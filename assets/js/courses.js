@@ -5,6 +5,7 @@ window.BADBEAR_COURSES = [
     categoria: "Medicina",
     icono: "🩺",
     logo: "assets/logos/cursos/dermatologia/logo.png",
+    logoAlternativo: "assets/logos/cursos/dermatologia/badbear.med_dermatology_panda_logo.png",
     descripcion: "Lesiones elementales, enfermedades inflamatorias, infecciosas, parasitarias, tumorales y práctica clínica.",
     href: "dermatologia/estudio.html?page=index.html",
     estado: "integrado"
@@ -24,6 +25,7 @@ window.BADBEAR_COURSES = [
     categoria: "Medicina",
     icono: "🫀",
     logo: "assets/logos/cursos/cardiologia/logo.png",
+    logoAlternativo: "assets/logos/cursos/cardiologia/badbear.med_panda_heart_logo.png",
     descripcion: "Portal temático con semiología, ECG, hipertensión, cardiopatía isquémica, insuficiencia cardíaca, arritmias y valvulopatías.",
     href: "cardiologia/index.html",
     estado: "integrado"
