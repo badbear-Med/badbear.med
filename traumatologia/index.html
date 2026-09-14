@@ -3,12 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Traumatología y Ortopedia del proyecto BADBEAR.MED del grupo WAJOMEA, organizada según TEXTO TRAUMATOLOGIA 2026.">
   <title>Traumatología y Ortopedia | BADBEAR.MED</title>
   <link rel="stylesheet" href="../assets/css/course.css">
+  <link rel="stylesheet" href="traumatologia.css">
 </head>
-<body data-course-id="traumatologia">
-  <div id="course-app"></div>
-  <script src="../assets/js/courses.js"></script>
-  <script src="../assets/js/course-page.js"></script>
+<body>
+  <header class="trauma-header">
+    <div class="inner">
+      <a href="../index.html" class="trauma-brand">🐼 BADBEAR.<span>MED</span></a>
+      <nav class="trauma-nav">
+        <a href="#temas">Clases</a>
+        <a href="modulo.html?m=preguntas">Banco</a>
+        <a href="modulo.html?m=examenes">Exámenes</a>
+        <a href="modulo.html?m=progreso">Progreso</a>
+        <a href="../index.html" class="portal">← Portal principal</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="trauma-hero">
+    <div class="trauma-hero-inner">
+      <div>
+        <span class="trauma-kicker">ORTOPEDIA Y TRAUMATOLOGÍA · 2026</span>
+        <h1>Traumatología y Ortopedia</h1>
+        <p>Portal de estudio organizado según las <strong>15 clases reales</strong> de TEXTO TRAUMATOLOGIA 2026: semiología, fracturas, luxaciones, trauma pediátrico, columna, fracturas expuestas, infecciones, lesiones de partes blandas, tumores óseos y politrauma.</p>
+        <div class="trauma-actions">
+          <a href="#temas" class="trauma-btn primary">Ver las 15 clases</a>
+          <a href="modulo.html?m=preguntas" class="trauma-btn secondary">Banco de preguntas</a>
+        </div>
+      </div>
+      <div class="trauma-visual" aria-hidden="true">🦴</div>
+    </div>
+  </section>
+
+  <section class="trauma-dashboard">
+    <div class="trauma-stats">
+      <div class="trauma-stat"><strong id="trauma-total-temas">15</strong><span>Clases del texto</span></div>
+      <div class="trauma-stat"><strong id="trauma-total-areas">0</strong><span>Áreas temáticas</span></div>
+      <div class="trauma-stat"><strong id="trauma-completados">0</strong><span>Clases revisadas</span></div>
+      <div class="trauma-stat"><strong id="trauma-porcentaje">0%</strong><span>Progreso</span></div>
+    </div>
+  </section>
+
+  <section id="temas" class="trauma-section">
+    <div class="trauma-section-head">
+      <div>
+        <h2>Contenido de clases</h2>
+        <p>Se conserva el orden del material de José Santiago Sandoval Vílchez utilizado en el curso. No se reemplazó por un temario genérico.</p>
+      </div>
+      <div class="trauma-tools">
+        <input id="trauma-buscar" type="search" placeholder="Buscar clase, fractura, tumor..." aria-label="Buscar clase">
+        <select id="trauma-filtro" aria-label="Filtrar por área"><option value="todos">Todas las áreas</option></select>
+      </div>
+    </div>
+    <div id="trauma-temas" class="trauma-grid"></div>
+  </section>
+
+  <section class="trauma-section">
+    <div class="trauma-section-head"><div><h2>Recursos del curso</h2><p>La estructura ya está preparada para integrar el material que hemos venido trabajando.</p></div></div>
+    <div class="trauma-actions">
+      <a href="modulo.html?m=teoria" class="trauma-btn secondary">Teoría</a>
+      <a href="modulo.html?m=resumenes" class="trauma-btn secondary">Resúmenes</a>
+      <a href="modulo.html?m=preguntas" class="trauma-btn secondary">Banco</a>
+      <a href="modulo.html?m=examenes" class="trauma-btn secondary">Exámenes pasados</a>
+      <a href="modulo.html?m=pdf" class="trauma-btn secondary">PDF</a>
+      <a href="modulo.html?m=videos" class="trauma-btn secondary">Videos</a>
+      <a href="modulo.html?m=audios" class="trauma-btn secondary">Audios</a>
+      <a href="modulo.html?m=progreso" class="trauma-btn secondary">Progreso</a>
+    </div>
+  </section>
+
+  <script src="temas.js"></script>
+  <script src="traumatologia.js"></script>
 </body>
 </html>
