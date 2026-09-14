@@ -1,2 +1,31 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Patología Clínica | BADBEAR.MED</title><link rel="stylesheet" href="../assets/css/course.css"></head><body data-course-id="patologia-clinica"><div id="course-app"></div><script src="../assets/js/courses.js"></script><script src="../assets/js/course-page.js"></script></body></html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Patología Clínica del proyecto BADBEAR.MED del grupo WAJOMEA: hemograma, anemias, hemostasia, bioquímica, enzimología, biomarcadores, microbiología y serología.">
+  <title>Patología Clínica | BADBEAR.MED</title>
+  <link rel="icon" type="image/png" href="../dermatologia/badbear_logo.png">
+  <link rel="stylesheet" href="../assets/css/course.css">
+  <link rel="stylesheet" href="patologia-clinica.css">
+</head>
+<body>
+  <header class="pat-header">
+    <div class="inner">
+      <a href="../index.html" class="pat-brand"><img src="../dermatologia/badbear_logo.png" alt="Logo BADBEAR.MED">BADBEAR.<span>MED</span></a>
+      <nav class="pat-nav"><a href="#temas">Temas</a><a href="modulo.html?m=preguntas">Banco</a><a href="modulo.html?m=examenes">Exámenes</a><a href="modulo.html?m=progreso">Progreso</a><a href="../index.html" class="portal">← Portal principal</a></nav>
+    </div>
+  </header>
+
+  <section class="pat-hero"><div class="pat-hero-inner"><div><span class="pat-kicker">BADBEAR.MED · DIAGNÓSTICO DE LABORATORIO</span><h1>Patología Clínica</h1><p>Portal de estudio centrado en interpretación clínica de laboratorio: hemograma, índices eritrocitarios, anemias, leucocitos, plaquetas, hemostasia, bioquímica, función renal y hepática, enzimología, biomarcadores, gasometría, microbiología y serología.</p><div class="pat-actions"><a href="#temas" class="pat-btn primary">Explorar temas</a><a href="modulo.html?m=preguntas" class="pat-btn secondary">Banco de preguntas</a></div></div><div class="pat-visual" aria-hidden="true">🔬</div></div></section>
+
+  <section class="pat-dashboard"><div class="pat-stats"><div class="pat-stat"><strong id="pat-total-temas">16</strong><span>Temas</span></div><div class="pat-stat"><strong id="pat-total-areas">0</strong><span>Áreas</span></div><div class="pat-stat"><strong id="pat-completados">0</strong><span>Temas revisados</span></div><div class="pat-stat"><strong id="pat-porcentaje">0%</strong><span>Progreso</span></div></div></section>
+
+  <section id="temas" class="pat-section"><div class="pat-section-head"><div><h2>Contenido del curso</h2><p>Organizado a partir de los bloques de laboratorio que hemos venido trabajando, con énfasis en interpretación y diagnóstico diferencial.</p></div><div class="pat-tools"><input id="pat-buscar" type="search" placeholder="Buscar hemograma, VCM, VDRL..." aria-label="Buscar tema"><select id="pat-filtro" aria-label="Filtrar por área"><option value="todos">Todas las áreas</option></select></div></div><div id="pat-temas" class="pat-grid"></div></section>
+
+  <section class="pat-section"><div class="pat-note"><h3>BADBEAR.MED FIJA:</h3><p>En Patología Clínica el objetivo no será memorizar números aislados: priorizaremos patrones, relaciones entre pruebas, algoritmos de confirmación y errores de interpretación.</p></div><div class="pat-actions"><a href="modulo.html?m=teoria" class="pat-btn secondary">Teoría</a><a href="modulo.html?m=resumenes" class="pat-btn secondary">Resúmenes</a><a href="modulo.html?m=preguntas" class="pat-btn secondary">Banco</a><a href="modulo.html?m=examenes" class="pat-btn secondary">Exámenes pasados</a><a href="modulo.html?m=pdf" class="pat-btn secondary">PDF</a><a href="modulo.html?m=videos" class="pat-btn secondary">Videos</a><a href="modulo.html?m=audios" class="pat-btn secondary">Audios</a><a href="modulo.html?m=progreso" class="pat-btn secondary">Progreso</a></div></section>
+
+  <script src="temas.js"></script>
+  <script src="patologia-clinica.js"></script>
+</body>
+</html>
