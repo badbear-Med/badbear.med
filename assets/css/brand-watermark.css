@@ -1,2 +1,37 @@
 /* BADBEAR.MED · Identidad transversal */
-.bb-brand-logo{width:42px;height:42px;object-fit:contain;display:block;flex:0 0 auto}.bb-brand-lockup{display:inline-flex!important;align-items:center;gap:10px}.bb-brand-lockup img{width:42px;height:42px;object-fit:contain;display:block}body::after{content:"";position:fixed;right:18px;bottom:16px;width:88px;height:88px;background:url("../../dermatologia/badbear_logo.png") center/contain no-repeat;opacity:.13;pointer-events:none;z-index:2147483000;filter:saturate(.9);transform:translateZ(0)}@media(max-width:650px){body::after{width:64px;height:64px;right:10px;bottom:10px;opacity:.11}.bb-brand-logo,.bb-brand-lockup img{width:36px;height:36px}}@media print{body::after{width:72px;height:72px;right:10mm;bottom:10mm;opacity:.09}}
+.bb-brand-logo{width:42px;height:42px;object-fit:contain;display:block;flex:0 0 auto}
+.bb-brand-lockup{display:inline-flex!important;align-items:center;gap:10px}
+.bb-brand-lockup img{width:42px;height:42px;object-fit:contain;display:block}
+
+/*
+   MARCA DE AGUA PRINCIPAL
+   El logo oficial se muestra GRANDE y CENTRADO en la ventana.
+   Es decorativo, no bloquea clics y permanece fijo mientras se navega.
+*/
+body::after{
+  content:"";
+  position:fixed;
+  left:50%;
+  top:54%;
+  width:min(48vw,560px);
+  aspect-ratio:1/1;
+  background:url("../../dermatologia/badbear_logo.png") center/contain no-repeat;
+  opacity:.055;
+  pointer-events:none;
+  z-index:2147483000;
+  transform:translate(-50%,-50%);
+  filter:grayscale(.12) saturate(.8);
+}
+
+@media(max-width:900px){
+  body::after{width:min(62vw,430px);top:53%;opacity:.05}
+}
+
+@media(max-width:650px){
+  body::after{width:min(78vw,320px);top:52%;opacity:.045}
+  .bb-brand-logo,.bb-brand-lockup img{width:36px;height:36px}
+}
+
+@media print{
+  body::after{width:115mm;top:52%;opacity:.045}
+}
