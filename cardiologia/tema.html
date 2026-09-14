@@ -5,14 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tema de Cardiología en BADBEAR.MED, proyecto WAJOMEA.GROUP">
   <title>Cardiología | BADBEAR.MED</title>
+  <link rel="icon" type="image/png" href="../assets/logos/cursos/cardiologia/logo.png" data-bb-course-favicon>
   <link rel="stylesheet" href="../assets/css/course.css">
   <link rel="stylesheet" href="cardiologia.css">
   <link rel="stylesheet" href="tema.css">
 </head>
-<body>
+<body
+  data-course-logo="../assets/logos/cursos/cardiologia/logo.png"
+  data-course-logo-alt="../assets/logos/cursos/cardiologia/badbear.med_panda_heart_logo.png"
+  data-course-logo-fallback="../dermatologia/badbear_logo.png"
+  style="--bb-watermark-image:url('../assets/logos/cursos/cardiologia/logo.png')"
+>
   <header class="cardio-header">
     <div class="inner">
-      <a href="../index.html" class="cardio-brand">🐼 BADBEAR.<span>MED</span></a>
+      <a href="../index.html" class="cardio-brand">
+        <img data-bb-course-logo src="../assets/logos/cursos/cardiologia/logo.png" alt="Logo Cardiología BADBEAR.MED">
+        <span class="cardio-brand-text">BADBEAR.<strong>MED</strong><small>Cardiología</small></span>
+      </a>
       <nav class="cardio-nav">
         <a href="index.html">Cardiología</a>
         <a href="modulo.html?m=teoria">Módulos</a>
@@ -21,6 +30,7 @@
     </div>
   </header>
   <main id="cardio-tema-app" class="tema-page"></main>
+  <script src="../assets/js/course-branding.js"></script>
   <script src="temas.js"></script>
   <script src="tema.js"></script>
 </body>

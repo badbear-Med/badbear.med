@@ -5,8 +5,8 @@
 
 /*
    MARCA DE AGUA PRINCIPAL
-   El logo oficial se muestra GRANDE y CENTRADO en la ventana.
-   Es decorativo, no bloquea clics y permanece fijo mientras se navega.
+   Cada curso puede definir --bb-watermark-image desde su propia página.
+   Si no lo hace, se conserva el logo maestro BADBEAR.MED.
 */
 body::after{
   content:"";
@@ -15,7 +15,10 @@ body::after{
   top:54%;
   width:min(48vw,560px);
   aspect-ratio:1/1;
-  background:url("../../dermatologia/badbear_logo.png") center/contain no-repeat;
+  background-image:var(--bb-watermark-image,url("../../dermatologia/badbear_logo.png"));
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
   opacity:.055;
   pointer-events:none;
   z-index:2147483000;
