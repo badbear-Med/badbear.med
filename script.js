@@ -36,7 +36,13 @@
       img.src = curso.logo;
       img.alt = "";
       img.loading = "lazy";
+      let intentoAlternativo = false;
       img.addEventListener("error", () => {
+        if (!intentoAlternativo && curso.logoAlternativo) {
+          intentoAlternativo = true;
+          img.src = curso.logoAlternativo;
+          return;
+        }
         icono.classList.remove("logo-curso");
         icono.textContent = curso.icono || "📘";
       });
