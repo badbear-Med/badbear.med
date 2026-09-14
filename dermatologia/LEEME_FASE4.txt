@@ -1,0 +1,32 @@
+BADBEAR.MED · FASE 4 — RENDIMIENTO POR TEMA + TEMAS DÉBILES
+
+Archivos incluidos:
+- app.js
+- examenes.js
+- repaso.html
+- progreso.html
+- badbear-theme.css
+
+INSTALACIÓN
+1. Copia estos 5 archivos dentro de C:\badbear-dermatologia\
+2. Reemplaza los archivos existentes con el mismo nombre.
+3. NO borres styles.css.
+4. Abre index.html y presiona Ctrl + F5.
+
+QUÉ HACE ESTA FASE
+- Exámenes calcula rendimiento por cada una de sus partes temáticas.
+- Una pregunta inicialmente incorrecta y luego recuperada en Repaso cuenta como dominada en el rendimiento actual.
+- Banco clínico agrupa los casos en áreas dermatológicas (inflamatorias, bacterianas, virales, micóticas, parasitarias, ampollosas, pigmentarias/anexos, sistémicas y tumores).
+- Banco empieza a registrar rendimiento temático desde esta actualización; no inventa datos de respuestas anteriores.
+- Temas débiles: Exámenes requiere al menos 3 respuestas del tema y Banco al menos 2; se considera débil un rendimiento <60%.
+- 60–74% = en consolidación.
+- >=75% = dominado.
+- Repaso muestra el análisis completo y Progreso muestra los 8 temas prioritarios.
+
+NUEVAS CLAVES localStorage
+- badbear_derma_examen_temas
+- badbear_derma_banco_temas
+- badbear_derma_temas_debiles
+
+SIGUIENTE FASE
+- Simulador de examen: 20/40/50 preguntas, cronómetro, corrección al final y nota vigesimal.

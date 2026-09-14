@@ -1,0 +1,39 @@
+BADBEAR.MED · FASE 9 — HISTORIAL LONGITUDINAL DE RENDIMIENTO
+
+Archivos nuevos:
+- historial.html
+- historial.js
+
+Archivos actualizados:
+- index.html
+- examenes.html
+- simulador.html
+- atlas.html
+- reconocimiento.html
+- practico.html
+- repaso.html
+- progreso.html
+- badbear-theme.css
+- app.js
+- examenes.js
+
+INSTALACIÓN
+1. Copia todos los archivos del ZIP dentro de C:\badbear-dermatologia\
+2. Acepta reemplazar los archivos existentes.
+3. No borres styles.css, simulador.js, atlas.js, reconocimiento.js ni practico.js.
+4. Abre index.html y presiona Ctrl + F5.
+5. Entra a Historial.
+
+QUÉ HACE
+- Gráfico de notas /20 por fecha: Simulador y Examen práctico.
+- Gráfico de rendimiento del Reconocimiento visual.
+- Resumen por modalidad: intentos, último, promedio y mejor.
+- Cronología unificada de evaluaciones.
+- Temas actuales ordenados por prioridad.
+- Empieza a registrar snapshots de rendimiento por tema desde esta fase.
+- Detecta temas que mejoran y temas que siguen débiles cuando ya existen al menos dos snapshots.
+- Agrega un resumen de Historial dentro de Progreso.
+
+IMPORTANTE
+Las notas previas de Simulador, Práctico y Reconocimiento sí aparecen porque ya se guardaban con fecha.
+La tendencia histórica por TEMA empieza desde esta Fase 9 porque antes no se almacenaban snapshots longitudinales por tema. La plataforma no inventa retrospectivamente esos datos.

@@ -1,0 +1,37 @@
+BADBEAR.MED · FASE 7 — RECONOCIMIENTO DERMATOLÓGICO
+
+Archivos incluidos:
+- index.html
+- examenes.html
+- simulador.html
+- atlas.html
+- repaso.html
+- progreso.html
+- reconocimiento.html   (NUEVO)
+- reconocimiento.js     (NUEVO)
+- badbear-theme.css
+
+INSTALACIÓN
+1. Copia todos estos archivos dentro de C:\badbear-dermatologia\
+2. Reemplaza los archivos existentes cuando Windows lo solicite.
+3. Agrega reconocimiento.html y reconocimiento.js.
+4. NO borres styles.css, app.js, examenes.js, simulador.js ni atlas.js.
+5. Abre index.html y pulsa Ctrl + F5.
+
+QUÉ AGREGA
+- Modo de reconocimiento dermatológico a ciegas.
+- 10, 20 o 24 casos por sesión.
+- Fotografía clínica real consultada dinámicamente en Wikimedia Commons.
+- La fuente y el diagnóstico permanecen ocultos hasta corregir.
+- 6 criterios morfológicos: lesión, tipo, color, bordes, superficie y distribución.
+- Diagnóstico presuntivo con alternativas.
+- Puntaje máximo de 8 puntos por caso: 6 morfología + 2 diagnóstico.
+- Comparación inmediata entre tu respuesta y la esperada.
+- BADBEAR.MED FIJA después de cada caso.
+- Historial local de sesiones, mejor rendimiento y última sesión.
+- Progreso incluye una tarjeta nueva de Entrenamiento visual.
+- Atlas incluye acceso directo a Reconocimiento.
+- Inicio queda ordenado en 9 módulos (3 x 3 en escritorio).
+
+NOTA
+Las imágenes son externas y pueden variar. El botón “Cambiar imagen” permite descartar una fotografía poco representativa antes de corregir.

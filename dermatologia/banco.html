@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BADBEAR.MED | Dermatología Clínica</title>
+
+    <meta name="description" content="Entrenamiento clínico de Dermatología de BADBEAR.MED: morfología, imágenes clínicas y diagnóstico diferencial.">
+    <meta name="theme-color" content="#0b1f33">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+<header class="cabecera bb-header">
+
+    <a class="marca" href="#" aria-label="Inicio BADBEAR.MED">
+        <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+
+        <div class="marca-texto">
+            <h1>BADBEAR<span>.MED</span></h1>
+            <p>Dermatología</p>
+        </div>
+    </a>
+
+<nav class="nav-principal" aria-label="Navegación principal">
+
+    <a href="index.html" class="nav-item">
+        Inicio
+    </a>
+
+    <a href="banco.html" class="nav-item nav-activo">
+        Banco
+    </a>
+
+    <a href="examenes.html" class="nav-item">
+        Exámenes pasados
+    </a>
+
+    <a href="teoria.html" class="nav-item">
+        Teoría
+    </a>
+<a href="audio.html" class="nav-item">Audio</a>
+    <a href="progreso.html" class="nav-item">
+        Progreso
+    </a>
+
+</nav>
+
+</header>
+
+
+<main id="banco" class="contenedor">
+
+
+    <!-- PROGRESO -->
+
+    <div class="estado">
+
+        <strong id="contador-caso">
+            Caso 1
+        </strong>
+
+        <strong id="contador-total">
+            1 / 100
+        </strong>
+
+    </div>
+
+
+    <div class="barra-fondo">
+
+        <div id="barra-progreso"></div>
+
+    </div>
+
+
+
+    <!-- IMAGEN Y CASO -->
+
+    <section class="caso-grid">
+
+
+        <div class="zona-imagen">
+
+            <div class="imagen-box">
+
+                <div
+                    id="cargando-imagen"
+                    class="cargando-imagen"
+                >
+                    Buscando fotografía clínica...
+                </div>
+
+
+                <img
+                    id="imagen-enfermedad"
+                    src=""
+                    alt="Fotografía dermatológica"
+                >
+
+            </div>
+
+
+            <button
+                id="btn-cambiar-imagen"
+                class="btn-secundario"
+            >
+                Cambiar imagen
+            </button>
+
+
+            <p
+                id="fuente-imagen"
+                class="fuente-imagen"
+            ></p>
+
+        </div>
+
+
+
+        <div class="caso-clinico">
+
+            <div class="etiqueta">
+                CASO CLÍNICO
+            </div>
+
+            <h2>
+                Historia clínica
+            </h2>
+
+            <p id="caso-clinico"></p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- MORFOLOGÍA -->
+
+    <section class="evaluacion">
+
+        <h2>
+            1. Describa la lesión dermatológica
+        </h2>
+
+
+        <div class="bloque-pregunta">
+
+            <h3>
+                Tipo de lesión predominante
+            </h3>
+
+            <div
+                id="opciones-lesion"
+                class="opciones-descriptivas"
+            ></div>
+
+        </div>
+
+
+        <div class="bloque-pregunta">
+
+            <h3>
+                Color predominante
+            </h3>
+
+            <div
+                id="opciones-color"
+                class="opciones-descriptivas"
+            ></div>
+
+        </div>
+
+
+        <div class="bloque-pregunta">
+
+            <h3>
+                Bordes o límites
+            </h3>
+
+            <div
+                id="opciones-borde"
+                class="opciones-descriptivas"
+            ></div>
+
+        </div>
+
+
+        <div class="bloque-pregunta">
+
+            <h3>
+                Distribución predominante
+            </h3>
+
+            <div
+                id="opciones-distribucion"
+                class="opciones-descriptivas"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- DIAGNÓSTICO -->
+
+    <section class="diagnostico-section">
+
+        <h2>
+            2. ¿Cuál es el diagnóstico más probable?
+        </h2>
+
+        <div
+            id="opciones"
+            class="opciones-diagnostico"
+        ></div>
+
+    </section>
+
+
+
+    <!-- EXPLICACIÓN -->
+
+    <section
+        id="explicacion"
+        class="explicacion oculto"
+    >
+
+        <div id="mensaje-respuesta"></div>
+
+
+        <h2
+            id="diagnostico"
+            class="titulo-diagnostico"
+        ></h2>
+
+
+        <div class="grid-info">
+
+
+            <article class="info-card">
+
+                <h3>Definición</h3>
+
+                <p id="definicion"></p>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <h3>
+                    Descripción dermatológica
+                </h3>
+
+                <p id="lesion"></p>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <h3>Clínica</h3>
+
+                <p id="clinica"></p>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <h3>Diagnóstico</h3>
+
+                <p id="diagnostico-info"></p>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <h3>Tratamiento</h3>
+
+                <p id="tratamiento"></p>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <h3>
+                    Diagnóstico diferencial
+                </h3>
+
+                <p id="diferencial"></p>
+
+            </article>
+
+
+        </div>
+
+
+<div class="perla">
+
+    <h3>
+        BADBEAR.MED FIJA:
+    </h3>
+
+    <p id="perla"></p>
+
+</div>
+
+
+        <button id="btn-siguiente">
+
+            Siguiente caso →
+
+        </button>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    BADBEAR.MED · Dermatología Clínica · WAJOMEA.GROUP
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

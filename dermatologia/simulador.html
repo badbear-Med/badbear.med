@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Simulador · Dermatología</title>
+  <meta name="description" content="Simulador de examen de Dermatología con 20, 40 o 50 preguntas, cronómetro y nota vigesimal del proyecto BADBEAR.MED del grupo WAJOMEA.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badbear-theme.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+
+<header class="cabecera bb-header">
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a>
+    <a href="banco.html" class="nav-item">Banco</a>
+    <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+    <a href="simulador.html" class="nav-item nav-activo">Simulador</a>
+        <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+        <a href="practico.html" class="nav-item">Práctico</a>
+    <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+
+    <a href="repaso.html" class="nav-item">Repaso</a>
+    <a href="teoria.html" class="nav-item">Teoría</a>
+    <a href="audio.html" class="nav-item">Audio</a>
+    <a href="progreso.html" class="nav-item">Progreso</a>
+        <a href="historial.html" class="nav-item">Historial</a>
+
+  </nav>
+</header>
+
+<main class="sim-main">
+
+  <section class="sim-hero">
+    <span class="sim-kicker">BADBEAR.MED · SIMULADOR</span>
+    <h2>Simulación de examen</h2>
+    <p>
+      Selecciona el tamaño del examen. Las preguntas se distribuyen entre los bloques temáticos,
+      el cronómetro continúa aunque recargues la página y no se muestran respuestas hasta finalizar.
+    </p>
+  </section>
+
+  <section id="sim-config-section" class="sim-config">
+
+    <article class="sim-panel">
+      <h3>Configura tu simulación</h3>
+      <p>Elige la cantidad de preguntas. El tiempo se asigna automáticamente.</p>
+
+      <div class="sim-tamanos">
+        <button type="button" class="sim-tamano activo" data-total="20">
+          <strong>20</strong><span>30 minutos</span>
+        </button>
+        <button type="button" class="sim-tamano" data-total="40">
+          <strong>40</strong><span>60 minutos</span>
+        </button>
+        <button type="button" class="sim-tamano" data-total="50">
+          <strong>50</strong><span>75 minutos</span>
+        </button>
+      </div>
+
+      <div class="sim-reglas">
+        <div class="sim-regla"><span>⏱</span><div><b>Tiempo:</b> <span id="sim-config-tiempo">30 minutos</span>.</div></div>
+        <div class="sim-regla"><span>◼</span><div><b>Modo examen:</b> no hay corrección ni BADBEAR.MED FIJA durante la prueba.</div></div>
+        <div class="sim-regla"><span>20</span><div><b>Nota:</b> se calcula sobre 20 usando todas las preguntas del simulacro.</div></div>
+        <div class="sim-regla"><span>↺</span><div><b>Recarga segura:</b> si actualizas la página, el examen y el tiempo continúan.</div></div>
+      </div>
+
+      <button id="sim-start" class="sim-start" type="button">
+        <span id="sim-start-text">Iniciar 20 preguntas · 30 min</span>
+      </button>
+    </article>
+
+    <aside class="sim-panel">
+      <h3>Historial reciente</h3>
+      <p>Tus últimas simulaciones se guardan únicamente en este navegador.</p>
+      <div id="sim-history-list" class="sim-history-list"></div>
+      <div id="sim-history-empty" class="repaso-vacio">Aún no realizaste simulaciones.</div>
+    </aside>
+
+  </section>
+
+  <section id="sim-exam-section" class="sim-exam" style="display:none">
+
+    <div class="sim-exam-top">
+      <div>
+        <small>SIMULACIÓN EN CURSO · SIN RETROALIMENTACIÓN</small>
+        <strong id="sim-exam-title">Simulación</strong>
+      </div>
+      <div id="sim-timer" class="sim-timer">30:00</div>
+    </div>
+
+    <div class="sim-layout">
+
+      <article class="sim-question-card">
+        <div class="sim-question-head">
+          <div class="sim-question-meta">
+            <strong id="sim-question-number">Pregunta 1</strong>
+            <span id="sim-question-count">1 / 20</span>
+          </div>
+          <div class="sim-progress"><div id="sim-progress-bar"></div></div>
+        </div>
+
+        <div class="sim-question-body">
+          <div id="sim-question-section" class="sim-section-label"></div>
+          <h3 id="sim-question-text"></h3>
+          <div id="sim-options" class="sim-options"></div>
+        </div>
+
+        <div class="sim-nav">
+          <button id="sim-prev" class="sim-prev" type="button">← Anterior</button>
+          <button id="sim-next" class="sim-next" type="button">Siguiente →</button>
+        </div>
+      </article>
+
+      <aside class="sim-palette-card">
+        <h3>Mapa de preguntas</h3>
+        <p>Puedes regresar a cualquier pregunta antes de finalizar.</p>
+        <div id="sim-palette" class="sim-palette"></div>
+        <div class="sim-palette-meta">
+          <span id="sim-answered-count">0 respondidas</span>
+          <span id="sim-pending-count">20 pendientes</span>
+        </div>
+        <button id="sim-finish" class="sim-finish" type="button">Finalizar simulación</button>
+      </aside>
+
+    </div>
+
+  </section>
+
+  <section id="sim-result-section" class="sim-result">
+
+    <div class="sim-result-hero">
+      <span class="sim-kicker">RESULTADO</span>
+      <h2 id="sim-result-title">Simulación finalizada</h2>
+      <p id="sim-result-subtitle"></p>
+
+      <div class="sim-score-row">
+        <div class="sim-score-main">
+          <span>NOTA VIGESIMAL</span>
+          <strong id="sim-result-nota">0,0 / 20</strong>
+        </div>
+        <div class="sim-score-box"><span>CORRECTAS</span><strong id="sim-result-correct">0</strong></div>
+        <div class="sim-score-box"><span>INCORRECTAS</span><strong id="sim-result-incorrect">0</strong></div>
+        <div class="sim-score-box"><span>SIN RESPONDER</span><strong id="sim-result-unanswered">0</strong></div>
+        <div class="sim-score-box"><span>RENDIMIENTO</span><strong id="sim-result-performance">0%</strong></div>
+      </div>
+
+      <p id="sim-result-time" style="margin-top:15px;color:#667085;font-weight:800"></p>
+
+      <div class="sim-result-actions">
+        <button id="sim-new" class="primary" type="button">Nueva simulación</button>
+        <a class="secondary" href="repaso.html">Ir a Repaso</a>
+        <a class="secondary" href="examenes.html">Exámenes pasados</a>
+      </div>
+    </div>
+
+    <div class="sim-review">
+      <h3>Revisión de errores</h3>
+      <p id="sim-review-count">0 preguntas para revisar</p>
+      <div id="sim-review-empty" class="sim-empty-review" style="display:none">Excelente: no tuviste errores en esta simulación.</div>
+      <div id="sim-review-list" class="sim-review-list"></div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
+<script src="simulador.js"></script>
+</body>
+</html>

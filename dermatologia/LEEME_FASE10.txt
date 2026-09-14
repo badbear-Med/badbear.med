@@ -1,0 +1,10 @@
+BADBEAR.MED · FASE 10 · PLAN ADAPTATIVO
+
+1. Copia todos los archivos de esta carpeta dentro de C:\badbear-dermatologia\
+2. Acepta reemplazar los archivos existentes incluidos en este paquete.
+3. Agrega los archivos nuevos plan.html y plan.js.
+4. NO borres ni reemplaces: styles.css, app.js, examenes.js, simulador.js, atlas.js, reconocimiento.js, practico.js, historial.js.
+5. Abre index.html y presiona Ctrl + F5.
+6. Entra a PLAN y elige 30, 45, 60 o 90 minutos.
+
+La Fase 10 utiliza solamente datos ya guardados en localStorage. No inventa rendimiento previo ni modifica tus respuestas históricas.

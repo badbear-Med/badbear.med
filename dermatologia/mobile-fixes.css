@@ -1,0 +1,158 @@
+/* BADBEAR.MED · navegación y contenedores móviles */
+html,body{max-width:100%;overflow-x:hidden}
+img,iframe,video,canvas,svg{max-width:100%}
+.bb-mobile-menu-btn{display:none}
+
+@media (max-width:900px){
+  .bb-header,
+  .cabecera.bb-header{
+    position:sticky!important;
+    top:0!important;
+    z-index:9990!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto!important;
+    align-items:center!important;
+    gap:10px!important;
+    width:100%!important;
+    max-width:100%!important;
+    padding:10px 14px!important;
+    min-height:auto!important;
+    background:rgba(255,255,255,.98)!important;
+  }
+
+  .bb-header .marca{min-width:0!important;gap:9px!important}
+  .bb-header .logo-badbear{width:44px!important;height:44px!important;flex:0 0 44px!important}
+  .bb-header .marca-texto h1{font-size:22px!important;line-height:1!important;white-space:nowrap!important}
+  .bb-header .marca-texto p{margin-top:4px!important;font-size:11px!important}
+
+  .bb-mobile-menu-btn{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:7px!important;
+    min-height:40px!important;
+    border:1px solid #dbe2ea!important;
+    border-radius:12px!important;
+    padding:10px 12px!important;
+    background:#111827!important;
+    color:#fff!important;
+    font:800 12px/1 Arial,Helvetica,sans-serif!important;
+    cursor:pointer!important;
+    box-shadow:0 6px 18px rgba(17,24,39,.12)!important;
+    white-space:nowrap!important;
+  }
+
+  .bb-mobile-menu-btn[aria-expanded="true"]{background:#2458ff!important}
+
+  .bb-header .nav-principal{
+    grid-column:1/-1!important;
+    display:none!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:10px 0 2px!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:7px!important;
+  }
+
+  .bb-header.bb-menu-abierto .nav-principal{display:grid!important}
+
+  .bb-header .nav-item{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    min-height:42px!important;
+    min-width:0!important;
+    padding:10px 12px!important;
+    margin:0!important;
+    border:1px solid #e4e9f0!important;
+    border-radius:11px!important;
+    background:#fff!important;
+    color:#374151!important;
+    font-size:12px!important;
+    font-weight:800!important;
+    text-decoration:none!important;
+    white-space:normal!important;
+  }
+
+  .bb-header .nav-item.nav-activo{
+    background:#fff0eb!important;
+    border-color:#ffd1c5!important;
+    color:#111827!important;
+  }
+
+  .bb-header .nav-item.nav-activo::after{display:none!important}
+
+  .inicio-badbear,
+  .teoria-badbear,
+  .audio-main,
+  .exam-main,
+  .atlas-main,
+  .repaso-main,
+  .progreso-badbear,
+  .simulador-main,
+  .recon-main,
+  .practico-main,
+  .plan-main,
+  .historial-main,
+  .srs-main{
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:0!important;
+    margin-right:0!important;
+    padding-left:12px!important;
+    padding-right:12px!important;
+    box-sizing:border-box!important;
+  }
+
+  .exam-hero,.exam-card,.exam-stats,.exam-stat,
+  .atlas-hero,.atlas-toolbar,.atlas-summary,.atlas-grid,.atlas-card,
+  .repaso-panel,.repaso-hero,.cuaderno-card,.visor-pdf{
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+
+  .exam-tools{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    max-width:100%!important;
+    gap:8px!important;
+  }
+  .exam-tools>*{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .exam-btn-simulador{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    min-height:44px!important;
+    padding:0 14px!important;
+    border:1px solid #111827!important;
+    border-radius:10px!important;
+    background:#111827!important;
+    color:#fff!important;
+    text-decoration:none!important;
+    font-weight:900!important;
+  }
+  .exam-hero-top{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+  .exam-youtube{width:100%!important;max-width:100%!important;box-sizing:border-box!important}
+  .exam-pregunta,.exam-opcion,.exam-argumento p{overflow-wrap:anywhere!important}
+
+  .bb-auth-logout{
+    right:10px!important;
+    bottom:10px!important;
+    padding:9px 11px!important;
+    font-size:11px!important;
+  }
+}
+
+@media (max-width:390px){
+  .bb-header .marca-texto h1{font-size:19px!important}
+  .bb-mobile-menu-btn{padding:9px 10px!important}
+  .bb-header .nav-principal{grid-template-columns:1fr!important}
+}

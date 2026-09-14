@@ -1,0 +1,36 @@
+BADBEAR.MED · FASE 5 — SIMULADOR DE EXAMEN
+
+ARCHIVOS INCLUIDOS
+- index.html
+- examenes.html
+- repaso.html
+- progreso.html
+- badbear-theme.css
+- simulador.html
+- simulador.js
+
+INSTALACIÓN
+1. Copia los 7 archivos a C:\badbear-dermatologia\
+2. Reemplaza index.html, examenes.html, repaso.html, progreso.html y badbear-theme.css.
+3. simulador.html y simulador.js son archivos nuevos.
+4. NO borres styles.css, app.js ni examenes.js.
+5. Abre index.html y presiona Ctrl + F5.
+
+QUÉ HACE LA FASE 5
+- Simulaciones de 20, 40 o 50 preguntas.
+- Tiempo automático: 30, 60 o 75 minutos.
+- Selección aleatoria equilibrada entre bloques temáticos.
+- Sin corrección durante el examen.
+- Navegación libre y mapa de preguntas respondidas/pendientes.
+- Cronómetro persistente aunque se recargue la página.
+- Finalización automática al agotarse el tiempo.
+- Nota vigesimal /20.
+- Correctas, incorrectas, sin responder y rendimiento.
+- Revisión final de errores con explicación y BADBEAR.MED FIJA.
+- Historial de las últimas 20 simulaciones.
+- Progreso muestra última nota, mejor nota e intentos.
+
+LOCALSTORAGE
+- badbear_derma_simulador_activo
+- badbear_derma_simulador_historial
+- badbear_derma_simulador_ultimo

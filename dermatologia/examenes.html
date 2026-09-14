@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Exámenes pasados · Dermatología</title>
+  <meta name="description" content="Banco de 200 preguntas de Dermatología tomadas de las clases desarrolladas durante la unidad de Dermatología por proyecto BADBEAR.MED del grupo WAJOMEA.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root{--ex-blue:#0969ff;--ex-ink:#0b1f33;--ex-muted:#64748b;--ex-line:#dfe7f0;--ex-bg:#f4f7fb;--ex-green:#0f9f63;--ex-red:#d63c45}
+    body{background:var(--ex-bg)}
+    .exam-main{max-width:1180px;margin:34px auto 60px;padding:0 24px;position:relative;z-index:1}
+    .exam-hero{background:#fff;border:1px solid var(--ex-line);border-radius:22px;padding:34px 38px;box-shadow:0 12px 35px rgba(11,31,51,.06);margin-bottom:20px}
+    .exam-eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;background:#edf4ff;color:var(--ex-blue);font-size:12px;font-weight:800;letter-spacing:.7px}
+    .exam-hero h2{font-size:38px;margin:14px 0 10px;color:var(--ex-ink)}
+    .exam-hero p{margin:0;color:var(--ex-muted);font-size:16px;line-height:1.7;max-width:850px}
+    .exam-tools{display:grid;grid-template-columns:1fr auto auto;gap:12px;margin-top:24px;align-items:center}
+    .exam-tools select,.exam-tools button{min-height:44px;border:1px solid #ced9e6;border-radius:10px;background:#fff;padding:0 14px;font-weight:700;color:var(--ex-ink)}
+    .exam-tools button{cursor:pointer}.exam-tools button.activo{background:#edf4ff;border-color:#8bb8ff;color:var(--ex-blue)}
+    .exam-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+    .exam-stat{background:#fff;border:1px solid var(--ex-line);border-radius:16px;padding:18px 20px}.exam-stat span{display:block;color:var(--ex-muted);font-size:12px;font-weight:700;margin-bottom:7px}.exam-stat strong{font-size:26px;color:var(--ex-ink)}
+    .exam-card{background:#fff;border:1px solid var(--ex-line);border-radius:22px;box-shadow:0 12px 35px rgba(11,31,51,.06);overflow:hidden}
+    .exam-top{padding:22px 28px 16px}.exam-topline{display:flex;justify-content:space-between;gap:20px;align-items:center}.exam-numero{font-weight:800;color:var(--ex-ink)}.exam-contador{font-weight:800;color:var(--ex-muted)}
+    .exam-progress{height:7px;background:#e9eff6;border-radius:999px;overflow:hidden;margin-top:12px}.exam-progress>div{height:100%;background:var(--ex-blue);border-radius:999px;transition:.3s}
+    .exam-body{padding:8px 28px 30px}.exam-parte{color:var(--ex-blue);font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px}.exam-pregunta{font-size:22px;line-height:1.55;color:var(--ex-ink);margin:0 0 22px;font-weight:750}
+    .exam-opciones{display:grid;gap:11px}.exam-opcion{display:flex;align-items:flex-start;gap:12px;width:100%;padding:15px 16px;text-align:left;background:#fff;border:1px solid #d6e0ea;border-radius:11px;cursor:pointer;font-size:15px;line-height:1.5;color:#22344a;transition:.15s}.exam-opcion:hover:not(:disabled){border-color:#6fa7ff;background:#f7faff;transform:translateY(-1px)}.exam-opcion:disabled{cursor:default}.exam-letra{flex:0 0 29px;height:29px;border-radius:8px;background:#eef3f8;display:grid;place-items:center;font-weight:800;color:#31516f}.exam-opcion.correcta{background:#eaf8f1;border-color:#67c89a;color:#0b633f}.exam-opcion.correcta .exam-letra{background:#cceede;color:#087047}.exam-opcion.incorrecta{background:#fff0f1;border-color:#ef9ca1;color:#a92c34}.exam-opcion.incorrecta .exam-letra{background:#ffd9dc;color:#a92c34}
+    .exam-feedback{margin-top:22px;border-top:1px solid #e4eaf1;padding-top:20px}.oculto{display:none!important}.exam-estado{padding:13px 15px;border-radius:10px;font-weight:800;margin-bottom:14px}.exam-estado.correcto{background:#eaf8f1;color:#087047}.exam-estado.incorrecto{background:#fff0f1;color:#a92c34}
+    .exam-argumento{border:1px solid #cbdbea;border-radius:13px;padding:18px 20px;background:#f9fbfd;margin-bottom:14px}.exam-argumento h3{margin:0 0 8px;color:var(--ex-ink);font-size:16px}.exam-argumento p{margin:0;color:#42566d;line-height:1.75;font-size:14px}
+    .exam-fija{border-left:4px solid #f2b500;background:#fff6d8;border-radius:12px;padding:17px 19px}.exam-fija strong{display:block;color:#164e92;font-size:13px;margin-bottom:6px}.exam-fija p{margin:0;color:#4b4a35;line-height:1.6}
+    .exam-nav{display:flex;justify-content:space-between;gap:14px;padding:0 28px 28px}.exam-nav button{min-height:46px;padding:0 18px;border-radius:10px;font-weight:800;cursor:pointer}.exam-prev{background:#fff;border:1px solid #ced9e6;color:var(--ex-ink)}.exam-next{background:var(--ex-blue);border:1px solid var(--ex-blue);color:white}.exam-nav button:disabled{opacity:.45;cursor:not-allowed}
+    .exam-source{margin-top:14px;color:#8290a3;font-size:12px}.exam-source strong{color:#5b6f86}
+
+/* =========================================================
+   HERO EXÁMENES + PLAYLIST YOUTUBE
+========================================================= */
+
+.exam-hero-top{
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 330px;
+  gap:32px;
+  align-items:center;
+}
+
+.exam-descripcion{
+  font-size:18px !important;
+  line-height:1.75 !important;
+  max-width:760px !important;
+}
+
+.exam-youtube{
+  display:flex;
+  align-items:center;
+  gap:16px;
+
+  padding:20px;
+
+  background:#fff;
+  border:1px solid #dce5ef;
+  border-radius:18px;
+
+  text-decoration:none;
+
+  box-shadow:0 10px 28px rgba(11,31,51,.07);
+
+  transition:.2s ease;
+}
+
+.exam-youtube:hover{
+  transform:translateY(-3px);
+  border-color:#ff4b4b;
+  box-shadow:0 14px 35px rgba(11,31,51,.11);
+}
+
+.exam-youtube-icono{
+  flex:0 0 56px;
+  width:56px;
+  height:56px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:16px;
+
+  background:#ff2020;
+  color:white;
+
+  font-size:23px;
+}
+
+.exam-youtube-contenido{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.exam-youtube-etiqueta{
+  color:#ff2020;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.8px;
+}
+
+.exam-youtube-contenido strong{
+  color:#0b1f33;
+  font-size:17px;
+  line-height:1.25;
+}
+
+.exam-youtube-contenido small{
+  color:#64748b;
+  font-size:12px;
+  line-height:1.45;
+}
+
+.exam-youtube-boton{
+  margin-top:5px;
+
+  color:#0969ff;
+  font-size:12px;
+  font-weight:800;
+}
+
+.exam-source{
+  margin-top:16px !important;
+  font-size:14px !important;
+  line-height:1.6 !important;
+}
+
+@media(max-width:900px){
+
+  .exam-hero-top{
+    grid-template-columns:1fr;
+  }
+
+  .exam-youtube{
+    max-width:450px;
+  }
+
+}
+
+    @media(max-width:760px){.exam-main{padding:0 12px}.exam-hero{padding:25px 20px}.exam-hero h2{font-size:31px}.exam-tools{grid-template-columns:1fr}.exam-stats{grid-template-columns:1fr}.exam-body,.exam-top,.exam-nav{padding-left:18px;padding-right:18px}.exam-pregunta{font-size:19px}.exam-nav{flex-direction:column-reverse}.exam-nav button{width:100%}}
+  </style>
+  <link rel="stylesheet" href="badbear-theme.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+<header class="cabecera bb-header">
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a>
+    <a href="banco.html" class="nav-item">Banco</a>
+    <a href="examenes.html" class="nav-item nav-activo">Exámenes pasados</a>
+        <a href="simulador.html" class="nav-item">Simulador</a>
+        <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+        <a href="practico.html" class="nav-item">Práctico</a>
+    <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+
+    <a href="repaso.html" class="nav-item">Repaso</a>
+   <a href="teoria.html" class="nav-item">Teoría</a>
+<a href="audio.html" class="nav-item">Audio</a>
+<a href="progreso.html" class="nav-item">Progreso</a>
+        <a href="historial.html" class="nav-item">Historial</a>
+
+  </nav>
+</header>
+
+<main class="exam-main">
+  <section class="exam-hero">
+
+  <div class="exam-hero-top">
+
+    <div class="exam-hero-info">
+
+      <span class="exam-eyebrow">
+        DERMATOLOGÍA · BADBEAR.MED
+      </span>
+
+      <h2>Exámenes pasados</h2>
+
+      <p class="exam-descripcion">
+        200 preguntas tomadas de las clases desarrolladas durante la unidad de Dermatología,
+        organizadas para reforzar el razonamiento clínico, diagnóstico,
+        fisiopatología y tratamiento.
+      </p>
+
+    </div>
+
+
+    <a
+      class="exam-youtube"
+      href="https://www.youtube.com/playlist?list=PLBeP1w0B3Wqc"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      <div class="exam-youtube-icono">
+        ▶
+      </div>
+
+      <div class="exam-youtube-contenido">
+
+        <span class="exam-youtube-etiqueta">
+          YOUTUBE · BADBEAR.MED
+        </span>
+
+        <strong>
+          Playlist de Dermatología
+        </strong>
+
+        <small>
+          Clases, repasos y contenido desarrollado durante la unidad
+        </small>
+
+        <span class="exam-youtube-boton">
+          Ver playlist →
+        </span>
+
+      </div>
+
+    </a>
+
+  </div>
+
+
+  <div class="exam-tools">
+
+    <select
+      id="exam-filtro"
+      aria-label="Filtrar por parte"
+    ></select>
+
+    <button
+      id="btn-aleatorio"
+      type="button"
+    >
+      Mezclar preguntas
+    </button>
+
+    <button
+      id="btn-repasar-errores"
+      class="exam-btn-repaso"
+      type="button"
+    >
+      Repasar errores (0)
+    </button>
+
+    <a
+      class="exam-btn-simulador"
+      href="simulador.html"
+    >
+      Simulador
+    </a>
+
+    <button
+      id="btn-reiniciar-exam"
+      type="button"
+    >
+      Reiniciar
+    </button>
+
+  </div>
+
+
+  <p class="exam-source">
+    <strong>Material académico:</strong>
+    Unidad de Dermatología · Proyecto BADBEAR.MED del grupo WAJOMEA.
+  </p>
+
+  <section id="exam-modo-repaso" class="exam-repaso-banner oculto">
+    <div>
+      <span class="exam-repaso-kicker">REPASO INTELIGENTE</span>
+      <h3 id="repaso-titulo-exam">Modo repaso de errores</h3>
+      <p id="repaso-texto-exam">Resuelve únicamente las preguntas que fallaste. Al acertarlas quedan marcadas como recuperadas.</p>
+    </div>
+
+    <div class="exam-repaso-metricas">
+      <span>Pendientes <strong id="repaso-pendientes-exam">0</strong></span>
+      <span>Recuperadas <strong id="repaso-recuperadas-exam">0</strong></span>
+      <span id="repaso-nota-exam">Nota del repaso: 0,0 / 20</span>
+    </div>
+
+    <button id="btn-salir-repaso" type="button">Volver a las 200 preguntas</button>
+  </section>
+
+</section>
+
+  <section class="exam-stats" aria-label="Estadísticas del examen">
+    <div class="exam-stat"><span>RESPONDIDAS</span><strong id="exam-respondidas">0</strong></div>
+    <div class="exam-stat"><span>CORRECTAS</span><strong id="exam-correctas">0</strong></div>
+    <div class="exam-stat"><span>RENDIMIENTO</span><strong id="exam-rendimiento">0%</strong></div>
+  </section>
+
+  <section class="exam-card">
+    <div class="exam-top">
+      <div class="exam-topline"><span id="exam-numero" class="exam-numero">Pregunta 1</span><span id="exam-contador" class="exam-contador">1 / 200</span></div>
+      <div class="exam-progress"><div id="exam-barra"></div></div>
+    </div>
+    <div class="exam-body">
+      <div id="exam-parte" class="exam-parte"></div>
+      <h3 id="exam-pregunta" class="exam-pregunta"></h3>
+      <div id="exam-opciones" class="exam-opciones"></div>
+      <section id="exam-feedback" class="exam-feedback oculto">
+        <div id="exam-estado" class="exam-estado"></div>
+        <div class="exam-argumento"><h3>Argumento clínico</h3><p id="exam-explicacion"></p></div>
+        <div class="exam-fija"><strong>BADBEAR.MED FIJA:</strong><p id="exam-fija"></p></div>
+      </section>
+    </div>
+    <div class="exam-nav">
+      <button id="btn-anterior-exam" class="exam-prev" type="button">← Anterior</button>
+      <button id="btn-siguiente-exam" class="exam-next" type="button">Siguiente pregunta →</button>
+    </div>
+  </section>
+</main>
+<footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
+<script src="examenes.js"></script>
+</body>
+</html>

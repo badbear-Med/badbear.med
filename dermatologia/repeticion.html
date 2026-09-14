@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Repetición espaciada · Dermatología</title>
+  <meta name="description" content="Repetición espaciada de errores, diagnósticos y BADBEAR.MED FIJA del proyecto BADBEAR.MED del grupo WAJOMEA.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badbear-theme.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+<header class="cabecera bb-header">
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a>
+    <a href="banco.html" class="nav-item">Banco</a>
+    <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+    <a href="simulador.html" class="nav-item">Simulador</a>
+    <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+    <a href="practico.html" class="nav-item">Práctico</a>
+    <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item nav-activo">Repetición</a>
+    <a href="repaso.html" class="nav-item">Repaso</a>
+    <a href="teoria.html" class="nav-item">Teoría</a>
+    <a href="audio.html" class="nav-item">Audio</a>
+    <a href="progreso.html" class="nav-item">Progreso</a>
+    <a href="historial.html" class="nav-item">Historial</a>
+  </nav>
+</header>
+
+<main class="srs-main">
+  <section class="srs-hero">
+    <div>
+      <span class="srs-kicker">BADBEAR.MED · REPETICIÓN ESPACIADA</span>
+      <h2>Volver a ver lo importante justo antes de olvidarlo</h2>
+      <p>Los errores de Exámenes pasados, nuevos errores del Banco y tus favoritos/FIJAS entran en una cola de repaso. Cada respuesta cambia automáticamente la próxima fecha de revisión.</p>
+    </div>
+    <div class="srs-hero-actions">
+      <button id="srs-sincronizar" type="button">↻ Sincronizar errores y FIJAS</button>
+      <a href="plan.html">Ver plan de hoy →</a>
+    </div>
+  </section>
+
+  <section class="srs-stats" aria-label="Resumen de repetición">
+    <article><span>PARA HOY</span><strong id="srs-hoy">0</strong><small>Vencidas o listas</small></article>
+    <article><span>PRÓXIMOS 7 DÍAS</span><strong id="srs-semana">0</strong><small>Programadas</small></article>
+    <article><span>DOMINADAS</span><strong id="srs-dominadas">0</strong><small>Intervalo ≥ 30 días</small></article>
+    <article><span>REPASOS HOY</span><strong id="srs-repasos-hoy">0</strong><small>Sesiones completadas</small></article>
+  </section>
+
+  <section class="srs-toolbar">
+    <div class="srs-filtros" role="group" aria-label="Filtro de repetición">
+      <button type="button" data-filtro="hoy" class="activo">Hoy</button>
+      <button type="button" data-filtro="proximos">Próximos</button>
+      <button type="button" data-filtro="dominados">Dominados</button>
+      <button type="button" data-filtro="todos">Todos</button>
+    </div>
+    <div class="srs-toolbar-right">
+      <span id="srs-cola-texto">0 elementos</span>
+      <button id="srs-mezclar" type="button">Mezclar</button>
+    </div>
+  </section>
+
+  <section class="srs-layout">
+    <article class="srs-card" id="srs-card">
+      <div class="srs-card-top">
+        <div>
+          <span id="srs-tipo" class="srs-tipo">REPASO</span>
+          <h3 id="srs-titulo">Sin elementos pendientes</h3>
+          <small id="srs-tema"></small>
+        </div>
+        <div class="srs-card-meta">
+          <span id="srs-contador">0 / 0</span>
+          <span id="srs-proxima"></span>
+        </div>
+      </div>
+
+      <div id="srs-vacio" class="srs-vacio">
+        No hay revisiones vencidas en este momento. Puedes abrir “Próximos” para estudiar por adelantado o volver más tarde.
+      </div>
+
+      <div id="srs-contenido" class="srs-contenido oculto">
+        <div class="srs-frente">
+          <span>PREGUNTA / CASO</span>
+          <p id="srs-frente"></p>
+          <div id="srs-opciones" class="srs-opciones"></div>
+        </div>
+
+        <button id="srs-revelar" type="button" class="srs-revelar">Revelar respuesta</button>
+
+        <div id="srs-respuesta" class="srs-respuesta oculto">
+          <div class="srs-respuesta-principal"><span>RESPUESTA</span><strong id="srs-respuesta-texto"></strong></div>
+          <p id="srs-explicacion"></p>
+          <div class="srs-fija"><strong>BADBEAR.MED FIJA:</strong><span id="srs-fija"></span></div>
+
+          <div class="srs-calificacion">
+            <button type="button" data-nota="otra" class="srs-otra"><strong>Otra vez</strong><small>10 min</small></button>
+            <button type="button" data-nota="dificil" class="srs-dificil"><strong>Difícil</strong><small>≈ 1 día</small></button>
+            <button type="button" data-nota="bien" class="srs-bien"><strong>Bien</strong><small id="srs-bien-tiempo">3 días</small></button>
+            <button type="button" data-nota="dominado" class="srs-dominado"><strong>Dominado</strong><small id="srs-dominado-tiempo">7 días</small></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="srs-card-footer">
+        <a id="srs-abrir-origen" href="repaso.html">Abrir en origen →</a>
+        <button id="srs-quitar" type="button">Quitar de repetición</button>
+      </div>
+    </article>
+
+    <aside class="srs-side">
+      <section class="srs-side-panel">
+        <span>COLA ACTUAL</span>
+        <h3>Qué vas a repasar</h3>
+        <div id="srs-lista" class="srs-lista"></div>
+      </section>
+
+      <section class="srs-side-panel srs-regla">
+        <span>REGLA DE MEMORIA</span>
+        <h3>Cómo cambia el intervalo</h3>
+        <p><b>Otra vez:</b> vuelve en 10 minutos. <b>Difícil:</b> mantiene un intervalo corto. <b>Bien:</b> avanza un nivel. <b>Dominado:</b> salta dos niveles.</p>
+        <div class="srs-escalera"><i>1 d</i><i>3 d</i><i>7 d</i><i>14 d</i><i>30 d</i><i>60 d</i><i>90 d</i></div>
+      </section>
+    </aside>
+  </section>
+</main>
+
+<footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
+<script src="repeticion-data.js"></script>
+<script src="repeticion.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Historial de rendimiento</title>
+  <meta name="description" content="Historial longitudinal de rendimiento en Dermatología del proyecto BADBEAR.MED del grupo WAJOMEA.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badbear-theme.css">
+</head>
+<body>
+<header class="cabecera bb-header">
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a>
+    <a href="banco.html" class="nav-item">Banco</a>
+    <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+    <a href="simulador.html" class="nav-item">Simulador</a>
+    <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+    <a href="practico.html" class="nav-item">Práctico</a>
+    <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+
+    <a href="repaso.html" class="nav-item">Repaso</a>
+    <a href="teoria.html" class="nav-item">Teoría</a>
+    <a href="audio.html" class="nav-item">Audio</a>
+    <a href="progreso.html" class="nav-item">Progreso</a>
+    <a href="historial.html" class="nav-item nav-activo">Historial</a>
+  </nav>
+</header>
+
+<main class="hist-main">
+  <section class="hist-hero">
+    <div>
+      <span class="hist-kicker">BADBEAR.MED · EVOLUCIÓN LONGITUDINAL</span>
+      <h2>Historial de rendimiento</h2>
+      <p>Compara tus notas por fecha, el reconocimiento visual y el comportamiento de tus temas para identificar una tendencia real de estudio, no solo un resultado aislado.</p>
+    </div>
+    <div class="hist-hero-legend">
+      <span><i class="hist-dot azul"></i> Simulador</span>
+      <span><i class="hist-dot naranja"></i> Práctico</span>
+      <span><i class="hist-dot amarillo"></i> Reconocimiento</span>
+    </div>
+  </section>
+
+  <section class="hist-stats">
+    <article><span>EVALUACIONES REGISTRADAS</span><strong id="hist-total-sesiones">0</strong><small>simulador + práctico + reconocimiento</small></article>
+    <article><span>PROMEDIO DE NOTAS</span><strong id="hist-promedio-notas">—</strong><small>solo evaluaciones calificadas sobre 20</small></article>
+    <article><span>MEJOR NOTA</span><strong id="hist-mejor-nota">—</strong><small>mejor simulador o examen práctico</small></article>
+    <article><span>TENDENCIA RECIENTE</span><strong id="hist-tendencia">—</strong><small>comparación con la evaluación anterior</small></article>
+  </section>
+
+  <section class="hist-grid-principal">
+    <article class="hist-panel hist-panel-grande">
+      <div class="hist-panel-head">
+        <div><span>NOTA / 20</span><h3>Evolución de evaluaciones</h3></div>
+        <small>Simulador y práctico</small>
+      </div>
+      <div id="hist-chart-notas" class="hist-chart"></div>
+    </article>
+
+    <article class="hist-panel">
+      <div class="hist-panel-head">
+        <div><span>RECONOCIMIENTO VISUAL</span><h3>Evolución porcentual</h3></div>
+        <small>0–100%</small>
+      </div>
+      <div id="hist-chart-recon" class="hist-chart hist-chart-recon"></div>
+    </article>
+  </section>
+
+  <section class="hist-panel">
+    <div class="hist-panel-head">
+      <div><span>MODALIDADES</span><h3>Resumen acumulado</h3></div>
+      <small>Último · promedio · mejor</small>
+    </div>
+    <div id="hist-modalidades" class="hist-modalidades"></div>
+  </section>
+
+  <section class="hist-grid-principal">
+    <article class="hist-panel">
+      <div class="hist-panel-head">
+        <div><span>RENDIMIENTO ACTUAL</span><h3>Temas prioritarios</h3></div>
+        <small>Ordenados de menor a mayor dominio</small>
+      </div>
+      <div id="hist-temas-actuales" class="hist-temas"></div>
+    </article>
+
+    <article class="hist-panel">
+      <div class="hist-panel-head">
+        <div><span>TENDENCIA POR TEMA</span><h3>Qué está cambiando</h3></div>
+        <small>Seguimiento desde Fase 9</small>
+      </div>
+      <div id="hist-tendencias-temas" class="hist-tendencias"></div>
+      <div class="hist-nota-temas"><strong>BADBEAR.MED FIJA:</strong> el seguimiento longitudinal por tema comienza desde esta actualización; no se inventan datos previos que la plataforma no guardó.</div>
+    </article>
+  </section>
+
+  <section class="hist-panel">
+    <div class="hist-panel-head">
+      <div><span>CRONOLOGÍA</span><h3>Actividad reciente</h3></div>
+      <small>Últimos registros</small>
+    </div>
+    <div id="hist-timeline" class="hist-timeline"></div>
+  </section>
+</main>
+
+<footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
+<script src="historial.js"></script>
+</body>
+</html>

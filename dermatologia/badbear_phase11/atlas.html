@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Atlas visual · Dermatología</title>
+  <meta name="description" content="Atlas visual de Dermatología con lesiones elementales, enfermedades y patrones de distribución. Proyecto BADBEAR.MED del grupo WAJOMEA.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badbear-theme.css">
+</head>
+<body>
+<header class="cabecera bb-header">
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a>
+    <a href="banco.html" class="nav-item">Banco</a>
+    <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+    <a href="simulador.html" class="nav-item">Simulador</a>
+    <a href="atlas.html" class="nav-item nav-activo">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+        <a href="practico.html" class="nav-item">Práctico</a>
+    <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+
+    <a href="repaso.html" class="nav-item">Repaso</a>
+    <a href="teoria.html" class="nav-item">Teoría</a>
+    <a href="audio.html" class="nav-item">Audio</a>
+    <a href="progreso.html" class="nav-item">Progreso</a>
+        <a href="historial.html" class="nav-item">Historial</a>
+
+  </nav>
+</header>
+
+<main class="atlas-main">
+  <section class="atlas-hero">
+    <div>
+      <span class="atlas-kicker">BADBEAR.MED · ATLAS VISUAL</span>
+      <h2>Reconoce la piel antes de memorizar el diagnóstico</h2>
+      <p>
+        Atlas de entrenamiento visual organizado por lesión elemental, enfermedad y patrón de distribución.
+        Las fotografías se cargan desde Wikimedia Commons y cada imagen conserva un enlace visible a su fuente.
+      </p>
+    </div>
+    <div class="atlas-hero-badges" aria-label="Características del atlas">
+      <span>Fotografías clínicas reales</span>
+      <span>Descripción morfológica</span>
+      <span>BADBEAR.MED FIJA</span>
+    </div>
+    <a class="atlas-entrenar-btn" href="reconocimiento.html">Entrenar reconocimiento a ciegas →</a>
+  </section>
+
+  <section class="atlas-toolbar" aria-label="Controles del atlas">
+    <div class="atlas-tabs" role="tablist" aria-label="Tipo de atlas">
+      <button class="atlas-tab activo" data-tab="lesion" type="button">Lesiones elementales</button>
+      <button class="atlas-tab" data-tab="enfermedad" type="button">Enfermedades</button>
+      <button class="atlas-tab" data-tab="distribucion" type="button">Distribución</button>
+    </div>
+
+    <div class="atlas-search-wrap">
+      <span aria-hidden="true">⌕</span>
+      <input id="atlas-busqueda" type="search" placeholder="Buscar: psoriasis, pápula, dermatomal…" autocomplete="off">
+      <button id="atlas-limpiar" type="button" title="Limpiar búsqueda">×</button>
+    </div>
+  </section>
+
+  <section class="atlas-summary">
+    <div><span>SECCIÓN</span><strong id="atlas-seccion">Lesiones elementales</strong></div>
+    <div><span>RESULTADOS</span><strong id="atlas-total">0</strong></div>
+    <div><span>FUENTE VISUAL</span><strong>Wikimedia Commons</strong></div>
+  </section>
+
+  <section id="atlas-grid" class="atlas-grid" aria-live="polite"></section>
+
+  <section id="atlas-vacio" class="atlas-vacio oculto">
+    <strong>No encontramos coincidencias.</strong>
+    <p>Prueba con otro término o cambia de sección.</p>
+  </section>
+
+  <section class="atlas-nota-fuente">
+    <strong>Importante:</strong> las imágenes se consultan dinámicamente en Wikimedia Commons. La fotografía disponible puede variar y se usa como apoyo académico; siempre revisa la morfología y el contexto clínico, no solo la apariencia de una imagen aislada.
+  </section>
+</main>
+
+<footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
+<script src="atlas.js"></script>
+</body>
+</html>

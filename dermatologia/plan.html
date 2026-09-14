@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Plan adaptativo · Dermatología</title>
+  <meta name="description" content="Plan diario adaptativo de Dermatología del proyecto BADBEAR.MED del grupo WAJOMEA, basado en errores, temas débiles, reconocimiento visual y rendimiento académico.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badbear-theme.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+<header class="cabecera bb-header">
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a>
+    <a href="banco.html" class="nav-item">Banco</a>
+    <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+    <a href="simulador.html" class="nav-item">Simulador</a>
+    <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+    <a href="practico.html" class="nav-item">Práctico</a>
+    <a href="plan.html" class="nav-item nav-activo">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+    <a href="repaso.html" class="nav-item">Repaso</a>
+    <a href="teoria.html" class="nav-item">Teoría</a>
+    <a href="audio.html" class="nav-item">Audio</a>
+    <a href="progreso.html" class="nav-item">Progreso</a>
+    <a href="historial.html" class="nav-item">Historial</a>
+  </nav>
+</header>
+
+<main class="plan-main">
+  <section class="plan-hero">
+    <div>
+      <span class="plan-kicker">BADBEAR.MED · PLAN ADAPTATIVO</span>
+      <h2>Qué estudiar primero, hoy</h2>
+      <p>El plan combina tus errores pendientes, rendimiento por tema, reconocimiento visual, examen práctico, simulaciones, favoritos y audios. La prioridad cambia automáticamente conforme avanzas.</p>
+    </div>
+    <div class="plan-hero-panel">
+      <span>TIEMPO DISPONIBLE</span>
+      <div class="plan-duraciones" id="plan-duraciones">
+        <button type="button" data-min="30">30 min</button>
+        <button type="button" data-min="45">45 min</button>
+        <button type="button" data-min="60" class="activo">60 min</button>
+        <button type="button" data-min="90">90 min</button>
+      </div>
+      <button id="plan-regenerar" type="button" class="plan-btn-principal">Actualizar plan de hoy</button>
+    </div>
+  </section>
+
+  <section class="plan-stats" aria-label="Resumen adaptativo">
+    <article><span>PREPARACIÓN ACTUAL</span><strong id="plan-preparacion">—</strong><small id="plan-preparacion-nivel">Esperando datos</small></article>
+    <article><span>REPETICIONES HOY</span><strong id="plan-repeticion">0</strong><small>Tarjetas vencidas o listas</small></article>
+    <article><span>ERRORES PENDIENTES</span><strong id="plan-errores">0</strong><small>Exámenes por recuperar</small></article>
+    <article><span>TEMAS PRIORITARIOS</span><strong id="plan-temas-debiles">0</strong><small>Rendimiento insuficiente</small></article>
+    <article><span>DEBILIDADES VISUALES</span><strong id="plan-visuales">0</strong><small>Diagnósticos a reforzar</small></article>
+  </section>
+
+  <section class="plan-grid-top">
+    <article class="plan-panel">
+      <div class="plan-panel-head">
+        <div><span>PRIORIDAD CLÍNICA</span><h3>Lo que más necesita atención</h3></div>
+        <small>Ordenado automáticamente</small>
+      </div>
+      <div id="plan-prioridades" class="plan-prioridades"></div>
+    </article>
+
+    <article class="plan-panel plan-meta-panel">
+      <div class="plan-panel-head">
+        <div><span>OBJETIVO DEL DÍA</span><h3 id="plan-objetivo">Generando...</h3></div>
+      </div>
+      <p id="plan-objetivo-detalle">El objetivo aparecerá cuando BADBEAR.MED analice tu rendimiento.</p>
+      <div class="plan-meta-grid">
+        <div><span>DURACIÓN</span><strong id="plan-meta-duracion">60 min</strong></div>
+        <div><span>AVANCE</span><strong id="plan-meta-avance">0%</strong></div>
+        <div><span>TAREAS</span><strong id="plan-meta-tareas">0 / 0</strong></div>
+      </div>
+      <div class="plan-progreso"><i id="plan-barra" style="width:0%"></i></div>
+    </article>
+  </section>
+
+  <section class="plan-panel plan-sesion-panel">
+    <div class="plan-panel-head">
+      <div><span>SESIÓN PERSONALIZADA</span><h3>Plan de estudio de hoy</h3></div>
+      <small>Marca cada bloque al terminarlo</small>
+    </div>
+    <div id="plan-tareas" class="plan-tareas"></div>
+    <div id="plan-completado" class="plan-completado oculto">
+      <strong>✓ Sesión completada</strong>
+      <span>Terminaste el plan de hoy. Mañana se generará una nueva prioridad con tus datos actualizados.</span>
+    </div>
+  </section>
+
+  <section class="plan-grid-bottom">
+    <article class="plan-panel">
+      <div class="plan-panel-head"><div><span>RUTA DE REFUERZO</span><h3>Top 3 temas</h3></div></div>
+      <div id="plan-top-temas" class="plan-top-temas"></div>
+    </article>
+    <article class="plan-panel">
+      <div class="plan-panel-head"><div><span>RECOMENDACIÓN</span><h3>Siguiente evaluación</h3></div></div>
+      <div id="plan-siguiente-evaluacion" class="plan-recomendacion"></div>
+    </article>
+  </section>
+
+  <div class="plan-nota">
+    <strong>Cómo se calcula:</strong> la preparación es un indicador interno de estudio, no una predicción de nota. Se construye únicamente con los datos guardados en tu navegador: rendimiento por tema, último simulador, práctico y reconocimiento visual. Los temas con menos de 60% reciben prioridad alta; de 60–74%, consolidación; y desde 75%, mantenimiento.
+  </div>
+</main>
+
+<footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
+<script src="plan.js"></script>
+</body>
+</html>

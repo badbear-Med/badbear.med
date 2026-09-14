@@ -1,0 +1,431 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   ENCABEZADO
+======================================== */
+
+.header {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.header nav {
+    display: flex;
+    gap: 25px;
+}
+
+.header nav a {
+    color: #334155;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.header nav a:hover {
+    color: #2563eb;
+}
+
+
+/* ========================================
+   PORTADA
+======================================== */
+
+.hero {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff 0%,
+            #ffffff 50%,
+            #f5f3ff 100%
+        );
+}
+
+.hero > div {
+    max-width: 850px;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    background: #dbeafe;
+    color: #1d4ed8;
+
+    padding: 8px 18px;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: 1.05;
+
+    margin-bottom: 10px;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero h2 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    color: #334155;
+}
+
+.descripcion {
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    color: #64748b;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+}
+
+.boton {
+    display: inline-block;
+
+    background: #2563eb;
+    color: white;
+
+    padding: 14px 28px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.boton:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   CURSOS
+======================================== */
+
+.cursos {
+    padding: 90px 8%;
+}
+
+.cursos > h2 {
+    text-align: center;
+
+    font-size: 40px;
+
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    text-align: center;
+
+    color: #64748b;
+
+    margin-bottom: 50px;
+}
+
+.contenedor-cursos {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ========================================
+   TARJETAS
+======================================== */
+
+.tarjeta {
+    min-height: 285px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+    color: #172033;
+
+    transition: 0.25s;
+}
+
+a.tarjeta:hover {
+    transform: translateY(-8px);
+
+    border-color: #93c5fd;
+
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.1);
+}
+
+.icono {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 15px;
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.tarjeta h3 {
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+.tarjeta p {
+    color: #64748b;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+.tarjeta span {
+    color: #2563eb;
+
+    font-weight: 700;
+
+    margin-top: auto;
+}
+
+.proximo {
+    opacity: 0.55;
+}
+
+
+/* ========================================
+   RECURSOS
+======================================== */
+
+.recursos {
+    padding: 90px 8%;
+
+    background: #eef2f7;
+}
+
+.recursos > h2 {
+    text-align: center;
+
+    font-size: 38px;
+
+    margin-bottom: 45px;
+}
+
+.recursos-grid {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.recursos-grid > div {
+    background: white;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    font-size: 35px;
+
+    transition: 0.25s;
+}
+
+.recursos-grid > div:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+.recursos-grid h3 {
+    margin-top: 10px;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #0f172a;
+
+    color: white;
+}
+
+footer strong {
+    font-size: 22px;
+}
+
+footer p {
+    margin: 10px 0;
+
+    color: #94a3b8;
+}
+
+footer small {
+    color: #64748b;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .contenedor-cursos {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .recursos-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 65px;
+        padding: 0 20px;
+    }
+
+    .header nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .descripcion {
+        font-size: 16px;
+    }
+
+    .cursos,
+    .recursos {
+        padding: 65px 20px;
+    }
+
+    .contenedor-cursos {
+        grid-template-columns: 1fr;
+    }
+
+    .recursos-grid {
+        grid-template-columns: 1fr;
+    }
+}

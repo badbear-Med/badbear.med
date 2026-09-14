@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Examen práctico de Dermatología</title>
+  <meta name="description" content="Examen práctico dermatológico con fotografía clínica, descripción libre y diagnóstico escrito. Proyecto BADBEAR.MED del grupo WAJOMEA.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badbear-theme.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+<header class="cabecera bb-header">
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a>
+    <a href="banco.html" class="nav-item">Banco</a>
+    <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+    <a href="simulador.html" class="nav-item">Simulador</a>
+    <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+    <a href="practico.html" class="nav-item nav-activo">Práctico</a>
+    <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+
+    <a href="repaso.html" class="nav-item">Repaso</a>
+    <a href="teoria.html" class="nav-item">Teoría</a>
+    <a href="audio.html" class="nav-item">Audio</a>
+    <a href="progreso.html" class="nav-item">Progreso</a>
+        <a href="historial.html" class="nav-item">Historial</a>
+
+  </nav>
+</header>
+
+<main class="pract-main">
+  <section class="pract-hero">
+    <div>
+      <span class="pract-kicker">BADBEAR.MED · EXAMEN PRÁCTICO</span>
+      <h2>Describe la lesión sin alternativas</h2>
+      <p>Observa la fotografía y redacta una descripción dermatológica como en una evaluación práctica. Después escribe tu diagnóstico presuntivo. No se muestran opciones ni pistas antes de corregir.</p>
+    </div>
+    <div class="pract-hero-flags">
+      <span>Texto libre</span><span>2 min por caso</span><span>Nota vigesimal</span>
+    </div>
+  </section>
+
+  <section id="pract-inicio" class="pract-inicio">
+    <div class="pract-config-card">
+      <span class="pract-eyebrow">CONFIGURAR EXAMEN</span>
+      <h3>¿Cuántos casos quieres resolver?</h3>
+      <div class="pract-cantidades" role="group" aria-label="Cantidad de casos">
+        <button type="button" data-cantidad="10" class="activo">10 casos</button>
+        <button type="button" data-cantidad="20">20 casos</button>
+        <button type="button" data-cantidad="24">Banco completo · 24</button>
+      </div>
+      <div class="pract-reglas">
+        <div><strong>6 pts</strong><span>morfología</span></div>
+        <div><strong>2 pts</strong><span>diagnóstico</span></div>
+        <div><strong id="pract-tiempo-config">20 min</strong><span>tiempo total</span></div>
+      </div>
+      <div class="pract-instruccion">
+        <strong>En tu descripción incluye:</strong>
+        lesión dominante, primaria/secundaria/mixta, color, bordes, superficie y distribución. Si la imagen lo permite, añade número, tamaño, forma, simetría y agrupación.
+      </div>
+      <button id="pract-empezar" class="pract-btn-principal" type="button">Comenzar examen práctico →</button>
+      <button id="pract-reanudar" class="pract-btn-secundario oculto" type="button">Reanudar examen pendiente</button>
+    </div>
+
+    <div class="pract-historial-card">
+      <span class="pract-eyebrow">HISTORIAL PRÁCTICO</span>
+      <h3>Resultados guardados</h3>
+      <div class="pract-historial-stats">
+        <div><span>INTENTOS</span><strong id="pract-h-sesiones">0</strong></div>
+        <div><span>MEJOR NOTA</span><strong id="pract-h-mejor">—</strong></div>
+        <div><span>ÚLTIMA NOTA</span><strong id="pract-h-ultima">—</strong></div>
+      </div>
+      <p>La corrección es flexible por términos equivalentes. Si escribes una formulación muy distinta, revisa también la respuesta clínica mostrada después de cada caso.</p>
+    </div>
+  </section>
+
+  <section id="pract-juego" class="oculto">
+    <div class="pract-live-stats">
+      <div><span>CASO</span><strong id="pract-caso-num">1 / 10</strong></div>
+      <div><span>TIEMPO</span><strong id="pract-tiempo">20:00</strong></div>
+      <div><span>PUNTOS</span><strong id="pract-puntos">0 / 80</strong></div>
+      <div><span>DIAGNÓSTICOS</span><strong id="pract-dx">0 / 0</strong></div>
+      <div><span>RENDIMIENTO</span><strong id="pract-rendimiento">0%</strong></div>
+    </div>
+
+    <section class="pract-card">
+      <div class="pract-foto-col">
+        <div class="pract-imagen-wrap">
+          <img id="pract-imagen" class="pract-imagen" alt="Fotografía clínica para examen práctico dermatológico">
+          <div id="pract-cargando" class="pract-cargando">Buscando fotografía clínica real…</div>
+          <span class="pract-foto-badge">CASO CLÍNICO · SIN PISTAS</span>
+          <button id="pract-otra-imagen" class="pract-otra-imagen" type="button">↻ Cambiar imagen</button>
+        </div>
+        <a id="pract-fuente" class="pract-fuente oculto" target="_blank" rel="noopener noreferrer">Fuente · Wikimedia Commons →</a>
+        <p class="pract-aviso">La fuente se oculta hasta corregir para no revelar el diagnóstico.</p>
+      </div>
+
+      <div class="pract-form-col">
+        <div class="pract-paso"><span id="pract-etiqueta-caso">CASO PRÁCTICO 01</span><strong>Redacta antes de diagnosticar</strong></div>
+        <label class="pract-label">Descripción dermatológica completa
+          <textarea id="pract-descripcion" rows="9" placeholder="Ej.: lesión primaria tipo placa, eritematosa, bien delimitada, de superficie escamosa, con distribución en superficies extensoras..."></textarea>
+        </label>
+        <p class="pract-ayuda">No copies una plantilla: describe lo que realmente observas en la fotografía.</p>
+        <label class="pract-label">Diagnóstico presuntivo
+          <input id="pract-diagnostico" type="text" autocomplete="off" placeholder="Escribe el diagnóstico">
+        </label>
+        <button id="pract-corregir" class="pract-btn-principal" type="button">Calificar caso</button>
+      </div>
+    </section>
+
+    <section id="pract-feedback" class="pract-feedback oculto">
+      <div class="pract-feedback-top"><div><span>RESULTADO DEL CASO</span><h3 id="pract-feedback-titulo">—</h3></div><strong id="pract-puntaje-caso">0 / 8</strong></div>
+      <div id="pract-comparacion" class="pract-comparacion"></div>
+      <div class="pract-respuesta-clinica"><span>RESPUESTA ESPERADA</span><h3 id="pract-respuesta-dx"></h3><p id="pract-respuesta-desc"></p></div>
+      <div class="pract-fija"><strong>BADBEAR.MED FIJA:</strong><span id="pract-respuesta-fija"></span></div>
+      <div class="pract-feedback-actions"><a href="atlas.html" class="pract-link">Abrir Atlas</a><button id="pract-siguiente" class="pract-btn-principal" type="button">Siguiente caso →</button></div>
+    </section>
+  </section>
+
+  <section id="pract-final" class="pract-final oculto">
+    <span class="pract-kicker">EXAMEN FINALIZADO</span><h2>Resultado práctico</h2><p id="pract-final-motivo" class="pract-final-motivo"></p>
+    <div class="pract-final-grid">
+      <div><span>NOTA</span><strong id="pract-final-nota">0,0 / 20</strong></div>
+      <div><span>RENDIMIENTO</span><strong id="pract-final-rend">0%</strong></div>
+      <div><span>PUNTOS</span><strong id="pract-final-puntos">0 / 0</strong></div>
+      <div><span>DIAGNÓSTICOS</span><strong id="pract-final-dx">0 / 0</strong></div>
+    </div>
+    <div id="pract-errores" class="pract-errores"></div>
+    <div class="pract-final-actions"><button id="pract-nuevo" class="pract-btn-principal" type="button">Nuevo examen</button><a href="reconocimiento.html" class="pract-btn-secundario">Entrenar con alternativas</a><a href="progreso.html" class="pract-btn-secundario">Ver progreso</a></div>
+  </section>
+</main>
+
+<footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
+<script src="practico.js"></script>
+</body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BADBEAR.MED | Repaso inteligente</title>
+
+    <meta
+        name="description"
+        content="Repaso inteligente de Dermatología del proyecto BADBEAR.MED del grupo WAJOMEA."
+    >
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="badbear-theme.css">
+    <script src="auth.js"></script>
+</head>
+
+<body>
+
+<header class="cabecera bb-header">
+
+    <a
+        class="marca"
+        href="index.html"
+        aria-label="Inicio BADBEAR.MED"
+    >
+
+        <img
+            class="logo-badbear"
+            src="badbear_logo.png"
+            alt="Logo BADBEAR.MED"
+        >
+
+        <div class="marca-texto">
+            <h1>BADBEAR<span>.MED</span></h1>
+            <p>Dermatología</p>
+        </div>
+
+    </a>
+
+    <nav
+        class="nav-principal"
+        aria-label="Navegación principal"
+    >
+
+        <a href="index.html" class="nav-item">Inicio</a>
+        <a href="banco.html" class="nav-item">Banco</a>
+        <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+        <a href="simulador.html" class="nav-item">Simulador</a>
+        <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+        <a href="practico.html" class="nav-item">Práctico</a>
+        <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+
+        <a href="repaso.html" class="nav-item nav-activo">Repaso</a>
+        <a href="teoria.html" class="nav-item">Teoría</a>
+        <a href="audio.html" class="nav-item">Audio</a>
+        <a href="progreso.html" class="nav-item">Progreso</a>
+        <a href="historial.html" class="nav-item">Historial</a>
+
+
+    </nav>
+
+</header>
+
+
+<main class="repaso-main">
+
+    <section class="repaso-hero">
+
+        <span class="repaso-kicker">
+            BADBEAR.MED · REPASO INTELIGENTE
+        </span>
+
+        <h2>
+            Refuerza exactamente lo que estás fallando
+        </h2>
+
+        <p>
+            Esta sección toma los datos que ya guarda la plataforma
+            y reúne tus errores de Exámenes pasados, tus fallos del Banco
+            clínico, favoritos y el rendimiento real por tema.
+        </p>
+
+    </section>
+
+
+    <section class="repaso-stats">
+
+        <article class="repaso-stat">
+            <span>ERRORES EN EXÁMENES</span>
+            <strong id="repaso-errores-examen">0</strong>
+            <small>preguntas para reforzar</small>
+        </article>
+
+        <article class="repaso-stat">
+            <span>FALLOS EN BANCO</span>
+            <strong id="repaso-errores-banco">0</strong>
+            <small>casos respondidos incorrectamente</small>
+        </article>
+
+        <article class="repaso-stat">
+            <span>FAVORITOS</span>
+            <strong id="repaso-favoritos">0</strong>
+            <small>elementos guardados</small>
+        </article>
+
+        <article class="repaso-stat">
+            <span>TEMAS DÉBILES</span>
+            <strong id="repaso-temas">0</strong>
+            <small>detectados automáticamente</small>
+        </article>
+
+    </section>
+
+
+    <section class="repaso-grid">
+
+        <article class="repaso-panel">
+
+            <h3>
+                Preguntas falladas de Exámenes pasados
+            </h3>
+
+            <p>
+                Estas son las preguntas que actualmente aparecen
+                registradas como incorrectas en tu avance.
+            </p>
+
+            <div
+                id="repaso-lista-errores"
+                class="repaso-error-list"
+            ></div>
+
+            <div
+                id="repaso-sin-errores"
+                class="repaso-vacio"
+            >
+                Todavía no hay preguntas incorrectas registradas.
+            </div>
+
+            <div class="repaso-actions">
+
+                <a
+                    href="examenes.html?modo=repaso"
+                    class="repaso-btn orange"
+                >
+                    <span>Repasar errores ahora</span>
+                    <span>→</span>
+                </a>
+
+                <a
+                    href="examenes.html"
+                    class="repaso-btn blue"
+                >
+                    <span>Volver a las 200 preguntas</span>
+                    <span>→</span>
+                </a>
+
+                <a
+                    href="banco.html"
+                    class="repaso-btn yellow"
+                >
+                    <span>Practicar Banco clínico</span>
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="repaso-panel repaso-favoritos-panel">
+
+            <h3>
+                ⭐ Favoritos + BADBEAR.MED FIJA
+            </h3>
+
+            <p>
+                Guarda las preguntas y casos que quieras revisar después.
+                La perla de alta rentabilidad queda almacenada junto al elemento.
+            </p>
+
+            <div
+                id="repaso-lista-favoritos"
+                class="repaso-favoritos-lista"
+            ></div>
+
+            <div
+                id="repaso-sin-favoritos"
+                class="repaso-vacio"
+            >
+                Todavía no guardaste favoritos. Usa el botón ☆ en Banco o Exámenes.
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    <section class="repaso-panel repaso-temas-panel">
+
+        <div class="repaso-temas-cabecera">
+            <div>
+                <span class="repaso-kicker">ANÁLISIS ADAPTATIVO</span>
+                <h3>Rendimiento por tema</h3>
+                <p>
+                    BADBEAR.MED prioriza en rojo/anaranjado los temas con menor dominio,
+                    amarillo los que están en consolidación y azul los ya dominados.
+                </p>
+            </div>
+
+            <div class="repaso-leyenda">
+                <span><i class="leyenda-debil"></i> Débil &lt; 60%</span>
+                <span><i class="leyenda-progreso"></i> En progreso 60–74%</span>
+                <span><i class="leyenda-dominio"></i> Dominado ≥ 75%</span>
+            </div>
+        </div>
+
+        <div id="repaso-rendimiento-temas" class="bb-temas-grid"></div>
+
+        <div id="repaso-sin-temas" class="repaso-vacio">
+            Aún no hay suficientes respuestas para analizar temas. Resuelve preguntas y casos clínicos para generar el perfil.
+        </div>
+
+        <div class="repaso-nota bb-temas-nota">
+            <strong>BADBEAR.MED FIJA:</strong>
+            En Exámenes, una pregunta fallada que luego recuperas en modo Repaso cuenta como dominada para el análisis actual. En Banco, el análisis por tema comienza a registrarse desde esta actualización.
+        </div>
+
+    </section>
+
+    <section class="repaso-panel repaso-proximas-fases">
+
+        <div>
+            <span class="repaso-kicker">
+                SIMULADOR ACTIVO
+            </span>
+
+            <h3>
+                Entrena en condiciones de evaluación real
+            </h3>
+
+            <p>
+                Elige 20, 40 o 50 preguntas. Durante la simulación no se muestran
+                respuestas ni explicaciones; al finalizar obtienes nota vigesimal,
+                rendimiento y revisión completa de errores.
+            </p>
+        </div>
+
+        <div class="repaso-actions repaso-actions-inline">
+
+            <div class="repaso-btn yellow">
+                <span>Rendimiento por tema</span>
+                <span>✓ Activo</span>
+            </div>
+
+            <a class="repaso-btn blue" href="simulador.html">
+                <span>Iniciar simulador</span>
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+  <section class="bb-repaso-srs-cta">
+    <div><span>MEMORIA A LARGO PLAZO</span><h3>Repetición espaciada</h3><p>Convierte errores, diagnósticos y FIJAS en revisiones programadas. BADBEAR.MED decide cuándo volver a mostrar cada elemento según tu respuesta.</p></div>
+    <a href="repeticion.html">Abrir repetición →</a>
+  </section>
+
+</main>
+
+
+<footer>
+    BADBEAR.MED · Dermatología · WAJOMEA.GROUP
+</footer>
+
+
+<script>
+(() => {
+
+    const CLAVE_RESPUESTAS = "badbear_derma_examen_respuestas";
+    const CLAVE_RECUPERADAS = "badbear_derma_examen_recuperadas";
+    const CLAVE_REPASO = "badbear_derma_repaso_examen";
+
+    /* EXÁMENES */
+
+    let respuestas = {};
+    let recuperadas = {};
+
+    try {
+        const guardadas = localStorage.getItem(CLAVE_RESPUESTAS);
+        if (guardadas) respuestas = JSON.parse(guardadas);
+    } catch (error) {
+        respuestas = {};
+    }
+
+    try {
+        const guardadas = localStorage.getItem(CLAVE_RECUPERADAS);
+        if (guardadas) recuperadas = JSON.parse(guardadas);
+    } catch (error) {
+        recuperadas = {};
+    }
+
+    const erroresOriginales =
+        Object.entries(respuestas)
+        .filter(([, respuesta]) => respuesta && respuesta.correcta === false);
+
+    const erroresPendientes =
+        erroresOriginales
+        .filter(([id]) => recuperadas[id] !== true);
+
+    document.getElementById("repaso-errores-examen").textContent = erroresPendientes.length;
+
+    const idsErroresPendientes = erroresPendientes.map(([id]) => Number(id));
+
+    localStorage.setItem(
+        CLAVE_REPASO,
+        JSON.stringify(idsErroresPendientes)
+    );
+
+    /* BANCO CLÍNICO */
+
+    const casos = Number(localStorage.getItem("badbear_derma_casos")) || 0;
+    const correctas = Number(localStorage.getItem("badbear_derma_correctas")) || 0;
+    const erroresBanco = Math.max(casos - correctas, 0);
+
+    document.getElementById("repaso-errores-banco").textContent = erroresBanco;
+
+    /* FAVORITOS + BADBEAR.MED FIJA */
+
+    const CLAVE_FAVORITOS = "badbear_derma_favoritos";
+
+    function leerFavoritos() {
+        try {
+            const guardados = JSON.parse(localStorage.getItem(CLAVE_FAVORITOS));
+            return Array.isArray(guardados) ? guardados : [];
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function guardarFavoritos(favoritos) {
+        localStorage.setItem(
+            CLAVE_FAVORITOS,
+            JSON.stringify(favoritos)
+        );
+    }
+
+    function renderFavoritos() {
+        const favoritos = leerFavoritos();
+        const contador = document.getElementById("repaso-favoritos");
+        const lista = document.getElementById("repaso-lista-favoritos");
+        const vacio = document.getElementById("repaso-sin-favoritos");
+
+        contador.textContent = favoritos.length;
+        lista.innerHTML = "";
+
+        if (!favoritos.length) {
+            vacio.style.display = "block";
+            return;
+        }
+
+        vacio.style.display = "none";
+
+        favoritos.forEach(favorito => {
+            if (!favorito || !favorito.tipo) return;
+
+            const tarjeta = document.createElement("article");
+            tarjeta.className = "repaso-favorito-card";
+
+            const cabecera = document.createElement("div");
+            cabecera.className = "repaso-favorito-cabecera";
+
+            const tipo = document.createElement("span");
+            tipo.className =
+                favorito.tipo === "examen"
+                    ? "repaso-favorito-tipo tipo-examen"
+                    : "repaso-favorito-tipo tipo-banco";
+
+            tipo.textContent =
+                favorito.tipo === "examen"
+                    ? "EXAMEN"
+                    : "BANCO";
+
+            const eliminar = document.createElement("button");
+            eliminar.type = "button";
+            eliminar.className = "repaso-favorito-eliminar";
+            eliminar.textContent = "Quitar";
+            eliminar.setAttribute("aria-label", "Quitar de favoritos");
+
+            eliminar.addEventListener("click", () => {
+                const nuevos = leerFavoritos().filter(
+                    item =>
+                        !(
+                            item &&
+                            String(item.tipo) === String(favorito.tipo) &&
+                            String(item.id) === String(favorito.id)
+                        )
+                );
+
+                guardarFavoritos(nuevos);
+                renderFavoritos();
+            });
+
+            cabecera.appendChild(tipo);
+            cabecera.appendChild(eliminar);
+
+            const titulo = document.createElement("h4");
+            titulo.textContent =
+                favorito.titulo ||
+                (favorito.tipo === "examen"
+                    ? `Pregunta ${favorito.id}`
+                    : `Caso ${favorito.id}`);
+
+            const subtitulo = document.createElement("small");
+            subtitulo.textContent = favorito.subtitulo || favorito.tema || "";
+
+            const pregunta = document.createElement("p");
+            pregunta.className = "repaso-favorito-pregunta";
+            pregunta.textContent = favorito.pregunta || "";
+
+            const fija = document.createElement("div");
+            fija.className = "repaso-favorito-fija";
+
+            const fijaTitulo = document.createElement("strong");
+            fijaTitulo.textContent = "BADBEAR.MED FIJA:";
+
+            const fijaTexto = document.createElement("span");
+            fijaTexto.textContent = favorito.fija || "Sin perla guardada.";
+
+            fija.appendChild(fijaTitulo);
+            fija.appendChild(fijaTexto);
+
+            const abrir = document.createElement("a");
+            abrir.className = "repaso-favorito-abrir";
+
+            if (favorito.tipo === "examen") {
+                abrir.href = `examenes.html?pregunta=${encodeURIComponent(favorito.id)}`;
+                abrir.textContent = "Abrir pregunta →";
+            } else {
+                abrir.href = `banco.html?caso=${encodeURIComponent(favorito.id)}`;
+                abrir.textContent = "Abrir caso →";
+            }
+
+            tarjeta.appendChild(cabecera);
+            tarjeta.appendChild(titulo);
+
+            if (subtitulo.textContent) {
+                tarjeta.appendChild(subtitulo);
+            }
+
+            if (pregunta.textContent) {
+                tarjeta.appendChild(pregunta);
+            }
+
+            tarjeta.appendChild(fija);
+            tarjeta.appendChild(abrir);
+
+            lista.appendChild(tarjeta);
+        });
+    }
+
+    renderFavoritos();
+
+    /* RENDIMIENTO POR TEMA + TEMAS DÉBILES */
+
+    function leerObjetoTemas(clave) {
+        try {
+            const guardados = JSON.parse(localStorage.getItem(clave) || "{}");
+            return guardados && typeof guardados === "object" && !Array.isArray(guardados)
+                ? guardados
+                : {};
+        } catch (error) {
+            return {};
+        }
+    }
+
+    const examenTemas = leerObjetoTemas("badbear_derma_examen_temas");
+    const bancoTemas = leerObjetoTemas("badbear_derma_banco_temas");
+
+    const temasRendimiento = [];
+
+    Object.values(examenTemas).forEach(item => {
+        if (!item || !item.tema || !Number(item.respondidas)) return;
+        temasRendimiento.push({
+            fuente: "Exámenes",
+            tema: item.tema,
+            respondidas: Number(item.respondidas) || 0,
+            correctas: Number(item.dominadas) || Number(item.correctasOriginales) || 0,
+            rendimiento: Number(item.rendimiento) || 0
+        });
+    });
+
+    Object.values(bancoTemas).forEach(item => {
+        if (!item || !item.tema || !Number(item.respondidas)) return;
+        temasRendimiento.push({
+            fuente: "Banco",
+            tema: item.tema,
+            respondidas: Number(item.respondidas) || 0,
+            correctas: Number(item.correctas) || 0,
+            rendimiento: Number(item.rendimiento) || 0
+        });
+    });
+
+    const temasDebiles = temasRendimiento
+        .filter(item =>
+            item.rendimiento < 60 &&
+            (
+                (item.fuente === "Exámenes" && item.respondidas >= 3) ||
+                (item.fuente === "Banco" && item.respondidas >= 2)
+            )
+        )
+        .sort((a,b) => a.rendimiento - b.rendimiento);
+
+    localStorage.setItem(
+        "badbear_derma_temas_debiles",
+        JSON.stringify(temasDebiles)
+    );
+
+    document.getElementById("repaso-temas").textContent = temasDebiles.length;
+
+    const temasContenedor = document.getElementById("repaso-rendimiento-temas");
+    const sinTemas = document.getElementById("repaso-sin-temas");
+
+    temasRendimiento.sort((a,b) => {
+        const aSuficiente = a.fuente === "Exámenes" ? a.respondidas >= 3 : a.respondidas >= 2;
+        const bSuficiente = b.fuente === "Exámenes" ? b.respondidas >= 3 : b.respondidas >= 2;
+
+        if (aSuficiente !== bSuficiente) return aSuficiente ? -1 : 1;
+        return a.rendimiento - b.rendimiento;
+    });
+
+    if (!temasRendimiento.length) {
+        sinTemas.style.display = "block";
+    } else {
+        sinTemas.style.display = "none";
+
+        temasRendimiento.forEach(item => {
+            const suficiente = item.fuente === "Exámenes"
+                ? item.respondidas >= 3
+                : item.respondidas >= 2;
+
+            let nivel = "sin-datos";
+            let etiqueta = "Más datos";
+
+            if (suficiente && item.rendimiento < 60) {
+                nivel = "debil";
+                etiqueta = "Prioridad alta";
+            } else if (suficiente && item.rendimiento < 75) {
+                nivel = "progreso";
+                etiqueta = "En consolidación";
+            } else if (suficiente) {
+                nivel = "dominio";
+                etiqueta = "Dominado";
+            }
+
+            const tarjeta = document.createElement("article");
+            tarjeta.className = `bb-tema-card ${nivel}`;
+
+            const fuente = document.createElement("span");
+            fuente.className = "bb-tema-fuente";
+            fuente.textContent = item.fuente.toUpperCase();
+
+            const titulo = document.createElement("h4");
+            titulo.textContent = item.tema.replace(/^PARTE\s+\d+:\s*/i, "");
+
+            const fila = document.createElement("div");
+            fila.className = "bb-tema-fila";
+
+            const dato = document.createElement("span");
+            dato.textContent = `${item.correctas} / ${item.respondidas} dominadas`;
+
+            const porcentaje = document.createElement("strong");
+            porcentaje.textContent = suficiente ? `${item.rendimiento}%` : "—";
+
+            fila.appendChild(dato);
+            fila.appendChild(porcentaje);
+
+            const barra = document.createElement("div");
+            barra.className = "bb-tema-barra";
+
+            const relleno = document.createElement("div");
+            relleno.style.width = suficiente ? `${Math.min(item.rendimiento,100)}%` : "0%";
+            barra.appendChild(relleno);
+
+            const estado = document.createElement("small");
+            estado.className = "bb-tema-estado";
+            estado.textContent = etiqueta;
+
+            tarjeta.appendChild(fuente);
+            tarjeta.appendChild(titulo);
+            tarjeta.appendChild(fila);
+            tarjeta.appendChild(barra);
+            tarjeta.appendChild(estado);
+
+            temasContenedor.appendChild(tarjeta);
+        });
+    }
+
+    /* LISTA VISIBLE DE ERRORES PENDIENTES */
+
+    const lista = document.getElementById("repaso-lista-errores");
+    const vacio = document.getElementById("repaso-sin-errores");
+
+    if (erroresPendientes.length > 0) {
+        vacio.style.display = "none";
+
+        erroresPendientes
+            .slice(0, 16)
+            .forEach(([id]) => {
+                const chip = document.createElement("span");
+                chip.className = "repaso-error-chip";
+
+                const numero = Number(id);
+                chip.textContent = Number.isFinite(numero)
+                    ? `Pregunta ${numero}`
+                    : `Pregunta ${id}`;
+
+                lista.appendChild(chip);
+            });
+    } else {
+        lista.innerHTML = "";
+        vacio.textContent = erroresOriginales.length > 0
+            ? "¡Muy bien! Ya recuperaste todas las preguntas que habías fallado."
+            : "Todavía no hay preguntas incorrectas registradas.";
+    }
+
+})();
+</script>
+
+</body>
+</html>

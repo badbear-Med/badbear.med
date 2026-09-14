@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BADBEAR.MED | Progreso</title>
+
+    <meta
+        name="description"
+        content="Seguimiento de progreso académico en Dermatología - BADBEAR.MED."
+    >
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="badbear-theme.css">
+
+    
+
+<style>
+/* =========================================================
+   PROGRESO DE AUDIO · BADBEAR.MED
+========================================================= */
+
+.progreso-audio-card{
+  margin-top:22px;
+  padding:26px 28px;
+
+  background:#fff;
+
+  border:1px solid #dfe7f0;
+  border-radius:20px;
+
+  box-shadow:0 10px 30px rgba(11,31,51,.06);
+}
+
+.progreso-audio-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.progreso-audio-etiqueta{
+  display:block;
+
+  margin-bottom:7px;
+
+  color:#0969ff;
+
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.8px;
+}
+
+.progreso-audio-card h3{
+  margin:0;
+
+  color:#0b1f33;
+
+  font-size:22px;
+}
+
+.progreso-audio-numero{
+  color:#0969ff;
+
+  font-size:28px;
+  font-weight:900;
+}
+
+.progreso-audio-barra{
+  width:100%;
+  height:10px;
+
+  margin-top:20px;
+
+  overflow:hidden;
+
+  background:#e9eef5;
+
+  border-radius:999px;
+}
+
+#progreso-audio-relleno{
+  width:0%;
+  height:100%;
+
+  background:#0969ff;
+
+  border-radius:999px;
+
+  transition:width .4s ease;
+}
+
+.progreso-audio-info{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px 16px;
+
+  margin-top:10px;
+
+  color:#64748b;
+
+  font-size:12px;
+  font-weight:700;
+}
+
+.progreso-audio-boton{
+  display:inline-flex;
+
+  margin-top:20px;
+  padding:10px 16px;
+
+  background:#edf4ff;
+  color:#0969ff;
+
+  border-radius:10px;
+
+  text-decoration:none;
+
+  font-size:13px;
+  font-weight:800;
+}
+
+.progreso-audio-boton:hover{
+  background:#dceaff;
+}
+
+#progreso-examen-relleno{
+  width:0%;
+  height:100%;
+  background:#0969ff;
+  border-radius:999px;
+  transition:width .4s ease;
+}
+
+/* =========================================================
+   RESUMEN GENERAL DE LA UNIDAD
+========================================================= */
+
+.resumen-unidad{
+  margin-bottom:22px;
+  padding:28px;
+
+  background:#fff;
+  border:1px solid #dfe7f0;
+  border-radius:22px;
+
+  box-shadow:0 10px 30px rgba(11,31,51,.06);
+}
+
+.resumen-unidad-cabecera span{
+  color:#0969ff;
+
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.8px;
+}
+
+.resumen-unidad-cabecera h2{
+  margin:7px 0 5px;
+
+  color:#0b1f33;
+
+  font-size:25px;
+}
+
+.resumen-unidad-cabecera p{
+  margin:0;
+
+  color:#64748b;
+
+  font-size:13px;
+}
+
+.resumen-unidad-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:14px;
+
+  margin-top:24px;
+}
+
+.resumen-unidad-item{
+  padding:20px;
+
+  background:#f8faff;
+
+  border:1px solid #e2e9f2;
+  border-radius:16px;
+}
+
+.resumen-tipo{
+  display:block;
+
+  margin-bottom:9px;
+
+  color:#64748b;
+
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.7px;
+}
+
+.resumen-unidad-item strong{
+  display:block;
+
+  color:#0b1f33;
+
+  font-size:25px;
+}
+
+.resumen-mini-barra{
+  width:100%;
+  height:7px;
+
+  margin:15px 0 8px;
+
+  overflow:hidden;
+
+  background:#e4ebf4;
+
+  border-radius:999px;
+}
+
+.resumen-mini-barra div{
+  width:0%;
+  height:100%;
+
+  background:#0969ff;
+
+  border-radius:999px;
+
+  transition:width .4s ease;
+}
+
+.resumen-unidad-item small{
+  color:#64748b;
+
+  font-size:11px;
+  font-weight:700;
+}
+
+@media(max-width:800px){
+
+  .resumen-unidad-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+.resumen-nota{
+  display:block;
+  margin-top:6px;
+
+  color:#0969ff !important;
+
+  font-size:13px !important;
+  font-weight:900 !important;
+}
+
+.progreso-examen-nota{
+  color:#0969ff;
+  font-weight:900;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<header class="cabecera bb-header">
+
+    <a
+        class="marca"
+        href="index.html"
+        aria-label="Inicio BADBEAR.MED"
+    >
+
+        <img
+            class="logo-badbear"
+            src="badbear_logo.png"
+            alt="Logo BADBEAR.MED"
+        >
+
+        <div class="marca-texto">
+            <h1>BADBEAR<span>.MED</span></h1>
+            <p>Dermatología</p>
+        </div>
+
+    </a>
+
+
+    <nav
+        class="nav-principal"
+        aria-label="Navegación principal"
+    >
+
+        <a href="index.html" class="nav-item">
+            Inicio
+        </a>
+
+        <a href="banco.html" class="nav-item">
+            Banco
+        </a>
+
+        <a href="examenes.html" class="nav-item">
+            Exámenes pasados
+        </a>
+        <a href="simulador.html" class="nav-item">Simulador</a>
+        <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+        <a href="practico.html" class="nav-item">Práctico</a>
+
+        <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+
+
+        <a
+            href="repaso.html"
+            class="nav-item"
+        >
+            Repaso
+        </a>
+
+        <a href="teoria.html" class="nav-item">
+            Teoría
+        </a>
+        <a href="audio.html" class="nav-item">Audio</a>
+        <a href="progreso.html" class="nav-item nav-activo">
+            Progreso
+        </a>
+        <a href="historial.html" class="nav-item">Historial</a>
+
+
+    </nav>
+
+</header>
+
+
+<main class="progreso-badbear">
+
+    <section class="cabecera-progreso">
+
+        <span class="hero-etiqueta">
+            SEGUIMIENTO ACADÉMICO
+        </span>
+
+        <h2>
+            Mi progreso
+        </h2>
+
+        <p>
+            Visualiza tu avance en el banco clínico,
+            el rendimiento acumulado y las áreas que requieren más repaso.
+        </p>
+
+    </section>
+
+
+    <section class="estadisticas-progreso">
+
+        <article class="tarjeta-estadistica">
+
+            <span class="estadistica-titulo">
+                Casos respondidos
+            </span>
+
+            <strong id="progreso-casos">
+                0
+            </strong>
+
+            <span class="estadistica-subtexto">
+                casos completados
+            </span>
+
+        </article>
+
+
+        <article class="tarjeta-estadistica">
+
+            <span class="estadistica-titulo">
+                Respuestas correctas
+            </span>
+
+            <strong id="progreso-correctas">
+                0
+            </strong>
+
+            <span class="estadistica-subtexto">
+                diagnósticos correctos
+            </span>
+
+        </article>
+
+
+        <article class="tarjeta-estadistica">
+
+            <span class="estadistica-titulo">
+                Rendimiento
+            </span>
+
+            <strong id="progreso-porcentaje">
+                0%
+            </strong>
+
+            <span class="estadistica-subtexto">
+                precisión global
+            </span>
+
+        </article>
+
+
+        <article class="tarjeta-estadistica">
+
+            <span class="estadistica-titulo">
+                Nivel actual
+            </span>
+
+            <strong id="progreso-nivel">
+                Inicial
+            </strong>
+
+            <span class="estadistica-subtexto">
+                entrenamiento clínico
+            </span>
+
+        </article>
+
+    </section>
+
+<section class="resumen-unidad">
+
+  <div class="resumen-unidad-cabecera">
+
+    <div>
+      <span>BADBEAR.MED · DERMATOLOGÍA</span>
+
+      <h2>
+        Resumen general de la unidad
+      </h2>
+
+      <p>
+        Tu avance actual en las tres modalidades de estudio.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="resumen-unidad-grid">
+
+
+    <div class="resumen-unidad-item">
+
+      <span class="resumen-tipo">
+        BANCO CLÍNICO
+      </span>
+
+      <strong id="resumen-banco-numero">
+        0 / 133
+      </strong>
+
+      <div class="resumen-mini-barra">
+        <div id="resumen-banco-barra"></div>
+      </div>
+
+      <small id="resumen-banco-porcentaje">
+        0% completado
+      </small>
+    </div>
+
+
+    <div class="resumen-unidad-item">
+
+      <span class="resumen-tipo">
+        EXÁMENES PASADOS
+      </span>
+
+      <strong id="resumen-examen-numero">
+        0 / 200
+      </strong>
+
+      <div class="resumen-mini-barra">
+        <div id="resumen-examen-barra"></div>
+      </div>
+
+      <small id="resumen-examen-porcentaje">
+        0% completado
+      </small>
+
+      <small
+  id="resumen-examen-nota"
+  class="resumen-nota"
+>
+  Nota: 0,0 / 20
+</small>
+
+    </div>
+
+
+    <div class="resumen-unidad-item">
+
+      <span class="resumen-tipo">
+        AUDIO
+      </span>
+
+      <strong id="resumen-audio-numero">
+        0 / 6
+      </strong>
+
+      <div class="resumen-mini-barra">
+        <div id="resumen-audio-barra"></div>
+      </div>
+
+      <small id="resumen-audio-porcentaje">
+        0% completado
+      </small>
+
+    </div>
+
+
+  </div>
+
+</section>
+    <section class="panel-rendimiento">
+
+    <div class="panel-rendimiento-cabecera">
+
+        <div>
+            <span class="panel-etiqueta">
+                BANCO CLÍNICO
+            </span>
+
+            <h3>
+                Progreso del banco
+            </h3>
+        </div>
+
+        <strong id="avance-texto">
+            0 / 133
+        </strong>
+
+    </div>
+
+
+    <div class="barra-progreso-general">
+
+        <div id="avance-barra"></div>
+
+    </div>
+
+
+    <p class="mensaje-progreso" id="mensaje-progreso">
+        Empieza a resolver casos clínicos para registrar tu progreso.
+    </p>
+
+</section>
+
+
+    <section class="acciones-progreso">
+
+        <div>
+
+            <h3>
+                Continúa practicando
+            </h3>
+
+            <p>
+                Cada caso clínico ayuda a mejorar el reconocimiento
+                morfológico y el diagnóstico dermatológico.
+            </p>
+
+        </div>
+
+        <a
+            href="banco.html"
+            class="btn-principal"
+        >
+            Ir al banco clínico
+        </a>
+
+    </section>
+
+
+
+<section class="progreso-audio-card">
+
+  <div class="progreso-audio-top">
+
+    <div>
+
+      <span class="progreso-audio-etiqueta">
+        EXÁMENES PASADOS
+      </span>
+
+      <h3>
+        Progreso de preguntas
+      </h3>
+
+    </div>
+
+    <div
+      id="progreso-examen-numero"
+      class="progreso-audio-numero"
+    >
+      0 / 200
+    </div>
+
+  </div>
+
+
+  <div class="progreso-audio-barra">
+
+    <div
+      id="progreso-examen-relleno"
+    ></div>
+
+  </div>
+
+
+  <div class="progreso-audio-info">
+
+    <span id="progreso-examen-correctas">
+      0 respuestas correctas
+    </span>
+
+    <span id="progreso-examen-rendimiento">
+      0% rendimiento
+    </span>
+
+<span
+  id="progreso-examen-nota"
+  class="progreso-examen-nota"
+>
+  Nota: 0,0 / 20
+</span>
+
+  </div>
+
+
+  <a
+    href="examenes.html"
+    class="progreso-audio-boton"
+  >
+    Continuar preguntas →
+  </a>
+
+</section>
+
+    <section class="progreso-audio-card">
+
+  <div class="progreso-audio-top">
+
+    <div>
+
+      <span class="progreso-audio-etiqueta">
+        BADBEAR.MED AUDIO
+      </span>
+
+      <h3>
+        Audios completados
+      </h3>
+
+    </div>
+
+
+    <div
+      id="progreso-audio-numero"
+      class="progreso-audio-numero"
+    >
+      0 / 6
+    </div>
+
+  </div>
+
+
+  <div class="progreso-audio-barra">
+
+    <div
+      id="progreso-audio-relleno"
+    ></div>
+
+  </div>
+
+
+  <div class="progreso-audio-info">
+
+    <span>
+      Progreso de la playlist
+    </span>
+
+    <span id="progreso-audio-porcentaje">
+      0%
+    </span>
+
+  </div>
+
+
+  <a
+    href="audio.html"
+    class="progreso-audio-boton"
+  >
+    Continuar escuchando →
+  </a>
+
+
+  <script>
+
+    const TOTAL_AUDIOS_DERMA = 6;
+
+    let audiosTerminados = [];
+
+    try{
+
+      const guardados =
+        JSON.parse(
+          localStorage.getItem(
+            "badbear_derma_audios_completados"
+          )
+        );
+
+      if(
+        Array.isArray(guardados)
+      ){
+        audiosTerminados =
+          guardados;
+      }
+
+    }
+
+    catch(error){
+
+      audiosTerminados = [];
+
+    }
+
+
+    const cantidadAudios =
+      audiosTerminados.length;
+
+
+    const porcentajeAudios =
+      Math.min(
+        Math.round(
+          (
+            cantidadAudios /
+            TOTAL_AUDIOS_DERMA
+          ) * 100
+        ),
+        100
+      );
+
+
+    document
+      .getElementById(
+        "progreso-audio-numero"
+      )
+      .textContent =
+        `${cantidadAudios} / ${TOTAL_AUDIOS_DERMA}`;
+
+
+    document
+      .getElementById(
+        "progreso-audio-porcentaje"
+      )
+      .textContent =
+        `${porcentajeAudios}%`;
+
+
+    document
+      .getElementById(
+        "progreso-audio-relleno"
+      )
+      .style.width =
+        `${porcentajeAudios}%`;
+
+  </script>
+
+</section>
+
+
+<section class="progreso-audio-card bb-progreso-temas">
+
+  <div class="progreso-audio-top">
+    <div>
+      <span class="progreso-audio-etiqueta">ANÁLISIS ADAPTATIVO</span>
+      <h3>Rendimiento por tema</h3>
+    </div>
+
+    <a href="repaso.html" class="progreso-audio-boton bb-progreso-temas-link">
+      Ver análisis completo →
+    </a>
+  </div>
+
+  <p class="bb-progreso-temas-texto">
+    Se muestran primero las áreas con menor dominio. Los errores recuperados en Exámenes se consideran dominados en el rendimiento actual.
+  </p>
+
+  <div id="progreso-temas-grid" class="bb-temas-grid bb-temas-grid-progreso"></div>
+
+  <div id="progreso-temas-vacio" class="repaso-vacio bb-progreso-temas-vacio">
+    Todavía no hay suficientes respuestas para calcular rendimiento por tema.
+  </div>
+
+</section>
+
+<script>
+(() => {
+
+  function leerTemasProgreso(clave){
+    try{
+      const valor = JSON.parse(localStorage.getItem(clave) || "{}");
+      return valor && typeof valor === "object" && !Array.isArray(valor) ? valor : {};
+    }
+    catch(error){
+      return {};
+    }
+  }
+
+  const examen = leerTemasProgreso("badbear_derma_examen_temas");
+  const banco = leerTemasProgreso("badbear_derma_banco_temas");
+  const items = [];
+
+  Object.values(examen).forEach(item => {
+    if(!item || !item.tema || !Number(item.respondidas)) return;
+    items.push({
+      fuente:"EXÁMENES",
+      tema:item.tema,
+      respondidas:Number(item.respondidas)||0,
+      correctas:Number(item.dominadas)||Number(item.correctasOriginales)||0,
+      rendimiento:Number(item.rendimiento)||0,
+      minimo:3
+    });
+  });
+
+  Object.values(banco).forEach(item => {
+    if(!item || !item.tema || !Number(item.respondidas)) return;
+    items.push({
+      fuente:"BANCO",
+      tema:item.tema,
+      respondidas:Number(item.respondidas)||0,
+      correctas:Number(item.correctas)||0,
+      rendimiento:Number(item.rendimiento)||0,
+      minimo:2
+    });
+  });
+
+  items.sort((a,b) => {
+    const aOk = a.respondidas >= a.minimo;
+    const bOk = b.respondidas >= b.minimo;
+    if(aOk !== bOk) return aOk ? -1 : 1;
+    return a.rendimiento - b.rendimiento;
+  });
+
+  const grid = document.getElementById("progreso-temas-grid");
+  const vacio = document.getElementById("progreso-temas-vacio");
+
+  if(!items.length){
+    vacio.style.display = "block";
+    return;
+  }
+
+  vacio.style.display = "none";
+
+  items.slice(0,8).forEach(item => {
+    const suficiente = item.respondidas >= item.minimo;
+    let nivel = "sin-datos";
+    let estado = "Más datos";
+
+    if(suficiente && item.rendimiento < 60){
+      nivel = "debil";
+      estado = "Prioridad alta";
+    }
+    else if(suficiente && item.rendimiento < 75){
+      nivel = "progreso";
+      estado = "En consolidación";
+    }
+    else if(suficiente){
+      nivel = "dominio";
+      estado = "Dominado";
+    }
+
+    const card = document.createElement("article");
+    card.className = `bb-tema-card ${nivel}`;
+
+    const fuente = document.createElement("span");
+    fuente.className = "bb-tema-fuente";
+    fuente.textContent = item.fuente;
+
+    const h4 = document.createElement("h4");
+    h4.textContent = item.tema.replace(/^PARTE\s+\d+:\s*/i, "");
+
+    const fila = document.createElement("div");
+    fila.className = "bb-tema-fila";
+
+    const detalle = document.createElement("span");
+    detalle.textContent = `${item.correctas} / ${item.respondidas}`;
+
+    const porcentaje = document.createElement("strong");
+    porcentaje.textContent = suficiente ? `${item.rendimiento}%` : "—";
+
+    fila.appendChild(detalle);
+    fila.appendChild(porcentaje);
+
+    const barra = document.createElement("div");
+    barra.className = "bb-tema-barra";
+
+    const relleno = document.createElement("div");
+    relleno.style.width = suficiente ? `${Math.min(item.rendimiento,100)}%` : "0%";
+    barra.appendChild(relleno);
+
+    const small = document.createElement("small");
+    small.className = "bb-tema-estado";
+    small.textContent = estado;
+
+    card.appendChild(fuente);
+    card.appendChild(h4);
+    card.appendChild(fila);
+    card.appendChild(barra);
+    card.appendChild(small);
+
+    grid.appendChild(card);
+  });
+
+})();
+</script>
+
+
+
+
+<section id="progreso-simulador-card" class="progreso-audio-card bb-simulador-progreso">
+
+  <div class="progreso-audio-top">
+    <div>
+      <span class="progreso-audio-etiqueta">BADBEAR.MED SIMULADOR</span>
+      <h3>Simulaciones de examen</h3>
+    </div>
+
+    <div id="progreso-simulador-ultima" class="progreso-audio-numero">—</div>
+  </div>
+
+  <div class="bb-simulador-progreso-grid">
+    <div>
+      <span>ÚLTIMA NOTA</span>
+      <strong id="progreso-sim-ultima-nota">— / 20</strong>
+    </div>
+    <div>
+      <span>MEJOR NOTA</span>
+      <strong id="progreso-sim-mejor-nota">— / 20</strong>
+    </div>
+    <div>
+      <span>INTENTOS</span>
+      <strong id="progreso-sim-intentos">0</strong>
+    </div>
+  </div>
+
+  <p id="progreso-sim-detalle" class="bb-simulador-progreso-texto">
+    Aún no realizaste una simulación.
+  </p>
+
+  <a href="simulador.html" class="progreso-audio-boton">Abrir simulador →</a>
+
+</section>
+
+<section class="progreso-audio-card bb-progreso-recon">
+  <div class="progreso-audio-top">
+    <div>
+      <span class="progreso-audio-etiqueta">BADBEAR.MED RECONOCIMIENTO</span>
+      <h3>Entrenamiento visual</h3>
+    </div>
+    <div id="progreso-recon-ultima" class="progreso-audio-numero">—</div>
+  </div>
+  <div class="bb-progreso-recon-grid">
+    <div><span>ÚLTIMO RENDIMIENTO</span><strong id="progreso-recon-ult">—</strong></div>
+    <div><span>MEJOR RENDIMIENTO</span><strong id="progreso-recon-mejor">—</strong></div>
+    <div><span>SESIONES</span><strong id="progreso-recon-sesiones">0</strong></div>
+  </div>
+  <p id="progreso-recon-detalle" class="bb-simulador-progreso-texto">Todavía no hay sesiones de reconocimiento registradas.</p>
+  <a href="reconocimiento.html" class="progreso-audio-boton">Entrenar reconocimiento →</a>
+</section>
+
+<section class="progreso-audio-card bb-progreso-practico">
+  <div class="progreso-audio-top">
+    <div><span class="progreso-audio-etiqueta">BADBEAR.MED PRÁCTICO</span><h3>Examen dermatológico escrito</h3></div>
+    <div id="progreso-practico-ultima" class="progreso-audio-numero">—</div>
+  </div>
+  <div class="bb-progreso-practico-grid">
+    <div><span>ÚLTIMA NOTA</span><strong id="progreso-practico-ult">— / 20</strong></div>
+    <div><span>MEJOR NOTA</span><strong id="progreso-practico-mejor">— / 20</strong></div>
+    <div><span>INTENTOS</span><strong id="progreso-practico-intentos">0</strong></div>
+  </div>
+  <p id="progreso-practico-detalle" class="bb-simulador-progreso-texto">Todavía no hay exámenes prácticos registrados.</p>
+  <a href="practico.html" class="progreso-audio-boton">Abrir examen práctico →</a>
+</section>
+
+
+<section class="progreso-audio-card bb-progreso-plan">
+  <div class="progreso-audio-top">
+    <div>
+      <span class="progreso-audio-etiqueta">PLAN ADAPTATIVO</span>
+      <h3>Sesión de estudio de hoy</h3>
+    </div>
+    <div id="progreso-plan-avance" class="progreso-audio-numero">0%</div>
+  </div>
+  <div class="bb-progreso-plan-grid">
+    <div><span>TAREAS</span><strong id="progreso-plan-tareas">0 / 0</strong></div>
+    <div><span>PRIORIDAD</span><strong id="progreso-plan-prioridad">—</strong></div>
+    <div><span>DURACIÓN</span><strong id="progreso-plan-duracion">—</strong></div>
+  </div>
+  <p class="bb-simulador-progreso-texto">BADBEAR.MED combina tus errores, temas débiles, entrenamiento visual y evaluaciones para ordenar qué estudiar primero.</p>
+  <a href="plan.html" class="progreso-audio-boton">Abrir plan de hoy →</a>
+</section>
+
+<section class="progreso-audio-card bb-progreso-historial">
+  <div class="progreso-audio-top">
+    <div>
+      <span class="progreso-audio-etiqueta">HISTORIAL LONGITUDINAL</span>
+      <h3>Evolución del rendimiento</h3>
+    </div>
+    <div id="progreso-historial-sesiones" class="progreso-audio-numero">0</div>
+  </div>
+
+  <div class="bb-progreso-historial-grid">
+    <div><span>EVALUACIONES</span><strong id="progreso-historial-evals">0</strong></div>
+    <div><span>PROMEDIO /20</span><strong id="progreso-historial-promedio">—</strong></div>
+    <div><span>TENDENCIA</span><strong id="progreso-historial-tendencia">—</strong></div>
+  </div>
+
+  <p class="bb-simulador-progreso-texto">
+    Revisa cómo cambian tus notas, reconocimiento visual y rendimiento por tema a lo largo del tiempo.
+  </p>
+  <a href="historial.html" class="progreso-audio-boton">Ver historial completo →</a>
+</section>
+
+
+<section class="progreso-seccion bb-progreso-srs">
+  <div class="progreso-seccion-cabecera">
+    <div><span>MEMORIA A LARGO PLAZO</span><h2>Repetición espaciada</h2><p>Revisiones programadas según tus errores y FIJAS.</p></div>
+    <a href="repeticion.html" class="btn-continuar">Abrir repetición →</a>
+  </div>
+  <div class="bb-progreso-srs-grid">
+    <div><span>PARA HOY</span><strong id="prog-srs-hoy">0</strong></div>
+    <div><span>PRÓXIMOS 7 DÍAS</span><strong id="prog-srs-semana">0</strong></div>
+    <div><span>DOMINADAS</span><strong id="prog-srs-dominadas">0</strong></div>
+    <div><span>REPASOS HOY</span><strong id="prog-srs-repasos">0</strong></div>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+    BADBEAR.MED · Dermatología · WAJOMEA.GROUP
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const casos = Number(localStorage.getItem("badbear_derma_casos")) || 0;
+    const correctas = Number(localStorage.getItem("badbear_derma_correctas")) || 0;
+
+    const porcentaje = casos > 0
+        ? Math.round((correctas / casos) * 100)
+        : 0;
+
+    document.getElementById("progreso-casos").textContent = casos;
+    document.getElementById("progreso-correctas").textContent = correctas;
+    document.getElementById("progreso-porcentaje").textContent =
+        porcentaje + "%";
+
+const totalCasos = 133;
+
+const avanceBanco = Math.min(
+    Math.round((casos / totalCasos) * 100),
+    100
+);
+
+document.getElementById("avance-texto").textContent =
+    casos + " / " + totalCasos;
+
+document.getElementById("avance-barra").style.width =
+    avanceBanco + "%";
+
+
+    let nivel = "Inicial";
+
+    if (casos >= 10) {
+        nivel = "En entrenamiento";
+    }
+
+    if (casos >= 25 && porcentaje >= 60) {
+        nivel = "Intermedio";
+    }
+
+    if (casos >= 50 && porcentaje >= 75) {
+        nivel = "Avanzado";
+    }
+
+    if (casos >= 80 && porcentaje >= 85) {
+        nivel = "Dominio clínico";
+    }
+
+    document.getElementById("progreso-nivel").textContent = nivel;
+
+
+    const mensaje = document.getElementById("mensaje-progreso");
+
+    if (casos === 0) {
+
+        mensaje.textContent =
+            "Empieza a resolver casos clínicos para registrar tu progreso.";
+
+    } else if (porcentaje < 50) {
+
+        mensaje.textContent =
+            "Continúa practicando. Conviene reforzar la descripción morfológica y el diagnóstico diferencial.";
+
+    } else if (porcentaje < 75) {
+
+        mensaje.textContent =
+            "Buen avance. Sigue practicando para mejorar la precisión diagnóstica.";
+
+    } else if (porcentaje < 90) {
+
+        mensaje.textContent =
+            "Muy buen rendimiento. Estás consolidando el reconocimiento clínico dermatológico.";
+
+    } else {
+
+        mensaje.textContent =
+            "Excelente rendimiento. Mantén la práctica para conservar la precisión diagnóstica.";
+
+    }
+
+});
+</script>
+
+<script>
+
+/* =========================================================
+   PROGRESO EXÁMENES PASADOS
+========================================================= */
+
+const TOTAL_PREGUNTAS_EXAMEN = 200;
+
+let respuestasExamen = {};
+
+try {
+
+  const guardadas =
+    localStorage.getItem(
+      "badbear_derma_examen_respuestas"
+    );
+
+  if (guardadas) {
+    respuestasExamen = JSON.parse(guardadas);
+  }
+
+} catch (error) {
+
+  respuestasExamen = {};
+
+}
+
+
+const respondidasExamen =
+  Object.keys(respuestasExamen).length;
+
+
+const correctasExamen =
+  Object.values(respuestasExamen)
+    .filter(respuesta =>
+      respuesta &&
+      respuesta.correcta === true
+    )
+    .length;
+
+
+const rendimientoExamen =
+  respondidasExamen
+    ? Math.round(
+        correctasExamen /
+        respondidasExamen *
+        100
+      )
+    : 0;
+
+
+const avanceExamen =
+  Math.min(
+    Math.round(
+      respondidasExamen /
+      TOTAL_PREGUNTAS_EXAMEN *
+      100
+    ),
+    100
+  );
+
+
+const numeroExamen =
+  document.getElementById(
+    "progreso-examen-numero"
+  );
+
+const correctasElemento =
+  document.getElementById(
+    "progreso-examen-correctas"
+  );
+
+const rendimientoElemento =
+  document.getElementById(
+    "progreso-examen-rendimiento"
+  );
+
+  const notaExamenElemento =
+  document.getElementById(
+    "progreso-examen-nota"
+  );
+
+const barraExamen =
+  document.getElementById(
+    "progreso-examen-relleno"
+  );
+
+
+if (numeroExamen) {
+
+  numeroExamen.textContent =
+    `${respondidasExamen} / ${TOTAL_PREGUNTAS_EXAMEN}`;
+
+}
+
+
+if (correctasElemento) {
+
+  correctasElemento.textContent =
+    `${correctasExamen} respuestas correctas`;
+
+}
+
+
+if (rendimientoElemento) {
+
+  rendimientoElemento.textContent =
+    `${rendimientoExamen}% rendimiento`;
+
+}
+
+if (notaExamenElemento) {
+
+  const notaExamen =
+    respondidasExamen > 0
+      ? (
+          correctasExamen /
+          respondidasExamen
+        ) * 20
+      : 0;
+
+  const notaExamenFormateada =
+    notaExamen
+      .toFixed(1)
+      .replace(".", ",");
+
+  notaExamenElemento.textContent =
+    `Nota: ${notaExamenFormateada} / 20`;
+
+}
+
+if (barraExamen) {
+
+  barraExamen.style.width =
+    `${avanceExamen}%`;
+
+}
+
+</script>
+
+<script>
+
+/* =========================================================
+   RESUMEN GENERAL DE LA UNIDAD
+========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    /* BANCO CLÍNICO */
+
+    const casosResumen =
+      Number(
+        localStorage.getItem(
+          "badbear_derma_casos"
+        )
+      ) || 0;
+
+    const totalBancoResumen = 133;
+
+    const porcentajeBancoResumen =
+      Math.min(
+        Math.round(
+          casosResumen /
+          totalBancoResumen *
+          100
+        ),
+        100
+      );
+
+
+    const bancoNumero =
+      document.getElementById(
+        "resumen-banco-numero"
+      );
+
+    const bancoPorcentaje =
+      document.getElementById(
+        "resumen-banco-porcentaje"
+      );
+
+    const bancoBarra =
+      document.getElementById(
+        "resumen-banco-barra"
+      );
+
+
+    if(bancoNumero){
+      bancoNumero.textContent =
+        `${casosResumen} / ${totalBancoResumen}`;
+    }
+
+    if(bancoPorcentaje){
+      bancoPorcentaje.textContent =
+        `${porcentajeBancoResumen}% completado`;
+    }
+
+    if(bancoBarra){
+      bancoBarra.style.width =
+        `${porcentajeBancoResumen}%`;
+    }
+
+
+
+    /* EXÁMENES PASADOS */
+
+    let respuestasResumen = {};
+
+    try{
+
+      const guardadas =
+        localStorage.getItem(
+          "badbear_derma_examen_respuestas"
+        );
+
+      if(guardadas){
+        respuestasResumen =
+          JSON.parse(guardadas);
+      }
+
+    }
+
+    catch(error){
+      respuestasResumen = {};
+    }
+
+
+    const preguntasRespondidasResumen =
+      Object.keys(
+        respuestasResumen
+      ).length;
+
+const preguntasCorrectasResumen =
+  Object.values(
+    respuestasResumen
+  )
+  .filter(
+    respuesta =>
+      respuesta &&
+      respuesta.correcta === true
+  )
+  .length;
+
+
+const notaVigesimalResumen =
+  preguntasRespondidasResumen > 0
+    ? (
+        preguntasCorrectasResumen /
+        preguntasRespondidasResumen
+      ) * 20
+    : 0;
+
+    const totalExamenResumen = 200;
+
+    const porcentajeExamenResumen =
+      Math.min(
+        Math.round(
+          preguntasRespondidasResumen /
+          totalExamenResumen *
+          100
+        ),
+        100
+      );
+
+
+    const examenNumero =
+      document.getElementById(
+        "resumen-examen-numero"
+      );
+
+    const examenPorcentaje =
+      document.getElementById(
+        "resumen-examen-porcentaje"
+      );
+
+    const examenBarra =
+      document.getElementById(
+        "resumen-examen-barra"
+      );
+
+      const examenNota =
+  document.getElementById(
+    "resumen-examen-nota"
+  );
+
+    if(examenNumero){
+      examenNumero.textContent =
+        `${preguntasRespondidasResumen} / ${totalExamenResumen}`;
+    }
+
+    if(examenPorcentaje){
+      examenPorcentaje.textContent =
+        `${porcentajeExamenResumen}% completado`;
+    }
+
+    
+if(examenNota){
+
+  const notaFormateada =
+    notaVigesimalResumen
+      .toFixed(1)
+      .replace(".", ",");
+
+  examenNota.textContent =
+    `Nota: ${notaFormateada} / 20`;
+
+}
+
+
+    if(examenBarra){
+      examenBarra.style.width =
+        `${porcentajeExamenResumen}%`;
+    }
+
+
+
+    /* AUDIO */
+
+    let audiosResumen = [];
+
+    try{
+
+      const guardados =
+        JSON.parse(
+          localStorage.getItem(
+            "badbear_derma_audios_completados"
+          )
+        );
+
+      if(Array.isArray(guardados)){
+        audiosResumen = guardados;
+      }
+
+    }
+
+    catch(error){
+      audiosResumen = [];
+    }
+
+
+    const totalAudioResumen = 6;
+
+    const porcentajeAudioResumen =
+      Math.min(
+        Math.round(
+          audiosResumen.length /
+          totalAudioResumen *
+          100
+        ),
+        100
+      );
+
+
+    const audioNumero =
+      document.getElementById(
+        "resumen-audio-numero"
+      );
+
+    const audioPorcentaje =
+      document.getElementById(
+        "resumen-audio-porcentaje"
+      );
+
+    const audioBarra =
+      document.getElementById(
+        "resumen-audio-barra"
+      );
+
+
+    if(audioNumero){
+      audioNumero.textContent =
+        `${audiosResumen.length} / ${totalAudioResumen}`;
+    }
+
+    if(audioPorcentaje){
+      audioPorcentaje.textContent =
+        `${porcentajeAudioResumen}% completado`;
+    }
+
+    if(audioBarra){
+      audioBarra.style.width =
+        `${porcentajeAudioResumen}%`;
+    }
+
+  }
+);
+
+</script>
+
+
+<script>
+(() => {
+  const CLAVE = "badbear_derma_simulador_historial";
+  let historial = [];
+
+  try {
+    const guardado = JSON.parse(localStorage.getItem(CLAVE) || "[]");
+    historial = Array.isArray(guardado) ? guardado : [];
+  } catch (error) {
+    historial = [];
+  }
+
+  const ultima = historial[0] || null;
+  const mejor = historial.length
+    ? Math.max(...historial.map(i => Number(i.nota) || 0))
+    : null;
+
+  const ultimaEl = document.getElementById("progreso-simulador-ultima");
+  const ultimaNotaEl = document.getElementById("progreso-sim-ultima-nota");
+  const mejorNotaEl = document.getElementById("progreso-sim-mejor-nota");
+  const intentosEl = document.getElementById("progreso-sim-intentos");
+  const detalleEl = document.getElementById("progreso-sim-detalle");
+
+  const formato = n => Number(n).toFixed(1).replace(".", ",");
+
+  if (intentosEl) intentosEl.textContent = historial.length;
+
+  if (!ultima) return;
+
+  if (ultimaEl) ultimaEl.textContent = `${formato(ultima.nota)} / 20`;
+  if (ultimaNotaEl) ultimaNotaEl.textContent = `${formato(ultima.nota)} / 20`;
+  if (mejorNotaEl) mejorNotaEl.textContent = `${formato(mejor)} / 20`;
+
+  if (detalleEl) {
+    detalleEl.textContent =
+      `Última simulación: ${ultima.total} preguntas · ${ultima.correctas} correctas · ${ultima.rendimiento}% rendimiento.`;
+  }
+})();
+</script>
+
+<script>
+(() => {
+  const CLAVE = "badbear_derma_recon_historial";
+  let h = [];
+  try { const x = JSON.parse(localStorage.getItem(CLAVE) || "[]"); h = Array.isArray(x) ? x : []; } catch (e) { h = []; }
+  const sesiones = document.getElementById("progreso-recon-sesiones");
+  const ult = document.getElementById("progreso-recon-ult");
+  const mejor = document.getElementById("progreso-recon-mejor");
+  const numero = document.getElementById("progreso-recon-ultima");
+  const detalle = document.getElementById("progreso-recon-detalle");
+  if (sesiones) sesiones.textContent = h.length;
+  if (!h.length) return;
+  const u = h[0];
+  const m = Math.max(...h.map(x => Number(x.rendimiento) || 0));
+  if (ult) ult.textContent = `${u.rendimiento}%`;
+  if (numero) numero.textContent = `${u.rendimiento}%`;
+  if (mejor) mejor.textContent = `${m}%`;
+  if (detalle) detalle.textContent = `Última sesión: ${u.total} casos · ${u.dxCorrectos} diagnósticos correctos · ${u.puntos}/${u.max} puntos.`;
+})();
+</script>
+<script>
+(() => {
+  const CLAVE = "badbear_derma_practico_historial";
+  let h = [];
+  try { const x = JSON.parse(localStorage.getItem(CLAVE) || "[]"); h = Array.isArray(x) ? x : []; } catch (e) { h = []; }
+  const intentos = document.getElementById("progreso-practico-intentos");
+  const ult = document.getElementById("progreso-practico-ult");
+  const mejor = document.getElementById("progreso-practico-mejor");
+  const numero = document.getElementById("progreso-practico-ultima");
+  const detalle = document.getElementById("progreso-practico-detalle");
+  const f = n => Number(n).toFixed(1).replace(".", ",");
+  if (intentos) intentos.textContent = h.length;
+  if (!h.length) return;
+  const u = h[0], m = Math.max(...h.map(x => Number(x.nota) || 0));
+  if (ult) ult.textContent = `${f(u.nota)} / 20`;
+  if (numero) numero.textContent = `${f(u.nota)} / 20`;
+  if (mejor) mejor.textContent = `${f(m)} / 20`;
+  if (detalle) detalle.textContent = `Último práctico: ${u.total} casos · ${u.respondidos} respondidos · ${u.dxCorrectos} diagnósticos correctos · ${u.puntos}/${u.max} puntos.`;
+})();
+</script>
+
+<script>
+(() => {
+  const leer = clave => {
+    try {
+      const x = JSON.parse(localStorage.getItem(clave) || "[]");
+      return Array.isArray(x) ? x : [];
+    } catch (e) { return []; }
+  };
+
+  const sim = leer("badbear_derma_simulador_historial");
+  const pract = leer("badbear_derma_practico_historial");
+  const recon = leer("badbear_derma_recon_historial");
+  const notas = [
+    ...sim.map(x => ({fecha:Number(x.fecha)||0, nota:Number(x.nota)||0})),
+    ...pract.map(x => ({fecha:Date.parse(x.fecha)||0, nota:Number(x.nota)||0}))
+  ].filter(x => x.fecha && Number.isFinite(x.nota)).sort((a,b) => a.fecha-b.fecha);
+
+  const evaluaciones = sim.length + pract.length + recon.length;
+  const promedio = notas.length ? notas.reduce((s,x)=>s+x.nota,0)/notas.length : null;
+  const tendencia = notas.length >= 2 ? notas.at(-1).nota - notas.at(-2).nota : null;
+  const f = n => Number(n).toFixed(1).replace(".", ",");
+
+  const sesiones = document.getElementById("progreso-historial-sesiones");
+  const evals = document.getElementById("progreso-historial-evals");
+  const prom = document.getElementById("progreso-historial-promedio");
+  const tend = document.getElementById("progreso-historial-tendencia");
+
+  if (sesiones) sesiones.textContent = evaluaciones;
+  if (evals) evals.textContent = evaluaciones;
+  if (prom) prom.textContent = promedio === null ? "—" : `${f(promedio)} / 20`;
+  if (tend) {
+    if (tendencia === null) tend.textContent = "—";
+    else if (Math.abs(tendencia) < 0.05) tend.textContent = "→ estable";
+    else tend.textContent = `${tendencia > 0 ? "↑" : "↓"} ${tendencia > 0 ? "+" : ""}${f(tendencia)}`;
+    tend.classList.toggle("sube", tendencia !== null && tendencia > 0);
+    tend.classList.toggle("baja", tendencia !== null && tendencia < 0);
+  }
+})();
+</script>
+
+
+<script>
+(() => {
+  let estado = null;
+  try { estado = JSON.parse(localStorage.getItem("badbear_derma_plan_diario_v1") || "null"); } catch(e) { estado = null; }
+  const hoy = new Date();
+  const fecha = `${hoy.getFullYear()}-${String(hoy.getMonth()+1).padStart(2,"0")}-${String(hoy.getDate()).padStart(2,"0")}`;
+  const tareas = estado && estado.fecha === fecha && Array.isArray(estado.tareas) ? estado.tareas : [];
+  const hechas = tareas.filter(t => t && t.hecha).length;
+  const avance = tareas.length ? Math.round(hechas/tareas.length*100) : 0;
+  const e = id => document.getElementById(id);
+  if(e("progreso-plan-avance")) e("progreso-plan-avance").textContent = `${avance}%`;
+  if(e("progreso-plan-tareas")) e("progreso-plan-tareas").textContent = `${hechas} / ${tareas.length}`;
+  if(e("progreso-plan-duracion")) e("progreso-plan-duracion").textContent = estado && estado.fecha===fecha ? `${estado.duracion||60} min` : "—";
+  if(e("progreso-plan-prioridad")) e("progreso-plan-prioridad").textContent = estado && estado.fecha===fecha && estado.prioridad ? estado.prioridad : "Generar plan";
+})();
+</script>
+
+
+<script>
+(function(){
+  function obj(k){try{const x=JSON.parse(localStorage.getItem(k)||"{}");return x&&typeof x==="object"&&!Array.isArray(x)?x:{};}catch(e){return {};}}
+  function arr(k){try{const x=JSON.parse(localStorage.getItem(k)||"[]");return Array.isArray(x)?x:[];}catch(e){return [];}}
+  const items=Object.values(obj("badbear_derma_srs_v1")).filter(x=>x&&x.activo!==false);
+  const now=Date.now(); const d=new Date(); d.setHours(23,59,59,999); const fin=d.getTime(); const semana=now+7*86400000; const inicio=new Date(); inicio.setHours(0,0,0,0);
+  const dom=x=>Number(x.intervaloDias)>=30||Number(x.etapa)>=5;
+  const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v;};
+  set("prog-srs-hoy",items.filter(x=>Number(x.proximoEn||0)<=fin&&!dom(x)).length);
+  set("prog-srs-semana",items.filter(x=>Number(x.proximoEn||0)>fin&&Number(x.proximoEn||0)<=semana&&!dom(x)).length);
+  set("prog-srs-dominadas",items.filter(dom).length);
+  set("prog-srs-repasos",arr("badbear_derma_srs_historial_v1").filter(x=>Number(x.fecha)>=inicio.getTime()).length);
+})();
+</script>
+
+</body>
+
+</html>

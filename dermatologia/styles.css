@@ -1,0 +1,2110 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #eef3f8;
+
+    color: #17202a;
+}
+
+
+/* =====================================================
+   CABECERA
+===================================================== */
+
+.cabecera {
+
+    background: white;
+
+    padding: 20px 4%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid #d9e1e8;
+}
+
+
+.cabecera h1 {
+
+    margin: 0;
+
+    color: #0969ff;
+
+    font-size: 32px;
+}
+
+
+.cabecera p {
+
+    margin: 7px 0 0;
+
+    color: #64748b;
+}
+
+
+.marcador {
+
+    display: flex;
+
+    gap: 22px;
+
+    background: #f4f7fb;
+
+    padding: 14px 20px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+}
+
+
+
+/* =====================================================
+   CONTENEDOR
+===================================================== */
+
+.contenedor {
+
+    max-width: 1250px;
+
+    margin: 30px auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 7px 28px rgba(0, 0, 0, 0.08);
+}
+
+
+
+/* =====================================================
+   PROGRESO
+===================================================== */
+
+.estado {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+
+.barra-fondo {
+
+    height: 11px;
+
+    width: 100%;
+
+    background: #e1e7ed;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+}
+
+
+#barra-progreso {
+
+    width: 0;
+
+    height: 100%;
+
+    background: #0969ff;
+
+    transition: width 0.4s ease;
+}
+
+
+
+/* =====================================================
+   CASO
+===================================================== */
+
+.caso-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 1fr;
+
+    gap: 28px;
+
+    margin-bottom: 35px;
+}
+
+
+.zona-imagen {
+
+    width: 100%;
+}
+
+
+.imagen-box {
+
+    width: 100%;
+
+    height: 470px;
+
+    background: #111;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.imagen-box img {
+
+    display: none;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+.cargando-imagen {
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    font-size: 18px;
+}
+
+
+.btn-secundario {
+
+    display: block;
+
+    margin: 12px auto 5px;
+
+    padding: 10px 18px;
+
+    border: 1px solid #0969ff;
+
+    background: white;
+
+    color: #0969ff;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+.btn-secundario:hover {
+
+    background: #eef5ff;
+}
+
+
+.fuente-imagen {
+
+    min-height: 20px;
+
+    margin: 8px 0 0;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #64748b;
+}
+
+
+.fuente-imagen a {
+
+    color: #0969ff;
+}
+
+
+.caso-clinico {
+
+    padding: 28px;
+
+    background: #f1f6ff;
+
+    border-left: 6px solid #0969ff;
+
+    border-radius: 12px;
+}
+
+
+.etiqueta {
+
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    background: #0969ff;
+
+    color: white;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.caso-clinico h2 {
+
+    color: #0969ff;
+}
+
+
+.caso-clinico p {
+
+    font-size: 19px;
+
+    line-height: 1.75;
+}
+
+
+
+/* =====================================================
+   MORFOLOGÍA
+===================================================== */
+
+.evaluacion {
+
+    margin-top: 30px;
+}
+
+
+.bloque-pregunta {
+
+    background: #f8fafc;
+
+    border: 1px solid #dce4ec;
+
+    padding: 20px;
+
+    border-radius: 11px;
+
+    margin-bottom: 18px;
+}
+
+
+.bloque-pregunta h3 {
+
+    margin-top: 0;
+
+    color: #25364a;
+}
+
+
+.opciones-descriptivas {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.opcion-descriptiva {
+
+    padding: 12px 18px;
+
+    border: 2px solid #d8e0e8;
+
+    background: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+
+.opcion-descriptiva:hover {
+
+    border-color: #0969ff;
+
+    background: #f2f7ff;
+}
+
+
+.opcion-descriptiva.seleccionada {
+
+    border-color: #0969ff;
+
+    background: #dbeafe;
+}
+
+
+.descripcion-correcta {
+
+    background: #d1e7dd !important;
+
+    border-color: #198754 !important;
+
+    color: #0f5132;
+
+    font-weight: bold;
+}
+
+
+.descripcion-incorrecta {
+
+    background: #f8d7da !important;
+
+    border-color: #dc3545 !important;
+
+    color: #842029;
+
+    font-weight: bold;
+}
+
+
+
+/* =====================================================
+   DIAGNÓSTICO
+===================================================== */
+
+.diagnostico-section {
+
+    border-top: 2px solid #e5e9ee;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+}
+
+
+.opciones-diagnostico {
+
+    display: grid;
+
+    gap: 12px;
+}
+
+
+.opcion {
+
+    padding: 17px 20px;
+
+    text-align: left;
+
+    background: white;
+
+    border: 2px solid #dce2e8;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: 0.2s;
+}
+
+
+.opcion:hover {
+
+    background: #f2f7ff;
+
+    border-color: #0969ff;
+}
+
+
+.opcion.correcta {
+
+    background: #d1e7dd;
+
+    border-color: #198754;
+
+    color: #0f5132;
+}
+
+
+.opcion.incorrecta {
+
+    background: #f8d7da;
+
+    border-color: #dc3545;
+
+    color: #842029;
+}
+
+
+
+/* =====================================================
+   EXPLICACIÓN
+===================================================== */
+
+.oculto {
+
+    display: none !important;
+}
+
+
+.explicacion {
+
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+    border-top: 2px solid #e3e8ed;
+}
+
+
+.mensaje-correcto {
+
+    padding: 17px;
+
+    background: #d1e7dd;
+
+    color: #0f5132;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+
+    font-size: 20px;
+}
+
+
+.mensaje-incorrecto {
+
+    padding: 17px;
+
+    background: #f8d7da;
+
+    color: #842029;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+
+    font-size: 20px;
+}
+
+
+.titulo-diagnostico {
+
+    color: #0969ff;
+
+    font-size: 31px;
+}
+
+
+.grid-info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+
+.info-card {
+
+    padding: 20px;
+
+    background: #f7f9fc;
+
+    border: 1px solid #e0e6ec;
+
+    border-radius: 10px;
+}
+
+
+.info-card h3 {
+
+    margin-top: 0;
+
+    color: #0969ff;
+}
+
+
+.info-card p {
+
+    line-height: 1.65;
+}
+
+
+.perla {
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    background: #fff3cd;
+
+    border-left: 6px solid #ffc107;
+
+    border-radius: 9px;
+}
+
+
+#btn-siguiente {
+
+    display: block;
+
+    margin: 30px auto 0;
+
+    padding: 16px 35px;
+
+    border: none;
+
+    background: #0969ff;
+
+    color: white;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+#btn-siguiente:hover {
+
+    background: #0759d8;
+}
+
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.resultado-final {
+
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+
+.porcentaje {
+
+    margin: 25px;
+
+    font-size: 80px;
+
+    font-weight: bold;
+
+    color: #0969ff;
+}
+
+
+.btn-final {
+
+    padding: 15px 30px;
+
+    border: none;
+
+    background: #0969ff;
+
+    color: white;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+
+button:disabled {
+
+    cursor: default;
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    text-align: center;
+
+    color: #64748b;
+
+    padding: 25px;
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width: 850px) {
+
+    .caso-grid,
+    .grid-info {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .cabecera {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .imagen-box {
+
+        height: 380px;
+    }
+}
+
+/* =====================================================
+   BADBEAR.MED · IDENTIDAD DE MARCA 2026
+===================================================== */
+
+:root {
+    --bb-ink: #0b1f33;
+    --bb-blue: #1368e8;
+    --bb-blue-dark: #0a4fb8;
+    --bb-sky: #eaf3ff;
+    --bb-line: #dce5ef;
+    --bb-green: #18845a;
+    --bb-red: #c94a4a;
+}
+
+body {
+    background: radial-gradient(circle at 10% -10%, rgba(19, 104, 232, 0.10), transparent 28%), #eef3f8;
+}
+
+.cabecera {
+    min-height: 92px;
+    padding: 15px 4%;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--bb-line);
+    box-shadow: 0 7px 24px rgba(13, 38, 67, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.perfil-logo {
+    width: 62px;
+    height: 62px;
+    flex: 0 0 62px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #0b1f33, #183955);
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 2px #dce9f9, 0 8px 20px rgba(11,31,51,.16);
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.panda-cara {
+    font-size: 35px;
+    line-height: 1;
+    transform: translateY(-1px);
+}
+
+.huella {
+    position: absolute;
+    right: 7px;
+    bottom: 4px;
+    width: 15px;
+    height: 15px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--bb-blue);
+    color: white;
+    font-size: 7px;
+    border: 2px solid white;
+}
+
+.marca-linea {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cabecera .marca-texto h1 {
+    margin: 0;
+    color: var(--bb-ink);
+    font-size: 31px;
+    letter-spacing: -1.2px;
+    font-weight: 800;
+}
+
+.cabecera .marca-texto h1 span { color: var(--bb-blue); }
+
+.cabecera .marca-texto p {
+    margin: 5px 0 0;
+    color: #66778a;
+    font-size: 13px;
+    letter-spacing: .1px;
+}
+
+.badge-marca {
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: var(--bb-sky);
+    color: var(--bb-blue-dark);
+    border: 1px solid #cee0fb;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .8px;
+}
+
+.cabecera-derecha {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.modo-estudio {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #637488;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.punto-vivo {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #28a76c;
+    box-shadow: 0 0 0 4px rgba(40,167,108,.12);
+}
+
+.marcador { gap: 9px; background: transparent; padding: 0; }
+
+.stat {
+    min-width: 76px;
+    padding: 8px 13px;
+    border: 1px solid var(--bb-line);
+    border-radius: 12px;
+    background: #fff;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.stat small {
+    display: block;
+    margin-bottom: 5px;
+    color: #738296;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .45px;
+}
+
+.stat strong { font-size: 20px; color: var(--bb-ink); }
+.stat-ok strong { color: var(--bb-green); }
+.stat-error strong { color: var(--bb-red); }
+
+.nav-principal {
+    background: var(--bb-ink);
+    color: #d8e4f0;
+    box-shadow: 0 4px 12px rgba(11,31,51,.10);
+}
+
+.nav-contenido {
+    max-width: 1250px;
+    margin: 0 auto;
+    min-height: 44px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav-contenido::-webkit-scrollbar { display: none; }
+.nav-contenido span { opacity: .76; }
+.nav-contenido .nav-activo { color: white; opacity: 1; position: relative; }
+.nav-contenido .nav-activo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -14px;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: #4fa0ff;
+}
+.nav-contenido .nav-firma {
+    margin-left: auto;
+    color: #ffd77a;
+    opacity: 1;
+    letter-spacing: .35px;
+}
+
+.contenedor { border: 1px solid rgba(220,229,239,.8); }
+.etiqueta { letter-spacing: .6px; }
+
+.perla h3 { 
+    color: var(--bb-blue-dark);
+}
+
+footer { font-size: 13px; letter-spacing: .2px; }
+
+@media(max-width: 980px) {
+    .modo-estudio { display: none; }
+    .cabecera-derecha { gap: 8px; }
+}
+
+@media(max-width: 720px) {
+    .cabecera {
+        position: static;
+        align-items: stretch;
+        padding: 13px 16px;
+    }
+    .marca { width: 100%; }
+    .perfil-logo { width: 54px; height: 54px; flex-basis: 54px; }
+    .panda-cara { font-size: 31px; }
+    .cabecera .marca-texto h1 { font-size: 27px; }
+    .badge-marca { font-size: 9px; }
+    .cabecera-derecha { width: 100%; }
+    .marcador { width: 100%; }
+    .stat { flex: 1; }
+    .nav-contenido { padding: 0 16px; gap: 22px; }
+    .nav-contenido .nav-firma { margin-left: 0; }
+    .contenedor { margin-top: 18px; padding: 20px 16px; border-radius: 12px; }
+}
+
+/* =====================================================
+   BADBEAR.MED · ESTILO PRINCIPAL 2026
+   Referencia visual: cabecera blanca + navegación superior
+===================================================== */
+:root {
+    --bb-blue-brand: #2458ff;
+    --bb-navy: #0f172a;
+    --bb-muted: #667085;
+    --bb-bg: #f4f7fb;
+    --bb-soft: #eef3ff;
+    --bb-line2: #e5eaf1;
+}
+
+body {
+    background: var(--bb-bg);
+    color: var(--bb-navy);
+}
+
+.bb-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: 110px;
+    padding: 18px 3.2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background: #fff;
+    border-bottom: 1px solid var(--bb-line2);
+    box-shadow: none;
+}
+
+.bb-header .marca {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 310px;
+}
+
+.logo-badbear {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.bb-header .marca-texto h1 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--bb-navy);
+}
+
+.bb-header .marca-texto h1 span {
+    color: var(--bb-blue-brand);
+}
+
+.bb-header .marca-texto p {
+    margin: 7px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--bb-muted);
+}
+
+.bb-header .nav-principal {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--bb-muted);
+    box-shadow: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.bb-header .nav-principal::-webkit-scrollbar {
+    display: none;
+}
+
+.bb-header .nav-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 14px;
+    border-radius: 11px;
+    color: var(--bb-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background .18s ease, color .18s ease;
+}
+
+.bb-header .nav-item:hover {
+    color: var(--bb-blue-brand);
+    background: #f7f9ff;
+}
+
+.bb-header .nav-item.nav-activo {
+    color: var(--bb-blue-brand);
+    background: var(--bb-soft);
+}
+
+.bb-header .nav-item.nav-activo::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: -1px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--bb-blue-brand);
+}
+
+/* Anula la barra oscura del diseño anterior */
+body > .nav-principal,
+.nav-contenido {
+    display: none !important;
+}
+
+.contenedor {
+    max-width: 1250px;
+    margin: 28px auto;
+    border: 1px solid #edf0f5;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(15, 23, 42, .06);
+}
+
+#barra-progreso,
+.etiqueta,
+#btn-siguiente {
+    background: var(--bb-blue-brand);
+}
+
+.caso-clinico {
+    background: #f5f8ff;
+    border-left-color: var(--bb-blue-brand);
+}
+
+.caso-clinico h2,
+.info-card h3,
+.titulo-diagnostico {
+    color: var(--bb-blue-brand);
+}
+
+.btn-secundario {
+    border-color: var(--bb-blue-brand);
+    color: var(--bb-blue-brand);
+}
+
+@media (max-width: 900px) {
+    .bb-header {
+        position: static;
+        padding: 14px 18px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .bb-header .marca {
+        min-width: 0;
+    }
+
+    .bb-header .nav-principal {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+        padding-bottom: 2px;
+    }
+}
+
+@media (max-width: 560px) {
+    .logo-badbear {
+        width: 50px;
+        height: 50px;
+        flex-basis: 50px;
+    }
+
+    .bb-header .marca-texto h1 {
+        font-size: 25px;
+    }
+
+    .bb-header .nav-item {
+        padding: 0 11px;
+        font-size: 13px;
+    }
+}
+/* =========================================================
+   INICIO BADBEAR.MED
+========================================================= */
+
+.inicio-badbear {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 0 24px 40px;
+}
+
+.hero-badbear {
+    background: white;
+    border-radius: 24px;
+    padding: 60px;
+    box-shadow: 0 18px 50px rgba(11, 31, 51, 0.08);
+    border: 1px solid #e5ebf2;
+}
+
+.hero-contenido {
+    max-width: 760px;
+}
+
+.hero-etiqueta {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #eef5ff;
+    color: #0969ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.hero-badbear h2 {
+    margin: 0 0 18px;
+    font-size: 52px;
+    line-height: 1.05;
+    color: #0b1f33;
+}
+
+.hero-badbear p {
+    margin: 0;
+    max-width: 700px;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #5f6f82;
+}
+
+.hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.btn-principal,
+.btn-secundario-inicio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.btn-principal {
+    background: #0969ff;
+    color: white;
+}
+
+.btn-principal:hover {
+    background: #0759d8;
+    transform: translateY(-1px);
+}
+
+.btn-secundario-inicio {
+    background: white;
+    color: #0b1f33;
+    border: 1px solid #cfd9e5;
+}
+
+.btn-secundario-inicio:hover {
+    border-color: #0969ff;
+    color: #0969ff;
+    background: #f8fbff;
+}
+
+.modulos-inicio {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.tarjeta-modulo {
+    display: block;
+    min-height: 220px;
+    padding: 26px;
+    background: white;
+    border: 1px solid #e1e8f0;
+    border-radius: 18px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 8px 28px rgba(11, 31, 51, 0.05);
+    transition: 0.2s ease;
+}
+
+.tarjeta-modulo:hover {
+    transform: translateY(-4px);
+    border-color: #a9c9ff;
+    box-shadow: 0 16px 34px rgba(11, 31, 51, 0.09);
+}
+
+.modulo-numero {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #0969ff;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+}
+
+.tarjeta-modulo h3 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    color: #0b1f33;
+}
+
+.tarjeta-modulo p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+@media (max-width: 1000px) {
+    .modulos-inicio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-badbear {
+        padding: 42px;
+    }
+
+    .hero-badbear h2 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 650px) {
+    .inicio-badbear {
+        margin-top: 22px;
+        padding: 0 14px 30px;
+    }
+
+    .hero-badbear {
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+
+    .hero-badbear h2 {
+        font-size: 34px;
+    }
+
+    .hero-badbear p {
+        font-size: 17px;
+    }
+
+    .modulos-inicio {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-botones {
+        flex-direction: column;
+    }
+
+    .btn-principal,
+    .btn-secundario-inicio {
+        width: 100%;
+    }
+}
+/* =========================================================
+   TEORÍA / CUADERNO PDF BADBEAR.MED
+========================================================= */
+
+.teoria-badbear {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 0 24px 50px;
+}
+
+.cabecera-teoria {
+    margin-bottom: 24px;
+}
+
+.cabecera-teoria h2 {
+    margin: 10px 0 12px;
+    font-size: 46px;
+    color: #0b1f33;
+}
+
+.cabecera-teoria p {
+    max-width: 760px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+
+/* TARJETA DEL CUADERNO */
+
+.cuaderno-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    border: 1px solid #e1e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 35px rgba(11, 31, 51, 0.06);
+    margin-bottom: 24px;
+}
+
+.cuaderno-info {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.cuaderno-icono {
+    width: 74px;
+    height: 74px;
+    border-radius: 16px;
+    background: #eef5ff;
+    color: #0969ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 19px;
+    flex-shrink: 0;
+}
+
+.cuaderno-info h3 {
+    margin: 0 0 8px;
+    font-size: 23px;
+    color: #0b1f33;
+}
+
+.cuaderno-info p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.estado-cuaderno {
+    margin-top: 8px !important;
+    font-size: 14px;
+    color: #0969ff !important;
+    font-weight: 700;
+}
+
+.acciones-cuaderno {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+
+/* VISOR PDF */
+
+.visor-pdf {
+    background: white;
+    border: 1px solid #e1e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(11, 31, 51, 0.06);
+}
+
+.visor-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5ebf2;
+}
+
+.visor-cabecera h3 {
+    margin: 4px 0 0;
+    color: #0b1f33;
+    font-size: 20px;
+}
+
+.visor-cabecera a {
+    color: #0969ff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.visor-cabecera a:hover {
+    text-decoration: underline;
+}
+
+.visor-etiqueta {
+    font-size: 12px;
+    font-weight: 800;
+    color: #0969ff;
+    letter-spacing: 0.08em;
+}
+
+.visor-pdf iframe {
+    width: 100%;
+    height: 820px;
+    border: none;
+    display: block;
+    background: #f5f7fa;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .cuaderno-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acciones-cuaderno {
+        width: 100%;
+    }
+
+    .acciones-cuaderno a {
+        flex: 1;
+    }
+
+    .visor-pdf iframe {
+        height: 650px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .teoria-badbear {
+        margin-top: 24px;
+        padding: 0 14px 35px;
+    }
+
+    .cabecera-teoria h2 {
+        font-size: 34px;
+    }
+
+    .cuaderno-info {
+        align-items: flex-start;
+    }
+
+    .cuaderno-icono {
+        width: 58px;
+        height: 58px;
+        font-size: 15px;
+    }
+
+    .acciones-cuaderno {
+        flex-direction: column;
+    }
+
+    .visor-cabecera {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .visor-pdf iframe {
+        height: 520px;
+    }
+}
+/* =========================================================
+   EXÁMENES PASADOS BADBEAR.MED
+========================================================= */
+
+.examenes-badbear {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 0 24px 50px;
+}
+
+.cabecera-examenes {
+    margin-bottom: 26px;
+}
+
+.cabecera-examenes h2 {
+    margin: 10px 0 12px;
+    font-size: 46px;
+    color: #0b1f33;
+}
+
+.cabecera-examenes p {
+    max-width: 780px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+
+/* PANEL PRINCIPAL */
+
+.panel-examenes {
+    background: white;
+    border: 1px solid #e1e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(11, 31, 51, 0.06);
+}
+
+.panel-examenes-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 28px 30px;
+    border-bottom: 1px solid #e5ebf2;
+}
+
+.panel-etiqueta {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #0969ff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.panel-examenes-superior h3 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: #0b1f33;
+}
+
+.panel-examenes-superior p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* CONTADOR */
+
+.contador-examenes {
+    min-width: 150px;
+    text-align: center;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: #eef5ff;
+}
+
+.contador-examenes strong {
+    display: block;
+    font-size: 30px;
+    color: #0969ff;
+}
+
+.contador-examenes span {
+    display: block;
+    margin-top: 3px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+
+/* ESTADO VACÍO */
+
+.estado-vacio-examenes {
+    text-align: center;
+    padding: 85px 30px;
+}
+
+.icono-examen {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef5ff;
+    color: #0969ff;
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.estado-vacio-examenes h3 {
+    margin: 0 0 10px;
+    color: #0b1f33;
+    font-size: 23px;
+}
+
+.estado-vacio-examenes p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .examenes-badbear {
+        margin-top: 24px;
+        padding: 0 14px 35px;
+    }
+
+    .cabecera-examenes h2 {
+        font-size: 34px;
+    }
+
+    .panel-examenes-superior {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contador-examenes {
+        width: 100%;
+    }
+
+    .estado-vacio-examenes {
+        padding: 55px 22px;
+    }
+}
+/* =========================================================
+   PROGRESO BADBEAR.MED
+========================================================= */
+
+.progreso-badbear {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 0 24px 50px;
+}
+
+.cabecera-progreso {
+    margin-bottom: 28px;
+}
+
+.cabecera-progreso h2 {
+    margin: 10px 0 12px;
+    font-size: 46px;
+    color: #0b1f33;
+}
+
+.cabecera-progreso p {
+    max-width: 780px;
+    margin: 0;
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.estadisticas-progreso {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.tarjeta-estadistica {
+    background: white;
+    border: 1px solid #e1e8f0;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 28px rgba(11, 31, 51, 0.05);
+}
+
+.estadistica-titulo {
+    display: block;
+    margin-bottom: 18px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.tarjeta-estadistica strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #0b1f33;
+    font-size: 36px;
+    line-height: 1;
+}
+
+.estadistica-subtexto {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.panel-rendimiento {
+    background: white;
+    border: 1px solid #e1e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 35px rgba(11, 31, 51, 0.06);
+    margin-bottom: 24px;
+}
+
+.panel-rendimiento-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.panel-rendimiento-cabecera h3 {
+    margin: 4px 0 0;
+    color: #0b1f33;
+    font-size: 24px;
+}
+
+.panel-rendimiento-cabecera > strong {
+    color: #0969ff;
+    font-size: 26px;
+}
+
+.barra-progreso-general {
+    width: 100%;
+    height: 14px;
+    margin-top: 24px;
+    background: #eaf0f7;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+#avance-barra {
+    width: 0%;
+    height: 100%;
+    background: #0969ff;
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+.mensaje-progreso {
+    margin: 18px 0 0;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.acciones-progreso {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    border: 1px solid #e1e8f0;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 35px rgba(11, 31, 51, 0.06);
+}
+
+.acciones-progreso h3 {
+    margin: 0 0 8px;
+    color: #0b1f33;
+    font-size: 23px;
+}
+
+.acciones-progreso p {
+    margin: 0;
+    max-width: 650px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+@media (max-width: 950px) {
+    .estadisticas-progreso {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .progreso-badbear {
+        margin-top: 24px;
+        padding: 0 14px 35px;
+    }
+
+    .cabecera-progreso h2 {
+        font-size: 34px;
+    }
+
+    .estadisticas-progreso {
+        grid-template-columns: 1fr;
+    }
+
+    .acciones-progreso {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acciones-progreso .btn-principal {
+        width: 100%;
+    }
+}
+/* =========================================================
+   MARCA DE AGUA BADBEAR.MED
+========================================================= */
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+
+    width: 850px;
+height: 850px;
+
+    left: 50%;
+    top: 54%;
+
+    transform: translate(-50%, -50%);
+
+    background-image: url("badbear_logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 0.065;
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Mantener todo el contenido por encima de la marca de agua */
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+/* =========================================================
+   BANCO CLÍNICO - MEJORA DE TAMAÑO Y LEGIBILIDAD
+========================================================= */
+
+.contenedor {
+    max-width: 1180px;
+    margin: 32px auto;
+    padding: 0 24px 50px;
+}
+
+
+/* CABECERA DEL CASO */
+
+.estado {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.barra-fondo {
+    height: 8px;
+    border-radius: 999px;
+}
+
+
+/* IMAGEN + HISTORIA CLÍNICA */
+
+.caso-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 24px;
+    align-items: stretch;
+    margin-top: 22px;
+}
+
+.zona-imagen,
+.caso-clinico {
+    width: 100%;
+}
+
+.imagen-box {
+    min-height: 390px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+#imagen-enfermedad {
+    width: 100%;
+    height: 390px;
+    object-fit: contain;
+}
+
+.caso-clinico {
+    padding: 28px;
+    border-radius: 16px;
+}
+
+.caso-clinico h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+#caso-clinico {
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+
+/* PREGUNTAS */
+
+.evaluacion,
+.diagnostico-section {
+    margin-top: 30px;
+}
+
+.evaluacion > h2,
+.diagnostico-section > h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.bloque-pregunta {
+    padding: 20px;
+    margin-bottom: 14px;
+    border-radius: 14px;
+}
+
+.bloque-pregunta h3 {
+    font-size: 17px;
+    margin-bottom: 14px;
+}
+
+
+/* BOTONES DE MORFOLOGÍA */
+
+.opciones-descriptivas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.opciones-descriptivas button {
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+
+/* OPCIONES DE DIAGNÓSTICO */
+
+.opciones-diagnostico {
+    display: grid;
+    gap: 11px;
+}
+
+.opciones-diagnostico button {
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 18px;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 9px;
+}
+
+
+/* EXPLICACIÓN */
+
+.explicacion {
+    margin-top: 30px;
+}
+
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.info-card {
+    padding: 22px;
+}
+
+.info-card h3 {
+    font-size: 18px;
+}
+
+.info-card p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* BADBEAR.MED FIJA */
+
+.perla {
+    margin-top: 20px;
+    padding: 22px;
+    border-radius: 14px;
+}
+
+.perla h3 {
+    font-size: 18px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .caso-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-info {
+        grid-template-columns: 1fr;
+    }
+
+    .imagen-box,
+    #imagen-enfermedad {
+        height: auto;
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .contenedor {
+        padding: 0 14px 35px;
+    }
+
+    .evaluacion > h2,
+    .diagnostico-section > h2 {
+        font-size: 21px;
+    }
+
+    .opciones-descriptivas button {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+/* =========================================================
+   MÓDULOS DEL INICIO - 5 TARJETAS
+========================================================= */
+
+.modulos-inicio{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:16px;
+    width:100%;
+}
+
+.tarjeta-modulo{
+    min-width:0;
+}
+
+/* TABLET */
+@media (max-width:1100px){
+
+    .modulos-inicio{
+        grid-template-columns:repeat(3, 1fr);
+    }
+
+}
+
+/* CELULAR */
+@media (max-width:700px){
+
+    .modulos-inicio{
+        grid-template-columns:1fr;
+    }
+
+}

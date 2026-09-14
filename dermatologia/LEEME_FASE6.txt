@@ -1,0 +1,35 @@
+BADBEAR.MED · FASE 6 — ATLAS VISUAL DE DERMATOLOGÍA
+
+Archivos incluidos:
+- index.html
+- examenes.html
+- simulador.html
+- repaso.html
+- progreso.html
+- atlas.html          (NUEVO)
+- atlas.js            (NUEVO)
+- badbear-theme.css
+- LEEME_FASE6.txt
+
+INSTALACIÓN
+1. Copia todos los archivos a C:\badbear-dermatologia\
+2. Reemplaza index.html, examenes.html, simulador.html, repaso.html, progreso.html y badbear-theme.css.
+3. Agrega atlas.html y atlas.js.
+4. NO borres styles.css, app.js, examenes.js ni simulador.js.
+5. Abre index.html y presiona Ctrl + F5.
+
+QUÉ AGREGA ESTA FASE
+- Nuevo módulo ATLAS VISUAL en Inicio y navegación.
+- 13 lesiones elementales.
+- 24 enfermedades dermatológicas de alta frecuencia/rentabilidad.
+- 11 patrones de distribución.
+- Buscador instantáneo.
+- Fotografías clínicas reales consultadas dinámicamente en Wikimedia Commons.
+- Enlace visible a la fuente de cada fotografía.
+- Botón "Otra imagen" si deseas cambiar el ejemplo visual.
+- Morfología clave, patrón y BADBEAR.MED FIJA en cada tarjeta.
+- Carga diferida de imágenes para no saturar la página.
+
+NOTA
+Las imágenes no se guardan dentro del ZIP. Se consultan desde Wikimedia Commons cuando abres Atlas,
+por lo que necesitas conexión a Internet para verlas. El resto del atlas funciona localmente.

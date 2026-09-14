@@ -1,0 +1,28 @@
+BADBEAR.MED · FASE 1 — REPASO + NUEVA PALETA
+
+Archivos incluidos:
+- index.html
+- progreso.html
+- repaso.html
+- badbear-theme.css
+
+IMPORTANTE:
+1. Copia estos 4 archivos a C:\badbear-dermatologia\
+2. Reemplaza index.html y progreso.html.
+3. repaso.html y badbear-theme.css son archivos nuevos.
+4. NO borres styles.css.
+5. NO reemplaces app.js ni examenes.js todavía.
+6. Abre index.html y presiona Ctrl + F5.
+
+Qué hace esta fase:
+- Añade "Repaso" al menú de Inicio y Progreso.
+- Añade una sexta tarjeta "Repaso inteligente" al Inicio.
+- Aplica la nueva paleta azul + negro + rojo/anaranjado + amarillo.
+- repaso.html lee tus datos actuales de localStorage.
+- Detecta preguntas incorrectas de Exámenes pasados.
+- Calcula fallos globales del Banco = casos respondidos - correctos.
+- Prepara la clave badbear_derma_repaso_examen para la siguiente fase.
+
+Siguiente fase:
+- Modificar examenes.js para que el botón "Repasar errores" cargue SOLO preguntas falladas.
+- Modificar app.js para guardar exactamente cuáles casos clínicos se fallaron.

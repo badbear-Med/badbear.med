@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Temas, audio, PDF y video · Dermatología</title>
+  <meta name="description" content="Catálogo de 16 temas de Dermatología con audio, PDF, video y teoría del proyecto BADBEAR.MED del grupo WAJOMEA.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badbear-theme.css">
+  <script src="auth.js"></script>
+  <script src="contenido-dermatologia.js"></script>
+  <script src="theory-audio.js" defer></script>
+  <style>
+    .media-main{width:min(1180px,92%);margin:34px auto 70px}.media-hero{background:#fff;border:1px solid #e2e8f0;border-radius:24px;padding:32px;box-shadow:0 14px 38px rgba(17,24,39,.07);position:relative;overflow:hidden}.media-hero:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#2458ff,#ff5a36,#ffc928)}.media-kicker{display:inline-flex;padding:7px 11px;border-radius:999px;background:#eef3ff;color:#2458ff;font-size:11px;font-weight:900;letter-spacing:.7px}.media-hero h2{font-size:36px;margin:14px 0 8px;color:#111827}.media-hero p{margin:0;max-width:790px;color:#667085;line-height:1.65}.media-resumen{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.media-stat{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:18px}.media-stat span{display:block;color:#667085;font-size:11px;font-weight:900;letter-spacing:.5px}.media-stat strong{display:block;margin-top:7px;font-size:28px;color:#111827}.media-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.media-btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border-radius:11px;text-decoration:none;font-size:12px;font-weight:900;border:1px solid #dbe2ea;background:#fff;color:#111827;cursor:pointer}.media-btn.primary{background:#2458ff;border-color:#2458ff;color:#fff}.media-btn.youtube{background:#ff3b30;border-color:#ff3b30;color:#fff}.temas-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}.tema-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:19px;box-shadow:0 8px 22px rgba(17,24,39,.045)}.tema-card.pendiente{background:#fbfcfe}.tema-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.tema-num{color:#2458ff;font-size:12px;font-weight:950}.tema-estado{padding:6px 9px;border-radius:999px;background:#eefbf4;color:#11734b;font-size:10px;font-weight:900}.tema-card.pendiente .tema-estado{background:#fff7cc;color:#765900}.tema-card h3{margin:9px 0 8px;font-size:18px;color:#111827}.tema-meta{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.tema-chip{padding:6px 8px;border-radius:8px;background:#f4f6fa;color:#556274;font-size:10px;font-weight:800}.tema-chip.ok{background:#eef3ff;color:#2458ff}.tema-acciones{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}.tema-accion{min-height:36px;padding:0 11px;border:1px solid #dbe2ea;border-radius:9px;background:#fff;color:#111827;font-size:11px;font-weight:850;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}.tema-accion.audio{background:#111827;border-color:#111827;color:#fff}.tema-accion.pdf{background:#2458ff;border-color:#2458ff;color:#fff}.tema-accion:disabled{opacity:.45;cursor:not-allowed}.media-nota{margin-top:18px;padding:15px 17px;border-left:5px solid #ffc928;border-radius:12px;background:#fffbea;color:#665200;font-size:12px;line-height:1.6}
+    @media(max-width:900px){.media-resumen{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){.media-main{width:calc(100% - 24px);margin-top:18px}.media-hero{padding:25px 20px}.media-hero h2{font-size:29px}.media-resumen,.temas-grid{grid-template-columns:1fr}.tema-card{padding:16px}.media-actions{display:grid;grid-template-columns:1fr}.media-btn{width:100%;box-sizing:border-box}.tema-acciones{display:grid;grid-template-columns:1fr 1fr}.tema-accion{width:100%;box-sizing:border-box}}
+  </style>
+</head>
+<body>
+<header class="cabecera bb-header">
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a><a href="banco.html" class="nav-item">Banco</a><a href="examenes.html" class="nav-item">Exámenes pasados</a><a href="simulador.html" class="nav-item">Simulador</a><a href="atlas.html" class="nav-item">Atlas</a><a href="reconocimiento.html" class="nav-item">Reconocimiento</a><a href="practico.html" class="nav-item">Práctico</a><a href="plan.html" class="nav-item">Plan</a><a href="repeticion.html" class="nav-item">Repetición</a><a href="repaso.html" class="nav-item">Repaso</a><a href="teoria.html" class="nav-item">Teoría</a><a href="audio.html" class="nav-item nav-activo">Audio</a><a href="progreso.html" class="nav-item">Progreso</a><a href="historial.html" class="nav-item">Historial</a>
+  </nav>
+</header>
+
+<main class="media-main">
+  <section class="media-hero">
+    <span class="media-kicker">BADBEAR.MED · 16 TEMAS</span>
+    <h2>Audio, PDF y video en un solo catálogo</h2>
+    <p>Cada tema puede tener su audio, su PDF individual y su clase en YouTube. Todo se controla desde un único catálogo central para que el material crezca sin modificar cada página por separado.</p>
+    <div class="media-actions">
+      <a id="playlist-general" class="media-btn youtube" target="_blank" rel="noopener noreferrer">▶ Ver playlist completa</a>
+      <a class="media-btn primary" href="teoria.html">📖 Abrir cuaderno general</a>
+    </div>
+  </section>
+
+  <section class="media-resumen" aria-label="Resumen del material">
+    <div class="media-stat"><span>TEMAS PLANIFICADOS</span><strong id="stat-temas">16</strong></div>
+    <div class="media-stat"><span>AUDIOS DISPONIBLES</span><strong id="stat-audios">0 / 16</strong></div>
+    <div class="media-stat"><span>PDF INDIVIDUALES</span><strong id="stat-pdfs">0 / 16</strong></div>
+    <div class="media-stat"><span>VIDEOS INDIVIDUALES</span><strong id="stat-videos">0 / 16</strong></div>
+  </section>
+
+  <section id="temas-grid" class="temas-grid" aria-label="Temas de Dermatología"></section>
+
+  <div class="media-nota"><strong>Desde ahora:</strong> cada tema se administra desde <code>contenido-dermatologia.js</code>. Los MP3 se guardan en <code>audios/</code>, los PDF en <code>pdfs/temas/</code> y los videos se enlazan desde YouTube. El catálogo se actualiza automáticamente al publicar los archivos.</div>
+</main>
+
+<footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
+
+<script>
+(function(){
+  "use strict";
+  const C = window.BADBEAR_DERMATOLOGIA;
+  if(!C) return;
+
+  const grid = document.getElementById("temas-grid");
+  const audios = C.temas.filter(t=>t.audio).length;
+  const pdfs = C.temas.filter(t=>t.pdf).length;
+  const videos = C.temas.filter(t=>t.video).length;
+  document.getElementById("stat-temas").textContent = C.totalTemas;
+  document.getElementById("stat-audios").textContent = `${audios} / ${C.totalTemas}`;
+  document.getElementById("stat-pdfs").textContent = `${pdfs} / ${C.totalTemas}`;
+  document.getElementById("stat-videos").textContent = `${videos} / ${C.totalTemas}`;
+  document.getElementById("playlist-general").href = C.playlistYouTube;
+
+  function reproducirTema(id){
+    if(window.self !== window.top){
+      window.parent.postMessage({type:"bb-audio-play-topic",temaId:id},location.origin);
+    }else if(window.BADBEAR_AUDIO_API){
+      window.BADBEAR_AUDIO_API.playTopic(id);
+    }
+  }
+
+  grid.innerHTML = C.temas.map(t=>{
+    const numero = String(t.id).padStart(2,"0");
+    const tieneAlgo = !!(t.audio || t.pdf || t.video);
+    const videoUrl = t.video || C.playlistYouTube;
+    const videoTexto = t.video ? "▶ Ver video" : "▶ Ver playlist";
+    const pdfAccion = t.pdf
+      ? `<a class="tema-accion pdf" href="${t.pdf}" target="_blank" rel="noopener noreferrer">📄 Abrir PDF</a>`
+      : `<button class="tema-accion" type="button" disabled>PDF pendiente</button>`;
+
+    return `
+      <article class="tema-card ${tieneAlgo ? "" : "pendiente"}">
+        <div class="tema-top">
+          <span class="tema-num">TEMA ${numero}</span>
+          <span class="tema-estado">${tieneAlgo ? "MATERIAL DISPONIBLE" : "EN PREPARACIÓN"}</span>
+        </div>
+        <h3>${t.titulo}</h3>
+        <div class="tema-meta">
+          <span class="tema-chip ${t.audio ? "ok" : ""}">🎧 ${t.audio ? "Audio" : "Audio pendiente"}</span>
+          <span class="tema-chip ${t.pdf ? "ok" : ""}">📄 ${t.pdf ? "PDF" : "PDF pendiente"}</span>
+          <span class="tema-chip ${t.video ? "ok" : ""}">▶ ${t.video ? "Video" : "Video pendiente"}</span>
+        </div>
+        <div class="tema-acciones">
+          <button class="tema-accion audio" type="button" data-audio-id="${t.id}" ${t.audio ? "" : "disabled"}>${t.audio ? "▶ Escuchar" : "Audio pendiente"}</button>
+          ${pdfAccion}
+          <a class="tema-accion" href="${videoUrl}" target="_blank" rel="noopener noreferrer">${videoTexto}</a>
+          <a class="tema-accion" href="${t.teoria || "teoria.html"}">📖 Cuaderno general</a>
+        </div>
+      </article>`;
+  }).join("");
+
+  grid.querySelectorAll("[data-audio-id]").forEach(btn=>{
+    btn.addEventListener("click",()=>reproducirTema(Number(btn.dataset.audioId)));
+  });
+})();
+</script>
+</body>
+</html>

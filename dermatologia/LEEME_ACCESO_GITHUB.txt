@@ -1,0 +1,33 @@
+BADBEAR.MED · ACCESO CON CLAVE PARA GITHUB PAGES
+=================================================
+
+INSTALACIÓN
+1. Copia TODO el contenido de este paquete dentro de C:\\badbear-dermatologia\\
+2. Acepta reemplazar los archivos incluidos.
+3. Conserva sin cambios tus carpetas pdfs\\ y audios\\ y el archivo badbear_logo.png.
+4. Sube el proyecto completo a GitHub y publica con GitHub Pages.
+5. Prueba entrando por index.html / la URL principal de GitHub Pages.
+
+QUÉ HACE
+- La página principal pide una clave antes de mostrar BADBEAR.MED.
+- La clave NO aparece escrita en texto claro dentro de auth.js; se compara mediante SHA-256 con sal.
+- La sesión dura 24 horas en ese navegador.
+- Se agrega un botón "Cerrar sesión".
+- Las páginas nuevas de BADBEAR.MED redirigen al acceso cuando no hay sesión.
+- Banco también verifica la sesión desde app.js.
+- El PDF permanece exactamente como está dentro de pdfs\\; este paquete NO lo modifica ni lo elimina.
+
+IMPORTANTE SOBRE GITHUB PAGES
+GitHub Pages es alojamiento estático. Esta clave funciona como barrera básica para visitantes normales,
+pero NO es una autenticación de servidor. Una persona con conocimientos técnicos puede inspeccionar el
+código o acceder directamente a recursos estáticos si conoce sus URLs. Por esa razón no debe usarse para
+información privada, confidencial o sensible.
+
+PRUEBA RÁPIDA
+- Abre la URL principal en una ventana de incógnito.
+- Debe aparecer "ACCESO PRIVADO".
+- Ingresa la clave que configuraste.
+- Navega por la plataforma.
+- Pulsa "Cerrar sesión" y verifica que vuelva a pedir la clave.
+
+Proyecto BADBEAR.MED · WAJOMEA.GROUP

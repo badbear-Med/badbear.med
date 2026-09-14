@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Reconocimiento dermatológico</title>
+  <meta name="description" content="Entrenamiento visual de reconocimiento dermatológico con fotografías clínicas reales. Proyecto BADBEAR.MED del grupo WAJOMEA.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badbear-theme.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+<header class="cabecera bb-header">
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a>
+    <a href="banco.html" class="nav-item">Banco</a>
+    <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+    <a href="simulador.html" class="nav-item">Simulador</a>
+    <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item nav-activo">Reconocimiento</a>
+        <a href="practico.html" class="nav-item">Práctico</a>
+    <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+
+    <a href="repaso.html" class="nav-item">Repaso</a>
+    <a href="teoria.html" class="nav-item">Teoría</a>
+    <a href="audio.html" class="nav-item">Audio</a>
+    <a href="progreso.html" class="nav-item">Progreso</a>
+        <a href="historial.html" class="nav-item">Historial</a>
+
+  </nav>
+</header>
+
+<main class="recon-main">
+  <section class="recon-hero">
+    <div>
+      <span class="recon-kicker">BADBEAR.MED · EVALUACIÓN VISUAL</span>
+      <h2>Reconocimiento dermatológico a ciegas</h2>
+      <p>Primero observa la fotografía. Después identifica la lesión dominante, si es primaria o secundaria, color, bordes, superficie, distribución y diagnóstico. La respuesta y la fuente se revelan recién al corregir.</p>
+    </div>
+    <div class="recon-hero-flags">
+      <span>Sin pistas diagnósticas</span>
+      <span>Fotografías clínicas reales</span>
+      <span>Puntaje por morfología + diagnóstico</span>
+    </div>
+  </section>
+
+  <section id="recon-inicio" class="recon-inicio">
+    <div class="recon-config-card">
+      <span class="recon-config-eyebrow">CONFIGURAR ENTRENAMIENTO</span>
+      <h3>¿Cuántas imágenes quieres resolver?</h3>
+      <div class="recon-cantidades" role="group" aria-label="Cantidad de casos">
+        <button type="button" data-cantidad="10" class="activo">10 casos</button>
+        <button type="button" data-cantidad="20">20 casos</button>
+        <button type="button" data-cantidad="24">Banco completo · 24</button>
+      </div>
+      <div class="recon-reglas">
+        <div><strong>6</strong><span>criterios morfológicos</span></div>
+        <div><strong>2 pts</strong><span>por diagnóstico correcto</span></div>
+        <div><strong>8 pts</strong><span>máximo por caso</span></div>
+      </div>
+      <button id="recon-empezar" class="recon-btn-principal" type="button">Comenzar reconocimiento →</button>
+      <button id="recon-reanudar" class="recon-btn-secundario oculto" type="button">Reanudar sesión pendiente</button>
+    </div>
+
+    <div class="recon-historial-card">
+      <span class="recon-config-eyebrow">TU ENTRENAMIENTO VISUAL</span>
+      <h3>Historial</h3>
+      <div class="recon-historial-stats">
+        <div><span>SESIONES</span><strong id="recon-h-sesiones">0</strong></div>
+        <div><span>MEJOR</span><strong id="recon-h-mejor">—</strong></div>
+        <div><span>ÚLTIMA</span><strong id="recon-h-ultima">—</strong></div>
+      </div>
+      <p>El historial se guarda en este navegador. No modifica las estadísticas de Banco ni Exámenes.</p>
+    </div>
+  </section>
+
+  <section id="recon-juego" class="oculto">
+    <div class="recon-live-stats">
+      <div><span>CASO</span><strong id="recon-caso-num">1 / 10</strong></div>
+      <div><span>PUNTOS</span><strong id="recon-puntos">0 / 0</strong></div>
+      <div><span>DIAGNÓSTICOS</span><strong id="recon-dx">0</strong></div>
+      <div><span>RENDIMIENTO</span><strong id="recon-rendimiento">0%</strong></div>
+    </div>
+
+    <section class="recon-card">
+      <div class="recon-foto-col">
+        <div class="recon-imagen-wrap">
+          <img id="recon-imagen" class="recon-imagen" alt="Fotografía clínica para reconocimiento dermatológico">
+          <div id="recon-cargando" class="recon-cargando">Buscando fotografía clínica real…</div>
+          <span class="recon-foto-badge">FOTOGRAFÍA CLÍNICA · SIN PISTAS</span>
+          <button id="recon-otra-imagen" class="recon-otra-imagen" type="button">↻ Cambiar imagen</button>
+        </div>
+        <a id="recon-fuente" class="recon-fuente oculto" target="_blank" rel="noopener noreferrer">Fuente · Wikimedia Commons →</a>
+        <p class="recon-aviso-imagen">Si la fotografía no representa claramente la lesión, puedes cambiarla antes de corregir sin penalización.</p>
+      </div>
+
+      <div class="recon-form-col">
+        <div class="recon-paso"><span id="recon-etiqueta-caso">CASO VISUAL 01</span><strong>Describe antes de diagnosticar</strong></div>
+
+        <div class="recon-campos">
+          <label>1. Lesión dominante<select id="recon-lesion"></select></label>
+          <label>2. Tipo de lesión<select id="recon-tipo"></select></label>
+          <label>3. Color predominante<select id="recon-color"></select></label>
+          <label>4. Bordes o límites<select id="recon-borde"></select></label>
+          <label>5. Superficie<select id="recon-superficie"></select></label>
+          <label>6. Distribución<select id="recon-distribucion"></select></label>
+          <label class="recon-diagnostico-label">7. Diagnóstico presuntivo<select id="recon-diagnostico"></select></label>
+        </div>
+
+        <button id="recon-corregir" class="recon-btn-principal" type="button">Corregir caso</button>
+      </div>
+    </section>
+
+    <section id="recon-feedback" class="recon-feedback oculto">
+      <div class="recon-feedback-top">
+        <div>
+          <span>RESULTADO DEL CASO</span>
+          <h3 id="recon-feedback-titulo">—</h3>
+        </div>
+        <strong id="recon-puntaje-caso">0 / 8</strong>
+      </div>
+      <div id="recon-comparacion" class="recon-comparacion"></div>
+      <div class="recon-respuesta-clinica">
+        <span>DIAGNÓSTICO</span>
+        <h3 id="recon-respuesta-dx"></h3>
+        <p id="recon-respuesta-desc"></p>
+      </div>
+      <div class="recon-fija"><strong>BADBEAR.MED FIJA:</strong><span id="recon-respuesta-fija"></span></div>
+      <div class="recon-feedback-actions">
+        <a href="atlas.html" class="recon-link-atlas">Abrir Atlas</a>
+        <button id="recon-siguiente" class="recon-btn-principal" type="button">Siguiente caso →</button>
+      </div>
+    </section>
+  </section>
+
+  <section id="recon-final" class="recon-final oculto">
+    <span class="recon-kicker">SESIÓN COMPLETADA</span>
+    <h2>Resultado de reconocimiento</h2>
+    <div class="recon-final-grid">
+      <div><span>RENDIMIENTO</span><strong id="recon-final-rend">0%</strong></div>
+      <div><span>PUNTOS</span><strong id="recon-final-puntos">0 / 0</strong></div>
+      <div><span>DIAGNÓSTICOS</span><strong id="recon-final-dx">0 / 0</strong></div>
+      <div><span>NIVEL</span><strong id="recon-final-nivel">—</strong></div>
+    </div>
+    <div id="recon-errores" class="recon-errores"></div>
+    <div class="recon-final-actions">
+      <button id="recon-repetir" class="recon-btn-principal" type="button">Nuevo entrenamiento</button>
+      <a href="atlas.html" class="recon-btn-secundario">Repasar en Atlas</a>
+      <a href="practico.html" class="recon-btn-secundario">Ir al examen práctico</a>
+      <a href="progreso.html" class="recon-btn-secundario">Ver progreso</a>
+    </div>
+  </section>
+</main>
+
+<footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
+<script src="reconocimiento.js"></script>
+</body>
+</html>

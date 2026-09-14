@@ -1,0 +1,30 @@
+BADBEAR.MED · FASE 3 — FAVORITOS + BADBEAR.MED FIJA
+
+Archivos incluidos:
+- app.js
+- examenes.js
+- repaso.html
+- badbear-theme.css
+
+Instalación:
+1. Copia estos 4 archivos a C:\badbear-dermatologia\
+2. Reemplaza los archivos existentes con el mismo nombre.
+3. NO borres styles.css.
+4. NO reemplaces index.html, progreso.html ni examenes.html en esta fase.
+5. Abre la plataforma y presiona Ctrl + F5.
+
+Qué añade:
+- Banco clínico: botón ☆ Guardar caso + FIJA después de responder.
+- Exámenes: botón ☆ Guardar pregunta + FIJA después de responder.
+- Un favorito guarda la pregunta/caso y la perla BADBEAR.MED FIJA.
+- Repaso muestra todos los favoritos en tarjetas.
+- Puedes quitar favoritos desde Repaso.
+- Cada favorito tiene un enlace para volver directamente a su pregunta o caso.
+- Banco clínico carga automáticamente badbear-theme.css para continuar la nueva paleta.
+- La clave usada es: badbear_derma_favoritos
+
+No se borran:
+- progreso previo,
+- respuestas del examen,
+- errores recuperados,
+- audios completados.

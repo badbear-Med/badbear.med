@@ -1,0 +1,1 @@
+console.log("BADBEAR.MED cargado correctamente");

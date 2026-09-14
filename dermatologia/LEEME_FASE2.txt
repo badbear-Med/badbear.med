@@ -1,0 +1,35 @@
+BADBEAR.MED · FASE 2 — REPASAR SOLO MIS ERRORES
+
+ARCHIVOS INCLUIDOS
+- examenes.js      -> reemplazar
+- examenes.html    -> reemplazar
+- repaso.html      -> reemplazar
+- badbear-theme.css -> reemplazar
+
+NO TOCAR
+- app.js
+- banco.html
+- index.html
+- progreso.html
+- styles.css
+
+QUÉ HACE ESTA FASE
+1. Añade botón “Repasar errores (X)” en Exámenes pasados.
+2. Abre solo las preguntas previamente falladas.
+3. Al acertar una pregunta en modo repaso, queda marcada como recuperada.
+4. Las recuperadas salen de la cola en la siguiente sesión de repaso.
+5. Conserva el rendimiento histórico de las 200 preguntas; no lo reescribe.
+6. Muestra rendimiento y nota /20 de la sesión de repaso.
+7. Añade botón para volver al modo normal de 200 preguntas.
+8. Corrige el número mostrado en los chips de preguntas falladas de repaso.html.
+
+INSTALACIÓN
+1. Copia los 4 archivos a C:\badbear-dermatologia\
+2. Acepta reemplazar los existentes.
+3. Abre index.html o examenes.html.
+4. Presiona Ctrl + F5.
+5. En Exámenes pasados, pulsa “Repasar errores (X)”.
+
+IMPORTANTE
+Las estadísticas históricas del examen se mantienen separadas del repaso.
+Esto evita que recuperar un error borre artificialmente el resultado original.

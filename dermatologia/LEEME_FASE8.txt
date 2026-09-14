@@ -1,0 +1,45 @@
+BADBEAR.MED · FASE 8 — EXAMEN PRÁCTICO DERMATOLÓGICO
+
+ARCHIVOS A REEMPLAZAR:
+- index.html
+- examenes.html
+- simulador.html
+- atlas.html
+- reconocimiento.html
+- repaso.html
+- progreso.html
+- badbear-theme.css
+
+ARCHIVOS NUEVOS:
+- practico.html
+- practico.js
+
+NO BORRAR / NO REEMPLAZAR:
+- styles.css
+- app.js
+- examenes.js
+- simulador.js
+- atlas.js
+- reconocimiento.js
+
+QUÉ AGREGA:
+- Examen práctico sin alternativas.
+- Fotografía clínica real y fuente oculta hasta corregir.
+- Descripción dermatológica en texto libre.
+- Diagnóstico presuntivo escrito.
+- Corrección flexible por términos equivalentes (acentos y sinónimos comunes).
+- Puntaje: 6 criterios morfológicos + 2 puntos de diagnóstico = 8 por caso.
+- Sesiones de 10, 20 o 24 casos.
+- Tiempo total: 2 minutos por caso.
+- Nota vigesimal /20.
+- Historial local y tarjeta en Progreso.
+- Acceso Práctico en navegación y portada.
+
+IMPORTANTE:
+La corrección de texto libre es una comparación local por términos y sinónimos, no una evaluación semántica de IA. Por eso, después de cada caso se muestra la respuesta esperada para que puedas revisar formulaciones clínicas equivalentes.
+
+INSTALACIÓN:
+1. Copia estos archivos a C:\badbear-dermatologia\
+2. Acepta reemplazar los archivos existentes.
+3. Abre index.html y presiona Ctrl + F5.
+4. Entra a Práctico y prueba primero 10 casos.
