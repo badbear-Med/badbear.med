@@ -1,0 +1,13 @@
+(() => {
+  "use strict";
+  const app=document.getElementById("cxg-tema-app");
+  const temas=Array.isArray(window.BADBEAR_CXGENERAL_TEMAS)?window.BADBEAR_CXGENERAL_TEMAS:[];
+  const id=new URLSearchParams(location.search).get("t");
+  const tema=temas.find(t=>t.id===id)||temas[0];
+  if(!app||!tema)return;
+  document.title=`${tema.titulo} | Cirugía General | BADBEAR.MED`;
+  const leidos=new Set(JSON.parse(localStorage.getItem("badbear_cxg_leidos")||"[]"));
+  const i=temas.findIndex(t=>t.id===tema.id), ant=temas[(i-1+temas.length)%temas.length], sig=temas[(i+1)%temas.length];
+  app.innerHTML=`<div class="tema-breadcrumb"><a href="../index.html">BADBEAR.MED</a><span>›</span><a href="index.html">Cirugía General</a><span>›</span><strong>${tema.area}</strong></div><section class="tema-hero"><div class="tema-icon">${tema.icono}</div><div><span>${tema.area.toUpperCase()}</span><h1>${tema.titulo}</h1><p>${tema.descripcion}</p></div></section><div class="tema-layout"><div><section class="tema-card"><h2>Ruta de estudio</h2><ul><li>Definición y fisiopatología.</li><li>Presentación clínica y examen físico.</li><li>Diagnóstico y estudios complementarios.</li><li>Clasificaciones y criterios de gravedad cuando correspondan.</li><li>Manejo inicial, tratamiento definitivo y criterios quirúrgicos.</li><li>Complicaciones y seguimiento.</li></ul></section><section class="tema-card"><h2>Recursos</h2><p>Esta sección está preparada para incorporar el desarrollo completo, imágenes, casos clínicos, preguntas, exámenes pasados, PDF, videos y audios del tema.</p></section><section class="tema-note"><h3>BADBEAR.MED FIJA:</h3><p>Aquí se concentrarán signos, criterios diagnósticos, clasificaciones, indicaciones operatorias y decisiones de mayor rentabilidad para examen.</p></section></div><aside class="tema-side"><h3>Navegación</h3><a href="tema.html?t=${ant.id}">← ${ant.titulo}</a><a href="index.html#temas">Todos los temas</a><a href="tema.html?t=${sig.id}">${sig.titulo} →</a><a href="modulo.html?m=preguntas">Banco de preguntas</a><a href="modulo.html?m=examenes">Exámenes pasados</a><a href="modulo.html?m=pdf">PDF</a><a href="modulo.html?m=videos">Videos</a><a href="modulo.html?m=audios">Audios</a><button id="tema-complete" class="tema-complete ${leidos.has(tema.id)?"hecho":""}">${leidos.has(tema.id)?"✓ Tema revisado":"Marcar como revisado"}</button></aside></div>`;
+  document.getElementById("tema-complete")?.addEventListener("click",e=>{if(leidos.has(tema.id))leidos.delete(tema.id);else leidos.add(tema.id);localStorage.setItem("badbear_cxg_leidos",JSON.stringify([...leidos]));e.currentTarget.classList.toggle("hecho",leidos.has(tema.id));e.currentTarget.textContent=leidos.has(tema.id)?"✓ Tema revisado":"Marcar como revisado"});
+})();
