@@ -58,9 +58,9 @@ window.BADBEAR_COURSES = [
     nombre: "Psiquiatría",
     categoria: "Medicina",
     icono: "🧩",
-    descripcion: "Psicopatología, trastornos del ánimo, ansiedad, psicosis, personalidad y farmacoterapia.",
+    descripcion: "Portal temático con examen mental, psicopatología, ánimo, ansiedad, psicosis, personalidad, urgencias y psicofarmacología.",
     href: "psiquiatria/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "neumologia",
