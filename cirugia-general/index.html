@@ -1,2 +1,52 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cirugía General | BADBEAR.MED</title><link rel="stylesheet" href="../assets/css/course.css"></head><body data-course-id="cirugia-general"><div id="course-app"></div><script src="../assets/js/courses.js"></script><script src="../assets/js/course-page.js"></script></body></html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cirugía General del proyecto BADBEAR.MED del grupo WAJOMEA, con temas quirúrgicos, banco de preguntas, exámenes y recursos de estudio.">
+  <title>Cirugía General | BADBEAR.MED</title>
+  <link rel="stylesheet" href="../assets/css/course.css">
+  <link rel="stylesheet" href="cirugia-general.css">
+</head>
+<body>
+  <header class="cxg-header">
+    <div class="inner">
+      <a href="../index.html" class="cxg-brand">BADBEAR.<span>MED</span></a>
+      <nav class="cxg-nav">
+        <a href="#temas">Temas</a>
+        <a href="modulo.html?m=preguntas">Banco</a>
+        <a href="modulo.html?m=examenes">Exámenes</a>
+        <a href="modulo.html?m=progreso">Progreso</a>
+        <a href="../index.html" class="portal">← Portal principal</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="cxg-hero">
+    <div class="cxg-hero-inner">
+      <div>
+        <span class="cxg-kicker">BADBEAR.MED · CIRUGÍA</span>
+        <h1>Cirugía General</h1>
+        <p>Portal funcional para integrar el contenido quirúrgico del curso: perioperatorio, trauma, abdomen agudo, pared abdominal, patología hepatobiliar, gastrointestinal, colorrectal, mamaria y endocrina.</p>
+        <div class="cxg-actions"><a href="#temas" class="cxg-btn primary">Explorar temas</a><a href="modulo.html?m=preguntas" class="cxg-btn secondary">Banco de preguntas</a></div>
+      </div>
+      <div class="cxg-visual" aria-hidden="true">⚕️</div>
+    </div>
+  </section>
+
+  <section class="cxg-dashboard"><div class="cxg-stats"><div class="cxg-stat"><strong id="cxg-total-temas">16</strong><span>Temas base</span></div><div class="cxg-stat"><strong id="cxg-total-areas">0</strong><span>Áreas</span></div><div class="cxg-stat"><strong id="cxg-completados">0</strong><span>Temas revisados</span></div><div class="cxg-stat"><strong id="cxg-porcentaje">0%</strong><span>Progreso</span></div></div></section>
+
+  <section id="temas" class="cxg-section">
+    <div class="cxg-section-head"><div><h2>Contenido del curso</h2><p>La arquitectura queda lista para recibir el material exacto de clases, libros, bancos y exámenes sin modificar el portal maestro.</p></div><div class="cxg-tools"><input id="cxg-buscar" type="search" placeholder="Buscar tema..." aria-label="Buscar tema"><select id="cxg-filtro" aria-label="Filtrar por área"><option value="todos">Todas las áreas</option></select></div></div>
+    <div id="cxg-temas" class="cxg-grid"></div>
+  </section>
+
+  <section class="cxg-section">
+    <div class="cxg-section-head"><div><h2>Recursos</h2><p>Todos los módulos quedan conectados al mismo estándar de BADBEAR.MED.</p></div></div>
+    <div class="cxg-actions"><a href="modulo.html?m=teoria" class="cxg-btn secondary">Teoría</a><a href="modulo.html?m=resumenes" class="cxg-btn secondary">Resúmenes</a><a href="modulo.html?m=preguntas" class="cxg-btn secondary">Banco</a><a href="modulo.html?m=examenes" class="cxg-btn secondary">Exámenes pasados</a><a href="modulo.html?m=pdf" class="cxg-btn secondary">PDF</a><a href="modulo.html?m=videos" class="cxg-btn secondary">Videos</a><a href="modulo.html?m=audios" class="cxg-btn secondary">Audios</a><a href="modulo.html?m=progreso" class="cxg-btn secondary">Progreso</a></div>
+  </section>
+
+  <script src="temas.js"></script>
+  <script src="cirugia-general.js"></script>
+</body>
+</html>
