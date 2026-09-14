@@ -112,9 +112,9 @@ window.BADBEAR_COURSES = [
     nombre: "Parasitología",
     categoria: "Ciencias básicas",
     icono: "🧫",
-    descripcion: "Protozoarios, helmintos, diagnóstico parasitológico, ciclos biológicos y tratamiento.",
+    descripcion: "Portal con diagnóstico parasitológico, Strongyloides, Leishmania, Chagas, malaria, cisticercosis, helmintos intestinales, coccidios y parasitosis en inmunocomprometidos.",
     href: "parasitologia/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "fisiologia",
