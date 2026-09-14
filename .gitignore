@@ -1,0 +1,21 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+
+# Temporales y respaldos locales
+*.tmp
+*.temp
+*.bak
+*.backup
+~$*
+
+# Dependencias futuras
+node_modules/
+
+# Archivos sensibles locales
+.env
+.env.*
