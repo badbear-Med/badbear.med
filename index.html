@@ -1,298 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>BADBEAR.MED | Plataforma Médica</title>
-
-    <meta name="description"
-          content="BADBEAR.MED, plataforma educativa médica del grupo WAJOMEA.GROUP">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Plataforma Médica</title>
+  <meta name="description" content="BADBEAR.MED, plataforma educativa médica del grupo WAJOMEA.GROUP con cursos, bancos de preguntas, exámenes y material de estudio.">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<header class="header">
-
-    <div class="logo">
-        🐼 BADBEAR.<span>MED</span>
-    </div>
-
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#cursos">Cursos</a>
-        <a href="#recursos">Recursos</a>
+  <header class="header">
+    <a class="logo" href="#inicio" aria-label="Inicio BADBEAR.MED">🐼 BADBEAR.<span>MED</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#cursos">Cursos</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#proyecto">Proyecto</a>
     </nav>
-
-</header>
-
-
-<main>
-
-<section class="hero" id="inicio">
-
-    <div>
-
-        <p class="etiqueta">
-            PROYECTO WAJOMEA.GROUP
-        </p>
-
-        <h1>
-            BADBEAR.<span>MED</span>
-        </h1>
-
-        <h2>
-            Plataforma educativa médica
-        </h2>
-
-        <p class="descripcion">
-
-            Resúmenes, clases, preguntas, exámenes,
-            videos, audios y material académico
-            organizados por especialidades.
-
-        </p>
-
-        <a href="#cursos" class="boton">
-            Ver cursos
-        </a>
-
-    </div>
-
-</section>
-
-
-
-<section id="cursos" class="cursos">
-
-    <h2>
-        Cursos disponibles
-    </h2>
-
-    <p class="subtitulo">
-        Selecciona el curso que deseas estudiar.
-    </p>
-
-
-    <div class="contenedor-cursos">
-
-
-        <a href="dermatologia/index.html"
-           class="tarjeta">
-
-            <div class="icono">
-                🩺
-            </div>
-
-            <h3>
-                Dermatología
-            </h3>
-
-            <p>
-                Lesiones, enfermedades dermatológicas,
-                bancos de preguntas y material de estudio.
-            </p>
-
-            <span>
-                Ingresar →
-            </span>
-
-        </a>
-
-
-
-        <a href="cirugia-pediatrica/index.html"
-           class="tarjeta">
-
-            <div class="icono">
-                👶
-            </div>
-
-            <h3>
-                Cirugía Pediátrica
-            </h3>
-
-            <p>
-                Patologías quirúrgicas pediátricas,
-                clases, preguntas y exámenes.
-            </p>
-
-            <span>
-                Ingresar →
-            </span>
-
-        </a>
-
-
-
-        <a href="cardiologia/index.html"
-           class="tarjeta">
-
-            <div class="icono">
-                🫀
-            </div>
-
-            <h3>
-                Cardiología
-            </h3>
-
-            <p>
-                Cardiología clínica,
-                electrocardiografía y casos clínicos.
-            </p>
-
-            <span>
-                Ingresar →
-            </span>
-
-        </a>
-
-
-
-        <a href="infectologia/index.html"
-           class="tarjeta">
-
-            <div class="icono">
-                🦠
-            </div>
-
-            <h3>
-                Infectología
-            </h3>
-
-            <p>
-                Enfermedades infecciosas,
-                antimicrobianos y casos clínicos.
-            </p>
-
-            <span>
-                Ingresar →
-            </span>
-
-        </a>
-
-
-
-        <a href="traumatologia/index.html"
-           class="tarjeta">
-
-            <div class="icono">
-                🦴
-            </div>
-
-            <h3>
-                Traumatología
-            </h3>
-
-            <p>
-                Fracturas, tumores óseos,
-                osteomielitis y radiología.
-            </p>
-
-            <span>
-                Ingresar →
-            </span>
-
-        </a>
-
-
-
-        <div class="tarjeta proximo">
-
-            <div class="icono">
-                ➕
-            </div>
-
-            <h3>
-                Próximamente
-            </h3>
-
-            <p>
-                Se agregarán nuevas unidades
-                médicas.
-            </p>
-
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <p class="etiqueta">PROYECTO WAJOMEA.GROUP</p>
+        <h1>BADBEAR.<span>MED</span></h1>
+        <h2>Una plataforma central para todos tus cursos médicos</h2>
+        <p class="descripcion">Dermatología, Cirugía Pediátrica y las nuevas unidades se integran en un único portal escalable con bancos de preguntas, teoría, exámenes, audio, PDF, video y seguimiento del progreso.</p>
+        <div class="hero-acciones">
+          <a href="#cursos" class="boton">Explorar cursos</a>
+          <a href="dermatologia/estudio.html?page=index.html" class="boton boton-secundario">Entrar a Dermatología</a>
         </div>
+      </div>
+    </section>
 
+    <section id="cursos" class="cursos">
+      <div class="cabecera-seccion">
+        <span>ECOSISTEMA ACADÉMICO</span>
+        <h2>Cursos BADBEAR.MED</h2>
+        <p>El portal ya está preparado para crecer sin rehacer la página principal cada vez que incorporemos una nueva especialidad.</p>
+      </div>
 
-    </div>
+      <div class="controles-cursos">
+        <label class="buscador-cursos">
+          <span>Buscar curso</span>
+          <input id="buscar-curso" type="search" placeholder="Ej. Nefrología, Psiquiatría, Cirugía..." autocomplete="off">
+        </label>
+        <label class="filtro-cursos">
+          <span>Área</span>
+          <select id="filtro-categoria">
+            <option value="todos">Todas</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Cirugía">Cirugía</option>
+            <option value="Diagnóstico">Diagnóstico</option>
+            <option value="Ciencias básicas">Ciencias básicas</option>
+          </select>
+        </label>
+      </div>
 
-</section>
+      <div class="resumen-cursos" aria-live="polite">
+        <strong id="contador-cursos">0</strong>
+        <span>cursos disponibles en el portal</span>
+      </div>
 
+      <div id="lista-cursos" class="contenedor-cursos"></div>
+    </section>
 
+    <section id="recursos" class="recursos">
+      <div class="cabecera-seccion">
+        <span>RECURSOS TRANSVERSALES</span>
+        <h2>Un mismo estándar para todos los cursos</h2>
+        <p>Cada especialidad puede incorporar progresivamente estos módulos sin alterar las demás.</p>
+      </div>
+      <div class="recursos-grid">
+        <div><span>📚</span><h3>Teoría y resúmenes</h3><p>Contenido desarrollado por temas y unidades.</p></div>
+        <div><span>🧠</span><h3>Banco de preguntas</h3><p>Modo estudio, examen y análisis de errores.</p></div>
+        <div><span>📋</span><h3>Exámenes pasados</h3><p>Preguntas históricas depuradas y organizadas.</p></div>
+        <div><span>🎥</span><h3>Video</h3><p>Clases y material audiovisual por tema.</p></div>
+        <div><span>🎧</span><h3>Audio</h3><p>Repaso persistente y material para escuchar.</p></div>
+        <div><span>📄</span><h3>PDF</h3><p>Cuadernos, resúmenes y documentos complementarios.</p></div>
+      </div>
+    </section>
 
-<section id="recursos"
-         class="recursos">
+    <section id="proyecto" class="proyecto">
+      <div>
+        <span>ARQUITECTURA ESCALABLE</span>
+        <h2>BADBEAR.MED crecerá por módulos</h2>
+        <p>Dermatología y Cirugía Pediátrica conservan sus sistemas completos. Los demás cursos ya cuentan con una base común preparada para recibir bancos, teoría, exámenes, PDF, audio y video cuando el contenido esté listo.</p>
+      </div>
+    </section>
+  </main>
 
-    <h2>
-        Recursos BADBEAR.MED
-    </h2>
+  <footer>
+    <strong>BADBEAR.<span>MED</span></strong>
+    <p>Proyecto educativo médico del grupo WAJOMEA.GROUP</p>
+    <small>© 2026 BADBEAR.MED</small>
+  </footer>
 
-    <div class="recursos-grid">
-
-        <div>
-            📚
-            <h3>Resúmenes</h3>
-        </div>
-
-        <div>
-            📝
-            <h3>Preguntas</h3>
-        </div>
-
-        <div>
-            📋
-            <h3>Exámenes</h3>
-        </div>
-
-        <div>
-            🎥
-            <h3>Videos</h3>
-        </div>
-
-        <div>
-            🎧
-            <h3>Audios</h3>
-        </div>
-
-        <div>
-            📄
-            <h3>PDF</h3>
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-<footer>
-
-    <strong>
-        BADBEAR.MED
-    </strong>
-
-    <p>
-        Proyecto educativo médico
-        del grupo WAJOMEA.GROUP
-    </p>
-
-    <small>
-        © 2026 BADBEAR.MED
-    </small>
-
-</footer>
-
-
-<script src="script.js"></script>
-
+  <script src="assets/js/courses.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
