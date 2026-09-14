@@ -3,12 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curso de Infectología del proyecto BADBEAR.MED del grupo WAJOMEA.GROUP: teoría, temas, banco de preguntas, exámenes, PDF, videos, audios y progreso.">
   <title>Infectología | BADBEAR.MED</title>
   <link rel="stylesheet" href="../assets/css/course.css">
+  <link rel="stylesheet" href="infectologia.css">
 </head>
-<body data-course-id="infectologia">
-  <div id="course-app"></div>
-  <script src="../assets/js/courses.js"></script>
-  <script src="../assets/js/course-page.js"></script>
+<body>
+  <header class="infecto-header">
+    <div class="inner">
+      <a href="../index.html" class="infecto-brand">🐼 BADBEAR.<span>MED</span></a>
+      <nav class="infecto-nav">
+        <a href="#temas">Temas</a>
+        <a href="modulo.html?m=preguntas">Banco</a>
+        <a href="modulo.html?m=examenes">Exámenes</a>
+        <a href="modulo.html?m=pdf">PDF</a>
+        <a href="modulo.html?m=audios">Audio</a>
+        <a href="../index.html" class="portal">← Portal principal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="infecto-hero">
+      <div class="infecto-hero-inner">
+        <div>
+          <span class="infecto-kicker">MEDICINA · BADBEAR.MED</span>
+          <h1>Infectología</h1>
+          <p>Portal de estudio organizado por temas y módulos, preparado para integrar clases, resúmenes, bancos de preguntas, exámenes históricos, PDFs, videos, audios y seguimiento de progreso.</p>
+          <div class="infecto-actions">
+            <a class="infecto-btn primary" href="#temas">Comenzar a estudiar</a>
+            <a class="infecto-btn secondary" href="modulo.html?m=preguntas">Resolver preguntas</a>
+          </div>
+        </div>
+        <div class="infecto-visual" aria-hidden="true">🦠</div>
+      </div>
+    </section>
+
+    <section class="infecto-dashboard">
+      <div class="infecto-stats">
+        <div class="infecto-stat"><strong id="infecto-total-temas">0</strong><span>Temas planificados</span></div>
+        <div class="infecto-stat"><strong id="infecto-total-areas">0</strong><span>Áreas temáticas</span></div>
+        <div class="infecto-stat"><strong id="infecto-completados">0</strong><span>Temas revisados</span></div>
+        <div class="infecto-stat"><strong id="infecto-porcentaje">0%</strong><span>Progreso personal</span></div>
+      </div>
+    </section>
+
+    <section class="infecto-section" id="temas">
+      <div class="infecto-section-head">
+        <div>
+          <h2>Temario de Infectología</h2>
+          <p>Catálogo temático central. Cada tema tiene una ruta estable y puede recibir contenido propio sin modificar el resto del portal.</p>
+        </div>
+        <div class="infecto-tools">
+          <input id="infecto-buscar" type="search" placeholder="Buscar tema..." aria-label="Buscar tema">
+          <select id="infecto-filtro" aria-label="Filtrar por área"><option value="todos">Todas las áreas</option></select>
+        </div>
+      </div>
+      <div id="infecto-temas" class="infecto-grid"></div>
+    </section>
+
+    <section class="infecto-section">
+      <div class="infecto-section-head">
+        <div>
+          <h2>Módulos académicos</h2>
+          <p>Accesos directos a la arquitectura común de BADBEAR.MED.</p>
+        </div>
+      </div>
+      <div class="infecto-modules">
+        <a class="infecto-module" href="modulo.html?m=teoria"><span>📚</span><h3>Teoría</h3><p>Desarrollo por unidades y temas.</p></a>
+        <a class="infecto-module" href="modulo.html?m=resumenes"><span>📖</span><h3>Resúmenes</h3><p>Repaso y BADBEAR.MED FIJA.</p></a>
+        <a class="infecto-module" href="modulo.html?m=preguntas"><span>🧠</span><h3>Banco</h3><p>Preguntas y seguimiento de errores.</p></a>
+        <a class="infecto-module" href="modulo.html?m=examenes"><span>📝</span><h3>Exámenes</h3><p>Banco histórico depurado.</p></a>
+        <a class="infecto-module" href="modulo.html?m=pdf"><span>📄</span><h3>PDF</h3><p>Cuadernos y material académico.</p></a>
+        <a class="infecto-module" href="modulo.html?m=videos"><span>🎥</span><h3>Videos</h3><p>Clases y material audiovisual.</p></a>
+        <a class="infecto-module" href="modulo.html?m=audios"><span>🎧</span><h3>Audios</h3><p>Repaso auditivo por tema.</p></a>
+        <a class="infecto-module" href="modulo.html?m=progreso"><span>📊</span><h3>Progreso</h3><p>Rendimiento y temas revisados.</p></a>
+      </div>
+      <div class="infecto-progress">
+        <div><h3>BADBEAR.MED FIJA:</h3><p>Infectología ya funciona como una rama independiente del portal maestro y puede crecer tema por tema sin reconstruir BADBEAR.MED.</p></div>
+        <strong>V1</strong>
+      </div>
+    </section>
+  </main>
+
+  <script src="temas.js"></script>
+  <script src="infectologia.js"></script>
 </body>
 </html>

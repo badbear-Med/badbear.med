@@ -31,9 +31,9 @@ window.BADBEAR_COURSES = [
     nombre: "Infectología",
     categoria: "Medicina",
     icono: "🦠",
-    descripcion: "Enfermedades infecciosas, antimicrobianos, tuberculosis, VIH e infecciones oportunistas.",
+    descripcion: "Portal temático con antimicrobianos, tuberculosis, VIH, infecciones oportunistas y síndromes infecciosos.",
     href: "infectologia/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "nefrologia",
