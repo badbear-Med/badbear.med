@@ -76,9 +76,9 @@ window.BADBEAR_COURSES = [
     nombre: "Traumatología y Ortopedia",
     categoria: "Cirugía",
     icono: "🦴",
-    descripcion: "Fracturas, luxaciones, osteomielitis, tumores óseos y radiología musculoesquelética.",
+    descripcion: "Portal organizado según las 15 clases de TEXTO TRAUMATOLOGIA 2026: semiología, fracturas, luxaciones, trauma pediátrico, columna, infecciones, tumores y politrauma.",
     href: "traumatologia/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "cirugia-general",
