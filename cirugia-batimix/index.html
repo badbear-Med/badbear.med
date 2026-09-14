@@ -1,2 +1,53 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cirugía BATIMIX | BADBEAR.MED</title><link rel="stylesheet" href="../assets/css/course.css"></head><body data-course-id="cirugia-batimix"><div id="course-app"></div><script src="../assets/js/courses.js"></script><script src="../assets/js/course-page.js"></script></body></html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cirugía BATIMIX del proyecto BADBEAR.MED del grupo WAJOMEA: repaso quirúrgico mixto, casos clínicos, banco de preguntas y recursos de estudio.">
+  <title>Cirugía BATIMIX | BADBEAR.MED</title>
+  <link rel="icon" type="image/png" href="../dermatologia/badbear_logo.png">
+  <link rel="stylesheet" href="../assets/css/course.css">
+  <link rel="stylesheet" href="batimix.css">
+</head>
+<body>
+  <header class="bat-header">
+    <div class="inner">
+      <a href="../index.html" class="bat-brand"><img src="../dermatologia/badbear_logo.png" alt="Logo BADBEAR.MED">BADBEAR.<span>MED</span></a>
+      <nav class="bat-nav">
+        <a href="#temas">Temas</a>
+        <a href="modulo.html?m=preguntas">Banco</a>
+        <a href="modulo.html?m=examenes">Exámenes</a>
+        <a href="modulo.html?m=progreso">Progreso</a>
+        <a href="../index.html" class="portal">← Portal principal</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bat-hero">
+    <div class="bat-hero-inner">
+      <div>
+        <span class="bat-kicker">BADBEAR.MED · REPASO QUIRÚRGICO MIXTO</span>
+        <h1>Cirugía BATIMIX</h1>
+        <p>Un módulo de integración para mezclar los temas quirúrgicos de mayor rentabilidad: abdomen agudo, trauma, shock, heridas, infecciones, perioperatorio, cirugía pediátrica, traumatología e interpretación de imágenes.</p>
+        <div class="bat-actions"><a href="#temas" class="bat-btn primary">Explorar BATIMIX</a><a href="modulo.html?m=preguntas" class="bat-btn secondary">Banco de preguntas</a></div>
+      </div>
+      <div class="bat-visual" aria-hidden="true">🛠️</div>
+    </div>
+  </section>
+
+  <section class="bat-dashboard"><div class="bat-stats"><div class="bat-stat"><strong id="bat-total-temas">18</strong><span>Temas integrados</span></div><div class="bat-stat"><strong id="bat-total-areas">0</strong><span>Áreas</span></div><div class="bat-stat"><strong id="bat-completados">0</strong><span>Temas revisados</span></div><div class="bat-stat"><strong id="bat-porcentaje">0%</strong><span>Progreso</span></div></div></section>
+
+  <section id="temas" class="bat-section">
+    <div class="bat-section-head"><div><h2>Repaso quirúrgico BATIMIX</h2><p>Esta estructura no sustituye los temarios oficiales de Cirugía General, Cirugía Pediátrica o Traumatología. Su función es mezclarlos para practicar integración clínica y decisiones quirúrgicas.</p></div><div class="bat-tools"><input id="bat-buscar" type="search" placeholder="Buscar abdomen, trauma, shock..." aria-label="Buscar tema"><select id="bat-filtro" aria-label="Filtrar por área"><option value="todos">Todas las áreas</option></select></div></div>
+    <div id="bat-temas" class="bat-grid"></div>
+  </section>
+
+  <section class="bat-section">
+    <div class="bat-note"><h3>BADBEAR.MED FIJA:</h3><p>BATIMIX se usará para juntar clasificaciones, signos radiológicos, decisiones de urgencia y preguntas que cruzan más de una rama quirúrgica.</p></div>
+    <div class="bat-actions"><a href="modulo.html?m=teoria" class="bat-btn secondary">Teoría</a><a href="modulo.html?m=resumenes" class="bat-btn secondary">Resúmenes</a><a href="modulo.html?m=preguntas" class="bat-btn secondary">Banco</a><a href="modulo.html?m=examenes" class="bat-btn secondary">Exámenes pasados</a><a href="modulo.html?m=pdf" class="bat-btn secondary">PDF</a><a href="modulo.html?m=videos" class="bat-btn secondary">Videos</a><a href="modulo.html?m=audios" class="bat-btn secondary">Audios</a><a href="modulo.html?m=progreso" class="bat-btn secondary">Progreso</a></div>
+  </section>
+
+  <script src="temas.js"></script>
+  <script src="batimix.js"></script>
+</body>
+</html>
