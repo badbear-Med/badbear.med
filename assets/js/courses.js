@@ -85,9 +85,9 @@ window.BADBEAR_COURSES = [
     nombre: "Cirugía General",
     categoria: "Cirugía",
     icono: "⚕",
-    descripcion: "Principios quirúrgicos, abdomen agudo, trauma, infecciones, perioperatorio y casos clínicos.",
+    descripcion: "Portal funcional con perioperatorio, shock, trauma, abdomen agudo, hernias, patología hepatobiliar, gastrointestinal, colorrectal, mamaria y endocrina.",
     href: "cirugia-general/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "cirugia-batimix",
