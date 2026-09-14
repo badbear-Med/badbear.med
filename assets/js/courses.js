@@ -121,9 +121,9 @@ window.BADBEAR_COURSES = [
     nombre: "Fisiología",
     categoria: "Ciencias básicas",
     icono: "⚙",
-    descripcion: "Bases fisiológicas integradas por sistemas con enfoque clínico y de evaluación.",
+    descripcion: "Portal por sistemas con homeostasis, excitabilidad, músculo, cardiovascular, respiratorio, renal, ácido-base, gastrointestinal, endocrino e integración fisiológica.",
     href: "fisiologia/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "medicina-interna",
