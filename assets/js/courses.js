@@ -21,10 +21,10 @@ window.BADBEAR_COURSES = [
     id: "cardiologia",
     nombre: "Cardiología",
     categoria: "Medicina",
-    icono: "❤",
-    descripcion: "Semiología cardiovascular, electrocardiografía, cardiopatías y casos clínicos.",
+    icono: "🫀",
+    descripcion: "Portal temático con semiología, ECG, hipertensión, cardiopatía isquémica, insuficiencia cardíaca, arritmias y valvulopatías.",
     href: "cardiologia/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "infectologia",
