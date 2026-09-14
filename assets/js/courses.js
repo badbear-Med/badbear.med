@@ -103,9 +103,9 @@ window.BADBEAR_COURSES = [
     nombre: "Patología Clínica",
     categoria: "Diagnóstico",
     icono: "🔬",
-    descripcion: "Hemograma, bioquímica clínica, hemostasia, microbiología e interpretación de laboratorio.",
+    descripcion: "Portal de interpretación de laboratorio con hemograma, índices eritrocitarios, anemias, leucocitos, plaquetas, hemostasia, bioquímica, enzimología, biomarcadores, microbiología y serología.",
     href: "patologia-clinica/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "parasitologia",
