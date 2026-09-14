@@ -40,9 +40,9 @@ window.BADBEAR_COURSES = [
     nombre: "Nefrología",
     categoria: "Medicina",
     icono: "💧",
-    descripcion: "Función renal, trastornos hidroelectrolíticos, lesión renal, glomerulopatías y terapéutica.",
+    descripcion: "Portal temático con función renal, lesión renal, glomerulopatías, electrolitos, diálisis y trasplante.",
     href: "nefrologia/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "neurologia",
