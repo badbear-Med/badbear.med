@@ -49,9 +49,9 @@ window.BADBEAR_COURSES = [
     nombre: "Neurología",
     categoria: "Medicina",
     icono: "🧠",
-    descripcion: "Semiología neurológica, enfermedades cerebrovasculares, epilepsia, cefaleas y neurodegeneración.",
+    descripcion: "Portal temático con semiología, ACV, epilepsia, cefaleas, neuroinfecciones, movimiento y neurodegeneración.",
     href: "neurologia/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "psiquiatria",
