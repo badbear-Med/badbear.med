@@ -1,0 +1,1 @@
+window.BADBEAR_PSIQUIATRIA_TEMAS = [];
