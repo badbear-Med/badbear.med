@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BADBEAR.MED | Dermatología</title>
   <meta name="description" content="BADBEAR.MED Dermatología · plataforma de estudio con audio persistente.">
+  <link rel="icon" type="image/png" href="../assets/logos/cursos/dermatologia/logo.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="badbear-theme.css">
   <link rel="stylesheet" href="../assets/css/brand-watermark.css">
@@ -12,19 +13,20 @@
     html,body{height:100%;margin:0;overflow:hidden;background:#f5f7fb}
     body{display:flex;flex-direction:column}
     .bb-shell-header{flex:0 0 auto}
+    .bb-shell-header .logo-badbear{width:58px;height:58px;object-fit:contain;border-radius:14px}
     .bb-shell-stage{position:relative;flex:1 1 auto;min-height:0;background:#f5f7fb}
     #bb-app-frame{width:100%;height:100%;border:0;display:block;background:#f5f7fb}
     body.bb-study-audio-activo .bb-shell-stage{padding-bottom:106px;box-sizing:border-box}
-    @media(max-width:760px){body.bb-study-audio-activo .bb-shell-stage{padding-bottom:148px}}
+    @media(max-width:760px){body.bb-study-audio-activo .bb-shell-stage{padding-bottom:148px}.bb-shell-header .logo-badbear{width:48px;height:48px}}
   </style>
   <script src="auth.js"></script>
   <script src="contenido-dermatologia.js"></script>
   <script src="theory-audio.js" defer></script>
 </head>
-<body>
+<body style="--bb-watermark-image:url('../assets/logos/cursos/dermatologia/logo.png')">
 <header class="cabecera bb-header bb-shell-header">
-  <a class="marca" href="estudio.html?page=index.html" aria-label="Inicio BADBEAR.MED" data-shell-page="index.html">
-    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+  <a class="marca" href="estudio.html?page=index.html" aria-label="Inicio BADBEAR.MED Dermatología" data-shell-page="index.html">
+    <img class="logo-badbear" src="../assets/logos/cursos/dermatologia/logo.png" alt="Logo Dermatología BADBEAR.MED" onerror="this.src='badbear_logo.png';this.onerror=null;">
     <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
   </a>
 <nav class="nav-principal" aria-label="Navegación principal">
@@ -112,6 +114,7 @@
       ocultar.textContent = `
         .bb-header,.cabecera.bb-header,body>footer,.bb-auth-logout{display:none!important}
         body{padding-top:0!important;margin-top:0!important}
+        body::after{display:none!important}
         .exam-main,.atlas-main,.inicio-badbear,.teoria-badbear,.audio-main,.repaso-main,.progreso-badbear{margin-top:18px!important}
       `;
       doc.head.appendChild(ocultar);
