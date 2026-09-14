@@ -67,9 +67,9 @@ window.BADBEAR_COURSES = [
     nombre: "Neumología",
     categoria: "Medicina",
     icono: "🫁",
-    descripcion: "Semiología respiratoria, imágenes, EPOC, asma, infecciones, pleura y falla respiratoria.",
+    descripcion: "Portal temático con semiología respiratoria, función pulmonar, imágenes, asma, EPOC, pleura, vascular pulmonar y falla respiratoria.",
     href: "neumologia/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "traumatologia",
