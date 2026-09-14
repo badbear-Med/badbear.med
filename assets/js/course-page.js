@@ -14,14 +14,14 @@
   document.title = `${curso.nombre} | BADBEAR.MED`;
 
   const modulos = [
-    ["📚", "Teoría", "Desarrollo organizado por unidades y temas."],
-    ["📖", "Resúmenes", "Repaso de alta rentabilidad y BADBEAR.MED FIJA."],
-    ["🧠", "Banco de preguntas", "Modo estudio, examen, errores y estadísticas."],
-    ["📝", "Exámenes pasados", "Banco histórico depurado y organizado."],
-    ["📄", "PDF", "Cuadernos, clases y material complementario."],
-    ["🎥", "Videos", "Clases y material audiovisual por tema."],
-    ["🎧", "Audios", "Repaso persistente y material para escuchar."],
-    ["📊", "Progreso", "Seguimiento del rendimiento y temas por reforzar."]
+    ["teoria", "📚", "Teoría", "Desarrollo organizado por unidades y temas."],
+    ["resumenes", "📖", "Resúmenes", "Repaso de alta rentabilidad y BADBEAR.MED FIJA."],
+    ["preguntas", "🧠", "Banco de preguntas", "Modo estudio, examen, errores y estadísticas."],
+    ["examenes", "📝", "Exámenes pasados", "Banco histórico depurado y organizado."],
+    ["pdf", "📄", "PDF", "Cuadernos, clases y material complementario."],
+    ["videos", "🎥", "Videos", "Clases y material audiovisual por tema."],
+    ["audios", "🎧", "Audios", "Repaso persistente y material para escuchar."],
+    ["progreso", "📊", "Progreso", "Seguimiento del rendimiento y temas por reforzar."]
   ];
 
   app.innerHTML = `
@@ -40,8 +40,8 @@
             <h1>${curso.nombre}</h1>
             <p>${curso.descripcion}</p>
             <div class="hero-botones">
-              <a href="#modulos" class="btn btn-primary">Ver estructura</a>
-              <a href="../index.html" class="btn btn-secondary">Todos los cursos</a>
+              <a href="modulo.html?m=teoria" class="btn btn-primary">Comenzar por teoría</a>
+              <a href="#modulos" class="btn btn-secondary">Ver módulos</a>
             </div>
           </div>
           <div class="hero-icon" aria-hidden="true">${curso.icono || "📘"}</div>
@@ -50,18 +50,18 @@
 
       <section class="contenido" id="modulos">
         <div class="encabezado-seccion">
-          <span>ESTRUCTURA PREPARADA</span>
+          <span>RAMA PREPARADA</span>
           <h2>Módulos del curso</h2>
-          <p>Esta rama ya está creada dentro del repositorio maestro. El contenido se activará progresivamente sin modificar el resto de BADBEAR.MED.</p>
+          <p>La navegación y las rutas ya están activas. Cada módulo puede recibir contenido propio sin modificar las demás especialidades.</p>
         </div>
         <div class="modulos">
-          ${modulos.map(([icono, nombre, descripcion]) => `
-            <div class="modulo modulo-pendiente">
+          ${modulos.map(([slug, icono, nombre, descripcion]) => `
+            <a class="modulo" href="modulo.html?m=${slug}">
               <div class="modulo-icon">${icono}</div>
               <h3>${nombre}</h3>
               <p>${descripcion}</p>
-              <strong>Pendiente de integrar</strong>
-            </div>
+              <strong>Abrir módulo →</strong>
+            </a>
           `).join("")}
         </div>
 
@@ -69,7 +69,7 @@
           <div class="fija-icon">⭐</div>
           <div>
             <h3>BADBEAR.MED FIJA:</h3>
-            <p>La estructura ya está lista. Cuando incorporemos el contenido de ${curso.nombre}, mantendremos el mismo estándar de navegación, preguntas explicadas, material multimedia y puntos de alta rentabilidad.</p>
+            <p>${curso.nombre} ya tiene una arquitectura estable y escalable. Podemos integrar teoría, bancos, exámenes, PDFs, videos y audios progresivamente sin rehacer el portal.</p>
           </div>
         </div>
       </section>
