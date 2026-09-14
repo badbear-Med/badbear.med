@@ -22,16 +22,50 @@
     const a = document.createElement("a");
     a.className = "tarjeta";
     a.href = curso.href;
-    a.innerHTML = `
-      <div class="tarjeta-top">
-        <div class="icono" aria-hidden="true">${curso.icono || "📘"}</div>
-        <span class="estado-curso ${curso.estado}">${etiquetaEstado(curso.estado)}</span>
-      </div>
-      <span class="categoria-curso">${curso.categoria}</span>
-      <h3>${curso.nombre}</h3>
-      <p>${curso.descripcion}</p>
-      <span class="entrar">${curso.estado === "integrado" ? "Ingresar al curso" : "Abrir estructura"} →</span>
-    `;
+
+    const top = document.createElement("div");
+    top.className = "tarjeta-top";
+
+    const icono = document.createElement("div");
+    icono.className = "icono";
+    icono.setAttribute("aria-hidden", "true");
+
+    if (curso.logo) {
+      icono.classList.add("logo-curso");
+      const img = document.createElement("img");
+      img.src = curso.logo;
+      img.alt = "";
+      img.loading = "lazy";
+      img.addEventListener("error", () => {
+        icono.classList.remove("logo-curso");
+        icono.textContent = curso.icono || "📘";
+      });
+      icono.appendChild(img);
+    } else {
+      icono.textContent = curso.icono || "📘";
+    }
+
+    const estado = document.createElement("span");
+    estado.className = `estado-curso ${curso.estado}`;
+    estado.textContent = etiquetaEstado(curso.estado);
+
+    top.append(icono, estado);
+
+    const categoria = document.createElement("span");
+    categoria.className = "categoria-curso";
+    categoria.textContent = curso.categoria;
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = curso.nombre;
+
+    const descripcion = document.createElement("p");
+    descripcion.textContent = curso.descripcion;
+
+    const entrar = document.createElement("span");
+    entrar.className = "entrar";
+    entrar.textContent = `${curso.estado === "integrado" ? "Ingresar al curso" : "Abrir estructura"} →`;
+
+    a.append(top, categoria, titulo, descripcion, entrar);
     return a;
   }
 
