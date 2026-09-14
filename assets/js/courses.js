@@ -133,5 +133,14 @@ window.BADBEAR_COURSES = [
     descripcion: "Portal de integración clínica por sistemas con diagnóstico sindrómico, diagnóstico diferencial, gravedad, tratamiento y casos multisistémicos.",
     href: "medicina-interna/index.html",
     estado: "integrado"
+  },
+  {
+    id: "gastroenterologia",
+    nombre: "Gastroenterología",
+    categoria: "Medicina",
+    icono: "🍽️",
+    descripcion: "Portal con semiología gastrointestinal, esófago, estómago, hemorragia digestiva, intestino, hepatología, vía biliar, páncreas y oncología digestiva.",
+    href: "gastroenterologia/index.html",
+    estado: "integrado"
   }
 ];
