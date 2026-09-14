@@ -1,0 +1,20 @@
+window.BADBEAR_BATIMIX_TEMAS = [
+  {id:"abdomen-agudo",titulo:"Abdomen agudo: enfoque sindrómico",area:"Abdomen",icono:"🩺",descripcion:"Dolor abdominal agudo, peritonismo, estudios iniciales y criterios de intervención."},
+  {id:"apendicitis",titulo:"Apendicitis, plastrón y peritonitis",area:"Abdomen",icono:"🔥",descripcion:"Diagnóstico clínico, escalas, imágenes, complicaciones y manejo quirúrgico."},
+  {id:"obstruccion",titulo:"Obstrucción intestinal, vólvulo e íleo",area:"Intestino",icono:"🔄",descripcion:"Patrones clínicos y radiológicos, estrangulación, isquemia y conducta operatoria."},
+  {id:"hernia",titulo:"Hernias: reducible, incarcerada y estrangulada",area:"Pared abdominal",icono:"🧱",descripcion:"Diagnóstico, urgencia quirúrgica y principios de reparación de hernias frecuentes."},
+  {id:"biliar",titulo:"Cólico biliar, colecistitis y colangitis",area:"Hepatobiliar",icono:"🟢",descripcion:"Diferenciación clínica, ecografía, criterios de gravedad y manejo definitivo."},
+  {id:"pancreatitis",titulo:"Pancreatitis aguda",area:"Hepatobiliar",icono:"🟠",descripcion:"Diagnóstico, severidad, complicaciones locales y criterios de intervención."},
+  {id:"hemorragia",titulo:"Hemorragia digestiva en cirugía",area:"Gastrointestinal",icono:"🩸",descripcion:"Estabilización, localización del sangrado, endoscopia y escenarios quirúrgicos."},
+  {id:"trauma",titulo:"Trauma abdominal y politraumatizado",area:"Trauma",icono:"🚑",descripcion:"Evaluación inicial, FAST, lesiones de víscera sólida y hueca, y prioridades de control de daños."},
+  {id:"shock",titulo:"Shock hemorrágico y reanimación",area:"Emergencias",icono:"🚨",descripcion:"Reconocimiento, perfusión, hemoderivados, control de hemorragia y reanimación balanceada."},
+  {id:"heridas",titulo:"Heridas, suturas y cicatrización",area:"Técnica",icono:"🪡",descripcion:"Clasificación de heridas, cierre, materiales de sutura y complicaciones de la cicatrización."},
+  {id:"infeccion",titulo:"Infección de sitio quirúrgico y sepsis",area:"Infecciones",icono:"🦠",descripcion:"Profilaxis, diagnóstico, drenaje, control de foco y principios antimicrobianos."},
+  {id:"preoperatorio",titulo:"Evaluación preoperatoria y riesgo quirúrgico",area:"Perioperatorio",icono:"📋",descripcion:"Optimización preoperatoria, riesgo anestésico, ayuno, profilaxis y seguridad quirúrgica."},
+  {id:"postoperatorio",titulo:"Complicaciones postoperatorias",area:"Perioperatorio",icono:"🏥",descripcion:"Fiebre, atelectasia, tromboembolismo, íleo, dehiscencia y complicaciones metabólicas."},
+  {id:"liquidos",titulo:"Líquidos y electrolitos en cirugía",area:"Perioperatorio",icono:"💧",descripcion:"Mantenimiento, reposición, pérdidas gastrointestinales y trastornos hidroelectrolíticos."},
+  {id:"pediatrica",titulo:"Urgencias quirúrgicas pediátricas",area:"Pediátrica",icono:"👶",descripcion:"Apendicitis, estenosis hipertrófica de píloro, invaginación, hernia y malformaciones frecuentes."},
+  {id:"trauma-oseo",titulo:"Principios de trauma musculoesquelético",area:"Traumatología",icono:"🦴",descripcion:"Fracturas, luxaciones, inmovilización inicial, lesiones abiertas y prioridades de derivación."},
+  {id:"imagenes",titulo:"Imágenes de alta rentabilidad quirúrgica",area:"Diagnóstico",icono:"🩻",descripcion:"Radiografía, ecografía y tomografía aplicadas a abdomen agudo, trauma y urgencias."},
+  {id:"casos",titulo:"Casos integrados BATIMIX",area:"Repaso",icono:"🧠",descripcion:"Casos clínicos combinados para integrar diagnóstico, priorización y tratamiento quirúrgico."}
+];
