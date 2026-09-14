@@ -1,2 +1,47 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Fisiología | BADBEAR.MED</title><link rel="stylesheet" href="../assets/css/course.css"></head><body data-course-id="fisiologia"><div id="course-app"></div><script src="../assets/js/courses.js"></script><script src="../assets/js/course-page.js"></script></body></html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fisiología del proyecto BADBEAR.MED del grupo WAJOMEA: homeostasis, neurofisiología, músculo, cardiovascular, respiratorio, renal, gastrointestinal, endocrino e integración.">
+  <title>Fisiología | BADBEAR.MED</title>
+  <link rel="icon" type="image/png" href="../dermatologia/badbear_logo.png">
+  <link rel="stylesheet" href="../assets/css/course.css">
+  <link rel="stylesheet" href="fisiologia.css">
+</head>
+<body>
+  <header class="fis-header">
+    <div class="inner">
+      <a href="../index.html" class="fis-brand"><img src="../dermatologia/badbear_logo.png" alt="Logo BADBEAR.MED">BADBEAR.<span>MED</span></a>
+      <nav class="fis-nav"><a href="#temas">Temas</a><a href="modulo.html?m=preguntas">Banco</a><a href="modulo.html?m=examenes">Exámenes</a><a href="modulo.html?m=progreso">Progreso</a><a href="../index.html" class="portal">← Portal principal</a></nav>
+    </div>
+  </header>
+
+  <section class="fis-hero">
+    <div class="fis-hero-inner">
+      <div>
+        <span class="fis-kicker">BADBEAR.MED · FISIOLOGÍA</span>
+        <h1>Fisiología</h1>
+        <p>Portal por sistemas para estudiar mecanismos, regulación e integración: homeostasis, excitabilidad, músculo, cardiovascular, respiratorio, renal, ácido-base, gastrointestinal, endocrino y metabolismo.</p>
+        <div class="fis-actions"><a href="#temas" class="fis-btn primary">Explorar temas</a><a href="modulo.html?m=preguntas" class="fis-btn secondary">Banco de preguntas</a></div>
+      </div>
+      <div class="fis-visual" aria-hidden="true">⚙️</div>
+    </div>
+  </section>
+
+  <section class="fis-dashboard"><div class="fis-stats"><div class="fis-stat"><strong id="fis-total-temas">16</strong><span>Temas</span></div><div class="fis-stat"><strong id="fis-total-areas">0</strong><span>Sistemas</span></div><div class="fis-stat"><strong id="fis-completados">0</strong><span>Temas revisados</span></div><div class="fis-stat"><strong id="fis-porcentaje">0%</strong><span>Progreso</span></div></div></section>
+
+  <section id="temas" class="fis-section">
+    <div class="fis-section-head"><div><h2>Contenido del curso</h2><p>Incluye los bloques gastrointestinal y renal que ya hemos trabajado, además de una estructura sistémica para integrar el resto del curso.</p></div><div class="fis-tools"><input id="fis-buscar" type="search" placeholder="Buscar renal, músculo, GI..." aria-label="Buscar tema"><select id="fis-filtro" aria-label="Filtrar por sistema"><option value="todos">Todos los sistemas</option></select></div></div>
+    <div id="fis-temas" class="fis-grid"></div>
+  </section>
+
+  <section class="fis-section">
+    <div class="fis-note"><h3>BADBEAR.MED FIJA:</h3><p>En Fisiología priorizaremos mecanismos, relaciones causa-efecto, fórmulas, curvas y cambios esperados ante una perturbación, no memorización aislada.</p></div>
+    <div class="fis-actions"><a href="modulo.html?m=teoria" class="fis-btn secondary">Teoría</a><a href="modulo.html?m=resumenes" class="fis-btn secondary">Resúmenes</a><a href="modulo.html?m=preguntas" class="fis-btn secondary">Banco</a><a href="modulo.html?m=examenes" class="fis-btn secondary">Exámenes pasados</a><a href="modulo.html?m=pdf" class="fis-btn secondary">PDF</a><a href="modulo.html?m=videos" class="fis-btn secondary">Videos</a><a href="modulo.html?m=audios" class="fis-btn secondary">Audios</a><a href="modulo.html?m=progreso" class="fis-btn secondary">Progreso</a></div>
+  </section>
+
+  <script src="temas.js"></script>
+  <script src="fisiologia.js"></script>
+</body>
+</html>
