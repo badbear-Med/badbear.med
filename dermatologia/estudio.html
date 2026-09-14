@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BADBEAR.MED | Dermatología</title>
   <meta name="description" content="BADBEAR.MED Dermatología · plataforma de estudio con audio persistente.">
-  <link rel="icon" type="image/png" href="../assets/logos/cursos/dermatologia/logo.png">
+  <link rel="icon" type="image/png" href="../assets/logos/cursos/dermatologia/logo.png" data-bb-course-favicon>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="badbear-theme.css">
   <link rel="stylesheet" href="../assets/css/brand-watermark.css">
@@ -23,10 +23,15 @@
   <script src="contenido-dermatologia.js"></script>
   <script src="theory-audio.js" defer></script>
 </head>
-<body style="--bb-watermark-image:url('../assets/logos/cursos/dermatologia/logo.png')">
+<body
+  data-course-logo="../assets/logos/cursos/dermatologia/logo.png"
+  data-course-logo-alt="../assets/logos/cursos/dermatologia/badbear.med_dermatology_panda_logo.png"
+  data-course-logo-fallback="badbear_logo.png"
+  style="--bb-watermark-image:url('../assets/logos/cursos/dermatologia/logo.png')"
+>
 <header class="cabecera bb-header bb-shell-header">
   <a class="marca" href="estudio.html?page=index.html" aria-label="Inicio BADBEAR.MED Dermatología" data-shell-page="index.html">
-    <img class="logo-badbear" src="../assets/logos/cursos/dermatologia/logo.png" alt="Logo Dermatología BADBEAR.MED" onerror="this.src='badbear_logo.png';this.onerror=null;">
+    <img data-bb-course-logo class="logo-badbear" src="../assets/logos/cursos/dermatologia/logo.png" alt="Logo Dermatología BADBEAR.MED">
     <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
   </a>
 <nav class="nav-principal" aria-label="Navegación principal">
@@ -141,5 +146,6 @@
   navegar(params.get("page") || "index.html", false);
 })();
 </script>
+<script src="../assets/js/course-branding.js"></script>
 </body>
 </html>
