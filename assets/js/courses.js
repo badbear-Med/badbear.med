@@ -94,9 +94,9 @@ window.BADBEAR_COURSES = [
     nombre: "Cirugía BATIMIX",
     categoria: "Cirugía",
     icono: "🛠",
-    descripcion: "Módulo quirúrgico integrado BADBEAR.MED para contenido mixto, repaso y bancos de preguntas.",
+    descripcion: "Portal de repaso quirúrgico mixto con abdomen agudo, trauma, shock, perioperatorio, cirugía pediátrica, traumatología, imágenes y casos integrados.",
     href: "cirugia-batimix/index.html",
-    estado: "base"
+    estado: "integrado"
   },
   {
     id: "patologia-clinica",
