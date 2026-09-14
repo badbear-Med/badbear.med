@@ -130,8 +130,8 @@ window.BADBEAR_COURSES = [
     nombre: "Medicina Interna",
     categoria: "Medicina",
     icono: "🏥",
-    descripcion: "Integración clínica por sistemas, diagnóstico diferencial, tratamiento y preparación de exámenes.",
+    descripcion: "Portal de integración clínica por sistemas con diagnóstico sindrómico, diagnóstico diferencial, gravedad, tratamiento y casos multisistémicos.",
     href: "medicina-interna/index.html",
-    estado: "base"
+    estado: "integrado"
   }
 ];
