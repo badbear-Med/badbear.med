@@ -152,3 +152,19 @@ footer {
     opacity: .035;
   }
 }
+/* =========================================================
+   BADBEAR.MED - LIMPIEZA LEGACY PEDIATRICA V5
+========================================================= */
+.bb-hide-legacy-bg {
+  background-image: none !important;
+}
+
+.bb-hide-legacy-before::before {
+  background-image: none !important;
+  content: none !important;
+}
+
+.bb-hide-legacy-after::after {
+  background-image: none !important;
+  content: none !important;
+}

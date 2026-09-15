@@ -34,25 +34,19 @@
     link.href = src;
   }
 
-  function limpiarMarcaGenerica(brand, imgCurso) {
+  function limpiarMarca(brand, imgCurso) {
     if (!brand) return;
 
     brand.childNodes.forEach((node) => {
       if (node.nodeType === Node.TEXT_NODE && node.textContent) {
-        node.textContent = node.textContent.replace(/ðŸ¼/g, "").replace(/\s{2,}/g, " ");
+        node.textContent = node.textContent
+          .replace(/ðŸ¼/g, "")
+          .replace(/\s{2,}/g, " ");
       }
     });
 
     brand.querySelectorAll("img").forEach((img) => {
-      if (img === imgCurso) return;
-      const src = (img.getAttribute("src") || "").toLowerCase();
-      if (
-        src.includes("badbear_logo") ||
-        src.includes("/principal/") ||
-        src.includes("logo-principal")
-      ) {
-        img.remove();
-      }
+      if (img !== imgCurso) img.remove();
     });
   }
 
@@ -81,7 +75,9 @@
     if (!brand) {
       const header = document.querySelector("header");
       if (header) {
-        brand = header.querySelector("a[href='../index.html'],a[href='index.html'],a");
+        brand = header.querySelector(
+          "a[href='../index.html'],a[href='index.html'],a"
+        );
       }
     }
     if (!brand) return;
@@ -91,11 +87,7 @@
     let img = brand.querySelector("[data-bb-course-logo],.bb-auto-course-logo");
 
     if (!img) {
-      const imagenExistente = Array.from(brand.querySelectorAll("img")).find((item) => {
-        const s = (item.getAttribute("src") || "").toLowerCase();
-        return s.includes("badbear_logo") || s.includes("/assets/logos/");
-      });
-
+      const imagenExistente = brand.querySelector("img");
       if (imagenExistente) {
         img = imagenExistente;
       } else {
@@ -109,7 +101,7 @@
     }
 
     img.src = src;
-    limpiarMarcaGenerica(brand, img);
+    limpiarMarca(brand, img);
   }
 
   function asegurarHero(src) {
@@ -166,8 +158,50 @@
     sello.src = src;
   }
 
+  function limpiarSellosLegacy() {
+    if (courseId !== "cirugia-pediatrica") return;
+
+    const elementos = Array.from(document.querySelectorAll("body *"));
+
+    elementos.forEach((el) => {
+      try {
+        const normal = getComputedStyle(el);
+        const before = getComputedStyle(el, "::before");
+        const after = getComputedStyle(el, "::after");
+
+        const bgNormal = (normal.backgroundImage || "").toLowerCase();
+        const bgBefore = (before.backgroundImage || "").toLowerCase();
+        const bgAfter = (after.backgroundImage || "").toLowerCase();
+
+        const esLegacy = (bg) => {
+          if (!bg || bg === "none") return false;
+          const pareceLogo =
+            bg.includes("badbear") ||
+            bg.includes("logo") ||
+            bg.includes("marca");
+          const esLogoActual =
+            bg.includes("/assets/logos/cursos/cirugia-pediatrica/logo.png");
+          return pareceLogo && !esLogoActual;
+        };
+
+        if (esLegacy(bgNormal)) {
+          el.classList.add("bb-hide-legacy-bg");
+        }
+        if (esLegacy(bgBefore)) {
+          el.classList.add("bb-hide-legacy-before");
+        }
+        if (esLegacy(bgAfter)) {
+          el.classList.add("bb-hide-legacy-after");
+        }
+      } catch (_) {}
+    });
+  }
+
   function aplicar(src) {
-    document.documentElement.style.setProperty("--bb-watermark-image", `url("${src}")`);
+    document.documentElement.style.setProperty(
+      "--bb-watermark-image",
+      `url("${src}")`
+    );
 
     document.querySelectorAll("[data-bb-course-logo]").forEach((img) => {
       img.src = src;
@@ -177,6 +211,11 @@
     asegurarLogoCabecera(src);
     asegurarHero(src);
     asegurarSello(src);
+
+    requestAnimationFrame(() => {
+      limpiarSellosLegacy();
+      setTimeout(limpiarSellosLegacy, 250);
+    });
   }
 
   const prueba = new Image();
