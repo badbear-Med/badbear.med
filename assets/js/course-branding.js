@@ -258,3 +258,65 @@ function asegurarLogoCabecera(src) {
   prueba.onload = () => aplicar(logo);
   prueba.src = logo;
 })();
+/* BADBEAR.MED - LIMPIEZA RECURSIVA PANDA V8 */
+(() => {
+  "use strict";
+
+  function limpiarPandaCabecera() {
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    const walker = document.createTreeWalker(
+      header,
+      NodeFilter.SHOW_TEXT
+    );
+
+    const nodos = [];
+    let nodo;
+
+    while ((nodo = walker.nextNode())) {
+      nodos.push(nodo);
+    }
+
+    nodos.forEach((texto) => {
+      if (!texto.nodeValue) return;
+
+      const limpio = texto.nodeValue
+        .replace(/ðŸ¼/g, "")
+        .replace(/\s{2,}/g, " ");
+
+      if (limpio !== texto.nodeValue) {
+        texto.nodeValue = limpio;
+      }
+    });
+
+    header.querySelectorAll("span, i, b, strong").forEach((el) => {
+      const contenido = (el.textContent || "").trim();
+      if (contenido === "ðŸ¼") {
+        el.remove();
+      }
+    });
+  }
+
+  limpiarPandaCabecera();
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", limpiarPandaCabecera, { once: true });
+  }
+
+  requestAnimationFrame(() => {
+    limpiarPandaCabecera();
+    setTimeout(limpiarPandaCabecera, 150);
+    setTimeout(limpiarPandaCabecera, 500);
+  });
+
+  const header = document.querySelector("header");
+  if (header) {
+    const observer = new MutationObserver(() => limpiarPandaCabecera());
+    observer.observe(header, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
+  }
+})();
