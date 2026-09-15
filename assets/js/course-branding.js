@@ -85,33 +85,33 @@
     return brand;
   }
 
-  function asegurarLogoCabecera(src) {
-    const brand = obtenerBrand();
-    if (!brand) return null;
+function asegurarLogoCabecera(src) {
+  const brand = obtenerBrand();
+  if (!brand) return null;
 
-    brand.classList.add("bb-auto-brand");
-    limpiarTextoPanda(brand);
+  brand.classList.add("bb-auto-brand");
+  limpiarTextoPanda(brand);
 
-    let img = brand.querySelector("[data-bb-course-logo], .bb-auto-course-logo, img");
+  let img = brand.querySelector("[data-bb-course-logo], .bb-auto-course-logo, img");
 
-    if (!img) {
-      img = document.createElement("img");
-      brand.prepend(img);
-    }
-
-    img.classList.add("bb-auto-course-logo");
-    img.setAttribute("data-bb-course-logo", "");
-    img.alt = `Logo ${courseId} BADBEAR.MED`;
-    img.src = src;
-
-    // Dentro de la marca debe quedar UN SOLO logo.
-    brand.querySelectorAll("img").forEach((item) => {
-      if (item !== img) item.remove();
-    });
-
-    return img;
+  if (!img) {
+    img = document.createElement("img");
+    brand.prepend(img);
   }
 
+  img.classList.add("bb-auto-course-logo");
+  img.setAttribute("data-bb-course-logo", "");
+  img.alt = `Logo ${courseId} BADBEAR.MED`;
+  img.src = src;
+
+  // IMPORTANTE: borrar cualquier otro logo o panda dentro de la marca
+  const todasLasImagenes = Array.from(brand.querySelectorAll("img"));
+  todasLasImagenes.forEach((item) => {
+    if (item !== img) item.remove();
+  });
+
+  return img;
+}
   function limpiarPandasGenericosEnCabecera(src, logoCabecera) {
     const header = document.querySelector("header");
     if (!header) return;

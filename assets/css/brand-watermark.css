@@ -195,3 +195,7 @@ footer {
     opacity: .016 !important;
   }
 }
+/* Solo un logo en la cabecera del curso */
+.bb-auto-brand img:not(.bb-auto-course-logo) {
+  display: none !important;
+}
