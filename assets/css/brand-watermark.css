@@ -168,3 +168,30 @@ footer {
   background-image: none !important;
   content: none !important;
 }
+/* =========================================================
+   BADBEAR.MED - AJUSTE OPACIDAD SELLO GLOBAL V6
+========================================================= */
+#bb-course-watermark {
+  z-index: 0 !important;
+  opacity: .022 !important;
+  width: clamp(320px, 34vw, 560px) !important;
+  max-height: 62vh !important;
+  top: 58% !important;
+  filter: saturate(.78) !important;
+}
+
+header,
+main,
+section,
+footer {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+@media (max-width: 800px) {
+  #bb-course-watermark {
+    width: clamp(220px, 58vw, 360px) !important;
+    top: 56% !important;
+    opacity: .016 !important;
+  }
+}
