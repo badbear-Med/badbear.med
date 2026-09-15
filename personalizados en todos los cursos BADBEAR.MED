@@ -1,0 +1,51 @@
+warning: in the working copy of 'assets/css/brand-watermark.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'assets/js/course-branding.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'dermatologia/index.html', LF will be replaced by CRLF the next time Git touches it
+ assets/css/brand-watermark.css |  31 [32m+++++++++[m
+ assets/js/course-branding.js   | 141 [32m++++++++++++++++++++++++++++++++++++++[m[31m---[m
+ assets/js/courses.js           |  16 [32m++++[m[31m-[m
+ cardiologia/index.html         |   1 [32m+[m
+ cardiologia/modulo.html        |   3 [32m+[m[31m-[m
+ cardiologia/tema.html          |   1 [32m+[m
+ cirugia-batimix/index.html     |   3 [32m+[m
+ cirugia-batimix/modulo.html    |   5 [32m+[m[31m-[m
+ cirugia-batimix/tema.html      |   3 [32m+[m
+ cirugia-general/index.html     |   3 [32m+[m
+ cirugia-general/modulo.html    |   5 [32m+[m[31m-[m
+ cirugia-general/tema.html      |   3 [32m+[m
+ cirugia-pediatrica/index.html  |   3 [32m+[m
+ dermatologia/index.html        |   3 [32m+[m
+ fisiologia/index.html          |   3 [32m+[m
+ fisiologia/modulo.html         |   5 [32m+[m[31m-[m
+ fisiologia/tema.html           |   3 [32m+[m
+ gastroenterologia/index.html   |   3 [32m+[m
+ gastroenterologia/modulo.html  |   5 [32m+[m[31m-[m
+ gastroenterologia/tema.html    |   5 [32m+[m[31m-[m
+ infectologia/index.html        |   3 [32m+[m
+ infectologia/modulo.html       |   5 [32m+[m[31m-[m
+ infectologia/tema.html         |   3 [32m+[m
+ medicina-interna/index.html    |   3 [32m+[m
+ medicina-interna/modulo.html   |   5 [32m+[m[31m-[m
+ medicina-interna/tema.html     |   5 [32m+[m[31m-[m
+ nefrologia/index.html          |   3 [32m+[m
+ nefrologia/modulo.html         |   5 [32m+[m[31m-[m
+ nefrologia/tema.html           |   3 [32m+[m
+ neumologia/index.html          |   3 [32m+[m
+ neumologia/modulo.html         |   5 [32m+[m[31m-[m
+ neumologia/tema.html           |   3 [32m+[m
+ neurologia/index.html          |   3 [32m+[m
+ neurologia/modulo.html         |   5 [32m+[m[31m-[m
+ neurologia/tema.html           |   3 [32m+[m
+ parasitologia/index.html       |   3 [32m+[m
+ parasitologia/modulo.html      |   5 [32m+[m[31m-[m
+ parasitologia/tema.html        |   3 [32m+[m
+ patologia-clinica/index.html   |   3 [32m+[m
+ patologia-clinica/modulo.html  |   5 [32m+[m[31m-[m
+ patologia-clinica/tema.html    |   3 [32m+[m
+ psiquiatria/index.html         |   3 [32m+[m
+ psiquiatria/modulo.html        |   5 [32m+[m[31m-[m
+ psiquiatria/tema.html          |   3 [32m+[m
+ traumatologia/index.html       |   3 [32m+[m
+ traumatologia/modulo.html      |   5 [32m+[m[31m-[m
+ traumatologia/tema.html        |   3 [32m+[m
+ 47 files changed, 319 insertions(+), 27 deletions(-)

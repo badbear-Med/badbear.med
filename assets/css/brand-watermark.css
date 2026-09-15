@@ -38,3 +38,34 @@ body::after{
 @media print{
   body::after{width:115mm;top:52%;opacity:.045}
 }
+
+/* BADBEAR.MED - logos especificos por curso */
+.bb-auto-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.bb-auto-course-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.bb-auto-hero-logo {
+  width: min(78%, 270px);
+  max-height: 260px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  filter: drop-shadow(0 16px 26px rgba(15, 23, 42, .16));
+}
+
+@media (max-width: 650px) {
+  .bb-auto-course-logo {
+    width: 40px;
+    height: 40px;
+  }
+}
