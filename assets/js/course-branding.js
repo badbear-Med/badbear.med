@@ -22,6 +22,14 @@
 
   const logo = `../assets/logos/cursos/${courseId}/logo.png`;
 
+  function normalizarSrc(valor) {
+    try {
+      return new URL(valor, location.href).pathname.toLowerCase();
+    } catch (_) {
+      return (valor || "").toLowerCase();
+    }
+  }
+
   function asegurarFavicon(src) {
     let link = document.querySelector('link[data-bb-course-favicon]');
     if (!link) {
@@ -34,23 +42,18 @@
     link.href = src;
   }
 
-  function limpiarMarca(brand, imgCurso) {
-    if (!brand) return;
-
-    brand.childNodes.forEach((node) => {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent) {
-        node.textContent = node.textContent
+  function limpiarTextoPanda(nodo) {
+    if (!nodo) return;
+    nodo.childNodes.forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE && child.textContent) {
+        child.textContent = child.textContent
           .replace(/ðŸ¼/g, "")
           .replace(/\s{2,}/g, " ");
       }
     });
-
-    brand.querySelectorAll("img").forEach((img) => {
-      if (img !== imgCurso) img.remove();
-    });
   }
 
-  function asegurarLogoCabecera(src) {
+  function obtenerBrand() {
     const selectores = [
       "[data-bb-brand]",
       ".cardio-brand",
@@ -71,7 +74,6 @@
     ];
 
     let brand = document.querySelector(selectores.join(","));
-
     if (!brand) {
       const header = document.querySelector("header");
       if (header) {
@@ -80,28 +82,63 @@
         );
       }
     }
-    if (!brand) return;
+    return brand;
+  }
+
+  function asegurarLogoCabecera(src) {
+    const brand = obtenerBrand();
+    if (!brand) return null;
 
     brand.classList.add("bb-auto-brand");
+    limpiarTextoPanda(brand);
 
-    let img = brand.querySelector("[data-bb-course-logo],.bb-auto-course-logo");
+    let img = brand.querySelector("[data-bb-course-logo], .bb-auto-course-logo, img");
 
     if (!img) {
-      const imagenExistente = brand.querySelector("img");
-      if (imagenExistente) {
-        img = imagenExistente;
-      } else {
-        img = document.createElement("img");
-        brand.prepend(img);
-      }
-
-      img.classList.add("bb-auto-course-logo");
-      img.setAttribute("data-bb-course-logo", "");
-      img.alt = `Logo ${courseId} BADBEAR.MED`;
+      img = document.createElement("img");
+      brand.prepend(img);
     }
 
+    img.classList.add("bb-auto-course-logo");
+    img.setAttribute("data-bb-course-logo", "");
+    img.alt = `Logo ${courseId} BADBEAR.MED`;
     img.src = src;
-    limpiarMarca(brand, img);
+
+    // Dentro de la marca debe quedar UN SOLO logo.
+    brand.querySelectorAll("img").forEach((item) => {
+      if (item !== img) item.remove();
+    });
+
+    return img;
+  }
+
+  function limpiarPandasGenericosEnCabecera(src, logoCabecera) {
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    const logoActual = normalizarSrc(src);
+
+    Array.from(header.querySelectorAll("img")).forEach((img) => {
+      if (img === logoCabecera) return;
+      if (img.closest(".bb-auto-hero-logo")) return;
+
+      const ruta = normalizarSrc(img.getAttribute("src") || "");
+      const esMismoLogo = ruta.endsWith(`/assets/logos/cursos/${courseId}/logo.png`) || ruta === logoActual;
+      if (esMismoLogo) return;
+
+      const esGenerico =
+        ruta.includes("badbear") ||
+        ruta.includes("logo") ||
+        ruta.includes("panda") ||
+        ruta.includes("/principal/");
+
+      if (esGenerico) {
+        img.remove();
+      }
+    });
+
+    // TambiÃ©n limpia emojis panda residuales en nodos cercanos.
+    limpiarTextoPanda(header);
   }
 
   function asegurarHero(src) {
@@ -131,7 +168,7 @@
       return;
     }
 
-    let img = visual.querySelector(".bb-auto-hero-logo,[data-bb-course-logo]");
+    let img = visual.querySelector(".bb-auto-hero-logo, [data-bb-course-logo]");
 
     if (!img) {
       visual.textContent = "";
@@ -184,15 +221,9 @@
           return pareceLogo && !esLogoActual;
         };
 
-        if (esLegacy(bgNormal)) {
-          el.classList.add("bb-hide-legacy-bg");
-        }
-        if (esLegacy(bgBefore)) {
-          el.classList.add("bb-hide-legacy-before");
-        }
-        if (esLegacy(bgAfter)) {
-          el.classList.add("bb-hide-legacy-after");
-        }
+        if (esLegacy(bgNormal)) el.classList.add("bb-hide-legacy-bg");
+        if (esLegacy(bgBefore)) el.classList.add("bb-hide-legacy-before");
+        if (esLegacy(bgAfter)) el.classList.add("bb-hide-legacy-after");
       } catch (_) {}
     });
   }
@@ -208,13 +239,18 @@
     });
 
     asegurarFavicon(src);
-    asegurarLogoCabecera(src);
+    const logoCabecera = asegurarLogoCabecera(src);
+    limpiarPandasGenericosEnCabecera(src, logoCabecera);
     asegurarHero(src);
     asegurarSello(src);
 
     requestAnimationFrame(() => {
+      limpiarPandasGenericosEnCabecera(src, logoCabecera);
       limpiarSellosLegacy();
-      setTimeout(limpiarSellosLegacy, 250);
+      setTimeout(() => {
+        limpiarPandasGenericosEnCabecera(src, logoCabecera);
+        limpiarSellosLegacy();
+      }, 250);
     });
   }
 
