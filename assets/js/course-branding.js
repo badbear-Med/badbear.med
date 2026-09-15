@@ -7,35 +7,23 @@
   function detectarCurso() {
     if (body.dataset.courseId) return body.dataset.courseId;
 
-    const partes = location.pathname
-      .split("/")
-      .filter(Boolean);
-
+    const partes = location.pathname.split("/").filter(Boolean);
     if (!partes.length) return "";
 
-    let ultimo = partes[partes.length - 1] || "";
-    if (/\.[a-z0-9]+$/i.test(ultimo)) {
-      ultimo = partes[partes.length - 2] || "";
+    const archivo = partes[partes.length - 1] || "";
+    if (/\.[a-z0-9]+$/i.test(archivo)) {
+      return partes[partes.length - 2] || "";
     }
-
-    return ultimo === "badbear.med" ? "" : ultimo;
+    return archivo;
   }
 
   const courseId = detectarCurso();
-  if (!courseId) return;
+  if (!courseId || courseId === "badbear.med") return;
 
-  const candidatos = [
-    body.dataset.courseLogo,
-    `../assets/logos/cursos/${courseId}/logo.png`,
-    body.dataset.courseLogoAlt,
-    body.dataset.courseLogoFallback,
-    "../dermatologia/badbear_logo.png"
-  ].filter(Boolean);
+  const logo = `../assets/logos/cursos/${courseId}/logo.png`;
 
-  const unicos = [...new Set(candidatos)];
-
-  function favicon(src) {
-    let link = document.querySelector("link[data-bb-course-favicon]");
+  function asegurarFavicon(src) {
+    let link = document.querySelector('link[data-bb-course-favicon]');
     if (!link) {
       link = document.createElement("link");
       link.rel = "icon";
@@ -46,7 +34,29 @@
     link.href = src;
   }
 
-  function logoCabecera(src) {
+  function limpiarMarcaGenerica(brand, imgCurso) {
+    if (!brand) return;
+
+    brand.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent) {
+        node.textContent = node.textContent.replace(/ðŸ¼/g, "").replace(/\s{2,}/g, " ");
+      }
+    });
+
+    brand.querySelectorAll("img").forEach((img) => {
+      if (img === imgCurso) return;
+      const src = (img.getAttribute("src") || "").toLowerCase();
+      if (
+        src.includes("badbear_logo") ||
+        src.includes("/principal/") ||
+        src.includes("logo-principal")
+      ) {
+        img.remove();
+      }
+    });
+  }
+
+  function asegurarLogoCabecera(src) {
     const selectores = [
       "[data-bb-brand]",
       ".cardio-brand",
@@ -74,25 +84,36 @@
         brand = header.querySelector("a[href='../index.html'],a[href='index.html'],a");
       }
     }
-
     if (!brand) return;
 
     brand.classList.add("bb-auto-brand");
 
     let img = brand.querySelector("[data-bb-course-logo],.bb-auto-course-logo");
+
     if (!img) {
-      img = document.createElement("img");
-      img.className = "bb-auto-course-logo";
+      const imagenExistente = Array.from(brand.querySelectorAll("img")).find((item) => {
+        const s = (item.getAttribute("src") || "").toLowerCase();
+        return s.includes("badbear_logo") || s.includes("/assets/logos/");
+      });
+
+      if (imagenExistente) {
+        img = imagenExistente;
+      } else {
+        img = document.createElement("img");
+        brand.prepend(img);
+      }
+
+      img.classList.add("bb-auto-course-logo");
       img.setAttribute("data-bb-course-logo", "");
       img.alt = `Logo ${courseId} BADBEAR.MED`;
-      brand.prepend(img);
     }
 
     img.src = src;
+    limpiarMarcaGenerica(brand, img);
   }
 
-  function logoHero(src) {
-    const selectores = [
+  function asegurarHero(src) {
+    const visual = document.querySelector([
       "[data-bb-course-hero-logo]",
       ".cardio-visual",
       ".infecto-visual",
@@ -108,53 +129,57 @@
       ".fisio-visual",
       ".interna-visual",
       ".gastro-visual"
-    ];
+    ].join(","));
 
-    const visual = document.querySelector(selectores.join(","));
     if (!visual) return;
 
     if (visual.matches("img")) {
       visual.src = src;
+      visual.classList.add("bb-auto-hero-logo");
       return;
     }
 
-    let img = visual.querySelector(".bb-auto-hero-logo");
+    let img = visual.querySelector(".bb-auto-hero-logo,[data-bb-course-logo]");
+
     if (!img) {
       visual.textContent = "";
       img = document.createElement("img");
       img.className = "bb-auto-hero-logo";
-      img.alt = `Emblema ${courseId} BADBEAR.MED`;
+      img.alt = `Logo ${courseId} BADBEAR.MED`;
       visual.appendChild(img);
     }
 
     img.src = src;
   }
 
+  function asegurarSello(src) {
+    let sello = document.getElementById("bb-course-watermark");
+
+    if (!sello) {
+      sello = document.createElement("img");
+      sello.id = "bb-course-watermark";
+      sello.alt = "";
+      sello.setAttribute("aria-hidden", "true");
+      document.body.appendChild(sello);
+    }
+
+    sello.src = src;
+  }
+
   function aplicar(src) {
-    document.documentElement.style.setProperty(
-      "--bb-watermark-image",
-      `url("${src}")`
-    );
+    document.documentElement.style.setProperty("--bb-watermark-image", `url("${src}")`);
 
     document.querySelectorAll("[data-bb-course-logo]").forEach((img) => {
       img.src = src;
     });
 
-    favicon(src);
-    logoCabecera(src);
-    logoHero(src);
+    asegurarFavicon(src);
+    asegurarLogoCabecera(src);
+    asegurarHero(src);
+    asegurarSello(src);
   }
 
-  function probar(indice) {
-    if (indice >= unicos.length) return;
-
-    const src = unicos[indice];
-    const prueba = new Image();
-
-    prueba.onload = () => aplicar(src);
-    prueba.onerror = () => probar(indice + 1);
-    prueba.src = src;
-  }
-
-  probar(0);
+  const prueba = new Image();
+  prueba.onload = () => aplicar(logo);
+  prueba.src = logo;
 })();

@@ -69,3 +69,86 @@ body::after{
     height: 40px;
   }
 }
+/* =========================================================
+   BADBEAR.MED - BRANDING GLOBAL V4
+   Logo especifico + hero + sello de agua
+========================================================= */
+
+/* Desactiva el sello viejo para evitar duplicados. */
+body::after {
+  content: none !important;
+  display: none !important;
+}
+
+.bb-auto-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.bb-auto-course-logo,
+[data-bb-course-logo].bb-auto-course-logo {
+  width: 52px !important;
+  height: 52px !important;
+  object-fit: contain !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+}
+
+.bb-auto-hero-logo {
+  width: 92% !important;
+  height: 92% !important;
+  max-width: 380px !important;
+  max-height: 310px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: auto !important;
+  transform: scale(1.16);
+  transform-origin: center;
+  filter: drop-shadow(0 16px 28px rgba(15, 23, 42, .17));
+}
+
+#bb-course-watermark {
+  position: fixed;
+  left: 50%;
+  top: 57%;
+  transform: translate(-50%, -50%);
+  width: clamp(360px, 38vw, 640px);
+  max-height: 68vh;
+  object-fit: contain;
+  opacity: .045;
+  pointer-events: none;
+  user-select: none;
+  z-index: 8;
+  filter: saturate(.82);
+}
+
+header {
+  z-index: 1000;
+}
+
+main,
+section,
+footer {
+  position: relative;
+}
+
+@media (max-width: 800px) {
+  .bb-auto-course-logo,
+  [data-bb-course-logo].bb-auto-course-logo {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .bb-auto-hero-logo {
+    width: 88% !important;
+    height: 88% !important;
+    transform: scale(1.08);
+  }
+
+  #bb-course-watermark {
+    width: clamp(260px, 68vw, 420px);
+    top: 54%;
+    opacity: .035;
+  }
+}
