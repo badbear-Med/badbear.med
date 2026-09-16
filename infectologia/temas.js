@@ -1,18 +1,15 @@
-window.BADBEAR_INFECTO_TEMAS = [
-  {id:"fundamentos",titulo:"Fundamentos de Infectología",area:"Bases",icono:"🧭",descripcion:"Enfoque clínico inicial del paciente con sospecha de infección, fiebre y síndrome infeccioso."},
-  {id:"antimicrobianos",titulo:"Antimicrobianos",area:"Terapéutica",icono:"💊",descripcion:"Uso racional, espectro, selección empírica y dirigida, resistencia y optimización terapéutica."},
-  {id:"sepsis",titulo:"Sepsis y shock séptico",area:"Urgencias",icono:"🚨",descripcion:"Reconocimiento, evaluación inicial, control del foco y principios de manejo del paciente grave."},
-  {id:"tbc",titulo:"Tuberculosis",area:"Micobacterias",icono:"🫁",descripcion:"TBC latente y activa, diagnóstico, tratamiento, prevención y seguimiento."},
-  {id:"tbc-resistente",titulo:"TBC resistente y diagnóstico molecular",area:"Micobacterias",icono:"🧬",descripcion:"MDR/RR-TB, GeneXpert, LPA, resistencia molecular y lectura de resultados."},
-  {id:"vih",titulo:"VIH",area:"Inmunodeficiencias",icono:"🧪",descripcion:"Diagnóstico, estadificación, terapia antirretroviral, seguimiento y prevención."},
-  {id:"oportunistas",titulo:"Infecciones oportunistas",area:"Inmunodeficiencias",icono:"🛡️",descripcion:"Pneumocystis, CMV, toxoplasmosis, micosis y otras infecciones del inmunocomprometido."},
-  {id:"respiratorias",titulo:"Infecciones respiratorias",area:"Síndromes",icono:"🌬️",descripcion:"Neumonías, infecciones virales respiratorias y enfoque sindrómico del tracto respiratorio."},
-  {id:"urinarias",titulo:"Infecciones urinarias",area:"Síndromes",icono:"💧",descripcion:"Cistitis, pielonefritis, bacteriuria y escenarios complicados."},
-  {id:"snc",titulo:"Infecciones del sistema nervioso central",area:"Síndromes",icono:"🧠",descripcion:"Meningitis, encefalitis y aproximación diagnóstica inicial."},
-  {id:"endocarditis",titulo:"Endocarditis infecciosa",area:"Síndromes",icono:"❤️",descripcion:"Sospecha clínica, hemocultivos, ecocardiografía y principios terapéuticos."},
-  {id:"its",titulo:"ITS y sífilis",area:"Transmisión sexual",icono:"🔬",descripcion:"Algoritmos diagnósticos, pruebas treponémicas y no treponémicas, tratamiento y control."},
-  {id:"piel-tejidos",titulo:"Infecciones de piel y tejidos blandos",area:"Síndromes",icono:"🩹",descripcion:"Celulitis, abscesos, infecciones necrotizantes y selección inicial del manejo."},
-  {id:"gastrointestinales",titulo:"Infecciones gastrointestinales",area:"Síndromes",icono:"🦠",descripcion:"Diarrea infecciosa, enteropatógenos y evaluación del paciente con síndrome diarreico."},
-  {id:"inmunocomprometido",titulo:"Paciente inmunocomprometido",area:"Inmunodeficiencias",icono:"🧫",descripcion:"Enfoque de infecciones en VIH, trasplante, neutropenia y otras inmunosupresiones."},
-  {id:"control-infecciones",titulo:"Prevención y control de infecciones",area:"Prevención",icono:"🧼",descripcion:"Aislamiento, bioseguridad, prevención de transmisión y uso responsable de antimicrobianos."}
+window.BADBEAR_INFECTOLOGIA_TEMAS = [
+  { id:"febril-sirs-sepsis", titulo:"Enfoque del paciente febril, SIRS y sepsis", area:"Bases", icono:"ðŸŒ¡ï¸", resumen:"Paciente febril, respuesta inflamatoria sistÃ©mica, sepsis, bacteriemia y neutropenia febril." },
+  { id:"emergentes-reemergentes", titulo:"Infecciones emergentes y reemergentes", area:"EpidemiologÃ­a", icono:"ðŸŒŽ", resumen:"Arbovirosis y enfermedades emergentes/reemergentes con enfoque clÃ­nico y epidemiolÃ³gico." },
+  { id:"vih-sida", titulo:"VIH / SIDA", area:"VIH", icono:"ðŸ§¬", resumen:"Historia natural, diagnÃ³stico, TARGA, infecciones oportunistas y puntos de alta rentabilidad." },
+  { id:"fungicas-invasivas", titulo:"Infecciones fÃºngicas invasivas", area:"Micosis", icono:"ðŸ„", resumen:"Candidemia, aspergilosis, mucormicosis, criptococosis y micosis endÃ©micas." },
+  { id:"antimicrobianos", titulo:"Antimicrobianos y antibiÃ³ticos", area:"TerapÃ©utica", icono:"ðŸ’Š", resumen:"Familias, mecanismos, espectro, indicaciones, resistencia, toxicidad y elecciÃ³n clÃ­nica." },
+  { id:"parasitosis-intestinales", titulo:"Parasitosis intestinales", area:"ParasitologÃ­a", icono:"ðŸ¦ ", resumen:"Blastocystis, Enterobius, Ascaris, Hymenolepis, Taenia y otros parÃ¡sitos desarrollados en clase." },
+  { id:"fiebre-tifoidea", titulo:"Fiebre tifoidea", area:"Bacterianas", icono:"ðŸ§«", resumen:"Salmonella Typhi: epidemiologÃ­a, clÃ­nica, diagnÃ³stico, complicaciones y tratamiento." },
+  { id:"brucelosis", titulo:"Brucelosis", area:"Zoonosis", icono:"ðŸ„", resumen:"TransmisiÃ³n, fisiopatologÃ­a, formas clÃ­nicas, diagnÃ³stico y tratamiento de brucelosis." },
+  { id:"ofidismo", titulo:"Ofidismo", area:"ToxicologÃ­a", icono:"ðŸ", resumen:"Accidentes botrÃ³pico, lachÃ©sico, crotÃ¡lico y elapÃ­dico; gravedad y uso de antiveneno." },
+  { id:"diarrea-aguda", titulo:"Enfermedad diarreica aguda", area:"Gastrointestinal", icono:"ðŸ’§", resumen:"Tipos de diarrea, etiologÃ­as, deshidrataciÃ³n, rehidrataciÃ³n y antimicrobianos cuando corresponden." },
+  { id:"mononucleosis", titulo:"Mononucleosis infecciosa", area:"Virales", icono:"ðŸ§ª", resumen:"Virus de Epstein-Barr, trÃ­ada clÃ¡sica, diagnÃ³stico, complicaciones y manejo." },
+  { id:"tuberculosis", titulo:"Tuberculosis pulmonar y extrapulmonar", area:"Micobacterias", icono:"TB", resumen:"Inmunopatogenia, TB primaria/postprimaria, diagnÃ³stico, tratamiento y efectos adversos." },
+  { id:"its", titulo:"Infecciones de transmisiÃ³n sexual", area:"ITS", icono:"âš•ï¸", resumen:"Enfoque sindrÃ³mico: Ãºlcera genital, descarga genital, dolor abdominal bajo y bubÃ³n inguinal." }
 ];

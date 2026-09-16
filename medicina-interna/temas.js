@@ -1,7 +1,7 @@
 window.BADBEAR_MI_TEMAS = [
   {id:"enfoque",titulo:"Enfoque del paciente adulto y razonamiento clínico",area:"Bases",icono:"🩺",descripcion:"Historia clínica, problemas activos, diagnóstico sindrómico, diagnóstico diferencial y priorización clínica."},
-  {id:"cardio",titulo:"Síndromes cardiovasculares frecuentes",area:"Cardiovascular",icono:"🫀",descripcion:"Dolor torácico, hipertensión, insuficiencia cardíaca, arritmias y evaluación inicial del paciente cardiovascular."},
-  {id:"resp",titulo:"Síndromes respiratorios frecuentes",area:"Respiratorio",icono:"🫁",descripcion:"Disnea, tos, hipoxemia, neumonía, asma, EPOC, derrame pleural e insuficiencia respiratoria."},
+  {id:"cardio",titulo:"Síndromes cardiovasculares frecuentes",area:"Cardiovascular",icono:"\u2665",descripcion:"Dolor torácico, hipertensión, insuficiencia cardíaca, arritmias y evaluación inicial del paciente cardiovascular."},
+  {id:"resp",titulo:"Síndromes respiratorios frecuentes",area:"Respiratorio",icono:"Oâ‚",descripcion:"Disnea, tos, hipoxemia, neumonía, asma, EPOC, derrame pleural e insuficiencia respiratoria."},
   {id:"renal",titulo:"Síndromes renales y alteraciones hidroelectrolíticas",area:"Renal",icono:"💧",descripcion:"Lesión renal aguda, enfermedad renal crónica, síndrome nefrítico/nefrótico, sodio, potasio y equilibrio ácido-base."},
   {id:"gastro",titulo:"Síndromes gastrointestinales",area:"Gastroenterología",icono:"🍽️",descripcion:"Dolor abdominal, diarrea, estreñimiento, hemorragia digestiva, malabsorción y enfoque sindrómico gastrointestinal."},
   {id:"hepato",titulo:"Hepatología clínica",area:"Gastroenterología",icono:"🟤",descripcion:"Ictericia, hepatitis, cirrosis, ascitis, encefalopatía hepática y complicaciones de la hipertensión portal."},

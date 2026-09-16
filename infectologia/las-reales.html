@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LAS REALES | Infectolog&iacute;a | BADBEAR.MED</title>
+  <link rel="stylesheet" href="../assets/css/brand-watermark.css">
+  <link rel="stylesheet" href="infectologia.css">
+  <link rel="stylesheet" href="las-reales.css">
+</head>
+<body data-course-id="infectologia">
+  <header class="infecto-header">
+    <div class="inner">
+      <a class="infecto-brand" href="index.html">BADBEAR.<span>MED</span></a>
+      <nav class="infecto-nav">
+        <a href="index.html">Temas</a>
+        <a href="modulo.html?m=preguntas">Banco</a>
+        <a href="modulo.html?m=examenes">Ex&aacute;menes</a>
+        <a href="recursos.html">Biblioteca</a>
+        <a class="las-reales-link active" href="las-reales.html">BADBEAR.MED &middot; LAS REALES</a>
+        <a href="../index.html" class="portal">&larr; Portal principal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="reales-shell">
+    <section class="reales-hero">
+      <div>
+        <span class="reales-kicker">ACCESO RESTRINGIDO &middot; INFECTOLOG&Iacute;A</span>
+        <h1>BADBEAR.MED<br><strong>LAS REALES</strong></h1>
+        <p>Preguntas RECONTRA FIJAS separadas del banco general del curso.</p>
+      </div>
+      <div class="reales-logo" data-bb-course-hero-logo></div>
+    </section>
+
+    <section id="access-card" class="access-card">
+      <div class="lock-mark" aria-hidden="true">&#128274;</div>
+      <h2>Contenido protegido</h2>
+      <p>Ingresa la clave de acceso para abrir LAS REALES de Infectolog&iacute;a.</p>
+      <form id="access-form">
+        <label for="access-key">Clave</label>
+        <div class="key-row">
+          <input id="access-key" type="password" autocomplete="current-password" required>
+          <button type="button" id="toggle-key">Ver</button>
+        </div>
+        <button class="unlock-btn" type="submit">Desbloquear</button>
+        <p id="access-msg" class="access-msg" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="protected-content" class="protected-content" hidden>
+      <div class="protected-head">
+        <div>
+          <span class="reales-kicker">ZONA PRIVADA</span>
+          <h2>LAS REALES &middot; Infectolog&iacute;a</h2>
+          <p>Banco reservado, independiente del banco general.</p>
+        </div>
+        <button id="lock-again" class="lock-again">Cerrar acceso</button>
+      </div>
+      <div id="reales-app"></div>
+    </section>
+  </main>
+
+  <script src="las-reales-config.js"></script>
+  <script src="las-reales-data.js"></script>
+  <script src="las-reales.js"></script>
+  <script src="../assets/js/course-branding.js"></script>
+</body>
+</html>

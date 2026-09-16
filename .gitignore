@@ -19,3 +19,7 @@ node_modules/
 # Archivos sensibles locales
 .env
 .env.*
+infectologia/audios/
+!infectologia/audios-web/
+infectologia/audios/
+!infectologia/audios-web/

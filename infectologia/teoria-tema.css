@@ -1,0 +1,136 @@
+
+/* BADBEAR.MED - teoria real del cuaderno por tema */
+.bb-topic-theory{
+  max-width:1120px;
+  margin:28px auto;
+  padding:28px;
+  background:#fff;
+  border:1px solid #dbe5f2;
+  border-radius:22px;
+  box-shadow:0 14px 36px rgba(20,45,80,.06);
+}
+.bb-theory-head{
+  padding-bottom:20px;
+  border-bottom:1px solid #e8eef6;
+}
+.bb-theory-kicker{
+  display:inline-flex;
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.09em;
+  color:#155eef;
+  background:#eaf2ff;
+  border-radius:999px;
+  padding:7px 9px;
+}
+.bb-theory-head h2{
+  margin:10px 0 7px;
+  font-size:30px;
+  line-height:1.15;
+}
+.bb-theory-head p{
+  margin:0;
+  color:#64748b;
+  line-height:1.55;
+}
+.bb-theory-sections{
+  display:grid;
+  gap:15px;
+  margin-top:20px;
+}
+.bb-theory-block{
+  border:1px solid #dbe5f2;
+  border-radius:16px;
+  background:#fcfdff;
+  padding:20px;
+}
+.bb-theory-block h3{
+  margin:0 0 12px;
+  font-size:19px;
+  color:#102a56;
+}
+.bb-theory-body{
+  color:#334155;
+  font-size:15px;
+  line-height:1.62;
+}
+.bb-theory-body p{margin:9px 0}
+.bb-theory-body ul{margin:9px 0 9px 21px;padding:0}
+.bb-theory-body li{margin:5px 0}
+.bb-theory-body strong{color:#0f172a}
+.bb-mini-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:14px 0;
+}
+.bb-mini-grid>div{
+  border:1px solid #dce6f4;
+  border-radius:12px;
+  padding:12px;
+  background:#fff;
+  display:grid;
+  gap:4px;
+}
+.bb-mini-grid b{color:#123064}
+.bb-mini-grid span{color:#64748b;font-size:13.5px;line-height:1.45}
+.bb-theory-table{
+  display:grid;
+  gap:8px;
+  margin:14px 0;
+}
+.bb-theory-table>div{
+  display:grid;
+  grid-template-columns:1fr 1.25fr 1.35fr;
+  gap:10px;
+  border:1px solid #dce6f4;
+  border-radius:11px;
+  padding:11px 12px;
+  background:#fff;
+}
+.bb-theory-table b{color:#123064}
+.bb-theory-table span{color:#52647b;font-size:13.5px}
+.bb-fija{
+  margin-top:14px;
+  padding:14px 15px;
+  border:1px solid #f4c76b;
+  border-left:5px solid #f59e0b;
+  border-radius:12px;
+  background:linear-gradient(135deg,#fffbea,#fff7ed);
+  color:#543b16;
+}
+.bb-fija b{
+  color:#92400e;
+  letter-spacing:.02em;
+}
+.bb-theory-end{
+  margin-top:20px;
+  border-radius:14px;
+  padding:16px;
+  background:#102a56;
+  color:#fff;
+  display:grid;
+  gap:4px;
+}
+.bb-theory-end span{opacity:.82;font-size:13.5px}
+@media(max-width:780px){
+  .bb-topic-theory{padding:18px}
+  .bb-theory-head h2{font-size:25px}
+  .bb-mini-grid{grid-template-columns:1fr}
+  .bb-theory-table>div{grid-template-columns:1fr}
+}
+
+
+/* v13: lectura más amplia */
+.bb-theory-body p{
+  line-height:1.72;
+}
+.bb-theory-block{
+  padding:22px;
+}
+.bb-theory-block + .bb-theory-block{
+  margin-top:2px;
+}
+.bb-theory-body em{
+  color:#1e3a5f;
+}

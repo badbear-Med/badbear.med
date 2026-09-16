@@ -1,0 +1,105 @@
+:root{
+  --r-bg:#f5f7fb;
+  --r-text:#111827;
+  --r-muted:#64748b;
+  --r-line:#dbe3ef;
+  --r-red:#b91c1c;
+  --r-red2:#ef4444;
+  --r-navy:#102a56;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--r-bg);color:var(--r-text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+.reales-shell{max-width:1120px;margin:0 auto;padding:42px 24px 80px}
+.reales-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;background:linear-gradient(135deg,#fff,#fff1f2);border:1px solid #fecaca;border-radius:24px;padding:36px;margin-bottom:24px}
+.reales-kicker{font-size:12px;font-weight:900;letter-spacing:.09em;color:var(--r-red)}
+.reales-hero h1{font-size:47px;line-height:1.02;margin:10px 0 12px}
+.reales-hero h1 strong{color:var(--r-red)}
+.reales-hero p{font-size:17px;color:var(--r-muted);max-width:620px}
+.reales-logo{height:220px;border-radius:20px;background:linear-gradient(135deg,#7f1d1d,#dc2626);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.access-card{max-width:520px;margin:34px auto;background:#fff;border:1px solid var(--r-line);border-radius:20px;padding:30px;box-shadow:0 18px 48px rgba(15,36,85,.08)}
+.lock-mark{font-size:38px}
+.access-card h2{font-size:28px;margin:10px 0 5px}
+.access-card p{color:var(--r-muted)}
+.access-card label{display:block;margin:22px 0 7px;font-weight:800}
+.key-row{display:grid;grid-template-columns:1fr auto;gap:8px}
+.key-row input{width:100%;border:1px solid #cbd5e1;border-radius:11px;padding:13px;font-size:16px}
+.key-row button{border:1px solid #cbd5e1;background:#fff;border-radius:11px;padding:0 14px;font-weight:800;cursor:pointer}
+.unlock-btn{width:100%;margin-top:12px;border:0;border-radius:11px;padding:13px;background:linear-gradient(135deg,#7f1d1d,#dc2626);color:#fff;font-weight:900;cursor:pointer}
+.access-msg{min-height:22px;margin:10px 0 0!important;font-size:14px}
+.access-msg.error{color:#b91c1c}
+.protected-content{background:#fff;border:1px solid var(--r-line);border-radius:22px;padding:28px}
+.protected-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.protected-head h2{font-size:30px;margin:7px 0}
+.protected-head p{color:var(--r-muted)}
+.lock-again{border:1px solid #fecaca;background:#fff1f2;color:#991b1b;border-radius:10px;padding:10px 13px;font-weight:900;cursor:pointer}
+
+.reales-dashboard{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:24px 0}
+.reales-stat{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:15px;display:grid;gap:3px}
+.reales-stat strong{font-size:25px}
+.reales-stat span{font-size:12px;color:#64748b}
+.reales-stat.ok strong{color:#059669}
+.reales-stat.bad strong{color:#dc2626}
+.reales-controls{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.reales-controls select,.reales-controls button{border:1px solid #cbd5e1;background:#fff;border-radius:10px;padding:10px 12px;font-weight:800}
+.reales-controls button{cursor:pointer}
+.reales-controls button.active{background:#7f1d1d;border-color:#7f1d1d;color:#fff}
+.reales-controls .danger-lite{color:#991b1b;background:#fff1f2;border-color:#fecaca}
+
+.real-question-card{background:#fff;border:1px solid #dbe3ef;border-radius:18px;padding:24px}
+.real-question-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:15px}
+.real-question-top>div{display:flex;gap:7px;flex-wrap:wrap}
+.real-block,.real-case{font-size:11px;line-height:1;font-weight:900;text-transform:uppercase;letter-spacing:.04em;padding:7px 9px;border-radius:999px}
+.real-block{background:#fee2e2;color:#991b1b}
+.real-case{background:#e0e7ff;color:#3730a3}
+.real-number{font-size:13px;color:#64748b;font-weight:800}
+.real-question-card h3{font-size:20px;line-height:1.45;margin:8px 0 19px}
+.real-options{display:grid;gap:9px}
+.real-option{width:100%;display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:start;text-align:left;border:1px solid #dbe3ef;background:#fff;border-radius:12px;padding:12px;cursor:pointer}
+.real-option:hover:not(.locked){border-color:#94a3b8;background:#f8fafc}
+.real-option span{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:#eef2ff;color:#1e3a8a;font-weight:900}
+.real-option b{font-weight:650;line-height:1.4;padding-top:5px}
+.real-option.correct{border-color:#86efac;background:#f0fdf4}
+.real-option.correct span{background:#16a34a;color:#fff}
+.real-option.wrong{border-color:#fca5a5;background:#fef2f2}
+.real-option.wrong span{background:#dc2626;color:#fff}
+.real-option.locked{cursor:default}
+.real-feedback{margin-top:15px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;padding:12px 14px;border-radius:11px;background:#f8fafc}
+.real-feedback.hidden{display:none}
+.feedback-ok{color:#047857}
+.feedback-bad{color:#b91c1c}
+.real-nav{margin-top:20px;display:flex;justify-content:space-between;gap:10px}
+.real-nav button{border:0;border-radius:10px;padding:10px 14px;background:#102a56;color:#fff;font-weight:900;cursor:pointer}
+.real-nav button:disabled{opacity:.35;cursor:not-allowed}
+.reales-empty{background:#fff;border:1px dashed #cbd5e1;border-radius:14px;padding:30px;text-align:center;color:#64748b}
+
+.infecto-nav .las-reales-link{background:linear-gradient(135deg,#7f1d1d,#dc2626);color:#fff!important;border:1px solid rgba(127,29,29,.35);border-radius:10px;padding:9px 12px;font-weight:900;box-shadow:0 7px 18px rgba(127,29,29,.18)}
+@media(max-width:780px){
+  .reales-hero{grid-template-columns:1fr}
+  .reales-logo{height:180px}
+  .reales-hero h1{font-size:38px}
+  .protected-head{flex-direction:column}
+  .reales-dashboard{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .real-question-card{padding:17px}
+}
+
+
+.badbear-fija{
+  margin-top:16px;
+  padding:17px 18px;
+  border:1px solid #f59e0b;
+  border-left:5px solid #f59e0b;
+  border-radius:12px;
+  background:linear-gradient(135deg,#fffbeb,#fff7ed);
+}
+.badbear-fija-title{
+  font-weight:950;
+  letter-spacing:.035em;
+  color:#92400e;
+  margin-bottom:7px;
+}
+.badbear-fija p{
+  margin:0;
+  color:#47351f;
+  font-size:14.5px;
+  line-height:1.55;
+}

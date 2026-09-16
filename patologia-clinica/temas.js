@@ -12,7 +12,7 @@ window.BADBEAR_PATOLOGIA_TEMAS = [
   {id:"funcion-hepatica",titulo:"Perfil hepático y pruebas de función hepática",area:"Bioquímica",icono:"🟤",descripcion:"AST, ALT, fosfatasa alcalina, GGT, bilirrubinas, albúmina y patrones hepatocelular, colestásico y mixto."},
   {id:"enzimologia",titulo:"Enzimología clínica",area:"Bioquímica",icono:"⚙️",descripcion:"Principios de actividad enzimática, isoenzimas y utilidad diagnóstica de enzimas séricas en daño tisular."},
   {id:"biomarcadores",titulo:"Biomarcadores clínicos",area:"Biomarcadores",icono:"📈",descripcion:"Troponinas, CK-MB, BNP/NT-proBNP, PCR, procalcitonina y otros marcadores aplicados al diagnóstico y seguimiento."},
-  {id:"gasometria",titulo:"Gasometría arterial y equilibrio ácido-base",area:"Bioquímica",icono:"🫁",descripcion:"pH, PaCO₂, HCO₃⁻, compensación, anión gap y abordaje sistemático de trastornos ácido-base."},
+  {id:"gasometria",titulo:"Gasometría arterial y equilibrio ácido-base",area:"Bioquímica",icono:"Oâ‚",descripcion:"pH, PaCO\u2082, HCO₃⁻, compensación, anión gap y abordaje sistemático de trastornos ácido-base."},
   {id:"microbiologia",titulo:"Microbiología clínica y antibiograma",area:"Microbiología",icono:"🦠",descripcion:"Toma de muestra, Gram, cultivos, sensibilidad antimicrobiana, interpretación de antibiograma y contaminación."},
   {id:"serologia",titulo:"Serología e inmunodiagnóstico",area:"Inmunología",icono:"🧫",descripcion:"Pruebas treponémicas y no treponémicas, CLIA, VDRL/RPR, inmunoensayos y algoritmos de confirmación diagnóstica."}
 ];

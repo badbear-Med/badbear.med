@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Biblioteca | InfectologÃ­a | BADBEAR.MED</title>
+  <link rel="stylesheet" href="../assets/css/brand-watermark.css">
+  <link rel="stylesheet" href="infectologia.css">
+  <link rel="stylesheet" href="recursos.css">
+</head>
+<body data-course-id="infectologia">
+  <header class="infecto-header">
+    <div class="inner">
+      <a class="infecto-brand" href="index.html">BADBEAR.<span>MED</span></a>
+      <nav class="infecto-nav">
+        <a href="index.html">Temas</a>
+        <a href="modulo.html?m=preguntas">Banco</a>
+        <a href="modulo.html?m=examenes">ExÃ¡menes</a>
+        <a class="active" href="recursos.html">Biblioteca</a>
+        <a href="../index.html" class="portal">â† Portal principal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="bb-library">
+    <section class="bb-library-hero">
+      <div>
+        <span class="bb-kicker">INFECTOLOGÃA Â· BADBEAR.MED</span>
+        <h1>Biblioteca multimedia</h1>
+        <p>PDFs, audios y contenido de YouTube del curso organizados en un solo lugar.</p>
+      </div>
+      <div class="bb-library-logo" data-bb-course-hero-logo></div>
+    </section>
+
+    <section class="bb-tabs" aria-label="Tipos de recurso">
+      <button data-tab="pdf" class="active">PDF</button>
+      <button data-tab="audio">Audios</button>
+      <button data-tab="youtube">YouTube</button>
+      <button data-tab="playlist">Playlist</button>
+    </section>
+
+    <section id="panel-pdf" class="bb-panel active">
+      <div class="bb-panel-head">
+        <div><h2>PDFs de InfectologÃ­a</h2><p id="pdf-count"></p></div>
+        <input id="pdf-search" type="search" placeholder="Buscar PDF...">
+      </div>
+      <div id="pdf-grid" class="bb-resource-grid"></div>
+    </section>
+
+    <section id="panel-audio" class="bb-panel">
+      <div class="bb-panel-head">
+        <div><h2>Audios de estudio</h2><p id="audio-count"></p></div>
+        <input id="audio-search" type="search" placeholder="Buscar audio...">
+      </div>
+      <div id="audio-grid" class="bb-resource-grid"></div>
+    </section>
+
+    <section id="panel-youtube" class="bb-panel">
+      <div class="bb-panel-head">
+        <div><h2>Videos de YouTube</h2><p id="youtube-count"></p></div>
+        <input id="youtube-search" type="search" placeholder="Buscar video...">
+      </div>
+      <div id="youtube-grid" class="bb-resource-grid"></div>
+    </section>
+
+    <section id="panel-playlist" class="bb-panel">
+      <div class="bb-panel-head">
+        <div><h2>Playlist del curso</h2><p>Lista de reproducciÃ³n principal de InfectologÃ­a.</p></div>
+      </div>
+      <div id="playlist-box" class="bb-playlist-box"></div>
+    </section>
+  </main>
+
+  <script src="recursos.js"></script>
+  <script src="youtube.js"></script>
+  <script src="recursos-page.js"></script>
+  <script src="../assets/js/course-branding.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@ window.BADBEAR_NEUMOLOGIA_TEMAS = [
   {id:"imagen-torax",titulo:"Radiografía y TAC de tórax",area:"Diagnóstico",icono:"🩻",descripcion:"Lectura sistemática, patrones alveolar e intersticial, atelectasia, derrame y hallazgos tomográficos."},
   {id:"asma",titulo:"Asma",area:"Obstructivas",icono:"🌬️",descripcion:"Diagnóstico, control, exacerbación, tratamiento escalonado y criterios de gravedad."},
   {id:"epoc",titulo:"EPOC",area:"Obstructivas",icono:"🚬",descripcion:"Diagnóstico espirométrico, clasificación, exacerbaciones, oxigenoterapia y tratamiento inhalado."},
-  {id:"bronquiectasias",titulo:"Bronquiectasias",area:"Obstructivas",icono:"🫁",descripcion:"Etiologías, clínica, TAC de alta resolución, exacerbaciones y manejo integral."},
+  {id:"bronquiectasias",titulo:"Bronquiectasias",area:"Obstructivas",icono:"Oâ‚",descripcion:"Etiologías, clínica, TAC de alta resolución, exacerbaciones y manejo integral."},
   {id:"neumonia",titulo:"Neumonía adquirida en la comunidad",area:"Infecciones",icono:"🦠",descripcion:"Evaluación de gravedad, diagnóstico, tratamiento empírico y complicaciones."},
   {id:"tuberculosis-pulmonar",titulo:"Tuberculosis pulmonar",area:"Infecciones",icono:"🔬",descripcion:"Presentación pulmonar, patrones radiológicos, diagnóstico microbiológico y seguimiento respiratorio."},
   {id:"intersticiales",titulo:"Enfermedades pulmonares intersticiales",area:"Intersticio",icono:"🧬",descripcion:"Patrones clínicos y tomográficos, fibrosis pulmonar y aproximación diagnóstica."},

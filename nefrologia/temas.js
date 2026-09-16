@@ -9,7 +9,7 @@ window.BADBEAR_NEFRO_TEMAS = [
   {id:"tubulointersticial",titulo:"Enfermedad tubulointersticial",area:"Tubular",icono:"🧫",descripcion:"Nefritis intersticial, daño tubular, etiologías farmacológicas, infecciosas y metabólicas."},
   {id:"electrolitos",titulo:"Trastornos hidroelectrolíticos",area:"Electrolitos",icono:"⚡",descripcion:"Sodio, potasio, calcio, magnesio y alteraciones del volumen con enfoque clínico."},
   {id:"acido-base",titulo:"Trastornos ácido-base",area:"Electrolitos",icono:"⚖️",descripcion:"Acidosis y alcalosis metabólica o respiratoria, compensación y lectura sistemática de gasometría."},
-  {id:"hta-renal",titulo:"Hipertensión y riñón",area:"Vascular",icono:"🫀",descripcion:"Relación entre hipertensión, daño renal, causas secundarias y nefroprotección."},
+  {id:"hta-renal",titulo:"Hipertensión y riñón",area:"Vascular",icono:"\u2665",descripcion:"Relación entre hipertensión, daño renal, causas secundarias y nefroprotección."},
   {id:"nefrolitiasis",titulo:"Nefrolitiasis",area:"Urolitiasis",icono:"🪨",descripcion:"Tipos de cálculos, factores de riesgo, evaluación metabólica, prevención y manejo inicial."},
   {id:"infeccion-urinaria",titulo:"Infección urinaria y pielonefritis",area:"Infecciones",icono:"🦠",descripcion:"Cistitis, pielonefritis, bacteriuria, escenarios complicados y evaluación de gravedad."},
   {id:"enfermedad-quistica",titulo:"Enfermedad renal quística",area:"Hereditarias",icono:"🧬",descripcion:"Poliquistosis renal y otras enfermedades quísticas hereditarias con enfoque diagnóstico."},
