@@ -1,0 +1,49 @@
+
+/* BADBEAR.MED Infectología v17 - reflujo de teoría + navegación */
+.bb-study-layout{
+  width:min(1180px, calc(100% - 32px));
+  margin:22px auto 44px;
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) 250px;
+  gap:22px;
+  align-items:start;
+}
+.bb-study-main{
+  min-width:0;
+}
+.bb-study-main > #bb-topic-theory,
+.bb-study-main > #bb-topic-resources{
+  width:100%;
+  max-width:none;
+  margin-left:0;
+  margin-right:0;
+}
+.bb-study-main > #bb-topic-theory{
+  margin-top:0;
+}
+.bb-study-main > #bb-topic-resources{
+  margin-top:20px;
+}
+.bb-study-sidebar{
+  min-width:0;
+  position:sticky;
+  top:86px;
+}
+.bb-study-sidebar > *{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+}
+.bb-study-sidebar h2,
+.bb-study-sidebar h3,
+.bb-study-sidebar h4{
+  margin-top:0;
+}
+@media (max-width: 900px){
+  .bb-study-layout{
+    grid-template-columns:1fr;
+  }
+  .bb-study-sidebar{
+    position:static;
+  }
+}
