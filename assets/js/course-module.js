@@ -76,7 +76,7 @@
 
   app.innerHTML = `
     <header class="header module-header">
-      <a href="../index.html" class="logo">🐼 BADBEAR.<span>MED</span></a>
+      <a href="../index.html" class="logo">BADBEAR.<span>MED</span></a>
       <nav class="menu">
         <a href="index.html">${curso.nombre}</a>
         <a href="../index.html" class="volver">← Portal principal</a>

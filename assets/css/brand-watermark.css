@@ -199,3 +199,77 @@ footer {
 .bb-auto-brand img:not(.bb-auto-course-logo) {
   display: none !important;
 }
+
+/* =========================================================
+   BADBEAR.MED - ELIMINAR ICONO RESIDUAL CABECERA V9
+   Mantener UN SOLO logo: el logo propio del curso.
+========================================================= */
+
+/* Elimina pandas/iconos insertados con pseudoelementos */
+.bb-auto-brand::before,
+.bb-auto-brand::after,
+.cardio-brand::before,
+.cardio-brand::after,
+.infecto-brand::before,
+.infecto-brand::after,
+.nefro-brand::before,
+.nefro-brand::after,
+.neuro-brand::before,
+.neuro-brand::after,
+.psiq-brand::before,
+.psiq-brand::after,
+.neumo-brand::before,
+.neumo-brand::after,
+.trauma-brand::before,
+.trauma-brand::after,
+.cxg-brand::before,
+.cxg-brand::after,
+.batimix-brand::before,
+.batimix-brand::after,
+.pato-brand::before,
+.pato-brand::after,
+.para-brand::before,
+.para-brand::after,
+.fisio-brand::before,
+.fisio-brand::after,
+.interna-brand::before,
+.interna-brand::after,
+.gastro-brand::before,
+.gastro-brand::after {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}
+
+/* Elimina contenedores de iconos legacy comunes */
+.bb-auto-brand > .brand-icon,
+.bb-auto-brand > .logo-icon,
+.bb-auto-brand > .panda-icon,
+.bb-auto-brand > .brand-mark,
+.bb-auto-brand > .marca-icono,
+.bb-auto-brand > [aria-hidden="true"]:not(img) {
+  display: none !important;
+}
+
+/* Dentro de la marca solo la imagen del curso puede verse */
+.bb-auto-brand > img:not(.bb-auto-course-logo),
+.bb-auto-brand img:not(.bb-auto-course-logo) {
+  display: none !important;
+}
+
+.bb-auto-brand .bb-auto-course-logo {
+  display: block !important;
+}
+
+/* =========================================================
+   BADBEAR.MED - OCULTAR PSEUDOELEMENTO PANDA V12
+========================================================= */
+.bb-no-panda-before::before {
+  content: none !important;
+  display: none !important;
+}
+
+.bb-no-panda-after::after {
+  content: none !important;
+  display: none !important;
+}

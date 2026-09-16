@@ -320,3 +320,195 @@ function asegurarLogoCabecera(src) {
     });
   }
 })();
+
+/* BADBEAR.MED - DETECTOR PSEUDOELEMENTO PANDA V12 */
+(() => {
+  "use strict";
+
+  function contienePanda(content) {
+    if (!content || content === "none" || content === "normal") return false;
+
+    const limpio = String(content).replace(/^["']|["']$/g, "");
+    return Array.from(limpio).some((ch) => ch.codePointAt(0) === 0x1F43C);
+  }
+
+  function limpiarPseudoelementosPanda() {
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    const elementos = [header, ...header.querySelectorAll("*")];
+
+    elementos.forEach((el) => {
+      try {
+        const before = getComputedStyle(el, "::before").content;
+        const after = getComputedStyle(el, "::after").content;
+
+        if (contienePanda(before)) {
+          el.classList.add("bb-no-panda-before");
+        }
+
+        if (contienePanda(after)) {
+          el.classList.add("bb-no-panda-after");
+        }
+      } catch (_) {}
+    });
+  }
+
+  limpiarPseudoelementosPanda();
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", limpiarPseudoelementosPanda, {
+      once: true
+    });
+  }
+
+  requestAnimationFrame(() => {
+    limpiarPseudoelementosPanda();
+    setTimeout(limpiarPseudoelementosPanda, 100);
+    setTimeout(limpiarPseudoelementosPanda, 400);
+  });
+
+  const header = document.querySelector("header");
+  if (header) {
+    const observer = new MutationObserver(limpiarPseudoelementosPanda);
+    observer.observe(header, {
+      childList: true,
+      subtree: true,
+      attributes: true
+    });
+  }
+})();
+
+/* BADBEAR.MED - LIMPIEZA GRAFICA CABECERA V13 */
+(() => {
+  "use strict";
+
+  function getBrandRoot() {
+    const header = document.querySelector("header");
+    if (!header) return null;
+
+    const courseLogo = header.querySelector(
+      '[data-bb-course-logo], .bb-auto-course-logo'
+    );
+    if (!courseLogo) return null;
+
+    let node = courseLogo.parentElement;
+
+    while (node && node !== header) {
+      const text = (node.textContent || "").replace(/\s+/g, " ").trim();
+
+      if (/BADBEAR/i.test(text)) {
+        return { root: node, logo: courseLogo };
+      }
+
+      node = node.parentElement;
+    }
+
+    return { root: courseLogo.parentElement || header, logo: courseLogo };
+  }
+
+  function isCourseLogo(el, logo) {
+    return el === logo || el.contains?.(logo) || logo.contains?.(el);
+  }
+
+  function hideSecondaryGraphic(el) {
+    el.style.setProperty("display", "none", "important");
+    el.style.setProperty("visibility", "hidden", "important");
+    el.setAttribute("aria-hidden", "true");
+  }
+
+  function limpiar() {
+    const result = getBrandRoot();
+    if (!result) return;
+
+    const { root, logo } = result;
+
+    // 1) Elimina cualquier imagen/SVG/icono adicional dentro de la marca.
+    root.querySelectorAll(
+      'img,svg,picture,object,canvas,[role="img"]'
+    ).forEach((el) => {
+      if (!isCourseLogo(el, logo)) {
+        hideSecondaryGraphic(el);
+      }
+    });
+
+    // 2) Elimina pequeÃ±os elementos con imagen de fondo.
+    root.querySelectorAll("*").forEach((el) => {
+      if (isCourseLogo(el, logo)) return;
+
+      try {
+        const cs = getComputedStyle(el);
+        const bg = cs.backgroundImage || "none";
+        const rect = el.getBoundingClientRect();
+
+        if (
+          bg !== "none" &&
+          rect.width > 0 &&
+          rect.height > 0 &&
+          rect.width <= 90 &&
+          rect.height <= 90
+        ) {
+          el.style.setProperty("background-image", "none", "important");
+        }
+      } catch (_) {}
+    });
+
+    // 3) Borra cualquier nodo textual de panda si reaparece.
+    const walker = document.createTreeWalker(
+      root,
+      NodeFilter.SHOW_TEXT
+    );
+
+    const textNodes = [];
+    let n;
+    while ((n = walker.nextNode())) textNodes.push(n);
+
+    textNodes.forEach((textNode) => {
+      if (!textNode.nodeValue) return;
+      textNode.nodeValue = textNode.nodeValue
+        .replace(/ðŸ¼/g, "")
+        .replace(/\s{2,}/g, " ");
+    });
+
+    // 4) Mantiene visible el logo especÃ­fico del curso.
+    logo.style.removeProperty("visibility");
+    logo.style.setProperty("display", "block", "important");
+  }
+
+  function ejecutarVariasVeces() {
+    limpiar();
+    requestAnimationFrame(limpiar);
+    setTimeout(limpiar, 100);
+    setTimeout(limpiar, 350);
+    setTimeout(limpiar, 900);
+  }
+
+  ejecutarVariasVeces();
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", ejecutarVariasVeces, {
+      once: true
+    });
+  }
+
+  const header = document.querySelector("header");
+  if (header) {
+    let bloqueado = false;
+
+    const observer = new MutationObserver(() => {
+      if (bloqueado) return;
+      bloqueado = true;
+
+      requestAnimationFrame(() => {
+        limpiar();
+        bloqueado = false;
+      });
+    });
+
+    observer.observe(header, {
+      childList: true,
+      subtree: true,
+      attributes: true
+    });
+  }
+})();
