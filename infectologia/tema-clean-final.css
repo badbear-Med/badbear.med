@@ -1,0 +1,40 @@
+
+/* BADBEAR.MED Infectología - limpieza definitiva de tema */
+.bb-clean-study-layout{
+  width:min(1180px,calc(100% - 32px));
+  margin:18px auto 44px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 235px;
+  gap:22px;
+  align-items:start;
+}
+.bb-clean-study-layout.no-aside{
+  grid-template-columns:1fr;
+}
+.bb-clean-study-main{
+  min-width:0;
+}
+.bb-clean-study-main #bb-topic-theory,
+.bb-clean-study-main #bb-topic-resources{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 0 20px !important;
+}
+.bb-clean-study-aside{
+  position:sticky;
+  top:82px;
+  min-width:0;
+}
+.bb-clean-study-aside > *{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+}
+@media(max-width:900px){
+  .bb-clean-study-layout{
+    grid-template-columns:1fr;
+  }
+  .bb-clean-study-aside{
+    position:static;
+  }
+}
