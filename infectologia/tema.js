@@ -49,7 +49,7 @@
         <a href="tema.html?t=${anterior.id}">← ${anterior.titulo}</a>
         <a href="index.html#temas">Todos los temas</a>
         <a href="tema.html?t=${siguiente.id}">${siguiente.titulo} →</a>
-        <a href="modulo.html?m=preguntas">Banco de preguntas</a>
+        <a href="banco-preguntas.html">Banco de preguntas</a>
         <a href="modulo.html?m=pdf">PDF</a>
         <a href="modulo.html?m=audios">Audios</a>
         <button id="tema-complete" class="tema-complete ${leidos.has(tema.id) ? "hecho" : ""}">${leidos.has(tema.id) ? "✓ Tema revisado" : "Marcar como revisado"}</button>

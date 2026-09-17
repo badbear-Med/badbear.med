@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="modulo-infectologia-v20.css">
   <link rel="stylesheet" href="../assets/css/brand-watermark.css">
   <link rel="stylesheet" href="../assets/css/bb-responsive-global-v21.css">
+<script id="BB_INFECTO_BANCO_REDIRECT">
+(() => {
+  const p = new URLSearchParams(location.search);
+  if (p.get("m") === "preguntas") {
+    location.replace("banco-preguntas.html");
+  }
+})();
+</script>
 </head>
 <body>
   <header class="bb-top">
@@ -24,7 +32,7 @@
 
     <nav class="bb-topnav">
       <a href="index.html">Temas</a>
-      <a href="modulo.html?m=preguntas">Banco</a>
+      <a href="banco-preguntas.html">Banco</a>
       <a href="las-reales.html" class="bb-real">LAS REALES</a>
       <a href="../index.html" class="bb-portal">← Portal principal</a>
     </nav>

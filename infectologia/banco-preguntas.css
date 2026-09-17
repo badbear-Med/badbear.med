@@ -1,0 +1,44 @@
+*{box-sizing:border-box}
+:root{--blue:#2563eb;--navy:#0f1f4d;--ink:#172033;--muted:#66758f;--line:#dce5f1;--bg:#f4f7fb;--ok:#14804a;--bad:#c72c41}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+.bbq-head{height:78px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 1500px)/2));position:sticky;top:0;z-index:30}
+.bbq-brand{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:900;letter-spacing:.2px}
+.bbq-brand img{width:50px;height:50px;object-fit:contain}.bbq-brand b{color:var(--blue)}
+.bbq-topnav{display:flex;gap:8px;align-items:center}.bbq-topnav a{padding:10px 12px;border-radius:10px;font-weight:800;font-size:14px;color:#344258}
+.bbq-topnav a:hover,.bbq-topnav a.active{background:#eaf2ff;color:var(--blue)}.bbq-topnav .reales{background:#fff1f2;color:#b4232a}.bbq-topnav .portal{background:#edf4ff;color:#175cd3}
+.bbq-shell{width:min(1500px,calc(100% - 48px));margin:28px auto 60px}
+.bbq-hero{background:linear-gradient(135deg,#eef5ff,#fff 60%,#eefcf7);border:1px solid #d7e6fb;border-radius:24px;padding:34px 38px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.eyebrow{display:inline-block;background:#dbeafe;color:#1d4ed8;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;letter-spacing:.08em}
+.bbq-hero h1{font-size:clamp(38px,5vw,66px);margin:14px 0 8px;line-height:1}.bbq-hero p{font-size:18px;line-height:1.6;color:var(--muted);max-width:900px;margin:0}
+.hero-number{min-width:170px;height:150px;border-radius:22px;background:linear-gradient(135deg,#172554,#2563eb);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 18px 45px rgba(37,99,235,.2)}
+.hero-number strong{font-size:58px;line-height:1}.hero-number span{font-weight:800;margin-top:5px}
+.bbq-warning{margin:18px 0;padding:14px 18px;background:#fff8e8;border:1px solid #f3d38a;border-radius:14px;display:flex;gap:8px;flex-wrap:wrap;font-size:14px}.bbq-warning span{color:#725b2c}
+.bbq-controls{display:grid;grid-template-columns:minmax(220px,1fr) minmax(180px,.7fr) auto auto;gap:12px;margin:20px 0}
+.bbq-controls label{font-size:12px;font-weight:900;color:#55657c}.bbq-controls select,.bbq-controls button{width:100%;margin-top:6px;min-height:46px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 13px;font:700 14px inherit;color:var(--ink)}
+.bbq-controls button{margin-top:18px;cursor:pointer;background:#eaf2ff;color:#175cd3}.bbq-controls button.ghost{background:#fff}
+.bbq-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}
+.bbq-stats article{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px 20px;min-height:88px;display:flex;flex-direction:column;justify-content:center}.bbq-stats strong{font-size:27px}.bbq-stats span{font-size:13px;color:var(--muted)}
+.bbq-layout{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:22px;align-items:start}
+.bbq-question-card,.bbq-side{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 9px 26px rgba(23,32,51,.04)}
+.bbq-question-card{padding:28px}.bbq-side{padding:22px;position:sticky;top:100px}
+.question-meta{display:flex;gap:8px;flex-wrap:wrap}.question-meta span{background:#f1f5f9;color:#526178;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:900}.question-meta span:nth-child(2){background:#eaf2ff;color:#1d4ed8}
+.bbq-question-card h2{font-size:26px;line-height:1.38;margin:22px 0}
+.bbq-options{display:grid;gap:11px}.bbq-option{width:100%;text-align:left;border:1px solid #dbe4ef;background:#fff;border-radius:14px;padding:15px 16px;display:flex;gap:12px;align-items:flex-start;cursor:pointer;font:600 16px/1.45 inherit;color:var(--ink)}
+.bbq-option:hover{border-color:#9cbdfb;background:#f8fbff}.bbq-option.selected{border:2px solid var(--blue);background:#edf4ff}.bbq-option.correct{border-color:#66c38e;background:#edfdf3}.bbq-option.wrong{border-color:#ef9aa6;background:#fff2f4}
+.opt-letter{width:29px;height:29px;border-radius:9px;background:#eef2f7;display:inline-flex;align-items:center;justify-content:center;font-weight:900;flex:0 0 auto}
+.bbq-actions{display:flex;gap:10px;margin-top:20px}.bbq-actions button{min-height:46px;border-radius:12px;border:0;padding:0 22px;font-weight:900;cursor:pointer}.bbq-actions .primary{background:var(--blue);color:#fff}.bbq-actions .secondary{background:#eef3fa;color:#314158}.bbq-actions button:disabled{opacity:.45;cursor:not-allowed}
+.bbq-feedback{margin-top:22px;display:grid;gap:12px}.result-banner{padding:14px 16px;border-radius:13px;font-weight:900}.result-banner.ok{background:#eafaf1;color:#086b3b}.result-banner.bad{background:#fff0f2;color:#a3172a}
+.explain,.fija,.why{border:1px solid var(--line);border-radius:14px;padding:16px;margin:0}.explain h3,.fija h3{margin:0 0 7px;font-size:16px}.explain p,.fija p{margin:0;line-height:1.58}.fija{background:#fff7e6;border-color:#f1ca73}.fija h3{color:#9a5a00}
+.why summary{font-weight:900;cursor:pointer}.why-item{padding:10px 0;border-bottom:1px dashed #e2e8f0;line-height:1.48}.why-item:last-child{border-bottom:0}.why-item b{display:inline-block;min-width:25px}
+.source{font-size:12px;color:#7b879a;margin:0}.bbq-side h3{margin-top:0}.bbq-side p{color:var(--muted);line-height:1.55}.progress-track{height:10px;background:#e8eef6;border-radius:999px;overflow:hidden;margin:14px 0 8px}.progress-track span{display:block;height:100%;width:0;background:linear-gradient(90deg,#2563eb,#12b76a);transition:.2s}
+.bbq-side hr{border:0;border-top:1px solid var(--line);margin:18px 0}.side-link{display:block;padding:10px 0;font-weight:800;color:#2855a8}.reales-link{color:#b4232a}
+@media(max-width:900px){
+  .bbq-head{height:70px;padding:0 16px}.bbq-brand{font-size:20px}.bbq-brand img{width:44px;height:44px}.bbq-topnav{display:none}
+  .bbq-shell{width:calc(100% - 20px);margin:16px auto 40px}.bbq-hero{padding:24px 18px;border-radius:18px}.bbq-hero h1{font-size:40px}.bbq-hero p{font-size:16px}.hero-number{display:none}
+  .bbq-controls{grid-template-columns:1fr 1fr}.bbq-controls button{margin-top:0}.bbq-stats{grid-template-columns:1fr 1fr;gap:10px}.bbq-stats article{min-height:78px;padding:13px 15px}
+  .bbq-layout{grid-template-columns:1fr}.bbq-question-card{padding:18px}.bbq-question-card h2{font-size:21px}.bbq-option{font-size:15px;padding:13px}.bbq-side{position:static;order:2}
+}
+@media(max-width:520px){
+  .bbq-brand span{font-size:18px}.bbq-controls{grid-template-columns:1fr}.bbq-stats strong{font-size:24px}.bbq-question-card h2{font-size:19px}.bbq-actions{display:grid;grid-template-columns:1fr 1fr}.bbq-actions button{padding:0 10px}
+}

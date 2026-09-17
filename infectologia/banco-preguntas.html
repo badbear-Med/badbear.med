@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Banco de preguntas | Infectología | BADBEAR.MED</title>
+  <meta name="description" content="Banco interactivo de 100 preguntas de Infectología BADBEAR.MED.">
+  <link rel="stylesheet" href="banco-preguntas.css">
+  <link rel="stylesheet" href="../assets/css/brand-watermark.css">
+  <link rel="stylesheet" href="../assets/css/bb-responsive-global-v21.css">
+</head>
+<body>
+<header class="bbq-head">
+  <a class="bbq-brand" href="index.html">
+    <img src="../assets/logos/cursos/infectologia/logo.png" alt="Logo Infectología BADBEAR.MED">
+    <span>BADBEAR.<b>MED</b></span>
+  </a>
+  <nav class="bbq-topnav">
+    <a href="index.html">Infectología</a>
+    <a href="banco-preguntas.html" class="active">Banco</a>
+    <a href="modulo.html?m=examenes">Exámenes</a>
+    <a href="las-reales.html" class="reales">LAS REALES</a>
+    <a href="../index.html" class="portal">← Portal principal</a>
+  </nav>
+</header>
+
+<main class="bbq-shell">
+  <section class="bbq-hero">
+    <div>
+      <span class="eyebrow">BADBEAR.MED · INFECTOLOGÍA</span>
+      <h1>Banco de preguntas</h1>
+      <p>100 preguntas para practicar el patrón de evaluación del curso. Este banco es independiente de <strong>BADBEAR.MED · LAS REALES</strong>.</p>
+    </div>
+    <div class="hero-number">
+      <strong>100</strong>
+      <span>preguntas</span>
+    </div>
+  </section>
+
+  <section class="bbq-warning"><strong>Aprende respondiendo.</strong><span>DespuÃ©s de marcar una alternativa verÃ¡s la explicaciÃ³n fisiopatolÃ³gica, farmacolÃ³gica o clÃ­nica y el razonamiento de cada opciÃ³n.</span></section>
+
+  <section class="bbq-controls">
+    <label>Tema
+      <select id="topicFilter"><option value="">Todos los temas</option></select>
+    </label>
+    <label>Dificultad
+      <select id="difficultyFilter">
+        <option value="">Todas</option>
+        <option>Intermedio</option>
+        <option>Difícil</option>
+      </select>
+    </label>
+    <button id="shuffleBtn" type="button">Mezclar preguntas</button>
+    <button id="resetBtn" type="button" class="ghost">Reiniciar progreso</button>
+  </section>
+
+  <section class="bbq-stats">
+    <article><strong id="answeredStat">0</strong><span>Respondidas</span></article>
+    <article><strong id="correctStat">0</strong><span>Correctas</span></article>
+    <article><strong id="wrongStat">0</strong><span>Incorrectas</span></article>
+    <article><strong id="percentStat">0%</strong><span>Rendimiento</span></article>
+  </section>
+
+  <div class="bbq-layout">
+    <section class="bbq-question-card">
+      <div class="question-meta">
+        <span id="counter">Pregunta 1 / 100</span>
+        <span id="topicBadge">Tema</span>
+        <span id="difficultyBadge">Intermedio</span>
+      </div>
+
+      <h2 id="questionText"></h2>
+      <div id="options" class="bbq-options"></div>
+
+      <div class="bbq-actions">
+        <button id="answerBtn" type="button" class="primary">Responder</button>
+        <button id="nextBtn" type="button" class="secondary" disabled>Siguiente →</button>
+      </div>
+
+      <section id="feedback" class="bbq-feedback" hidden>
+        <div id="resultBanner" class="result-banner"></div>
+
+        <article class="explain">
+          <h3>Explicación</h3>
+          <p id="explanation"></p>
+        </article>
+
+        <article class="fija">
+          <h3>BADBEAR.MED FIJA:</h3>
+          <p id="fijaText"></p>
+        </article>
+
+        <details class="why">
+          <summary>¿Por qué no las otras alternativas?</summary>
+          <div id="alternativeNotes"></div>
+        </details>
+      </section>
+    </section>
+
+    <aside class="bbq-side">
+      <h3>Sesión de práctica</h3>
+      <p>Responde primero. La teoría y la clave aparecen recién después de enviar tu respuesta.</p>
+      <div class="progress-track"><span id="progressBar"></span></div>
+      <small id="progressLabel">0 de 100 respondidas</small>
+      <hr>
+      <a href="las-reales.html" class="side-link reales-link">BADBEAR.MED · LAS REALES</a>
+      <a href="index.html" class="side-link">← Volver a Infectología</a>
+    </aside>
+  </div>
+</main>
+
+<script src="banco-preguntas-data.js"></script>
+<script src="banco-preguntas.js"></script>
+<script src="../assets/js/bb-responsive-global-v21.js"></script>
+  <script src="banco-sin-fuentes-v25.js"></script>
+</body>
+</html>
