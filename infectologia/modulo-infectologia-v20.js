@@ -1,3 +1,10 @@
+/* BADBEAR.MED — rutas especiales de Infectología */
+const bbModuloActual = new URLSearchParams(window.location.search).get("m");
+
+if (bbModuloActual === "examenes") {
+  window.location.replace("examenes.html");
+}
+
 (() => {
   "use strict";
 
