@@ -129,19 +129,9 @@ if (bbModuloActual === "examenes") {
       </section>`;
   }
 
-  function renderExamenes(){
-    root.innerHTML =
-      hero("Exámenes pasados","Archivo histórico separado del Banco general y de LAS REALES.") +
-      `<section class="bb-panel">
-        <h2>Exámenes históricos</h2>
-        <p class="lead">No se inventan exámenes que no hayan sido proporcionados.</p>
-        <div class="bb-empty">
-          <strong>Aún no hay exámenes pasados cargados</strong>
-          Cuando agregues PDF, fotografías o transcripciones, aparecerán aquí organizados por fecha, bloque y tema.
-        </div>
-        <div class="bb-note"><b>BADBEAR.MED:</b> LAS REALES seguirá en su zona privada.</div>
-      </section>`;
-  }
+function renderExamenes(){
+  window.location.href = "examenes.html";
+}
 
   function renderPdf(){
     root.innerHTML =
