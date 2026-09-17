@@ -14,3 +14,105 @@ body{background:#f6f8fc}.infecto-header{position:sticky;top:0;z-index:1000;backg
   transform:translateY(-1px);
   box-shadow:0 9px 22px rgba(127,29,29,.24);
 }
+/* =========================
+   AMPLIAR DETALLE DE TEMA EN PC
+   sin romper celular
+   ========================= */
+
+@media (min-width: 1100px) {
+  /* contenedor general de la página */
+  main,
+  .container,
+  .wrap,
+  .page-wrap,
+  .topic-wrap,
+  .tema-wrap,
+  .bb-topic-wrap,
+  .bb-page,
+  .bb-shell {
+    width: min(1500px, calc(100% - 48px));
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* bloque principal con contenido + navegación */
+  .topic-layout,
+  .tema-layout,
+  .content-layout,
+  .bb-topic-layout,
+  .bb-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* contenido principal */
+  .topic-main,
+  .tema-main,
+  .content-main,
+  .bb-topic-main,
+  .bb-main {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* panel lateral de navegación */
+  .topic-side,
+  .tema-side,
+  .content-side,
+  .bb-topic-side,
+  .bb-sidebar,
+  .navegacion {
+    width: 280px;
+    max-width: 280px;
+    position: sticky;
+    top: 96px;
+    align-self: start;
+  }
+
+  /* tarjetas y bloques internos */
+  .card,
+  .panel,
+  .block,
+  .topic-card,
+  .tema-card,
+  .bb-card,
+  .bb-panel {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* hero / cabecera del tema */
+  .hero,
+  .topic-hero,
+  .tema-hero,
+  .bb-hero {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* celular y tablet: mantener cómodo */
+@media (max-width: 1099px) {
+  .topic-layout,
+  .tema-layout,
+  .content-layout,
+  .bb-topic-layout,
+  .bb-layout {
+    display: block;
+  }
+
+  .topic-side,
+  .tema-side,
+  .content-side,
+  .bb-topic-side,
+  .bb-sidebar,
+  .navegacion {
+    width: 100%;
+    max-width: none;
+    position: static;
+    margin-top: 16px;
+  }
+}
