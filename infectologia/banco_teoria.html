@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Banco de teoría · Infectología</title>
+  <meta name="description" content="Banco de 296 preguntas de Infectología organizado por bloques y temas en BADBEAR.MED.">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033}
+    button,input,select{font:inherit}
+    .bb-header{background:#fff;border-bottom:1px solid #e5e7eb;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:20}
+    .bb-brand{text-decoration:none;color:#0b1f33}.bb-brand h1{font-size:25px;font-weight:900}.bb-brand h1 span{color:#0969ff}.bb-brand p{font-size:13px;color:#64748b;margin-top:3px}
+    .bb-nav{display:flex;gap:8px;flex-wrap:wrap}.bb-nav a{text-decoration:none;color:#334155;font-size:13px;font-weight:800;padding:9px 11px;border-radius:9px}.bb-nav a:hover{background:#eef4ff;color:#0969ff}.bb-nav .activo{background:#0969ff;color:#fff}
+    main{max-width:1180px;margin:auto;padding:34px 18px 60px}
+    .hero{background:#fff;border-radius:20px;padding:32px;box-shadow:0 8px 30px rgba(15,23,42,.07);margin-bottom:20px}
+    .eyebrow{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.9px;color:#0969ff;margin-bottom:9px}
+    .hero h2{font-size:36px;line-height:1.1;color:#0b1f33;margin-bottom:12px}.hero>p{max-width:850px;color:#64748b;line-height:1.65}
+    .hero-resumen{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.resumen-pill{background:#eef5ff;color:#0b4db5;border:1px solid #d6e6ff;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900}
+    .herramientas{display:grid;grid-template-columns:1fr 1fr 1.2fr auto auto;gap:10px;margin-top:24px}
+    select,input,button{min-height:46px;border-radius:10px;border:1px solid #dbe1ea;padding:0 13px}
+    input,select{background:#fff;color:#1e293b}button{background:#0969ff;color:#fff;border:0;cursor:pointer;font-weight:900}button:hover{background:#075bd8}button:disabled{opacity:.45;cursor:not-allowed}
+    button.secundario,#btn-reiniciar{background:#fff;color:#334155;border:1px solid #dbe1ea}button.secundario:hover,#btn-reiniciar:hover{background:#f8fafc}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}.stat{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px;text-align:center}.stat small{display:block;color:#64748b;font-size:12px;font-weight:700;margin-bottom:5px}.stat strong{font-size:26px;color:#0b1f33}
+    .pregunta-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(15,23,42,.07)}
+    .pregunta-top{padding:19px 24px;border-bottom:1px solid #e5e7eb}.pregunta-topline{display:flex;justify-content:space-between;gap:15px}.pregunta-numero{color:#0969ff;font-weight:900}.pregunta-contador{color:#64748b;font-weight:800;font-size:13px}
+    .chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.chip{font-size:11px;font-weight:900;color:#475569;background:#f1f5f9;border-radius:999px;padding:6px 9px}.chip-modulo{background:#eef5ff;color:#075fc7}.dificultad{background:#fff7ed;color:#9a3412}
+    .pregunta-body{padding:26px}.pregunta-body h3{font-size:21px;line-height:1.55;margin-bottom:20px;color:#172033}
+    .opciones{display:grid;gap:10px}.opcion{min-height:auto;padding:14px 15px;background:#f8fafc;color:#172033;border:1px solid #e2e8f0;text-align:left;display:flex;align-items:flex-start;gap:12px;font-weight:600}.opcion:hover{background:#eef5ff;border-color:#0969ff}.opcion .letra{flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#e9eef6;font-weight:900;font-size:12px}.opcion.correcta{background:#eaf8ef!important;border-color:#1f9d4c!important}.opcion.incorrecta{background:#fff0f0!important;border-color:#e5484d!important}
+    .feedback{margin-top:24px;border-top:1px solid #e5e7eb;padding-top:22px}.oculto{display:none}.estado-respuesta{border-radius:10px;padding:12px 14px;margin-bottom:18px;display:flex;gap:10px;flex-wrap:wrap}.estado-ok{background:#eaf8ef;color:#176b35}.estado-error{background:#fff0f0;color:#9f2630}
+    .concepto{background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:18px}.concepto h4{font-size:16px;margin-bottom:8px;color:#0b1f33}.concepto p,.fija p{line-height:1.75;color:#475569}
+    .fija{margin-top:14px;background:#eef5ff;border-left:4px solid #0969ff;padding:16px;border-radius:10px}.fija strong{color:#0969ff;display:block;margin-bottom:5px}
+    .nav-preguntas{padding:20px 25px;border-top:1px solid #e5e7eb;display:flex;justify-content:space-between;gap:12px}.nav-preguntas button{min-width:160px}
+    .pendiente,.sin-preguntas{padding:28px;border-radius:12px;background:#fff8e8;color:#7c5a10;line-height:1.6}.sin-preguntas{text-align:center;margin:20px}.sin-preguntas strong,.pendiente strong{display:block;color:#5e4307;margin-bottom:6px}
+    footer{text-align:center;padding:30px;color:#94a3b8;font-size:13px}
+    @media(max-width:950px){.herramientas{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.bb-header{position:static;flex-direction:column;align-items:flex-start}.hero{padding:24px}.hero h2{font-size:29px}.herramientas,.stats{grid-template-columns:1fr}.pregunta-body{padding:20px}.pregunta-body h3{font-size:19px}.nav-preguntas{flex-direction:column}.nav-preguntas button{width:100%}}
+  </style>
+</head>
+<body data-course-id="infectologia">
+<header class="bb-header">
+  <a href="index.html" class="bb-brand">
+    <h1>BADBEAR<span>.MED</span></h1>
+    <p>Infectología</p>
+  </a>
+  <nav class="bb-nav">
+    <a href="index.html">Inicio</a>
+    <a href="tema.html">Teoría</a>
+    <a href="banco_teoria.html" class="activo">Banco de preguntas de la teoría</a>
+    <a href="examenes.html">Exámenes pasados</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="eyebrow">INFECTOLOGÍA · BADBEAR.MED</span>
+    <h2>Banco de preguntas de la teoría</h2>
+    <p>Banco completo organizado por bloques y temas. Resuelve las preguntas, revisa el concepto teórico detrás de cada ítem y fija los puntos de alta rentabilidad.</p>
+    <div class="hero-resumen">
+      <span class="resumen-pill">296 preguntas</span>
+      <span class="resumen-pill">13 bloques</span>
+      <span class="resumen-pill">Filtro por tema</span>
+      <span class="resumen-pill">BADBEAR.MED FIJA</span>
+    </div>
+
+    <div class="herramientas">
+      <select id="filtro-modulo" aria-label="Filtrar por bloque"></select>
+      <select id="filtro-tema" aria-label="Filtrar por tema"></select>
+      <input id="buscador" type="search" placeholder="Buscar por palabra, enfermedad o tratamiento...">
+      <button id="btn-mezclar" type="button">Mezclar</button>
+      <button id="btn-reiniciar" type="button">Reiniciar</button>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><small>Preguntas visibles</small><strong id="stat-total">296</strong></div>
+    <div class="stat"><small>Respondidas</small><strong id="stat-respondidas">0</strong></div>
+    <div class="stat"><small>Aciertos</small><strong id="stat-aciertos">0</strong></div>
+    <div class="stat"><small>Errores</small><strong id="stat-errores">0</strong></div>
+  </section>
+
+  <section id="pregunta-card" class="pregunta-card"></section>
+</main>
+
+<footer>BADBEAR.MED · Infectología · WAJOMEA.GROUP</footer>
+<script src="banco_teoria.js"></script>
+</body>
+</html>
