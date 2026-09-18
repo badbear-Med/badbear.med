@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Banco de preguntas | Cirugía General | BADBEAR.MED</title>
+  <meta name="description" content="Banco de preguntas reales de Cirugía General BADBEAR.MED">
+  <link rel="stylesheet" href="banco-preguntas.css">
+</head>
+<body>
+<header class="bb-header">
+  <div class="bb-head-inner">
+    <a href="index.html" class="bb-brand">
+      <img src="../assets/logos/cursos/cirugia-general/logo.png" alt="BADBEAR.MED Cirugía General"
+           onerror="this.onerror=null;this.src='../dermatologia/badbear_logo.png';">
+      <span>BADBEAR.<b>MED</b></span>
+    </a>
+    <nav>
+      <a href="index.html">Cirugía General</a>
+      <a href="teoria.html">Teoría</a>
+      <a href="banco-preguntas.html" class="active">Banco</a>
+      <a href="../index.html" class="portal">← Portal principal</a>
+    </nav>
+  </div>
+</header>
+
+<main class="shell">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">CIRUGÍA GENERAL · BANCO REAL</span>
+      <h1>Banco de preguntas</h1>
+      <p>Preguntas de exámenes previos organizadas para practicar con explicación, razonamiento clínico y BADBEAR.MED FIJA.</p>
+    </div>
+    <div class="hero-count">
+      <strong id="total-count">110</strong>
+      <span>preguntas</span>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div><strong id="stat-seen">0</strong><span>respondidas</span></div>
+    <div><strong id="stat-correct">0</strong><span>correctas</span></div>
+    <div><strong id="stat-wrong">0</strong><span>incorrectas</span></div>
+    <div><strong id="stat-percent">0%</strong><span>rendimiento</span></div>
+  </section>
+
+  <section class="toolbar">
+    <div class="filters">
+      <label>Buscar
+        <input id="search" type="search" placeholder="Tema o palabra clave...">
+      </label>
+      <label>Tipo
+        <select id="type-filter">
+          <option value="all">Todas</option>
+          <option value="choice">Alternativas</option>
+          <option value="open">Abiertas</option>
+          <option value="review">Revisar</option>
+        </select>
+      </label>
+      <label>Tema
+        <select id="topic-filter"><option value="all">Todos los temas</option></select>
+      </label>
+    </div>
+    <div class="toolbar-actions">
+      <button id="shuffle-btn" type="button">Aleatorizar</button>
+      <button id="reset-btn" type="button" class="ghost">Reiniciar progreso</button>
+    </div>
+  </section>
+
+  <section class="question-wrap">
+    <div class="question-topline">
+      <span id="question-position">Pregunta 1 de 110</span>
+      <span id="question-topic" class="topic-pill">Cirugía General</span>
+    </div>
+
+    <article id="question-card" class="question-card"></article>
+
+    <div class="nav-row">
+      <button id="prev-btn" type="button" class="ghost">← Anterior</button>
+      <button id="next-btn" type="button">Siguiente →</button>
+    </div>
+  </section>
+</main>
+
+<footer>BADBEAR.MED · Cirugía General · WAJOMEA.GROUP</footer>
+
+<script src="banco-cirugia-general-data.js"></script>
+<script src="banco-preguntas.js"></script>
+</body>
+</html>

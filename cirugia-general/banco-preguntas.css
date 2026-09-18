@@ -1,0 +1,217 @@
+
+:root{
+  --bg:#f5f7fb;--card:#fff;--ink:#172033;--muted:#68758c;--line:#dfe5ee;
+  --accent:#0f766e;--accent2:#0d9488;--ok:#15803d;--okbg:#ecfdf3;
+  --bad:#b42318;--badbg:#fff1f0;--gold:#a35b00;--goldbg:#fff8e8;
+  --navy:#0f172a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.bb-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.bb-head-inner{max-width:1320px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.bb-brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900}
+.bb-brand img{width:42px;height:42px;object-fit:contain}
+.bb-brand b{color:#0d9488}
+nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+nav a{padding:9px 11px;border-radius:10px;font-weight:800;font-size:13px}
+nav a.active{background:#e6fffb;color:#0f766e}
+nav .portal{background:#eef6ff;color:#155eef}
+.shell{max-width:1320px;margin:auto;padding:28px 22px 60px}
+.hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:linear-gradient(135deg,#ecfeff,#fff7ed);border:1px solid #cfe8e5;border-radius:24px;padding:30px}
+.eyebrow{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.08em;color:#0f766e}
+.hero h1{font-size:clamp(34px,5vw,64px);line-height:1;margin:10px 0 12px}
+.hero p{margin:0;color:var(--muted);font-size:17px;line-height:1.6;max-width:850px}
+.hero-count{width:150px;height:150px;border-radius:28px;background:#0f766e;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 16px 40px rgba(15,118,110,.18)}
+.hero-count strong{font-size:46px;line-height:1}.hero-count span{font-size:13px;font-weight:800;margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+.stats div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px}
+.stats strong{display:block;font-size:26px}.stats span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.toolbar{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:18px}
+.filters{display:flex;gap:12px;flex-wrap:wrap}
+.filters label{font-size:12px;font-weight:800;color:#475467;display:flex;flex-direction:column;gap:6px}
+input,select{min-width:190px;border:1px solid #cfd8e6;border-radius:10px;padding:10px 12px;background:#fff;color:#172033}
+.toolbar-actions{display:flex;gap:8px}
+button{border:0;border-radius:10px;padding:11px 16px;background:var(--accent);color:#fff;font-weight:900}
+button.ghost{background:#eef2f7;color:#26364d}
+button:disabled{opacity:.45;cursor:not-allowed}
+.question-wrap{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px}
+.question-topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;color:#667085;font-size:13px;font-weight:800}
+.topic-pill{background:#e6fffb;color:#0f766e;border-radius:999px;padding:6px 10px}
+.question-card h2{font-size:25px;line-height:1.35;margin:0 0 20px}
+.options{display:grid;gap:10px}
+.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #d8e0ea;border-radius:14px;padding:14px 15px;transition:.15s;background:#fff}
+.option:hover{border-color:#8fb6b2;background:#fbffff}
+.option input{min-width:auto;margin-top:3px}
+.option-letter{width:28px;height:28px;border-radius:8px;background:#f0f4f8;display:flex;align-items:center;justify-content:center;font-weight:900;flex:none}
+.option.correct{border-color:#37b26c;background:var(--okbg)}
+.option.wrong{border-color:#f04438;background:var(--badbg)}
+.answer-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.open-answer textarea{width:100%;min-height:120px;border:1px solid #d8e0ea;border-radius:14px;padding:14px;resize:vertical}
+.feedback{margin-top:18px}
+.result{border-radius:13px;padding:12px 14px;font-weight:900}
+.result.ok{background:var(--okbg);color:var(--ok)}
+.result.bad{background:var(--badbg);color:var(--bad)}
+.result.neutral{background:#eef6ff;color:#175cd3}
+.explanation,.fija,.note-box{margin-top:12px;border-radius:15px;padding:17px 18px;line-height:1.65}
+.explanation{border:1px solid var(--line);background:#fff}
+.explanation h3,.fija h3{margin:0 0 7px;font-size:16px}
+.explanation p,.fija p,.note-box p{margin:0}
+.fija{border:1px solid #f6c765;background:var(--goldbg);color:#593a00}
+.fija h3{color:var(--gold)}
+.note-box{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412}
+.nav-row{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
+.empty{padding:50px 20px;text-align:center;color:#667085}
+footer{text-align:center;color:#7b8798;padding:20px 15px 45px;font-size:12px}
+@media(max-width:800px){
+  .bb-head-inner{padding:10px 14px}.bb-brand span{font-size:18px}
+  nav a:not(.portal){display:none}
+  .shell{padding:18px 12px 40px}
+  .hero{grid-template-columns:1fr;padding:22px 18px;border-radius:18px}
+  .hero-count{width:100%;height:auto;border-radius:14px;padding:15px;flex-direction:row;gap:8px}
+  .hero-count strong{font-size:28px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .toolbar{align-items:stretch}.filters{display:grid;grid-template-columns:1fr;width:100%}
+  input,select{width:100%;min-width:0}.toolbar-actions{width:100%}.toolbar-actions button{flex:1}
+  .question-wrap{padding:16px 13px;border-radius:16px}
+  .question-card h2{font-size:20px}
+  .question-topline{align-items:flex-start}
+}
+
+
+/* ===== BANCO CIRUGIA GENERAL V4 - FEEDBACK COMPLETO ===== */
+
+.result{
+  margin-top:18px;
+  border-radius:14px;
+  padding:15px 17px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-size:14px;
+}
+
+.result strong{
+  font-size:16px;
+  letter-spacing:.02em;
+}
+
+.result.ok{
+  background:#eafaf0;
+  border:1px solid #65c98b;
+  color:#116530;
+}
+
+.result.bad{
+  background:#fff0ef;
+  border:1px solid #f28b82;
+  color:#a61b12;
+}
+
+.result.neutral{
+  background:#eef6ff;
+  border:1px solid #9cc7ff;
+  color:#124a91;
+}
+
+.bb-answer-box,
+.bb-theory-box,
+.bb-fija-v4{
+  margin-top:13px;
+  border-radius:15px;
+  padding:18px 19px;
+  line-height:1.7;
+}
+
+.bb-answer-box{
+  background:#ffffff;
+  border:1px solid #d9e2ec;
+}
+
+.bb-answer-label{
+  display:inline-block;
+  margin-bottom:8px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#eef2ff;
+  color:#3156c8;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.06em;
+}
+
+.bb-answer-box h3,
+.bb-theory-box h3,
+.bb-fija-v4 h3{
+  margin:0 0 8px;
+  font-size:17px;
+}
+
+.bb-answer-box p,
+.bb-theory-box p,
+.bb-fija-v4 p{
+  margin:0;
+}
+
+.bb-theory-box{
+  background:#eff6ff;
+  border:1px solid #a8ccff;
+}
+
+.bb-theory-box h3{
+  color:#1d4ed8;
+}
+
+.bb-clinical-link{
+  margin-top:12px!important;
+  padding-top:12px;
+  border-top:1px dashed #93c5fd;
+}
+
+.bb-fija-v4{
+  background:#fff8e8!important;
+  border:1px solid #f3bd53!important;
+  color:#553600;
+}
+
+.bb-fija-v4 h3{
+  color:#9a5700;
+}
+
+.option.correct{
+  border:2px solid #36b86b!important;
+  background:#eafaf0!important;
+}
+
+.option.wrong{
+  border:2px solid #ef6b63!important;
+  background:#fff0ef!important;
+}
+
+#next-btn:disabled{
+  background:#cbd5e1!important;
+  color:#64748b!important;
+  opacity:1!important;
+  cursor:not-allowed!important;
+}
+
+.alt-analysis,
+.alt-list,
+.alt-row{
+  display:none!important;
+}
+
+@media(max-width:800px){
+  .result,
+  .bb-answer-box,
+  .bb-theory-box,
+  .bb-fija-v4{
+    padding:15px;
+  }
+}
+
+/* ===== FIN BANCO CIRUGIA GENERAL V4 ===== */
+
