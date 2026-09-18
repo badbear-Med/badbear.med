@@ -1,0 +1,20 @@
+
+html.bb-course-lock-pending body{visibility:hidden!important}
+html.bb-course-locked{overflow:hidden!important}
+.bb-lock-overlay{position:fixed;inset:0;z-index:2147483646;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at 15% 15%,rgba(13,148,136,.12),transparent 32%),radial-gradient(circle at 85% 80%,rgba(37,99,235,.10),transparent 34%),#f6f8fb;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;visibility:visible!important}
+.bb-lock-card{width:min(100%,520px);background:#fff;border:1px solid #dfe5ee;border-radius:24px;box-shadow:0 24px 70px rgba(15,23,42,.14);padding:28px;color:#172033}
+.bb-lock-brand{display:flex;align-items:center;gap:10px;margin-bottom:20px;font-weight:950;font-size:22px;letter-spacing:-.02em}
+.bb-lock-brand .med{color:#0d9488}
+.bb-lock-badge{display:inline-flex;margin-bottom:10px;padding:6px 9px;border-radius:999px;background:#ecfeff;color:#0f766e;font-size:11px;font-weight:900;letter-spacing:.08em}
+.bb-lock-card h1{margin:0 0 8px;font-size:30px;line-height:1.15}
+.bb-lock-card p{margin:0 0 18px;color:#68758c;line-height:1.55}
+.bb-lock-field label{display:block;margin-bottom:7px;font-size:13px;font-weight:900}
+.bb-lock-row{display:grid;grid-template-columns:1fr auto;gap:8px}
+.bb-lock-row input{width:100%;min-width:0;border:1px solid #cfd8e6;border-radius:12px;padding:12px 13px;font:inherit;color:#172033;background:#fff}
+.bb-lock-row button,.bb-lock-submit{border:0;border-radius:12px;font:inherit;font-weight:900;cursor:pointer}
+.bb-lock-row button{min-width:72px;background:#eef2f7;color:#172033}
+.bb-lock-submit{width:100%;margin-top:10px;padding:13px 16px;background:linear-gradient(135deg,#0f766e,#2563eb);color:#fff}
+.bb-lock-error{min-height:20px;margin-top:10px!important;color:#b42318!important;font-size:13px;font-weight:800}
+.bb-lock-note{margin-top:16px!important;padding-top:15px;border-top:1px solid #e5e7eb;font-size:12px;color:#7b8798!important}
+.bb-lock-close{position:fixed;z-index:2147483640;right:16px;bottom:16px;border:1px solid #d8dee8;border-radius:999px;background:#fff;color:#344054;padding:8px 11px;box-shadow:0 6px 18px rgba(15,23,42,.08);font:700 12px/1 Inter,system-ui,sans-serif;cursor:pointer}
+@media(max-width:600px){.bb-lock-overlay{padding:14px}.bb-lock-card{padding:22px 18px;border-radius:19px}.bb-lock-card h1{font-size:25px}.bb-lock-row{grid-template-columns:1fr}.bb-lock-row button{padding:11px}}
