@@ -1,0 +1,273 @@
+*{box-sizing:border-box}
+:root{
+  --cg-ink:#182033;--cg-muted:#667085;--cg-bg:#f5f7fb;--cg-white:#fff;
+  --cg-line:#dfe6ef;--cg-orange:#f97316;--cg-red:#dc2626;--cg-dark:#111827;
+  --cg-blue:#2563eb;--cg-gold:#b45309;--cg-soft:#fff7ed;--cg-green:#15803d;
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cg-bg);color:var(--cg-ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+.cg-header{height:76px;background:#fff;border-bottom:1px solid var(--cg-line);position:sticky;top:0;z-index:70}
+.cg-header-inner{width:min(1500px,calc(100% - 40px));height:100%;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.cg-brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:900;letter-spacing:.2px;white-space:nowrap}
+.cg-brand img{width:50px;height:50px;object-fit:contain}.cg-brand b{color:var(--cg-orange)}
+.cg-nav{display:flex;align-items:center;gap:4px}.cg-nav a{padding:10px 12px;border-radius:10px;font-weight:800;font-size:14px;color:#344054}
+.cg-nav a:hover,.cg-nav a.active{background:#fff1e8;color:#c2410c}.cg-nav .portal{background:#eef4ff;color:#175cd3}
+.cg-mobile-toc{display:none;border:0;border-radius:10px;padding:10px 13px;font-weight:900;background:#fff1e8;color:#c2410c}
+.cg-shell{width:min(1500px,calc(100% - 48px));margin:28px auto 60px}
+.cg-breadcrumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:#667085;font-size:13px;margin:0 0 16px}.cg-breadcrumb a{color:#175cd3}
+.cg-hero{position:relative;overflow:hidden;border:1px solid #fed7aa;background:linear-gradient(135deg,#fff7ed 0%,#fff 58%,#fee2e2 100%);border-radius:26px;padding:38px 42px;display:flex;justify-content:space-between;align-items:center;gap:36px;box-shadow:0 18px 50px rgba(122,64,24,.05)}
+.cg-hero:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-170px;top:-170px;background:rgba(249,115,22,.08)}
+.cg-kicker{display:inline-flex;padding:7px 11px;border-radius:999px;background:#ffedd5;color:#c2410c;font-size:12px;font-weight:900;letter-spacing:.09em}
+.cg-hero h1{font-size:clamp(40px,5vw,68px);line-height:1.02;margin:15px 0 10px;letter-spacing:-.035em}
+.cg-hero p{max-width:980px;color:var(--cg-muted);font-size:18px;line-height:1.65;margin:0}
+.hero-tags,.class-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.hero-tags span,.class-tags span{padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #fed7aa;font-size:12px;font-weight:800;color:#9a3412}
+.hero-mark{position:relative;z-index:1;min-width:170px;height:150px;border-radius:24px;background:linear-gradient(145deg,#111827,#b91c1c 68%,#f97316);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;box-shadow:0 18px 40px rgba(127,29,29,.22)}
+.hero-mark span{font-size:62px;font-weight:900;line-height:1}.hero-mark small{margin-top:5px;font-weight:800}
+.cg-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 24px}.cg-summary article{background:#fff;border:1px solid var(--cg-line);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:4px}.cg-summary strong{font-size:15px}.cg-summary span{font-size:13px;color:var(--cg-muted)}
+.cg-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:24px;align-items:start}
+.cg-article{min-width:0}.cg-section{position:relative;background:#fff;border:1px solid var(--cg-line);border-radius:20px;padding:30px 34px;margin-bottom:18px;box-shadow:0 8px 26px rgba(16,24,40,.035);scroll-margin-top:96px}
+.section-number{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:30px;border-radius:999px;background:#111827;color:#fff;font-size:12px;font-weight:900;letter-spacing:.08em}
+.cg-section h2{font-size:29px;line-height:1.2;margin:12px 0 16px;letter-spacing:-.02em}.cg-section h3{font-size:20px;margin:24px 0 8px}.cg-section p{font-size:16px;color:#344054;margin:10px 0}
+.cg-section strong{color:#182033}
+.bb-fija{margin:22px 0 2px;padding:17px 19px;border-radius:14px;border:1px solid #f5b942;background:#fff8e8;color:#6b4300;line-height:1.55}.bb-fija b{color:#9a5b00}
+.update-box{margin:20px 0 2px;padding:16px 18px;border-radius:14px;background:#eef6ff;border:1px solid #b9d7ff;color:#19436d}.update-box b{color:#0b4aa2}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.mini-card{border:1px solid var(--cg-line);border-radius:15px;padding:17px;background:#fafcff}.mini-card h3{font-size:16px;margin:0 0 5px}.mini-card p{font-size:14px;margin:0;color:#667085}
+.objective-list{display:grid;grid-template-columns:1fr 1fr;gap:11px}.objective-list div{border-left:4px solid var(--cg-orange);background:#fffaf6;padding:15px 16px;border-radius:0 12px 12px 0}.objective-list strong,.objective-list span{display:block}.objective-list span{font-size:14px;color:#667085;margin-top:4px}
+.table-wrap{overflow:auto;border:1px solid var(--cg-line);border-radius:14px;margin:18px 0}.table-wrap table{width:100%;border-collapse:collapse;min-width:720px;background:#fff}.table-wrap th{background:#111827;color:#fff;text-align:left;padding:13px 14px;font-size:13px}.table-wrap td{padding:13px 14px;border-top:1px solid var(--cg-line);vertical-align:top;font-size:14px}.table-wrap tr:nth-child(even) td{background:#fafbfc}
+.timeline{display:grid;gap:12px;margin-top:16px}.timeline div{display:grid;grid-template-columns:120px 1fr;gap:15px;align-items:start;padding:16px;border:1px solid var(--cg-line);border-radius:14px;background:#fbfcfe}.timeline span{font-weight:900;color:#c2410c}.timeline p{margin:0;font-size:14px}
+.alarm-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.alarm-grid div{padding:15px;border-radius:13px;background:#fff5f5;border:1px solid #fecaca}.alarm-grid b,.alarm-grid span{display:block}.alarm-grid b{color:#b91c1c}.alarm-grid span{font-size:13px;color:#667085;margin-top:4px}
+.final-review{background:linear-gradient(180deg,#fffdf7,#fff)}.gold-list{display:grid;gap:10px}.gold-list p{margin:0;padding:14px 16px;border-radius:12px;background:#fff8e8;border:1px solid #f4cc75;color:#6b4300}.gold-list b{color:#9a5b00}
+.cg-complete{display:flex;justify-content:space-between;gap:18px;align-items:center;background:#111827;color:#fff;border-radius:18px;padding:22px 24px;margin:4px 0 30px}.cg-complete strong,.cg-complete span{display:block}.cg-complete span{font-size:13px;color:#cbd5e1;margin-top:3px}.cg-complete button{border:0;border-radius:11px;background:#f97316;color:#fff;padding:13px 17px;font-weight:900;cursor:pointer;white-space:nowrap}.cg-complete button.done{background:#15803d}
+.cg-sidebar{position:relative}.toc-card{position:sticky;top:98px;background:#fff;border:1px solid var(--cg-line);border-radius:18px;padding:20px;max-height:calc(100vh - 118px);overflow:auto}.toc-label{font-size:11px;letter-spacing:.12em;font-weight:900;color:#c2410c}.toc-card h3{margin:4px 0 12px;font-size:19px}.toc-links{display:grid;gap:2px}.toc-links a{padding:7px 9px;border-radius:8px;color:#526078;font-size:12.5px;font-weight:700;line-height:1.25}.toc-links a:hover,.toc-links a.active{background:#fff1e8;color:#c2410c}
+.reading-progress{border-top:1px solid var(--cg-line);margin-top:14px;padding-top:14px}.reading-progress span{font-size:12px;color:#667085}.reading-progress div{height:8px;background:#edf1f6;border-radius:999px;overflow:hidden;margin-top:7px}.reading-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f97316,#dc2626);transition:.2s}
+.back-theory{display:block;margin-top:14px;padding:11px 12px;border-radius:10px;background:#f4f7fb;color:#344054;text-align:center;font-weight:800;font-size:13px}
+.cg-footer{text-align:center;padding:24px;color:#667085;font-size:13px;border-top:1px solid var(--cg-line);background:#fff}
+.cg-overlay{display:none}.cg-mobile-drawer{display:none}
+.theory-page{min-height:calc(100vh - 150px)}.theory-hero{margin-bottom:22px}.theory-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:18px}.class-card{background:#fff;border:1px solid var(--cg-line);border-radius:20px;padding:25px;box-shadow:0 8px 24px rgba(16,24,40,.035)}.class-card.available{border-top:5px solid var(--cg-orange)}.class-top{display:flex;justify-content:space-between;gap:10px;color:#c2410c;font-size:11px;font-weight:900;letter-spacing:.09em}.status{color:#15803d;background:#ecfdf3;padding:4px 7px;border-radius:999px}.class-icon{width:52px;height:52px;border-radius:15px;background:#fff1e8;display:flex;align-items:center;justify-content:center;color:#dc2626;font-size:24px;margin-top:18px}.class-card h2{font-size:26px;margin:13px 0 8px}.class-card p{color:#667085}.open-class{display:inline-flex;margin-top:18px;border-radius:11px;background:#111827;color:#fff;padding:12px 15px;font-weight:900}.placeholder{background:#fbfcfe}
+@media(max-width:1050px){
+  .cg-layout{grid-template-columns:minmax(0,1fr) 255px}.cg-shell{width:min(100% - 30px,1300px)}.cg-section{padding:26px}.cg-summary{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:820px){
+  .cg-header{height:70px}.cg-header-inner{width:calc(100% - 24px)}.cg-nav{display:none}.cg-mobile-toc{display:block}.cg-brand{font-size:20px}.cg-brand img{width:44px;height:44px}
+  .cg-shell{width:calc(100% - 20px);margin:16px auto 40px}.cg-hero{padding:25px 20px;border-radius:20px}.cg-hero h1{font-size:40px}.cg-hero p{font-size:16px}.hero-mark{display:none}
+  .cg-summary{grid-template-columns:1fr;gap:9px}.cg-summary article{padding:14px 16px}.cg-layout{grid-template-columns:1fr}.cg-sidebar{display:none}.cg-section{padding:22px 18px;border-radius:16px}.cg-section h2{font-size:25px}.cg-section p{font-size:15.5px}
+  .grid-2,.objective-list,.alarm-grid,.theory-grid{grid-template-columns:1fr}.timeline div{grid-template-columns:1fr;gap:4px}
+  .cg-mobile-drawer{display:block;position:fixed;z-index:100;right:-88%;top:0;width:min(88%,360px);height:100dvh;background:#fff;box-shadow:-20px 0 50px rgba(0,0,0,.18);padding:18px;transition:right .22s;overflow:auto}.cg-mobile-drawer.open{right:0}.drawer-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--cg-line)}.drawer-head button{border:0;background:#f2f4f7;border-radius:8px;width:36px;height:36px;font-size:24px}.cg-mobile-drawer #mobileTocLinks{display:grid;gap:3px;margin-top:12px}.cg-mobile-drawer a{padding:10px;border-radius:8px;font-size:14px;font-weight:750;color:#475467}.cg-overlay{position:fixed;z-index:90;inset:0;background:rgba(15,23,42,.42)}.cg-overlay.show{display:block}
+  .cg-complete{align-items:flex-start;flex-direction:column}.cg-complete button{width:100%}
+}
+@media(max-width:480px){
+  .cg-hero h1{font-size:34px}.cg-section{padding:19px 15px}.cg-section h2{font-size:23px}.table-wrap{margin-left:-4px;margin-right:-4px}.hero-tags{gap:5px}.hero-tags span{font-size:11px}.cg-summary{margin-top:12px}
+}
+/* =========================================================
+   BADBEAR.MED Â· CIRUGÃA GENERAL Â· MEDIA CLÃNICA CLASE 01
+   ========================================================= */
+.cg-clinical-media{
+  margin:24px auto 26px;
+  width:min(920px,100%);
+  background:#fff;
+  border:1px solid #dfe6ef;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(16,24,40,.08);
+}
+.cg-clinical-media img,
+.cg-clinical-media video{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:560px;
+  object-fit:contain;
+  background:#f7f8fa;
+}
+.cg-clinical-media figcaption{
+  padding:11px 15px 12px;
+  border-top:1px solid #e5e7eb;
+  background:#fbfcfe;
+  color:#667085;
+  font-size:13px;
+  line-height:1.45;
+  font-style:italic;
+}
+.cg-clinical-media figcaption strong{
+  color:#344054;
+  font-style:normal;
+}
+.cg-clinical-media + p{
+  margin-top:18px;
+}
+@media(max-width:820px){
+  .cg-clinical-media{
+    margin:18px 0 20px;
+    border-radius:14px;
+  }
+  .cg-clinical-media img,
+  .cg-clinical-media video{
+    max-height:none;
+  }
+  .cg-clinical-media figcaption{
+    padding:9px 11px 10px;
+    font-size:12px;
+  }
+}
+
+/* =========================================================
+   BADBEAR.MED Â· CIRUGÃA GENERAL Â· MEDIA EN COLUMNA V3
+   Imagen lateral + texto fluido en escritorio
+   ========================================================= */
+
+/* Cada secciÃ³n contiene correctamente sus elementos flotantes */
+.cg-section::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+/* En PC: la imagen ocupa un lado y el texto continÃºa a su costado */
+@media (min-width: 900px){
+  .cg-section .cg-clinical-media{
+    float:right;
+    width:42%;
+    max-width:520px;
+    min-width:360px;
+    margin:8px 0 20px 26px;
+    border-radius:16px;
+  }
+
+  .cg-section .cg-clinical-media img,
+  .cg-section .cg-clinical-media video{
+    width:100%;
+    height:auto;
+    max-height:430px;
+    object-fit:contain;
+    background:#f8fafc;
+  }
+
+  .cg-section .cg-clinical-media figcaption{
+    font-size:12.5px;
+    line-height:1.4;
+    padding:9px 12px 10px;
+  }
+
+  /* Alternar algunas imÃ¡genes para que el cuaderno se vea mÃ¡s editorial */
+  #concepto .cg-clinical-media,
+  #anestesia .cg-clinical-media,
+  #postoperatorio .cg-clinical-media,
+  #complicaciones .cg-clinical-media{
+    float:right;
+    margin:8px 0 20px 26px;
+  }
+
+  #historia .cg-clinical-media,
+  #emergencia .cg-clinical-media,
+  #cuidados .cg-clinical-media{
+    float:left;
+    margin:8px 26px 20px 0;
+  }
+
+  /* Los subtÃ­tulos y pÃ¡rrafos se mantienen naturales al lado de la imagen */
+  .cg-section h3{
+    clear:none;
+  }
+
+  /* Los bloques grandes de alta rentabilidad no quedan partidos junto a la foto */
+  .cg-section .bb-fija,
+  .cg-section .update-box,
+  .cg-section .table-wrap,
+  .cg-section .grid-2,
+  .cg-section .objective-list,
+  .cg-section .timeline,
+  .cg-section .alarm-grid,
+  .cg-section .gold-list{
+    clear:both;
+  }
+}
+
+/* Tablet: imagen lateral un poco mÃ¡s pequeÃ±a */
+@media (min-width: 700px) and (max-width: 899px){
+  .cg-section .cg-clinical-media{
+    float:right;
+    width:46%;
+    min-width:0;
+    margin:6px 0 18px 20px;
+  }
+
+  .cg-section::after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+}
+
+/* Celular: una sola columna, imagen completa y legible */
+@media (max-width: 699px){
+  .cg-section .cg-clinical-media{
+    float:none !important;
+    width:100% !important;
+    max-width:none !important;
+    min-width:0 !important;
+    margin:16px 0 18px !important;
+  }
+
+  .cg-section .cg-clinical-media img,
+  .cg-section .cg-clinical-media video{
+    width:100%;
+    max-height:none;
+    object-fit:contain;
+  }
+
+  .cg-section .cg-clinical-media figcaption{
+    font-size:12px;
+    padding:9px 10px;
+  }
+}
+
+
+/* ===== CLASE 02 · NUTRICIÓN QUIRÚRGICA ===== */
+.cg-hero-nutrition{
+  background:linear-gradient(135deg,#f0fdf4 0%,#fff 55%,#fff7ed 100%);
+  border-color:#bbf7d0;
+}
+.hero-mark-nutrition{
+  background:linear-gradient(145deg,#064e3b,#15803d 60%,#f59e0b);
+}
+.cg-next-class{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin:0 0 30px;
+}
+.cg-next-class a{
+  display:inline-flex;
+  padding:12px 15px;
+  border-radius:11px;
+  background:#fff;
+  border:1px solid var(--cg-line);
+  font-weight:800;
+  color:#344054;
+}
+@media(max-width:700px){
+  .cg-next-class{flex-direction:column}
+  .cg-next-class a{justify-content:center}
+}
+
+/* Media clínica reutilizable para Clase 02 */
+.cg-clinical-media.media-left{float:left}
+@media(min-width:900px){
+  .cg-section .cg-clinical-media.media-left{
+    float:left;
+    margin:8px 26px 20px 0;
+  }
+}
+
+
+
+/* ===== CLASE 03 · ESÓFAGO ===== */
+.cg-hero-esophagus{
+  background:linear-gradient(135deg,#eff6ff 0%,#ffffff 56%,#f5f3ff 100%);
+  border-color:#bfdbfe;
+}
+.hero-mark-esophagus{
+  background:linear-gradient(145deg,#172554,#1d4ed8 60%,#7c3aed);
+}
+
