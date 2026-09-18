@@ -60,7 +60,7 @@ a{color:inherit;text-decoration:none}
   .cg-hero h1{font-size:34px}.cg-section{padding:19px 15px}.cg-section h2{font-size:23px}.table-wrap{margin-left:-4px;margin-right:-4px}.hero-tags{gap:5px}.hero-tags span{font-size:11px}.cg-summary{margin-top:12px}
 }
 /* =========================================================
-   BADBEAR.MED Â· CIRUGÃA GENERAL Â· MEDIA CLÃNICA CLASE 01
+   BADBEAR.MED · CIRUGÍA GENERAL · MEDIA CLÍNICA CLASE 01
    ========================================================= */
 .cg-clinical-media{
   margin:24px auto 26px;
@@ -112,18 +112,18 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================================================
-   BADBEAR.MED Â· CIRUGÃA GENERAL Â· MEDIA EN COLUMNA V3
+   BADBEAR.MED · CIRUGÍA GENERAL · MEDIA EN COLUMNA V3
    Imagen lateral + texto fluido en escritorio
    ========================================================= */
 
-/* Cada secciÃ³n contiene correctamente sus elementos flotantes */
+/* Cada sección contiene correctamente sus elementos flotantes */
 .cg-section::after{
   content:"";
   display:block;
   clear:both;
 }
 
-/* En PC: la imagen ocupa un lado y el texto continÃºa a su costado */
+/* En PC: la imagen ocupa un lado y el texto continúa a su costado */
 @media (min-width: 900px){
   .cg-section .cg-clinical-media{
     float:right;
@@ -149,7 +149,7 @@ a{color:inherit;text-decoration:none}
     padding:9px 12px 10px;
   }
 
-  /* Alternar algunas imÃ¡genes para que el cuaderno se vea mÃ¡s editorial */
+  /* Alternar algunas imágenes para que el cuaderno se vea más editorial */
   #concepto .cg-clinical-media,
   #anestesia .cg-clinical-media,
   #postoperatorio .cg-clinical-media,
@@ -165,7 +165,7 @@ a{color:inherit;text-decoration:none}
     margin:8px 26px 20px 0;
   }
 
-  /* Los subtÃ­tulos y pÃ¡rrafos se mantienen naturales al lado de la imagen */
+  /* Los subtítulos y párrafos se mantienen naturales al lado de la imagen */
   .cg-section h3{
     clear:none;
   }
@@ -183,7 +183,7 @@ a{color:inherit;text-decoration:none}
   }
 }
 
-/* Tablet: imagen lateral un poco mÃ¡s pequeÃ±a */
+/* Tablet: imagen lateral un poco más pequeña */
 @media (min-width: 700px) and (max-width: 899px){
   .cg-section .cg-clinical-media{
     float:right;
@@ -271,3 +271,27 @@ a{color:inherit;text-decoration:none}
   background:linear-gradient(145deg,#172554,#1d4ed8 60%,#7c3aed);
 }
 
+
+/* ===== PLAN OFICIAL CIRUGIA GENERAL V6 ===== */
+.cg-plan-legend{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0;padding:15px 17px;background:#fff;border:1px solid var(--cg-line);border-radius:15px}
+.cg-plan-legend p{margin:0;flex:1 1 480px;color:#667085;font-size:13px}
+.plan-badge{padding:5px 8px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.08em}
+.plan-badge.available{background:#ecfdf3;color:#15803d}.plan-badge.pending{background:#f2f4f7;color:#667085}
+.cg-official-plan{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.plan-item{background:#fff;border:1px solid var(--cg-line);border-radius:17px;padding:20px;min-height:150px;position:relative}
+.plan-item.available{border-top:5px solid #f97316;box-shadow:0 8px 24px rgba(16,24,40,.04)}
+.plan-item.pending{background:#fafbfc}
+.plan-type{font-size:11px;font-weight:900;letter-spacing:.09em;color:#c2410c}.plan-item.pending .plan-type{color:#667085}
+.plan-item h2{margin:8px 0 7px;font-size:19px;line-height:1.3;color:#182033}
+.plan-item p{margin:5px 0;color:#667085;font-size:13px}
+.plan-sub{padding:8px 10px;background:#fff7ed;border-left:4px solid #f97316;border-radius:0 9px 9px 0}
+.plan-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:15px}
+.plan-actions a{display:inline-flex;padding:9px 12px;border-radius:9px;background:#111827;color:#fff;font-weight:900;font-size:12px}
+.plan-actions span{font-size:10px;font-weight:900;color:#15803d;background:#ecfdf3;border-radius:999px;padding:5px 7px}
+.cg-official-subtopic{margin:16px 0 18px;padding:16px 18px;background:#fff7ed;border:1px solid #fed7aa;border-left:5px solid #f97316;border-radius:13px}
+.cg-official-subtopic span,.cg-official-subtopic strong,.cg-official-subtopic small{display:block}
+.cg-official-subtopic span{color:#c2410c;font-size:11px;font-weight:900;letter-spacing:.08em}
+.cg-official-subtopic strong{margin-top:3px;font-size:18px}
+.cg-official-subtopic small{margin-top:5px;color:#667085;line-height:1.45}
+@media(max-width:820px){.cg-official-plan{grid-template-columns:1fr}.plan-item{min-height:0;padding:17px}.plan-item h2{font-size:17px}}
+/* ===== FIN PLAN OFICIAL CIRUGIA GENERAL V6 ===== */

@@ -10,6 +10,130 @@
   <link rel="stylesheet" href="../assets/css/brand-watermark.css">
   <link rel="icon" type="image/png" href="../assets/logos/cursos/cirugia-general/logo.png" data-bb-course-favicon>
   <link rel="stylesheet" href="../assets/css/bb-responsive-global-v21.css">
+<!-- BB_CG_CLASES_PORTADA_V4_START -->
+<style id="bb-cg-clases-portada-v4">
+  .bb-cg-study-hub{
+    max-width:1500px;
+    margin:30px auto 34px;
+    padding:0 24px;
+  }
+  .bb-cg-study-head{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:flex-end;
+    margin-bottom:16px;
+  }
+  .bb-cg-study-head .eyebrow{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:999px;
+    background:#fff1e8;
+    color:#c2410c;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.09em;
+  }
+  .bb-cg-study-head h2{
+    margin:7px 0 4px;
+    font-size:32px;
+    line-height:1.15;
+    color:#182033;
+  }
+  .bb-cg-study-head p{
+    margin:0;
+    color:#667085;
+    max-width:840px;
+    line-height:1.5;
+  }
+  .bb-cg-study-head>a{
+    flex:0 0 auto;
+    display:inline-flex;
+    padding:12px 16px;
+    border-radius:11px;
+    background:#111827;
+    color:white;
+    font-weight:900;
+    text-decoration:none;
+  }
+  .bb-cg-class-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+  }
+  .bb-cg-class{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    min-height:270px;
+    padding:22px;
+    border:1px solid #e4e7ec;
+    border-top:5px solid #f97316;
+    border-radius:18px;
+    background:white;
+    box-shadow:0 9px 26px rgba(16,24,40,.05);
+    overflow:hidden;
+  }
+  .bb-cg-class:nth-child(2){border-top-color:#15803d}
+  .bb-cg-class:nth-child(3){border-top-color:#2563eb}
+  .bb-cg-class .num{
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.1em;
+    color:#c2410c;
+  }
+  .bb-cg-class:nth-child(2) .num{color:#15803d}
+  .bb-cg-class:nth-child(3) .num{color:#1d4ed8}
+  .bb-cg-class h3{
+    margin:9px 0 8px;
+    font-size:21px;
+    line-height:1.25;
+    color:#182033;
+  }
+  .bb-cg-class p{
+    margin:0 0 14px;
+    color:#667085;
+    font-size:14px;
+    line-height:1.5;
+  }
+  .bb-cg-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-top:auto;
+    margin-bottom:15px;
+  }
+  .bb-cg-tags span{
+    padding:5px 8px;
+    border-radius:999px;
+    background:#f5f7fa;
+    color:#475467;
+    font-size:11px;
+    font-weight:800;
+  }
+  .bb-cg-class>a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:44px;
+    border-radius:10px;
+    background:#111827;
+    color:white;
+    font-weight:900;
+    text-decoration:none;
+  }
+  .bb-cg-mobile-theory-link{display:none!important}
+  @media(max-width:900px){
+    .bb-cg-study-hub{padding:0 14px;margin:22px auto 28px}
+    .bb-cg-study-head{align-items:flex-start;flex-direction:column}
+    .bb-cg-study-head h2{font-size:28px}
+    .bb-cg-study-head>a{width:100%;justify-content:center}
+    .bb-cg-class-grid{grid-template-columns:1fr}
+    .bb-cg-class{min-height:0}
+    .bb-cg-mobile-theory-link{display:block!important}
+  }
+</style>
+<!-- BB_CG_CLASES_PORTADA_V4_END -->
 </head>
 <body>
   <header class="cxg-header">
@@ -31,7 +155,7 @@
         <span class="cxg-kicker">BADBEAR.MED · CIRUGÍA</span>
         <h1>Cirugía General</h1>
         <p>Portal funcional para integrar el contenido quirúrgico del curso: perioperatorio, trauma, abdomen agudo, pared abdominal, patología hepatobiliar, gastrointestinal, colorrectal, mamaria y endocrina.</p>
-        <div class="cxg-actions"><a href="#temas" class="cxg-btn primary">Explorar temas</a><a href="modulo.html?m=preguntas" class="cxg-btn secondary">Banco de preguntas</a></div>
+        <div class="cxg-actions"><a  href="#clases-badbear" class="cxg-btn primary">Ver clases</a><a href="modulo.html?m=preguntas" class="cxg-btn secondary">Banco de preguntas</a></div>
       </div>
       <div class="cxg-visual" aria-hidden="true" data-bb-course-hero-logo></div>
     </div>
@@ -39,7 +163,45 @@
 
   <section class="cxg-dashboard"><div class="cxg-stats"><div class="cxg-stat"><strong id="cxg-total-temas">16</strong><span>Temas base</span></div><div class="cxg-stat"><strong id="cxg-total-areas">0</strong><span>Áreas</span></div><div class="cxg-stat"><strong id="cxg-completados">0</strong><span>Temas revisados</span></div><div class="cxg-stat"><strong id="cxg-porcentaje">0%</strong><span>Progreso</span></div></div></section>
 
-  <section id="temas" class="cxg-section">
+  <!-- BB_CG_CLASES_PORTADA_V4_START -->
+<section class="bb-cg-study-hub" id="clases-badbear">
+  <div class="bb-cg-study-head">
+    <div>
+      <span class="eyebrow">CUADERNO BADBEAR.MED · CIRUGÍA GENERAL</span>
+      <h2>Clases desarrolladas</h2>
+      <p>Teoría amplia, razonamiento quirúrgico, imágenes clínicas y bloques BADBEAR.MED FIJA. Actualmente hay 3 clases publicadas.</p>
+    </div>
+    <a href="teoria.html">Ver plan completo →</a>
+  </div>
+
+  <div class="bb-cg-class-grid">
+    <article class="bb-cg-class">
+      <span class="num">CLASE 01</span>
+      <h3>Teoría 1 — Est. pre, trans y postoperatorio inmediato, patología quirúrgica y Teoría 1.2 — Líquidos y electrolitos</h3>
+      <p>Evaluación prequirúrgica, riesgo, ASA, vía aérea, consentimiento, URPA, analgesia y vigilancia postoperatoria.</p>
+      <div class="bb-cg-tags"><span>Preoperatorio</span><span>ASA</span><span>Postoperatorio</span></div>
+      <a href="clase-01-pre-posoperatorio.html">Estudiar clase →</a>
+    </article>
+
+    <article class="bb-cg-class">
+      <span class="num">CLASE 02</span>
+      <h3>Teoría 2 — Nutrición en cirugía, porcentaje de nutrientes necesarios y Teoría 2.2 — Heridas y cicatrización, tipos</h3>
+      <p>Estrés metabólico, desnutrición, tamizaje, ERAS, requerimientos, soporte enteral y nutrición parenteral.</p>
+      <div class="bb-cg-tags"><span>Nutrición</span><span>ERAS</span><span>Enteral</span></div>
+      <a href="clase-02-nutricion-paciente-quirurgico.html">Estudiar clase →</a>
+    </article>
+
+    <article class="bb-cg-class">
+      <span class="num">CLASE 03</span>
+      <h3>Teoría 3 — Teoría 3 — Patología quirúrgica benigna y maligna del esófago</h3>
+      <p>Anatomía quirúrgica, divertículos, acalasia, perforación, lesión cáustica, cáncer y reconstrucción esofágica.</p>
+      <div class="bb-cg-tags"><span>Esófago</span><span>Acalasia</span><span>Cáncer</span></div>
+      <a href="clase-03-esofago.html">Estudiar clase →</a>
+    </article>
+  </div>
+</section>
+<!-- BB_CG_CLASES_PORTADA_V4_END -->
+<section id="temas" class="cxg-section">
     <div class="cxg-section-head"><div><h2>Contenido del curso</h2><p>La arquitectura queda lista para recibir el material exacto de clases, libros, bancos y exámenes sin modificar el portal maestro.</p></div><div class="cxg-tools"><input id="cxg-buscar" type="search" placeholder="Buscar tema..." aria-label="Buscar tema"><select id="cxg-filtro" aria-label="Filtrar por área"><option value="todos">Todas las áreas</option></select></div></div>
     <div id="cxg-temas" class="cxg-grid"></div>
   </section>
@@ -53,5 +215,42 @@
   <script src="cirugia-general.js"></script>
   <script src="../assets/js/course-branding.js"></script>
   <script src="../assets/js/bb-responsive-global-v21.js"></script>
+<!-- BB_CG_PORTADA_OFICIAL_V8_START -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const titles = {
+    "clase-01-pre-posoperatorio.html": 'Teoría 1 — Est. pre, trans y postoperatorio inmediato, patología quirúrgica y Teoría 1.2 — Líquidos y electrolitos',
+    "clase-02-nutricion-paciente-quirurgico.html": 'Teoría 2 — Nutrición en cirugía, porcentaje de nutrientes necesarios y Teoría 2.2 — Heridas y cicatrización, tipos',
+    "clase-03-esofago.html": 'Teoría 3 — Patología quirúrgica benigna y maligna del esófago'
+  };
+
+  Object.entries(titles).forEach(([href,title]) => {
+    const link = [...document.querySelectorAll("a[href]")].find(a => {
+      const raw = (a.getAttribute("href") || "").split("?")[0];
+      return raw.endsWith(href);
+    });
+    if (!link) return;
+    const card = link.closest("article") || link.parentElement;
+    if (!card) return;
+    const h = card.querySelector("h2,h3");
+    if (h) h.textContent = title;
+  });
+
+  [...document.querySelectorAll("h1,h2,h3")].forEach(h => {
+    if ((h.textContent || "").trim().toLowerCase() === "contenido del curso") {
+      const section = h.closest("section");
+      if (section) section.remove();
+    }
+  });
+
+  [...document.querySelectorAll("a")].forEach(a => {
+    if ((a.textContent || "").trim() === "Ver todo el cuaderno") {
+      a.textContent = "Ver plan completo";
+      a.setAttribute("href","teoria.html");
+    }
+  });
+});
+</script>
+<!-- BB_CG_PORTADA_OFICIAL_V8_END -->
 </body>
 </html>
