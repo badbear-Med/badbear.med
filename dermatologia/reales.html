@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BADBEAR.MED | Reales Fijas</title>
+    <meta name="description" content="Preguntas reales fijas de Dermatología con desarrollo y BADBEAR.MED FIJA.">
+    <link rel="icon" type="image/png" href="../assets/logos/cursos/dermatologia/logo.png" data-bb-course-favicon>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="badbear-theme.css">
+    <link rel="stylesheet" href="reales.css">
+    <link rel="stylesheet" href="../assets/css/brand-watermark.css">
+    <link rel="stylesheet" href="../assets/css/bb-responsive-global-v21.css">
+    <script src="auth.js"></script>
+</head>
+<body data-course-logo="../assets/logos/cursos/dermatologia/logo.png"
+      data-course-logo-alt="../assets/logos/cursos/dermatologia/badbear.med_dermatology_panda_logo.png"
+      data-course-logo-fallback="badbear_logo.png"
+      style="--bb-watermark-image:url('../assets/logos/cursos/dermatologia/logo.png')">
+
+<header class="cabecera bb-header">
+    <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+        <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+        <div class="marca-texto">
+            <h1>BADBEAR<span>.MED</span></h1>
+            <p>Dermatología</p>
+        </div>
+    </a>
+
+    <nav class="nav-principal" aria-label="Navegación principal">
+        <a href="../index.html" class="nav-item" target="_top">← BADBEAR.MED</a>
+        <a href="index.html" class="nav-item">Inicio</a>
+        <a href="banco.html" class="nav-item">Banco</a>
+        <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+        <a href="reales.html" class="nav-item nav-activo">Reales fijas</a>
+        <a href="simulador.html" class="nav-item">Simulador</a>
+        <a href="atlas.html" class="nav-item">Atlas</a>
+        <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+        <a href="practico.html" class="nav-item">Práctico</a>
+        <a href="plan.html" class="nav-item">Plan</a>
+        <a href="repeticion.html" class="nav-item">Repetición</a>
+        <a href="repaso.html" class="nav-item">Repaso</a>
+        <a href="teoria.html" class="nav-item">Teoría</a>
+        <a href="audio.html" class="nav-item">Audio</a>
+        <a href="progreso.html" class="nav-item">Progreso</a>
+        <a href="historial.html" class="nav-item">Historial</a>
+    </nav>
+</header>
+
+<main class="reales-wrap">
+    <section class="reales-hero">
+        <span class="reales-kicker">BADBEAR.MED REALES FIJAS</span>
+        <h2>Preguntas reales para fijar</h2>
+        <p>
+            Resuelve una pregunta por vez. Después de confirmar verás la clave,
+            el desarrollo y la perla de alta rentabilidad.
+        </p>
+
+        <div class="reales-stats">
+            <div class="real-stat">
+                <span>Pregunta</span>
+                <strong id="real-progreso">1 / 90</strong>
+            </div>
+            <div class="real-stat ok">
+                <span>Aciertos</span>
+                <strong id="real-aciertos">0</strong>
+            </div>
+            <div class="real-stat error">
+                <span>Errores</span>
+                <strong id="real-errores">0</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="real-card">
+        <div class="real-card-top">
+            <span id="real-id" class="real-id">REAL FIJA #001</span>
+        </div>
+
+        <h3 id="real-enunciado"></h3>
+
+        <div id="real-opciones" class="real-opciones"></div>
+
+        <div class="real-acciones">
+            <button id="real-confirmar" class="real-btn real-btn-primary">Confirmar respuesta</button>
+            <button id="real-siguiente" class="real-btn real-btn-secondary" hidden>Siguiente</button>
+        </div>
+
+        <div id="real-alerta" class="real-alerta" hidden>
+            Selecciona una alternativa antes de confirmar.
+        </div>
+    </section>
+
+    <section id="real-resultado" class="real-resultado" hidden>
+        <div id="real-estado" class="real-estado"></div>
+
+        <div class="real-bloque">
+            <h4>Desarrollo</h4>
+            <p id="real-desarrollo"></p>
+        </div>
+
+        <div class="real-fija">
+            <strong>BADBEAR.MED FIJA:</strong>
+            <span id="real-fija"></span>
+        </div>
+
+        <figure id="real-imagen-wrap" class="real-imagen-wrap" hidden>
+            <img id="real-imagen" alt="">
+            <figcaption id="real-imagen-pie"></figcaption>
+        </figure>
+    </section>
+</main>
+
+<script src="reales.js"></script>
+<script src="../assets/js/course-branding.js"></script>
+<script src="../assets/js/bb-responsive-global-v21.js"></script>
+</body>
+</html>
