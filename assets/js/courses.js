@@ -5,7 +5,7 @@ window.BADBEAR_COURSES = [
     categoria: "Medicina",
     icono: "🩺",
     logo: "assets/logos/cursos/dermatologia/logo.png",
-    descripcion: "Lesiones elementales, enfermedades inflamatorias, infecciosas, parasitarias, tumorales y práctica clínica.",
+    descripcion: "Lesiones elementales, casos clínicos, Reales Fijas, exámenes pasados, enfermedades inflamatorias, infecciosas, parasitarias y tumorales.",
     href: "dermatologia/estudio.html?page=index.html",
     estado: "integrado"
   },
