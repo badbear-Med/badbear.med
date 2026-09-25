@@ -73,7 +73,7 @@
     contenedor.innerHTML = `
       <div class="bb-study-audio-grid">
         <div class="bb-study-meta">
-          <span class="bb-study-kicker">🎧 AUDIO DE ESTUDIO · ${DISPONIBLES.length}/${catalogo.totalTemas} DISPONIBLES</span>
+          <span class="bb-study-kicker">🎧 AUDIO DE ESTUDIO · ${DISPONIBLES.length} AUDIOS · ${catalogo.totalTemas} TEMAS</span>
           <strong id="bb-study-title" class="bb-study-title"></strong>
           <span class="bb-study-sub">Continúa sonando mientras cambias de sección</span>
         </div>
