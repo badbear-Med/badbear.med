@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BADBEAR.MED | Temas, audio, PDF y video · Dermatología</title>
-  <meta name="description" content="Catálogo de 16 temas de Dermatología con audio, PDF, video y teoría del proyecto BADBEAR.MED del grupo WAJOMEA.">
+  <meta name="description" content="Catálogo oficial de 12 temas de Dermatología con audio, PDF y video del proyecto BADBEAR.MED del grupo WAJOMEA.">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="badbear-theme.css">
   <script src="auth.js"></script>
@@ -30,9 +30,9 @@
 
 <main class="media-main">
   <section class="media-hero">
-    <span class="media-kicker">BADBEAR.MED · 16 TEMAS</span>
+    <span class="media-kicker">BADBEAR.MED · 12 TEMAS COMPLETOS</span>
     <h2>Audio, PDF y video en un solo catálogo</h2>
-    <p>Cada tema puede tener su audio, su PDF individual y su clase en YouTube. Todo se controla desde un único catálogo central para que el material crezca sin modificar cada página por separado.</p>
+    <p>Programa completo de Dermatología: 12 temas con audio, PDF individual y clase en YouTube. El tema 10 se divide en 10.1 y 10.2, por eso el catálogo contiene 13 unidades multimedia.</p>
     <div class="media-actions">
       <a id="playlist-general" class="media-btn youtube" target="_blank" rel="noopener noreferrer">▶ Ver playlist completa</a>
       <a class="media-btn primary" href="teoria.html">📖 Abrir cuaderno general</a>
@@ -40,15 +40,15 @@
   </section>
 
   <section class="media-resumen" aria-label="Resumen del material">
-    <div class="media-stat"><span>TEMAS PLANIFICADOS</span><strong id="stat-temas">16</strong></div>
-    <div class="media-stat"><span>AUDIOS DISPONIBLES</span><strong id="stat-audios">0 / 16</strong></div>
-    <div class="media-stat"><span>PDF INDIVIDUALES</span><strong id="stat-pdfs">0 / 16</strong></div>
-    <div class="media-stat"><span>VIDEOS INDIVIDUALES</span><strong id="stat-videos">0 / 16</strong></div>
+    <div class="media-stat"><span>TEMAS DEL CURSO</span><strong id="stat-temas">12</strong></div>
+    <div class="media-stat"><span>AUDIOS DISPONIBLES</span><strong id="stat-audios">0 / 13</strong></div>
+    <div class="media-stat"><span>PDF INDIVIDUALES</span><strong id="stat-pdfs">0 / 13</strong></div>
+    <div class="media-stat"><span>VIDEOS INDIVIDUALES</span><strong id="stat-videos">0 / 13</strong></div>
   </section>
 
   <section id="temas-grid" class="temas-grid" aria-label="Temas de Dermatología"></section>
 
-  <div class="media-nota"><strong>Desde ahora:</strong> cada tema se administra desde <code>contenido-dermatologia.js</code>. Los MP3 se guardan en <code>audios/</code>, los PDF en <code>pdfs/temas/</code> y los videos se enlazan desde YouTube. El catálogo se actualiza automáticamente al publicar los archivos.</div>
+  <div class="media-nota"><strong>Programa completo:</strong> 12 temas oficiales. El tema 10 tiene dos partes (10.1 y 10.2), por lo que hay 13 audios, 13 PDF y 13 videos disponibles en el catálogo.</div>
 </main>
 
 <footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
@@ -64,9 +64,9 @@
   const pdfs = C.temas.filter(t=>t.pdf).length;
   const videos = C.temas.filter(t=>t.video).length;
   document.getElementById("stat-temas").textContent = C.totalTemas;
-  document.getElementById("stat-audios").textContent = `${audios} / ${C.totalTemas}`;
-  document.getElementById("stat-pdfs").textContent = `${pdfs} / ${C.totalTemas}`;
-  document.getElementById("stat-videos").textContent = `${videos} / ${C.totalTemas}`;
+  document.getElementById("stat-audios").textContent = `${audios} / ${C.totalMateriales || C.temas.length}`;
+  document.getElementById("stat-pdfs").textContent = `${pdfs} / ${C.totalMateriales || C.temas.length}`;
+  document.getElementById("stat-videos").textContent = `${videos} / ${C.totalMateriales || C.temas.length}`;
   document.getElementById("playlist-general").href = C.playlistYouTube;
 
   function reproducirTema(id){
