@@ -1,84 +1,189 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BADBEAR.MED | Teoría Dermatología</title>
-    <meta name="description" content="Cuaderno BADBEAR.MED de Dermatología del proyecto BADBEAR.MED del grupo WAJOMEA.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="badbear-theme.css">
-    <script src="auth.js"></script>
-    <script src="contenido-dermatologia.js"></script>
-    <script src="theory-audio.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Teoría Dermatología</title>
+  <meta name="description" content="Teoría completa de Dermatología BADBEAR.MED organizada por los 12 temas oficiales del curso.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="badbear-theme.css">
+  <script src="auth.js"></script>
+  <script src="contenido-dermatologia.js"></script>
+  <script src="theory-audio.js" defer></script>
+  <style>
+    .teoria-main{width:min(1240px,94%);margin:28px auto 90px}
+    .teoria-hero{background:linear-gradient(135deg,#ffffff 0%,#f7f9ff 68%,#fff8f3 100%);border:1px solid #e2e8f0;border-radius:24px;padding:30px;box-shadow:0 14px 38px rgba(17,24,39,.07);position:relative;overflow:hidden}
+    .teoria-hero:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#2458ff,#ff5a36,#ffc928,#16a36f)}
+    .teoria-kicker{display:inline-flex;padding:7px 11px;border-radius:999px;background:#eef3ff;color:#2458ff;font-size:11px;font-weight:900;letter-spacing:.7px}
+    .teoria-hero h2{font-size:38px;line-height:1.08;margin:14px 0 9px;color:#111827}
+    .teoria-hero p{max-width:820px;margin:0;color:#667085;line-height:1.65}
+    .teoria-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0}
+    .teoria-stat{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:17px}
+    .teoria-stat span{display:block;color:#667085;font-size:10px;font-weight:900;letter-spacing:.55px}
+    .teoria-stat strong{display:block;margin-top:6px;font-size:26px;color:#111827}
+    .seccion-titulo{margin:28px 0 12px}
+    .seccion-titulo h3{margin:0;color:#111827;font-size:24px}
+    .seccion-titulo p{margin:5px 0 0;color:#667085;font-size:13px}
+    .temas-teoria{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .tema-teoria{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:18px;box-shadow:0 8px 22px rgba(17,24,39,.045)}
+    .tema-cab{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .tema-numero{display:inline-flex;align-items:center;justify-content:center;min-width:62px;height:27px;padding:0 8px;border-radius:999px;background:#eef3ff;color:#2458ff;font-size:10px;font-weight:950;letter-spacing:.5px}
+    .tema-listo{font-size:9px;font-weight:900;color:#11734b;background:#eefbf4;padding:6px 8px;border-radius:999px}
+    .tema-teoria h4{margin:11px 0 7px;font-size:18px;color:#111827}
+    .tema-teoria p{margin:0;color:#697586;font-size:12px;line-height:1.55}
+    .tema-recursos{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .tema-btn{min-height:36px;padding:0 11px;border-radius:9px;border:1px solid #dbe2ea;background:#fff;color:#111827;text-decoration:none;font-size:11px;font-weight:900;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+    .tema-btn.leer{background:#2458ff;border-color:#2458ff;color:#fff}
+    .tema-btn.audio{background:#111827;border-color:#111827;color:#fff}
+    .tema-btn.video{background:#ff3b30;border-color:#ff3b30;color:#fff}
+    .lector-wrap{margin-top:28px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;overflow:hidden;box-shadow:0 12px 34px rgba(17,24,39,.06)}
+    .lector-head{padding:17px 20px;border-bottom:1px solid #e7ebf0;display:flex;justify-content:space-between;align-items:center;gap:14px}
+    .lector-head small{display:block;color:#2458ff;font-weight:950;letter-spacing:.55px;margin-bottom:4px}
+    .lector-head h3{margin:0;font-size:19px;color:#111827}
+    .lector-head a{font-size:12px;font-weight:900;color:#2458ff;text-decoration:none;white-space:nowrap}
+    .lector-wrap iframe{width:100%;height:780px;border:0;background:#f2f4f7;display:block}
+    .cuaderno-integral{margin-top:22px;background:#fffbea;border:1px solid #f0df8a;border-radius:18px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .cuaderno-integral h3{margin:0 0 4px;color:#4e4300;font-size:17px}
+    .cuaderno-integral p{margin:0;color:#756600;font-size:12px;line-height:1.5}
+    .cuaderno-integral a{flex:0 0 auto;text-decoration:none;background:#111827;color:#fff;padding:11px 14px;border-radius:10px;font-size:11px;font-weight:900}
+    @media(max-width:900px){.teoria-stats{grid-template-columns:repeat(2,1fr)}.temas-teoria{grid-template-columns:1fr}.lector-wrap iframe{height:650px}}
+    @media(max-width:760px){.teoria-main{width:calc(100% - 24px);margin-top:18px}.teoria-hero{padding:24px 19px}.teoria-hero h2{font-size:30px}.teoria-stats{grid-template-columns:1fr 1fr}.tema-recursos{display:grid;grid-template-columns:1fr 1fr}.tema-btn{width:100%;box-sizing:border-box}.lector-head{align-items:flex-start;flex-direction:column}.lector-wrap iframe{height:560px}.cuaderno-integral{align-items:flex-start;flex-direction:column}.cuaderno-integral a{width:100%;box-sizing:border-box;text-align:center}}
+  </style>
   <link rel="stylesheet" href="../assets/css/bb-responsive-global-v21.css">
 </head>
 <body>
 <header class="cabecera bb-header">
-    <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
-        <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
-        <div class="marca-texto">
-            <h1>BADBEAR<span>.MED</span></h1>
-            <p>Dermatología</p>
-        </div>
-    </a>
-
-    <nav class="nav-principal" aria-label="Navegación principal">
-        <a href="index.html" class="nav-item">Inicio</a>
-        <a href="banco.html" class="nav-item">Banco</a>
-        <a href="examenes.html" class="nav-item">Exámenes pasados</a>
-        <a href="simulador.html" class="nav-item">Simulador</a>
-        <a href="atlas.html" class="nav-item">Atlas</a>
-        <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
-        <a href="practico.html" class="nav-item">Práctico</a>
-        <a href="plan.html" class="nav-item">Plan</a>
-        <a href="repeticion.html" class="nav-item">Repetición</a>
-        <a href="repaso.html" class="nav-item">Repaso</a>
-        <a href="teoria.html" class="nav-item nav-activo">Teoría</a>
-        <a href="audio.html" class="nav-item">Audio</a>
-        <a href="progreso.html" class="nav-item">Progreso</a>
-        <a href="historial.html" class="nav-item">Historial</a>
-    </nav>
+  <a class="marca" href="index.html" aria-label="Inicio BADBEAR.MED">
+    <img class="logo-badbear" src="badbear_logo.png" alt="Logo BADBEAR.MED">
+    <div class="marca-texto"><h1>BADBEAR<span>.MED</span></h1><p>Dermatología</p></div>
+  </a>
+  <nav class="nav-principal" aria-label="Navegación principal">
+    <a href="index.html" class="nav-item">Inicio</a>
+    <a href="banco.html" class="nav-item">Banco</a>
+    <a href="examenes.html" class="nav-item">Exámenes pasados</a>
+    <a href="reales.html" class="nav-item">Reales fijas</a>
+    <a href="simulador.html" class="nav-item">Simulador</a>
+    <a href="atlas.html" class="nav-item">Atlas</a>
+    <a href="reconocimiento.html" class="nav-item">Reconocimiento</a>
+    <a href="practico.html" class="nav-item">Práctico</a>
+    <a href="plan.html" class="nav-item">Plan</a>
+    <a href="repeticion.html" class="nav-item">Repetición</a>
+    <a href="repaso.html" class="nav-item">Repaso</a>
+    <a href="teoria.html" class="nav-item nav-activo">Teoría</a>
+    <a href="audio.html" class="nav-item">Audio</a>
+    <a href="progreso.html" class="nav-item">Progreso</a>
+    <a href="historial.html" class="nav-item">Historial</a>
+  </nav>
 </header>
 
-<main class="teoria-badbear">
-    <section class="cabecera-teoria">
-        <span class="hero-etiqueta">CUADERNO BADBEAR.MED</span>
-        <h2>Dermatología</h2>
-        <p>
-            Resumen integral de la unidad de Dermatología,
-            desarrollado progresivamente durante el curso.
-        </p>
-    </section>
+<main class="teoria-main">
+  <section class="teoria-hero">
+    <span class="teoria-kicker">BADBEAR.MED · TEORÍA DE DERMATOLOGÍA</span>
+    <h2>Los 12 temas del curso, organizados para estudiar</h2>
+    <p>Ya no dependes solamente del cuaderno general. Aquí puedes entrar directamente a cada tema, leer su PDF individual, escuchar el audio correspondiente y abrir la clase en video.</p>
+  </section>
 
-    <section class="cuaderno-card">
-        <div class="cuaderno-info">
-            <div class="cuaderno-icono">PDF</div>
-            <div>
-                <h3>Cuaderno BADBEAR.MED – Dermatología</h3>
-                <p>Material de estudio centralizado con los temas desarrollados durante la unidad.</p>
-                <p class="estado-cuaderno">Documento en desarrollo · 16 temas planificados</p>
-            </div>
-        </div>
+  <section class="teoria-stats" aria-label="Resumen de teoría">
+    <div class="teoria-stat"><span>TEMAS OFICIALES</span><strong>12</strong></div>
+    <div class="teoria-stat"><span>UNIDADES DE LECTURA</span><strong>13</strong></div>
+    <div class="teoria-stat"><span>AUDIOS</span><strong id="stat-audios-teoria">13</strong></div>
+    <div class="teoria-stat"><span>VIDEOS</span><strong id="stat-videos-teoria">13</strong></div>
+  </section>
 
-        <div class="acciones-cuaderno">
-            <a href="pdfs/cuaderno-dermatologia.pdf" target="_blank" class="btn-principal">Abrir PDF</a>
-            <a href="pdfs/cuaderno-dermatologia.pdf" download class="btn-secundario-inicio">Descargar</a>
-        </div>
-    </section>
+  <section>
+    <div class="seccion-titulo">
+      <h3>Temario completo</h3>
+      <p>El tema 10 se divide en 10.1 y 10.2.</p>
+    </div>
+    <div id="temas-teoria" class="temas-teoria"></div>
+  </section>
 
-    <section class="visor-pdf">
-        <div class="visor-cabecera">
-            <div>
-                <span class="visor-etiqueta">LECTOR</span>
-                <h3>Cuaderno de Dermatología</h3>
-            </div>
-            <a href="pdfs/cuaderno-dermatologia.pdf" target="_blank">Pantalla completa ↗</a>
-        </div>
-        <iframe src="pdfs/cuaderno-dermatologia.pdf" title="Cuaderno BADBEAR.MED Dermatología"></iframe>
-    </section>
+  <section id="lector" class="lector-wrap">
+    <div class="lector-head">
+      <div>
+        <small>LECTOR DE TEORÍA</small>
+        <h3 id="lector-titulo">01 · Anatomía y fisiología de la piel</h3>
+      </div>
+      <a id="lector-externo" href="pdfs/temas/01-anatomia-fisiologia-piel.pdf" target="_blank" rel="noopener noreferrer">Abrir en pantalla completa ↗</a>
+    </div>
+    <iframe id="lector-pdf" src="pdfs/temas/01-anatomia-fisiologia-piel.pdf" title="Teoría de Dermatología"></iframe>
+  </section>
+
+  <section class="cuaderno-integral">
+    <div>
+      <h3>Cuaderno integral de Dermatología</h3>
+      <p>El PDF general de 186 páginas se conserva como material complementario. Para estudiar por tema usa el temario de arriba.</p>
+    </div>
+    <a href="pdfs/cuaderno-dermatologia.pdf" target="_blank" rel="noopener noreferrer">Abrir cuaderno integral</a>
+  </section>
 </main>
 
 <footer>BADBEAR.MED · Dermatología · WAJOMEA.GROUP</footer>
-  <script src="../assets/js/bb-responsive-global-v21.js"></script>
+
+<script>
+(function(){
+  "use strict";
+  const C = window.BADBEAR_DERMATOLOGIA;
+  if(!C || !Array.isArray(C.temas)) return;
+
+  const contenedor = document.getElementById("temas-teoria");
+  const lector = document.getElementById("lector");
+  const iframe = document.getElementById("lector-pdf");
+  const titulo = document.getElementById("lector-titulo");
+  const externo = document.getElementById("lector-externo");
+
+  document.getElementById("stat-audios-teoria").textContent = C.temas.filter(t=>t.audio).length;
+  document.getElementById("stat-videos-teoria").textContent = C.temas.filter(t=>t.video).length;
+
+  function etiquetaId(id){
+    const s = String(id);
+    return s.includes(".") ? s : s.padStart(2,"0");
+  }
+
+  function abrirTema(t){
+    iframe.src = t.pdf;
+    titulo.textContent = etiquetaId(t.id) + " · " + t.titulo;
+    externo.href = t.pdf;
+    lector.scrollIntoView({behavior:"smooth",block:"start"});
+  }
+
+  function reproducirTema(id){
+    if(window.self !== window.top){
+      window.parent.postMessage({type:"bb-audio-play-topic",temaId:Number(id)},location.origin);
+    }else if(window.BADBEAR_AUDIO_API){
+      window.BADBEAR_AUDIO_API.playTopic(Number(id));
+    }
+  }
+
+  contenedor.innerHTML = C.temas.map(t=>`
+    <article class="tema-teoria">
+      <div class="tema-cab">
+        <span class="tema-numero">TEMA ${etiquetaId(t.id)}</span>
+        <span class="tema-listo">COMPLETO</span>
+      </div>
+      <h4>${t.titulo}</h4>
+      <p>Material del tema disponible en PDF, audio de estudio y video.</p>
+      <div class="tema-recursos">
+        <button class="tema-btn leer" type="button" data-leer="${t.id}">📖 Leer aquí</button>
+        <a class="tema-btn" href="${t.pdf}" target="_blank" rel="noopener noreferrer">📄 PDF</a>
+        <button class="tema-btn audio" type="button" data-audio="${t.id}">🎧 Audio</button>
+        <a class="tema-btn video" href="${t.video}" target="_blank" rel="noopener noreferrer">▶ Video</a>
+      </div>
+    </article>
+  `).join("");
+
+  contenedor.querySelectorAll("[data-leer]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const t = C.temas.find(x=>String(x.id)===String(btn.dataset.leer));
+      if(t) abrirTema(t);
+    });
+  });
+
+  contenedor.querySelectorAll("[data-audio]").forEach(btn=>{
+    btn.addEventListener("click",()=>reproducirTema(btn.dataset.audio));
+  });
+})();
+</script>
+<script src="../assets/js/bb-responsive-global-v21.js"></script>
 </body>
 </html>
