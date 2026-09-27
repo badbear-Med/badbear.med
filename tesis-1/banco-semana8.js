@@ -37,7 +37,7 @@ function showFeedback(q,choice,restored=false){
   });
   const ok=choice===q.answer;
   const feedback=$("feedback");
-  $("feedbackHead").textContent=ok?"Respuesta correcta":"Respuesta incorrecta";
+  $("feedbackHead").textContent=ok?("Respuesta correcta · "+letters[q.answer]+". "+q.options[q.answer]):("Respuesta incorrecta · Correcta: "+letters[q.answer]+". "+q.options[q.answer]);
   $("feedbackHead").className="feedback-head "+(ok?"ok":"bad");
   $("explanation").textContent=q.explanation||"Revisa la explicación y la alternativa correcta.";
   const theory=$("theoryText");
