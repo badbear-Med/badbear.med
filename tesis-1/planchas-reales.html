@@ -28,12 +28,35 @@
 </section>
 
 <section class="pr-section">
-<div class="pr-head"><div><h2>Planchas reales</h2><p>Para preguntas, fotografías, capturas o exámenes que provengan realmente de evaluaciones y que tú nos entregues.</p></div><span class="pr-count" id="count-real">0 cargadas</span></div>
+<div class="pr-head"><div><h2>Planchas reales cargadas</h2><p>Preguntas transcritas desde los archivos reales que acabas de entregar. Se mantiene la clave original y se explica cualquier punto discutible sin alterar el examen.</p></div><span class="pr-count" id="count-real">45 verificadas</span></div>
 <div class="pr-grid">
-<article class="pr-card real"><span class="type">REAL</span><h3>Preguntas reales sueltas</h3><p>Banco para preguntas individuales recuperadas de evaluaciones. Se conservará la redacción original.</p><div class="empty">Esperando material</div></article>
-<article class="pr-card real"><span class="type">REAL</span><h3>Planchas completas</h3><p>Bloques de preguntas pertenecientes a una misma evaluación o colección.</p><div class="empty">Esperando material</div></article>
-<article class="pr-card real"><span class="type">REAL</span><h3>Exámenes completos</h3><p>Evaluaciones completas para resolver en orden, manteniendo estructura y clave cuando estén disponibles.</p><div class="empty">Esperando material</div></article>
+<article class="pr-card real"><span class="type">REAL · 20</span><h3>Banqueo Tesis I · Parcial</h3><p>20 preguntas completas con alternativas y clave original verificadas.</p><div class="empty">Cargado al banco interactivo</div></article>
+<article class="pr-card real"><span class="type">REAL · 20</span><h3>Examen parcial Tesis I · 2023</h3><p>20 preguntas recuperadas del examen con las claves visibles en las capturas.</p><div class="empty">Cargado al banco interactivo</div></article>
+<article class="pr-card real"><span class="type">REAL · 5</span><h3>Plancha complementaria</h3><p>5 preguntas adicionales completamente legibles. Las preguntas cortadas del archivo no se reconstruyen ni se inventan.</p><div class="empty">Cargado al banco interactivo</div></article>
 </div>
+</section>
+
+<section class="real-quiz" id="bancoReal">
+  <div class="pr-head"><div><h2>Resolver preguntas reales</h2><p>Selecciona una fuente o mezcla todo el material. Al responder se muestra la clave original, explicación teórica, revisión de alternativas y BADBEAR.MED FIJA.</p></div><span class="pr-count" id="realProgress">1 / 45</span></div>
+  <div class="real-tools">
+    <select id="realSource"><option value="all">Todas las planchas</option><option value="BANQUEO">Banqueo Tesis I · Parcial</option><option value="EX2023">Examen parcial Tesis I · 2023</option><option value="COMP">Plancha complementaria</option></select>
+    <button id="realShuffle">Mezclar</button><button id="realReset">Reiniciar</button>
+    <span class="real-score">Correctas <b id="realRight">0</b> / <b id="realDone">0</b></span>
+  </div>
+  <article class="real-question">
+    <div class="real-meta"><span class="real-badge" id="realBadge">REAL</span><span id="realSourceLabel"></span></div>
+    <h3 id="realStem"></h3>
+    <div id="realOptions" class="real-options"></div>
+    <div class="real-actions"><button id="realPrev">← Anterior</button><button class="primary" id="realCheck">Responder</button><button id="realNext">Siguiente →</button></div>
+    <div id="realFeedback" class="real-feedback">
+      <h4 id="realResult"></h4>
+      <div class="real-explain"><strong>Explicación</strong><p id="realExplanation"></p></div>
+      <div class="real-theory"><strong>Explicación teórica</strong><p id="realTheory"></p></div>
+      <div><strong>Revisión de alternativas</strong><div id="realRationales" class="real-rationales"></div></div>
+      <div class="real-fija" id="realFija"></div>
+      <div class="real-source-note" id="realKeyNote"></div>
+    </div>
+  </article>
 </section>
 
 <section class="pr-section">
@@ -63,5 +86,5 @@
 </main>
 
 <footer class="tesis-footer">BADBEAR.MED · Tesis I · Planchas Reales · WAJOMEA.GROUP</footer>
-<script src="../assets/js/bb-responsive-global-v21.js"></script>
+<script>window.TESIS_PLANCHAS_REALES=[];</script><script src="planchas-reales-data.js?v=20260927a"></script><script src="planchas-reales.js?v=20260927a"></script><script src="../assets/js/bb-responsive-global-v21.js"></script>
 </body></html>
