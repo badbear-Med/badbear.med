@@ -1,5 +1,14 @@
 window.BADBEAR_COURSES = [
   {
+    id: "tesis-1",
+    nombre: "Tesis I",
+    categoria: "Investigación",
+    icono: "📑",
+    descripcion: "Portal para construir el proyecto de investigación: problema, antecedentes, objetivos, variables, metodología, población, instrumentos, análisis, ética y protocolo final.",
+    href: "tesis-1/index.html",
+    estado: "integrado"
+  },
+  {
     id: "dermatologia",
     nombre: "Dermatología",
     categoria: "Medicina",
