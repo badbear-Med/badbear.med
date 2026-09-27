@@ -45,3 +45,6 @@
 .real-fija{margin-top:12px;padding:12px 13px;border-radius:11px;background:#fffbea;border:1px solid #f0df8a;color:#5c5100;font-size:12px;line-height:1.55}.real-fija strong{display:block;margin-bottom:3px}
 .real-source-note{margin-top:10px;font-size:10.5px;color:#667085;line-height:1.5}
 @media(max-width:620px){.real-tools>*{width:100%}.real-tools .real-score{margin-left:0}.real-actions{flex-wrap:wrap}.real-actions button{flex:1}.real-question{padding:17px}}
+
+.prob-quiz{margin-top:28px}
+.prob-badge{display:inline-flex;padding:6px 9px;border-radius:999px;background:#fff4e8;color:#b54708;font-weight:950;letter-spacing:.55px;font-size:9px}
