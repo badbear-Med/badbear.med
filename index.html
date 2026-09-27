@@ -21,82 +21,26 @@
   </header>
 
   <main>
-    <section class="hero hero-redesign" id="inicio">
-      <div class="hero-shell">
-        <div class="hero-copy">
-          <div class="hero-kicker">
-            <span class="hero-dot"></span>
-            PLATAFORMA ACADÉMICA · WAJOMEA.GROUP
-          </div>
-
+    <section class="hero-showcase" id="inicio">
+      <div class="hero-showcase__inner">
+        <div class="hero-showcase__copy">
+          <span class="hero-showcase__eyebrow">PROYECTO WAJOMEA.GROUP</span>
           <h1>BADBEAR.<span>MED</span></h1>
-
-          <h2>Estudia medicina desde un solo lugar.</h2>
-
-          <p class="descripcion">
-            Cursos organizados, teoría desarrollada, bancos de preguntas, exámenes,
-            PDF, audio, video y herramientas de repaso integradas en una sola plataforma.
-          </p>
-
-          <div class="hero-pills" aria-label="Recursos principales">
-            <span>🧠 Bancos de preguntas</span>
-            <span>📚 Teoría por clases</span>
-            <span>🎧 Audio · PDF · Video</span>
+          <h2>Tu plataforma médica para estudiar, practicar y repasar.</h2>
+          <p>Teoría, bancos de preguntas, exámenes, PDF, audio y video organizados por curso en un solo portal.</p>
+          <div class="hero-showcase__actions">
+            <a href="#cursos" class="boton">Explorar cursos</a>
+            <a href="tesis-1/index.html" class="boton boton-secundario">Entrar a Tesis I</a>
           </div>
-
-          <div class="hero-acciones">
-            <a href="#cursos" class="boton hero-primary">Explorar todos los cursos</a>
-            <a href="tesis-1/index.html" class="boton hero-secondary">Entrar a Tesis I</a>
-          </div>
-
-          <div class="hero-footnote">
-            <strong>BADBEAR.MED</strong>
-            <span>Aprendizaje médico organizado, práctico y progresivo.</span>
+          <div class="hero-showcase__names">
+            <strong>Doctor Bad Bear</strong>
+            <span>+</span>
+            <strong>Doctora Kha-mhu</strong>
           </div>
         </div>
-
-        <aside class="hero-dashboard" aria-label="Accesos destacados">
-          <div class="dashboard-head">
-            <div>
-              <span>ACCESOS DESTACADOS</span>
-              <h3>Continúa estudiando</h3>
-            </div>
-            <div class="dashboard-mark">MED</div>
-          </div>
-
-          <div class="dashboard-grid">
-            <a href="dermatologia/estudio.html?page=index.html" class="dash-card dash-blue">
-              <div class="dash-icon">🩺</div>
-              <div><strong>Dermatología</strong><span>Teoría · atlas · banco clínico</span></div>
-              <b>→</b>
-            </a>
-
-            <a href="tesis-1/index.html" class="dash-card dash-orange">
-              <div class="dash-icon">📑</div>
-              <div><strong>Tesis I</strong><span>Clases · planchas · simulacros</span></div>
-              <b>→</b>
-            </a>
-
-            <a href="cirugia-general/index.html" class="dash-card dash-green">
-              <div class="dash-icon">⚕</div>
-              <div><strong>Cirugía General</strong><span>Teoría · casos · banco</span></div>
-              <b>→</b>
-            </a>
-
-            <a href="infectologia/index.html" class="dash-card dash-red">
-              <div class="dash-icon">🦠</div>
-              <div><strong>Infectología</strong><span>Clases · repaso · evaluación</span></div>
-              <b>→</b>
-            </a>
-          </div>
-
-          <div class="dashboard-bottom">
-            <span class="db-chip db-blue">Medicina</span>
-            <span class="db-chip db-orange">Investigación</span>
-            <span class="db-chip db-green">Cirugía</span>
-            <span class="db-chip db-red">Repaso</span>
-          </div>
-        </aside>
+        <div class="hero-showcase__visual">
+          <img src="data:image/webp;base64,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" alt="Doctor Bad Bear y Doctora Kha-mhu, mascotas médicas de BADBEAR.MED">
+        </div>
       </div>
     </section>
 
