@@ -9,7 +9,7 @@ function render(){
  const q=current(); selected=null;
  if(!q){$("realStem").textContent="No hay preguntas en esta selección.";$("realOptions").innerHTML="";return}
  $("realBadge").textContent="REAL";
- $("realSourceLabel").textContent=(q.source==="BANQUEO"?"Banqueo Tesis I · Parcial":q.source==="EX2023"?"Examen parcial Tesis I · 2023":"Plancha complementaria")+" · "+q.topic;
+ $("realSourceLabel").textContent=(q.source==="BANQUEO"?"Banqueo Tesis I · Parcial":q.source==="EX2023"?"Examen parcial Tesis I · 2023 · corroborado en varios archivos":"Plancha complementaria")+" · "+q.topic;
  $("realStem").textContent=q.stem;
  const box=$("realOptions");box.innerHTML="";
  q.options.forEach((o,i)=>{const b=document.createElement("button");b.className="real-option";b.innerHTML="<strong>"+L[i]+".</strong> "+o;b.onclick=()=>{if(answers.has(q.id))return;selected=i;[...box.children].forEach(x=>x.classList.remove("selected"));b.classList.add("selected")};box.appendChild(b)});
