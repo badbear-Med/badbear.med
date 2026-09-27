@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estructura completa del plan de tesis explicada paso a paso con ejemplos en BADBEAR.MED.">
+  <title>Estructura de la tesis | Tesis I | BADBEAR.MED</title>
+  <link rel="icon" type="image/png" href="../dermatologia/badbear_logo.png">
+  <link rel="stylesheet" href="tesis-1.css">
+  <link rel="stylesheet" href="../assets/css/bb-responsive-global-v21.css">
+  <link rel="stylesheet" href="../assets/css/course-lock.css">
+  <script src="../assets/js/course-lock-config.js"></script>
+  <script src="../assets/js/course-lock.js" data-course="tesis-1"></script>
+  <style>
+    .manual-main{width:min(1180px,94%);margin:30px auto 80px}
+    .manual-hero{background:linear-gradient(135deg,#eef3ff,#fff 58%,#fff7ed);border:1px solid #e4e7ec;border-radius:24px;padding:30px;box-shadow:0 14px 38px rgba(17,24,39,.06)}
+    .manual-hero h1{font-size:38px;margin:10px 0 8px;letter-spacing:-1px}
+    .manual-hero p{margin:0;color:#667085;line-height:1.65;max-width:850px}
+    .manual-alert{margin-top:16px;padding:14px 16px;background:#111827;color:#fff;border-radius:14px;font-size:13px;line-height:1.55}
+    .manual-alert strong{color:#f5c518}
+    .manual-toc{margin:20px 0;display:flex;gap:8px;flex-wrap:wrap}
+    .manual-toc a{padding:8px 10px;background:#fff;border:1px solid #e4e7ec;border-radius:999px;text-decoration:none;color:#344054;font-size:11px;font-weight:900}
+    .manual-capitulo{margin-top:22px;background:#fff;border:1px solid #e4e7ec;border-radius:20px;padding:22px;box-shadow:0 8px 24px rgba(17,24,39,.04)}
+    .manual-capitulo>h2{margin:0 0 4px;font-size:24px}
+    .manual-capitulo>.intro{margin:0 0 16px;color:#667085;font-size:13px;line-height:1.6}
+    .manual-bloque{padding:17px 0;border-top:1px solid #eef0f3}
+    .manual-bloque:first-of-type{border-top:0}
+    .manual-bloque h3{font-size:17px;margin:0 0 7px}
+    .manual-bloque p{font-size:13px;line-height:1.65;color:#475467;margin:6px 0}
+    .manual-bloque ul{margin:9px 0 0;padding-left:20px;color:#475467;font-size:13px;line-height:1.7}
+    .ejemplo{margin-top:11px;padding:13px 14px;border-radius:12px;background:#f7f9fc;border-left:4px solid #2458ff}
+    .ejemplo strong{display:block;color:#2458ff;margin-bottom:5px;font-size:11px;letter-spacing:.45px}
+    .fija{margin-top:11px;padding:13px 14px;border-radius:12px;background:#fffbea;border:1px solid #f0df8a;color:#5c5100;font-size:12px;line-height:1.55}
+    .fija strong{display:block;margin-bottom:4px}
+    .coherencia{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:13px}
+    .coherencia div{padding:12px 8px;background:#eef3ff;border-radius:11px;text-align:center;font-size:10px;font-weight:900;color:#2458ff}
+    .tabla-wrap{overflow:auto;margin-top:12px}
+    .manual-table{width:100%;border-collapse:collapse;font-size:12px}
+    .manual-table th,.manual-table td{border:1px solid #e4e7ec;padding:10px;vertical-align:top;text-align:left}
+    .manual-table th{background:#f8fafc;color:#344054}
+    .volver{display:inline-flex;margin-top:22px;text-decoration:none;font-weight:900;font-size:12px;color:#2458ff}
+    @media(max-width:900px){.coherencia{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:650px){.manual-main{width:calc(100% - 24px)}.manual-hero{padding:22px}.manual-hero h1{font-size:30px}.manual-capitulo{padding:17px}.coherencia{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<header class="tesis-header">
+  <div class="inner">
+    <a class="tesis-brand" href="index.html"><span class="tesis-mark">📑</span> BADBEAR.<span>MED</span></a>
+    <nav class="tesis-nav">
+      <a href="index.html">Tesis I</a>
+      <a href="#introduccion">Introducción</a>
+      <a href="#marco">Marco teórico</a>
+      <a href="#metodo">Método</a>
+      <a href="#administrativos">Aspectos administrativos</a>
+      <a href="../index.html" class="portal">← Portal principal</a>
+    </nav>
+  </div>
+</header>
+
+<main class="manual-main">
+  <section class="manual-hero">
+    <span class="tesis-kicker">BADBEAR.MED · MANUAL DE ESTRUCTURA</span>
+    <h1>Estructura de la tesis, explicada paso a paso</h1>
+    <p>Esta sección sigue el esquema trabajado en clase y organiza cada apartado para que se entienda qué debe escribirse, para qué sirve, cómo se conecta con el resto del trabajo y qué errores deben evitarse.</p>
+    <div class="manual-alert"><strong>Idea central de la clase:</strong> una tesis no es una suma de capítulos aislados. Debe existir coherencia entre título, problema, objetivos, hipótesis, variables, método, análisis y conclusiones.</div>
+  </section>
+
+  <nav class="manual-toc" aria-label="Índice de la estructura">
+    <a href="#introduccion">I. Introducción</a>
+    <a href="#marco">II. Marco teórico</a>
+    <a href="#metodo">III. Método</a>
+    <a href="#administrativos">IV. Aspectos administrativos</a>
+    <a href="#referencias">Referencias</a>
+    <a href="#anexos">Anexos</a>
+  </nav>
+
+  <section id="introduccion" class="manual-capitulo">
+    <h2>I. Introducción</h2>
+    <p class="intro">Aquí se presenta el problema de investigación y se construye la lógica inicial del estudio.</p>
+
+    <div class="manual-bloque">
+      <h3>1. Planteamiento del problema</h3>
+      <p>El planteamiento explica qué situación merece ser investigada y por qué constituye un problema. En la clase se remarcó que el problema puede surgir de la experiencia, de la opinión de expertos y, especialmente en estudiantes, de la revisión de literatura reciente.</p>
+      <p>También se enfatizó el <strong>principio de contradicción</strong>: investigar cobra sentido cuando la evidencia no es completamente uniforme, cuando distintos trabajos muestran resultados diferentes o cuando existe una brecha que aún necesita aclararse.</p>
+      <div class="ejemplo"><strong>EJEMPLO</strong>Si varios estudios señalan que el bajo ingreso económico es el principal factor asociado a anemia, pero otros encuentran mayor peso de la dieta, parasitosis u otras variables, aparece una contradicción que puede justificar un nuevo estudio.</div>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>1.1. Descripción de la realidad problemática</h3>
+      <p>Debe mostrar el contexto real del problema: qué ocurre, en quiénes ocurre, dónde ocurre, qué se conoce y qué sigue sin estar claro. No consiste en llenar páginas con información general; debe conducir de forma lógica hasta la pregunta de investigación.</p>
+      <div class="fija"><strong>BADBEAR.MED FIJA:</strong> la realidad problemática debe terminar haciendo evidente por qué la pregunta de investigación merece ser respondida.</div>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>1.2. Formulación del problema</h3>
+      <p>En la clase se indicó que debe redactarse <strong>en forma de pregunta</strong>, cruzando las variables, usando términos claros y delimitando tiempo y espacio cuando corresponda.</p>
+      <div class="ejemplo"><strong>EJEMPLO DE LA CLASE</strong>¿Cuáles son los principales factores de riesgo asociados a la disminución de la agudeza visual en escolares de un centro educativo de Lima en 2022?</div>
+      <p>De una pregunta bien construida suelen reconocerse las variables principales, la población, el contexto temporal y espacial y, en muchos casos, el enfoque metodológico probable.</p>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>1.3. Problema general y problemas específicos</h3>
+      <p>El problema general expresa la interrogante central. Los problemas específicos descomponen esa pregunta en componentes más concretos. No siempre es necesario multiplicarlos: deben existir solo cuando ayudan a organizar el estudio y mantienen coherencia con los objetivos específicos.</p>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>2. Objetivos</h3>
+      <p>Los objetivos indican qué pretende lograr el investigador. Se redactan con verbos en infinitivo, por ejemplo: <strong>determinar, analizar, evaluar, identificar, cuantificar o describir</strong>.</p>
+      <h3 style="margin-top:12px">2.1. Objetivo general</h3>
+      <p>Debe responder directamente al problema general. La clase mostró que, si el problema está bien formulado, el objetivo general suele obtenerse cambiando la pregunta por una acción en infinitivo.</p>
+      <div class="ejemplo"><strong>EJEMPLO</strong>Problema: “¿Cuáles son los principales factores de riesgo asociados...?” → Objetivo general: “Determinar los principales factores de riesgo asociados...”.</div>
+      <h3 style="margin-top:12px">2.2. Objetivos específicos</h3>
+      <p>Desmenuzan el objetivo general en tareas o variables concretas. Deben ser más directos y no repetir innecesariamente toda la delimitación de lugar y tiempo.</p>
+      <div class="ejemplo"><strong>EJEMPLOS</strong>Determinar la prevalencia de agudeza visual disminuida. Evaluar si el sexo del estudiante se asocia con la disminución de agudeza visual. Determinar si el antecedente familiar constituye un factor de riesgo.</div>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>3. Justificación e importancia</h3>
+      <p>Responde principalmente a una pregunta: <strong>¿para qué servirá conocer los resultados?</strong> La justificación debe explicar la utilidad de la investigación y quiénes podrían beneficiarse de la información obtenida.</p>
+      <div class="ejemplo"><strong>EJEMPLO</strong>Si el estudio analiza agudeza visual en escolares, los resultados pueden ser útiles para estudiantes, padres, docentes, autoridades educativas y autoridades de salud, porque podrían orientar medidas preventivas o correctivas.</div>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>4. Limitaciones</h3>
+      <p>La clase distinguió limitaciones metodológicas y limitaciones del propio proceso de investigación. Deben reconocerse con claridad, no ocultarse.</p>
+      <ul>
+        <li>Tamaño muestral insuficiente.</li>
+        <li>Historias clínicas incompletas o datos poco fiables.</li>
+        <li>Dificultad de acceso a participantes.</li>
+        <li>Restricciones de tiempo.</li>
+        <li>Instrumentos de medición poco adecuados.</li>
+        <li>Sesgos del investigador o de selección.</li>
+        <li>Escasez de investigación previa pertinente.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="marco" class="manual-capitulo">
+    <h2>II. Marco teórico</h2>
+    <p class="intro">Sustenta científicamente el estudio sin convertir la tesis en un tratado enciclopédico.</p>
+
+    <div class="manual-bloque">
+      <h3>2.1. Antecedentes de investigación</h3>
+      <p>Incluyen investigaciones previas relacionadas con el problema. En la clase se insistió en buscar antecedentes que sean metodológica y temáticamente comparables con el propio estudio, porque luego servirán para interpretar y discutir los resultados.</p>
+      <p>Se remarcó además la importancia de trabajar con artículos y tesis recientes, y de <strong>parafrasear correctamente citando al autor</strong>, en lugar de copiar resúmenes textualmente.</p>
+      <div class="fija"><strong>BADBEAR.MED FIJA:</strong> antecedente útil no es cualquier artículo sobre el tema; es aquel que ayuda a comparar tu pregunta, diseño, variables o resultados.</div>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>2.2. Bases teóricas</h3>
+      <p>Son los conceptos, principios, definiciones y fundamentos necesarios para comprender el estudio. La recomendación de la clase fue mantenerlas enfocadas: explicar solo lo que realmente sirve para la investigación y evitar copiar capítulos enteros de libros.</p>
+      <div class="ejemplo"><strong>EJEMPLO</strong>Si la investigación estudia anemia, las bases teóricas deberían definir anemia, criterios relevantes y fundamentos necesarios para las variables del estudio; no es necesario desarrollar toda la hematología si no aporta al problema.</div>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>2.3. Hipótesis</h3>
+      <p>Cuando el estudio requiere hipótesis, estas deben mantener coherencia con los problemas y objetivos. La clase trabajó hipótesis general, hipótesis específicas y la distinción entre hipótesis alterna e hipótesis nula cuando existe tratamiento estadístico.</p>
+      <div class="ejemplo"><strong>EJEMPLO SIMPLIFICADO</strong>H₁: determinados antecedentes y exposiciones constituyen factores de riesgo para disminución de la agudeza visual. H₀: esos antecedentes y exposiciones no constituyen factores de riesgo.</div>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>2.4. Variables e indicadores</h3>
+      <p>Las variables deben reconocerse desde el problema y los objetivos. Después deben operacionalizarse: es decir, explicar <strong>cómo se medirán realmente</strong>.</p>
+      <div class="tabla-wrap">
+        <table class="manual-table">
+          <thead><tr><th>Variable</th><th>Definición operacional</th><th>Tipo</th><th>Categoría</th><th>Estadístico / medida</th></tr></thead>
+          <tbody>
+            <tr><td>Agudeza visual</td><td>Medición mediante cartilla o método definido en el protocolo.</td><td>Según escala empleada</td><td>Ej. normal / disminuida o categorías ordinales.</td><td>Porcentaje u otra medida según diseño.</td></tr>
+            <tr><td>Exposición a pantalla</td><td>Tiempo de exposición definido por el instrumento.</td><td>Según categorización</td><td>Ej. menor / mayor al punto de corte definido.</td><td>Porcentaje y medida de asociación si corresponde.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fija"><strong>BADBEAR.MED FIJA:</strong> operacionalizar una variable significa responder “¿cómo la voy a medir y con qué criterio la voy a clasificar?”.</div>
+    </div>
+  </section>
+
+  <section id="metodo" class="manual-capitulo">
+    <h2>III. Método</h2>
+    <p class="intro">Describe exactamente cómo se realizará el estudio para que el procedimiento sea comprensible y reproducible.</p>
+
+    <div class="manual-bloque">
+      <h3>3.1. Tipo y nivel de investigación</h3>
+      <p>La clase repasó estudios cualitativos y cuantitativos, y dentro de estos diferentes niveles y diseños. La clasificación concreta debe corresponder al problema que se pretende responder.</p>
+      <div class="ejemplo"><strong>RECONOCIMIENTO TRABAJADO EN CLASE</strong>Preguntas sobre frecuencia, prevalencia o porcentaje orientan a estudios descriptivos. Preguntas sobre relación o asociación entre variables orientan a estudios correlacionales. Cuando se busca identificar factores principales y comparar grupos, el análisis puede requerir diseños analíticos.</div>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>3.2. Diseño de investigación</h3>
+      <p>Diseñar significa describir paso a paso cómo se ejecutará la investigación, considerando tiempo y espacio, de modo que otro investigador pueda comprender y eventualmente reproducir el procedimiento.</p>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>3.3. Ámbito temporal y espacial</h3>
+      <p>Define dónde y cuándo se realizará el estudio. La delimitación debe ser coherente con el problema, la población y la disponibilidad real de los datos.</p>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>3.4. Población y muestra</h3>
+      <p>La población es el conjunto total que cumple las características del estudio. La muestra es el subconjunto seleccionado para la investigación cuando no se estudia a toda la población.</p>
+      <div class="ejemplo"><strong>EJEMPLO DE LA CLASE</strong>Si el problema se refiere a escolares de una institución durante 2022, la población corresponde a todos los escolares que cumplen los criterios establecidos en esa institución y periodo.</div>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>3.5. Instrumentos</h3>
+      <p>Son las herramientas con las que se obtendrán o medirán los datos. La clase mencionó cuestionarios, entrevistas, observaciones, documentos de archivo, registros, evaluaciones fisiológicas, pruebas, fuentes gubernamentales, grupos focales y otros recursos según el diseño.</p>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>3.6. Procedimientos</h3>
+      <p>Debe explicar en orden qué hará el investigador desde el acceso a la población o fuente de datos hasta la recolección, registro y preparación de la información para el análisis.</p>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>3.7. Análisis de datos</h3>
+      <p>Indica cómo se procesarán y analizarán los datos. La prueba o medida estadística debe corresponder al tipo de variable, objetivo y diseño. En la clase se usó como ejemplo la razón de momios (OR) para estudios de casos y controles.</p>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>3.8. Consideraciones éticas</h3>
+      <p>Debe contemplar la protección de los participantes, confidencialidad, manejo responsable de la información, consentimiento informado cuando corresponda y los requisitos institucionales del estudio.</p>
+    </div>
+  </section>
+
+  <section id="administrativos" class="manual-capitulo">
+    <h2>IV. Aspectos administrativos</h2>
+    <p class="intro">Organizan la ejecución real del proyecto: tiempo, costos y recursos.</p>
+
+    <div class="manual-bloque">
+      <h3>4.1. Cronograma</h3>
+      <p>Distribuye las actividades por semanas o meses: revisión, permisos, recolección de datos, procesamiento, análisis, redacción y presentación.</p>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>4.2. Presupuesto</h3>
+      <p>Debe considerar todos los costos reales del estudio: tiempo del investigador, personal de apoyo, movilidad, materiales, impresión, comunicación, software, equipos, alimentación u otros recursos necesarios.</p>
+    </div>
+
+    <div class="manual-bloque">
+      <h3>4.3. Fuentes de financiamiento</h3>
+      <p>Se debe indicar de dónde provendrán los recursos. La clase insistió en no reducir este apartado automáticamente a “recursos propios”, sino considerar si existe financiamiento institucional, nacional, internacional o de otra fuente.</p>
+    </div>
+  </section>
+
+  <section id="referencias" class="manual-capitulo">
+    <h2>Referencias bibliográficas</h2>
+    <p class="intro">Deben respaldar el problema, antecedentes, fundamentos y decisiones metodológicas.</p>
+    <div class="manual-bloque">
+      <p>La clase recomendó priorizar artículos de investigación y tesis recientes. También se mencionó el uso de estilos como APA o Vancouver según la normativa institucional aplicable.</p>
+      <div class="fija"><strong>BADBEAR.MED FIJA:</strong> una referencia no se agrega para “llenar bibliografía”; debe cumplir una función concreta dentro del argumento o la metodología del estudio.</div>
+    </div>
+  </section>
+
+  <section id="anexos" class="manual-capitulo">
+    <h2>Anexos</h2>
+    <p class="intro">Reúnen documentos necesarios para demostrar la coherencia y permitir la ejecución del proyecto.</p>
+    <div class="manual-bloque">
+      <h3>Matriz de consistencia</h3>
+      <p>Permite comprobar que problema, objetivos, hipótesis, variables y método están alineados.</p>
+      <div class="coherencia">
+        <div>TÍTULO</div><div>PROBLEMA</div><div>OBJETIVOS</div><div>HIPÓTESIS</div><div>MÉTODO</div><div>RESULTADOS</div>
+      </div>
+    </div>
+    <div class="manual-bloque">
+      <h3>Instrumentos de investigación</h3>
+      <p>Se anexan los cuestionarios, fichas, escalas, formularios u otros instrumentos utilizados, además de la documentación de validez y confiabilidad cuando corresponda.</p>
+    </div>
+    <div class="manual-bloque">
+      <h3>Consentimiento informado y otros documentos</h3>
+      <p>Cuando el estudio lo requiera, deben incorporarse los formatos éticos y documentos administrativos necesarios para su ejecución.</p>
+    </div>
+  </section>
+
+  <a class="volver" href="index.html">← Volver a Tesis I</a>
+</main>
+
+<footer class="tesis-footer">BADBEAR.MED · Tesis I · Estructura de la tesis · WAJOMEA.GROUP</footer>
+<script src="../assets/js/bb-responsive-global-v21.js"></script>
+</body>
+</html>
