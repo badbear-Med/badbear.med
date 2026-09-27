@@ -48,3 +48,7 @@
 
 .prob-quiz{margin-top:28px}
 .prob-badge{display:inline-flex;padding:6px 9px;border-radius:999px;background:#fff4e8;color:#b54708;font-weight:950;letter-spacing:.55px;font-size:9px}
+
+.pr-bank-list a{border:1px dashed #cfd6df;background:#fafbfc;border-radius:13px;padding:14px;text-align:center;text-decoration:none;color:#101828;transition:.18s ease}
+.pr-bank-list a:hover{border-color:#9bb0ff;background:#f7f9ff;transform:translateY(-1px)}
+.pr-bank-list a strong{display:block;font-size:14px}.pr-bank-list a span{display:block;margin-top:4px;color:var(--muted);font-size:10px;line-height:1.4}.pr-bank-list a em{display:inline-block;margin-top:9px;color:var(--blue);font-size:10px;font-style:normal;font-weight:950}
