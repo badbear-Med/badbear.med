@@ -10,7 +10,22 @@
 <section class="bank-hero"><span class="tag">SEMANA 08 · BANCO PARCIAL</span><h1>Clases 01–07 · 140 preguntas de alto nivel</h1><p>20 preguntas por clase. Predominan escenarios de aplicación, coherencia metodológica, interpretación de decisiones y detección de errores. El proyecto guía de prediabetes y diabetes mellitus tipo 2 se utiliza de manera transversal.</p></section>
 <section class="bank-stats"><div class="bank-stat"><span>TOTAL</span><strong id="total">140</strong></div><div class="bank-stat"><span>RESPONDIDAS</span><strong id="done">0</strong></div><div class="bank-stat"><span>CORRECTAS</span><strong id="right">0</strong></div><div class="bank-stat"><span>RENDIMIENTO</span><strong id="pct">0%</strong></div></section>
 <section class="bank-tools"><select id="classFilter"><option value="all">Todas las clases</option><option value="1">Clase 01</option><option value="2">Clase 02</option><option value="3">Clase 03</option><option value="4">Clase 04</option><option value="5">Clase 05</option><option value="6">Clase 06</option><option value="7">Clase 07</option></select><button id="shuffleBtn">Mezclar</button><button id="resetBtn">Reiniciar</button><div class="bank-progress"><div id="progressBar"></div></div></section>
-<section class="q-card" id="quizCard"><div class="q-meta"><span class="q-chip" id="qClass"></span><span class="q-num" id="qNum"></span></div><h2 id="stem"></h2><div class="options" id="options"></div><div class="answer-actions"><button id="prevBtn">← Anterior</button><button class="check" id="checkBtn">Responder</button><button id="nextBtn">Siguiente →</button></div><div class="feedback" id="feedback"><div class="feedback-head" id="feedbackHead"></div><p id="explanation"></p><div class="rationales" id="rationales"></div><div class="fija" id="fija"></div></div></section>
+<section class="q-card" id="quizCard"><div class="q-meta"><span class="q-chip" id="qClass"></span><span class="q-num" id="qNum"></span></div><h2 id="stem"></h2><div class="options" id="options"></div><div class="answer-actions"><button id="prevBtn">← Anterior</button><button class="check" id="checkBtn">Responder</button><button id="nextBtn">Siguiente →</button></div><div class="feedback" id="feedback">
+  <div class="feedback-head" id="feedbackHead"></div>
+  <div class="feedback-section">
+    <h3>Explicación de la pregunta</h3>
+    <p id="explanation"></p>
+  </div>
+  <div class="theory-block">
+    <h3>Explicación teórica</h3>
+    <div id="theoryText"></div>
+  </div>
+  <div class="feedback-section">
+    <h3>Revisión de alternativas</h3>
+    <div class="rationales" id="rationales"></div>
+  </div>
+  <div class="fija" id="fija"></div>
+</div></section>
 <section class="summary-box" id="summary"><h2>Resumen por clase</h2><p>Tu rendimiento se calcula solo con las preguntas respondidas.</p><div class="class-results" id="classResults"></div></section>
 </main>
 <footer class="tesis-footer">BADBEAR.MED · Tesis I · Banco Semana 08 · WAJOMEA.GROUP</footer>
