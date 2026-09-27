@@ -1,5 +1,18 @@
 (()=>{"use strict";
-const all=window.TESIS_S8_QUESTIONS||[];let pool=[...all],idx=0,selected=null,answered=new Map();
+function normalizeQuestion(q){
+  if(!q) return q;
+  if(Array.isArray(q.rationales) && q.rationales.length===2 && typeof q.rationales[0]==="string" && q.rationales[0].includes("|") && !q.fija){
+    q.fija=q.rationales[1];
+    q.rationales=q.rationales[0].split("|");
+  }else if(Array.isArray(q.rationales) && q.rationales.length===1 && typeof q.rationales[0]==="string" && q.rationales[0].includes("|")){
+    q.rationales=q.rationales[0].split("|");
+  }
+  if(!Array.isArray(q.rationales)) q.rationales=[];
+  while(q.rationales.length<q.options.length) q.rationales.push("Esta alternativa no es la mejor respuesta porque no se ajusta al criterio metodológico central de la pregunta.");
+  if(!q.fija) q.fija="Relaciona siempre problema, objetivo, variables, diseño y medición antes de escoger una respuesta.";
+  return q;
+}
+const all=(window.TESIS_S8_QUESTIONS||[]).map(normalizeQuestion);let pool=[...all],idx=0,selected=null,answered=new Map();
 const THEORY={
 1:`<p><strong>Proceso de investigación.</strong> La investigación se desarrolla como una secuencia lógica: planeamiento, organización, implementación, ejecución, evaluación y comunicación de resultados. En el planeamiento se define qué se investigará, por qué, con qué fundamento y cómo se realizará; en la implementación se preparan instrumentos y recursos; en la ejecución se recolectan y analizan los datos; finalmente se evalúa y comunica lo encontrado.</p><p><strong>Clave metodológica:</strong> el instrumento, la muestra y el análisis no deben aparecer antes de definir problema, objetivos, variables y diseño. Cada decisión posterior depende de la anterior.</p>`,
 2:`<p><strong>Problema de investigación.</strong> El problema parte de una dificultad, vacío o situación que requiere investigación. Debe pasar de una realidad amplia a una formulación concreta, delimitada y empíricamente abordable. La formulación debe expresar relación entre variables, escribirse como pregunta, permitir comprobación empírica y definir población, espacio y tiempo cuando corresponda.</p><p><strong>Clave metodológica:</strong> delimitar significa hacer manejable el problema: qué variables, en quiénes, dónde y en qué periodo se estudiarán.</p>`,
