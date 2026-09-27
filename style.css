@@ -254,3 +254,114 @@
   .dash-icon{width:40px;height:40px}
   .hero-footnote{align-items:flex-start;flex-direction:column;gap:2px}
 }
+
+/* ===== HERO CON DOCTOR BAD BEAR + DOCTORA KHA-MHU ===== */
+.hero-showcase{
+  padding:34px 5% 40px;
+  background:linear-gradient(180deg,#ffffff 0%,#f7fbff 100%);
+  border-bottom:1px solid #e8eef6;
+}
+.hero-showcase__inner{
+  width:min(1380px,100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:minmax(420px,.92fr) minmax(620px,1.35fr);
+  align-items:center;
+  gap:20px;
+  min-height:500px;
+}
+.hero-showcase__copy{
+  position:relative;
+  z-index:2;
+  padding:34px 0 34px 18px;
+}
+.hero-showcase__eyebrow{
+  display:inline-flex;
+  padding:8px 14px;
+  border-radius:999px;
+  background:#e9f2ff;
+  color:#1d4ed8;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:16px;
+}
+.hero-showcase h1{
+  margin:0;
+  font-size:clamp(54px,6.6vw,86px);
+  line-height:.95;
+  letter-spacing:-4px;
+  color:#111827;
+}
+.hero-showcase h1 span{color:#2563eb}
+.hero-showcase h2{
+  max-width:620px;
+  margin:18px 0 12px;
+  color:#24324a;
+  font-size:clamp(25px,2.6vw,35px);
+  line-height:1.16;
+}
+.hero-showcase p{
+  max-width:590px;
+  color:#64748b;
+  font-size:16px;
+  line-height:1.7;
+  margin:0 0 22px;
+}
+.hero-showcase__actions{
+  display:flex;
+  gap:11px;
+  flex-wrap:wrap;
+}
+.hero-showcase__names{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:22px;
+  color:#64748b;
+  font-size:11px;
+}
+.hero-showcase__names strong{color:#334155}
+.hero-showcase__visual{
+  min-width:0;
+  align-self:stretch;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+}
+.hero-showcase__visual img{
+  display:block;
+  width:100%;
+  max-width:860px;
+  height:auto;
+  border-radius:28px;
+  filter:drop-shadow(0 18px 32px rgba(37,99,235,.10));
+}
+@media(max-width:1050px){
+  .hero-showcase__inner{
+    grid-template-columns:1fr;
+    gap:4px;
+  }
+  .hero-showcase__copy{
+    padding:30px 14px 12px;
+    text-align:center;
+  }
+  .hero-showcase__copy p,
+  .hero-showcase__copy h2{margin-left:auto;margin-right:auto}
+  .hero-showcase__actions,
+  .hero-showcase__names{justify-content:center}
+  .hero-showcase__visual{justify-content:center}
+  .hero-showcase__visual img{max-width:950px}
+}
+@media(max-width:680px){
+  .hero-showcase{padding:20px 14px 28px}
+  .hero-showcase__inner{min-height:auto}
+  .hero-showcase__copy{padding:20px 6px 6px}
+  .hero-showcase h1{font-size:clamp(46px,15vw,62px);letter-spacing:-3px}
+  .hero-showcase h2{font-size:23px}
+  .hero-showcase p{font-size:14.5px}
+  .hero-showcase__actions{flex-direction:column}
+  .hero-showcase__actions .boton{width:100%;text-align:center}
+  .hero-showcase__names{flex-wrap:wrap}
+  .hero-showcase__visual img{border-radius:20px}
+}
