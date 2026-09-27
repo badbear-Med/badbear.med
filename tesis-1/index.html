@@ -3,25 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tesis I en BADBEAR.MED: estructura del proyecto de investigación, metodología, variables, instrumentos, ética y entregables.">
+  <meta name="description" content="Tesis I en BADBEAR.MED: estructura completa de tesis, clases del curso, banco parcial y materiales de investigación.">
   <title>Tesis I | BADBEAR.MED</title>
   <link rel="icon" type="image/png" href="../dermatologia/badbear_logo.png">
   <link rel="stylesheet" href="tesis-1.css">
   <link rel="stylesheet" href="../assets/css/bb-responsive-global-v21.css">
-  <!-- BB_GLOBAL_COURSE_LOCK_START -->
   <link rel="stylesheet" href="../assets/css/course-lock.css">
   <script src="../assets/js/course-lock-config.js"></script>
   <script src="../assets/js/course-lock.js" data-course="tesis-1"></script>
-  <!-- BB_GLOBAL_COURSE_LOCK_END -->
+  <style>
+    .estructura-destacada{margin:28px 0;background:linear-gradient(135deg,#111827,#1f2937);border-radius:22px;padding:24px;color:#fff;display:grid;grid-template-columns:1.4fr auto;gap:20px;align-items:center;box-shadow:0 16px 40px rgba(17,24,39,.14)}
+    .estructura-destacada .tag{display:inline-flex;padding:6px 9px;border-radius:999px;background:#263244;color:#f5c518;font-size:10px;font-weight:950;letter-spacing:.6px}
+    .estructura-destacada h2{margin:10px 0 7px;font-size:27px}
+    .estructura-destacada p{margin:0;color:#cbd5e1;font-size:13px;line-height:1.6;max-width:820px}
+    .estructura-destacada a{background:#fff;color:#111827;text-decoration:none;padding:12px 15px;border-radius:11px;font-size:12px;font-weight:950;white-space:nowrap}
+    .clases-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .clase-item{background:#fff;border:1px solid #e4e7ec;border-radius:17px;padding:17px;min-height:148px;position:relative;overflow:hidden}
+    .clase-item:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#d0d5dd}
+    .clase-item.activa:before{background:#2458ff}.clase-item.banco:before{background:#f97316}
+    .clase-item .estado{display:inline-flex;padding:5px 7px;border-radius:999px;background:#f2f4f7;color:#667085;font-size:9px;font-weight:950}
+    .clase-item.activa .estado{background:#eef3ff;color:#2458ff}.clase-item.banco .estado{background:#fff1e8;color:#c2410c}
+    .clase-item h3{font-size:16px;margin:10px 0 6px}.clase-item p{font-size:11px;line-height:1.5;color:#667085;margin:0}
+    .clase-item a{display:inline-flex;margin-top:12px;text-decoration:none;font-size:11px;font-weight:950;color:#2458ff}
+    .pendiente{opacity:.78}
+    .ruta-nota{margin-top:13px;color:#667085;font-size:11px}
+    @media(max-width:900px){.clases-grid{grid-template-columns:repeat(2,1fr)}.estructura-destacada{grid-template-columns:1fr}}
+    @media(max-width:650px){.clases-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 <header class="tesis-header">
   <div class="inner">
     <a class="tesis-brand" href="../index.html"><span class="tesis-mark">📑</span> BADBEAR.<span>MED</span></a>
     <nav class="tesis-nav" aria-label="Navegación de Tesis I">
-      <a href="#ruta">Ruta del curso</a>
+      <a href="estructura.html">Estructura de la tesis</a>
+      <a href="#clases">Clases</a>
       <a href="#recursos">Recursos</a>
-      <a href="#entregables">Entregables</a>
       <a href="../index.html" class="portal">← Portal principal</a>
     </nav>
   </div>
@@ -32,70 +49,73 @@
     <div>
       <span class="tesis-kicker">BADBEAR.MED · TESIS I</span>
       <h1>Tesis I</h1>
-      <p>Espacio de trabajo para construir el proyecto de investigación de forma ordenada: problema, antecedentes, objetivos, variables, metodología, población, instrumentos, análisis, ética y presentación del protocolo.</p>
+      <p>Curso organizado en dos niveles: una sección permanente para comprender toda la estructura de la tesis y, por separado, las clases del semestre en el orden en que fueron desarrolladas.</p>
       <div class="tesis-actions">
-        <a href="#ruta" class="tesis-btn primary">Ver ruta de trabajo</a>
-        <a href="#recursos" class="tesis-btn">Abrir recursos</a>
+        <a href="estructura.html" class="tesis-btn primary">Abrir estructura de la tesis</a>
+        <a href="#clases" class="tesis-btn">Ir a las clases</a>
       </div>
     </div>
     <div class="tesis-visual" aria-hidden="true">
       <div class="big">📚</div>
-      <div><small>CURSO EN CONSTRUCCIÓN</small><strong>Proyecto de investigación paso a paso</strong></div>
+      <div><small>TESIS I · BADBEAR.MED</small><strong>Estructura + clases + banco de repaso</strong></div>
     </div>
   </div>
 </section>
 
 <main class="tesis-main">
   <section class="tesis-stats" aria-label="Resumen del curso">
-    <div class="tesis-stat"><span>ETAPA</span><strong>I</strong></div>
-    <div class="tesis-stat"><span>RUTA BASE</span><strong>12</strong></div>
-    <div class="tesis-stat"><span>ENFOQUE</span><strong>Proyecto</strong></div>
+    <div class="tesis-stat"><span>MANUAL CENTRAL</span><strong>1</strong></div>
+    <div class="tesis-stat"><span>CLASES CARGADAS</span><strong>1</strong></div>
+    <div class="tesis-stat"><span>SEMANA 8</span><strong>Banco</strong></div>
     <div class="tesis-stat"><span>ESTADO</span><strong>Activo</strong></div>
   </section>
 
-  <section id="ruta">
+  <section class="estructura-destacada">
+    <div>
+      <span class="tag">SECCIÓN PERMANENTE</span>
+      <h2>Estructura completa de la tesis</h2>
+      <p>Planteamiento del problema, realidad problemática, formulación, objetivos, justificación, limitaciones, marco teórico, antecedentes, hipótesis, variables, método, población y muestra, instrumentos, análisis de datos, ética, cronograma, presupuesto, referencias y anexos; todo explicado con ejemplos.</p>
+    </div>
+    <a href="estructura.html">Entrar al manual →</a>
+  </section>
+
+  <section id="clases">
     <div class="tesis-section-head">
       <div>
-        <h2>Ruta base de Tesis I</h2>
-        <p>Esta es la estructura inicial del curso. Cuando incorporemos el sílabo, las clases, rúbricas o documentos del docente, la ajustaremos exactamente a la secuencia oficial.</p>
+        <h2>Clases del curso</h2>
+        <p>Las clases se irán habilitando conforme me pases el material real. La cantidad final se ajustará al sílabo; por ahora dejamos preparados hasta 15 espacios y reservamos la semana 8 para un banco acumulativo.</p>
       </div>
     </div>
 
-    <div class="tesis-grid">
-      <article class="tesis-card"><span class="tesis-num">01</span><h3>Idea y línea de investigación</h3><p>Delimitación del tema, pertinencia, viabilidad y formulación inicial del proyecto.</p></article>
-      <article class="tesis-card"><span class="tesis-num">02</span><h3>Planteamiento del problema</h3><p>Descripción de la realidad problemática, delimitación y formulación de la pregunta de investigación.</p></article>
-      <article class="tesis-card"><span class="tesis-num">03</span><h3>Antecedentes y marco teórico</h3><p>Búsqueda, selección y organización de evidencia relevante para sustentar el estudio.</p></article>
-      <article class="tesis-card"><span class="tesis-num">04</span><h3>Objetivos</h3><p>Construcción del objetivo general y de los objetivos específicos con coherencia metodológica.</p></article>
-      <article class="tesis-card"><span class="tesis-num">05</span><h3>Hipótesis</h3><p>Formulación cuando corresponda al diseño y al alcance del estudio.</p></article>
-      <article class="tesis-card"><span class="tesis-num">06</span><h3>Variables y operacionalización</h3><p>Definiciones conceptuales y operacionales, dimensiones, indicadores y escala de medición.</p></article>
-      <article class="tesis-card"><span class="tesis-num">07</span><h3>Diseño metodológico</h3><p>Enfoque, tipo, nivel, diseño y temporalidad del estudio.</p></article>
-      <article class="tesis-card"><span class="tesis-num">08</span><h3>Población y muestra</h3><p>Unidad de análisis, criterios de selección, tamaño muestral y estrategia de muestreo.</p></article>
-      <article class="tesis-card"><span class="tesis-num">09</span><h3>Técnicas e instrumentos</h3><p>Recolección de datos, validez, confiabilidad y procedimientos de aplicación.</p></article>
-      <article class="tesis-card"><span class="tesis-num">10</span><h3>Plan de análisis</h3><p>Preparación de la base de datos y estrategia de análisis de acuerdo con los objetivos.</p></article>
-      <article class="tesis-card"><span class="tesis-num">11</span><h3>Aspectos éticos</h3><p>Consentimiento, confidencialidad, riesgos, beneficios y requerimientos institucionales.</p></article>
-      <article class="tesis-card"><span class="tesis-num">12</span><h3>Protocolo final</h3><p>Cronograma, presupuesto, referencias, anexos y preparación del documento para revisión.</p></article>
+    <div class="clases-grid">
+      <article class="clase-item activa"><span class="estado">DISPONIBLE</span><h3>Clase 01 · Revisión integral del plan de tesis</h3><p>Coherencia del estudio, problema, objetivos, justificación, antecedentes, hipótesis, variables, método y operacionalización.</p><a href="clase-01.html">Abrir clase 01 →</a></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 02</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 03</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 04</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 05</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 06</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 07</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item banco"><span class="estado">BANCO PARCIAL</span><h3>Semana 08 · Repaso acumulativo</h3><p>Espacio reservado para preguntas de todo lo desarrollado hasta la semana 7: conceptos, aplicación, errores metodológicos y casos.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 09</h3><p>Continuación del curso después del banco parcial.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 10</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 11</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 12</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 13</h3><p>Se habilitará con el material original de la clase.</p></article>
+      <article class="clase-item pendiente"><span class="estado">PENDIENTE</span><h3>Clase 14</h3><p>Se habilitará si forma parte del programa oficial.</p></article>
+      <article class="clase-item pendiente"><span class="estado">POR CONFIRMAR</span><h3>Clase 15</h3><p>Espacio provisional hasta revisar el sílabo completo.</p></article>
     </div>
+    <p class="ruta-nota">No vamos a inventar los títulos de las clases 2–15: los nombres y contenidos se tomarán únicamente de tus materiales.</p>
   </section>
 
   <section id="recursos">
     <div class="tesis-section-head">
-      <div>
-        <h2>Recursos del curso</h2>
-        <p>Estos módulos quedarán listos para recibir tus materiales reales de Tesis I.</p>
-      </div>
+      <div><h2>Recursos del curso</h2><p>El curso irá acumulando los materiales reales y los productos que necesitas para desarrollar la tesis.</p></div>
     </div>
     <div class="tesis-recursos">
-      <article class="tesis-recurso"><span>📄</span><strong>PDF y clases</strong><p>Sílabo, diapositivas, lecturas y documentos del docente.</p></article>
-      <article class="tesis-recurso"><span>🧾</span><strong>Plantillas</strong><p>Matriz de consistencia, operacionalización, cronograma y formatos de proyecto.</p></article>
-      <article class="tesis-recurso"><span>🔎</span><strong>Artículos</strong><p>Bibliografía, antecedentes y evidencia para sustentar el protocolo.</p></article>
-      <article class="tesis-recurso"><span>✅</span><strong>Avance</strong><p>Lista de entregables, observaciones y seguimiento del proyecto.</p></article>
-    </div>
-  </section>
-
-  <section id="entregables">
-    <div class="tesis-note">
-      <strong>BADBEAR.MED · Estructura inicial</strong>
-      <p>No estamos fijando todavía el contenido académico definitivo. La estructura se adaptará al sílabo, rúbricas y documentos reales de tu curso Tesis I cuando los agreguemos.</p>
+      <article class="tesis-recurso"><span>📄</span><strong>Clases y documentos</strong><p>Transcripciones, diapositivas, sílabo, lecturas y materiales del docente.</p></article>
+      <article class="tesis-recurso"><span>🧾</span><strong>Plantillas</strong><p>Matriz de consistencia, operacionalización, cronograma, presupuesto y formatos.</p></article>
+      <article class="tesis-recurso"><span>🔎</span><strong>Artículos y antecedentes</strong><p>Material seleccionado para sustentar el problema, marco teórico y metodología.</p></article>
+      <article class="tesis-recurso"><span>✅</span><strong>Avance de tesis</strong><p>Checklist de secciones, correcciones y entregables pendientes.</p></article>
     </div>
   </section>
 </main>
