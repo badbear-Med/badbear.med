@@ -60,12 +60,34 @@
 </section>
 
 <section class="pr-section">
-<div class="pr-head"><div><h2>Preguntas de nivel examen</h2><p>Preguntas originales de práctica construidas a partir de las clases de Tesis I, con dificultad alta y sin presentarlas como preguntas reales.</p></div><span class="pr-count" id="count-level">0 cargadas</span></div>
+<div class="pr-head"><div><h2>BADBEAR.MED · Preguntas altamente probables</h2><p>40 preguntas nuevas de entrenamiento construidas a partir de los patrones que más se repiten en las planchas reales: diseño, variables, hipótesis, justificación, marco teórico, instrumentos y formulación del problema. No son preguntas reales.</p></div><span class="pr-count">40 cargadas</span></div>
 <div class="pr-grid">
-<article class="pr-card level"><span class="type">NIVEL EXAMEN</span><h3>Aplicación metodológica</h3><p>Casos en los que debes reconocer errores, corregir un protocolo o escoger la decisión metodológica más sólida.</p><div class="empty">Se habilitará al cargar el primer bloque</div></article>
-<article class="pr-card level"><span class="type">NIVEL EXAMEN</span><h3>Proyecto guía</h3><p>Preguntas avanzadas usando el proyecto de progresión de prediabetes a diabetes mellitus tipo 2.</p><div class="empty">Se habilitará al cargar el primer bloque</div></article>
-<article class="pr-card level"><span class="type">NIVEL EXAMEN</span><h3>Distractores finos</h3><p>Alternativas cercanas entre sí para obligar a distinguir conceptos metodológicos que suelen confundirse.</p><div class="empty">Se habilitará al cargar el primer bloque</div></article>
+<article class="pr-card level"><span class="type">ALTA PROBABILIDAD · 15</span><h3>Diseño y clasificación metodológica</h3><p>Casos que obligan a distinguir intervención, temporalidad, nivel y tipo de diseño.</p><div class="empty">Incluidas en el banco interactivo</div></article>
+<article class="pr-card level"><span class="type">ALTA PROBABILIDAD · 15</span><h3>Problema, objetivos, hipótesis y variables</h3><p>Preguntas de coherencia metodológica con distractores muy cercanos entre sí.</p><div class="empty">Incluidas en el banco interactivo</div></article>
+<article class="pr-card level"><span class="type">ALTA PROBABILIDAD · 10</span><h3>Marco teórico, justificación e instrumentos</h3><p>Preguntas centradas en los temas que reaparecen en los exámenes reales.</p><div class="empty">Incluidas en el banco interactivo</div></article>
 </div>
+</section>
+
+<section class="prob-quiz" id="probables">
+  <div class="pr-head"><div><h2>Resolver preguntas altamente probables</h2><p>Son preguntas originales de entrenamiento, no reales. Se construyeron a partir de patrones repetidos en las planchas y exámenes que subiste.</p></div><span class="pr-count" id="probProgress">1 / 40</span></div>
+  <div class="real-tools">
+    <select id="probTopic"><option value="all">Todos los temas</option><option value="diseno">Diseño</option><option value="problema">Problema / objetivos</option><option value="hipotesis">Hipótesis / variables</option><option value="teoria">Marco teórico / justificación</option><option value="instrumentos">Instrumentos</option></select>
+    <button id="probShuffle">Mezclar</button><button id="probReset">Reiniciar</button>
+    <span class="real-score">Correctas <b id="probRight">0</b> / <b id="probDone">0</b></span>
+  </div>
+  <article class="real-question">
+    <div class="real-meta"><span class="prob-badge">ALTA PROBABILIDAD · ENTRENAMIENTO</span><span id="probTopicLabel"></span></div>
+    <h3 id="probStem"></h3>
+    <div id="probOptions" class="real-options"></div>
+    <div class="real-actions"><button id="probPrev">← Anterior</button><button class="primary" id="probCheck">Responder</button><button id="probNext">Siguiente →</button></div>
+    <div id="probFeedback" class="real-feedback">
+      <h4 id="probResult"></h4>
+      <div class="real-explain"><strong>Explicación</strong><p id="probExplanation"></p></div>
+      <div class="real-theory"><strong>Explicación teórica</strong><p id="probTheory"></p></div>
+      <div><strong>Revisión de alternativas</strong><div id="probRationales" class="real-rationales"></div></div>
+      <div class="real-fija" id="probFija"></div>
+    </div>
+  </article>
 </section>
 
 <section class="pr-bank">
@@ -86,5 +108,5 @@
 </main>
 
 <footer class="tesis-footer">BADBEAR.MED · Tesis I · Planchas Reales · WAJOMEA.GROUP</footer>
-<script>window.TESIS_PLANCHAS_REALES=[];</script><script src="planchas-reales-data.js?v=20260927a"></script><script src="planchas-reales.js?v=20260927a"></script><script src="../assets/js/bb-responsive-global-v21.js"></script>
+<script>window.TESIS_PLANCHAS_REALES=[];window.TESIS_PREGUNTAS_PROBABLES=[];</script><script src="planchas-reales-data.js?v=20260927a"></script><script src="planchas-reales.js?v=20260927a"></script><script src="preguntas-probables-data.js?v=20260927a"></script><script src="preguntas-probables.js?v=20260927a"></script><script src="../assets/js/bb-responsive-global-v21.js"></script>
 </body></html>
