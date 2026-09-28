@@ -8,3 +8,231 @@ body{background:#f7f8fb}.cxg-header{position:sticky;top:0;z-index:1000;backgroun
 /* BB_CG_PROGRAM_CSS_START */
 .bb-programa-oficial{width:min(1480px,calc(100% - 40px));margin:34px auto;background:#fff;border:1px solid #dfe6ef;border-radius:22px;padding:28px}.bb-programa-head span{font-size:11px;font-weight:950;letter-spacing:.08em;color:#c2410c}.bb-programa-head h2{font-size:30px;margin:5px 0}.bb-programa-head p{color:#66758c;max-width:900px}.bb-programa-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}.bb-programa-card{display:flex;flex-direction:column;gap:8px;text-decoration:none;border:1px solid #dde5ef;border-radius:15px;padding:17px;color:#172033;background:#fbfdff;min-height:145px}.bb-programa-card small{font-weight:950;color:#0f8c82}.bb-programa-card strong{font-size:16px;line-height:1.35}.bb-programa-card span{margin-top:auto;color:#c2410c;font-weight:900}@media(max-width:900px){.bb-programa-oficial{width:min(100% - 24px,1480px);padding:20px 16px}.bb-programa-grid{grid-template-columns:1fr}}
 /* BB_CG_PROGRAM_CSS_END */
+
+
+/* BB_CG_ACADEMIC_ARCHITECTURE_V1_START */
+.bb-cg-academic-shell{
+  width:min(1480px,calc(100% - 40px));
+  margin:34px auto 44px;
+}
+.bb-cg-academic-intro{
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(360px,.7fr);
+  gap:26px;
+  align-items:center;
+  padding:30px;
+  background:linear-gradient(135deg,#fff 0%,#fff7ed 100%);
+  border:1px solid #fed7aa;
+  border-radius:24px;
+  box-shadow:0 18px 42px rgba(124,45,18,.06);
+}
+.bb-cg-academic-intro>div>span{
+  display:block;
+  color:#c2410c;
+  font-size:11px;
+  font-weight:950;
+  letter-spacing:.09em;
+  margin-bottom:8px;
+}
+.bb-cg-academic-intro h2{
+  margin:0 0 10px;
+  font-size:clamp(30px,4vw,44px);
+  color:#172033;
+  letter-spacing:-1px;
+}
+.bb-cg-academic-intro p{
+  margin:0;
+  color:#64748b;
+  line-height:1.7;
+  max-width:900px;
+}
+.bb-cg-academic-summary{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.bb-cg-academic-summary div{
+  background:#fff;
+  border:1px solid #fed7aa;
+  border-radius:16px;
+  padding:17px;
+  text-align:center;
+}
+.bb-cg-academic-summary strong{
+  display:block;
+  font-size:27px;
+  color:#c2410c;
+  line-height:1;
+}
+.bb-cg-academic-summary span{
+  display:block;
+  margin-top:6px;
+  color:#475569;
+  font-size:12px;
+  font-weight:850;
+}
+.bb-cg-notice{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:16px 0 26px;
+  padding:15px 18px;
+  background:#fff;
+  border:1px dashed #fb923c;
+  border-radius:16px;
+  color:#475569;
+}
+.bb-cg-notice strong{color:#9a3412}
+.bb-cg-notice span{
+  padding:5px 9px;
+  background:#fff7ed;
+  color:#c2410c;
+  border-radius:999px;
+  font-weight:900;
+  font-size:12px;
+}
+.bb-cg-notice p{margin:0;font-size:13px}
+.bb-cg-academic-group{
+  margin:28px 0 36px;
+  padding:26px;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:22px;
+}
+.bb-cg-academic-group-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  margin-bottom:20px;
+}
+.bb-cg-academic-group-head span{
+  color:#0f766e;
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.08em;
+}
+.bb-cg-academic-group-head h3{
+  margin:4px 0 6px;
+  font-size:27px;
+  color:#172033;
+}
+.bb-cg-academic-group-head p{
+  margin:0;
+  color:#64748b;
+  max-width:850px;
+  line-height:1.55;
+}
+.bb-cg-academic-group-head>strong{
+  flex:0 0 auto;
+  color:#0f766e;
+  background:#ecfdf5;
+  border:1px solid #a7f3d0;
+  padding:8px 11px;
+  border-radius:999px;
+  font-size:12px;
+}
+.bb-cg-academic-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.bb-cg-academic-card{
+  display:flex;
+  flex-direction:column;
+  min-height:250px;
+  padding:18px;
+  border:1px solid #dfe6ef;
+  border-radius:17px;
+  background:#fbfdff;
+}
+.bb-cg-academic-card.missing{
+  border-color:#fdba74;
+  background:#fff7ed;
+}
+.bb-cg-academic-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+.bb-cg-academic-label{
+  font-size:11px;
+  font-weight:950;
+  color:#0f766e;
+  letter-spacing:.04em;
+}
+.bb-cg-status{
+  font-size:10px;
+  font-weight:950;
+  padding:5px 8px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+.bb-cg-status.developed{background:#dcfce7;color:#166534}
+.bb-cg-status.ready{background:#e0f2fe;color:#075985}
+.bb-cg-status.missing{background:#ffedd5;color:#c2410c}
+.bb-cg-academic-card h4{
+  margin:14px 0 16px;
+  color:#172033;
+  font-size:17px;
+  line-height:1.38;
+}
+.bb-cg-resource-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  margin-top:auto;
+}
+.bb-cg-resource{
+  min-height:53px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:9px 10px;
+  border-radius:11px;
+  border:1px solid #e2e8f0;
+  background:#fff;
+  color:#334155;
+  font-size:11px;
+  font-weight:850;
+  text-decoration:none;
+}
+.bb-cg-resource>span{font-size:16px}
+.bb-cg-resource small{
+  display:block;
+  margin-left:auto;
+  color:#94a3b8;
+  font-size:8px;
+  text-transform:uppercase;
+}
+.bb-cg-resource.is-ready{
+  border-color:#99f6e4;
+  background:#f0fdfa;
+  color:#0f766e;
+}
+.bb-cg-resource.is-pending{opacity:.72}
+.bb-cg-study-link{
+  display:block;
+  margin-top:13px;
+  padding-top:12px;
+  border-top:1px solid #e2e8f0;
+  color:#c2410c;
+  font-size:12px;
+  font-weight:900;
+  text-decoration:none;
+}
+.bb-cg-study-link.disabled{color:#94a3b8}
+@media(max-width:1050px){
+  .bb-cg-academic-intro{grid-template-columns:1fr}
+  .bb-cg-academic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .bb-cg-academic-shell{width:min(100% - 24px,1480px)}
+  .bb-cg-academic-intro,.bb-cg-academic-group{padding:18px}
+  .bb-cg-academic-grid{grid-template-columns:1fr}
+  .bb-cg-academic-group-head{flex-direction:column}
+  .bb-cg-resource-grid{grid-template-columns:1fr 1fr}
+}
+/* BB_CG_ACADEMIC_ARCHITECTURE_V1_END */
