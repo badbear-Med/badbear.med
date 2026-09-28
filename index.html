@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="hero-showcase__visual">
-          <img src="assets/images/badbear-hero.webp?v=20260927-visible" alt="Doctor Bad Bear y Doctora Kha-mhu, mascotas médicas de BADBEAR.MED">
+          <img id="badbear-hero-image" width="1000" height="428" alt="Doctor Bad Bear y Doctora Kha-mhu, mascotas médicas de BADBEAR.MED">
         </div>
       </div>
     </section>
@@ -113,5 +113,38 @@
   <script src="assets/js/courses.js"></script>
   <script src="script.js"></script>
   <script src="assets/js/bb-responsive-global-v21.js"></script>
+
+  <script>
+    (async function cargarHeroBadbear() {
+      const img = document.getElementById('badbear-hero-image');
+      if (!img) return;
+
+      const base = 'assets/images/badbear-hero-parts/';
+      const archivos = [
+        'part01.txt','part02.txt','part03.txt','part04.txt',
+        'part05.txt','part06.txt','part07.txt'
+      ];
+
+      try {
+        const partes = await Promise.all(
+          archivos.map(async (nombre) => {
+            const respuesta = await fetch(base + nombre + '?v=20260927-final', { cache: 'no-store' });
+            if (!respuesta.ok) throw new Error(nombre + ': HTTP ' + respuesta.status);
+            return (await respuesta.text()).trim();
+          })
+        );
+
+        const base64 = partes.join('');
+        if (base64.length !== 25332 || !base64.startsWith('UklG')) {
+          throw new Error('Imagen incompleta: ' + base64.length + ' caracteres');
+        }
+
+        img.src = 'data:image/webp;base64,' + base64;
+      } catch (error) {
+        console.error('BADBEAR.MED: no se pudo cargar la imagen principal.', error);
+      }
+    })();
+  </script>
+
 </body>
 </html>
