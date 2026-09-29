@@ -336,3 +336,11 @@ body{background:#f7f8fb}.cxg-header{position:sticky;top:0;z-index:1000;backgroun
 .bb-cg-video.is-pending{display:flex}
 @media(max-width:700px){.bb-cg-audio-box audio{height:40px}}
 /* BB_CG_AUDIO_RESOURCE_V2_END */
+
+/* BB_CG_AUDIO_FIX_V3_START */
+.bb-cg-audio-label{display:flex;align-items:center;gap:7px}
+.bb-cg-audio-label .bb-cg-audio-open{margin-left:auto;color:#3730a3;text-decoration:none;font-size:10px;font-weight:900}
+.bb-cg-audio-label .bb-cg-audio-open:hover{text-decoration:underline}
+.bb-cg-audio-box audio{display:block;width:100%;margin-top:8px}
+.bb-cg-resource-grid .bb-cg-resource:first-child.is-ready{border-color:#bfdbfe;background:#eff6ff;color:#1d4ed8}
+/* BB_CG_AUDIO_FIX_V3_END */
