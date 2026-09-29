@@ -236,3 +236,89 @@ body{background:#f7f8fb}.cxg-header{position:sticky;top:0;z-index:1000;backgroun
   .bb-cg-resource-grid{grid-template-columns:1fr 1fr}
 }
 /* BB_CG_ACADEMIC_ARCHITECTURE_V1_END */
+
+
+/* BB_CG_SEGMENT_SEPARATION_V2_START */
+.bb-cg-academic-shell{
+  position:relative;
+  padding-top:8px;
+}
+.bb-cg-academic-shell:before{
+  content:"NUEVO SEGMENTO";
+  display:inline-flex;
+  margin:0 0 12px 4px;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#c2410c;
+  color:#fff;
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.11em;
+}
+.bb-cg-section-divider{
+  width:min(1480px,calc(100% - 40px));
+  margin:10px auto 34px;
+  display:grid;
+  grid-template-columns:auto auto minmax(80px,1fr) auto;
+  gap:12px;
+  align-items:center;
+  padding:15px 18px;
+  border:1px solid #cbd5e1;
+  border-radius:16px;
+  background:#f8fafc;
+  color:#475569;
+}
+.bb-cg-section-divider span{
+  padding:5px 9px;
+  border-radius:999px;
+  background:#0f172a;
+  color:#fff;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.09em;
+}
+.bb-cg-section-divider strong{
+  font-size:11px;
+  color:#334155;
+  white-space:nowrap;
+}
+.bb-cg-section-divider i{
+  height:1px;
+  background:#cbd5e1;
+}
+.bb-cg-legacy{
+  width:min(1480px,calc(100% - 40px));
+  margin:0 auto 46px;
+  padding:28px;
+  border:2px solid #cbd5e1;
+  border-radius:22px;
+  background:#fff;
+}
+.bb-cg-legacy .bb-cg-study-head{
+  padding-bottom:18px;
+  border-bottom:1px solid #e2e8f0;
+}
+.bb-cg-legacy .eyebrow{
+  background:#e2e8f0!important;
+  color:#334155!important;
+}
+.bb-cg-legacy .bb-cg-study-head h2{
+  color:#0f172a;
+}
+.bb-cg-legacy .bb-cg-study-head p{
+  max-width:980px;
+}
+@media(max-width:700px){
+  .bb-cg-section-divider{
+    width:min(100% - 24px,1480px);
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .bb-cg-section-divider i{display:none}
+  .bb-cg-section-divider strong{white-space:normal}
+  .bb-cg-legacy{
+    width:min(100% - 24px,1480px);
+    padding:18px;
+  }
+}
+/* BB_CG_SEGMENT_SEPARATION_V2_END */
