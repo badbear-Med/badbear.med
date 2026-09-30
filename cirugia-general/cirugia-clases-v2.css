@@ -76,3 +76,89 @@
 @media(max-width:900px){.cg-section-rich{padding:24px 18px}.cg-rich-text p{font-size:15px;line-height:1.78}.cg-keybox,.cg-clinical{padding:15px}.cg-side{max-height:none}}
 /* ===== FIN CIRUGIA GENERAL TEORIAS EXTENSAS V5 ===== */
 
+
+
+/* BB_CG_PDF_VISUALS_V1_START */
+.cg-visual{
+  margin:2px 0 8px;
+  overflow:hidden;
+  border:1px solid #d7e3ef;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 12px 34px rgba(15,23,42,.07);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.cg-visual-link{display:block;text-decoration:none;color:inherit}
+.cg-visual-canvas-wrap{
+  position:relative;
+  min-height:260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+  background:linear-gradient(135deg,#f8fbff,#f2faf8);
+}
+.cg-visual-canvas{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:980px;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 5px 22px rgba(15,23,42,.08);
+}
+.cg-visual-loading{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  color:#64748b;
+  font-size:13px;
+  font-weight:800;
+  text-align:center;
+}
+.cg-visual.is-ready .cg-visual-loading{display:none}
+.cg-visual figcaption{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:7px 10px;
+  align-items:center;
+  padding:15px 18px 17px;
+  border-top:1px solid #e7edf4;
+}
+.cg-visual-badge{
+  display:inline-flex;
+  padding:5px 8px;
+  border-radius:999px;
+  background:#e8fbf7;
+  color:#08776e;
+  font-size:9px;
+  font-weight:950;
+  letter-spacing:.08em;
+}
+.cg-visual figcaption strong{
+  color:#172033;
+  font-size:14px;
+  line-height:1.4;
+}
+.cg-visual figcaption small{
+  grid-column:1/-1;
+  color:#738197;
+  font-size:11px;
+  line-height:1.5;
+}
+.cg-visual:hover{
+  transform:translateY(-1px);
+  box-shadow:0 16px 40px rgba(15,23,42,.10);
+}
+.cg-visual.is-error .cg-visual-canvas{display:none}
+.cg-visual.is-error .cg-visual-canvas-wrap{min-height:150px}
+@media(max-width:900px){
+  .cg-visual-canvas-wrap{min-height:180px;padding:8px}
+  .cg-visual{border-radius:15px}
+  .cg-visual figcaption{grid-template-columns:1fr;padding:13px 14px}
+  .cg-visual figcaption small{grid-column:auto}
+}
+/* BB_CG_PDF_VISUALS_V1_END */
