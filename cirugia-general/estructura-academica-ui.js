@@ -37,8 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
         '<div class="bb-cg-academic-top"><span class="bb-cg-academic-label">' + esc(item.label) + '</span><span class="bb-cg-status ' + esc(item.status) + '">' + esc(item.statusText) + '</span></div>' +
         '<h4>' + esc(item.title) + '</h4>' +
         '<div class="bb-cg-resource-grid">' +
-          linkResource(item.study,"Desarrollo de la teoría","📘","Pendiente") +
-          linkResource(r.ppt,"PPT / diapositivas","📊") +
+          linkResource(item.study,"Desarrollo teórico","📘","Pendiente") +
+          linkResource(r.pdf,"PDF BADBEAR.MED","📄","Pendiente") +
+          linkResource(r.ppt,"PPT / diapositivas","📊","Pendiente") +
           videoResource(r.video) +
         '</div>' +
         audioResource(r.audio) +
