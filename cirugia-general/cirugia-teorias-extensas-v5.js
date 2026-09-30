@@ -3304,3 +3304,1159 @@ window.BADBEAR_CG_TOPICS["seminario-07-cirugia-robotica"] = {
 };
 
 /* BB_CG_SEMINARIOS_EXTENSOS_V6_END */
+
+
+/* BB_CG_FALTANTES_AMPLIOS_V7_START */
+window.BADBEAR_CG_TOPICS["sabatina-01-integrada"] = {
+  "title": "Actividad Académica Sabatina 1 — Trauma grave, patología esofágica y resolución quirúrgica",
+  "subtitle": "Integración de prioridades del trauma, evaluación abdominal y torácica, patología esofágica urgente y toma de decisiones operatorias.",
+  "tag": "Sabatina 1",
+  "notice": "Desarrollo BADBEAR.MED ampliado para integrar los problemas de mayor riesgo de la primera etapa del curso. Se organiza por razonamiento clínico y decisiones quirúrgicas.",
+  "sections": [
+    {
+      "title": "1. Cómo abordar al paciente quirúrgico grave",
+      "paragraphs": [
+        "La primera decisión frente a un paciente grave no es ponerle un nombre definitivo a la enfermedad, sino reconocer qué amenaza la vida en ese momento. En trauma y urgencias digestivas, el deterioro puede producirse por hemorragia, obstrucción de la vía aérea, insuficiencia ventilatoria, perforación, sepsis o isquemia. Por eso la evaluación inicial debe ordenar prioridades fisiológicas antes de completar el diagnóstico anatómico.",
+        "El enfoque útil combina evaluación primaria, reanimación simultánea y reevaluación. La respuesta a las primeras medidas aporta información: un paciente que mejora con control de sangrado y restitución de volumen no tiene el mismo perfil que otro que persiste inestable y probablemente requiere control definitivo de la fuente."
+      ],
+      "bullets": [
+        "Priorizar amenaza vital.",
+        "Reanimar mientras se diagnostica.",
+        "Buscar fuente de hemorragia o contaminación.",
+        "Reevaluar tras cada intervención."
+      ],
+      "clinical": "Si el paciente empeora, vuelve a las prioridades fisiológicas antes de ampliar estudios.",
+      "fija": "En urgencias quirúrgicas, la fisiología manda sobre el detalle anatómico."
+    },
+    {
+      "title": "2. Trauma abdominal: mecanismo, anatomía y sospecha",
+      "paragraphs": [
+        "El mecanismo orienta el patrón de lesión. En trauma cerrado predominan desaceleración, compresión y cizallamiento; en trauma penetrante importan trayecto, energía y estructuras atravesadas. Hígado y bazo son fuentes frecuentes de sangrado intraperitoneal, mientras retroperitoneo, pelvis y mesenterio pueden ocultar pérdidas importantes.",
+        "La ausencia de dolor intenso no excluye lesión grave. Intoxicación, traumatismo craneal, analgesia, edad avanzada o lesión medular pueden modificar el examen. El abdomen debe reevaluarse de forma seriada y siempre en relación con la estabilidad hemodinámica."
+      ],
+      "bullets": [
+        "Cerrado vs penetrante.",
+        "Sangrado intraperitoneal y retroperitoneal.",
+        "Examen seriado.",
+        "La estabilidad define la estrategia."
+      ],
+      "clinical": "Un paciente inestable con sospecha de sangrado intraabdominal necesita respuestas rápidas que cambien conducta.",
+      "fija": "Mecanismo + fisiología + examen seriado construyen la sospecha de lesión abdominal."
+    },
+    {
+      "title": "3. eFAST, tomografía y decisión operatoria",
+      "paragraphs": [
+        "El eFAST es útil para detectar líquido libre y complicaciones torácicas en el contexto adecuado, especialmente cuando el paciente está inestable. Su valor no radica en describir todas las lesiones, sino en responder si existe un hallazgo que justifique una intervención inmediata o cambie el siguiente paso.",
+        "La tomografía con contraste ofrece una caracterización anatómica mucho mayor y es fundamental en pacientes suficientemente estables. Puede mostrar lesiones de órgano sólido, extravasación, neumoperitoneo, hematomas, lesión mesentérica y hallazgos retroperitoneales. Sin embargo, una tomografía no debe retrasar control quirúrgico cuando la fisiología ya indica una amenaza no contenida."
+      ],
+      "bullets": [
+        "eFAST: rapidez y triage.",
+        "TC: anatomía y planificación.",
+        "Inestabilidad persistente: priorizar control de fuente."
+      ],
+      "clinical": "La mejor prueba es la que responde la pregunta correcta dentro del tiempo que el paciente tolera.",
+      "fija": "La indicación de imagen depende de estabilidad, no solo de disponibilidad."
+    },
+    {
+      "title": "4. Lesión esofágica aguda y perforación",
+      "paragraphs": [
+        "La perforación esofágica es una urgencia de alto riesgo porque contenido salival, gástrico y bacteriano puede contaminar mediastino, pleura o cuello. Las causas incluyen iatrogenia, vómitos violentos, trauma y cuerpos extraños. El cuadro varía según la localización y puede presentarse con dolor torácico o cervical, enfisema subcutáneo, fiebre y sepsis.",
+        "El diagnóstico temprano mejora el pronóstico. La estrategia depende de sitio, tamaño, tiempo de evolución, contención de la fuga, estado séptico y enfermedad esofágica de base. Algunas perforaciones contenidas pueden tratarse de forma no operatoria muy seleccionada; otras exigen drenaje, reparación, exclusión o resección."
+      ],
+      "bullets": [
+        "Pensar en perforación ante dolor + sepsis tras instrumentación o vómito.",
+        "Definir localización y contaminación.",
+        "Drenaje y control de fuga son principios centrales."
+      ],
+      "clinical": "La demora diagnóstica permite que una lesión localizada se transforme en mediastinitis y shock séptico.",
+      "fija": "Perforación esofágica = control de contaminación + control de fuga + soporte fisiológico."
+    },
+    {
+      "title": "5. Obstrucción esofágica, acalasia y urgencias mecánicas",
+      "paragraphs": [
+        "La disfagia debe diferenciar trastornos motores de obstrucciones estructurales. La acalasia produce falla de relajación del esfínter esofágico inferior y pérdida de peristalsis; en contraste, tumores o estenosis generan una obstrucción anatómica progresiva. El patrón de disfagia a sólidos y líquidos desde el inicio orienta más a alteración motora, mientras progresión de sólidos a líquidos sugiere lesión estructural.",
+        "En urgencias, impactación alimentaria o cuerpo extraño puede requerir endoscopia. La evaluación debe considerar riesgo de aspiración, perforación y lesión cáustica. El tratamiento definitivo de la acalasia puede incluir dilatación, miotomía endoscópica o miotomía de Heller según selección."
+      ],
+      "bullets": [
+        "Motora vs mecánica.",
+        "Disfagia progresiva = descartar neoplasia.",
+        "Urgencia si hay obstrucción completa o perforación."
+      ],
+      "clinical": "No atribuyas disfagia progresiva a reflujo sin descartar obstrucción estructural.",
+      "fija": "La cronología de la disfagia orienta la fisiopatología."
+    },
+    {
+      "title": "6. Cáncer de esófago: lógica oncológica",
+      "paragraphs": [
+        "El cáncer de esófago exige confirmar histología, localizar la lesión y completar estadificación. La profundidad tumoral, compromiso ganglionar, metástasis y estado funcional determinan si el tratamiento será endoscópico, multimodal o quirúrgico. El estado nutricional tiene especial importancia porque muchos pacientes llegan con disfagia y pérdida de peso.",
+        "La esofagectomía es una operación compleja con reconstrucción digestiva y riesgo respiratorio, anastomótico y nutricional. Por eso la selección del paciente y el tratamiento en centros con experiencia son determinantes."
+      ],
+      "bullets": [
+        "Histología.",
+        "Estadificación.",
+        "Nutrición.",
+        "Resecabilidad y estrategia multimodal."
+      ],
+      "clinical": "Diagnóstico no equivale a operabilidad; primero se define extensión y reserva del paciente.",
+      "fija": "En oncología esofágica se planifica la secuencia completa, no solo la resección."
+    },
+    {
+      "title": "7. Shock, transfusión y control de daños",
+      "paragraphs": [
+        "El shock hemorrágico reduce entrega de oxígeno y conduce a metabolismo anaerobio, acidosis e hipoperfusión orgánica. La hipotermia y la coagulopatía empeoran la hemorragia. La reanimación moderna busca controlar el sangrado, evitar cristaloides excesivos y utilizar hemoderivados de forma racional cuando están indicados.",
+        "En pacientes fisiológicamente exhaustos, una operación extensa puede agravar el deterioro. La cirugía de control de daños limita el primer procedimiento a detener hemorragia y contaminación, difiriendo reconstrucciones hasta corregir temperatura, perfusión y coagulación."
+      ],
+      "bullets": [
+        "Control hemorrágico precoz.",
+        "Prevenir hipotermia.",
+        "Reanimación hemostática.",
+        "Control de daños cuando la fisiología no tolera reparación definitiva."
+      ],
+      "clinical": "La duración de la operación debe adaptarse a la reserva fisiológica del paciente.",
+      "fija": "Primero salvar la fisiología; después reconstruir."
+    },
+    {
+      "title": "8. Integración práctica y errores que debes evitar",
+      "paragraphs": [
+        "Los errores más peligrosos son tratar hallazgos aislados sin integrar al paciente, retrasar control de fuente por estudios que no cambiarán la conducta, no reevaluar y subestimar el deterioro progresivo. En cirugía de urgencias, una tendencia desfavorable puede ser más importante que un dato aislado aparentemente normal.",
+        "El razonamiento útil sigue una secuencia: amenaza vital, estabilidad, diagnóstico sindrómico, fuente probable, estudio que realmente cambia conducta y tratamiento definitivo. Esta estructura permite priorizar incluso cuando aún no existe certeza diagnóstica completa."
+      ],
+      "bullets": [
+        "No retrasar control de fuente.",
+        "No confiar en una sola exploración.",
+        "No confundir estabilidad transitoria con resolución.",
+        "Documentar respuesta al tratamiento."
+      ],
+      "clinical": "Cuando la evolución no encaja con el diagnóstico inicial, reabre el diagnóstico diferencial.",
+      "fija": "La reevaluación es una intervención clínica, no un trámite."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["sabatina-02-abdomen-agudo"] = {
+  "title": "Actividad Académica Sabatina 2 — Abdomen agudo quirúrgico: diagnóstico y manejo",
+  "subtitle": "Integración de abdomen inflamatorio, obstructivo, perforativo, hemorrágico e isquémico con prioridades de reanimación y control de fuente.",
+  "tag": "Sabatina 2",
+  "notice": "Desarrollo BADBEAR.MED de alta rentabilidad para ordenar el abdomen agudo desde el síndrome hasta la conducta.",
+  "sections": [
+    {
+      "title": "1. Abdomen agudo como síndrome",
+      "paragraphs": [
+        "Abdomen agudo describe un cuadro de dolor abdominal de inicio reciente que puede corresponder a una enfermedad potencialmente grave. No implica que todos los pacientes requieran operación, pero obliga a identificar rápidamente quién tiene peritonitis, shock, sepsis, obstrucción complicada, perforación, hemorragia o isquemia.",
+        "La evaluación comienza con estabilidad hemodinámica, historia dirigida y examen completo. El tiempo de evolución, migración del dolor, vómitos, tránsito intestinal, fiebre, sangrado y cirugías previas ayudan a organizar el diagnóstico."
+      ],
+      "bullets": [
+        "Estabilidad.",
+        "Peritonitis.",
+        "Obstrucción.",
+        "Perforación.",
+        "Hemorragia/isquemia."
+      ],
+      "clinical": "Antes de preguntar qué enfermedad es, pregunta si existe una amenaza que necesita intervención inmediata.",
+      "fija": "Abdomen agudo es un síndrome; la fisiología define la urgencia."
+    },
+    {
+      "title": "2. Dolor abdominal y anatomía",
+      "paragraphs": [
+        "El dolor visceral suele ser difuso; el parietal es más localizado; el referido aparece lejos del órgano afectado por convergencia segmentaria. La evolución del dolor puede reflejar progresión anatómica, como inflamación que alcanza peritoneo parietal.",
+        "La localización inicial y posterior, la relación con comidas, movimiento, vómitos y defecación ayudan a distinguir patrones. Sin embargo, ancianos, inmunosuprimidos y pacientes con neuropatía pueden tener presentación atípica."
+      ],
+      "bullets": [
+        "Visceral.",
+        "Parietal.",
+        "Referido.",
+        "Migración del dolor."
+      ],
+      "clinical": "La cronología del dolor puede ser más diagnóstica que su intensidad aislada.",
+      "fija": "El dolor abdominal se interpreta por patrón, evolución y contexto."
+    },
+    {
+      "title": "3. Inflamatorio e infeccioso",
+      "paragraphs": [
+        "Apendicitis, colecistitis, diverticulitis y algunas infecciones intraabdominales comparten inflamación local con riesgo de perforación, absceso y sepsis. El tratamiento combina soporte, antibióticos cuando están indicados y control de fuente.",
+        "La imagen ayuda a confirmar anatomía y complicaciones, pero la indicación quirúrgica surge de la combinación entre hallazgos, evolución y estado del paciente."
+      ],
+      "bullets": [
+        "Apendicitis.",
+        "Colecistitis.",
+        "Diverticulitis.",
+        "Absceso intraabdominal."
+      ],
+      "clinical": "Una inflamación localizada puede tratarse de manera distinta a una perforación con peritonitis difusa.",
+      "fija": "Control de fuente es el principio central de la infección quirúrgica."
+    },
+    {
+      "title": "4. Obstructivo",
+      "paragraphs": [
+        "La obstrucción produce acumulación de gas y líquido proximal al punto de bloqueo, distensión, vómitos y pérdidas hidroelectrolíticas. Las adherencias, hernias y tumores son causas frecuentes. El diagnóstico no termina en demostrar obstrucción: hay que decidir si existe estrangulación o isquemia.",
+        "Dolor continuo, peritonismo, acidosis, deterioro, fiebre o alteración del realce intestinal aumentan la preocupación por compromiso vascular."
+      ],
+      "bullets": [
+        "Punto de transición.",
+        "Causa.",
+        "Obstrucción simple vs estrangulada.",
+        "Viabilidad intestinal."
+      ],
+      "clinical": "Una obstrucción con deterioro fisiológico deja de ser un problema puramente mecánico.",
+      "fija": "La pregunta de examen en obstrucción es: ¿hay isquemia?"
+    },
+    {
+      "title": "5. Perforativo",
+      "paragraphs": [
+        "La perforación de víscera hueca permite contaminación de la cavidad peritoneal y puede producir peritonitis y sepsis. Las causas incluyen úlcera péptica, diverticulitis, neoplasias, isquemia, trauma y perforación iatrogénica.",
+        "El tratamiento exige reanimación, antibióticos de espectro apropiado y control de la perforación. La técnica puede ser reparación, resección, derivación o control de daños según localización y fisiología."
+      ],
+      "bullets": [
+        "Neumoperitoneo.",
+        "Peritonitis.",
+        "Sepsis.",
+        "Control de contaminación."
+      ],
+      "clinical": "En peritonitis generalizada, la demora en control de fuente aumenta riesgo.",
+      "fija": "Perforación + contaminación = reanimación + antibiótico + control de fuente."
+    },
+    {
+      "title": "6. Hemorrágico",
+      "paragraphs": [
+        "La hemorragia intraabdominal puede ser traumática, vascular, ginecológica o secundaria a tumores y lesiones viscerales. La presentación puede incluir dolor, distensión, hipotensión, síncope y caída de hemoglobina, aunque esta última puede ser inicialmente normal.",
+        "La prioridad es identificar sangrado activo y decidir si puede controlarse mediante cirugía, endovascular o manejo no operatorio seleccionado."
+      ],
+      "bullets": [
+        "Buscar shock.",
+        "Localizar fuente.",
+        "Reanimar.",
+        "Elegir método de hemostasia."
+      ],
+      "clinical": "La hemoglobina inicial no cuantifica de forma confiable una hemorragia aguda significativa.",
+      "fija": "En sangrado activo, la respuesta a reanimación ayuda a definir urgencia."
+    },
+    {
+      "title": "7. Isquémico y vascular",
+      "paragraphs": [
+        "La isquemia mesentérica puede deberse a embolia, trombosis arterial, trombosis venosa o hipoperfusión no oclusiva. El dolor puede ser intenso con pocos hallazgos iniciales en el abdomen. La progresión conduce a necrosis, peritonitis y sepsis.",
+        "La angiotomografía es clave en pacientes estables. Si existe necrosis intestinal, la resección es necesaria y algunos casos requieren revascularización o segunda mirada."
+      ],
+      "bullets": [
+        "Dolor desproporcionado.",
+        "Factores vasculares.",
+        "Angio-TC.",
+        "Viabilidad intestinal."
+      ],
+      "clinical": "La sospecha temprana es crucial porque el examen puede retrasarse respecto a la gravedad vascular.",
+      "fija": "Isquemia intestinal es tiempo-dependiente."
+    },
+    {
+      "title": "8. Reanimación, antibióticos y control de fuente",
+      "paragraphs": [
+        "La reanimación corrige hipovolemia, alteraciones electrolíticas y perfusión. La analgesia adecuada forma parte del manejo. Los antibióticos se indican cuando existe infección, perforación o alto riesgo bacteriano, pero no sustituyen el control de la fuente.",
+        "El procedimiento definitivo depende de la causa. En pacientes inestables puede ser más seguro limitar la cirugía inicial a controlar hemorragia y contaminación."
+      ],
+      "bullets": [
+        "Fluidos guiados por respuesta.",
+        "Analgesia.",
+        "Antibióticos cuando corresponden.",
+        "Control de fuente."
+      ],
+      "clinical": "La mejor reanimación no compensa una fuente séptica o hemorrágica sin controlar.",
+      "fija": "Reanimación y control de fuente deben avanzar en paralelo."
+    },
+    {
+      "title": "9. Observación y reevaluación",
+      "paragraphs": [
+        "No todos los pacientes con dolor abdominal requieren operación inmediata. Cuando el diagnóstico es incierto y el paciente está estable, la observación hospitalaria con reevaluación seriada puede ser una estrategia diagnóstica segura.",
+        "Los cambios en signos vitales, examen, dolor, laboratorio o tolerancia oral pueden revelar una enfermedad que inicialmente no era evidente."
+      ],
+      "bullets": [
+        "Examen seriado.",
+        "Tendencias de laboratorio.",
+        "Repetir imagen si cambia el cuadro.",
+        "Escalar conducta ante deterioro."
+      ],
+      "clinical": "Un paciente observado debe tener objetivos y criterios claros de escalamiento.",
+      "fija": "Observar no significa no hacer nada; significa reevaluar con intención."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["sabatina-03-integrada"] = {
+  "title": "Actividad Académica Sabatina 3 — Oncología pancreática, intestino y patología anorrectal",
+  "subtitle": "Integración de cáncer pancreático, patología del intestino delgado y enfermedades quirúrgicas de recto y ano.",
+  "tag": "Sabatina 3",
+  "notice": "Desarrollo BADBEAR.MED para relacionar anatomía, oncología y conducta quirúrgica en páncreas, intestino y región anorrectal.",
+  "sections": [
+    {
+      "title": "1. Principios generales de oncología quirúrgica",
+      "paragraphs": [
+        "La cirugía oncológica busca resección completa con márgenes adecuados y manejo del drenaje linfático cuando corresponde. Antes de operar debe establecerse diagnóstico, extensión, resecabilidad y capacidad fisiológica del paciente para tolerar la intervención.",
+        "La resección R0 representa ausencia de tumor microscópico residual. Sin embargo, la decisión quirúrgica no depende solo de si técnicamente puede extirparse una masa, sino de si el procedimiento ofrece beneficio oncológico razonable."
+      ],
+      "bullets": [
+        "Diagnóstico histológico cuando corresponde.",
+        "Estadificación.",
+        "Resecabilidad.",
+        "Operabilidad.",
+        "Objetivo R0."
+      ],
+      "clinical": "Técnicamente resecable no siempre significa clínicamente conveniente.",
+      "fija": "Cirugía oncológica = tumor + márgenes + territorio linfático + selección del paciente."
+    },
+    {
+      "title": "2. Cáncer de páncreas y resecabilidad",
+      "paragraphs": [
+        "Las neoplasias de cabeza pancreática pueden presentarse con ictericia obstructiva, pérdida de peso y dolor. La tomografía protocolizada evalúa relación con vasos mesentéricos y porta, metástasis y anatomía quirúrgica.",
+        "La resecabilidad se clasifica según compromiso vascular y enfermedad a distancia. La duodenopancreatectomía cefálica se utiliza para lesiones seleccionadas de cabeza, mientras cuerpo y cola pueden requerir pancreatectomía distal."
+      ],
+      "bullets": [
+        "Localización.",
+        "Metástasis.",
+        "Relación vascular.",
+        "Estado funcional."
+      ],
+      "clinical": "Antes de plantear Whipple, define si existe enfermedad metastásica y si puede lograrse resección oncológica.",
+      "fija": "En cáncer pancreático, la anatomía vascular determina resecabilidad."
+    },
+    {
+      "title": "3. Intestino delgado: obstrucción e isquemia",
+      "paragraphs": [
+        "El intestino delgado puede obstruirse por adherencias, hernias, tumores, enfermedad inflamatoria, intususcepción o vólvulo. La distensión y el secuestro de líquidos producen deshidratación y alteraciones electrolíticas.",
+        "La estrangulación compromete perfusión y puede llevar a necrosis. La evaluación combina dolor, examen, laboratorio y tomografía. La cirugía es urgente cuando existen datos de isquemia, perforación o fracaso del manejo conservador."
+      ],
+      "bullets": [
+        "Causa.",
+        "Punto de transición.",
+        "Viabilidad.",
+        "Necesidad de resección."
+      ],
+      "clinical": "La presencia de una transición en TC no basta; busca signos de sufrimiento intestinal.",
+      "fija": "Obstrucción + isquemia = urgencia quirúrgica."
+    },
+    {
+      "title": "4. Tumores del intestino delgado",
+      "paragraphs": [
+        "Los tumores incluyen adenocarcinoma, neuroendocrinos, linfoma y tumores mesenquimales. Pueden presentarse con anemia, sangrado, obstrucción, dolor o ser hallazgos incidentales.",
+        "La resección depende de histología, localización y extensión. En tumores neuroendocrinos debe considerarse enfermedad multifocal y compromiso mesentérico; en linfoma, el papel de cirugía puede ser distinto y centrarse en complicaciones."
+      ],
+      "bullets": [
+        "Adenocarcinoma.",
+        "Neuroendocrino.",
+        "Linfoma.",
+        "GIST/mesenquimales."
+      ],
+      "clinical": "No todas las neoplasias intestinales siguen el mismo principio de resección y linfadenectomía.",
+      "fija": "Histología cambia la estrategia quirúrgica."
+    },
+    {
+      "title": "5. Patología anal benigna",
+      "paragraphs": [
+        "Hemorroides, fisura, absceso, fístula y prolapso tienen mecanismos y tratamientos diferentes. Las hemorroides son almohadillas vasculares; la fisura es un desgarro del anodermo con hipertonía esfinteriana frecuente; absceso y fístula suelen formar parte de un proceso criptoglandular.",
+        "El examen debe respetar el dolor del paciente y definir localización, drenaje, trayectos y función esfinteriana. El tratamiento quirúrgico siempre debe equilibrar curación con preservación de continencia."
+      ],
+      "bullets": [
+        "Hemorroides.",
+        "Fisura.",
+        "Absceso.",
+        "Fístula.",
+        "Prolapso."
+      ],
+      "clinical": "Un absceso requiere drenaje; antibióticos aislados rara vez sustituyen control de la colección.",
+      "fija": "En cirugía anal, preservar el esfínter es un objetivo central."
+    },
+    {
+      "title": "6. Cáncer de recto",
+      "paragraphs": [
+        "El cáncer rectal exige definir altura, relación con fascia mesorrectal, ganglios, esfínteres y enfermedad metastásica. La resonancia pélvica tiene un papel importante en estadificación local.",
+        "El tratamiento puede combinar terapia neoadyuvante, resección total del mesorrecto y tratamiento sistémico. La posibilidad de preservar esfínter depende de oncología y función, no solo de distancia anatómica."
+      ],
+      "bullets": [
+        "RM pélvica.",
+        "CRM/fascia mesorrectal.",
+        "Ganglios.",
+        "Esfínteres.",
+        "Estrategia multimodal."
+      ],
+      "clinical": "La cirugía rectal se planifica en función de estadificación local completa.",
+      "fija": "TME de calidad es parte del tratamiento oncológico."
+    },
+    {
+      "title": "7. Cáncer anal",
+      "paragraphs": [
+        "El cáncer del canal anal tiene biología y tratamiento distintos al cáncer rectal. La mayoría de carcinomas escamosos se manejan inicialmente con quimiorradioterapia, reservándose cirugía radical para enfermedad persistente o recurrente seleccionada.",
+        "Esto ilustra por qué la proximidad anatómica no implica identidad terapéutica."
+      ],
+      "bullets": [
+        "Histología escamosa frecuente.",
+        "Quimiorradioterapia como base.",
+        "Cirugía de rescate en casos seleccionados."
+      ],
+      "clinical": "No trates un cáncer anal como un cáncer rectal distal.",
+      "fija": "Recto y canal anal son vecinos anatómicos con algoritmos oncológicos diferentes."
+    },
+    {
+      "title": "8. Complicaciones posoperatorias y seguimiento",
+      "paragraphs": [
+        "Después de cirugía pancreática, intestinal o colorrectal deben vigilarse fuga, absceso, sangrado, íleo, infección y deterioro nutricional. La naturaleza de la operación define riesgos específicos, como fístula pancreática o fuga anastomótica.",
+        "El seguimiento oncológico se organiza según tumor, estadio y tratamiento recibido. La cirugía es una fase de una estrategia longitudinal."
+      ],
+      "bullets": [
+        "Fuga/anastomosis.",
+        "Infección.",
+        "Nutrición.",
+        "Recurrencia.",
+        "Seguimiento multidisciplinario."
+      ],
+      "clinical": "El deterioro posoperatorio sin explicación obliga a buscar complicaciones ocultas de forma activa.",
+      "fija": "Una operación termina en quirófano; el tratamiento no."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["sabatina-04-integrada"] = {
+  "title": "Actividad Académica Sabatina 4 — Integración hepatobiliar, portal y vascular",
+  "subtitle": "Hepatología quirúrgica, hipertensión portal, bazo, complicaciones vasculares y toma de decisiones en cirugía abdominal avanzada.",
+  "tag": "Sabatina 4",
+  "notice": "Desarrollo BADBEAR.MED para integrar anatomía hepatobiliar, presión portal, sangrado y decisiones de alta complejidad.",
+  "sections": [
+    {
+      "title": "1. Anatomía funcional hepática y portal",
+      "paragraphs": [
+        "El hígado recibe flujo por vena porta y arteria hepática y drena a través de venas hepáticas hacia la cava. La división segmentaria permite resecciones anatómicas preservando territorios funcionales. La vía biliar acompaña en gran medida a los pedículos portales.",
+        "El sistema portal recoge sangre del tubo digestivo, bazo y páncreas. Cualquier aumento sostenido de resistencia genera circulación colateral y consecuencias hemodinámicas."
+      ],
+      "bullets": [
+        "Flujo portal.",
+        "Flujo arterial.",
+        "Venas hepáticas.",
+        "Segmentación.",
+        "Vía biliar."
+      ],
+      "clinical": "Toda resección hepática debe preservar entrada vascular, drenaje venoso y salida biliar del remanente.",
+      "fija": "La cirugía hepática es cirugía de territorios vasculobiliares."
+    },
+    {
+      "title": "2. Reserva hepática y riesgo operatorio",
+      "paragraphs": [
+        "La capacidad de tolerar una resección depende de función hepática basal y volumen remanente. Cirrosis, colestasis, quimioterapia previa y esteatosis pueden reducir reserva.",
+        "La evaluación integra clínica, laboratorio, imagen y, en casos seleccionados, volumetría. Un tumor resecable anatómicamente puede no ser operable si el remanente sería insuficiente."
+      ],
+      "bullets": [
+        "Función basal.",
+        "Volumen remanente.",
+        "Calidad del parénquima.",
+        "Hipertensión portal."
+      ],
+      "clinical": "La pregunta no es solo cuánto hígado se reseca, sino cuánto hígado funcional queda.",
+      "fija": "Resecabilidad anatómica y operabilidad fisiológica son conceptos distintos."
+    },
+    {
+      "title": "3. Hipertensión portal",
+      "paragraphs": [
+        "La hipertensión portal se produce por aumento de resistencia al flujo portal y puede ser prehepática, intrahepática o posthepática. Sus manifestaciones incluyen várices, ascitis, esplenomegalia e hiperesplenismo.",
+        "En cirrosis, la descompensación refleja una alteración sistémica, no solo local. La presencia de sangrado variceal, ascitis refractaria o encefalopatía modifica pronóstico y opciones terapéuticas."
+      ],
+      "bullets": [
+        "Prehepática.",
+        "Intrahepática.",
+        "Posthepática.",
+        "Várices y ascitis.",
+        "Hiperesplenismo."
+      ],
+      "clinical": "La hipertensión portal debe interpretarse junto con función hepática y causa subyacente.",
+      "fija": "Reducir presión portal no corrige por sí solo la enfermedad hepática."
+    },
+    {
+      "title": "4. Hemorragia variceal",
+      "paragraphs": [
+        "El sangrado variceal es una urgencia que exige reanimación, terapia vasoactiva, antibióticos en contexto cirrótico y control endoscópico según protocolos. El objetivo es controlar el sangrado sin producir sobrecarga que aumente la presión portal.",
+        "Cuando el control endoscópico falla o el riesgo de resangrado es alto pueden considerarse estrategias de derivación portosistémica como TIPS en pacientes seleccionados."
+      ],
+      "bullets": [
+        "Reanimación.",
+        "Endoscopia.",
+        "Terapia portal.",
+        "TIPS en indicaciones específicas."
+      ],
+      "clinical": "El sangrado variceal combina un problema hemorrágico y hemodinámico portal.",
+      "fija": "En varices, detener la hemorragia y controlar la presión portal son objetivos complementarios."
+    },
+    {
+      "title": "5. Bazo e hiperesplenismo",
+      "paragraphs": [
+        "El bazo participa en filtración sanguínea e inmunidad. La hipertensión portal puede producir esplenomegalia e hiperesplenismo con citopenias. La esplenectomía no se indica por tamaño aislado y debe tener una razón clínica clara.",
+        "Después de esplenectomía existe mayor riesgo de infecciones graves por bacterias encapsuladas y también riesgo trombótico en determinados pacientes, por lo que vacunación y seguimiento son esenciales."
+      ],
+      "bullets": [
+        "Función inmune.",
+        "Hiperesplenismo.",
+        "Indicaciones selectivas.",
+        "Vacunación."
+      ],
+      "clinical": "Un bazo grande no es sinónimo de necesidad de esplenectomía.",
+      "fija": "Antes de esplenectomía piensa en indicación, vacunas y riesgo trombótico."
+    },
+    {
+      "title": "6. Tumores hepáticos y metástasis",
+      "paragraphs": [
+        "La evaluación de una lesión hepática diferencia tumores primarios, metástasis y lesiones benignas. En hepatocarcinoma importan tanto carga tumoral como función del hígado. En metástasis, especialmente colorrectales, la estrategia depende de distribución y posibilidad de dejar remanente adecuado.",
+        "Resección, ablación, trasplante y tratamiento sistémico se combinan según enfermedad y paciente."
+      ],
+      "bullets": [
+        "HCC.",
+        "Metástasis.",
+        "Lesiones benignas.",
+        "Resección/ablación/trasplante."
+      ],
+      "clinical": "Dos pacientes con tumores de igual tamaño pueden recibir tratamientos distintos por su reserva hepática.",
+      "fija": "En oncología hepática se estadifica tumor y también hígado."
+    },
+    {
+      "title": "7. Complicaciones vasculares hepatobiliares",
+      "paragraphs": [
+        "Trombosis portal, trombosis de arteria hepática, pseudoaneurismas y sangrado pueden aparecer espontáneamente o tras procedimientos. La ecografía Doppler, angiotomografía y angiografía cumplen funciones complementarias.",
+        "La radiología intervencionista puede embolizar sangrado o recanalizar determinados territorios, reduciendo necesidad de cirugía abierta en casos seleccionados."
+      ],
+      "bullets": [
+        "Doppler.",
+        "Angio-TC.",
+        "Angiografía.",
+        "Embolización."
+      ],
+      "clinical": "El deterioro súbito tras cirugía hepatobiliar debe hacer buscar una complicación vascular o biliar.",
+      "fija": "En complicaciones vasculares, el diagnóstico temprano puede preservar órgano y vida."
+    },
+    {
+      "title": "8. Integración y decisiones complejas",
+      "paragraphs": [
+        "La cirugía hepatobiliar avanzada exige integrar anatomía, reserva funcional, oncología y fisiología. La operación más extensa no siempre es la mejor; a veces una estrategia escalonada, endovascular o de trasplante ofrece mayor beneficio.",
+        "El razonamiento debe culminar en una pregunta: qué intervención ofrece control de enfermedad con riesgo aceptable para este paciente concreto."
+      ],
+      "bullets": [
+        "Anatomía.",
+        "Función.",
+        "Oncología.",
+        "Riesgo.",
+        "Alternativas no quirúrgicas."
+      ],
+      "clinical": "La complejidad técnica nunca debe desplazar la selección adecuada del paciente.",
+      "fija": "La mejor estrategia es la que equilibra radicalidad, función y seguridad."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["taller-01-trauma-abdominal"] = {
+  "title": "Taller 1 — Atención del paciente politraumatizado y traumatismo abdominal",
+  "subtitle": "xABCDE, shock hemorrágico, eFAST, trauma de órganos sólidos, víscera hueca, pelvis y decisiones de control de daños.",
+  "tag": "Taller de trauma",
+  "notice": "Desarrollo BADBEAR.MED práctico para ejecutar decisiones paso a paso en el paciente traumatizado.",
+  "sections": [
+    {
+      "title": "1. xABCDE aplicado al trauma",
+      "paragraphs": [
+        "La secuencia xABCDE prioriza hemorragia exanguinante antes de vía aérea, seguida de respiración, circulación, estado neurológico y exposición. Cada paso contiene evaluación y tratamiento simultáneos.",
+        "La protección cervical se integra con vía aérea. En respiración se buscan neumotórax a tensión, hemotórax masivo y otras lesiones torácicas críticas. En circulación se controla sangrado externo y se busca hemorragia oculta."
+      ],
+      "bullets": [
+        "x: hemorragia masiva.",
+        "A: vía aérea + columna cervical.",
+        "B: ventilación.",
+        "C: perfusión y sangrado.",
+        "D: neurología.",
+        "E: exposición y temperatura."
+      ],
+      "clinical": "Si aparece deterioro durante el examen secundario, regresa al ABCDE.",
+      "fija": "ABCDE no es una lista; es un ciclo de reevaluación y tratamiento."
+    },
+    {
+      "title": "2. Shock hemorrágico y respuesta a reanimación",
+      "paragraphs": [
+        "La pérdida sanguínea reduce precarga, volumen sistólico y perfusión. La taquicardia y vasoconstricción pueden mantener presión inicialmente, especialmente en jóvenes. La hipotensión puede ser tardía.",
+        "La respuesta a fluidos y sangre ayuda a clasificar si el sangrado está controlado o continúa. Lactato, déficit de base, diuresis y estado mental aportan información de perfusión."
+      ],
+      "bullets": [
+        "No esperar hipotensión.",
+        "Valorar perfusión.",
+        "Controlar fuente.",
+        "Prevenir coagulopatía e hipotermia."
+      ],
+      "clinical": "Un respondedor transitorio puede seguir sangrando activamente.",
+      "fija": "Shock es hipoperfusión; no se define solo por presión arterial."
+    },
+    {
+      "title": "3. Trauma abdominal cerrado",
+      "paragraphs": [
+        "La desaceleración puede lesionar hígado, bazo, mesenterio, riñón y vísceras huecas. El examen inicial puede ser poco expresivo y debe repetirse.",
+        "En pacientes estables, la tomografía define lesiones y permite manejo no operatorio de muchos órganos sólidos. La inestabilidad con sangrado no controlado orienta a intervención urgente."
+      ],
+      "bullets": [
+        "Órgano sólido.",
+        "Mesenterio.",
+        "Víscera hueca.",
+        "Retroperitoneo."
+      ],
+      "clinical": "El manejo no operatorio requiere estabilidad y capacidad de vigilancia.",
+      "fija": "La estabilidad hemodinámica es un criterio terapéutico."
+    },
+    {
+      "title": "4. Trauma penetrante",
+      "paragraphs": [
+        "En heridas por arma blanca o proyectil importan trayectoria, localización y signos de lesión interna. Evisceración, peritonitis, inestabilidad o hemorragia significativa pueden indicar exploración.",
+        "En pacientes estables seleccionados puede utilizarse imagen y observación estructurada dependiendo del mecanismo y experiencia del centro."
+      ],
+      "bullets": [
+        "Trayectoria.",
+        "Peritonitis.",
+        "Inestabilidad.",
+        "Evisceración.",
+        "Sangrado."
+      ],
+      "clinical": "Una herida pequeña en piel puede ocultar un trayecto profundo.",
+      "fija": "El tamaño externo de la herida no predice la lesión interna."
+    },
+    {
+      "title": "5. eFAST y tomografía",
+      "paragraphs": [
+        "El eFAST busca líquido libre y lesiones torácicas rápidas. Un resultado negativo no excluye lesión retroperitoneal o víscera hueca.",
+        "La tomografía con contraste es la herramienta anatómica principal en pacientes estables. Permite valorar extravasación, lesión de órgano, mesenterio, aire libre y retroperitoneo."
+      ],
+      "bullets": [
+        "eFAST para triage.",
+        "TC para anatomía.",
+        "Interpretar junto con fisiología."
+      ],
+      "clinical": "Un eFAST negativo en un paciente inestable obliga a buscar otras fuentes de shock.",
+      "fija": "Ninguna imagen sustituye la evaluación fisiológica."
+    },
+    {
+      "title": "6. Trauma hepático y esplénico",
+      "paragraphs": [
+        "Muchas lesiones de hígado y bazo pueden manejarse sin cirugía cuando el paciente está estable y existe vigilancia adecuada. La embolización arterial puede complementar el manejo en sangrado seleccionado.",
+        "La operación se reserva para inestabilidad persistente, peritonitis u otras indicaciones. En hígado grave puede ser necesario empaquetamiento y control de daños."
+      ],
+      "bullets": [
+        "Manejo no operatorio seleccionado.",
+        "Embolización.",
+        "Cirugía si inestable.",
+        "Control de daños."
+      ],
+      "clinical": "El grado anatómico no reemplaza la estabilidad como criterio principal.",
+      "fija": "Lesión de alto grado no significa automáticamente laparotomía si la fisiología es estable."
+    },
+    {
+      "title": "7. Víscera hueca y mesenterio",
+      "paragraphs": [
+        "Las lesiones intestinales pueden pasar desapercibidas al inicio. Dolor progresivo, peritonismo, aire extraluminal, engrosamiento, líquido sin lesión de órgano sólido y lesión mesentérica aumentan la sospecha.",
+        "La perforación o devascularización requiere reparación o resección. El retraso puede conducir a sepsis y peritonitis."
+      ],
+      "bullets": [
+        "Perforación.",
+        "Devascularización.",
+        "Lesión mesentérica.",
+        "Examen seriado."
+      ],
+      "clinical": "La evolución clínica es decisiva cuando la imagen inicial es equivoca.",
+      "fija": "En víscera hueca, el tiempo hasta control de contaminación importa."
+    },
+    {
+      "title": "8. Pelvis y retroperitoneo",
+      "paragraphs": [
+        "Las fracturas pélvicas pueden producir hemorragia masiva. La estabilización mecánica, reanimación y control hemorrágico mediante empaquetamiento, embolización u otras estrategias dependen del contexto.",
+        "El retroperitoneo puede ocultar sangrado significativo. Su exploración quirúrgica depende de mecanismo, zona y estabilidad."
+      ],
+      "bullets": [
+        "Binder pélvico cuando está indicado.",
+        "Sangrado venoso y arterial.",
+        "Embolización.",
+        "Packing."
+      ],
+      "clinical": "No movilices repetidamente una pelvis inestable sin necesidad.",
+      "fija": "Pelvis inestable + shock = pensar en hemorragia pélvica hasta demostrar lo contrario."
+    },
+    {
+      "title": "9. Cirugía de control de daños",
+      "paragraphs": [
+        "El control de daños limita la operación a detener hemorragia y contaminación en pacientes fisiológicamente exhaustos. Después se corrigen acidosis, hipotermia y coagulopatía en cuidados críticos antes de reintervención.",
+        "La decisión debe tomarse temprano; prolongar una reparación definitiva en un paciente que se deteriora puede empeorar el pronóstico."
+      ],
+      "bullets": [
+        "Hemostasia.",
+        "Control de contaminación.",
+        "Cierre temporal.",
+        "Reanimación en UCI.",
+        "Reoperación planificada."
+      ],
+      "clinical": "La operación más corta puede ser la más correcta cuando el paciente está al límite fisiológico.",
+      "fija": "Control de daños es una estrategia fisiológica, no una cirugía incompleta."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["taller-02-abdomen-agudo-complejo"] = {
+  "title": "Taller 2 — Abdomen agudo perforativo, hemorrágico, vascular e isquémico",
+  "subtitle": "Reconocimiento rápido, reanimación, imagen, control de fuente y elección de la estrategia quirúrgica.",
+  "tag": "Taller de abdomen agudo",
+  "notice": "Desarrollo BADBEAR.MED enfocado en cuadros abdominales de alta mortalidad donde el tiempo cambia la conducta.",
+  "sections": [
+    {
+      "title": "1. Cómo reconocer un abdomen de alto riesgo",
+      "paragraphs": [
+        "El paciente de alto riesgo combina dolor con inestabilidad, peritonitis, sepsis, sangrado, acidosis o deterioro rápido. La prioridad es identificar condiciones tiempo-dependientes y no demorar control de fuente por estudios innecesarios.",
+        "Signos vitales, perfusión, estado mental, lactato, diuresis y examen seriado deben interpretarse como tendencias."
+      ],
+      "bullets": [
+        "Shock.",
+        "Peritonitis.",
+        "Sepsis.",
+        "Hemorragia.",
+        "Isquemia."
+      ],
+      "clinical": "Un abdomen aparentemente blando no descarta enfermedad grave en ancianos o inmunosuprimidos.",
+      "fija": "La gravedad se define por fisiología y evolución."
+    },
+    {
+      "title": "2. Perforación gastrointestinal",
+      "paragraphs": [
+        "La perforación produce salida de gas y contenido al peritoneo. Las causas incluyen úlcera, diverticulitis, cáncer, isquemia, trauma y procedimientos. La contaminación química inicial puede evolucionar a infección y sepsis.",
+        "El manejo incluye reanimación, antibióticos y control de la perforación. La técnica depende de sitio, tejido, contaminación y estabilidad."
+      ],
+      "bullets": [
+        "Neumoperitoneo.",
+        "Peritonitis.",
+        "Control de contaminación.",
+        "Reparación o resección."
+      ],
+      "clinical": "La perforación libre con peritonitis difusa suele requerir control quirúrgico urgente.",
+      "fija": "Perforación significa resolver la fuente, no solo tratar la sepsis."
+    },
+    {
+      "title": "3. Hemorragia intraabdominal",
+      "paragraphs": [
+        "El sangrado puede provenir de trauma, aneurismas, órganos sólidos, complicaciones posoperatorias o tumores. La reanimación se realiza en paralelo con localización de la fuente.",
+        "En pacientes estables pueden utilizarse angiotomografía y embolización. La inestabilidad persistente puede obligar a cirugía."
+      ],
+      "bullets": [
+        "Reanimación.",
+        "Angio-TC.",
+        "Embolización.",
+        "Cirugía."
+      ],
+      "clinical": "La caída de presión con dolor abdominal y sin sangrado externo obliga a pensar en cavidades internas.",
+      "fija": "La fuente de sangrado determina el método de hemostasia."
+    },
+    {
+      "title": "4. Isquemia mesentérica arterial",
+      "paragraphs": [
+        "La oclusión arterial aguda puede ser embólica o trombótica. El dolor intenso desproporcionado al examen temprano es clásico, aunque no universal. La angio-TC confirma anatomía en pacientes que pueden tolerarla.",
+        "El tratamiento busca restaurar flujo cuando es posible y resecar intestino no viable. La segunda mirada puede ser útil cuando la viabilidad es dudosa."
+      ],
+      "bullets": [
+        "Embolia.",
+        "Trombosis.",
+        "Revascularización.",
+        "Resección de necrosis."
+      ],
+      "clinical": "Cada hora de isquemia puede convertir intestino recuperable en necrosis.",
+      "fija": "Diagnóstico temprano + reperfusión son claves."
+    },
+    {
+      "title": "5. Trombosis venosa y isquemia no oclusiva",
+      "paragraphs": [
+        "La trombosis venosa mesentérica produce congestión y edema y puede progresar a infarto. La isquemia no oclusiva aparece en estados de bajo flujo y vasoconstricción intensa, especialmente en pacientes críticos.",
+        "El manejo depende de viabilidad, causa y anatomía. Anticoagulación es central en trombosis venosa seleccionada; en isquemia no oclusiva se corrige el estado de bajo flujo y factores precipitantes."
+      ],
+      "bullets": [
+        "Congestión venosa.",
+        "Bajo flujo.",
+        "Anticoagulación según caso.",
+        "Corregir causa."
+      ],
+      "clinical": "No toda isquemia mesentérica tiene una arteria ocluida.",
+      "fija": "La fisiopatología vascular define el tratamiento."
+    },
+    {
+      "title": "6. Aneurisma y catástrofe vascular abdominal",
+      "paragraphs": [
+        "La rotura de aneurisma aórtico abdominal puede presentarse con dolor abdominal o lumbar, hipotensión y masa pulsátil, aunque la triada completa no siempre aparece. La sospecha en el paciente correcto debe acelerar diagnóstico y control.",
+        "La reparación puede ser endovascular o abierta según anatomía, disponibilidad y estabilidad."
+      ],
+      "bullets": [
+        "Dolor abdominal/lumbar.",
+        "Shock.",
+        "Factores vasculares.",
+        "Control endovascular o abierto."
+      ],
+      "clinical": "En un paciente mayor con shock y dolor lumbar, piensa en aorta además de causas gastrointestinales.",
+      "fija": "La rotura aneurismática es una urgencia vascular tiempo-dependiente."
+    },
+    {
+      "title": "7. Imagen en el abdomen complejo",
+      "paragraphs": [
+        "La tomografía contrastada o angiotomografía aporta anatomía de perforación, sangrado e isquemia. La ecografía puede ser decisiva en determinados escenarios, especialmente cuando se necesita respuesta inmediata.",
+        "La imagen solo es útil si el paciente puede tolerar el tiempo requerido. En shock profundo con indicación clara, el control definitivo puede preceder a estudios extensos."
+      ],
+      "bullets": [
+        "TC contrastada.",
+        "Angio-TC.",
+        "Ecografía en escenarios seleccionados.",
+        "No retrasar intervención."
+      ],
+      "clinical": "El estudio debe cambiar la conducta; si no la cambia y retrasa, probablemente no es el siguiente paso.",
+      "fija": "Estabilidad define cuánto diagnóstico puede hacerse antes de tratar."
+    },
+    {
+      "title": "8. Antibióticos y control de fuente",
+      "paragraphs": [
+        "En perforación e infección intraabdominal, los antibióticos deben cubrir flora esperada según sitio y contexto. La selección se ajusta a gravedad, exposición sanitaria, función renal y epidemiología local.",
+        "Sin embargo, el antibiótico no drena un absceso ni cierra una perforación. El control de fuente puede ser quirúrgico, percutáneo o endoscópico."
+      ],
+      "bullets": [
+        "Cobertura adecuada.",
+        "Ajuste por cultivo.",
+        "Control de fuente.",
+        "Evitar prolongación innecesaria."
+      ],
+      "clinical": "La persistencia de sepsis tras antibióticos obliga a preguntar si la fuente sigue sin controlar.",
+      "fija": "Antibiótico + fuente controlada es el principio; antibiótico solo puede ser insuficiente."
+    },
+    {
+      "title": "9. Elegir operación definitiva o control de daños",
+      "paragraphs": [
+        "Un paciente estable puede tolerar resección y reconstrucción definitiva. En shock, acidosis, hipotermia o coagulopatía, una estrategia abreviada puede reducir mortalidad.",
+        "La decisión depende de fisiología, contaminación, calidad tisular y complejidad de reconstrucción."
+      ],
+      "bullets": [
+        "Estado fisiológico.",
+        "Contaminación.",
+        "Tiempo operatorio.",
+        "Riesgo de fuga.",
+        "Plan de reintervención."
+      ],
+      "clinical": "La reconstrucción ideal en un paciente moribundo puede ser la decisión equivocada.",
+      "fija": "La cirugía debe ajustarse a la reserva fisiológica."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["teoria-08-hemorragia-digestiva"] = {
+  "title": "Teoría 8 — Hemorragia digestiva alta y baja",
+  "subtitle": "Evaluación hemodinámica, etiología, endoscopia, tratamiento farmacológico, radiología intervencionista y cirugía.",
+  "tag": "Hemorragia digestiva",
+  "notice": "Desarrollo BADBEAR.MED extenso del tema asignado a la Teoría 8 del nuevo segmento.",
+  "sections": [
+    {
+      "title": "1. Concepto y clasificación",
+      "paragraphs": [
+        "La hemorragia digestiva se clasifica por localización anatómica y forma de presentación. La alta se origina proximal al ligamento de Treitz; la baja, distal. Hematemesis y melena orientan a fuente alta, mientras hematoquecia suele sugerir una fuente baja, aunque una hemorragia alta masiva también puede presentarse así.",
+        "La prioridad inicial no es la localización exacta sino determinar gravedad: compromiso hemodinámico, velocidad del sangrado, comorbilidades y necesidad transfusional."
+      ],
+      "bullets": [
+        "HDA.",
+        "HDB.",
+        "Oculta.",
+        "Manifiesta.",
+        "Masiva."
+      ],
+      "clinical": "Hematoquecia con hipotensión debe hacer considerar una HDA de alto flujo.",
+      "fija": "Primero gravedad; luego localización."
+    },
+    {
+      "title": "2. Evaluación inicial y reanimación",
+      "paragraphs": [
+        "Se evalúan vía aérea, perfusión y estado mental, se obtienen accesos venosos y se solicitan hemograma, coagulación, función renal y pruebas pretransfusionales. La reposición se adapta al estado clínico y al sangrado activo.",
+        "La hemoglobina inicial puede subestimar una pérdida aguda porque aún no ocurrió redistribución completa del volumen plasmático."
+      ],
+      "bullets": [
+        "ABCDE.",
+        "Acceso IV.",
+        "Laboratorio.",
+        "Pruebas cruzadas.",
+        "Monitorización."
+      ],
+      "clinical": "No esperes una hemoglobina muy baja para reconocer un shock hemorrágico.",
+      "fija": "La clínica de perfusión tiene prioridad sobre un valor aislado de hemoglobina."
+    },
+    {
+      "title": "3. Estratificación de riesgo",
+      "paragraphs": [
+        "Las escalas pueden apoyar decisiones de ingreso, intervención y pronóstico, pero no sustituyen la valoración clínica. Deben interpretarse junto con comorbilidad, sangrado activo y respuesta a reanimación.",
+        "La presencia de inestabilidad, síncope, insuficiencia renal, hepatopatía o sangrado persistente eleva el riesgo."
+      ],
+      "bullets": [
+        "Signos vitales.",
+        "Comorbilidad.",
+        "Sangrado activo.",
+        "Escalas como apoyo."
+      ],
+      "clinical": "Una escala baja puede apoyar alta en casos seleccionados; una fisiología inestable siempre prevalece.",
+      "fija": "Las escalas organizan riesgo, no reemplazan juicio clínico."
+    },
+    {
+      "title": "4. HDA no variceal",
+      "paragraphs": [
+        "La úlcera péptica es una causa importante, junto con erosiones, Mallory-Weiss y neoplasias. La endoscopia permite diagnóstico, clasificación de estigmas y hemostasia.",
+        "La terapia antisecretora y el tratamiento de causas como Helicobacter pylori o AINE forman parte de la prevención secundaria."
+      ],
+      "bullets": [
+        "Úlcera.",
+        "Erosiones.",
+        "Mallory-Weiss.",
+        "Neoplasia."
+      ],
+      "clinical": "Controlar el vaso no completa el tratamiento si no se corrige la causa de la úlcera.",
+      "fija": "Hemostasia aguda + prevención secundaria."
+    },
+    {
+      "title": "5. HDA variceal",
+      "paragraphs": [
+        "El sangrado por várices ocurre en hipertensión portal y requiere una estrategia específica: reanimación cuidadosa, fármacos vasoactivos, antibióticos en cirrosis y terapia endoscópica.",
+        "En fracaso o alto riesgo, TIPS puede ser una opción seleccionada. La prevención secundaria combina control de presión portal y vigilancia."
+      ],
+      "bullets": [
+        "Vasoactivos.",
+        "Antibióticos.",
+        "Endoscopia.",
+        "TIPS seleccionado."
+      ],
+      "clinical": "Sobrecargar volumen puede aumentar presión portal y favorecer resangrado.",
+      "fija": "Variceal y no variceal no siguen el mismo algoritmo."
+    },
+    {
+      "title": "6. Hemorragia digestiva baja",
+      "paragraphs": [
+        "Las causas frecuentes incluyen divertículos, angiodisplasia, neoplasia, colitis y enfermedad anorrectal. La edad, dolor, diarrea y cantidad de sangrado ayudan a orientar.",
+        "La colonoscopia es útil en pacientes estabilizados; la angio-TC puede ser especialmente útil cuando existe sangrado activo significativo."
+      ],
+      "bullets": [
+        "Diverticular.",
+        "Angiodisplasia.",
+        "Neoplasia.",
+        "Colitis.",
+        "Anorrectal."
+      ],
+      "clinical": "No atribuyas hematoquecia automáticamente a hemorroides.",
+      "fija": "La fuente debe concordar con el volumen y patrón del sangrado."
+    },
+    {
+      "title": "7. Endoscopia terapéutica",
+      "paragraphs": [
+        "La endoscopia no solo identifica la fuente; permite clips, terapia térmica, inyección u otras técnicas según lesión. La elección depende del tipo de sangrado y recursos disponibles.",
+        "El resangrado obliga a reevaluar endoscopia, radiología intervencionista o cirugía."
+      ],
+      "bullets": [
+        "Diagnóstico.",
+        "Clasificación.",
+        "Hemostasia.",
+        "Plan de rescate."
+      ],
+      "clinical": "Un hallazgo endoscópico debe traducirse en riesgo y conducta.",
+      "fija": "Endoscopia terapéutica = localizar + tratar."
+    },
+    {
+      "title": "8. Radiología intervencionista",
+      "paragraphs": [
+        "La angiografía con embolización puede controlar sangrado arterial persistente cuando la endoscopia falla o no puede acceder a la fuente. La angio-TC puede orientar el territorio responsable.",
+        "La embolización evita cirugía en muchos casos, pero requiere valorar riesgo de isquemia y anatomía vascular."
+      ],
+      "bullets": [
+        "Angio-TC.",
+        "Angiografía.",
+        "Embolización."
+      ],
+      "clinical": "La localización precisa aumenta la eficacia del tratamiento endovascular.",
+      "fija": "La radiología intervencionista es parte del arsenal hemostático."
+    },
+    {
+      "title": "9. Indicaciones de cirugía",
+      "paragraphs": [
+        "La cirugía se reserva para sangrado persistente o recurrente no controlado por métodos menos invasivos, perforación asociada, tumor resecable o situaciones particulares.",
+        "Cuando se opera, localizar la fuente reduce resecciones innecesariamente extensas y morbilidad."
+      ],
+      "bullets": [
+        "Fracaso endoscópico.",
+        "Fracaso endovascular.",
+        "Inestabilidad persistente.",
+        "Lesión quirúrgica definida."
+      ],
+      "clinical": "Una resección sin fuente bien localizada puede no detener el sangrado.",
+      "fija": "Cirugía es control definitivo cuando otras estrategias fallan o no son apropiadas."
+    },
+    {
+      "title": "10. Prevención de resangrado y seguimiento",
+      "paragraphs": [
+        "El episodio agudo debe terminar con un plan etiológico: erradicación de H. pylori, revisión de AINE, manejo de hipertensión portal, seguimiento de neoplasias y ajuste de antitrombóticos.",
+        "El reinicio de anticoagulación se individualiza equilibrando riesgo trombótico y hemorrágico."
+      ],
+      "bullets": [
+        "Tratar causa.",
+        "Revisar medicación.",
+        "Seguimiento.",
+        "Plan de antitrombóticos."
+      ],
+      "clinical": "Después de detener el sangrado, el siguiente objetivo es evitar que vuelva.",
+      "fija": "La prevención secundaria completa el tratamiento."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["teoria-10-integrada"] = {
+  "title": "Teoría 10 — Cirugía bariátrica y cirugía del tubo digestivo en cáncer",
+  "subtitle": "Selección del paciente bariátrico, técnicas metabólicas, complicaciones y principios de cirugía oncológica digestiva.",
+  "tag": "Bariátrica y oncología",
+  "notice": "Desarrollo BADBEAR.MED integrado para el nuevo segmento. Reúne Teoría 10.1 y 10.2 en una sola ruta de estudio.",
+  "sections": [
+    {
+      "title": "1. Obesidad como enfermedad quirúrgicamente tratable",
+      "paragraphs": [
+        "La obesidad es una enfermedad crónica, multifactorial y recidivante asociada a diabetes, hipertensión, apnea del sueño, enfermedad hepática y mayor riesgo cardiovascular. La cirugía metabólica forma parte de un tratamiento integral en pacientes seleccionados.",
+        "La indicación no se basa en un objetivo cosmético, sino en balance riesgo-beneficio, comorbilidad, historia terapéutica y capacidad de seguimiento."
+      ],
+      "bullets": [
+        "Enfermedad crónica.",
+        "Comorbilidades.",
+        "Selección multidisciplinaria.",
+        "Seguimiento de por vida."
+      ],
+      "clinical": "El éxito no se mide solo por kilos perdidos, sino por salud metabólica y sostenibilidad.",
+      "fija": "Cirugía bariátrica es tratamiento metabólico, no cosmético."
+    },
+    {
+      "title": "2. Evaluación preoperatoria bariátrica",
+      "paragraphs": [
+        "La valoración integra estado nutricional, endocrino, cardiopulmonar, salud mental, conducta alimentaria y riesgo anestésico. También revisa expectativas y capacidad de adherencia.",
+        "La optimización preoperatoria reduce complicaciones y prepara al paciente para cambios dietarios y suplementación."
+      ],
+      "bullets": [
+        "Nutrición.",
+        "Comorbilidades.",
+        "Riesgo anestésico.",
+        "Conducta alimentaria.",
+        "Educación."
+      ],
+      "clinical": "Una cirugía técnicamente exitosa puede fracasar a largo plazo sin seguimiento estructurado.",
+      "fija": "La preparación es parte del tratamiento."
+    },
+    {
+      "title": "3. Gastrectomía en manga",
+      "paragraphs": [
+        "La manga reduce el volumen gástrico mediante resección longitudinal y modifica señales hormonales. Es técnicamente más simple que algunas reconstrucciones intestinales, pero no está libre de complicaciones.",
+        "Sangrado, fuga, estenosis y reflujo son problemas relevantes. La selección debe considerar enfermedad por reflujo y otros factores."
+      ],
+      "bullets": [
+        "Restricción.",
+        "Cambios hormonales.",
+        "Fuga.",
+        "Reflujo."
+      ],
+      "clinical": "Reflujo significativo preexistente puede influir en la elección del procedimiento.",
+      "fija": "La técnica se elige para el paciente, no al revés."
+    },
+    {
+      "title": "4. Bypass gástrico",
+      "paragraphs": [
+        "El bypass combina reducción del reservorio con modificación del tránsito intestinal. Puede aportar beneficios metabólicos importantes, pero introduce riesgos de hernias internas, úlcera marginal y deficiencias nutricionales.",
+        "La comprensión de la anatomía reconstruida es fundamental para interpretar dolor abdominal posoperatorio."
+      ],
+      "bullets": [
+        "Reservorio pequeño.",
+        "Anastomosis.",
+        "Hernia interna.",
+        "Déficits nutricionales."
+      ],
+      "clinical": "Dolor abdominal posbypass requiere bajo umbral de sospecha para hernia interna.",
+      "fija": "La nueva anatomía crea nuevas complicaciones."
+    },
+    {
+      "title": "5. Complicaciones y seguimiento bariátrico",
+      "paragraphs": [
+        "Las complicaciones tempranas incluyen sangrado, fuga y tromboembolismo. A largo plazo pueden aparecer reflujo, estenosis, hernias, hipoglucemia y deficiencias de hierro, B12, folato, calcio o vitaminas.",
+        "El seguimiento incluye nutrición, suplementación, control metabólico y detección de recuperación ponderal."
+      ],
+      "bullets": [
+        "Tempranas.",
+        "Tardías.",
+        "Suplementos.",
+        "Seguimiento."
+      ],
+      "clinical": "Una deficiencia nutricional puede ser silenciosa antes de producir daño neurológico o hematológico.",
+      "fija": "Bariátrica exige seguimiento de por vida."
+    },
+    {
+      "title": "6. Principios de cirugía oncológica digestiva",
+      "paragraphs": [
+        "La cirugía del cáncer digestivo busca resección R0, márgenes adecuados y tratamiento del drenaje linfático correspondiente. La estadificación define si la cirugía será inicial, posterior a neoadyuvancia o parte de una estrategia paliativa.",
+        "La técnica depende de órgano, localización y biología tumoral."
+      ],
+      "bullets": [
+        "R0.",
+        "Márgenes.",
+        "Linfadenectomía.",
+        "Estadificación.",
+        "Multimodalidad."
+      ],
+      "clinical": "La operación correcta depende de estadio, no solo de ubicación.",
+      "fija": "Oncología quirúrgica = resección completa dentro de una estrategia de enfermedad."
+    },
+    {
+      "title": "7. Cáncer gástrico",
+      "paragraphs": [
+        "La localización y extensión determinan gastrectomía distal o total y el territorio ganglionar a resecar. La endoscopia confirma diagnóstico y la imagen completa estadificación.",
+        "La reconstrucción digestiva se planifica después de cumplir los objetivos oncológicos."
+      ],
+      "bullets": [
+        "Distal vs total.",
+        "Márgenes.",
+        "Linfadenectomía.",
+        "Reconstrucción."
+      ],
+      "clinical": "No sacrifiques radicalidad oncológica por una reconstrucción técnicamente más sencilla.",
+      "fija": "Primero oncología, después reconstrucción."
+    },
+    {
+      "title": "8. Cáncer de colon",
+      "paragraphs": [
+        "La colectomía oncológica reseca el segmento afectado junto con mesocolon y drenaje linfovascular. La localización determina pedículos y extensión.",
+        "La anastomosis requiere perfusión, ausencia de tensión y condiciones sistémicas favorables."
+      ],
+      "bullets": [
+        "Segmento.",
+        "Pedículo.",
+        "Mesocolon.",
+        "Ganglios.",
+        "Anastomosis."
+      ],
+      "clinical": "Una anastomosis posible no siempre es prudente en un paciente séptico o inestable.",
+      "fija": "La fisiología también participa en la decisión reconstructiva."
+    },
+    {
+      "title": "9. Cáncer de recto",
+      "paragraphs": [
+        "La cirugía rectal se guía por resonancia, relación con fascia mesorrectal y aparato esfinteriano. El tratamiento total neoadyuvante u otras secuencias pueden formar parte de la estrategia.",
+        "La escisión total del mesorrecto es un principio central en tumores del recto medio e inferior seleccionados."
+      ],
+      "bullets": [
+        "RM pélvica.",
+        "CRM.",
+        "TME.",
+        "Neoadyuvancia."
+      ],
+      "clinical": "La calidad del plano mesorrectal influye en control local.",
+      "fija": "En recto, la cirugía empieza con una buena estadificación pélvica."
+    },
+    {
+      "title": "10. Recuperación, complicaciones y vigilancia oncológica",
+      "paragraphs": [
+        "Después de resecciones digestivas se vigilan fuga, íleo, infección, sangrado, nutrición y función. Los protocolos de recuperación mejorada buscan reducir estrés quirúrgico sin omitir seguridad.",
+        "La vigilancia posterior depende de tipo tumoral y estadio e integra clínica, marcadores, imagen y endoscopia cuando corresponde."
+      ],
+      "bullets": [
+        "Fuga.",
+        "Íleo.",
+        "Nutrición.",
+        "ERAS.",
+        "Vigilancia."
+      ],
+      "clinical": "El tratamiento oncológico continúa después del alta.",
+      "fija": "Una resección R0 necesita seguimiento para detectar recurrencia y secuelas."
+    }
+  ]
+};
+
+/* BB_CG_FALTANTES_AMPLIOS_V7_END */
