@@ -15,9 +15,9 @@ window.BADBEAR_CG_ACADEMIC_STRUCTURE = [
   {
     id:"sabatinas",
     title:"Actividades Académicas Sabatinas",
-    subtitle:"Nuevo segmento de recursos. Cada actividad conserva separados sus materiales de estudio.",
+    subtitle:"Diapositivas, grabaciones y contenidos de estudio de las actividades sabatinas.",
     items:[
-      {id:"sabatina-01",label:"ACTIVIDAD SABATINA 01",title:"Actividad Académica Sabatina 1",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=sabatina-01-integrada&v=7",resources:{pdf:"",ppt:"recursos-nuevo-programa/sabatinas/sabatina-01/diapositivas.pdf",audio:"recursos-nuevo-programa/sabatinas/sabatina-01/audio.m4a",video:"https://youtu.be/f3oT1ri7Z5"}},
+      {id:"sabatina-01",label:"ACTIVIDAD SABATINA 01",title:"Actividad Académica Sabatina 1",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=sabatina-01-integrada&v=7",resources:{pdf:"",ppt:"recursos-nuevo-programa/sabatinas/sabatina-01/diapositivas.pdf",audio:"recursos-nuevo-programa/sabatinas/sabatina-01/audio.m4a",video:"https://youtu.be/f3oT1ri7Z5M"}},
       {id:"sabatina-02",label:"ACTIVIDAD SABATINA 02",title:"Actividad Académica Sabatina 2",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=sabatina-02-abdomen-agudo&v=7",resources:{pdf:"",ppt:"recursos-nuevo-programa/sabatinas/sabatina-02/diapositivas.pdf",audio:"recursos-nuevo-programa/sabatinas/sabatina-02/audio.m4a",video:"https://youtu.be/V5nEL9i_a1c"}},
       {id:"sabatina-03",label:"ACTIVIDAD SABATINA 03",title:"Actividad Académica Sabatina 3",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=sabatina-03-integrada&v=7",resources:{pdf:"",ppt:"recursos-nuevo-programa/sabatinas/sabatina-03/diapositivas.pdf",audio:"recursos-nuevo-programa/sabatinas/sabatina-03/audio.m4a",video:"https://youtu.be/bB6W5BaRi5o"}},
       {id:"sabatina-04",label:"ACTIVIDAD SABATINA 04",title:"Actividad Académica Sabatina 4",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=sabatina-04-integrada&v=7",resources:{pdf:"",ppt:"recursos-nuevo-programa/sabatinas/sabatina-04/diapositivas.pdf",audio:"recursos-nuevo-programa/sabatinas/sabatina-04/audio.m4a",video:"https://youtu.be/fnpbtyee_ac"}}
@@ -26,13 +26,13 @@ window.BADBEAR_CG_ACADEMIC_STRUCTURE = [
   {
     id:"seminarios",
     title:"Seminarios",
-    subtitle:"Recursos de los seminarios. Seminario 5 queda reservado porque no vino en los ZIP entregados.",
+    subtitle:"Material de estudio para profundizar en los temas de cada seminario.",
     items:[
       {id:"seminario-01",label:"SEMINARIO 01",title:"Anatomía y patología quirúrgica de la pared abdominal, hernias ventrales y dorsales",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=seminario-01-pared-abdominal&v=6",resources:{pdf:"",ppt:"recursos-nuevo-programa/seminarios/seminario-01/diapositivas.pdf",audio:"recursos-nuevo-programa/seminarios/seminario-01/audio.m4a",video:"https://youtu.be/NIwN1X1vtSw"}},
       {id:"seminario-02",label:"SEMINARIO 02",title:"Patología quirúrgica benigna y maligna del estómago y duodeno",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=seminario-02-estomago-duodeno&v=5",resources:{pdf:"",ppt:"recursos-nuevo-programa/seminarios/seminario-02/diapositivas.pdf",audio:"recursos-nuevo-programa/seminarios/seminario-02/audio.m4a",video:"https://youtu.be/1RunAiTOOBM"}},
       {id:"seminario-03",label:"SEMINARIO 03",title:"Abdomen agudo quirúrgico inflamatorio y obstructivo",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=seminario-03-abdomen-agudo-inflamatorio-obstructivo&v=6",resources:{pdf:"",ppt:"recursos-nuevo-programa/seminarios/seminario-03/diapositivas.pdf",audio:"recursos-nuevo-programa/seminarios/seminario-03/audio.m4a",video:"https://youtu.be/ymHkC9ZnqGI"}},
       {id:"seminario-04",label:"SEMINARIO 04",title:"Hemorragia digestiva alta y baja",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=seminario-04-hemorragia-digestiva&v=6",resources:{pdf:"",ppt:"recursos-nuevo-programa/seminarios/seminario-04/diapositivas.pdf",audio:"recursos-nuevo-programa/seminarios/seminario-04/audio.m4a",video:"https://youtu.be/KTo6eOqV68g"}},
-      {id:"seminario-05",label:"SEMINARIO 05",title:"Pendiente de completar",status:"missing",statusText:"Pendiente",study:"",resources:{pdf:"",ppt:"",audio:"",video:""}},
+      {id:"seminario-05",label:"SEMINARIO 05",title:"Seminario 5",status:"missing",statusText:"Material en preparación",study:"",resources:{pdf:"",ppt:"",audio:"",video:""}},
       {id:"seminario-06",label:"SEMINARIO 06",title:"Pancreatitis aguda y complicaciones. Procedimientos quirúrgicos",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=seminario-06-pancreatitis-aguda&v=6",resources:{pdf:"",ppt:"recursos-nuevo-programa/seminarios/seminario-06/diapositivas.pdf",audio:"recursos-nuevo-programa/seminarios/seminario-06/audio.m4a",video:"https://youtu.be/RjqDCn4AxfU"}},
       {id:"seminario-07",label:"SEMINARIO 07",title:"Patología quirúrgica y cirugía robótica: actualidad y futuro con IA",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=seminario-07-cirugia-robotica&v=6",resources:{pdf:"",ppt:"recursos-nuevo-programa/seminarios/seminario-07/diapositivas.pdf",audio:"recursos-nuevo-programa/seminarios/seminario-07/audio.m4a",video:"https://youtu.be/BglSNFdoSrY"}}
     ]
@@ -40,16 +40,16 @@ window.BADBEAR_CG_ACADEMIC_STRUCTURE = [
   {
     id:"talleres",
     title:"Talleres de Atención al Paciente",
-    subtitle:"Recursos prácticos del nuevo segmento.",
+    subtitle:"Material y grabaciones para repasar la atención quirúrgica del paciente.",
     items:[
       {id:"taller-01",label:"TALLER 01",title:"Atención del paciente politraumatizado. Traumatismo abdominal",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=taller-01-trauma-abdominal&v=7",resources:{pdf:"",ppt:"recursos-nuevo-programa/talleres/taller-01/diapositivas.pdf",audio:"recursos-nuevo-programa/talleres/taller-01/audio.m4a",video:"https://youtu.be/iS92g8BfoMM"}},
-      {id:"taller-02",label:"TALLER 02",title:"Abdomen agudo quirúrgico perforativo, hemorrágico, vascular e isquémico",status:"developed",statusText:"PPT + video + teoría",study:"clase-cirugia-general.html?c=taller-02-abdomen-agudo-complejo&v=7",resources:{pdf:"",ppt:"recursos-nuevo-programa/talleres/taller-02/diapositivas.pdf",audio:"",video:"https://youtu.be/AoAgz1VZkhw"}}
+      {id:"taller-02",label:"TALLER 02",title:"Abdomen agudo quirúrgico perforativo, hemorrágico, vascular e isquémico",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-cirugia-general.html?c=taller-02-abdomen-agudo-complejo&v=7",resources:{pdf:"",ppt:"recursos-nuevo-programa/talleres/taller-02/diapositivas.pdf",audio:"recursos-nuevo-programa/talleres/taller-02/video.mp4",video:"https://youtu.be/AoAgz1VZkhw"}}
     ]
   },
   {
     id:"teorias",
     title:"Teorías 1–11",
-    subtitle:"Recursos del nuevo segmento. El desarrollo teórico anterior permanece separado y no se modifica.",
+    subtitle:"Consulta las diapositivas, grabaciones y recursos de las clases teóricas.",
     items:[
       {id:"teoria-01",label:"TEORÍA 01",title:"Estudio pre, trans y postoperatorio inmediato + líquidos y electrolitos",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-01-pre-posoperatorio.html",resources:{pdf:"",ppt:"recursos-nuevo-programa/teorias/teoria-01/diapositivas.pdf",audio:"recursos-nuevo-programa/teorias/teoria-01/audio.m4a",video:"https://youtu.be/YFXHsfIz8Bg"}},
       {id:"teoria-02",label:"TEORÍA 02",title:"Nutrición en cirugía + heridas y cicatrización",status:"developed",statusText:"PPT + audio + video + teoría",study:"clase-02-nutricion-paciente-quirurgico.html",resources:{pdf:"",ppt:"recursos-nuevo-programa/teorias/teoria-02/diapositivas.pdf",audio:"recursos-nuevo-programa/teorias/teoria-02/audio.m4a",video:"https://youtu.be/HihPErlyA_U"}},
