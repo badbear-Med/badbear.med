@@ -279,3 +279,7 @@ body>footer strong span{color:#38f39a!important}
 .hero-showcase .hero-showcase__copy h1 span{color:var(--bb-v-red)!important}
 .hero-showcase .hero-showcase__copy :is(h2,h3){color:var(--bb-v-black)!important}
 .hero-showcase .hero-showcase__copy p{color:#40516a!important}
+
+.hero-showcase h1{font-size:clamp(38px,4.7vw,72px)!important}
+body>footer>strong{display:inline-block;background:#fff;color:var(--bb-v-blue)!important;padding:8px 14px;border-radius:10px;font-weight:900}
+body>footer>strong span{color:var(--bb-v-red)!important}
