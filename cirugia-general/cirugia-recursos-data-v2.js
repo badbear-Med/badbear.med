@@ -204,3 +204,33 @@ window.BADBEAR_CG_RESOURCES = {
     }
   }
 };
+
+// Use the same current resources in the course portal and in each lesson.
+(() => {
+  const staticClasses = {
+    "clase-01-pre-posoperatorio.html": "clase-01",
+    "clase-02-nutricion-paciente-quirurgico.html": "clase-02",
+    "clase-03-esofago.html": "clase-03"
+  };
+  (window.BADBEAR_CG_ACADEMIC_STRUCTURE || []).forEach(group => {
+    (group.items || []).forEach(item => {
+      if (!item.study) return;
+      const study = new URL(item.study, "https://badbear-med.github.io/badbear.med/cirugia-general/");
+      const id = study.searchParams.get("c") || staticClasses[study.pathname.split("/").pop()];
+      if (!id) return;
+      const previous = window.BADBEAR_CG_RESOURCES[id] || {};
+      const source = item.resources || {};
+      const video = window.BADBEAR_CG_VIDEO_URL(source.video);
+      const pdfs = (previous.pdfs || []).slice();
+      if (source.pdf && !pdfs.some(pdf => pdf.file === source.pdf)) pdfs.push({title: "PDF BADBEAR.MED", file: source.pdf});
+      window.BADBEAR_CG_RESOURCES[id] = {
+        ...previous,
+        pdfs,
+        slides: source.ppt ? [{title: item.title + " — diapositivas", file: source.ppt}] : [],
+        audios: source.audio ? [{title: "Audio de la clase", file: source.audio}] : [],
+        videos: video ? [{title: item.title + " — video", url: video}] : [],
+        videoIssue: source.video && !video ? "Video de la clase: enlace incompleto." : ""
+      };
+    });
+  });
+})();

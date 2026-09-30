@@ -24,17 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
       '</div>';
   };
 
-  const videoResource = url =>
-    url
-      ? '<a class="bb-cg-resource bb-cg-video is-ready" href="' + esc(url) + '" target="_blank" rel="noopener"><span>▶</span><b>Ver video</b></a>'
-      : '<span class="bb-cg-resource bb-cg-video is-pending"><span>▶</span><b>Video / YouTube</b><small>Pendiente</small></span>';
+  const videoResource = url => {
+    const valid = window.BADBEAR_CG_VIDEO_URL(url);
+    if (valid) return '<a class="bb-cg-resource bb-cg-video is-ready" href="' + esc(valid) + '" target="_blank" rel="noopener"><span>▶</span><b>Ver video</b></a>';
+    return '<span class="bb-cg-resource bb-cg-video is-pending"><span>▶</span><b>' + (url ? 'Video no disponible' : 'Video / YouTube') + '</b><small>' + (url ? 'Enlace incompleto' : 'Pendiente') + '</small></span>';
+  };
 
   root.innerHTML = groups.map(group => {
     const cards = group.items.map(item => {
       const r = item.resources || {};
+      const statusText = r.video && !window.BADBEAR_CG_VIDEO_URL(r.video) ? item.statusText.replace(" + video", "") : item.statusText;
 
       return '<article class="bb-cg-academic-card ' + esc(item.status) + '">' +
-        '<div class="bb-cg-academic-top"><span class="bb-cg-academic-label">' + esc(item.label) + '</span><span class="bb-cg-status ' + esc(item.status) + '">' + esc(item.statusText) + '</span></div>' +
+        '<div class="bb-cg-academic-top"><span class="bb-cg-academic-label">' + esc(item.label) + '</span><span class="bb-cg-status ' + esc(item.status) + '">' + esc(statusText) + '</span></div>' +
         '<h4>' + esc(item.title) + '</h4>' +
         '<div class="bb-cg-resource-grid">' +
           linkResource(item.study,"Ver desarrollo teórico","📘","Pendiente") +

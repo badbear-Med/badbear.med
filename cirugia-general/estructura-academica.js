@@ -1,3 +1,16 @@
+window.BADBEAR_CG_VIDEO_URL = function(raw) {
+  if (!raw) return "";
+  try {
+    const url = new URL(raw, "https://badbear-med.github.io/badbear.med/cirugia-general/");
+    if (!/^https?:$/.test(url.protocol)) return "";
+    const host = url.hostname.toLowerCase();
+    let id = "";
+    if (host === "youtu.be") id = url.pathname.slice(1);
+    else if (host === "youtube.com" || host === "www.youtube.com" || host === "m.youtube.com") id = url.searchParams.get("v") || "";
+    else return /\.mp4$/i.test(url.pathname) ? raw : "";
+    return /^[A-Za-z0-9_-]{11}$/.test(id) ? raw : "";
+  } catch (_) { return ""; }
+};
 window.BADBEAR_CG_ACADEMIC_STRUCTURE = [
   {
     id:"sabatinas",
