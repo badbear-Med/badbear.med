@@ -267,3 +267,15 @@ body>footer strong span{color:#38f39a!important}
 .hero-showcase__names,.hero-showcase__names strong{color:#40516a!important}
 .hero-showcase__visual img{border:3px solid #fff;box-shadow:0 14px 34px #005be81a}
 .hero-showcase__actions .boton:not(.boton-secundario){border:2px solid var(--bb-v-blue)!important}
+
+/* Prioridad de la marca frente a los estilos de cada cabecera. */
+:is(.header,.cabecera,.bb-header,.bbq-head,[class$="-header"],.cg-top)
+:is(.logo,.bb-brand-lockup,.bb-auto-brand,[class$="-brand"],.bbq-brand,.marca-texto h1){color:var(--bb-v-blue)!important}
+:is(.header,.cabecera,.bb-header,.bbq-head,[class$="-header"],.cg-top)
+:is(.logo,.bb-brand-lockup,.bb-auto-brand,[class$="-brand"],.bbq-brand,.marca-texto h1) span{color:var(--bb-v-red)!important}
+:is(.header,.cabecera,.bb-header,.bbq-head,[class$="-header"],.cg-top)
+:is(.logo,.bb-brand-lockup,.bb-auto-brand,[class$="-brand"],.bbq-brand):hover{background:transparent!important}
+.hero-showcase .hero-showcase__copy h1{color:var(--bb-v-blue)!important}
+.hero-showcase .hero-showcase__copy h1 span{color:var(--bb-v-red)!important}
+.hero-showcase .hero-showcase__copy :is(h2,h3){color:var(--bb-v-black)!important}
+.hero-showcase .hero-showcase__copy p{color:#40516a!important}
