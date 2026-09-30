@@ -28,5 +28,28 @@
 .clase-nav-bottom{display:flex;justify-content:space-between;gap:10px;margin-top:18px;flex-wrap:wrap}
 .clase-nav-bottom a{text-decoration:none;font-size:12px;font-weight:900;color:#2458ff}
 .clase-warning{padding:22px;background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;color:#9a3412;line-height:1.6}
+.clase-material{overflow:hidden}
+.clase-material-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.clase-resource-card{border:1px solid #e4e7ec;border-radius:16px;padding:16px;background:#f8fafc;display:flex;flex-direction:column;gap:10px;min-width:0}
+.clase-resource-card.audio-card{grid-column:span 1}
+.clase-resource-card.resumen-card{background:linear-gradient(145deg,#fffbea,#fff);border-color:#f0df8a}
+.clase-resource-icon{font-size:25px}
+.clase-resource-card strong{font-size:14px;color:#101828}
+.clase-resource-card p{margin:4px 0 0;font-size:11px;line-height:1.5;color:#667085}
+.clase-audio{width:100%;margin-top:auto}
+.clase-resource-btn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 12px;border-radius:10px;text-decoration:none;font-size:11px;font-weight:950;border:1px solid #d0d5dd;background:#fff;color:#101828;margin-top:auto}
+.clase-resource-btn.primary{background:#2458ff;color:#fff;border-color:#2458ff}
+.clase-resource-btn.disabled{background:#f2f4f7;color:#98a2b3;border-color:#e4e7ec;cursor:not-allowed}
+.clase-resource-path{font-size:9px;line-height:1.35;color:#98a2b3;overflow-wrap:anywhere}
+.clase-video-block{margin-top:18px;padding-top:16px;border-top:1px solid #eaecf0}
+.clase-video-block h3{margin:0 0 12px;font-size:16px}
+.clase-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.clase-video-item{min-width:0}
+.clase-video-frame{position:relative;width:100%;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#101828}
+.clase-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.clase-resource-link{display:inline-flex;margin-top:7px;text-decoration:none;color:#2458ff;font-size:11px;font-weight:900}
+@media(max-width:900px){.clase-material-grid{grid-template-columns:1fr 1fr}.clase-resource-card.audio-card{grid-column:1/-1}}
+@media(max-width:650px){.clase-material-grid,.clase-video-grid{grid-template-columns:1fr}}
+
 @media(max-width:900px){.clase-layout{grid-template-columns:1fr}.clase-aside{position:static}.clase-pdf iframe{height:620px}}
 @media(max-width:650px){.clase-main{width:calc(100% - 24px)}.clase-hero{padding:22px}.clase-hero h1{font-size:30px}.clase-pdf iframe{height:520px}}
