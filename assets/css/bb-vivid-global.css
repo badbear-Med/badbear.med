@@ -283,3 +283,11 @@ body>footer strong span{color:#38f39a!important}
 .hero-showcase h1{font-size:clamp(38px,4.7vw,72px)!important}
 body>footer>strong{display:inline-block;background:#fff;color:var(--bb-v-blue)!important;padding:8px 14px;border-radius:10px;font-weight:900}
 body>footer>strong span{color:var(--bb-v-red)!important}
+
+/* Formularios claros y marca azul/roja, incluido el texto dentro de span. */
+.bb-lock-overlay,.bb-login-page{
+  background:linear-gradient(135deg,#edf4ff 0%,#fff 52%,#e8f6ed 100%)!important;
+}
+.bb-lock-card,.bb-login-card{box-shadow:0 22px 65px #005be824!important}
+.bb-lock-card .bb-lock-brand>span{color:var(--bb-v-blue)!important}
+.bb-lock-card .bb-lock-brand .med{color:var(--bb-v-red)!important}
