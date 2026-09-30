@@ -2555,3 +2555,752 @@ window.BADBEAR_CG_TOPICS["teoria-11-tumores-mixtos-hipertension-portal"] = {
     }
   ]
 };
+
+/* BB_CG_SEMINARIOS_EXTENSOS_V6_START */
+window.BADBEAR_CG_TOPICS["seminario-01-pared-abdominal"] = {
+  "title": "Seminario 1 — Anatomía y patología quirúrgica de la pared abdominal",
+  "subtitle": "Pared abdominal, hernias ventrales e incisionales, hernias lumbares o dorsales, diagnóstico, complicaciones y principios de reparación.",
+  "tag": "Pared abdominal",
+  "notice": "Desarrollo BADBEAR.MED ampliado para estudio quirúrgico. El objetivo es integrar anatomía, fisiopatología, examen clínico, diagnóstico y conducta.",
+  "sections": [
+    {
+      "title": "1. Anatomía quirúrgica de la pared abdominal",
+      "paragraphs": [
+        "La pared abdominal no es una simple envoltura. Está formada por piel, tejido celular subcutáneo, fascias, músculos, aponeurosis y peritoneo, organizados para contener las vísceras y transmitir fuerzas durante la respiración, la tos, la defecación y el esfuerzo. En la línea media, la línea alba resulta de la decusación de fibras aponeuróticas; lateralmente participan oblicuo externo, oblicuo interno y transverso del abdomen.",
+        "Desde el punto de vista quirúrgico importa reconocer zonas de debilidad naturales y adquiridas. El ombligo, la línea alba, la región inguinal, las cicatrices previas y las zonas lumbares pueden transformarse en puntos de salida del contenido abdominal cuando aumenta la presión intraabdominal o disminuye la resistencia tisular."
+      ],
+      "bullets": [
+        "Piel y tejido celular subcutáneo.",
+        "Fascia y planos musculares.",
+        "Aponeurosis y línea alba.",
+        "Peritoneo y relaciones profundas."
+      ],
+      "clinical": "Antes de reparar una hernia hay que entender qué plano falló y qué tejido sano puede utilizarse para reconstruir la pared.",
+      "fija": "La hernia es un problema anatómico y mecánico: defecto de pared + presión intraabdominal + calidad tisular."
+    },
+    {
+      "title": "2. Qué es una hernia y cómo se produce",
+      "paragraphs": [
+        "Una hernia es la protrusión de contenido intraabdominal a través de un defecto o zona de debilidad de la pared. Puede ser primaria, cuando aparece en un sitio anatómico predispuesto, o incisional, cuando se desarrolla sobre una cicatriz quirúrgica previa. No todas las hernias contienen intestino; pueden contener epiplón, grasa preperitoneal u otras estructuras.",
+        "La fisiopatología combina factores locales y sistémicos. Alteraciones del colágeno, obesidad, tabaquismo, tos crónica, ascitis, estreñimiento, esfuerzos repetidos, infección de herida y técnica de cierre deficiente pueden favorecer el desarrollo o crecimiento del defecto."
+      ],
+      "bullets": [
+        "Primaria vs incisional.",
+        "Reducible vs irreducible.",
+        "Sintomática vs asintomática.",
+        "Complicada vs no complicada."
+      ],
+      "clinical": "La presencia de una masa que aumenta con Valsalva y disminuye al decúbito orienta a hernia, pero la irreductibilidad cambia la urgencia.",
+      "fija": "Irreductible no significa necesariamente estrangulada; estrangulación implica compromiso vascular."
+    },
+    {
+      "title": "3. Hernias ventrales: umbilical, epigástrica e incisional",
+      "paragraphs": [
+        "Las hernias ventrales comprenden defectos de la pared anterior. Las umbilicales se localizan en el anillo umbilical; las epigástricas suelen aparecer en la línea alba supraumbilical; las incisionales se desarrollan sobre una laparotomía o incisión previa. El tamaño del defecto, síntomas, contenido, comorbilidades y calidad de tejidos condicionan la estrategia.",
+        "En una hernia incisional debe evaluarse no solo el orificio visible, sino toda la cicatriz y la función de la pared. Defectos múltiples, pérdida de dominio o separación de componentes musculares pueden requerir reconstrucción compleja."
+      ],
+      "bullets": [
+        "Localización exacta.",
+        "Tamaño del defecto.",
+        "Número de defectos.",
+        "Pérdida de dominio.",
+        "Estado de piel y cicatrices."
+      ],
+      "clinical": "Una tomografía es especialmente útil cuando el examen no define bien el defecto, existe obesidad o se planifica una reconstrucción compleja.",
+      "fija": "En hernia incisional, la cicatriz completa forma parte del problema, no solo el orificio palpable."
+    },
+    {
+      "title": "4. Hernias lumbares o dorsales",
+      "paragraphs": [
+        "Las hernias lumbares son poco frecuentes y aparecen en la región posterolateral del abdomen. Se relacionan con zonas de menor resistencia anatómica, clásicamente los triángulos lumbar superior e inferior. Pueden ser congénitas o adquiridas, y estas últimas pueden asociarse a cirugía, trauma o debilidad progresiva de la pared.",
+        "El diagnóstico puede confundirse con lipomas, hematomas o masas de partes blandas. La tomografía permite demostrar el defecto muscular, el contenido herniario y su relación con costillas, cresta ilíaca y musculatura lumbar, información indispensable si se planifica reparación."
+      ],
+      "bullets": [
+        "Región posterolateral.",
+        "Defecto anatómico demostrable.",
+        "Diagnóstico diferencial con masas de partes blandas.",
+        "TC útil para planificación."
+      ],
+      "clinical": "Una masa lumbar que cambia con esfuerzo o decúbito debe hacer pensar en defecto de pared y no solo en tumoración subcutánea.",
+      "fija": "Las hernias dorsales/lumbares son raras; la imagen suele ser decisiva para confirmar anatomía."
+    },
+    {
+      "title": "5. Clínica y examen físico",
+      "paragraphs": [
+        "El síntoma más frecuente es una tumoración asociada o no a dolor. Debe preguntarse cuándo apareció, si aumenta con esfuerzo, si se reduce, si limita actividades y si ha presentado episodios de dolor intenso, náuseas, vómitos o distensión. El examen se realiza de pie y en decúbito, con inspección, palpación y maniobras de Valsalva.",
+        "El cirujano debe describir localización, tamaño aproximado del defecto, reducibilidad, dolor, cambios cutáneos y presencia de cicatrices. En pacientes obesos o con defectos complejos el examen puede subestimar la extensión real."
+      ],
+      "bullets": [
+        "Masa o abultamiento.",
+        "Dolor o sensación de peso.",
+        "Cambios con Valsalva.",
+        "Reducibilidad.",
+        "Signos de obstrucción o isquemia."
+      ],
+      "clinical": "Dolor continuo intenso, irreductibilidad, vómitos y cambios inflamatorios sobre la hernia obligan a descartar complicación.",
+      "fija": "La historia de reducibilidad previa y el cambio súbito a irreductibilidad es un dato de alarma."
+    },
+    {
+      "title": "6. Incarceración, obstrucción y estrangulación",
+      "paragraphs": [
+        "La incarceración describe contenido herniario que ya no puede reducirse. Si el intestino queda atrapado puede producir obstrucción. La estrangulación aparece cuando el flujo sanguíneo del contenido comprometido se deteriora, con riesgo de isquemia, necrosis y perforación.",
+        "La conducta depende del estado clínico. Una hernia con sospecha de estrangulación es una urgencia quirúrgica. En ese escenario la prioridad es reanimación, antibióticos cuando están indicados, exploración y valoración de viabilidad intestinal."
+      ],
+      "bullets": [
+        "Incarceración: no reducible.",
+        "Obstrucción: compromiso del tránsito.",
+        "Estrangulación: compromiso vascular.",
+        "Necrosis: pérdida de viabilidad."
+      ],
+      "clinical": "No se debe forzar una reducción si existen datos de isquemia o peritonitis sin una estrategia quirúrgica adecuada.",
+      "fija": "Estrangulación es la complicación que amenaza la viabilidad intestinal y convierte el problema en emergencia."
+    },
+    {
+      "title": "7. Diagnóstico por imágenes",
+      "paragraphs": [
+        "Muchas hernias se diagnostican clínicamente. La ecografía puede ser útil en defectos pequeños o dudas superficiales. La tomografía permite definir diámetro, contenido, múltiples defectos, atrofia muscular, pérdida de dominio y complicaciones intestinales.",
+        "En reconstrucción compleja, la imagen ayuda a anticipar necesidad de liberación miofascial, posición de la malla y posibilidad de cierre fascial. También permite identificar otras hernias que no son evidentes en el examen."
+      ],
+      "bullets": [
+        "Ecografía en defectos seleccionados.",
+        "TC para anatomía compleja.",
+        "Buscar obstrucción e isquemia.",
+        "Evaluar musculatura y dominio abdominal."
+      ],
+      "clinical": "La imagen debe responder una pregunta quirúrgica concreta: qué defecto existe, qué contiene y cómo reconstruirlo.",
+      "fija": "La TC no sustituye el examen físico; agrega anatomía y planificación."
+    },
+    {
+      "title": "8. Principios de reparación y uso de malla",
+      "paragraphs": [
+        "La reparación busca restaurar continuidad y función de la pared con la menor tensión posible. En muchas hernias ventrales la malla disminuye la recurrencia respecto a una reparación suturada aislada, pero su indicación, tipo y plano dependen del tamaño del defecto, contaminación, tejidos disponibles y técnica.",
+        "Los planos retromuscular y preperitoneal permiten aislar la prótesis del contenido abdominal en muchas reconstrucciones. Las técnicas de separación de componentes se reservan para defectos en los que no puede lograrse cierre fascial sin tensión."
+      ],
+      "bullets": [
+        "Cerrar sin tensión excesiva.",
+        "Restaurar línea media cuando sea posible.",
+        "Elegir plano protésico adecuado.",
+        "Evitar lesión de vísceras y nervios.",
+        "Optimizar factores de riesgo."
+      ],
+      "clinical": "La mejor reparación no es la que usa la malla más grande, sino la que reconstruye anatomía y distribuye fuerzas de manera segura.",
+      "fija": "Reparar hernia significa reconstruir pared, no simplemente tapar un agujero."
+    },
+    {
+      "title": "9. Complicaciones y prevención de recurrencia",
+      "paragraphs": [
+        "Las complicaciones incluyen seroma, hematoma, infección, dolor crónico, lesión visceral, obstrucción y recurrencia. El riesgo depende del paciente, la técnica, el tamaño del defecto y la calidad de la reparación.",
+        "La optimización preoperatoria es parte del tratamiento: suspensión del tabaco, control de diabetes, reducción ponderal cuando es factible, tratamiento de tos o estreñimiento y manejo de infección disminuyen el riesgo de fracaso."
+      ],
+      "bullets": [
+        "Seroma y hematoma.",
+        "Infección del sitio quirúrgico.",
+        "Dolor crónico.",
+        "Recurrencia.",
+        "Complicaciones protésicas."
+      ],
+      "clinical": "En una recurrencia debe analizarse por qué falló la reparación previa antes de repetir la misma técnica.",
+      "fija": "La prevención de recurrencia empieza antes de la operación con selección y optimización del paciente."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["seminario-03-abdomen-agudo-inflamatorio-obstructivo"] = {
+  "title": "Seminario 3 — Abdomen agudo quirúrgico inflamatorio y obstructivo",
+  "subtitle": "Evaluación del dolor abdominal agudo, peritonitis, apendicitis, colecistitis, obstrucción intestinal, isquemia y decisión operatoria.",
+  "tag": "Abdomen agudo",
+  "notice": "Desarrollo BADBEAR.MED orientado a reconocer patrones clínicos y decidir cuándo observar, estudiar, reanimar o intervenir.",
+  "sections": [
+    {
+      "title": "1. Concepto de abdomen agudo",
+      "paragraphs": [
+        "El abdomen agudo es un síndrome clínico de inicio reciente en el que el dolor abdominal puede corresponder a una enfermedad potencialmente grave y, en algunos casos, requerir cirugía urgente. No es un diagnóstico etiológico. El objetivo inicial es reconocer inestabilidad, peritonitis, sepsis, hemorragia, obstrucción o isquemia.",
+        "La valoración debe integrar tiempo de evolución, localización inicial y actual del dolor, síntomas asociados, antecedentes quirúrgicos, medicación, exploración completa y respuesta a la reanimación."
+      ],
+      "bullets": [
+        "Estabilidad hemodinámica.",
+        "Peritonismo.",
+        "Sepsis.",
+        "Obstrucción.",
+        "Isquemia o perforación."
+      ],
+      "clinical": "Primero decide si el paciente está estable y si existe una amenaza que no puede esperar estudios prolongados.",
+      "fija": "Abdomen agudo describe urgencia diagnóstica; la conducta depende de la causa y de la fisiología."
+    },
+    {
+      "title": "2. Dolor visceral, parietal y referido",
+      "paragraphs": [
+        "El dolor visceral suele ser difuso y mal localizado por activación de fibras autonómicas. Cuando la inflamación alcanza el peritoneo parietal, el dolor se vuelve más intenso y localizado. El dolor referido se percibe en una zona distante que comparte segmentos medulares.",
+        "Esta transición explica patrones clásicos, como dolor inicialmente periumbilical que posteriormente se localiza en fosa ilíaca derecha en apendicitis."
+      ],
+      "bullets": [
+        "Visceral: difuso.",
+        "Parietal: localizado.",
+        "Referido: distante al órgano afectado."
+      ],
+      "clinical": "La migración del dolor puede aportar más información diagnóstica que una fotografía aislada de la intensidad.",
+      "fija": "El patrón temporal del dolor es una herramienta fisiopatológica."
+    },
+    {
+      "title": "3. Peritonitis y signos de irritación peritoneal",
+      "paragraphs": [
+        "La peritonitis puede ser localizada o generalizada. La defensa involuntaria, rigidez y dolor con movimientos sugieren irritación del peritoneo parietal. Sin embargo, ancianos, inmunosuprimidos y pacientes con alteración neurológica pueden mostrar signos menos evidentes.",
+        "Peritonitis generalizada, deterioro hemodinámico o evidencia de perforación suelen acelerar la indicación de control quirúrgico de la fuente."
+      ],
+      "bullets": [
+        "Defensa involuntaria.",
+        "Rigidez.",
+        "Dolor con tos o movimiento.",
+        "Rebote no siempre es necesario provocarlo."
+      ],
+      "clinical": "No retrases una conducta urgente por intentar obtener un signo físico clásico si el conjunto clínico ya indica peritonitis.",
+      "fija": "Peritonitis es un hallazgo de alto riesgo, no una etiqueta etiológica."
+    },
+    {
+      "title": "4. Abdomen agudo inflamatorio",
+      "paragraphs": [
+        "Entre las causas frecuentes se encuentran apendicitis, colecistitis, diverticulitis, pancreatitis y procesos inflamatorios pélvicos. Cada entidad tiene un patrón anatómico, pero todas pueden progresar desde inflamación local a absceso, perforación o sepsis.",
+        "Los marcadores inflamatorios apoyan la evaluación, pero no sustituyen la historia, el examen ni la imagen cuando está indicada."
+      ],
+      "bullets": [
+        "Apendicitis.",
+        "Colecistitis.",
+        "Diverticulitis.",
+        "Pancreatitis.",
+        "Abscesos intraabdominales."
+      ],
+      "clinical": "La localización del dolor orienta, pero la evolución y los signos sistémicos determinan gravedad.",
+      "fija": "Inflamación localizada puede transformarse en sepsis por pérdida del control de la fuente."
+    },
+    {
+      "title": "5. Obstrucción intestinal: fisiopatología",
+      "paragraphs": [
+        "La obstrucción impide el tránsito de contenido y gas. La acumulación proximal produce distensión, secuestro de líquidos, vómitos y alteraciones electrolíticas. Si aumenta la presión intraluminal y se compromete la perfusión de la pared puede aparecer isquemia y perforación.",
+        "Las adherencias posoperatorias y las hernias son causas frecuentes de obstrucción de intestino delgado; los tumores tienen especial relevancia en obstrucción colónica."
+      ],
+      "bullets": [
+        "Distensión.",
+        "Vómitos.",
+        "Ausencia de eliminación de gases o heces.",
+        "Dolor cólico.",
+        "Deshidratación."
+      ],
+      "clinical": "La pregunta decisiva no es solo si existe obstrucción, sino si existe estrangulación o isquemia.",
+      "fija": "Obstrucción simple y obstrucción estrangulada no tienen la misma urgencia."
+    },
+    {
+      "title": "6. Signos de isquemia o estrangulación",
+      "paragraphs": [
+        "Dolor continuo intenso, taquicardia persistente, fiebre, irritación peritoneal, acidosis, lactato elevado y alteraciones sugestivas en tomografía aumentan la preocupación por compromiso vascular. Ningún dato aislado es perfecto; importa la combinación clínica.",
+        "La isquemia intestinal es tiempo-dependiente. Cuando la sospecha es alta, el tratamiento no debe retrasarse por pruebas que no cambiarán la necesidad de exploración."
+      ],
+      "bullets": [
+        "Dolor desproporcionado o continuo.",
+        "Peritonismo.",
+        "Acidosis/lactato.",
+        "Alteración de realce intestinal.",
+        "Neumatosis o gas portal en contextos seleccionados."
+      ],
+      "clinical": "Un paciente con obstrucción y deterioro progresivo debe reevaluarse como posible isquemia aunque inicialmente pareciera estable.",
+      "fija": "En obstrucción, deterioro fisiológico = volver a preguntar por viabilidad intestinal."
+    },
+    {
+      "title": "7. Laboratorio e imágenes",
+      "paragraphs": [
+        "El laboratorio evalúa respuesta inflamatoria, función renal, equilibrio hidroelectrolítico, perfusión y diagnósticos alternativos. La ecografía es útil en patología biliar, apendicitis seleccionada y evaluación ginecológica. La tomografía con contraste es una herramienta central en muchos cuadros de abdomen agudo estable.",
+        "La imagen debe utilizarse para responder preguntas concretas: origen, complicación, perforación, absceso, transición obstructiva o isquemia."
+      ],
+      "bullets": [
+        "Hemograma y química.",
+        "Lactato cuando se sospecha hipoperfusión.",
+        "Ecografía en indicaciones específicas.",
+        "TC para diagnóstico y complicaciones."
+      ],
+      "clinical": "La estabilidad del paciente determina cuánto tiempo se puede invertir en imagen.",
+      "fija": "No toda urgencia abdominal necesita la misma modalidad de imagen."
+    },
+    {
+      "title": "8. Reanimación y manejo inicial",
+      "paragraphs": [
+        "Antes y durante el diagnóstico se corrigen alteraciones que ponen en riesgo al paciente: acceso venoso, fluidos según necesidad, analgesia, antieméticos, corrección de electrolitos y antibióticos cuando existe infección intraabdominal o sepsis. La sonda nasogástrica puede ser útil en vómitos persistentes u obstrucción con gran distensión.",
+        "El control de la fuente es el componente definitivo en perforación, absceso no controlado, necrosis u otras causas que no pueden resolverse solo con tratamiento médico."
+      ],
+      "bullets": [
+        "Reanimar.",
+        "Analgesia adecuada.",
+        "Corregir electrolitos.",
+        "Antibióticos si están indicados.",
+        "Definir control de fuente."
+      ],
+      "clinical": "Tratar el dolor no 'borra' el diagnóstico cuando se mantiene una reevaluación clínica adecuada.",
+      "fija": "En infección intraabdominal grave, antibiótico sin control de fuente puede ser insuficiente."
+    },
+    {
+      "title": "9. Indicaciones de cirugía urgente",
+      "paragraphs": [
+        "La cirugía se considera urgente ante peritonitis generalizada, perforación, estrangulación, isquemia, necrosis, obstrucción complicada o deterioro que no responde al manejo inicial. La técnica depende de la causa y del estado fisiológico.",
+        "En pacientes inestables puede ser necesario limitar el procedimiento a control de daños y reconstruir después, una vez corregida la fisiología."
+      ],
+      "bullets": [
+        "Perforación.",
+        "Isquemia/necrosis.",
+        "Peritonitis.",
+        "Obstrucción estrangulada.",
+        "Fracaso del manejo no operatorio."
+      ],
+      "clinical": "La pregunta operatoria debe ser: qué problema irreversible necesita ser resuelto ahora.",
+      "fija": "La fisiología del paciente define la magnitud segura de la operación."
+    },
+    {
+      "title": "10. Reevaluación y errores frecuentes",
+      "paragraphs": [
+        "El abdomen agudo evoluciona. Un examen normal temprano no excluye enfermedad importante. Por ello, cuando el diagnóstico sigue incierto, la observación clínica estructurada y la reevaluación seriada son herramientas diagnósticas.",
+        "Errores frecuentes incluyen confiar en un único laboratorio, retrasar cirugía por imagen innecesaria, ignorar el deterioro o asumir que todo dolor en un operado previo son adherencias."
+      ],
+      "bullets": [
+        "Repetir examen.",
+        "Revisar tendencias.",
+        "Revalorar diagnóstico diferencial.",
+        "Escalar conducta ante deterioro."
+      ],
+      "clinical": "Si el paciente cambia, el diagnóstico y el plan deben cambiar con él.",
+      "fija": "La reevaluación es parte del tratamiento del abdomen agudo."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["seminario-04-hemorragia-digestiva"] = {
+  "title": "Seminario 4 — Hemorragia digestiva alta y baja",
+  "subtitle": "Estabilización, localización del sangrado, endoscopia, transfusión, radiología intervencionista y cirugía.",
+  "tag": "Hemorragia digestiva",
+  "notice": "Desarrollo BADBEAR.MED centrado en prioridades: reanimar, localizar, tratar la fuente y prevenir resangrado.",
+  "sections": [
+    {
+      "title": "1. Definir hemorragia alta y baja",
+      "paragraphs": [
+        "La hemorragia digestiva alta se origina proximal al ligamento de Treitz y puede manifestarse como hematemesis, vómito en posos de café o melena. La hemorragia baja se origina distalmente y suele manifestarse como hematoquecia, aunque un sangrado alto masivo también puede producir sangre roja por recto.",
+        "La apariencia de las heces orienta, pero no localiza con certeza absoluta. El contexto hemodinámico y la velocidad del sangrado modifican la presentación."
+      ],
+      "bullets": [
+        "Hematemesis.",
+        "Melena.",
+        "Hematoquecia.",
+        "Sangrado oculto."
+      ],
+      "clinical": "Hematoquecia con shock obliga a considerar una fuente alta de gran volumen además de una causa colónica.",
+      "fija": "La forma de presentación orienta la localización, pero la gravedad determina la prioridad."
+    },
+    {
+      "title": "2. Reanimación antes de la endoscopia",
+      "paragraphs": [
+        "La primera evaluación debe identificar compromiso de vía aérea, hipoperfusión y magnitud probable de la pérdida. Se obtienen accesos venosos, hemograma, coagulación, función renal, pruebas pretransfusionales y se inicia reposición según la situación clínica.",
+        "La endoscopia es fundamental, pero un paciente inestable debe ser reanimado en paralelo. La estrategia transfusional se individualiza según hemoglobina, perfusión, comorbilidad y sangrado activo."
+      ],
+      "bullets": [
+        "ABCDE.",
+        "Acceso vascular.",
+        "Pruebas cruzadas.",
+        "Reposición y transfusión racional.",
+        "Monitorización."
+      ],
+      "clinical": "No retrases reanimación esperando una endoscopia; tampoco retrases control de fuente en un paciente que continúa sangrando.",
+      "fija": "En hemorragia digestiva grave, reanimación y hemostasia deben avanzar en paralelo."
+    },
+    {
+      "title": "3. Causas de hemorragia digestiva alta",
+      "paragraphs": [
+        "La úlcera péptica es una causa importante. También deben considerarse lesiones erosivas, desgarro de Mallory-Weiss, neoplasias y sangrado variceal. La etiología influye en la terapia endoscópica y en la prevención secundaria.",
+        "En sospecha de hipertensión portal, el manejo agrega medidas específicas para sangrado variceal y evaluación de descompensación hepática."
+      ],
+      "bullets": [
+        "Úlcera péptica.",
+        "Várices.",
+        "Erosiones.",
+        "Mallory-Weiss.",
+        "Neoplasias."
+      ],
+      "clinical": "La historia de hepatopatía, AINE, anticoagulantes y episodios previos orienta el diagnóstico y el riesgo.",
+      "fija": "No todas las HDA se tratan igual: variceal y no variceal siguen estrategias diferentes."
+    },
+    {
+      "title": "4. Endoscopia y hemostasia en HDA",
+      "paragraphs": [
+        "La endoscopia permite localizar la lesión, clasificar estigmas de sangrado y aplicar hemostasia mediante inyección, terapia térmica, clips u otras técnicas según la lesión. El objetivo no es solo visualizar, sino controlar el vaso o punto de sangrado cuando corresponde.",
+        "El riesgo de resangrado depende del hallazgo endoscópico, estabilidad y comorbilidad. Un paciente con resangrado puede requerir nueva endoscopia, embolización o cirugía según el contexto."
+      ],
+      "bullets": [
+        "Diagnóstico.",
+        "Estratificación.",
+        "Hemostasia.",
+        "Plan ante resangrado."
+      ],
+      "clinical": "La descripción endoscópica debe traducirse en riesgo y conducta, no quedar como un hallazgo aislado.",
+      "fija": "Endoscopia terapéutica = localizar + clasificar + tratar."
+    },
+    {
+      "title": "5. Hemorragia digestiva baja: causas principales",
+      "paragraphs": [
+        "Entre las causas se encuentran divertículos, angiodisplasia, neoplasia, colitis, enfermedad anorrectal y sangrado posprocedimiento. La edad, dolor abdominal, diarrea, pérdida de peso y antecedentes ayudan a priorizar diagnósticos.",
+        "La presencia de hemorroides no excluye una fuente proximal, especialmente cuando el patrón o volumen del sangrado no encaja."
+      ],
+      "bullets": [
+        "Diverticular.",
+        "Angiodisplasia.",
+        "Neoplasia.",
+        "Colitis.",
+        "Anorrectal."
+      ],
+      "clinical": "Sangrado rojo visible debe contextualizarse por volumen, dolor, edad y estabilidad.",
+      "fija": "No atribuyas automáticamente hematoquecia a hemorroides sin evaluar el contexto."
+    },
+    {
+      "title": "6. Colonoscopia y angiotomografía",
+      "paragraphs": [
+        "La colonoscopia permite diagnóstico y tratamiento en muchos pacientes estabilizados. Cuando existe sangrado activo importante y la localización es incierta, la angiotomografía puede identificar extravasación y orientar radiología intervencionista.",
+        "La elección del estudio depende de la velocidad del sangrado, preparación del colon y estabilidad hemodinámica."
+      ],
+      "bullets": [
+        "Colonoscopia en paciente estabilizado.",
+        "Angio-TC en sangrado activo significativo.",
+        "Angiografía para embolización en casos seleccionados."
+      ],
+      "clinical": "La prueba correcta es la que puede localizar una fuente activa y conducir a tratamiento en el tiempo disponible.",
+      "fija": "En sangrado activo masivo, localizar rápido puede ser más importante que completar una preparación ideal."
+    },
+    {
+      "title": "7. Anticoagulantes y coagulopatía",
+      "paragraphs": [
+        "El manejo debe equilibrar riesgo hemorrágico y riesgo trombótico. La reversión se considera según gravedad, fármaco, indicación de anticoagulación y posibilidad de hemostasia. No todos los pacientes requieren la misma estrategia.",
+        "En hepatopatía, las alteraciones de pruebas convencionales no reflejan de forma simple el equilibrio hemostático; el tratamiento debe centrarse en sangrado clínicamente relevante y procedimientos."
+      ],
+      "bullets": [
+        "Identificar fármaco.",
+        "Valorar gravedad.",
+        "Considerar reversión dirigida.",
+        "Planificar reinicio cuando sea seguro."
+      ],
+      "clinical": "Suspender anticoagulación sin plan de reinicio puede trasladar el riesgo de hemorragia a trombosis.",
+      "fija": "Hemostasia segura incluye controlar el sangrado y reevaluar cuándo reiniciar antitrombóticos."
+    },
+    {
+      "title": "8. Cuándo interviene radiología o cirugía",
+      "paragraphs": [
+        "La embolización puede controlar sangrado arterial cuando la endoscopia falla o no es posible. La cirugía se reserva para hemorragia persistente o recurrente no controlable por métodos menos invasivos, perforación asociada, lesión resecable que lo requiera u otras situaciones específicas.",
+        "Cuando se opera, localizar la fuente antes de resecar reduce el riesgo de una cirugía extensa o inefectiva."
+      ],
+      "bullets": [
+        "Fracaso endoscópico.",
+        "Sangrado persistente.",
+        "Fuente localizada para embolización.",
+        "Cirugía como control definitivo en casos seleccionados."
+      ],
+      "clinical": "Una colectomía sin localización confiable del sangrado puede ser una decisión de alto costo fisiológico.",
+      "fija": "Antes de operar una hemorragia, define fuente, fisiología y opciones menos invasivas."
+    },
+    {
+      "title": "9. Prevención del resangrado",
+      "paragraphs": [
+        "Después de controlar el episodio agudo debe tratarse la causa: erradicar Helicobacter pylori cuando corresponde, revisar AINE, optimizar protección gástrica, tratar hipertensión portal o completar estudio de lesión colónica.",
+        "El alta no termina el problema. El seguimiento debe incluir etiología, medicación y signos de alarma."
+      ],
+      "bullets": [
+        "Tratar causa.",
+        "Revisar fármacos.",
+        "Plan de seguimiento.",
+        "Educación sobre signos de alarma."
+      ],
+      "clinical": "El segundo objetivo después de detener el sangrado es evitar que vuelva a ocurrir.",
+      "fija": "Hemostasia sin prevención secundaria deja incompleto el tratamiento."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["seminario-06-pancreatitis-aguda"] = {
+  "title": "Seminario 6 — Pancreatitis aguda y complicaciones",
+  "subtitle": "Diagnóstico, etiología, gravedad, colecciones, necrosis, infección y procedimientos intervencionistas o quirúrgicos.",
+  "tag": "Pancreatitis aguda",
+  "notice": "Desarrollo BADBEAR.MED enfocado en la evolución temporal de la pancreatitis y en cuándo intervenir.",
+  "sections": [
+    {
+      "title": "1. Diagnóstico de pancreatitis aguda",
+      "paragraphs": [
+        "El diagnóstico se establece cuando se cumplen al menos dos de tres elementos clásicos: dolor abdominal compatible, elevación significativa de lipasa o amilasa y hallazgos característicos en imagen. La lipasa suele ser más útil por su mayor persistencia.",
+        "La tomografía no es obligatoria en todos los casos al ingreso; se reserva cuando el diagnóstico es incierto, existe mala evolución o se necesita caracterizar complicaciones."
+      ],
+      "bullets": [
+        "Dolor típico.",
+        "Enzimas pancreáticas.",
+        "Imagen cuando corresponde."
+      ],
+      "clinical": "Si clínica y lipasa son diagnósticas, una TC inmediata puede no aportar información que cambie el manejo.",
+      "fija": "Pancreatitis no se diagnostica por enzimas aisladas: integra clínica y contexto."
+    },
+    {
+      "title": "2. Buscar la etiología desde el inicio",
+      "paragraphs": [
+        "Las causas frecuentes incluyen litiasis biliar y alcohol. También deben considerarse hipertrigliceridemia, fármacos, procedimientos, alteraciones metabólicas y otras etiologías menos comunes. Identificar la causa es importante porque modifica prevención y tratamiento definitivo.",
+        "La ecografía hepatobiliar es útil en sospecha de origen biliar, aunque puede estar limitada por gas intestinal."
+      ],
+      "bullets": [
+        "Biliar.",
+        "Alcohol.",
+        "Hipertrigliceridemia.",
+        "Fármacos/procedimientos.",
+        "Otras causas."
+      ],
+      "clinical": "Una pancreatitis biliar obliga a pensar desde el inicio en la vía biliar y en prevención de recurrencia.",
+      "fija": "Confirmar pancreatitis es solo el primer paso; luego hay que identificar por qué ocurrió."
+    },
+    {
+      "title": "3. Gravedad y falla orgánica",
+      "paragraphs": [
+        "La mayoría de episodios son leves, pero un subgrupo desarrolla falla orgánica y complicaciones locales. La persistencia de falla orgánica es un elemento central de pancreatitis grave. La valoración seriada es más útil que confiar en una única escala.",
+        "Taquicardia, hipoxemia, oliguria, aumento de urea, hemoconcentración y respuesta inflamatoria persistente pueden sugerir evolución desfavorable."
+      ],
+      "bullets": [
+        "Falla respiratoria.",
+        "Falla cardiovascular.",
+        "Falla renal.",
+        "Respuesta sistémica persistente."
+      ],
+      "clinical": "La gravedad se descubre en la evolución; un paciente inicialmente estable puede empeorar en las primeras 24–48 horas.",
+      "fija": "Pancreatitis grave se define por fisiología, no por el número de veces que aumentó la lipasa."
+    },
+    {
+      "title": "4. Reanimación con fluidos y soporte",
+      "paragraphs": [
+        "La reposición de volumen busca corregir hipovolemia sin producir sobrecarga. Debe reevaluarse por presión, diuresis, perfusión, urea, hematocrito y situación cardiopulmonar. El concepto moderno favorece reanimación dirigida y reevaluada, no grandes volúmenes indiscriminados.",
+        "La analgesia, oxigenación y corrección de alteraciones metabólicas forman parte del manejo inicial."
+      ],
+      "bullets": [
+        "Fluidos guiados por respuesta.",
+        "Analgesia.",
+        "Monitorización.",
+        "Evitar sobrecarga."
+      ],
+      "clinical": "El paciente con cardiopatía o enfermedad renal necesita metas y reevaluación aún más cuidadosas.",
+      "fija": "Más volumen no siempre significa mejor reanimación."
+    },
+    {
+      "title": "5. Nutrición enteral temprana",
+      "paragraphs": [
+        "Cuando el paciente puede tolerarla, la alimentación oral temprana es preferible al ayuno prolongado. En enfermedad grave que no puede alimentarse por boca, la nutrición enteral ayuda a mantener integridad intestinal y suele preferirse a nutrición parenteral.",
+        "No es necesario esperar normalización completa de enzimas para iniciar alimentación si la clínica lo permite."
+      ],
+      "bullets": [
+        "Alimentación oral si tolera.",
+        "Enteral en casos graves.",
+        "Evitar ayuno innecesario."
+      ],
+      "clinical": "La tolerancia clínica guía la progresión nutricional.",
+      "fija": "El páncreas no necesita 'reposo' mediante ayuno prolongado rutinario."
+    },
+    {
+      "title": "6. Colecciones y nomenclatura",
+      "paragraphs": [
+        "Las complicaciones locales cambian con el tiempo y con la presencia o ausencia de necrosis. En fases tempranas pueden existir colecciones agudas; con maduración pueden formarse pseudoquistes o colecciones necróticas encapsuladas.",
+        "La nomenclatura importa porque una colección líquida simple no se maneja igual que una colección con tejido necrótico."
+      ],
+      "bullets": [
+        "Colección aguda.",
+        "Pseudoquiste.",
+        "Necrosis aguda.",
+        "Necrosis encapsulada."
+      ],
+      "clinical": "Antes de drenar una colección, define qué contiene, cuánto tiempo tiene y qué síntomas produce.",
+      "fija": "No toda colección pancreática necesita intervención."
+    },
+    {
+      "title": "7. Necrosis estéril vs infectada",
+      "paragraphs": [
+        "La necrosis pancreática puede permanecer estéril o infectarse. La infección cambia el pronóstico y puede manifestarse con sepsis, deterioro persistente o gas dentro de la colección en imagen. La sospecha se integra con evolución clínica.",
+        "La necrosis estéril sin síntomas o complicaciones específicas puede manejarse de forma no operatoria."
+      ],
+      "bullets": [
+        "Necrosis no equivale a infección.",
+        "Buscar deterioro sistémico.",
+        "Gas en colección puede sugerir infección."
+      ],
+      "clinical": "No indicar antibióticos solo porque exista necrosis si no hay datos de infección.",
+      "fija": "Necrosis estéril y necrosis infectada son entidades terapéuticas distintas."
+    },
+    {
+      "title": "8. Estrategia step-up",
+      "paragraphs": [
+        "Cuando se requiere intervención por necrosis infectada o complicaciones seleccionadas, la estrategia escalonada comienza con métodos menos invasivos, como drenaje percutáneo o endoscópico, y progresa a necrosectomía si el paciente no mejora.",
+        "Siempre que la situación clínica lo permita, retrasar la intervención favorece encapsulación y puede facilitar procedimientos más seguros."
+      ],
+      "bullets": [
+        "Drenaje.",
+        "Reevaluación.",
+        "Necrosectomía si persiste problema.",
+        "Elegir vía según anatomía."
+      ],
+      "clinical": "El objetivo no es operar pronto, sino controlar infección y necrosis con la menor agresión necesaria.",
+      "fija": "En necrosis pancreática, el tiempo y el escalonamiento son parte del tratamiento."
+    },
+    {
+      "title": "9. Pancreatitis biliar y CPRE",
+      "paragraphs": [
+        "La CPRE no se realiza de rutina en toda pancreatitis biliar. Tiene especial indicación cuando existe colangitis o evidencia de obstrucción biliar persistente. La colecistectomía previene recurrencia en pacientes apropiados una vez definido el momento seguro.",
+        "El timing de colecistectomía depende de la gravedad y de las complicaciones locales."
+      ],
+      "bullets": [
+        "Buscar colangitis.",
+        "Evaluar obstrucción persistente.",
+        "Colecistectomía para prevenir recurrencia."
+      ],
+      "clinical": "Una pancreatitis biliar leve y una necrotizante extensa no tienen el mismo momento quirúrgico.",
+      "fija": "CPRE trata obstrucción de la vía biliar; no trata directamente la inflamación pancreática."
+    },
+    {
+      "title": "10. Complicaciones vasculares y otras",
+      "paragraphs": [
+        "La pancreatitis puede asociarse a trombosis venosa esplácnica, pseudoaneurismas, hemorragia, obstrucción gástrica o biliar y fístulas. Estas complicaciones requieren enfoque multidisciplinario con endoscopia, radiología intervencionista y cirugía según el caso.",
+        "El sangrado por pseudoaneurisma puede ser catastrófico y suele beneficiarse de localización angiográfica y embolización cuando es factible."
+      ],
+      "bullets": [
+        "Trombosis.",
+        "Pseudoaneurisma.",
+        "Hemorragia.",
+        "Obstrucción.",
+        "Fístulas."
+      ],
+      "clinical": "Un descenso brusco de hemoglobina o inestabilidad en pancreatitis complicada obliga a buscar sangrado vascular.",
+      "fija": "Las complicaciones de pancreatitis no son solo infecciosas; también pueden ser vasculares y mecánicas."
+    }
+  ]
+};
+
+window.BADBEAR_CG_TOPICS["seminario-07-cirugia-robotica"] = {
+  "title": "Seminario 7 — Cirugía robótica: actualidad, ventajas, limitaciones y futuro con IA",
+  "subtitle": "Plataformas robóticas, ergonomía, visión, instrumentación, seguridad, entrenamiento, costos e integración progresiva de inteligencia artificial.",
+  "tag": "Cirugía robótica",
+  "notice": "Desarrollo BADBEAR.MED para comprender qué aporta realmente la robótica y qué problemas siguen dependiendo del juicio del cirujano.",
+  "sections": [
+    {
+      "title": "1. Qué significa cirugía robótica",
+      "paragraphs": [
+        "La cirugía robótica actual es cirugía mínimamente invasiva asistida por una plataforma controlada por el cirujano. El sistema no opera de manera autónoma: traduce los movimientos del operador a instrumentos articulados y proporciona una interfaz visual y ergonómica.",
+        "El valor de la plataforma depende del procedimiento, experiencia del equipo y disponibilidad de recursos; no convierte automáticamente una cirugía compleja en una cirugía sencilla."
+      ],
+      "bullets": [
+        "Consola del cirujano.",
+        "Carro del paciente.",
+        "Instrumentos articulados.",
+        "Sistema de visión."
+      ],
+      "clinical": "El robot es una herramienta; la indicación, estrategia y respuesta a complicaciones siguen dependiendo del equipo quirúrgico.",
+      "fija": "Robótico no significa autónomo."
+    },
+    {
+      "title": "2. Visión y destreza instrumental",
+      "paragraphs": [
+        "La visión tridimensional ampliada y los instrumentos con múltiples grados de libertad pueden facilitar disección, sutura y trabajo en espacios confinados. La filtración del temblor y el escalamiento de movimientos mejoran precisión técnica en ciertas tareas.",
+        "Estas ventajas son especialmente relevantes cuando la cirugía exige suturas finas o maniobras anguladas difíciles con laparoscopia convencional."
+      ],
+      "bullets": [
+        "Visión 3D.",
+        "Articulación distal.",
+        "Filtrado de temblor.",
+        "Escalamiento de movimiento."
+      ],
+      "clinical": "La ventaja técnica debe traducirse en una ventaja clínica real para justificar su uso.",
+      "fija": "Mejor ergonomía o precisión no equivale automáticamente a mejor desenlace para todos los procedimientos."
+    },
+    {
+      "title": "3. Ergonomía y equipo quirúrgico",
+      "paragraphs": [
+        "La consola puede reducir algunas posturas forzadas del cirujano, pero la seguridad depende de todo el equipo. El posicionamiento, docking, intercambio de instrumentos y acceso del anestesiólogo deben planificarse antes de comenzar.",
+        "La comunicación es crítica porque el cirujano principal puede estar físicamente separado del campo operatorio."
+      ],
+      "bullets": [
+        "Posicionamiento.",
+        "Docking.",
+        "Comunicación.",
+        "Plan de conversión."
+      ],
+      "clinical": "Todo procedimiento robótico debe tener una estrategia clara para conversión a laparoscopia o cirugía abierta si aparece una urgencia.",
+      "fija": "La plataforma cambia la ergonomía, no elimina la necesidad de trabajo en equipo."
+    },
+    {
+      "title": "4. Curva de aprendizaje y entrenamiento",
+      "paragraphs": [
+        "El entrenamiento incorpora simulación, observación, práctica supervisada y progresión por complejidad. La curva de aprendizaje no debe medirse solo por tiempo operatorio, sino también por calidad técnica, complicaciones y capacidad de resolver eventos inesperados.",
+        "La estandarización de pasos y revisión de video ayudan a mejorar rendimiento y seguridad."
+      ],
+      "bullets": [
+        "Simulación.",
+        "Proctoría.",
+        "Casos progresivos.",
+        "Revisión de resultados."
+      ],
+      "clinical": "Adoptar tecnología nueva sin un programa de entrenamiento estructurado puede trasladar la curva de aprendizaje al paciente.",
+      "fija": "La competencia robótica requiere entrenamiento deliberado, no solo familiaridad con la consola."
+    },
+    {
+      "title": "5. Ventajas potenciales y límites",
+      "paragraphs": [
+        "Entre las ventajas potenciales se describen precisión, sutura intracorpórea, ergonomía y acceso a espacios estrechos. Entre las limitaciones figuran costo, tiempo de preparación, disponibilidad, dependencia tecnológica y ausencia o reducción de retroalimentación háptica en varias plataformas.",
+        "La comparación con laparoscopia o cirugía abierta debe hacerse por procedimiento específico y desenlaces relevantes, no por entusiasmo tecnológico."
+      ],
+      "bullets": [
+        "Precisión.",
+        "Ergonomía.",
+        "Costo.",
+        "Tiempo de instalación.",
+        "Dependencia tecnológica."
+      ],
+      "clinical": "La mejor técnica es la que el equipo puede ejecutar de forma segura y con resultados consistentes para esa indicación.",
+      "fija": "Una tecnología puede ser técnicamente superior en una tarea y no demostrar beneficio global en todos los pacientes."
+    },
+    {
+      "title": "6. Seguridad y fallas del sistema",
+      "paragraphs": [
+        "La cirugía robótica exige conocer alarmas, liberación de instrumentos, apagado de emergencia y conversión. Las fallas técnicas son poco frecuentes pero deben estar previstas. El equipo debe poder acceder al paciente rápidamente si ocurre hemorragia o compromiso anestésico.",
+        "Los checklists específicos y la preparación previa reducen demoras durante eventos críticos."
+      ],
+      "bullets": [
+        "Plan de emergencia.",
+        "Conversión rápida.",
+        "Acceso al paciente.",
+        "Disponibilidad de instrumental convencional."
+      ],
+      "clinical": "La seguridad depende de que todos sepan qué hacer cuando la tecnología deja de funcionar.",
+      "fija": "Nunca inicies un caso robótico sin un plan de rescate convencional."
+    },
+    {
+      "title": "7. Costos y selección de casos",
+      "paragraphs": [
+        "El costo incluye adquisición, mantenimiento, consumibles, tiempo de quirófano y entrenamiento. La rentabilidad depende del volumen, tipo de procedimientos, eficiencia y sistema sanitario. Por eso la adopción debe evaluarse institucionalmente.",
+        "Seleccionar casos adecuados durante la implementación disminuye conversiones y eventos adversos."
+      ],
+      "bullets": [
+        "Costo de plataforma.",
+        "Consumibles.",
+        "Volumen de casos.",
+        "Eficiencia de quirófano."
+      ],
+      "clinical": "Una plataforma subutilizada puede aumentar costos sin producir una mejora proporcional en resultados.",
+      "fija": "La sostenibilidad también forma parte de la calidad quirúrgica."
+    },
+    {
+      "title": "8. Inteligencia artificial y futuro de la cirugía",
+      "paragraphs": [
+        "La inteligencia artificial puede apoyar reconocimiento anatómico, análisis de video, predicción de eventos, documentación, evaluación de destreza y planificación. Estas funciones son de asistencia y requieren validación clínica, control de sesgos y supervisión humana.",
+        "La progresión hacia mayor automatización plantea retos regulatorios, responsabilidad profesional, privacidad de datos y explicabilidad de decisiones."
+      ],
+      "bullets": [
+        "Análisis de video.",
+        "Reconocimiento anatómico.",
+        "Evaluación de destreza.",
+        "Soporte de decisión.",
+        "Automatización progresiva."
+      ],
+      "clinical": "Una recomendación algorítmica debe integrarse al contexto clínico y nunca sustituir ciegamente el juicio quirúrgico.",
+      "fija": "IA en cirugía debe aumentar la capacidad del equipo, no desplazar la responsabilidad clínica."
+    }
+  ]
+};
+
+/* BB_CG_SEMINARIOS_EXTENSOS_V6_END */
