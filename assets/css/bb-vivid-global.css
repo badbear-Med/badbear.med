@@ -229,3 +229,41 @@ body>footer strong span{color:#38f39a!important}
 .bb-login-eye{background:var(--bb-v-orange)!important;color:var(--bb-v-black)!important}
 .bb-login-submit{background:var(--bb-v-blue)!important;color:#fff!important}
 .bb-login-error{color:var(--bb-v-red)!important}
+
+/* Etiquetas sobre bloques de color: contraste uniforme. */
+.cursos .cursos-intro>span,.bb-cg-academic-intro>div>span,.estructura-destacada>span{color:#fff!important}
+.hero-showcase__actions .boton:not(.boton-secundario){border:2px solid #fff!important}
+
+/* Marca azul y roja sobre superficies claras. */
+:is(.header,.cabecera,.bb-header,.bbq-head,[class$="-header"],.cg-top){
+  background:#fff!important;color:var(--bb-v-black)!important;
+  border-bottom:4px solid var(--bb-v-blue)!important;
+}
+:is(.header,.cabecera,.bb-header,.bbq-head,[class$="-header"],.cg-top) :is(a,h1,strong,.marca-texto,p){
+  color:var(--bb-v-black)!important;
+}
+:is(.header,.cabecera,.bb-header,.bbq-head,[class$="-header"],.cg-top) :is(a:hover,a.active,a.activo,a.nav-activo){
+  color:#fff!important;background:var(--bb-v-blue)!important;
+}
+:is(.logo,.bb-brand-lockup,.bb-auto-brand,[class$="-brand"],.bbq-brand,.marca-texto h1,
+ .bb-lock-brand,.bb-login-brand h1){
+  color:var(--bb-v-blue)!important;
+}
+:is(.logo,.bb-brand-lockup,.bb-auto-brand,[class$="-brand"],.bbq-brand,.marca-texto h1,
+ .bb-lock-brand,.bb-login-brand h1) span,
+.bb-lock-brand .med,.bb-login-brand h1 span{color:var(--bb-v-red)!important}
+:is(.bb-brand-logo,.bb-brand-lockup img,.bb-auto-course-logo,.logo-badbear){
+  background:#fff;border:1px solid #dbe4f0;border-radius:50%;padding:3px;
+}
+.header .bb-brand-logo{width:50px;height:50px}
+.hero-showcase{
+  background:linear-gradient(120deg,#fff 0%,#f4f9ff 60%,#e6f1ff 100%)!important;
+  border-bottom:5px solid var(--bb-v-orange)!important;
+}
+.hero-showcase h1{color:var(--bb-v-blue)!important}
+.hero-showcase h1 span{color:var(--bb-v-red)!important}
+.hero-showcase :is(h2,h3){color:var(--bb-v-black)!important}
+.hero-showcase p{color:#40516a!important}
+.hero-showcase__names,.hero-showcase__names strong{color:#40516a!important}
+.hero-showcase__visual img{border:3px solid #fff;box-shadow:0 14px 34px #005be81a}
+.hero-showcase__actions .boton:not(.boton-secundario){border:2px solid var(--bb-v-blue)!important}
