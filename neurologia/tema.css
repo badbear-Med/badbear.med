@@ -31,3 +31,12 @@
 .image-modal{display:none;position:fixed;inset:0;background:rgba(15,23,42,.82);z-index:3000;padding:5vh 4vw;align-items:center;justify-content:center}.image-modal.open{display:flex}.image-modal-content{width:min(1100px,94vw);max-height:88vh;overflow:auto;background:#fff;border-radius:20px;padding:18px}.image-modal-content svg{width:100%;height:auto}.image-modal-content span{display:block;padding:10px;color:#475569;font-weight:700}.image-modal-close{position:fixed;right:24px;top:18px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#111827;font-size:30px;cursor:pointer}
 @media(max-width:900px){.resource-tabs{position:static}.visual-grid,.mini-grid,.two-panel,.functional-columns,.clinical-grid{grid-template-columns:1fr}.pathway{grid-template-columns:1fr}.pathway i{transform:rotate(0deg);text-align:center}.autonomic-row{grid-template-columns:1fr}.compare-table>div{grid-template-columns:1fr}.compare-table .thead{display:none}.compare-table span{border-top:1px solid #e2e8f0}.lesson-intro,.lesson-section{padding:22px 18px}}
 @media(max-width:640px){.resource-tabs{gap:6px}.resource-tab{font-size:12px;padding:9px 10px}.lesson-intro h2,.lesson-section h2{font-size:24px}}
+
+.source-line{margin-top:14px;padding:12px 14px;background:#f8fafc;border-left:4px solid #6d28d9;border-radius:0 10px 10px 0;font-size:13px}
+.source-note{padding:12px 14px;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;font-size:13px}
+.source-resource-card{display:grid;grid-template-columns:58px 1fr auto;gap:16px;align-items:center;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:20px;margin-bottom:16px}
+.source-resource-icon{width:58px;height:58px;border-radius:14px;background:#fee2e2;color:#b91c1c;display:flex;align-items:center;justify-content:center;font-weight:950}
+.source-resource-card span{font-size:11px;font-weight:900;color:#6d28d9;letter-spacing:.06em}.source-resource-card h3{margin:3px 0 5px;font-size:18px}.source-resource-card p{margin:0;color:#64748b;font-size:13px;line-height:1.5}
+.source-resource-card .sync-badge{color:#166534;background:#dcfce7;padding:6px 9px;border-radius:999px;white-space:nowrap}
+.material-note{background:#eff6ff;border:1px solid #bfdbfe;border-radius:16px;padding:18px;color:#1e3a8a}.material-note p{margin:6px 0 0;color:#475569;line-height:1.6}
+@media(max-width:700px){.source-resource-card{grid-template-columns:48px 1fr}.source-resource-icon{width:48px;height:48px}.source-resource-card .sync-badge{grid-column:1/-1;justify-self:start}}
