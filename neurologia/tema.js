@@ -3,6 +3,7 @@
   const app = document.getElementById("neuro-tema-app");
   const temas = Array.isArray(window.BADBEAR_NEURO_TEMAS) ? window.BADBEAR_NEURO_TEMAS : [];
   const contenidos = window.BADBEAR_NEURO_CONTENIDOS || {};
+  const recursos = window.BADBEAR_NEURO_RECURSOS || {};
   const id = new URLSearchParams(window.location.search).get("t");
   const tema = temas.find(t => t.id === id) || temas[0];
   if(!app || !tema) return;
@@ -13,6 +14,7 @@
   const anterior = temas[(actual - 1 + temas.length) % temas.length];
   const siguiente = temas[(actual + 1) % temas.length];
   const desarrollo = contenidos[tema.id];
+  const recurso = recursos[tema.id] || {};
 
   const tabs = [
     ["teoria","Desarrollo teórico"],
@@ -24,13 +26,25 @@
     ["fijas","BADBEAR.MED FIJA"]
   ];
 
+  const pdfCard = recurso.pdf ? `
+    <div class="source-resource-card">
+      <div class="source-resource-icon">PDF</div>
+      <div>
+        <span>${recurso.fuente || "Material extra"}</span>
+        <h3>${recurso.pdf}</h3>
+        <p>Documento fuente usado para desarrollar esta unidad. El archivo binario original se conservará con este mismo nombre dentro de la biblioteca del curso.</p>
+      </div>
+      <span class="sync-badge">Fuente identificada</span>
+    </div>` : `
+    <div class="resource-placeholder"><b>PDF</b><p>Esta unidad no tiene un PDF independiente dentro del ZIP recibido.</p></div>`;
+
   app.innerHTML = `
     <div class="tema-breadcrumb">
       <a href="../index.html">BADBEAR.MED</a><span>›</span><a href="index.html">Neurología</a><span>›</span><strong>${tema.titulo}</strong>
     </div>
     <section class="tema-hero">
       <div class="tema-icon">${tema.icono}</div>
-      <div><span>${tema.numero ? "UNIDAD "+tema.numero+" · " : ""}${tema.area.toUpperCase()} · NEUROLOGÍA</span><h1>${tema.titulo}</h1><p>${tema.descripcion}</p></div>
+      <div><span>${tema.numero ? "UNIDAD "+tema.numero+" · " : "UNIDAD 0 · "}${tema.area.toUpperCase()} · NEUROLOGÍA</span><h1>${tema.titulo}</h1><p>${tema.descripcion}</p></div>
     </section>
 
     <nav class="resource-tabs" aria-label="Recursos de la unidad">
@@ -40,21 +54,33 @@
     <div class="tema-layout">
       <div>
         <section class="tab-panel active" data-panel="teoria">
-          ${desarrollo || `
-            <section class="tema-card">
-              <h2>Desarrollo teórico</h2>
-              <p>Esta unidad está preparada para crecer progresivamente. Aquí se integrarán anatomía, fisiopatología, clínica, diagnóstico, tratamiento, organizadores, imágenes y correlación clínica.</p>
-              <div class="tema-empty">Desarrollo académico específico en integración.</div>
-            </section>
-          `}
+          ${desarrollo || `<section class="tema-card"><h2>Desarrollo teórico</h2><div class="tema-empty">Desarrollo académico específico en integración.</div></section>`}
         </section>
 
-        <section class="tab-panel" data-panel="audio"><div class="resource-placeholder"><b>Audio de clase</b><p>Se incorporará aquí cuando sea subido. Permanecerá asociado exclusivamente a esta unidad.</p></div></section>
-        <section class="tab-panel" data-panel="pdf"><div class="resource-placeholder"><b>PDF de clase</b><p>Espacio reservado para el PDF principal o la presentación convertida a PDF.</p></div></section>
-        <section class="tab-panel" data-panel="video"><div class="resource-placeholder"><b>Video / YouTube</b><p>Espacio para el enlace o reproductor correspondiente a esta unidad.</p></div></section>
-        <section class="tab-panel" data-panel="extra"><div class="resource-placeholder"><b>Material extra</b><p>PDF complementarios, guías, artículos, atlas, algoritmos y recursos visuales vinculados con el tema.</p></div></section>
-        <section class="tab-panel" data-panel="bankeos"><div class="resource-placeholder"><b>Bankeos reales</b><p>Solo se incorporarán preguntas provenientes de evaluaciones, bancos o material identificable. Las preguntas creadas por BADBEAR.MED se mantendrán diferenciadas.</p></div></section>
-        <section class="tab-panel" data-panel="fijas"><div class="resource-placeholder fija-placeholder"><b>BADBEAR.MED FIJA reales</b><p>Este espacio reunirá puntos enfatizados por el docente, repetidos en clase o documentados en bankeos. No se mezclarán con perlas creadas únicamente por nosotros.</p></div></section>
+        <section class="tab-panel" data-panel="audio">
+          <div class="resource-placeholder"><b>Audio de clase</b><p>Se añadirá progresivamente cuando se incorpore el audio de esta unidad.</p></div>
+        </section>
+
+        <section class="tab-panel" data-panel="pdf">
+          ${pdfCard}
+        </section>
+
+        <section class="tab-panel" data-panel="video">
+          <div class="resource-placeholder"><b>Video / YouTube</b><p>Espacio preparado para el enlace o reproductor correspondiente a esta unidad.</p></div>
+        </section>
+
+        <section class="tab-panel" data-panel="extra">
+          ${pdfCard}
+          <div class="material-note"><b>Uso académico del material</b><p>El desarrollo teórico de arriba fue construido a partir de este documento, conservando su organización, terminología y énfasis. Los gráficos e imágenes del PDF se integrarán como figuras ampliables al sincronizar los archivos binarios del material.</p></div>
+        </section>
+
+        <section class="tab-panel" data-panel="bankeos">
+          <div class="resource-placeholder"><b>Bankeos reales</b><p>Solo se incorporarán preguntas provenientes de evaluaciones, bancos o material identificable. Las preguntas creadas por BADBEAR.MED permanecerán diferenciadas.</p></div>
+        </section>
+
+        <section class="tab-panel" data-panel="fijas">
+          <div class="resource-placeholder fija-placeholder"><b>BADBEAR.MED FIJA reales</b><p>Los puntos FIJA ya aparecen dentro del desarrollo cuando están sustentados por el material fuente. Esta pestaña quedará como concentrado de los enfatizados por docente o bankeo.</p></div>
+        </section>
       </div>
 
       <aside class="tema-side">
