@@ -67,3 +67,10 @@
 /* Identidad del grupo en sus proyectos independientes. */
 .bb-extra-header .bb-group-logo b{color:#101722!important}
 @media(max-width:380px){.bb-extra-header .bb-group-logo{font-size:19px}}
+
+/* Nuevas creaciones y rotación clínica. */
+.bb-extra-lab{--extra-accent:#007a3d;--extra-soft:#ecfaf2;--extra-ink:#fff}
+.bb-extra-curiosidades{--extra-accent:#101722;--extra-soft:#f4f7ff;--extra-ink:#ffe34d}
+.bb-extra-sotelo{--extra-accent:#005be8;--extra-soft:#edf5ff;--extra-ink:#fff}
+.bb-extra-curiosidades .bb-extra-title{color:#101722}
+.bb-extra-curiosidades .bb-extra-action{color:#ffe34d}

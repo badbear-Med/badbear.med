@@ -10,6 +10,9 @@ El repositorio conserva las páginas, estilos, scripts y archivos publicados del
 - `badbear-music/`: música y acceso al canal de YouTube; los audios originales se guardan en `audios/`.
 - `enam/`: preparación ENAM; sus materiales se guardan en `recursos/`.
 - `badbear-books/`: publicaciones del equipo; los libros se guardan en `libros/`.
+- `badbear-lab/`: ingeniería y programación; originales en `proyectos/`.
+- `curiosidades/`: divulgación científica; originales en `recursos/`.
+- `cirugia-general/rotacion-dr-sotelo/`: catálogo y originales del material de la rotación. Su página de entrada es `cirugia-general/rotacion-dr-sotelo.html`.
 
 Todo archivo utilizado en una nueva creación debe incorporarse al repositorio junto con su página y sus enlaces. Si el alojamiento deja de funcionar, estos archivos permiten volver a publicar el sitio en GitHub Pages u otro alojamiento estático sin reconstruirlo.
 

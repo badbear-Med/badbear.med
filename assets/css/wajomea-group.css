@@ -65,3 +65,9 @@ a:focus-visible{outline:3px solid var(--wg-blue);outline-offset:5px}
 @media(max-width:950px){.wg-header{padding:14px 5%;gap:16px}.wg-header nav{gap:12px}.wg-hero-inner{grid-template-columns:minmax(0,1fr) 150px;gap:20px}.wg-orbit{width:140px;height:140px}.wg-orbit-center{width:90px;height:90px;font-size:34px}.wg-card{padding:20px}.wg-project-grid{gap:15px}.wg-team{margin-left:5%;margin-right:5%}}
 @media(max-width:760px){html{scroll-padding-top:160px}.wg-header{position:relative;flex-direction:column;align-items:flex-start;gap:12px}.wg-header nav{gap:10px 16px}.wg-header nav a{font-size:12px}.wg-header nav .wg-nav-med{padding:7px 10px}.wg-hero{padding:30px 5%}.wg-hero-inner{grid-template-columns:minmax(0,1fr)}.wg-orbit{display:none}.wg-hero h1{font-size:clamp(32px,8.8vw,60px)}.wg-eyebrow{font-size:10px;letter-spacing:.08em}.wg-hero-description{font-size:15px}.wg-projects{padding-top:25px}.wg-project-grid{grid-template-columns:1fr;gap:18px}.wg-card{padding:24px}.wg-card h3{font-size:29px}.wg-team{grid-template-columns:1fr;gap:20px;padding:25px 22px}.wg-section-heading h2{font-size:27px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.wg-card{transition:none}.wg-card:hover{transform:none}}
+
+/* Proyectos registrados para el crecimiento del grupo. */
+.wg-lab{--wg-accent:var(--wg-green);--wg-soft:#ecfaf2;--wg-icon-ink:#fff}
+.wg-curiosidades{--wg-accent:var(--wg-ink);--wg-soft:#f4f7ff;--wg-icon-ink:#ffe34d}
+.wg-lab h3 span{color:var(--wg-green)}
+.wg-curiosidades h3,.wg-curiosidades h3 span{color:var(--wg-ink)}

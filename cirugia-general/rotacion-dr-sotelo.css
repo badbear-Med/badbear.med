@@ -1,0 +1,14 @@
+/* Acceso a la rotación: mantiene el programa académico existente. */
+.bb-sotelo-entry{display:flex;align-items:center;gap:18px;margin:22px 0;padding:22px;border:2px solid #007a3d;border-left-width:7px;border-radius:16px;background:#ecfaf2;text-decoration:none;color:#101722}
+.bb-sotelo-entry-icon{display:grid;place-items:center;flex:0 0 54px;height:54px;background:#007a3d;border-radius:14px;font-size:27px}
+.bb-sotelo-entry>span:nth-child(2){flex:1;min-width:0}
+.bb-sotelo-entry strong{display:block;font-size:clamp(20px,2.4vw,27px);font-weight:900;line-height:1.2;margin-bottom:8px;color:#007a3d}
+.bb-sotelo-entry>span>span{display:block;color:#40516a;font-size:14px;line-height:1.6}
+.bb-sotelo-entry>b{font-size:28px;color:#007a3d}
+.bb-sotelo-entry:hover{box-shadow:0 9px 22px #007a3d18}
+.bb-sotelo-catalog{display:grid;gap:14px;margin-top:20px}
+.bb-sotelo-item{display:block;padding:20px;border:2px solid #005be8;border-radius:13px;background:#f5f9ff;text-decoration:none;color:#101722}
+.bb-sotelo-item strong{display:block;font-size:18px;line-height:1.3}
+.bb-sotelo-item p{color:#40516a;font-size:14px;margin:8px 0 12px}
+.bb-sotelo-item span{font-size:13px;font-weight:900;color:#005be8}
+@media(max-width:600px){.bb-sotelo-entry{padding:18px;gap:12px}.bb-sotelo-entry-icon{flex-basis:42px;height:42px;font-size:23px}}

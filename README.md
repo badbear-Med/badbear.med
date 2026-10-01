@@ -44,6 +44,10 @@ Consulta `docs/ARQUITECTURA.md` para agregar nuevas especialidades y mantener ru
 - [BADBEAR.MUSIC](badbear-music/index.html): creaciones musicales y canal de YouTube del equipo.
 - [Examen ENAM](enam/index.html): preparación, bancos de repaso y futuros simulacros.
 - [BADBEAR.BOOKS](badbear-books/index.html): libros redactados por WAJOMEA.GROUP.
+- [BADBEAR.LAB](badbear-lab/index.html): ingeniería y programación; primeros proyectos en preparación.
+- [Curiosidades científicas](curiosidades/index.html): divulgación científica; primeros contenidos en preparación.
+
+En Cirugía General, [Rotación con Dr. Sotelo](cirugia-general/rotacion-dr-sotelo.html) dispone de carpetas y catálogo para incorporar apuntes, documentos, audios y videos. Consulta [sus instrucciones](cirugia-general/rotacion-dr-sotelo/README.md).
 
 ## Respaldo y recuperación
 
