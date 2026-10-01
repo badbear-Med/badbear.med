@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BADBEAR.MED | Plataforma Médica</title>
+  <meta name="description" content="BADBEAR.MED, plataforma educativa médica del grupo WAJOMEA.GROUP con cursos, bancos de preguntas, exámenes y material de estudio.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/brand-watermark.css">
+  <link rel="stylesheet" href="assets/css/bb-responsive-global-v21.css">
+  <link rel="stylesheet" href="assets/css/bb-vivid-global.css?v=20260930-vivos-global3">
+  <link rel="stylesheet" href="assets/css/bb-extras.css?v=20261001-group1">
+</head>
+<body>
+  <header class="header">
+    <a class="logo bb-brand-lockup" href="#inicio" aria-label="Inicio BADBEAR.MED"><img class="bb-brand-logo" src="dermatologia/badbear_logo.png" alt="Logo BADBEAR.MED"> BADBEAR.<span>MED</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#cursos">Cursos</a>
+      <a href="enam/index.html">ENAM</a>
+      <a href="index.html">WAJOMEA.GROUP</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#proyecto">Proyecto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-showcase" id="inicio">
+      <div class="hero-showcase__inner">
+        <div class="hero-showcase__copy">
+          <span class="hero-showcase__eyebrow">PROYECTO WAJOMEA.GROUP</span>
+          <h1>BADBEAR.<span>MED</span></h1>
+          <h2>Tu plataforma médica para estudiar, practicar y repasar.</h2>
+          <p>Teoría, bancos de preguntas, exámenes, PDF, audio y video organizados por curso en un solo portal.</p>
+          <div class="hero-showcase__actions">
+            <a href="#cursos" class="boton">Explorar cursos</a>
+            <a href="tesis-1/index.html" class="boton boton-secundario">Entrar a Tesis I</a>
+            <a href="enam/index.html" class="boton boton-secundario">Preparar ENAM</a>
+          </div>
+          <div class="hero-showcase__names">
+            <strong>Doctor Bad Bear</strong>
+            <span>+</span>
+            <strong>Doctora Kha-mhu</strong>
+          </div>
+        </div>
+        <div class="hero-showcase__visual">
+          <img src="assets/images/badbear-hero-v4.webp?v=20260927-final2" width="1000" height="428" alt="Doctor Bad Bear y Doctora Kha-mhu, mascotas médicas de BADBEAR.MED">
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="cursos" class="cursos">
+      <div class="cabecera-seccion cursos-intro">
+  <span>APRENDIZAJE MÉDICO INTEGRADO</span>
+  <h2>Explora todo BADBEAR.MED</h2>
+  <p>
+    Elige tu curso y accede directamente a teoría, bancos de preguntas,
+    simuladores, audios, PDF, videos y recursos de repaso.
+  </p>
+</div>
+      <div class="controles-cursos">
+        <label class="buscador-cursos">
+          <span>Buscar curso</span>
+          <input id="buscar-curso" type="search" placeholder="Ej. Nefrología, Psiquiatría, Cirugía..." autocomplete="off">
+        </label>
+        <label class="filtro-cursos">
+          <span>Área</span>
+          <select id="filtro-categoria">
+            <option value="todos">Todas</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Cirugía">Cirugía</option>
+            <option value="Diagnóstico">Diagnóstico</option>
+            <option value="Ciencias básicas">Ciencias básicas</option>
+            <option value="Investigación">Investigación</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="resumen-cursos" aria-live="polite">
+        <strong id="contador-cursos">0</strong>
+        <span>cursos disponibles en el portal</span>
+      </div>
+
+      <div id="lista-cursos" class="contenedor-cursos"></div>
+    </section>
+
+    <section id="recursos" class="recursos">
+      <div class="cabecera-seccion">
+        <span>RECURSOS TRANSVERSALES</span>
+        <h2>Un mismo estándar para todos los cursos</h2>
+        <p>Cada especialidad puede incorporar progresivamente estos módulos sin alterar las demás.</p>
+      </div>
+      <div class="recursos-grid">
+        <div><span>📚</span><h3>Teoría y resúmenes</h3><p>Contenido desarrollado por temas y unidades.</p></div>
+        <div><span>🧠</span><h3>Banco de preguntas</h3><p>Modo estudio, examen y análisis de errores.</p></div>
+        <div><span>📋</span><h3>Exámenes pasados</h3><p>Preguntas históricas depuradas y organizadas.</p></div>
+        <div><span>🎥</span><h3>Video</h3><p>Clases y material audiovisual por tema.</p></div>
+        <div><span>🎧</span><h3>Audio</h3><p>Repaso persistente y material para escuchar.</p></div>
+        <div><span>📄</span><h3>PDF</h3><p>Cuadernos, resúmenes y documentos complementarios.</p></div>
+      </div>
+    </section>
+
+    <section id="proyecto" class="proyecto">
+      <div>
+        <span>EL EQUIPO SIGUE CREANDO</span>
+        <h2>Seguimos ampliando tu material de estudio</h2>
+        <p>BADBEAR.MED, del grupo WAJOMEA.GROUP, está trabajando para ofrecerte material completo, organizado y útil para tu formación médica. Publicaremos nuevos recursos y actividades conforme estén disponibles.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>BADBEAR.<span>MED</span></strong>
+    <p>Proyecto educativo médico del grupo WAJOMEA.GROUP</p>
+    <p><a href="index.html" style="color:#fff;text-decoration:underline">Volver a WAJOMEA.GROUP</a></p>
+    <small>© 2026 BADBEAR.MED</small>
+  </footer>
+
+  <script src="assets/js/courses.js"></script>
+  <script src="script.js"></script>
+  <script src="assets/js/bb-responsive-global-v21.js"></script>
+</body>
+</html>
+

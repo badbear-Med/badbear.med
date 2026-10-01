@@ -1,4 +1,4 @@
-/* BADBEAR.MED · Música, ENAM y libros de WAJOMEA.GROUP */
+/* Proyectos WAJOMEA.GROUP · Música, ENAM y libros */
 .bb-extra-music{--extra-accent:#d71939;--extra-soft:#fff0f3;--extra-ink:#fff}
 .bb-extra-enam{--extra-accent:#007a3d;--extra-soft:#ecfaf2;--extra-ink:#fff}
 .bb-extra-books{--extra-accent:#ff8616;--extra-soft:#fff5e8;--extra-ink:#101722}
@@ -63,3 +63,7 @@
 @media(max-width:950px){.bb-universe-grid{gap:16px}.bb-universe-card{padding:21px}.bb-extra-header{padding:12px 24px}.bb-extra-header nav{gap:2px}}
 @media(max-width:760px){.bb-universe{padding:42px 20px}.bb-universe-grid{grid-template-columns:1fr}.bb-universe-card{padding:24px}.bb-extra-header{position:relative;align-items:flex-start;flex-direction:column;gap:12px;padding:14px 20px}.bb-extra-header nav{width:100%;gap:5px}.bb-extra-header nav a{padding:7px 9px}.bb-extra-main{width:calc(100% - 32px);padding:24px 0 42px}.bb-extra-intro{grid-template-columns:minmax(0,1fr);padding:26px 22px;gap:20px}.bb-extra-intro>.bb-extra-icon{width:76px;height:76px;padding:17px;border-radius:20px;grid-row:1}.bb-extra-title{font-size:clamp(34px,9vw,54px)}.bb-extra-intro p{font-size:16px}.bb-extra-section{padding:24px 20px}.bb-extra-section h2{font-size:25px}.bb-extra-resource-grid{grid-template-columns:1fr}.bb-extra-actions{flex-direction:column}.bb-extra-action{width:100%;text-align:center}.bb-extra-logo{font-size:21px}}
 @media(prefers-reduced-motion:reduce){.bb-universe-card{transition:none}.bb-universe-card:hover{transform:none}}
+
+/* Identidad del grupo en sus proyectos independientes. */
+.bb-extra-header .bb-group-logo b{color:#101722!important}
+@media(max-width:380px){.bb-extra-header .bb-group-logo{font-size:19px}}

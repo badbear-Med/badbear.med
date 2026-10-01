@@ -1,8 +1,11 @@
-# Respaldo y recuperación de BADBEAR.MED
+# Respaldo y recuperación de WAJOMEA.GROUP
 
 Repositorio principal: https://github.com/badbear-Med/badbear.med
 
-El repositorio conserva las páginas, estilos, scripts y archivos publicados del sitio. Las nuevas secciones son:
+El repositorio conserva las páginas, estilos, scripts y archivos publicados del sitio. La organización principal es:
+
+- `index.html`: portada WAJOMEA.GROUP.
+- `badbear-med.html`: portal BADBEAR.MED, cursos y acceso a ENAM.
 
 - `badbear-music/`: música y acceso al canal de YouTube; los audios originales se guardan en `audios/`.
 - `enam/`: preparación ENAM; sus materiales se guardan en `recursos/`.
@@ -41,7 +44,7 @@ Los respaldos usan nombres únicos y ZIP64 para archivos grandes. No crean enlac
 
 ## Restaurar desde el ZIP
 
-1. Descomprime el ZIP en una carpeta vacía y confirma que `index.html`, `assets/` y las carpetas de los cursos están en el mismo nivel.
+1. Descomprime el ZIP en una carpeta vacía y confirma que `index.html`, `badbear-med.html`, `assets/` y las carpetas de los cursos están en el mismo nivel.
 2. Publica esa carpeta en un alojamiento estático. Para GitHub Pages, sube los archivos a un repositorio y activa **Settings → Pages → Deploy from a branch → main → / (root)**.
 
 Conserva las rutas relativas: no muevas solamente `index.html` ni separes los audios, imágenes o libros de sus carpetas.

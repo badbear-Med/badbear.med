@@ -78,7 +78,7 @@
       const header = document.querySelector("header");
       if (header) {
         brand = header.querySelector(
-          "a[href='../index.html'],a[href='index.html'],a"
+          "a[href='../badbear-med.html'],a[href='index.html'],a"
         );
       }
     }

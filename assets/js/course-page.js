@@ -26,9 +26,9 @@
 
   app.innerHTML = `
     <header class="header">
-      <a href="../index.html" class="logo">BADBEAR.<span>MED</span></a>
+      <a href="../badbear-med.html" class="logo">BADBEAR.<span>MED</span></a>
       <nav class="menu">
-        <a href="../index.html" class="volver">← Portal principal</a>
+        <a href="../badbear-med.html" class="volver">← Portal principal</a>
       </nav>
     </header>
 

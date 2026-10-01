@@ -1,153 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BADBEAR.MED | Plataforma Médica</title>
-  <meta name="description" content="BADBEAR.MED, plataforma educativa médica del grupo WAJOMEA.GROUP con cursos, bancos de preguntas, exámenes y material de estudio.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="assets/css/brand-watermark.css">
-  <link rel="stylesheet" href="assets/css/bb-responsive-global-v21.css">
-  <link rel="stylesheet" href="assets/css/bb-vivid-global.css?v=20260930-vivos-global3">
-  <link rel="stylesheet" href="assets/css/bb-extras.css?v=20261001-extras1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WAJOMEA.GROUP | Medicina, música y libros</title>
+  <meta name="description" content="Descubre los proyectos de WAJOMEA.GROUP: BADBEAR.MED, BADBEAR.MUSIC y BADBEAR.BOOKS. Aprendizaje, música original y publicaciones de nuestro equipo.">
+  <link rel="icon" href="dermatologia/badbear_logo.png">
+  <link rel="stylesheet" href="assets/css/wajomea-group.css?v=20261001-group1">
+  <script src="assets/js/wajomea-group.js?v=20261001-group1" defer></script>
 </head>
 <body>
-  <header class="header">
-    <a class="logo bb-brand-lockup" href="#inicio" aria-label="Inicio BADBEAR.MED"><img class="bb-brand-logo" src="dermatologia/badbear_logo.png" alt="Logo BADBEAR.MED"> BADBEAR.<span>MED</span></a>
+  <a class="wg-skip" href="#proyectos">Ir a los proyectos</a>
+  <header class="wg-header">
+    <a class="wg-brand" href="#inicio" aria-label="Inicio WAJOMEA.GROUP">WAJOMEA.<span>GROUP</span></a>
     <nav aria-label="Navegación principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#cursos">Cursos</a>
-      <a href="#universo-badbear">Universo BADBEAR</a>
-      <a href="#recursos">Recursos</a>
-      <a href="#proyecto">Proyecto</a>
+      <a href="#proyectos">Nuestros proyectos</a>
+      <a href="#equipo">El equipo</a>
+      <a class="wg-nav-med" href="badbear-med.html">Entrar a Medicina <span aria-hidden="true">→</span></a>
     </nav>
   </header>
-
-  <main>
-    <section class="hero-showcase" id="inicio">
-      <div class="hero-showcase__inner">
-        <div class="hero-showcase__copy">
-          <span class="hero-showcase__eyebrow">PROYECTO WAJOMEA.GROUP</span>
-          <h1>BADBEAR.<span>MED</span></h1>
-          <h2>Tu plataforma médica para estudiar, practicar y repasar.</h2>
-          <p>Teoría, bancos de preguntas, exámenes, PDF, audio y video organizados por curso en un solo portal.</p>
-          <div class="hero-showcase__actions">
-            <a href="#cursos" class="boton">Explorar cursos</a>
-            <a href="tesis-1/index.html" class="boton boton-secundario">Entrar a Tesis I</a>
-          </div>
-          <div class="hero-showcase__names">
-            <strong>Doctor Bad Bear</strong>
-            <span>+</span>
-            <strong>Doctora Kha-mhu</strong>
-          </div>
+  <main id="inicio">
+    <section class="wg-hero" aria-labelledby="wg-title">
+      <div class="wg-hero-inner">
+        <div class="wg-hero-copy">
+          <span class="wg-eyebrow">CONOCIMIENTO · CREATIVIDAD · NUEVAS IDEAS</span>
+          <h1 id="wg-title">WAJOMEA.<span>GROUP</span></h1>
+          <p>Aprendemos, creamos y compartimos.</p>
+          <p class="wg-hero-description">Bienvenido a nuestros proyectos. Medicina, música original y libros creados por un equipo con ideas que siguen creciendo.</p>
         </div>
-        <div class="hero-showcase__visual">
-          <img src="assets/images/badbear-hero-v4.webp?v=20260927-final2" width="1000" height="428" alt="Doctor Bad Bear y Doctora Kha-mhu, mascotas médicas de BADBEAR.MED">
+        <div class="wg-orbit" aria-hidden="true">
+          <span class="wg-orbit-center">W<span>G</span></span>
+          <span class="wg-orbit-dot wg-dot-blue"></span>
+          <span class="wg-orbit-dot wg-dot-red"></span>
+          <span class="wg-orbit-dot wg-dot-orange"></span>
+          <span class="wg-orbit-dot wg-dot-green"></span>
         </div>
       </div>
     </section>
-
-
-    <section id="universo-badbear" class="bb-universe" aria-labelledby="bb-universe-title">
-      <div class="bb-universe-heading">
-        <span class="bb-extra-eyebrow">CREACIÓN Y APRENDIZAJE · WAJOMEA.GROUP</span>
-        <h2 id="bb-universe-title">El universo BADBEAR</h2>
-        <p>Música original, preparación para el ENAM y libros escritos por nuestro equipo.</p>
+    <div id="universo-badbear" class="wg-anchor"></div>
+    <section id="proyectos" class="wg-projects" aria-labelledby="wg-projects-title">
+      <div class="wg-section-heading">
+        <span class="wg-eyebrow">ELIGE LO QUE QUIERES EXPLORAR</span>
+        <h2 id="wg-projects-title">Nuestros proyectos</h2>
       </div>
-      <div class="bb-universe-grid">
-        <a class="bb-universe-card bb-extra-music" href="badbear-music/index.html">
-          <span class="bb-extra-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 23V8l14-3v15M13 12l14-3"/><ellipse cx="9" cy="24" rx="4" ry="3"/><ellipse cx="23" cy="21" rx="4" ry="3"/></svg></span>
-          <span class="bb-extra-label">MÚSICA ORIGINAL</span>
+      <div class="wg-project-grid">
+        <a class="wg-card wg-med" href="badbear-med.html">
+          <span class="wg-card-icon wg-panda"><img src="dermatologia/badbear_logo.png" width="68" height="68" alt=""></span>
+          <span class="wg-card-category">FORMACIÓN Y ESTUDIO MÉDICO</span>
+          <h3>BADBEAR.<span>MED</span></h3>
+          <p>Cursos, teoría, bancos de preguntas, actividades académicas y preparación para el ENAM.</p>
+          <span class="wg-card-tags"><span>Cursos</span><span>Preguntas</span><span>ENAM</span></span>
+          <span class="wg-card-action">Entrar a Medicina <span aria-hidden="true">→</span></span>
+        </a>
+        <a class="wg-card wg-music" href="badbear-music/index.html">
+          <span class="wg-card-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 23V8l14-3v15M13 12l14-3"/><ellipse cx="9" cy="24" rx="4" ry="3"/><ellipse cx="23" cy="21" rx="4" ry="3"/></svg></span>
+          <span class="wg-card-category">MÚSICA ORIGINAL</span>
           <h3>BADBEAR.<span>MUSIC</span></h3>
-          <p>Nuestras canciones, proyectos musicales y lanzamientos. Descubre la música de WAJOMEA.GROUP.</p>
-          <span class="bb-extra-card-link">Explorar música <span aria-hidden="true">→</span></span>
+          <p>Nuestras canciones, creaciones musicales y novedades. Escucha al equipo en su canal de YouTube.</p>
+          <span class="wg-card-tags"><span>Creaciones</span><span>YouTube</span></span>
+          <span class="wg-card-action">Descubrir nuestra música <span aria-hidden="true">→</span></span>
         </a>
-        <a class="bb-universe-card bb-extra-enam" href="enam/index.html">
-          <span class="bb-extra-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="5" width="20" height="24" rx="3"/><path d="M12 5V3h10v2M12 14h10M17 9v10M12 24h10M3 11v14"/></svg></span>
-          <span class="bb-extra-label">PREPARACIÓN MÉDICA</span>
-          <h3>Examen ENAM</h3>
-          <p>Prepárate con preguntas clínicas, bancos por especialidad y recursos de repaso para fortalecer tu razonamiento.</p>
-          <span class="bb-extra-card-link">Ir a preparación ENAM <span aria-hidden="true">→</span></span>
-        </a>
-        <a class="bb-universe-card bb-extra-books" href="badbear-books/index.html">
-          <span class="bb-extra-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8C12 5 6 5 3 6v21c4-1 9-1 13 2 4-3 9-3 13-2V6c-3-1-9-1-13 2ZM16 8v21M7 11h5M7 16h5M20 11h5M20 16h5"/></svg></span>
-          <span class="bb-extra-label">PUBLICACIONES DEL EQUIPO</span>
+        <a class="wg-card wg-books" href="badbear-books/index.html">
+          <span class="wg-card-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8C12 5 6 5 3 6v21c4-1 9-1 13 2 4-3 9-3 13-2V6c-3-1-9-1-13 2ZM16 8v21M7 11h5M7 16h5M20 11h5M20 16h5"/></svg></span>
+          <span class="wg-card-category">PUBLICACIONES DEL EQUIPO</span>
           <h3>BADBEAR.<span>BOOKS</span></h3>
-          <p>Libros redactados por el equipo de WAJOMEA.GROUP: conocimiento, ideas y contenidos con nuestra propia voz.</p>
-          <span class="bb-extra-card-link">Explorar libros <span aria-hidden="true">→</span></span>
+          <p>Libros redactados por WAJOMEA.GROUP: conocimiento, historias e ideas con nuestra propia voz.</p>
+          <span class="wg-card-tags"><span>Libros</span><span>Autores</span></span>
+          <span class="wg-card-action">Explorar nuestras publicaciones <span aria-hidden="true">→</span></span>
         </a>
       </div>
     </section>
-
-    <section id="cursos" class="cursos">
-      <div class="cabecera-seccion cursos-intro">
-  <span>APRENDIZAJE MÉDICO INTEGRADO</span>
-  <h2>Explora todo BADBEAR.MED</h2>
-  <p>
-    Elige tu curso y accede directamente a teoría, bancos de preguntas,
-    simuladores, audios, PDF, videos y recursos de repaso.
-  </p>
-</div>
-      <div class="controles-cursos">
-        <label class="buscador-cursos">
-          <span>Buscar curso</span>
-          <input id="buscar-curso" type="search" placeholder="Ej. Nefrología, Psiquiatría, Cirugía..." autocomplete="off">
-        </label>
-        <label class="filtro-cursos">
-          <span>Área</span>
-          <select id="filtro-categoria">
-            <option value="todos">Todas</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Cirugía">Cirugía</option>
-            <option value="Diagnóstico">Diagnóstico</option>
-            <option value="Ciencias básicas">Ciencias básicas</option>
-            <option value="Investigación">Investigación</option>
-          </select>
-        </label>
-      </div>
-
-      <div class="resumen-cursos" aria-live="polite">
-        <strong id="contador-cursos">0</strong>
-        <span>cursos disponibles en el portal</span>
-      </div>
-
-      <div id="lista-cursos" class="contenedor-cursos"></div>
-    </section>
-
-    <section id="recursos" class="recursos">
-      <div class="cabecera-seccion">
-        <span>RECURSOS TRANSVERSALES</span>
-        <h2>Un mismo estándar para todos los cursos</h2>
-        <p>Cada especialidad puede incorporar progresivamente estos módulos sin alterar las demás.</p>
-      </div>
-      <div class="recursos-grid">
-        <div><span>📚</span><h3>Teoría y resúmenes</h3><p>Contenido desarrollado por temas y unidades.</p></div>
-        <div><span>🧠</span><h3>Banco de preguntas</h3><p>Modo estudio, examen y análisis de errores.</p></div>
-        <div><span>📋</span><h3>Exámenes pasados</h3><p>Preguntas históricas depuradas y organizadas.</p></div>
-        <div><span>🎥</span><h3>Video</h3><p>Clases y material audiovisual por tema.</p></div>
-        <div><span>🎧</span><h3>Audio</h3><p>Repaso persistente y material para escuchar.</p></div>
-        <div><span>📄</span><h3>PDF</h3><p>Cuadernos, resúmenes y documentos complementarios.</p></div>
-      </div>
-    </section>
-
-    <section id="proyecto" class="proyecto">
+    <section id="equipo" class="wg-team" aria-labelledby="wg-team-title">
       <div>
-        <span>ARQUITECTURA ESCALABLE</span>
-        <h2>BADBEAR.MED crecerá por módulos</h2>
-        <p>Dermatología y Cirugía Pediátrica conservan sus sistemas completos. Los demás cursos ya cuentan con una base común preparada para recibir bancos, teoría, exámenes, PDF, audio y video cuando el contenido esté listo.</p>
+        <span class="wg-eyebrow">UN EQUIPO, MUCHAS IDEAS</span>
+        <h2 id="wg-team-title">Lo que creamos lleva nuestra firma.</h2>
+        <p>WAJOMEA.GROUP reúne nuestros proyectos de aprendizaje y creación. Seguimos trabajando para ofrecerte material completo y nuevas propuestas, cuidando cada publicación.</p>
       </div>
+      <div class="wg-team-note"><span class="wg-note-dot" aria-hidden="true"></span><strong>Seguimos creciendo</strong><p>Los nuevos proyectos se presentarán aquí conforme estén listos para compartir contigo.</p></div>
     </section>
   </main>
-
-  <footer>
-    <strong>BADBEAR.<span>MED</span></strong>
-    <p>Proyecto educativo médico del grupo WAJOMEA.GROUP</p>
-    <small>© 2026 BADBEAR.MED</small>
-  </footer>
-
-  <script src="assets/js/courses.js"></script>
-  <script src="script.js"></script>
-  <script src="assets/js/bb-responsive-global-v21.js"></script>
+  <footer class="wg-footer"><a class="wg-brand" href="#inicio">WAJOMEA.<span>GROUP</span></a><p>Conocimiento, creatividad y proyectos de nuestro equipo.</p><small>© 2026 WAJOMEA.GROUP</small></footer>
 </body>
 </html>
-

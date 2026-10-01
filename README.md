@@ -1,8 +1,8 @@
-# BADBEAR.MED
+# WAJOMEA.GROUP
 
-Plataforma educativa médica del grupo **WAJOMEA.GROUP**.
+Portal general del equipo: medicina, música original y publicaciones. El repositorio conserva su nombre `badbear.med` y reúne todos los proyectos.
 
-Este repositorio maestro integra los cursos BADBEAR.MED en un solo portal y está preparado para crecer por especialidades sin rehacer la página principal.
+La portada general está en `index.html`. El portal médico se encuentra en `badbear-med.html`, con sus cursos y preparación ENAM. Los materiales de los cursos conservan sus carpetas y rutas.
 
 ## Estado actual
 
@@ -38,8 +38,9 @@ Consulta `docs/ARQUITECTURA.md` para agregar nuevas especialidades y mantener ru
 - `main`: versión estable.
 - `integracion-portal`: expansión y reorganización del portal.
 
-## Universo BADBEAR
+## Proyectos de WAJOMEA.GROUP
 
+- [BADBEAR.MED](badbear-med.html): cursos, preguntas, actividades y acceso al ENAM.
 - [BADBEAR.MUSIC](badbear-music/index.html): creaciones musicales y canal de YouTube del equipo.
 - [Examen ENAM](enam/index.html): preparación, bancos de repaso y futuros simulacros.
 - [BADBEAR.BOOKS](badbear-books/index.html): libros redactados por WAJOMEA.GROUP.
@@ -56,4 +57,6 @@ python tools/respaldo-sitio.py
 
 El ZIP se guarda fuera de la carpeta del proyecto. Los archivos originales de música y libros deben incorporarse al proyecto para quedar incluidos; un enlace externo por sí solo no contiene esos originales.
 
-[Vista de la portada con las tres secciones](docs/vistas/universo-badbear.jpg).
+[Vista anterior de las secciones](docs/vistas/universo-badbear.jpg).
+
+Consulta [la estructura del portal y cómo añadir proyectos](docs/PORTAL-WAJOMEA.md).
