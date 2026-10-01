@@ -1,5 +1,21 @@
 {
-  "documentos": [],
+  "documentos": [
+    {
+      "titulo": "Manual de la rotación: diez temas desarrollados",
+      "archivo": "documentos/manual-rotacion-sotelo.pdf",
+      "descripcion": "Manual completo con capítulos, cuadros, imágenes, bibliografía y repaso BADBEAR.MED FIJA:."
+    },
+    {
+      "titulo": "Material aportado: láminas de exposición",
+      "archivo": "documentos/temas-exposicion-material.pdf",
+      "descripcion": "Las 15 láminas aportadas a la rotación, conservadas sin cambios visuales. Los capítulos amplían y precisan su contenido."
+    },
+    {
+      "titulo": "Presentación: colon, coledocolitiasis y cáncer colorrectal",
+      "archivo": "documentos/temas-colon-coledocolitiasis-original.pptx",
+      "descripcion": "Archivo PowerPoint original aportado para la rotación."
+    }
+  ],
   "audios": [],
   "videos": []
 }

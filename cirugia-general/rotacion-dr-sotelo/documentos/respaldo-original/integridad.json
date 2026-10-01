@@ -1,0 +1,19 @@
+{
+  "nombre_original": "TEMASD E EXPOSIDICON.pdf",
+  "salida": "temas-exposicion-original.pdf",
+  "bytes": 12693189,
+  "sha256": "6aa5a6077aca4a51ab0dafb11df47852bba12cc649fa8e67854591b21e372fe8",
+  "partes": [
+    {
+      "archivo": "temas-exposicion-original.pdf.part001",
+      "bytes": 7340032,
+      "sha256": "310e1bd71e70c22d781fb41ca3e5092ff6085e78b76b1f682097b74aea0dc1c8"
+    },
+    {
+      "archivo": "temas-exposicion-original.pdf.part002",
+      "bytes": 5353157,
+      "sha256": "237e01160b29de36e33fbfea3887d58871f002cca878f2fe7e598c6814f33076"
+    }
+  ],
+  "nota": "El PDF de consulta conserva exactamente los pixels de las 15 láminas. Las partes preservan también los bytes exactos del original."
+}

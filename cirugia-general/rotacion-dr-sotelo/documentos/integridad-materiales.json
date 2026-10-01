@@ -1,0 +1,50 @@
+{
+  "edicion": "2026-10-01",
+  "archivos": [
+    {
+      "archivo": "documentos/manual-rotacion-sotelo.pdf",
+      "bytes": 1036818,
+      "sha256": "5fefd08e0fc4d79042bb7b45fea54384de6a9a562f5c96c625e6cf9366426ef6"
+    },
+    {
+      "archivo": "documentos/temas-colon-coledocolitiasis-original.pptx",
+      "bytes": 147498,
+      "sha256": "a69ef07a7b35164b41297dbbde109e2ca27cb059b9e69ae8420789fcb00ffa1d"
+    },
+    {
+      "archivo": "documentos/temas-exposicion-material.pdf",
+      "bytes": 12369277,
+      "sha256": "3d5301330d672313dc55fb230f041246a0731b2906eb174e4d763ccf1e9cde80"
+    },
+    {
+      "archivo": "imagenes/colon-anatomia-material.jpg",
+      "bytes": 272940,
+      "sha256": "8ae580e9e399fbdd0669ce86e3ebdc005ce2582edfe11d4611f4c0fb79d297f4"
+    },
+    {
+      "archivo": "imagenes/colon-endoscopia-derecha-izquierda.jpg",
+      "bytes": 147915,
+      "sha256": "ca32c0d69a1b4a9d2bfe0e66ae76cef92da5b9d332a64f3ad7f37fcebffabb50"
+    },
+    {
+      "archivo": "imagenes/cpre-instrumentos-material.jpg",
+      "bytes": 23039,
+      "sha256": "343971ff003aecb7d97adbe20e5d333b4384abfd27ead2d02489ce6c79fa0537"
+    },
+    {
+      "archivo": "imagenes/litotricia-material.jpg",
+      "bytes": 55397,
+      "sha256": "40a4b9f011108de965adf61f9705bfef68d1b5cc9c65afc601f501040c059017"
+    },
+    {
+      "archivo": "imagenes/rm-pelvica-material.jpg",
+      "bytes": 138561,
+      "sha256": "134c70429cdc961bd2df6e7963acd3b4146e439f7489e4fccd3598cccfaa8134"
+    },
+    {
+      "archivo": "imagenes/stent-biliar-material.jpg",
+      "bytes": 53782,
+      "sha256": "929c4de62b85b802fc6a14df11f2644b1351f1de7195b6f04e8de510a73eb41f"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "number": 1,
+    "slug": "01-intususcepcion-adultos",
+    "title": "Intususcepción intestinal en adultos",
+    "description": "Mecanismo, punto guía, lectura de TC y decisiones de observación o resección.",
+    "words": 1253
+  },
+  {
+    "number": 2,
+    "slug": "02-cd4",
+    "title": "CD4: qué es y qué indica en la práctica clínica",
+    "description": "Función inmunitaria, interpretación del recuento y umbrales de prevención en VIH.",
+    "words": 1288
+  },
+  {
+    "number": 3,
+    "slug": "03-ganglios-tomografia",
+    "title": "Cadenas ganglionares en tomografía: normalidad y neoplasia",
+    "description": "Estaciones, eje corto, morfología, metástasis y límites de RECIST.",
+    "words": 1179
+  },
+  {
+    "number": 4,
+    "slug": "04-gangrena-fournier",
+    "title": "Gangrena de Fournier",
+    "description": "Reconocimiento temprano, sepsis, desbridamiento y control del foco.",
+    "words": 1135
+  },
+  {
+    "number": 5,
+    "slug": "05-fistulas-anorrectales",
+    "title": "Fístulas anorrectales: anatomía, clasificación y tratamiento",
+    "description": "Parks, relación con esfínteres, RM y técnicas que protegen la continencia.",
+    "words": 1211
+  },
+  {
+    "number": 6,
+    "slug": "06-signo-infante-diaz",
+    "title": "Signo de Infante Díaz y evaluación de irritación peritoneal",
+    "description": "Maniobra de talones, interpretación y evaluación de irritación peritoneal.",
+    "words": 1106
+  },
+  {
+    "number": 7,
+    "slug": "07-neoplasias-colon",
+    "title": "Neoplasias del colon: nombre completo y distribución por segmentos",
+    "description": "Histología, nombres completos, segmentos y biomarcadores.",
+    "words": 1342
+  },
+  {
+    "number": 8,
+    "slug": "08-tratamiento-colon-zonas",
+    "title": "Tratamiento del cáncer de colon según zona y estadio",
+    "description": "Colectomías por territorio, principios oncológicos, adyuvancia y recto.",
+    "words": 1494
+  },
+  {
+    "number": 9,
+    "slug": "09-coledocolitiasis-endoscopia",
+    "title": "Coledocolitiasis: métodos endoscópicos de extracción y manejo",
+    "description": "Balón, Dormia, dilatación, litotricia, rescate y drenaje temporal.",
+    "words": 1626
+  },
+  {
+    "number": 10,
+    "slug": "10-aumento-cancer-colorrectal",
+    "title": "¿Por qué está aumentando el cáncer colorrectal, especialmente en jóvenes?",
+    "description": "Incidencia, predisposición, hábitos, microbiota y detección oportuna.",
+    "words": 1713
+  }
+]
