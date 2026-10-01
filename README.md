@@ -57,6 +57,8 @@ python tools/respaldo-sitio.py
 
 El ZIP se guarda fuera de la carpeta del proyecto. Los archivos originales de música y libros deben incorporarse al proyecto para quedar incluidos; un enlace externo por sí solo no contiene esos originales.
 
+[Vista de la portada WAJOMEA.GROUP](docs/vistas/wajomea-group-portada.jpg).
+
 [Vista anterior de las secciones](docs/vistas/universo-badbear.jpg).
 
 Consulta [la estructura del portal y cómo añadir proyectos](docs/PORTAL-WAJOMEA.md).
