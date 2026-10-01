@@ -37,7 +37,7 @@
     a.innerHTML = `
       <div class="neuro-topic-top">
         <div class="neuro-topic-icon">${t.icono}</div>
-        <span class="neuro-topic-area">${t.area}</span>
+        <span class="neuro-topic-area">${t.numero !== undefined ? `UNIDAD ${t.numero} · ` : ""}${t.area}</span>
       </div>
       <h3>${t.titulo}</h3>
       <p>${t.descripcion}</p>
