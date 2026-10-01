@@ -37,3 +37,23 @@ Consulta `docs/ARQUITECTURA.md` para agregar nuevas especialidades y mantener ru
 
 - `main`: versión estable.
 - `integracion-portal`: expansión y reorganización del portal.
+
+## Universo BADBEAR
+
+- [BADBEAR.MUSIC](badbear-music/index.html): creaciones musicales y canal de YouTube del equipo.
+- [Examen ENAM](enam/index.html): preparación, bancos de repaso y futuros simulacros.
+- [BADBEAR.BOOKS](badbear-books/index.html): libros redactados por WAJOMEA.GROUP.
+
+## Respaldo y recuperación
+
+Todo el código y los archivos de las nuevas creaciones deben conservarse en este repositorio.
+
+La [guía de recuperación](docs/RECUPERAR-SITIO.md) explica cómo restaurar el sitio. Desde una copia local completa, la herramienta siguiente genera un ZIP verificado, su suma SHA-256 y un inventario de archivos:
+
+```sh
+python tools/respaldo-sitio.py
+```
+
+El ZIP se guarda fuera de la carpeta del proyecto. Los archivos originales de música y libros deben incorporarse al proyecto para quedar incluidos; un enlace externo por sí solo no contiene esos originales.
+
+[Vista de la portada con las tres secciones](docs/vistas/universo-badbear.jpg).
