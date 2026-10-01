@@ -50,7 +50,7 @@ Para cálculos grandes, una estrategia recomendada en casos apropiados es **esfi
 
 La dilatación con balón pequeño sin esfinterotomía tiene indicaciones seleccionadas y una relación diferente con pancreatitis y sangrado. No se presenta como reemplazo universal de la esfinterotomía ni como la misma técnica que EPLBD.
 
-[[FIG:cpre-instrumentos-material.jpg|Recorte del material aportado, página 10: representación de captura mediante canastilla. Sirve como apoyo visual; la selección real depende de tamaño, salida y anatomía.]]
+[[FIG:cpre-instrumentos-material.jpg|Lámina aportada, página 10: balón extractor, canastilla y apertura papilar. Combina instrumentos y maniobras con funciones distintas; la elección real depende de tamaño, salida y anatomía.]]
 
 ## 7. Litotricia mecánica
 

@@ -7,7 +7,7 @@ Las seis imágenes JPG se extraen del PDF aportado por el usuario `documentos/te
 | colon-endoscopia-derecha-izquierda.jpg | 5 | 135, 175, 1235, 504 |
 | colon-anatomia-material.jpg | 6 | 0, 0, 1376, 768 (lámina completa) |
 | rm-pelvica-material.jpg | 9 | 32, 163, 501, 638 |
-| cpre-instrumentos-material.jpg | 10 | 1153, 340, 1321, 503 |
+| cpre-instrumentos-material.jpg | 10 | 0, 0, 1376, 768 (lámina completa) |
 | litotricia-material.jpg | 11 | 742, 428, 1023, 711 |
 | stent-biliar-material.jpg | 11 | 1044, 328, 1331, 615 |
 
