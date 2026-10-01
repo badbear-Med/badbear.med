@@ -31,10 +31,17 @@
       <div class="source-resource-icon">PDF</div>
       <div>
         <span>${recurso.fuente || "Material extra"}</span>
-        <h3>${recurso.pdf}</h3>
-        <p>Documento fuente usado para desarrollar esta unidad. El archivo binario original se conservará con este mismo nombre dentro de la biblioteca del curso.</p>
+        <h3>${recurso.nombre || recurso.pdf.split("/").pop()}</h3>
+        <p>PDF docente correspondiente a esta unidad.</p>
+        <div class="pdf-actions">
+          <a href="${recurso.pdf}" target="_blank" rel="noopener">Abrir PDF ↗</a>
+          <a href="${recurso.pdf}" download>Descargar PDF</a>
+        </div>
       </div>
-      <span class="sync-badge">Fuente identificada</span>
+      <span class="sync-badge">PDF de la unidad</span>
+    </div>
+    <div class="pdf-embed-wrap">
+      <iframe src="${recurso.pdf}#view=FitH" title="${recurso.nombre || "PDF de la unidad"}" loading="lazy"></iframe>
     </div>` : `
     <div class="resource-placeholder"><b>PDF</b><p>Esta unidad no tiene un PDF independiente dentro del ZIP recibido.</p></div>`;
 
