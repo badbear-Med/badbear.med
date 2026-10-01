@@ -15,6 +15,7 @@
   const siguiente = temas[(actual + 1) % temas.length];
   const desarrollo = contenidos[tema.id];
   const recurso = recursos[tema.id] || {};
+  const visuales = (window.BADBEAR_NEURO_VISUAL || {})[tema.id] || [];
 
   const tabs = [
     ["teoria","Desarrollo teórico"],
@@ -25,6 +26,31 @@
     ["bankeos","Bankeos"],
     ["fijas","BADBEAR.MED FIJA"]
   ];
+
+  const visualGallery = visuales.length ? `
+    <section class="source-visual-section">
+      <div class="source-visual-head">
+        <div><span>MATERIAL DOCENTE ORIGINAL</span><h2>Galería visual de la unidad</h2></div>
+        <p>Las figuras se han seleccionado por su utilidad anatómica, fisiopatológica, clínica o radiológica. Cada tarjeta conserva la página exacta del PDF fuente.</p>
+      </div>
+      <div class="source-visual-grid">
+        ${visuales.map(v => `
+          <article class="source-page-card">
+            <button class="source-page-preview" type="button" data-pdf="${recurso.pdf || ""}" data-page="${v.page}" aria-label="Abrir página ${v.page}">
+              <div class="source-page-placeholder">
+                <strong>PÁGINA ${v.page}</strong>
+                <span>${v.title}</span>
+                <small>Clic para visualizar la lámina original</small>
+              </div>
+            </button>
+            <div class="source-page-copy">
+              <h3>${v.title}</h3>
+              <p>${v.note}</p>
+              <span>Fuente: ${recurso.nombre || recurso.pdf || "material docente"} · p. ${v.page}</span>
+            </div>
+          </article>`).join("")}
+      </div>
+    </section>` : "";
 
   const pdfCard = recurso.pdf ? `
     <div class="source-resource-card">
@@ -62,6 +88,7 @@
       <div>
         <section class="tab-panel active" data-panel="teoria">
           ${desarrollo || `<section class="tema-card"><h2>Desarrollo teórico</h2><div class="tema-empty">Desarrollo académico específico en integración.</div></section>`}
+          ${visualGallery}
         </section>
 
         <section class="tab-panel" data-panel="audio">
@@ -115,6 +142,15 @@
   }));
 
   const modal = document.getElementById("image-modal");
+  const pageButtons = document.querySelectorAll(".source-page-preview");
+  pageButtons.forEach(btn => btn.addEventListener("click", () => {
+    const pdf = btn.dataset.pdf;
+    const page = btn.dataset.page;
+    if(!modal || !modalContent || !pdf) return;
+    modalContent.innerHTML = `<div class="pdf-page-modal"><div class="pdf-page-toolbar"><strong>Página ${page} · material docente</strong><a href="${pdf}#page=${page}" target="_blank" rel="noopener">Abrir PDF ↗</a></div><iframe src="${pdf}#page=${page}&view=FitH" title="Página ${page} del material docente"></iframe></div>`;
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden","false");
+  }));
   const modalContent = modal?.querySelector(".image-modal-content");
   document.querySelectorAll(".zoomable").forEach(fig => fig.addEventListener("click", () => {
     if(!modal || !modalContent) return;
