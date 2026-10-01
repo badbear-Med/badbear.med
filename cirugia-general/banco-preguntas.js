@@ -216,9 +216,10 @@
     const revealed = !!p.done;
 
     let html = `<h2>${esc(q.orden)}. ${esc(q.pregunta)}</h2>`;
+    html += `<p class="question-format">${hasOptions ? `${q.opciones.length} alternativas · Selecciona una respuesta` : "Pregunta abierta · Escribe tu respuesta"}</p>`;
 
     if (hasOptions) {
-      html += `<div class="options">`;
+      html += `<div class="options" role="radiogroup" aria-label="Alternativas de respuesta">`;
 
       q.opciones.forEach((op, idx) => {
         const letter = String.fromCharCode(65 + idx);
@@ -239,7 +240,7 @@
               ${revealed ? "disabled" : ""}
             >
             <span class="option-letter">${letter}</span>
-            <span>${esc(op)}</span>
+            <span class="option-text">${esc(op)}</span>
           </label>`;
       });
 

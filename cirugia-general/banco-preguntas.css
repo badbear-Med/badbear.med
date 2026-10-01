@@ -42,11 +42,13 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .question-topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;color:#667085;font-size:13px;font-weight:800}
 .topic-pill{background:#e6fffb;color:#0f766e;border-radius:999px;padding:6px 10px}
 .question-card h2{font-size:25px;line-height:1.35;margin:0 0 20px}
-.options{display:grid;gap:10px}
-.option{display:flex;gap:12px;align-items:flex-start;border:1px solid #d8e0ea;border-radius:14px;padding:14px 15px;transition:.15s;background:#fff}
+.options{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;min-width:0}
+.option{display:flex;gap:12px;align-items:flex-start;min-width:0;width:100%;border:1px solid #d8e0ea;border-radius:14px;padding:14px 15px;transition:.15s;background:#fff;cursor:pointer}
 .option:hover{border-color:#8fb6b2;background:#fbffff}
-.option input{min-width:auto;margin-top:3px}
+.option input[type="radio"]{width:18px;height:18px;min-width:18px;max-width:18px;flex:0 0 18px;padding:0;margin:5px 0 0;accent-color:var(--accent)}
 .option-letter{width:28px;height:28px;border-radius:8px;background:#f0f4f8;display:flex;align-items:center;justify-content:center;font-weight:900;flex:none}
+.option-text{flex:1;min-width:0;line-height:1.5;overflow-wrap:anywhere}
+.question-format{display:block;margin:-9px 0 16px;font-size:13px;line-height:1.5;font-weight:700;color:var(--muted)}
 .option.correct{border-color:#37b26c;background:var(--okbg)}
 .option.wrong{border-color:#f04438;background:var(--badbg)}
 .answer-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
@@ -75,7 +77,7 @@ footer{text-align:center;color:#7b8798;padding:20px 15px 45px;font-size:12px}
   .hero-count strong{font-size:28px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .toolbar{align-items:stretch}.filters{display:grid;grid-template-columns:1fr;width:100%}
-  input,select{width:100%;min-width:0}.toolbar-actions{width:100%}.toolbar-actions button{flex:1}
+  .filters input,.filters select{width:100%;min-width:0}.toolbar-actions{width:100%}.toolbar-actions button{flex:1}
   .question-wrap{padding:16px 13px;border-radius:16px}
   .question-card h2{font-size:20px}
   .question-topline{align-items:flex-start}
