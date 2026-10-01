@@ -4,29 +4,29 @@
   const h = (s) => s.trim();
 
   function unidad({fuente,objetivo,secciones,fijas,nota=""}) {
-    const bloques = secciones.map((s,i)=>h(\`
-      <section class="lesson-section" id="sec-\${i+1}">
-        <div class="lesson-number">\${i+1}</div>
-        <h2>\${s.titulo}</h2>
-        \${s.html}
-      </section>\`)).join("");
-    const fijasHtml = fijas.map(x=>\`<li>\${x}</li>\`).join("");
-    return h(\`
+    const bloques = secciones.map((s,i)=>h(`
+      <section class="lesson-section" id="sec-${i+1}">
+        <div class="lesson-number">${i+1}</div>
+        <h2>${s.titulo}</h2>
+        ${s.html}
+      </section>`)).join("");
+    const fijasHtml = fijas.map(x=>`<li>${x}</li>`).join("");
+    return h(`
       <section class="lesson-intro">
         <span class="lesson-label">DESARROLLO TEÓRICO · MATERIAL EXTRA</span>
-        <h2>\${objetivo}</h2>
-        <p class="source-line"><strong>Fuente base del desarrollo:</strong> \${fuente}</p>
-        \${nota ? \`<p class="source-note">\${nota}</p>\` : ""}
+        <h2>${objetivo}</h2>
+        <p class="source-line"><strong>Fuente base del desarrollo:</strong> ${fuente}</p>
+        ${nota ? `<p class="source-note">${nota}</p>` : ""}
       </section>
-      \${bloques}
+      ${bloques}
       <section class="lesson-section mastery">
         <div class="lesson-number">FIJA</div>
         <h2>BADBEAR.MED FIJA · puntos del material</h2>
-        <ul class="mastery-list">\${fijasHtml}</ul>
-      </section>\`);
+        <ul class="mastery-list">${fijasHtml}</ul>
+      </section>`);
   }
 
-  const neuroanatomia = h(\`
+  const neuroanatomia = h(`
     <section class="lesson-intro">
       <span class="lesson-label">BLOQUE 0 · LECCIÓN 1</span>
       <h2>Organización general del sistema nervioso</h2>
@@ -48,7 +48,7 @@
     <section class="lesson-section"><div class="lesson-number">1.3</div><h2>Médula, sustancia gris y sustancia blanca</h2><p>La médula conduce información y también integra reflejos. En ella la sustancia gris es central y la blanca periférica; en el cerebro, la corteza gris es periférica y la sustancia blanca predominantemente profunda.</p><div class="bb-fija-neuro"><b>BADBEAR.MED FIJA:</b> núcleo = cuerpos neuronales dentro del SNC; ganglio = cuerpos neuronales fuera del SNC.</div></section>
     <section class="lesson-section"><div class="lesson-number">1.4</div><h2>Somático, autónomo, aferente y eferente</h2><div class="functional-map"><div class="functional-title">Sistema nervioso periférico</div><div class="functional-columns"><article><h3>Somático</h3><p>Sensibilidad corporal y músculo esquelético.</p></article><article><h3>Autónomo</h3><p>Regulación visceral: simpático, parasimpático y sistema entérico.</p></article></div></div><p><strong>Aferente</strong> lleva información hacia el SNC. <strong>Eferente</strong> lleva órdenes desde el SNC hacia la periferia.</p></section>
     <section class="lesson-section clinical-section"><div class="lesson-number">1.5</div><h2>Aplicación clínica: ¿dónde está la lesión?</h2><div class="clinical-grid"><article><b>Debilidad + hiperreflexia + Babinski</b><span>Vía piramidal / primera motoneurona.</span></article><article><b>Debilidad + hiporreflexia/arreflexia</b><span>Raíz, nervio periférico o segunda motoneurona.</span></article><article><b>Debilidad proximal + sensibilidad conservada</b><span>Considerar músculo.</span></article><article><b>Fatigabilidad fluctuante</b><span>Considerar unión neuromuscular.</span></article></div></section>
-  \`);
+  `);
 
   window.BADBEAR_NEURO_CONTENIDOS = {
     neuroanatomia,
@@ -58,12 +58,12 @@
       objetivo:"Polineuropatías: localizar primero, clasificar después",
       nota:"La clase utiliza Guillain-Barré como prototipo de neuropatía aguda y luego contrasta neuropatías crónicas, metabólicas, nutricionales, tóxicas, infecciosas y por atrapamiento.",
       secciones:[
-        {titulo:"Localización en el sistema nervioso periférico",html:h(\`<p>El material parte del nervio periférico como estructura mixta, con fibras motoras y sensitivas. Una neuropatía puede comprometer preferentemente <strong>mielina, axón o ambos</strong>, y puede ser motora, sensitiva o mixta.</p><div class="compare-table"><div class="thead"><span>Patrón</span><span>Clínica orientadora</span><span>Neurofisiología</span></div><div><span>Desmielinizante</span><span>Debilidad, arreflexia; déficit variable</span><span>Enlentecimiento de conducción y alteraciones desmielinizantes.</span></div><div><span>Axonal</span><span>Motor y/o sensitivo según fibras dañadas</span><span>Compromiso de amplitudes por pérdida axonal.</span></div></div>\`)},
-        {titulo:"Síndrome de Guillain-Barré",html:h(\`<p>El PDF lo presenta como causa frecuente de <strong>parálisis flácida aguda</strong>, a cualquier edad, habitualmente precedida por infección respiratoria o digestiva y con mecanismo autoinmune.</p><div class="mini-grid"><article><h3>AIDP</h3><p>Polirradiculoneuropatía inflamatoria desmielinizante aguda: forma desmielinizante clásica.</p></article><article><h3>AMSAN</h3><p>Neuropatía axonal motora y sensitiva aguda.</p></article><article><h3>AMAN</h3><p>Neuropatía axonal motora aguda, sin compromiso sensitivo prominente.</p></article><article><h3>Miller Fisher</h3><p>Oftalmoplejía, ataxia y arreflexia; el material la vincula a anticuerpos antigangliósido y C. jejuni.</p></article></div>\`)},
-        {titulo:"Diagnóstico: LCR y neurofisiología",html:h(\`<p>La clase enfatiza la <strong>disociación albuminocitológica</strong>: aumento de proteínas con celularidad conservada o escasa. Advierte que una punción lumbar demasiado precoz puede ser todavía normal.</p><p>El estudio neurofisiológico permite medir conducción motora y sensitiva y separar patrones predominantemente desmielinizantes de axonales.</p>\`)},
-        {titulo:"Vigilancia y tratamiento del Guillain-Barré",html:h(\`<p>El material insiste en vigilar <strong>función respiratoria y sistema nervioso autónomo</strong>, porque el paciente puede deteriorarse rápidamente y requerir UCI y ventilación mecánica.</p><p>Como tratamiento inmunomodulador se desarrollan <strong>inmunoglobulina intravenosa</strong> y <strong>plasmaféresis</strong>, además de soporte, nutrición, movilización y terapia respiratoria.</p>\`)},
-        {titulo:"Neuropatías crónicas y metabólicas",html:h(\`<p>Se revisan polineuropatías desmielinizantes crónicas adquiridas, con debilidad proximal y distal, hiporreflexia/arreflexia y posible compromiso sensitivo. También se relacionan neuropatías con insuficiencia renal, hepatopatía, hipotiroidismo y especialmente diabetes.</p><p>La neuropatía diabética típica es <strong>distal y simétrica</strong>, con distribución en “guante y calcetín”; el PDF también menciona formas autonómicas, proximales y focales.</p>\`)},
-        {titulo:"Nutricionales, tóxicas, infecciosas y atrapamiento",html:h(\`<p>El material incluye déficit de B12, ácido fólico y B6, exposición a plomo, neuropatías farmacológicas, neuropatía asociada a VIH y neuropatías por atrapamiento.</p><p>En atrapamiento destaca el <strong>túnel carpiano</strong> y el compromiso cubital a nivel del codo. En VIH se describe polineuropatía distal sensitiva y dolor plantar urente.</p>\`)}
+        {titulo:"Localización en el sistema nervioso periférico",html:h(`<p>El material parte del nervio periférico como estructura mixta, con fibras motoras y sensitivas. Una neuropatía puede comprometer preferentemente <strong>mielina, axón o ambos</strong>, y puede ser motora, sensitiva o mixta.</p><div class="compare-table"><div class="thead"><span>Patrón</span><span>Clínica orientadora</span><span>Neurofisiología</span></div><div><span>Desmielinizante</span><span>Debilidad, arreflexia; déficit variable</span><span>Enlentecimiento de conducción y alteraciones desmielinizantes.</span></div><div><span>Axonal</span><span>Motor y/o sensitivo según fibras dañadas</span><span>Compromiso de amplitudes por pérdida axonal.</span></div></div>`)},
+        {titulo:"Síndrome de Guillain-Barré",html:h(`<p>El PDF lo presenta como causa frecuente de <strong>parálisis flácida aguda</strong>, a cualquier edad, habitualmente precedida por infección respiratoria o digestiva y con mecanismo autoinmune.</p><div class="mini-grid"><article><h3>AIDP</h3><p>Polirradiculoneuropatía inflamatoria desmielinizante aguda: forma desmielinizante clásica.</p></article><article><h3>AMSAN</h3><p>Neuropatía axonal motora y sensitiva aguda.</p></article><article><h3>AMAN</h3><p>Neuropatía axonal motora aguda, sin compromiso sensitivo prominente.</p></article><article><h3>Miller Fisher</h3><p>Oftalmoplejía, ataxia y arreflexia; el material la vincula a anticuerpos antigangliósido y C. jejuni.</p></article></div>`)},
+        {titulo:"Diagnóstico: LCR y neurofisiología",html:h(`<p>La clase enfatiza la <strong>disociación albuminocitológica</strong>: aumento de proteínas con celularidad conservada o escasa. Advierte que una punción lumbar demasiado precoz puede ser todavía normal.</p><p>El estudio neurofisiológico permite medir conducción motora y sensitiva y separar patrones predominantemente desmielinizantes de axonales.</p>`)},
+        {titulo:"Vigilancia y tratamiento del Guillain-Barré",html:h(`<p>El material insiste en vigilar <strong>función respiratoria y sistema nervioso autónomo</strong>, porque el paciente puede deteriorarse rápidamente y requerir UCI y ventilación mecánica.</p><p>Como tratamiento inmunomodulador se desarrollan <strong>inmunoglobulina intravenosa</strong> y <strong>plasmaféresis</strong>, además de soporte, nutrición, movilización y terapia respiratoria.</p>`)},
+        {titulo:"Neuropatías crónicas y metabólicas",html:h(`<p>Se revisan polineuropatías desmielinizantes crónicas adquiridas, con debilidad proximal y distal, hiporreflexia/arreflexia y posible compromiso sensitivo. También se relacionan neuropatías con insuficiencia renal, hepatopatía, hipotiroidismo y especialmente diabetes.</p><p>La neuropatía diabética típica es <strong>distal y simétrica</strong>, con distribución en “guante y calcetín”; el PDF también menciona formas autonómicas, proximales y focales.</p>`)},
+        {titulo:"Nutricionales, tóxicas, infecciosas y atrapamiento",html:h(`<p>El material incluye déficit de B12, ácido fólico y B6, exposición a plomo, neuropatías farmacológicas, neuropatía asociada a VIH y neuropatías por atrapamiento.</p><p>En atrapamiento destaca el <strong>túnel carpiano</strong> y el compromiso cubital a nivel del codo. En VIH se describe polineuropatía distal sensitiva y dolor plantar urente.</p>`)}
       ],
       fijas:["Debilidad con reflejos disminuidos o abolidos orienta a compromiso periférico.","Guillain-Barré: antecedente infeccioso + debilidad flácida progresiva + arreflexia.","LCR del SGB: disociación albuminocitológica.","Miller Fisher: oftalmoplejía + ataxia + arreflexia.","Diabetes: patrón distal simétrico en guante y calcetín."]
     }),
