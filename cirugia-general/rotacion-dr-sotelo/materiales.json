@@ -14,8 +14,20 @@
       "titulo": "Presentación: colon, coledocolitiasis y cáncer colorrectal",
       "archivo": "documentos/temas-colon-coledocolitiasis-original.pptx",
       "descripcion": "Archivo PowerPoint original aportado para la rotación."
+    },
+    {
+      "titulo": "Repaso intensivo de Cirugía General y Patología Digestiva",
+      "archivo": "documentos/repaso-intensivo-cirugia-digestiva.pdf",
+      "descripcion": "PDF aportado completo: 14 láminas. Sus imágenes están integradas y explicadas en los capítulos 10–15."
     }
   ],
-  "audios": [],
+  "audios": [
+    {
+      "titulo": "Tricobezoares e imagen en urgencias abdominales",
+      "archivo": "audios/tricobezoares-imagen.mp3",
+      "descripcion": "Audio aportado · 16 min 25 s. Escúchalo aquí o descarga el archivo.",
+      "original_manifest": "audios/tricobezoares-imagen-original.json"
+    }
+  ],
   "videos": []
 }
