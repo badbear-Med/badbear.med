@@ -9,12 +9,15 @@ Biblioteca de publicaciones de WAJOMEA.GROUP para lectura en la página web.
 - Prólogo y veinte capítulos: páginas HTML individuales en `wajomeismo-puro/`.
 - Portada original: `wajomeismo-puro/portada.jpeg`.
 - Ampliación editorial independiente: `wajomeismo-puro/guia-de-lectura.html`.
+- Veinte desarrollos de crecimiento, uno por capítulo: `wajomeismo-puro/crecimiento.json`, integrados en las páginas de lectura.
 - Texto de respaldo estructurado: `wajomeismo-puro/contenido.json`.
 - Reconstrucción: `python badbear-books/scripts/build_wajomeismo.py` desde la raíz del repositorio. Solo utiliza Python estándar y los archivos incluidos.
 
 La transcripción conserva el contenido del prólogo y los veinte capítulos. El índice web sigue los capítulos efectivamente desarrollados, no los dos índices preliminares del documento. Se excluyen encabezados repetidos y números de página; se corrige el rótulo «APÍTULO 15». Se conserva el contenido de las dos aperturas del prólogo.
 
-La guía de lectura es un texto editorial separado de la obra original. La biblioteca se presenta como una publicación de WAJOMEA.GROUP; no se atribuye una autoría individual no confirmada.
+Cada capítulo conserva su texto original y añade un desarrollo editorial diferenciado: objetivo, profundización, método, ejemplo aplicado, tres oportunidades de crecimiento, ejercicio, plan de siete días, preguntas de evaluación y una idea de cierre. Las ampliaciones desarrollan disciplina, autonomía, criterio, relaciones responsables y legado. Las aplicaciones relacionales evalúan conductas individuales, consentimiento y acuerdos; no amplifican descalificaciones sobre grupos de personas ni añaden afirmaciones biomédicas al capítulo de intimidad.
+
+La guía general de lectura también es un texto editorial separado de la obra original. La biblioteca se presenta como una publicación de WAJOMEA.GROUP; no se atribuye una autoría individual no confirmada.
 
 El PDF de trabajo no forma parte de la publicación ni del repositorio. El contenido se lee en HTML. La lectura web no impide técnicamente copiar, imprimir o guardar el texto.
 
