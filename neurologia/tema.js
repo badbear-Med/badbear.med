@@ -77,7 +77,7 @@
     </div>
     <section class="tema-hero">
       <div class="tema-icon">${tema.icono}</div>
-      <div><span>${tema.numero ? "UNIDAD "+tema.numero+" · " : "UNIDAD 0 · "}${tema.area.toUpperCase()} · NEUROLOGÍA</span><h1>${tema.titulo}</h1><p>${tema.descripcion}</p></div>
+      <div><span>${tema.numero ? "UNIDAD "+tema.numero+" · " : "UNIDAD 0 · "}${tema.area.toUpperCase()} · NEUROLOGÍA · BUILD 20261003-V2</span><h1>${tema.titulo}</h1><p>${tema.descripcion}</p></div>
     </section>
 
     <nav class="resource-tabs" aria-label="Recursos de la unidad">
@@ -119,9 +119,9 @@
 
       <aside class="tema-side">
         <h3>Navegación</h3>
-        <a href="tema.html?t=${anterior.id}">← ${anterior.titulo}</a>
+        <a href="tema-v2.html?t=${anterior.id}">← ${anterior.titulo}</a>
         <a href="index.html#temas">Todos los temas</a>
-        <a href="tema.html?t=${siguiente.id}">${siguiente.titulo} →</a>
+        <a href="tema-v2.html?t=${siguiente.id}">${siguiente.titulo} →</a>
         <hr>
         <a href="modulo.html?m=preguntas">Banco de preguntas</a>
         <a href="modulo.html?m=pdf">Biblioteca PDF</a>
