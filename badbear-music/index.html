@@ -166,6 +166,31 @@
     font-size: 13px;
     font-weight: 800;
   }
+
+  /* ===== CATÁLOGO MUSICAL ===== */
+  .music-genres{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 28px}
+  .music-genre{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid #d6e0ec;background:#fff;color:#31455d;border-radius:999px;padding:10px 18px;font-size:14px;font-weight:900}
+  .music-genre:hover{border-color:#005be8;color:#005be8}
+  .music-genre.bachata{background:#005be8;border-color:#005be8;color:#fff}
+  .music-genre.latin{background:#fff3eb;border-color:#ffb07a;color:#b94a00}
+  .music-category{margin-top:24px;padding:24px;border:1px solid #dce5ef;border-radius:20px;background:linear-gradient(135deg,#f7faff,#fff 65%)}
+  .music-category + .music-category{margin-top:22px}
+  .music-category-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .music-category-index{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:#005be8;color:#fff;font-weight:900}
+  .music-category.latin .music-category-index{background:#ff6a00}
+  .music-category-label{display:block;font-size:11px;font-weight:900;letter-spacing:1.4px;color:#ff6a00}
+  .music-category h3{margin:2px 0 0;font-size:27px;color:#172538}
+  .music-track{display:grid;grid-template-columns:54px minmax(0,1fr);gap:18px;padding:22px;background:#fff;border:1px solid #dce5ef;border-radius:17px;box-shadow:0 10px 24px rgba(20,40,70,.07)}
+  .music-track + .music-track{margin-top:14px}
+  .music-track-number{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#005be8,#003f9f);color:#fff;font-weight:900}
+  .music-category.latin .music-track-number{background:linear-gradient(135deg,#ff7a1a,#d84f00)}
+  .music-track-kicker{display:block;margin-bottom:4px;font-size:11px;font-weight:900;letter-spacing:1.2px;color:#ff6a00}
+  .music-track h4{margin:0 0 8px;font-size:clamp(23px,3vw,31px);line-height:1.15;color:#13233a}
+  .music-track p{margin:0 0 14px;color:#596a7e;font-size:15px;line-height:1.55}
+  .music-track-meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:15px;color:#40536a;font-size:13px;font-weight:800}
+  .music-player{display:block;width:100%;max-width:680px;height:46px}
+  @media(max-width:600px){.music-category{padding:18px}.music-track{grid-template-columns:1fr;padding:18px}.music-track-number{width:44px;height:44px}}
+
 </style>
 </head>
 <body class="bb-extra-page bb-extra-music">
@@ -230,11 +255,74 @@
     </section>
     <section class="bb-extra-section" id="creaciones" aria-labelledby="music-creations-title">
       <h2 id="music-creations-title">Nuestras creaciones musicales</h2>
-      <p>Cada lanzamiento tendrá aquí su lugar para que puedas conocerlo y escucharlo.</p>
-      <div class="bb-extra-notice">
-        <strong>Estamos preparando nuestros próximos lanzamientos</strong>
-        <p>BADBEAR.MUSIC, del grupo WAJOMEA.GROUP, está trabajando para compartir contigo sus creaciones musicales. Las canciones y sus novedades se publicarán conforme estén disponibles.</p>
+      <p>Explora las canciones originales de badbear.music organizadas por género.</p>
+
+      <div class="music-genres" aria-label="Géneros musicales">
+        <a class="music-genre bachata" href="#bachata">Bachata</a>
+        <a class="music-genre latin" href="#badbear-latin">Badbear Latin</a>
       </div>
+
+      <section class="music-category" id="bachata" aria-labelledby="bachata-title">
+        <div class="music-category-head">
+          <span class="music-category-index">01</span>
+          <div>
+            <span class="music-category-label">GÉNERO</span>
+            <h3 id="bachata-title">Bachata</h3>
+          </div>
+        </div>
+
+        <article class="music-track">
+          <div class="music-track-number">01</div>
+          <div>
+            <span class="music-track-kicker">BADBEAR.MUSIC · BACHATA</span>
+            <h4>Me quedó tu voz</h4>
+            <p>Bachata romántica original de badbear.music.</p>
+            <div class="music-track-meta"><span>♪ Bachata</span><span>Primera publicación de la categoría</span></div>
+            <audio class="music-player" controls preload="metadata">
+              <source src="audios/bachata/me-quedo-tu-voz.mp3" type="audio/mpeg">
+              Tu navegador no admite reproducción de audio.
+            </audio>
+          </div>
+        </article>
+      </section>
+
+      <section class="music-category latin" id="badbear-latin" aria-labelledby="latin-title">
+        <div class="music-category-head">
+          <span class="music-category-index">02</span>
+          <div>
+            <span class="music-category-label">GÉNERO</span>
+            <h3 id="latin-title">Badbear Latin</h3>
+          </div>
+        </div>
+
+        <article class="music-track">
+          <div class="music-track-number">01</div>
+          <div>
+            <span class="music-track-kicker">BADBEAR.MUSIC · LATIN</span>
+            <h4>Alas de mariposa</h4>
+            <p>Creación original de la colección Badbear Latin.</p>
+            <div class="music-track-meta"><span>♪ Badbear Latin</span></div>
+            <audio class="music-player" controls preload="metadata">
+              <source src="audios/badbear-latin/alas-de-mariposa.mp3" type="audio/mpeg">
+              Tu navegador no admite reproducción de audio.
+            </audio>
+          </div>
+        </article>
+
+        <article class="music-track">
+          <div class="music-track-number">02</div>
+          <div>
+            <span class="music-track-kicker">BADBEAR.MUSIC · LATIN</span>
+            <h4>No voy a volver</h4>
+            <p>Creación original de la colección Badbear Latin.</p>
+            <div class="music-track-meta"><span>♪ Badbear Latin</span></div>
+            <audio class="music-player" controls preload="metadata">
+              <source src="audios/badbear-latin/no-voy-a-volver.mp3" type="audio/mpeg">
+              Tu navegador no admite reproducción de audio.
+            </audio>
+          </div>
+        </article>
+      </section>
     </section>
     <section class="bb-extra-section" id="youtube" aria-labelledby="youtube-title">
       <h2 id="youtube-title">BADBEAR.MUSIC en YouTube</h2>
