@@ -58,3 +58,9 @@
 @media(max-width:650px){.clase-material-grid{grid-template-columns:1fr}}
 
 .clase-material-grid-dos{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* Acceso visible a los materiales originales de cada clase. */
+.clase-material-acceso{margin:16px 0 0}
+#material-clase,#material-extra{scroll-margin-top:100px}
+.clase-resource-card.consulta-card{border:2px solid #16a34a;background:linear-gradient(145deg,#ecfdf5,#fff)}
+.clase-resource-card.consulta-card .clase-resource-btn.primary{background:#15803d;border-color:#15803d;color:#fff}
