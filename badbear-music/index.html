@@ -8,8 +8,201 @@
   <meta name="description" content="Música original y proyectos musicales creados por el equipo de WAJOMEA.GROUP.">
   <link rel="stylesheet" href="../assets/css/bb-vivid-global.css?v=20260930-vivos-global3">
   <link rel="stylesheet" href="../assets/css/bb-extras.css?v=20261001-group1">
+
+  <style>
+  body.music-locked {
+    overflow: hidden;
+  }
+
+  #music-access {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+
+    background:
+      radial-gradient(circle at 20% 10%, rgba(0, 91, 232, .25), transparent 35%),
+      radial-gradient(circle at 80% 90%, rgba(255, 106, 0, .17), transparent 35%),
+      linear-gradient(135deg, #07111f, #0c1830 55%, #101b2e);
+
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #music-access[hidden] {
+    display: none !important;
+  }
+
+  .music-login-card {
+    position: relative;
+    width: min(420px, 100%);
+    padding: 38px 32px 30px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, .97);
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 24px;
+
+    box-shadow:
+      0 30px 80px rgba(0,0,0,.38),
+      0 5px 25px rgba(0,91,232,.12);
+
+    text-align: center;
+  }
+
+  .music-login-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+
+    background: linear-gradient(
+      90deg,
+      #005be8,
+      #2879ff,
+      #ff6a00
+    );
+  }
+
+  .music-login-card h1 {
+    margin: 4px 0 12px;
+
+    color: #005be8;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+
+  .music-login-card h1 span {
+    color: #ff6a00;
+  }
+
+  .music-divider {
+    width: 70px;
+    height: 4px;
+    margin: 0 auto 20px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+      90deg,
+      #005be8,
+      #ff6a00
+    );
+  }
+
+  .music-login-card p {
+    margin: 0 0 25px;
+
+    color: #53657a;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  #music-password {
+    box-sizing: border-box;
+    width: 100%;
+    height: 54px;
+
+    padding: 0 17px;
+
+    background: #f7faff;
+    border: 2px solid #dce5ef;
+    border-radius: 14px;
+
+    color: #18283c;
+    font-size: 16px;
+
+    outline: none;
+  }
+
+  #music-password:focus {
+    background: #fff;
+    border-color: #005be8;
+
+    box-shadow:
+      0 0 0 4px rgba(0,91,232,.11);
+  }
+
+  #music-login-button {
+    width: 100%;
+    height: 54px;
+
+    margin-top: 14px;
+
+    border: 0;
+    border-radius: 14px;
+
+    background:
+      linear-gradient(135deg, #005be8, #0045ba);
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: .5px;
+
+    cursor: pointer;
+
+    box-shadow:
+      0 10px 25px rgba(0,91,232,.28);
+  }
+
+  #music-login-button:hover {
+    filter: brightness(1.08);
+  }
+
+  #music-access-message {
+    min-height: 20px;
+    margin-top: 14px;
+
+    color: #cf2b2b;
+
+    font-size: 13px;
+    font-weight: 800;
+  }
+</style>
 </head>
 <body class="bb-extra-page bb-extra-music">
+  <section id="music-access">
+
+  <div class="music-login-card">
+
+    <h1>
+      badbear.<span>music</span>
+    </h1>
+
+    <div class="music-divider"></div>
+
+    <p>
+      Acceso privado a <strong>badbear.music</strong><br>
+      Ingresa tu clave para continuar.
+    </p>
+
+    <input
+      id="music-password"
+      type="password"
+      placeholder="Clave de acceso"
+      autocomplete="current-password"
+    >
+
+    <button
+      id="music-login-button"
+      type="button"
+    >
+      INGRESAR
+    </button>
+
+    <div id="music-access-message"></div>
+
+  </div>
+
+</section>
   <header class="bb-extra-header">
     <a class="bb-extra-logo bb-group-logo" href="../index.html"><span>WAJOMEA.<b>GROUP</b></span></a>
     <nav aria-label="Proyectos de WAJOMEA.GROUP">
@@ -53,5 +246,165 @@
     <p><strong>BADBEAR.MUSIC</strong> · Una creación de WAJOMEA.GROUP</p>
     <a href="../index.html">Volver a WAJOMEA.GROUP</a>
   </footer>
+  <script>
+(() => {
+
+  const EXPECTED_HASH =
+    "a7b2f98fe08f86bd339822ad9460b6bf5e8733e771713a35b3fb43700e168aee";
+
+  const ACCESS_KEY = "badbear_music_access";
+
+  const accessScreen =
+    document.getElementById("music-access");
+
+  const passwordInput =
+    document.getElementById("music-password");
+
+  const loginButton =
+    document.getElementById("music-login-button");
+
+  const message =
+    document.getElementById("music-access-message");
+
+
+  document.body.classList.add("music-locked");
+
+
+  function unlock() {
+
+    sessionStorage.setItem(
+      ACCESS_KEY,
+      "authorized"
+    );
+
+    accessScreen.hidden = true;
+
+    document.body.classList.remove(
+      "music-locked"
+    );
+  }
+
+
+  async function sha256(text) {
+
+    const data =
+      new TextEncoder().encode(text);
+
+    const buffer =
+      await crypto.subtle.digest(
+        "SHA-256",
+        data
+      );
+
+    return Array
+      .from(new Uint8Array(buffer))
+      .map(
+        byte =>
+          byte
+            .toString(16)
+            .padStart(2, "0")
+      )
+      .join("");
+  }
+
+
+  async function validatePassword() {
+
+    const password =
+      passwordInput.value;
+
+    if (!password) {
+
+      message.textContent =
+        "Ingresa la clave.";
+
+      passwordInput.focus();
+
+      return;
+    }
+
+
+    loginButton.disabled = true;
+
+    loginButton.textContent =
+      "VERIFICANDO...";
+
+    message.textContent = "";
+
+
+    try {
+
+      const enteredHash =
+        await sha256(password);
+
+
+      if (
+        enteredHash === EXPECTED_HASH
+      ) {
+
+        unlock();
+
+      } else {
+
+        message.textContent =
+          "Clave incorrecta.";
+
+        passwordInput.value = "";
+
+        passwordInput.focus();
+      }
+
+    } catch (error) {
+
+      console.error(error);
+
+      message.textContent =
+        "No fue posible validar la clave.";
+    }
+
+
+    loginButton.disabled = false;
+
+    loginButton.textContent =
+      "INGRESAR";
+  }
+
+
+  if (
+    sessionStorage.getItem(ACCESS_KEY)
+      === "authorized"
+  ) {
+
+    accessScreen.hidden = true;
+
+    document.body.classList.remove(
+      "music-locked"
+    );
+
+  } else {
+
+    passwordInput.focus();
+  }
+
+
+  loginButton.addEventListener(
+    "click",
+    validatePassword
+  );
+
+
+  passwordInput.addEventListener(
+    "keydown",
+    event => {
+
+      if (event.key === "Enter") {
+
+        validatePassword();
+      }
+    }
+  );
+
+})();
+</script>
 </body>
 </html>
