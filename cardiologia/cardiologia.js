@@ -33,7 +33,7 @@
   function tarjeta(t){
     const a = document.createElement("a");
     a.className = "cardio-topic";
-    a.href = `tema.html?t=${encodeURIComponent(t.id)}`;
+    a.href = t.href || `tema.html?t=${encodeURIComponent(t.id)}`;
     a.innerHTML = `
       <div class="cardio-topic-top">
         <div class="cardio-topic-icon">${t.icono}</div>
@@ -70,3 +70,4 @@
   filtro?.addEventListener("change", render);
   render();
 })();
+

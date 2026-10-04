@@ -7,6 +7,10 @@
   if(!app || !tema) return;
 
   document.title = `${tema.titulo} | Cardiología | BADBEAR.MED`;
+  if (tema.href) {
+    window.location.replace(tema.href);
+    return;
+  }
   const leidos = new Set(JSON.parse(localStorage.getItem("badbear_cardio_leidos") || "[]"));
   const actual = temas.findIndex(t => t.id === tema.id);
   const anterior = temas[(actual - 1 + temas.length) % temas.length];
@@ -64,3 +68,4 @@
     e.currentTarget.textContent = leidos.has(tema.id) ? "✓ Tema revisado" : "Marcar como revisado";
   });
 })();
+
