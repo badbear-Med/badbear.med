@@ -30,10 +30,10 @@ def page(title,body,description,attrs=''):
 <style>html.books-access-pending #books-page{{display:none!important}}</style>
 <title>{e(title)} | BADBEAR.BOOKS</title><meta name="description" content="{e(description)}">
 <meta name="theme-color" content="#fffaf3"><link rel="stylesheet" href="lector.css?v=20261004-1">
-<link rel="stylesheet" href="../acceso.css?v=20261004-books-lock1">
-<script src="../acceso-config.js?v=20261004-books-lock1" defer></script>
-<script src="../acceso.js?v=20261004-books-lock1" defer></script>
-<script src="lector.js?v=20261004-books-lock1" defer></script></head><body {attrs}>
+<link rel="stylesheet" href="../acceso.css?v=20261004-books-lock2">
+<script src="../acceso-config.js?v=20261004-books-lock2" defer></script>
+<script src="../acceso.js?v=20261004-books-lock2" defer></script>
+<script src="lector.js?v=20261004-books-lock2" defer></script></head><body {attrs}>
 <div id="books-access-loading" class="books-access-loading" role="status">Preparando el acceso a BADBEAR.BOOKS…</div>
 <noscript><p class="books-nojs">Activa JavaScript para verificar la clave de acceso a nuestra biblioteca.</p></noscript>
 <div id="books-page">{header()}{body}{footer()}</div></body></html>'''
