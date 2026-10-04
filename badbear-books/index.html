@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="books-access-pending">
 <head>
+  <style>html.books-access-pending #books-page{display:none!important}</style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BADBEAR.BOOKS | WAJOMEA.GROUP</title>
@@ -8,8 +9,14 @@
   <link rel="stylesheet" href="../assets/css/bb-vivid-global.css?v=20260930-vivos-global3">
   <link rel="stylesheet" href="../assets/css/bb-extras.css?v=20261001-group1">
   <link rel="stylesheet" href="books.css?v=20261004-1">
+  <link rel="stylesheet" href="acceso.css?v=20261004-books-lock1">
+  <script src="acceso-config.js?v=20261004-books-lock1" defer></script>
+  <script src="acceso.js?v=20261004-books-lock1" defer></script>
 </head>
 <body class="bb-extra-page bb-extra-books">
+  <div id="books-access-loading" class="books-access-loading" role="status">Preparando el acceso a BADBEAR.BOOKS…</div>
+  <noscript><p class="books-nojs">Activa JavaScript para verificar la clave de acceso a nuestra biblioteca.</p></noscript>
+  <div id="books-page">
   <header class="bb-extra-header">
     <a class="bb-extra-logo bb-group-logo" href="../index.html"><span>WAJOMEA.<b>GROUP</b></span></a>
     <nav aria-label="Proyectos de WAJOMEA.GROUP">
@@ -50,7 +57,6 @@
     <p><strong>BADBEAR.BOOKS</strong> · Una creación de WAJOMEA.GROUP</p>
     <a href="../index.html">Volver a WAJOMEA.GROUP</a>
   </footer>
+  </div>
 </body>
 </html>
-
-

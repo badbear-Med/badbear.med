@@ -1,5 +1,6 @@
 (() => {
   'use strict';
+  function initialize() {
   const key = 'bb-books-wajomeismo-v1';
   const safeRead = name => { try { return JSON.parse(localStorage.getItem(name)); } catch (_) { return null; } };
   const safeWrite = (name, value) => { try { localStorage.setItem(name, JSON.stringify(value)); return true; } catch (_) { return false; } };
@@ -46,4 +47,7 @@
   let queued = false;
   window.addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(() => { remember(); queued = false; }); } }, {passive:true});
   remember();
+  }
+  if (document.documentElement.classList.contains('books-access-granted')) initialize();
+  else document.addEventListener('books-access-granted', initialize, {once:true});
 })();

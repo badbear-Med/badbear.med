@@ -26,10 +26,17 @@ def toc(active=None):
 
 def page(title,body,description,attrs=''):
     return f'''<!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="es" class="books-access-pending"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>html.books-access-pending #books-page{{display:none!important}}</style>
 <title>{e(title)} | BADBEAR.BOOKS</title><meta name="description" content="{e(description)}">
 <meta name="theme-color" content="#fffaf3"><link rel="stylesheet" href="lector.css?v=20261004-1">
-<script src="lector.js?v=20261004-1" defer></script></head><body {attrs}>{header()}{body}{footer()}</body></html>'''
+<link rel="stylesheet" href="../acceso.css?v=20261004-books-lock1">
+<script src="../acceso-config.js?v=20261004-books-lock1" defer></script>
+<script src="../acceso.js?v=20261004-books-lock1" defer></script>
+<script src="lector.js?v=20261004-books-lock1" defer></script></head><body {attrs}>
+<div id="books-access-loading" class="books-access-loading" role="status">Preparando el acceso a BADBEAR.BOOKS…</div>
+<noscript><p class="books-nojs">Activa JavaScript para verificar la clave de acceso a nuestra biblioteca.</p></noscript>
+<div id="books-page">{header()}{body}{footer()}</div></body></html>'''
 
 total_minutes=sum(s['minutes'] for s in sections)
 index=f'''<main id="contenido" class="book-home">
