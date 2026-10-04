@@ -191,6 +191,14 @@
   .music-player{display:block;width:100%;max-width:680px;height:46px}
   @media(max-width:600px){.music-category{padding:18px}.music-track{grid-template-columns:1fr;padding:18px}.music-track-number{width:44px;height:44px}}
 
+
+  .music-float-btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    margin-top:12px;padding:10px 14px;border:0;border-radius:11px;
+    background:#101722;color:#fff;font-size:13px;font-weight:900;cursor:pointer
+  }
+  .music-float-btn:hover{filter:brightness(1.12)}
+  .music-float-note{display:block;margin-top:7px;color:#6d7d91;font-size:11px}
 </style>
 </head>
 <body class="bb-extra-page bb-extra-music">
@@ -282,6 +290,10 @@
               <source src="audios/bachata/me-quedo-tu-voz.mp3" type="audio/mpeg">
               Tu navegador no admite reproducción de audio.
             </audio>
+            <button class="music-float-btn" type="button" data-floating-track="me-quedo-tu-voz">
+              ↗ Reproducir flotante
+            </button>
+            <span class="music-float-note">Seguirá sonando aunque cambies de sección.</span>
           </div>
         </article>
       </section>
@@ -306,6 +318,10 @@
               <source src="audios/badbear-latin/alas-de-mariposa.mp3" type="audio/mpeg">
               Tu navegador no admite reproducción de audio.
             </audio>
+            <button class="music-float-btn" type="button" data-floating-track="alas-de-mariposa">
+              ↗ Reproducir flotante
+            </button>
+            <span class="music-float-note">Seguirá sonando aunque cambies de sección.</span>
           </div>
         </article>
 
@@ -320,6 +336,10 @@
               <source src="audios/badbear-latin/no-voy-a-volver.mp3" type="audio/mpeg">
               Tu navegador no admite reproducción de audio.
             </audio>
+            <button class="music-float-btn" type="button" data-floating-track="no-voy-a-volver">
+              ↗ Reproducir flotante
+            </button>
+            <span class="music-float-note">Seguirá sonando aunque cambies de sección.</span>
           </div>
         </article>
       </section>
@@ -492,6 +512,22 @@
     }
   );
 
+})();
+</script>
+<script>
+(() => {
+  document.querySelectorAll("[data-floating-track]").forEach(button => {
+    button.addEventListener("click", () => {
+      const track = button.dataset.floatingTrack;
+      const url = "player.html?track=" + encodeURIComponent(track);
+      const popup = window.open(
+        url,
+        "badbearMusicPlayer",
+        "width=420,height=260,resizable=yes,scrollbars=no"
+      );
+      if (popup) popup.focus();
+    });
+  });
 })();
 </script>
 </body>
