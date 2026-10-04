@@ -33,7 +33,7 @@
   function tarjeta(t){
     const a = document.createElement("a");
     a.className = "neuro-topic";
-    a.href = `tema.html?t=${encodeURIComponent(t.id)}`;
+    a.href = `tema-v2.html?t=${encodeURIComponent(t.id)}`;
     a.innerHTML = `
       <div class="neuro-topic-top">
         <div class="neuro-topic-icon">${t.icono}</div>
