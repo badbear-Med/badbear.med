@@ -1,6 +1,6 @@
 # Arritmias cardíacas: del mecanismo al diagnóstico y la conducta clínica
 
-Capítulo de estudio de **BADBEAR.MED · WAJOMEA.GROUP**. Material docente de base: *Arritmias cardíacas*, Dr. Luis A. Orellana V., Facultad de Medicina de la UNFV, 92 páginas. Desarrollo académico ampliado y revisión de recomendaciones: **4 de octubre de 2026**. Las figuras conservan su procedencia; las explicaciones y tablas de estudio fueron elaboradas para este capítulo.
+Capítulo de estudio de **BADBEAR.MED · WAJOMEA.GROUP**. Desarrollo académico ampliado de arritmias cardíacas. Revisión: **4 de octubre de 2026**. Incluye explicaciones, tablas comparativas, imágenes comentadas y casos clínicos razonados.
 
 ## 1. Qué es una arritmia y por qué importa {#concepto}
 
@@ -52,7 +52,7 @@ La **refractariedad** es el período durante el cual el tejido no puede responde
 
 La hiperkalemia inicialmente modifica la repolarización, pero al elevarse de forma importante despolariza el potencial de reposo e inactiva canales de sodio: puede ensanchar el QRS, reducir o borrar las ondas P y producir bloqueos o paro. La hipokalemia y la hipomagnesemia facilitan inestabilidad eléctrica y determinadas arritmias. El ECG orienta, pero no sustituye la medición de electrolitos ni permite estimar de forma exacta sus concentraciones.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-07.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-07.webp" alt="Diagramas de automatismo y modificaciones del potencial de acción del material docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 1. Bases electrofisiológicas. Material docente UNFV, p. 7. El desplazamiento de la fase 4 y del umbral modifica el momento de la descarga; la interpretación debe distinguir células nodales de miocitos de respuesta rápida.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-07.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-07.webp" alt="Diagramas de automatismo y modificaciones del potencial de acción del material docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 1. Bases electrofisiológicas. PDF de apoyo, p. 7. El desplazamiento de la fase 4 y del umbral modifica el momento de la descarga; la interpretación debe distinguir células nodales de miocitos de respuesta rápida.</figcaption></figure>
 
 ## 4. Los tres mecanismos fundamentales {#mecanismos}
 
@@ -68,7 +68,7 @@ Las posdespolarizaciones dependen de un potencial de acción previo. Las **preco
 
 Las **tardías** aparecen después de la repolarización, habitualmente en fase 4, y se relacionan con sobrecarga intracelular de calcio. La intoxicación digitálica y la estimulación catecolaminérgica son ejemplos. Si la oscilación alcanza el umbral, genera un nuevo impulso. En términos prácticos: QT prolongado y pausas orientan hacia actividad precoz; digoxina, calcio intracelular y catecolaminas, hacia actividad tardía.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-10.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-10.webp" alt="Posdespolarizaciones precoces y tardías del PDF docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 2. Posdespolarizaciones. Material docente, p. 10. Importa cuándo aparece la oscilación respecto de la repolarización, no solo su tamaño.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-10.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-10.webp" alt="Posdespolarizaciones precoces y tardías del PDF docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 2. Posdespolarizaciones. PDF de apoyo, p. 10. Importa cuándo aparece la oscilación respecto de la repolarización, no solo su tamaño.</figcaption></figure>
 
 ### Reentrada
 
@@ -78,7 +78,7 @@ En la AVNRT típica participan vías nodales de conducción rápida y lenta. En 
 
 La reentrada suele comenzar y terminar bruscamente. Un latido prematuro puede iniciar el circuito. Interrumpir un segmento crítico puede terminarla, fundamento de algunas maniobras, fármacos y ablaciones. Un medicamento que bloquea el nodo AV puede detener una AVNRT, pero no necesariamente una taquicardia auricular cuyo circuito no necesita ese nodo.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-11.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-11.webp" alt="Condiciones y esquema de reentrada del material docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 3. Reentrada. Material docente, p. 11. El circuito debe encontrar tejido recuperado al completar cada vuelta; si la onda alcanza tejido todavía refractario, se extingue.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-11.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-11.webp" alt="Condiciones y esquema de reentrada del material docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 3. Reentrada. PDF de apoyo, p. 11. El circuito debe encontrar tejido recuperado al completar cada vuelta; si la onda alcanza tejido todavía refractario, se extingue.</figcaption></figure>
 
 ### Mecanismos menos frecuentes y conceptos avanzados
 
@@ -128,7 +128,7 @@ Antes de interpretar, confirme identidad, calidad, velocidad y ganancia. La cali
 
 La fórmula de Bazett es QTc = QT / √RR, con QT y RR en segundos. Fridericia utiliza la raíz cúbica de RR. Bazett tiende a sobrecorregir a frecuencias rápidas y a infracorregir a frecuencias lentas. Con QRS muy ancho, parte del QT refleja despolarización prolongada y puede ser necesario valorar la repolarización mediante otros métodos, como JT, por personal experimentado.
 
-Los límites de QTc dependen del sexo, la metodología y el contexto; aproximadamente >450 ms en hombres y >460 ms en mujeres orientan a prolongación, sin convertir una sola medición en diagnóstico de síndrome congénito. Un QTc ≥500 ms constituye una señal de riesgo que exige revisar fármacos, electrolitos y antecedentes. Una lectura automática debe confirmarse manualmente cuando la decisión depende de ella. [9]
+Los límites de QTc dependen del sexo, la metodología y el contexto; aproximadamente >450 ms en hombres y >460 ms en mujeres orientan a prolongación, sin convertir una sola medición en diagnóstico de síndrome congénito. Un QTc ≥500 ms constituye una señal de riesgo que exige revisar fármacos, electrolitos y antecedentes. Una lectura automática debe confirmarse manualmente cuando la decisión depende de ella.
 
 <div class="fija"><strong>BADBEAR.MED FIJA:</strong> no escriba «QT normal» utilizando únicamente el intervalo sin corregir. Compruebe frecuencia, fórmula, final de la T y anchura del QRS.</div>
 
@@ -169,13 +169,13 @@ La troponina puede elevarse por lesión miocárdica asociada a una taquicardia s
 
 ## 9. La primera decisión: pulso y estabilidad {#urgencias}
 
-Una arritmia con hipotensión, shock, alteración aguda del estado mental, dolor isquémico o insuficiencia cardíaca aguda puede requerir intervención inmediata. Debe existir una relación razonable entre arritmia y deterioro. Una taquicardia sinusal por sepsis no se trata como una AVNRT solo porque la frecuencia sea alta. Evalúe vía aérea, ventilación, oxigenación, acceso venoso, monitorización y causas reversibles. [1]
+Una arritmia con hipotensión, shock, alteración aguda del estado mental, dolor isquémico o insuficiencia cardíaca aguda puede requerir intervención inmediata. Debe existir una relación razonable entre arritmia y deterioro. Una taquicardia sinusal por sepsis no se trata como una AVNRT solo porque la frecuencia sea alta. Evalúe vía aérea, ventilación, oxigenación, acceso venoso, monitorización y causas reversibles.
 
-**Sin pulso:** una FV o TV sin pulso pertenece al algoritmo de paro, con RCP y desfibrilación temprana. Asistolia y actividad eléctrica sin pulso no son ritmos desfibrilables. Tras un choque, se reanudan compresiones siguiendo el algoritmo y se investigan causas reversibles. No se espera un ECG de 12 derivaciones para actuar. [4]
+**Sin pulso:** una FV o TV sin pulso pertenece al algoritmo de paro, con RCP y desfibrilación temprana. Asistolia y actividad eléctrica sin pulso no son ritmos desfibrilables. Tras un choque, se reanudan compresiones siguiendo el algoritmo y se investigan causas reversibles. No se espera un ECG de 12 derivaciones para actuar.
 
-**Con pulso y taquiarritmia causante de inestabilidad:** cardioversión sincronizada si el ritmo permite sincronización; la TV polimorfa sostenida requiere choque no sincronizado. Si el paciente está consciente, sedación cuando sea factible sin retrasar una intervención urgente. [1,3]
+**Con pulso y taquiarritmia causante de inestabilidad:** cardioversión sincronizada si el ritmo permite sincronización; la TV polimorfa sostenida requiere choque no sincronizado. Si el paciente está consciente, sedación cuando sea factible sin retrasar una intervención urgente.
 
-**Con pulso y bradicardia causante de hipoperfusión:** soporte, corrección de causas y tratamiento dirigido; en bloqueos avanzados se prepara estimulación. **Con estabilidad:** es posible caracterizar el ECG y seleccionar una intervención con mayor precisión, pero estabilidad actual no significa ausencia de riesgo. [5]
+**Con pulso y bradicardia causante de hipoperfusión:** soporte, corrección de causas y tratamiento dirigido; en bloqueos avanzados se prepara estimulación. **Con estabilidad:** es posible caracterizar el ECG y seleccionar una intervención con mayor precisión, pero estabilidad actual no significa ausencia de riesgo.
 
 ## 10. Taquicardia sinusal y extrasístoles auriculares {#sinusal}
 
@@ -195,7 +195,7 @@ La activación auricular y ventricular resulta casi simultánea. La P retrógrad
 
 En las formas atípicas, como rápido-lento o lento-lento, la relación temporal cambia y puede aparecer una taquicardia de RP largo. RP es el intervalo entre la activación ventricular y la siguiente onda P; PR va de la P al siguiente QRS. Diferenciar RP corto y largo orienta el diagnóstico, aunque no identifica inequívocamente el mecanismo.
 
-Una persona joven puede referir episodios súbitos desencadenados por un latido adelantado, palpitaciones cervicales y resolución abrupta. La estabilidad permite intentar maniobras vagales y, si corresponde, adenosina; una arritmia causante de inestabilidad cambia la prioridad a cardioversión. La ablación de la vía lenta es una opción definitiva para episodios recurrentes o sintomáticos y requiere discutir eficacia, riesgo de bloqueo AV y preferencias. [2,7]
+Una persona joven puede referir episodios súbitos desencadenados por un latido adelantado, palpitaciones cervicales y resolución abrupta. La estabilidad permite intentar maniobras vagales y, si corresponde, adenosina; una arritmia causante de inestabilidad cambia la prioridad a cardioversión. La ablación de la vía lenta es una opción definitiva para episodios recurrentes o sintomáticos y requiere discutir eficacia, riesgo de bloqueo AV y preferencias.
 
 ### Valsalva modificado y respuesta a adenosina
 
@@ -215,7 +215,7 @@ El patrón clásico de preexcitación incluye PR corto, onda delta y ensanchamie
 
 Si la aurícula fibrila y los impulsos alcanzan el ventrículo por una vía accesoria capaz de conducir rápidamente, el nodo AV pierde su papel de filtro. Aparece una taquicardia muy rápida, irregular, con QRS de anchura y morfología variables; puede degenerar en FV. La combinación «irregular + ancho + muy rápido» exige considerar este diagnóstico.
 
-En FA preexcitada están contraindicados los bloqueadores nodales AV: adenosina, verapamilo, diltiazem, betabloqueadores, digoxina y amiodarona. En inestabilidad se utiliza cardioversión eléctrica; en estabilidad pueden considerarse procainamida o ibutilida bajo monitorización y supervisión experta. La ablación de la vía es el tratamiento definitivo de referencia. Esta contraindicación no debe trasladarse sin matices a toda AVRT ortodrómica regular. [8]
+En FA preexcitada están contraindicados los bloqueadores nodales AV: adenosina, verapamilo, diltiazem, betabloqueadores, digoxina y amiodarona. En inestabilidad se utiliza cardioversión eléctrica; en estabilidad pueden considerarse procainamida o ibutilida bajo monitorización y supervisión experta. La ablación de la vía es el tratamiento definitivo de referencia. Esta contraindicación no debe trasladarse sin matices a toda AVRT ortodrómica regular.
 
 <div class="fija"><strong>BADBEAR.MED FIJA:</strong> una FA preexcitada no se maneja como una FA común. Bloquear únicamente el nodo AV puede favorecer conducción ventricular peligrosa por la vía accesoria.</div>
 
@@ -227,9 +227,9 @@ La **taquicardia auricular multifocal** presenta ritmo irregular, al menos tres 
 
 La **taquicardia de la unión** puede resultar de automatismo aumentado cerca de la unión AV. Las P pueden estar ausentes en superficie, ser retrógradas o mostrar disociación. El ritmo acelerado de la unión, la taquicardia no paroxística y la AVNRT no son sinónimos. La intoxicación digitálica, situaciones posoperatorias y otros contextos orientan el mecanismo.
 
-En la taquicardia multifocal, el eje del tratamiento es corregir enfermedad subyacente y electrolitos; la cardioversión no suele resolver el mecanismo automático. Las taquicardias auriculares focales recurrentes o incesantes pueden requerir ablación. La conducta farmacológica debe valorar función ventricular, enfermedad pulmonar y posibles causas tóxicas. [7]
+En la taquicardia multifocal, el eje del tratamiento es corregir enfermedad subyacente y electrolitos; la cardioversión no suele resolver el mecanismo automático. Las taquicardias auriculares focales recurrentes o incesantes pueden requerir ablación. La conducta farmacológica debe valorar función ventricular, enfermedad pulmonar y posibles causas tóxicas.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-31.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-31.webp" alt="Ejemplos de taquiarritmias supraventriculares del PDF docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 4. Actividad auricular en distintos ritmos. Material docente, p. 31. La lámina reúne varios ejemplos: identifique P, ondas de flutter o actividad desorganizada antes de asignar un diagnóstico. Las tiras esquemáticas no sustituyen el ECG completo.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-31.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-31.webp" alt="Ejemplos de taquiarritmias supraventriculares del PDF docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 4. Actividad auricular en distintos ritmos. PDF de apoyo, p. 31. La lámina reúne varios ejemplos: identifique P, ondas de flutter o actividad desorganizada antes de asignar un diagnóstico. Las tiras esquemáticas no sustituyen el ECG completo.</figcaption></figure>
 
 ## 14. Flutter auricular {#flutter}
 
@@ -237,7 +237,7 @@ El flutter es una taquicardia auricular organizada, habitualmente por macroreent
 
 La conducción AV 2:1 puede producir una frecuencia ventricular cercana a 150/min y un ritmo aparentemente regular. Una de cada dos ondas auriculares puede quedar oculta en el QRS o la T. Cuando la relación cambia a 3:1 o 4:1, disminuye la frecuencia ventricular; si varía, aparece irregularidad. No todo flutter conduce a 150/min ni toda frecuencia de 150 corresponde a flutter.
 
-La adenosina puede aumentar transitoriamente el bloqueo AV y hacer visibles las ondas auriculares, sin interrumpir el circuito del flutter. El diagnóstico se apoya en ECG de varias derivaciones y registro durante la maniobra cuando se utiliza de forma adecuada. La cardioversión puede restaurar el ritmo; la ablación del istmo constituye una estrategia eficaz para flutter típico. El riesgo tromboembólico requiere evaluación y no desaparece por tener actividad auricular organizada. [7]
+La adenosina puede aumentar transitoriamente el bloqueo AV y hacer visibles las ondas auriculares, sin interrumpir el circuito del flutter. El diagnóstico se apoya en ECG de varias derivaciones y registro durante la maniobra cuando se utiliza de forma adecuada. La cardioversión puede restaurar el ritmo; la ablación del istmo constituye una estrategia eficaz para flutter típico. El riesgo tromboembólico requiere evaluación y no desaparece por tener actividad auricular organizada.
 
 ### Comparación de taquicardias regulares estrechas
 
@@ -263,21 +263,21 @@ La pérdida de contracción auricular y la estasis, especialmente en la orejuela
 | Persistente de larga duración | Actividad continua superior a 12 meses |
 | Permanente | Decisión compartida de no continuar intentando restaurar ritmo sinusal |
 
-«Permanente» describe una estrategia clínica, no una imposibilidad biológica inmutable. La documentación del ritmo y del comienzo real condiciona las decisiones; el inicio de palpitaciones no demuestra siempre el inicio de FA. [10]
+«Permanente» describe una estrategia clínica, no una imposibilidad biológica inmutable. La documentación del ritmo y del comienzo real condiciona las decisiones; el inicio de palpitaciones no demuestra siempre el inicio de FA.
 
 ### A. Controlar la frecuencia
 
-Implica reducir la respuesta ventricular, sin necesariamente terminar FA. Se elige el fármaco según presión, función ventricular y comorbilidades. Betabloqueadores, digoxina y, con fracción de eyección apropiada, verapamilo o diltiazem son opciones. Los dos últimos se evitan en disfunción sistólica importante. No se aplica esta estrategia nodal a FA preexcitada. [6,8]
+Implica reducir la respuesta ventricular, sin necesariamente terminar FA. Se elige el fármaco según presión, función ventricular y comorbilidades. Betabloqueadores, digoxina y, con fracción de eyección apropiada, verapamilo o diltiazem son opciones. Los dos últimos se evitan en disfunción sistólica importante. No se aplica esta estrategia nodal a FA preexcitada.
 
 ### B. Restaurar o mantener ritmo sinusal
 
-Puede utilizarse cardioversión eléctrica, farmacológica o ablación en pacientes seleccionados. La cardioversión urgente por deterioro no debe retrasarse para completar una evaluación electiva. En un paciente estable, la duración y el riesgo de trombo influyen en la preparación. La ESC 2024 utiliza un umbral de más de 24 horas para exigir una estrategia segura: anticoagulación terapéutica previa de al menos tres semanas o imagen que excluya trombo, con anticoagulación posterior habitualmente por al menos cuatro semanas. Las excepciones se individualizan. [11]
+Puede utilizarse cardioversión eléctrica, farmacológica o ablación en pacientes seleccionados. La cardioversión urgente por deterioro no debe retrasarse para completar una evaluación electiva. En un paciente estable, la duración y el riesgo de trombo influyen en la preparación. Cuando la duración supera 24 horas, se utiliza una estrategia de seguridad: anticoagulación terapéutica previa de al menos tres semanas o imagen que excluya trombo, con anticoagulación posterior habitualmente por al menos cuatro semanas. Las excepciones se individualizan.
 
 ### C. Prevenir tromboembolia
 
-La ESC 2024 propone CHA₂DS₂-VA: insuficiencia cardíaca, hipertensión, edad ≥75 años (2), diabetes, ictus/AIT/embolia previa (2), enfermedad vascular y edad de 65–74 años. Con 1 punto se considera anticoagulación; con ≥2 se recomienda si el paciente es elegible. El enfoque ACC/AHA 2023 utiliza riesgo anual y herramientas validadas como CHA₂DS₂-VASc. No deben mezclarse umbrales entre escalas. [6,10]
+La escala CHA₂DS₂-VA considera: insuficiencia cardíaca, hipertensión, edad ≥75 años (2), diabetes, ictus/AIT/embolia previa (2), enfermedad vascular y edad de 65–74 años. Con 1 punto se considera anticoagulación; con ≥2 se recomienda si el paciente es elegible. Otra estrategia de estratificación considera el riesgo anual y herramientas validadas como CHA₂DS₂-VASc. No deben mezclarse umbrales entre escalas.
 
-Los anticoagulantes directos se prefieren en muchos pacientes, con excepciones como prótesis mecánica o estenosis mitral relevante. Aspirina no sustituye anticoagulación cuando esta está indicada. El riesgo de sangrado ayuda a corregir factores modificables; no debe usarse aisladamente para negar tratamiento. Restaurar ritmo sinusal no elimina automáticamente la indicación antitrombótica. [10]
+Los anticoagulantes directos se prefieren en muchos pacientes, con excepciones como prótesis mecánica o estenosis mitral relevante. Aspirina no sustituye anticoagulación cuando esta está indicada. El riesgo de sangrado ayuda a corregir factores modificables; no debe usarse aisladamente para negar tratamiento. Restaurar ritmo sinusal no elimina automáticamente la indicación antitrombótica.
 
 <div class="fija"><strong>BADBEAR.MED FIJA:</strong> en FA, frecuencia, ritmo y anticoagulación responden a preguntas distintas. Una frecuencia normal no significa que el riesgo de ictus haya desaparecido.</div>
 
@@ -287,11 +287,11 @@ Una extrasístole ventricular es un complejo adelantado originado en el ventríc
 
 **Bigeminismo** significa alternancia de un latido dominante con uno ectópico; **trigeminismo**, una organización cada tres latidos; una **pareja** son dos complejos ventriculares consecutivos. Tres o más pueden constituir TV si la frecuencia y las características cumplen la definición. **Monomorfas** mantienen morfología similar; **multiformes** presentan distintas morfologías, aunque variaciones por fusión o conducción pueden complicar la interpretación.
 
-Cuantifique carga, síntomas, relación con esfuerzo, morfología, complejidad y función ventricular. Una cifra diaria aislada no separa de forma universal lo benigno de lo peligroso. Una carga elevada puede contribuir a miocardiopatía; la presencia de cicatriz o enfermedad estructural modifica el riesgo. Una persona asintomática sin cardiopatía requiere un enfoque distinto al de un paciente con síncope y fracción de eyección reducida. [12]
+Cuantifique carga, síntomas, relación con esfuerzo, morfología, complejidad y función ventricular. Una cifra diaria aislada no separa de forma universal lo benigno de lo peligroso. Una carga elevada puede contribuir a miocardiopatía; la presencia de cicatriz o enfermedad estructural modifica el riesgo. Una persona asintomática sin cardiopatía requiere un enfoque distinto al de un paciente con síncope y fracción de eyección reducida.
 
 El **ritmo idioventricular acelerado** suele mostrar complejos ventriculares a una frecuencia mayor que la de un escape habitual, frecuentemente alrededor de 50–110/min. Puede aparecer en reperfusión, pero no demuestra por sí solo éxito completo de una reperfusión. Suele ser transitorio y competir con el ritmo sinusal; tratarlo con supresión indiscriminada puede ser contraproducente si cumple una función de escape.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-33.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-33.webp" alt="Tiras ilustrativas de ectopia, taquicardia y fibrilación ventricular" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 5. Espectro ventricular. Material docente, p. 33. Compare complejos organizados y repetitivos con la actividad caótica de la FV; compruebe pulso y perfusión en todo trazado sospechoso.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-33.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-33.webp" alt="Tiras ilustrativas de ectopia, taquicardia y fibrilación ventricular" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 5. Espectro ventricular. PDF de apoyo, p. 33. Compare complejos organizados y repetitivos con la actividad caótica de la FV; compruebe pulso y perfusión en todo trazado sospechoso.</figcaption></figure>
 
 ## 17. Taquicardia ventricular y diagnóstico del QRS ancho {#ventriculares}
 
@@ -318,7 +318,7 @@ Un **latido de captura** aparece cuando un impulso supraventricular consigue act
 
 El algoritmo clásico pregunta secuencialmente si no existe RS en todas las precordiales, si el intervalo desde inicio de R al nadir de S supera 100 ms en alguna precordial, si existe disociación AV y si se cumplen criterios morfológicos de TV en V1–V2 y V6. Una respuesta positiva orienta a TV. Está diseñado para un contexto concreto; no debe aplicarse mecánicamente a cualquier taquicardia irregular, preexcitada o estimulada.
 
-Su rendimiento depende del observador, el tipo de cardiopatía y los fármacos. La existencia de algoritmos no elimina la incertidumbre. Si una taquicardia ancha no puede clasificarse de forma segura, se maneja inicialmente como TV y se solicita apoyo experto, evitando verapamilo o diltiazem como ensayo diagnóstico. [1]
+Su rendimiento depende del observador, el tipo de cardiopatía y los fármacos. La existencia de algoritmos no elimina la incertidumbre. Si una taquicardia ancha no puede clasificarse de forma segura, se maneja inicialmente como TV y se solicita apoyo experto, evitando verapamilo o diltiazem como ensayo diagnóstico.
 
 <figure><a href="imagenes/arritmias/pdf-pagina-27.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-27.webp" alt="Algoritmo clásico para diferenciar taquicardia ventricular y supraventricular con QRS ancho" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 6. Algoritmo diagnóstico presentado en el PDF, p. 27. Se estudia como herramienta para taquicardia regular ancha; no debe retrasar el tratamiento de un paciente inestable.</figcaption></figure>
 
@@ -326,7 +326,7 @@ Su rendimiento depende del observador, el tipo de cardiopatía y los fármacos. 
 
 La aberrancia dependiente de frecuencia puede producirse cuando un impulso llega a una rama todavía refractaria, especialmente después de cambios bruscos del ciclo. En FA, una secuencia largo-corto puede originar el fenómeno de Ashman, con QRS aberrante. La aberrancia de fase 4 se vincula a conducción anormal tras intervalos largos en tejido enfermo. La conducción retrógrada oculta puede mantener una rama refractaria sin generar una señal claramente identificable en superficie.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-37.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-37.webp" alt="Ensanchamiento del QRS al acortarse súbitamente el ciclo en el ejemplo docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 7. Cambio brusco del ciclo y conducción aberrante. Material docente, p. 37. Observe el paso de complejos estrechos a anchos; la explicación exige valorar la secuencia y no solamente el ancho final.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-37.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-37.webp" alt="Ensanchamiento del QRS al acortarse súbitamente el ciclo en el ejemplo docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 7. Cambio brusco del ciclo y conducción aberrante. PDF de apoyo, p. 37. Observe el paso de complejos estrechos a anchos; la explicación exige valorar la secuencia y no solamente el ancho final.</figcaption></figure>
 
 <figure><a href="imagenes/arritmias/pdf-pagina-38.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-38.webp" alt="Segundo ejemplo de cambios del ciclo y taquicardia de QRS ancho" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 8. Ejemplo complementario del PDF, p. 38. Compare el ritmo previo, los primeros complejos y la persistencia de la morfología para razonar sobre aberrancia y diagnósticos alternativos.</figcaption></figure>
 
@@ -334,19 +334,19 @@ La aberrancia dependiente de frecuencia puede producirse cuando un impulso llega
 
 La torsades de pointes es una TV polimorfa asociada a QT prolongado, en la que la amplitud y el eje parecen girar alrededor de la línea de base. No toda TV polimorfa es torsades. Cuando el QT previo es normal y existe isquemia, la interpretación y el tratamiento preventivo son diferentes. El inicio tras una secuencia corto-largo-corto o una pausa apoya un mecanismo dependiente de repolarización.
 
-Ante torsades se revisan fármacos, potasio, magnesio, función renal y causas de pausas. El QT puede ser congénito o adquirido. Los medicamentos que prolongan QT pueden interactuar, y el riesgo aumenta con bradicardia, insuficiencia cardíaca y trastornos electrolíticos. La TV polimorfa sostenida exige desfibrilación; el magnesio puede reducir recurrencias asociadas a QT largo, pero no reemplaza el choque. La estimulación para evitar pausas puede ser necesaria en casos seleccionados. [1,9]
+Ante torsades se revisan fármacos, potasio, magnesio, función renal y causas de pausas. El QT puede ser congénito o adquirido. Los medicamentos que prolongan QT pueden interactuar, y el riesgo aumenta con bradicardia, insuficiencia cardíaca y trastornos electrolíticos. La TV polimorfa sostenida exige desfibrilación; el magnesio puede reducir recurrencias asociadas a QT largo, pero no reemplaza el choque. La estimulación para evitar pausas puede ser necesaria en casos seleccionados.
 
 El síndrome de **Brugada** se relaciona con riesgo de arritmias ventriculares y un patrón tipo 1 característico en precordiales derechas; fiebre y algunos medicamentos pueden desenmascararlo. Un patrón sospechoso requiere diagnóstico diferencial y valoración especializada. El síndrome no se establece simplemente por mencionar elevación del ST en V1.
 
 La **TV polimorfa catecolaminérgica** puede aparecer con ejercicio o emoción en personas con ECG basal y estructura aparentemente normales. Puede mostrar TV bidireccional o polimorfa. El síncope de esfuerzo y los antecedentes familiares orientan, y el estudio debe realizarse de forma controlada. La normalidad del ECG de reposo no descarta una enfermedad eléctrica hereditaria.
 
-La **tormenta eléctrica** suele definirse como al menos tres episodios de arritmia ventricular sostenida en 24 horas que requieren terminación, separados entre sí. Obliga a buscar isquemia, descompensación, electrolitos, toxicidad y programación de dispositivos, además de controlar el tono simpático y considerar tratamiento especializado o ablación. No se resuelve únicamente repitiendo bolos sin analizar el sustrato. [12]
+La **tormenta eléctrica** suele definirse como al menos tres episodios de arritmia ventricular sostenida en 24 horas que requieren terminación, separados entre sí. Obliga a buscar isquemia, descompensación, electrolitos, toxicidad y programación de dispositivos, además de controlar el tono simpático y considerar tratamiento especializado o ablación. No se resuelve únicamente repitiendo bolos sin analizar el sustrato.
 
 ## 19. Bradicardia, pausas y disfunción sinusal {#bradiarritmias}
 
 La convención general denomina bradicardia a una frecuencia <60/min; los algoritmos de bradiarritmia sintomática utilizan frecuentemente <50/min como referencia. Una cifra baja no es enfermedad por sí misma. En deportistas o durante el sueño puede ser fisiológica; en un paciente con síncope, fármacos frenadores o daño del sistema de conducción adquiere otro significado.
 
-La disfunción sinusal reúne bradicardia inapropiada, pausas, bloqueo de salida, incompetencia cronotrópica y síndrome taquicardia-bradicardia. La fibrosis relacionada con edad es un sustrato frecuente, pero deben revisarse isquemia, hipotiroidismo, alteraciones electrolíticas, apnea del sueño y medicamentos. En esta entidad, la correlación temporal entre síntomas y ritmo es fundamental para decidir estimulación permanente; no existe una duración universal de pausa o una frecuencia aislada que la indiquen automáticamente. [13]
+La disfunción sinusal reúne bradicardia inapropiada, pausas, bloqueo de salida, incompetencia cronotrópica y síndrome taquicardia-bradicardia. La fibrosis relacionada con edad es un sustrato frecuente, pero deben revisarse isquemia, hipotiroidismo, alteraciones electrolíticas, apnea del sueño y medicamentos. En esta entidad, la correlación temporal entre síntomas y ritmo es fundamental para decidir estimulación permanente; no existe una duración universal de pausa o una frecuencia aislada que la indiquen automáticamente.
 
 ### Paro sinusal frente a bloqueo de salida sinoauricular
 
@@ -354,9 +354,9 @@ En el **paro sinusal**, el nodo no genera la descarga esperada; en el **bloqueo 
 
 En el bloqueo de salida tipo II, la pausa puede ser múltiplo del PP basal. En paro sinusal, habitualmente no conserva esa relación exacta. La arritmia sinusal y la falta de un registro largo reducen la precisión. Una P prematura bloqueada puede simular ambas situaciones; por eso se examina cuidadosamente la T anterior a la pausa.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-52.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-52.webp" alt="Ejemplo docente de pausa atribuida a paro sinusal" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 9. Pausa sinusal. Material docente, p. 52. Compare PP antes y después y busque una P prematura oculta antes de concluir el mecanismo.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-52.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-52.webp" alt="Ejemplo docente de pausa atribuida a paro sinusal" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 9. Pausa sinusal. PDF de apoyo, p. 52. Compare PP antes y después y busque una P prematura oculta antes de concluir el mecanismo.</figcaption></figure>
 
-<figure><a href="imagenes/arritmias/pdf-pagina-53.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-53.webp" alt="Ejemplo de bloqueo de salida sinoauricular" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 10. Bloqueo de salida sinoauricular. Material docente, p. 53. La relación entre la pausa y el ciclo sinusal ayuda a diferenciarlo de otras causas de ausencia de P.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-53.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-53.webp" alt="Ejemplo de bloqueo de salida sinoauricular" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 10. Bloqueo de salida sinoauricular. PDF de apoyo, p. 53. La relación entre la pausa y el ciclo sinusal ayuda a diferenciarlo de otras causas de ausencia de P.</figcaption></figure>
 
 ### Incompetencia cronotrópica y síndrome taqui-bradi
 
@@ -364,7 +364,7 @@ La incompetencia cronotrópica es la incapacidad de aumentar la frecuencia de fo
 
 En el síndrome taqui-bradi alternan ritmos auriculares rápidos y bradicardia o pausas, especialmente al terminar una taquiarritmia. El tratamiento de la fase rápida puede agravar la lenta. La documentación de síntomas, los medicamentos y la necesidad de soporte con marcapasos condicionan la estrategia global.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-55.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-55.webp" alt="Alternancia de bradicardia y taquicardia en la lámina docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 11. Síndrome taqui-bradi. Material docente, p. 55. La transición y la pausa posterior pueden explicar síntomas que no aparecen durante la fase de frecuencia rápida.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-55.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-55.webp" alt="Alternancia de bradicardia y taquicardia en la lámina docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 11. Síndrome taqui-bradi. PDF de apoyo, p. 55. La transición y la pausa posterior pueden explicar síntomas que no aparecen durante la fase de frecuencia rápida.</figcaption></figure>
 
 ## 20. Bloqueos auriculoventriculares y de rama {#bloqueos}
 
@@ -382,7 +382,7 @@ Una P se bloquea inesperadamente con PR constante en los latidos conducidos ante
 
 ### Bloqueo 2:1 y de alto grado
 
-En 2:1, una P conduce y la siguiente no. No hay suficientes PR consecutivos para demostrar progresión o constancia diagnóstica de Mobitz: **no se clasifica automáticamente como Mobitz II**. La anchura del QRS, los cambios con frecuencia y el estudio especializado pueden ayudar a localizarlo. Un bloqueo de alto grado incluye dos o más P consecutivas no conducidas con alguna conducción preservada. [14]
+En 2:1, una P conduce y la siguiente no. No hay suficientes PR consecutivos para demostrar progresión o constancia diagnóstica de Mobitz: **no se clasifica automáticamente como Mobitz II**. La anchura del QRS, los cambios con frecuencia y el estudio especializado pueden ayudar a localizarlo. Un bloqueo de alto grado incluye dos o más P consecutivas no conducidas con alguna conducción preservada.
 
 ### Tercer grado o completo
 
@@ -397,11 +397,11 @@ No existe conducción AV efectiva: las aurículas y los ventrículos siguen marc
 | Alto grado | Varias P consecutivas bloqueadas | Variable según mecanismo | Evaluación urgente |
 | Completo | Ninguna conducción AV | Sin relación fija | Escape, perfusión y estimulación |
 
-En Mobitz II adquirido, bloqueo avanzado o completo sin causa reversible o fisiológica, se recomienda estimulación permanente aunque no haya síntomas. La bradicardia nocturna aislada y las pausas sinusales sin correlación clínica no equivalen a esta indicación. [13]
+En Mobitz II adquirido, bloqueo avanzado o completo sin causa reversible o fisiológica, se recomienda estimulación permanente aunque no haya síntomas. La bradicardia nocturna aislada y las pausas sinusales sin correlación clínica no equivalen a esta indicación.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-60.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-60.webp" alt="Ejemplos docentes de retraso AV y bloqueos de segundo grado, con aclaración del trazado 2 a 1" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 12. Material docente, p. 60. <strong>Aclaración:</strong> la tira inferior rotulada como Mobitz II muestra conducción 2:1; ese patrón aislado no permite establecer Mobitz I frente a II. El PR constante de un único latido conducido no basta.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-60.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-60.webp" alt="Ejemplos docentes de retraso AV y bloqueos de segundo grado, con aclaración del trazado 2 a 1" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 12. PDF de apoyo, p. 60. <strong>Aclaración:</strong> la tira inferior rotulada como Mobitz II muestra conducción 2:1; ese patrón aislado no permite establecer Mobitz I frente a II. El PR constante de un único latido conducido no basta.</figcaption></figure>
 
-<figure><a href="imagenes/arritmias/pdf-pagina-61.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-61.webp" alt="Ejemplo de bloqueo auriculoventricular completo con actividad auricular y ventricular independientes" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 13. Bloqueo completo. Material docente, p. 61. Siga las P a través de QRS y T para reconocer la independencia auriculoventricular.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-61.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-61.webp" alt="Ejemplo de bloqueo auriculoventricular completo con actividad auricular y ventricular independientes" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 13. Bloqueo completo. PDF de apoyo, p. 61. Siga las P a través de QRS y T para reconocer la independencia auriculoventricular.</figcaption></figure>
 
 ### Bifascicular, «trifascicular» y enfermedad de conducción
 
@@ -425,13 +425,13 @@ La clasificación de Vaughan Williams agrupa efectos predominantes, pero algunos
 
 ### Particularidades de mayor utilidad clínica
 
-**Adenosina:** su acción breve facilita interrumpir AVNRT y determinadas AVRT. Se administra como bolo rápido por acceso adecuado seguido de lavado, mientras se registra el ECG. Puede generar pausa transitoria, rubor, disnea o molestias torácicas. Bloqueo AV avanzado sin soporte, ciertas situaciones respiratorias y las interacciones requieren evaluación. No se utiliza como ensayo en una taquicardia ancha irregular o polimorfa. [2]
+**Adenosina:** su acción breve facilita interrumpir AVNRT y determinadas AVRT. Se administra como bolo rápido por acceso adecuado seguido de lavado, mientras se registra el ECG. Puede generar pausa transitoria, rubor, disnea o molestias torácicas. Bloqueo AV avanzado sin soporte, ciertas situaciones respiratorias y las interacciones requieren evaluación. No se utiliza como ensayo en una taquicardia ancha irregular o polimorfa.
 
-**Amiodarona:** combina efectos sobre varias corrientes. En tratamientos prolongados se vigilan tiroides, hígado, pulmón y otras toxicidades, además de bradicardia e interacciones. La administración IV puede producir hipotensión. La dosis para TV con pulso no es la misma que el bolo del paro. Su menor propensión relativa a torsades frente a algunos agentes no significa ausencia de riesgo. No se usa en FA preexcitada. [2,4,8]
+**Amiodarona:** combina efectos sobre varias corrientes. En tratamientos prolongados se vigilan tiroides, hígado, pulmón y otras toxicidades, además de bradicardia e interacciones. La administración IV puede producir hipotensión. La dosis para TV con pulso no es la misma que el bolo del paro. Su menor propensión relativa a torsades frente a algunos agentes no significa ausencia de riesgo. No se usa en FA preexcitada.
 
 **Flecainida y propafenona:** enlentecen la conducción y pueden ensanchar QRS de forma dependiente de frecuencia. No deben extrapolarse a pacientes con cardiopatía isquémica o estructural significativa. La respuesta ventricular 1:1 de un flutter organizado por estos agentes es una complicación reconocida; la estrategia requiere selección y supervisión especializada.
 
-**Sotalol:** combina betabloqueo y prolongación de repolarización; QT, frecuencia y eliminación renal son relevantes. **Digoxina:** disminuye la conducción nodal principalmente mediante influencia vagal; su margen terapéutico, función renal, potasio e interacciones importan. Una intoxicación puede producir simultáneamente automatismo aumentado y bloqueo, por ejemplo taquicardia auricular con bloqueo AV. [9]
+**Sotalol:** combina betabloqueo y prolongación de repolarización; QT, frecuencia y eliminación renal son relevantes. **Digoxina:** disminuye la conducción nodal principalmente mediante influencia vagal; su margen terapéutico, función renal, potasio e interacciones importan. Una intoxicación puede producir simultáneamente automatismo aumentado y bloqueo, por ejemplo taquicardia auricular con bloqueo AV.
 
 **Verapamilo y diltiazem:** actúan sobre el nodo AV, pero no son una solución universal para QRS ancho. **Atropina:** reduce el efecto vagal; puede ser útil en bradicardia nodal, pero su eficacia es limitada si el bloqueo se encuentra distalmente. La falta de respuesta no debe retrasar soporte con estimulación cuando está indicado.
 
@@ -451,7 +451,7 @@ Estos esquemas pertenecen al manejo de adultos con monitorización y capacidad d
 | TV monomorfa estable seleccionada: amiodarona | 150 mg IV en 10 min; después 1 mg/min durante las primeras 6 h | No es el bolo de 300 mg del paro |
 | Taquicardia ancha estable seleccionada: procainamida | 20–50 mg/min, máximo 17 mg/kg; mantenimiento 1–4 mg/min | Detener por hipotensión, supresión o aumento de QRS >50%; evitar en QT prolongado o insuficiencia cardíaca |
 
-Esquemas de taquiarritmia: AHA 2025. No se combinan de forma automática y la disponibilidad de procainamida varía. [2]
+Esquemas iniciales de taquiarritmia. No se combinan de forma automática y la disponibilidad de procainamida varía.
 
 | Situación | Esquema de referencia | Precisión |
 |---|---|---|
@@ -459,7 +459,7 @@ Esquemas de taquiarritmia: AHA 2025. No se combinan de forma automática y la di
 | Soporte de bradicardia: dopamina | 5–20 µg/kg/min | Titular según respuesta, no confundir con µg/min |
 | Soporte de bradicardia: adrenalina | 2–10 µg/min | Infusión; no es la dosis de paro |
 
-Esquemas de bradicardia: AHA 2025. Si la atropina falla, se considera estimulación transcutánea y/o infusión, con valoración de estimulación transvenosa. [5]
+Esquemas iniciales de bradicardia. Si la atropina falla, se considera estimulación transcutánea y/o infusión, con valoración de estimulación transvenosa.
 
 | Situación | Esquema de referencia | Precisión |
 |---|---|---|
@@ -467,7 +467,7 @@ Esquemas de bradicardia: AHA 2025. Si la atropina falla, se considera estimulaci
 | FV/TV sin pulso refractaria: amiodarona | 300 mg IV/IO; segunda dosis 150 mg | Se añade al algoritmo; no sustituye RCP ni desfibrilación |
 | Alternativa: lidocaína | Inicial 1–1,5 mg/kg; segunda 0,5–0,75 mg/kg | Selección dentro del algoritmo de paro |
 
-Esquemas de paro: AHA 2025. Se minimizan interrupciones de compresiones y se investigan causas reversibles. [4]
+Esquemas iniciales de paro. Se minimizan interrupciones de compresiones y se investigan causas reversibles.
 
 La diferencia entre **mg**, **µg**, **µg/kg/min** y **µg/min** tiene consecuencias reales. Además, el mismo fármaco puede utilizarse en bolo, carga lenta o infusión. Una prescripción debe especificar concentración, vía, velocidad y objetivo de titulación. El electrocardiograma posterior y la respuesta clínica forman parte del tratamiento.
 
@@ -479,7 +479,7 @@ La **cardioversión sincronizada** entrega energía vinculada al QRS para reduci
 
 La **desfibrilación** es una descarga no sincronizada, utilizada en FV, TV sin pulso y TV polimorfa sostenida. En la polimorfa, la variación de complejos impide confiar en una sincronización adecuada. No se aplica a asistolia ni a actividad eléctrica sin pulso como intento de convertirlas en un ritmo perfundido.
 
-| Ritmo en un adulto cuando la descarga está indicada | Referencia inicial AHA 2025 |
+| Ritmo en un adulto cuando la descarga está indicada | Energía inicial de referencia |
 |---|---|
 | Fibrilación auricular | Cardioversión sincronizada, 200 J |
 | Flutter auricular | Cardioversión sincronizada, 200 J |
@@ -487,7 +487,7 @@ La **desfibrilación** es una descarga no sincronizada, utilizada en FV, TV sin 
 | TV monomorfa con pulso | Cardioversión sincronizada, 100 J |
 | TV polimorfa | Choque no sincronizado de alta energía |
 
-La energía debe concordar con el dispositivo y sus recomendaciones; puede escalarse si falla. Los valores de flutter difieren de esquemas antiguos de baja energía. Sedación, oxigenación y equipo de vía aérea se preparan cuando es factible, sin retrasar una intervención urgente. [3]
+La energía debe concordar con el dispositivo y sus recomendaciones; puede escalarse si falla. Los valores de flutter difieren de esquemas antiguos de baja energía. Sedación, oxigenación y equipo de vía aérea se preparan cuando es factible, sin retrasar una intervención urgente.
 
 En una cardioversión electiva de FA o flutter, anticoagulación e investigación de trombo siguen siendo necesarias según duración y riesgo. La energía restaura un patrón eléctrico, pero no elimina inmediatamente el aturdimiento auricular ni una fuente embólica. Tampoco garantiza que el ritmo se mantenga si persisten desencadenantes o remodelado.
 
@@ -520,15 +520,15 @@ Los electrogramas pueden identificar señales auriculares (**A**), del His (**H*
 
 La estimulación con ciclos y extraestímulos puede revelar doble fisiología nodal, conducción por una vía accesoria o inducibilidad de determinadas taquicardias. El *entrainment* y las respuestas a maniobras especializadas permiten analizar circuitos de reentrada. La inducción es una herramienta diagnóstica en pacientes seleccionados; un resultado negativo no elimina cualquier posibilidad de arritmia futura.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-67.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-67.webp" alt="Localización de electrocatéteres durante un estudio electrofisiológico" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 14. Catéteres y puntos de registro. Material docente, p. 67. Su distribución permite comparar la secuencia aurícula–His–ventrículo y el retorno retrógrado.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-67.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-67.webp" alt="Localización de electrocatéteres durante un estudio electrofisiológico" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 14. Catéteres y puntos de registro. PDF de apoyo, p. 67. Su distribución permite comparar la secuencia aurícula–His–ventrículo y el retorno retrógrado.</figcaption></figure>
 
-<figure><a href="imagenes/arritmias/pdf-pagina-69.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-69.webp" alt="Registro de superficie e intracardíaco de un estudio electrofisiológico" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 15. Electrogramas intracardíacos. Material docente, p. 69. Se analizan tiempos y secuencias; la información debe relacionarse con posición de catéteres y ECG de superficie.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-69.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-69.webp" alt="Registro de superficie e intracardíaco de un estudio electrofisiológico" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 15. Electrogramas intracardíacos. PDF de apoyo, p. 69. Se analizan tiempos y secuencias; la información debe relacionarse con posición de catéteres y ECG de superficie.</figcaption></figure>
 
 La **ablación por radiofrecuencia** produce lesión térmica controlada en una región crítica; la **crioablación** utiliza enfriamiento. En FA pueden utilizarse tecnologías adicionales, incluida ablación por campo pulsado en centros y situaciones adecuados. La elección depende del objetivo, el equipo y la experiencia. Los catéteres y el mapeo tridimensional permiten identificar focos y circuitos y reducir dependencia de fluoroscopia en determinados procedimientos.
 
 El objetivo cambia con la arritmia: vía lenta en AVNRT, vía accesoria en AVRT, istmo cavotricuspídeo en flutter típico, regiones relacionadas con venas pulmonares en FA, o canales de cicatriz en TV. «Ablacionar el corazón» es una descripción demasiado imprecisa para comprender el procedimiento.
 
-Los riesgos incluyen complicaciones vasculares, taponamiento, tromboembolia, lesión del sistema AV y otros dependientes de la zona tratada. Éxito y recurrencia varían según mecanismo, cardiopatía y técnica. Una tasa histórica única de fracaso del 15–30% no describe todas las ablaciones actuales. Algunas taquicardias por reentrada permiten ofrecer ablación como opción inicial tras explicar beneficios y riesgos; no es necesario asumir que siempre debe ser el último recurso. [7]
+Los riesgos incluyen complicaciones vasculares, taponamiento, tromboembolia, lesión del sistema AV y otros dependientes de la zona tratada. Éxito y recurrencia varían según mecanismo, cardiopatía y técnica. Una tasa histórica única de fracaso del 15–30% no describe todas las ablaciones actuales. Algunas taquicardias por reentrada permiten ofrecer ablación como opción inicial tras explicar beneficios y riesgos; no es necesario asumir que siempre debe ser el último recurso.
 
 ## 26. Desfibrilador implantable y prevención de muerte súbita {#desfibrilador}
 
@@ -538,9 +538,9 @@ La **estimulación antitaquicardia** entrega secuencias rápidas que pueden pene
 
 La **prevención secundaria** considera a sobrevivientes de FV o TV sostenida peligrosa cuando no existe una causa completamente reversible que explique el evento. La **primaria** busca prevenir un primer evento fatal en grupos de riesgo definidos. Fracción de eyección, enfermedad causal, evolución tras tratamiento, cicatriz, genética, comorbilidades y expectativa funcional influyen. No se indica un DAI por cualquier extrasístole ni por una cifra de frecuencia.
 
-El DAI y la ablación pueden ser complementarios: uno termina episodios y la otra reduce un circuito responsable. En TV recurrente con cardiopatía isquémica y terapias del DAI pese a tratamiento, la ablación puede preferirse a intensificar fármacos en escenarios definidos. La decisión requiere valoración especializada. [12]
+El DAI y la ablación pueden ser complementarios: uno termina episodios y la otra reduce un circuito responsable. En TV recurrente con cardiopatía isquémica y terapias del DAI pese a tratamiento, la ablación puede preferirse a intensificar fármacos en escenarios definidos. La decisión requiere valoración especializada.
 
-<figure><a href="imagenes/arritmias/pdf-pagina-92.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-92.webp" alt="Desfibrilador implantable, radiografía y terapias eléctricas del material docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 16. DAI y terapias. Material docente, p. 92. El dispositivo puede utilizar estimulación antitaquicardia o choque según detección y programación; la indicación depende del riesgo clínico global.</figcaption></figure>
+<figure><a href="imagenes/arritmias/pdf-pagina-92.webp" target="_blank" rel="noopener"><img src="imagenes/arritmias/pdf-pagina-92.webp" alt="Desfibrilador implantable, radiografía y terapias eléctricas del material docente" loading="lazy" width="1588" height="1190"></a><figcaption>Figura 16. DAI y terapias. PDF de apoyo, p. 92. El dispositivo puede utilizar estimulación antitaquicardia o choque según detección y programación; la indicación depende del riesgo clínico global.</figcaption></figure>
 
 ## 27. Casos clínicos razonados {#casos}
 
@@ -578,7 +578,7 @@ Los siguientes escenarios son **material original de entrenamiento**. Se estudia
 | «Pausa ≥3 segundos siempre indica marcapasos» | En disfunción sinusal importa correlación clínica y causa; no hay umbral universal |
 | «Una cantidad fija de extrasístoles diarias define normalidad» | Importan carga, síntomas, complejidad y cardiopatía |
 | «La adenosina que terminó el ritmo demuestra TSV» | Algunas TV idiopáticas responden; revisar el registro completo |
-| «Todo flutter se cardioverte inicialmente con 50 J» | AHA 2025 usa referencia de 200 J; verificar equipo y protocolo |
+| «Todo flutter se cardioverte inicialmente con 50 J» | La referencia inicial es 200 J; verificar equipo y protocolo |
 | «La misma dosis de amiodarona sirve con y sin pulso» | Carga lenta para situaciones con pulso y bolos de paro son distintos |
 | «Amiodarona sirve para cualquier FA» | En FA preexcitada está contraindicada |
 | «La ablación siempre requiere fracaso de muchos fármacos» | Puede ser una opción inicial en arritmias seleccionadas |
@@ -586,7 +586,7 @@ Los siguientes escenarios son **material original de entrenamiento**. Se estudia
 | «La radiofrecuencia nunca necesita anestesia general» | Sedación y anestesia dependen del procedimiento y paciente |
 | «PR largo más bifascicular demuestra daño de tres fascículos» | El retraso puede ser nodal; describir y localizar |
 
-El PDF original se conserva como material docente. Estas precisiones permiten estudiar sus ilustraciones sin convertir afirmaciones históricas o simplificadas en reglas universales. Los cuadros de urgencia y las recomendaciones específicas remiten a los documentos enumerados al final.
+El PDF original se conserva como material docente. Estas precisiones permiten estudiar sus ilustraciones sin convertir afirmaciones históricas o simplificadas en reglas universales. Los cuadros de urgencia integran los esquemas de manejo explicados en este capítulo.
 
 ## 29. Glosario para leer electrofisiología {#glosario}
 
@@ -630,29 +630,10 @@ El PDF original se conserva como material docente. Estas precisiones permiten es
 - Marcapasos, DAI y ablación resuelven problemas diferentes y pueden complementarse.
 - Una intervención exitosa sobre el ritmo no sustituye tratar cardiopatía, desencadenantes y riesgo tromboembólico.
 
-## 31. Material original y referencias {#referencias}
+## 31. Material extra de BADBEAR.MED {#referencias}
 
 ### Material extra del curso
 
-**Arritmias cardíacas · Dr. Luis A. Orellana V. · UNFV.** PDF original de 92 páginas, 10,59 MB. Los números de página de las figuras corresponden al archivo recibido. Su autoría docente se conserva; el desarrollo ampliado de esta página corresponde a BADBEAR.MED.
+**Arritmias cardíacas · Material extra.** PDF de apoyo de 92 páginas, 10,59 MB. Los números de página de las figuras permiten localizar cada trazado dentro del archivo. El desarrollo académico de este capítulo está a cargo de **BADBEAR.MED**.
 
-<div class="resource-actions"><a class="primary" href="pdf/material-extra/arritmias-cardiacas.pdf" target="_blank" rel="noopener">Abrir PDF original · 92 páginas</a><a href="pdf/material-extra/arritmias-cardiacas.pdf" download="arritmias-cardiacas-unfv.pdf">Descargar material extra</a><button type="button" data-print>Imprimir desarrollo</button></div>
-
-### Documentos consultados
-
-1. Wigginton JG, Agarwal S, Bartos JA, et al. Part 9: Adult Advanced Life Support. **AHA 2025**. Circulation. 2025;152(supl 2):S538–S577. [Documento oficial](https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support).
-2. American Heart Association. **Adult Tachyarrhythmia With a Pulse Algorithm, 2025**. [Algoritmo oficial](https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/Algorithm-ACLS-Tachycardia-250514.pdf?sc_lang=en).
-3. American Heart Association. **Electrical Cardioversion Algorithm, 2025**. [Algoritmo oficial](https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/Algorithm-ACLS-Electrical-Cardioversion-250514.pdf?sc_lang=es).
-4. American Heart Association. **Adult Cardiac Arrest Algorithm, 2025**. [Algoritmo oficial](https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/Algorithm-ACLS-CA-250527.pdf?sc_lang=en).
-5. American Heart Association. **Adult Bradycardia With a Pulse Algorithm, 2025**. [Algoritmo oficial](https://www.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Algorithms/Algorithm-ACLS-Bradycardia-250514.pdf).
-6. Van Gelder IC, Rienstra M, Bunting KV, et al. **ESC 2024: fibrilación auricular**. Resumen institucional de recomendaciones consultado en ACC. [Puntos clave](https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2024/09/17/04/05/2024-ESC-guidelines-for-AF-esc-2024).
-7. Brugada J, Katritsis DG, Arbelo E, et al. **ESC 2019: taquicardia supraventricular**. Eur Heart J. 2020;41:655–720. [Resumen institucional ACC](https://www.acc.org/latest-in-cardiology/ten-points-to-remember/2019/09/10/12/36/2019-esc-guidelines-for-supraventricular-tachycardia).
-8. Joglar JA, Chung MK, Armbruster AL, et al. **ACC/AHA/ACCP/HRS 2023: fibrilación auricular**, apartado de WPW y preexcitación. [Texto publicado](https://pmc.ncbi.nlm.nih.gov/articles/PMC11104284/).
-9. Tisdale JE, Chung MK, Campbell KB, et al. **AHA: arritmias inducidas por fármacos, 2020**. [Resumen institucional ACC](https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2020/09/21/03/45/Drug-Induced-Arrhythmias).
-10. American College of Cardiology. **Guía ACC/AHA/ACCP/HRS 2023 de FA: puntos clave**. [Consulta institucional](https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2023/11/27/19/46/2023-acc-guideline-for-af-gl-af).
-11. Van Gelder IC, Rienstra M, Bunting KV, et al. **2024 ESC Guidelines for the management of atrial fibrillation**. Eur Heart J. 2024;45:3314–3414. doi:10.1093/eurheartj/ehae176. [Publicación](https://academic.oup.com/eurheartj/article/45/36/3314/7738779).
-12. Zeppenfeld K, Tfelt-Hansen J, de Riva M, et al. **ESC 2022: arritmias ventriculares y prevención de muerte súbita**. [Resumen institucional ACC](https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2022/09/02/14/23/2022-ESC-Guidelines-for-VAs-ESC-2022).
-13. Kusumoto FM, Schoenfeld MH, Barrett C, et al. **ACC/AHA/HRS 2018: bradicardia y trastornos de conducción**. [Síntesis oficial AHA](https://professional.heart.org/en/science-news/2018-guideline-for-the-evaluation-and-management-of-bradycardia-and-cardiac-conduction-delay/top-things-to-know).
-14. Kusumoto FM, Schoenfeld MH, Barrett C, et al. **Executive Summary: bradycardia and cardiac conduction delay**. J Am Coll Cardiol. 2019;74:932–987. doi:10.1016/j.jacc.2018.10.043. [Definiciones publicadas](https://www.jacc.org/doi/10.1016/j.jacc.2018.10.043).
-
-La revisión combina el material docente proporcionado, explicaciones de fisiología y electrocardiografía y recomendaciones específicas verificadas en los documentos indicados. La elección terapéutica real requiere integrar diagnóstico, paciente, disponibilidad y protocolo clínico; las tablas no sustituyen esa valoración.
+<div class="resource-actions"><a class="primary" href="pdf/material-extra/arritmias-cardiacas.pdf" target="_blank" rel="noopener">Abrir material extra · 92 páginas</a><a href="pdf/material-extra/arritmias-cardiacas.pdf" download="arritmias-cardiacas.pdf">Descargar PDF de apoyo</a><button type="button" data-print>Imprimir desarrollo</button></div>
