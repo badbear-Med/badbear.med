@@ -293,7 +293,7 @@
             <button class="music-float-btn" type="button" data-floating-track="me-quedo-tu-voz">
               ↗ Reproducir flotante
             </button>
-            <span class="music-float-note">Seguirá sonando aunque cambies de sección.</span>
+            <span class="music-float-note">Seguirá sonando aunque cambies de sección y continuará con la siguiente canción.</span>
           </div>
         </article>
       </section>
@@ -321,7 +321,7 @@
             <button class="music-float-btn" type="button" data-floating-track="alas-de-mariposa">
               ↗ Reproducir flotante
             </button>
-            <span class="music-float-note">Seguirá sonando aunque cambies de sección.</span>
+            <span class="music-float-note">Seguirá sonando aunque cambies de sección y continuará con la siguiente canción.</span>
           </div>
         </article>
 
@@ -339,7 +339,7 @@
             <button class="music-float-btn" type="button" data-floating-track="no-voy-a-volver">
               ↗ Reproducir flotante
             </button>
-            <span class="music-float-note">Seguirá sonando aunque cambies de sección.</span>
+            <span class="music-float-note">Seguirá sonando aunque cambies de sección y continuará con la siguiente canción.</span>
           </div>
         </article>
       </section>
@@ -514,6 +514,30 @@
 
 })();
 </script>
+<script>
+/* ===== REPRODUCCIÓN CONTINUA POR BIBLIOTECA ===== */
+(() => {
+  document.querySelectorAll(".music-category").forEach(category => {
+    const players = [...category.querySelectorAll("audio.music-player")];
+    if (!players.length) return;
+
+    players.forEach((player, index) => {
+      player.addEventListener("play", () => {
+        document.querySelectorAll("audio.music-player").forEach(other => {
+          if (other !== player) other.pause();
+        });
+      });
+
+      player.addEventListener("ended", () => {
+        const next = players[(index + 1) % players.length];
+        next.currentTime = 0;
+        next.play().catch(() => {});
+      });
+    });
+  });
+})();
+</script>
+
 <script>
 (() => {
   document.querySelectorAll("[data-floating-track]").forEach(button => {
