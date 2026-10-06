@@ -142,11 +142,7 @@
   }
 
   function togglePlay() {
-    if (!currentTrack) {
-      const firstLibrary = catalog.find(item => item.tracks?.length);
-      if (firstLibrary) loadTrack(firstLibrary, 0, true);
-      return;
-    }
+    if (!currentTrack) return;
 
     if (audio.paused) audio.play().catch(() => {});
     else audio.pause();
