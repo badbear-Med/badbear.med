@@ -107,3 +107,77 @@
     // Los avisos de preparación siguen disponibles si el catálogo no responde.
   });
 })();
+
+
+/* BB_SOTELO_PRINT_SELECTOR_V1 */
+(() => {
+  "use strict";
+  const topics = [
+    [1,"Intususcepción intestinal en adultos"],
+    [2,"CD4: qué es y qué indica en la práctica clínica"],
+    [3,"Cadenas ganglionares en tomografía: normalidad y neoplasia"],
+    [4,"Gangrena de Fournier"],
+    [5,"Fístulas anorrectales: anatomía, clasificación y tratamiento"],
+    [6,"Signo de Infante Díaz y evaluación de irritación peritoneal"],
+    [7,"Neoplasias del colon: nombre completo y distribución por segmentos"],
+    [8,"Tratamiento del cáncer de colon según zona y estadio"],
+    [9,"Coledocolitiasis: métodos endoscópicos de extracción y manejo"],
+    [10,"Aumento del cáncer colorrectal, especialmente en jóvenes"],
+    [11,"Tomografía, resonancia y elección de imagen en patología biliar"],
+    [12,"Bezoares y tricobezoar gástrico"],
+    [13,"Incisiones de laparotomía y Rockey-Davis"],
+    [14,"Apendicitis y laparoscopia"],
+    [15,"Colangitis, colecistitis, Tokio y síndrome de Mirizzi"],
+    [16,"Proteína C reactiva (PCR): producción e interpretación"],
+    [17,"Marcadores hepáticos y serología de hepatitis B"],
+    [18,"Trastornos de coagulación en el paciente ictérico"],
+    [19,"Quistes hepáticos: diagnóstico, intervención y postoperatorio"],
+    [20,"Absceso anorrectal: drenaje, fístula y sospecha de Fournier"]
+  ];
+  const box = document.getElementById("sotelo-print-topics");
+  const count = document.getElementById("sotelo-print-count");
+  const go = document.getElementById("sotelo-print-go");
+  if (!box || !count || !go) return;
+
+  const selected = () => [...box.querySelectorAll('input[type="checkbox"]:checked')].map(i => i.value);
+  const update = () => {
+    const n = selected().length;
+    count.textContent = n + (n === 1 ? " seleccionado" : " seleccionados");
+    go.disabled = n === 0;
+    go.textContent = n ? `Preparar impresión (${n})` : "Preparar impresión";
+  };
+
+  const frag = document.createDocumentFragment();
+  topics.forEach(([n,title]) => {
+    const label = document.createElement("label");
+    label.className = "bb-sotelo-print-topic";
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.value = String(n);
+    input.addEventListener("change", update);
+    const num = document.createElement("strong");
+    num.textContent = "TEMA " + String(n).padStart(2,"0");
+    const text = document.createElement("span");
+    text.textContent = title;
+    label.append(input,num,text);
+    frag.appendChild(label);
+  });
+  box.appendChild(frag);
+
+  document.getElementById("sotelo-print-all")?.addEventListener("click", () => {
+    box.querySelectorAll('input[type="checkbox"]').forEach(i => i.checked = true);
+    update();
+  });
+  document.getElementById("sotelo-print-none")?.addEventListener("click", () => {
+    box.querySelectorAll('input[type="checkbox"]').forEach(i => i.checked = false);
+    update();
+  });
+  go.addEventListener("click", () => {
+    const ids = selected();
+    if (!ids.length) return;
+    const url = new URL("rotacion-dr-sotelo/imprimir-temas.html", document.baseURI);
+    url.searchParams.set("temas", ids.join(","));
+    window.open(url.href, "_blank", "noopener");
+  });
+  update();
+})();

@@ -1,3 +1,13 @@
 .bb-sotelo-developed{scroll-margin-top:1rem}.bb-sotelo-topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem;margin-top:1.8rem}.bb-sotelo-topic{display:flex;flex-direction:column;align-items:flex-start;padding:1.5rem;border:1px solid #c9d9ef;border-top:5px solid #0061d5;background:white;border-radius:13px;text-decoration:none;color:#172538;box-shadow:0 5px 16px #173d7610;transition:transform .15s,border-color .15s}.bb-sotelo-topic:nth-child(3n+2){border-top-color:#e5223f}.bb-sotelo-topic:nth-child(3n){border-top-color:#008951}.bb-sotelo-topic:hover{transform:translateY(-3px);border-color:#0061d5}.bb-sotelo-topic:focus-visible{outline:3px solid #e46300;outline-offset:4px}.bb-sotelo-topic-number{font-size:.875rem;font-weight:900;color:#e5223f;letter-spacing:.07em}.bb-sotelo-topic h3{font-size:1.22rem;font-weight:850;line-height:1.4;margin:.55rem 0 .7rem;color:#0061d5}.bb-sotelo-topic p{font-size:1rem;line-height:1.6;margin:0 0 1.1rem;color:#43556b}.bb-sotelo-read{margin-top:auto;font-size:.94rem;font-weight:800;color:#0061d5}.bb-sotelo-study-note{font-size:.92rem!important;color:#526175;margin-top:1.6rem!important}.bb-sotelo-developed>.bb-extra-actions{margin-top:1.2rem}
 @media(max-width:650px){.bb-sotelo-topic-grid{grid-template-columns:1fr}.bb-sotelo-topic{padding:1.25rem}.bb-sotelo-topic h3{font-size:1.15rem}}
 @media(prefers-reduced-motion:reduce){.bb-sotelo-topic{transition:none}.bb-sotelo-topic:hover{transform:none}}
+
+/* BB_SOTELO_PORTADA_MOBILE_V2 */
+@media(max-width:650px){
+  .bb-sotelo-developed{margin-top:18px}
+  .bb-sotelo-topic-grid{gap:.8rem;margin-top:1.2rem}
+  .bb-sotelo-topic{padding:1.05rem;border-radius:11px}
+  .bb-sotelo-topic h3{font-size:1.08rem;line-height:1.32;margin:.42rem 0 .55rem}
+  .bb-sotelo-topic p{font-size:.94rem;line-height:1.48;margin-bottom:.75rem}
+  .bb-sotelo-read{font-size:.9rem}
+}

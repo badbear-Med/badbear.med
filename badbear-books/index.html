@@ -1,14 +1,22 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="books-access-pending">
 <head>
+  <style>html.books-access-pending #books-page{display:none!important}</style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>BADBEAR.BOOKS | WAJOMEA.GROUP</title>
   <meta name="description" content="Libros y publicaciones redactados por el equipo de WAJOMEA.GROUP.">
   <link rel="stylesheet" href="../assets/css/bb-vivid-global.css?v=20260930-vivos-global3">
   <link rel="stylesheet" href="../assets/css/bb-extras.css?v=20261001-group1">
+  <link rel="stylesheet" href="books.css?v=20261004-1">
+  <link rel="stylesheet" href="acceso.css?v=20261004-books-lock2">
+  <script src="acceso-config.js?v=20261004-books-lock2" defer></script>
+  <script src="acceso.js?v=20261004-books-lock2" defer></script>
 </head>
 <body class="bb-extra-page bb-extra-books">
+  <div id="books-access-loading" class="books-access-loading" role="status">Preparando el acceso a BADBEAR.BOOKS…</div>
+  <noscript><p class="books-nojs">Activa JavaScript para verificar la clave de acceso a nuestra biblioteca.</p></noscript>
+  <div id="books-page">
   <header class="bb-extra-header">
     <a class="bb-extra-logo bb-group-logo" href="../index.html"><span>WAJOMEA.<b>GROUP</b></span></a>
     <nav aria-label="Proyectos de WAJOMEA.GROUP">
@@ -30,11 +38,15 @@
     </section>
     <section class="bb-extra-section" id="catalogo" aria-labelledby="books-catalog-title">
       <h2 id="books-catalog-title">Publicaciones de WAJOMEA.GROUP</h2>
-      <p>Aquí podrás conocer cada libro, sus autores y una presentación de su contenido.</p>
-      <div class="bb-extra-notice">
-        <strong>Nuestros libros están en preparación</strong>
-        <p>El equipo de WAJOMEA.GROUP está trabajando en sus publicaciones para compartir contigo contenido completo, ordenado y de elaboración propia. Los títulos se incorporarán al catálogo conforme estén disponibles.</p>
-      </div>
+      <p>Lee nuestras publicaciones directamente en la web, con capítulos organizados y una presentación de cada obra.</p>
+      <article class="bb-book-card" aria-labelledby="first-book-title">
+<a class="bb-book-cover" href="wajomeismo-puro/index.html" aria-label="Abrir WAJOMEÍSMO PURO"><img src="wajomeismo-puro/portada.jpeg" width="671" height="1024" alt="Portada original del libro WAJOMEÍSMO" loading="lazy"></a>
+<div><span class="bb-extra-eyebrow">PRIMER LIBRO · YA DISPONIBLE</span><h3 id="first-book-title">WAJOMEÍSMO PURO</h3><div class="bb-book-subtitle">Código Interno del Hombre que No Se Somete</div>
+<div class="bb-book-tags"><span>Edición ampliada</span><span>Prólogo + 20 capítulos</span><span>20 planes de crecimiento</span></div>
+<p>Cada capítulo reúne el texto original y un desarrollo con explicaciones, ejemplos, ejercicios y oportunidades de crecimiento. Incluye veinte planes de acción de siete días y una guía general de lectura.</p>
+<p>Una publicación de <strong>WAJOMEA.GROUP</strong> en <strong>BADBEAR.BOOKS</strong>.</p>
+<div class="bb-extra-actions"><a class="bb-extra-action" href="wajomeismo-puro/index.html">Leer el libro →</a><a class="bb-extra-action bb-extra-action-secondary" href="wajomeismo-puro/index.html#indice">Ver capítulos</a></div></div></article>
+<p class="bb-books-next">El equipo de WAJOMEA.GROUP continúa trabajando para incorporar nuevas publicaciones a nuestra biblioteca.</p>
     </section>
     <section class="bb-extra-section" aria-labelledby="books-team-title">
       <h2 id="books-team-title">Una creación de nuestro equipo</h2>
@@ -45,6 +57,6 @@
     <p><strong>BADBEAR.BOOKS</strong> · Una creación de WAJOMEA.GROUP</p>
     <a href="../index.html">Volver a WAJOMEA.GROUP</a>
   </footer>
+  </div>
 </body>
 </html>
-
