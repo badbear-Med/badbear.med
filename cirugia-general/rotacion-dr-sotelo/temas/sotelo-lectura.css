@@ -19,3 +19,11 @@ figure{margin:2rem 0;padding:1rem;border:1px solid var(--line);border-radius:12p
 @media(max-width:460px){.sotelo-index ol{columns:1}.sotelo-header nav{gap:.55rem}.sotelo-layout{padding:0 .5rem}.sotelo-article{padding:1.25rem 1rem}h1{font-size:1.95rem}.sotelo-fija{padding:1rem}.sotelo-kicker{font-size:.8rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{body.sotelo-reader{background:white;font-size:11pt}.sotelo-header,.sotelo-index,.sotelo-pager,.sotelo-footer,.sotelo-skip{display:none}.sotelo-layout{display:block;max-width:none;margin:0;padding:0}.sotelo-article{padding:0;border:0;box-shadow:none}h1{font-size:24pt}h2{break-after:avoid;font-size:15pt}figure,.sotelo-fija,tr{break-inside:avoid}table{min-width:0;font-size:9pt}.sotelo-table{overflow:visible}thead{display:table-header-group}}
+
+/* SOTELO_GALLERY_V2 */
+.sotelo-material-figure.sotelo-gallery a{display:block}
+.sotelo-material-figure.sotelo-gallery img{display:block;width:100%;max-width:100%;height:auto;max-height:none;object-fit:contain;margin:auto}
+@media(max-width:800px){
+  .sotelo-material-figure.sotelo-gallery{padding:.55rem;margin:1.35rem 0}
+  .sotelo-material-figure.sotelo-gallery figcaption{font-size:.86rem;line-height:1.5}
+}
