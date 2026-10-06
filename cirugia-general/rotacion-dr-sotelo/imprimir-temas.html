@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Imprimir temas | Rotación con Dr. Sotelo · BADBEAR.MED</title>
+<meta name="description" content="Versión imprimible personalizada de los temas de la Rotación con Dr. Sotelo en Cirugía General.">
+<link rel="icon" href="../../assets/logos/cursos/cirugia-general/logo.png">
+<link rel="stylesheet" href="temas/sotelo-lectura.css?v=20261006-print1">
+<style>
+:root{--print-blue:#005be8;--print-ink:#172538;--print-line:#d5dfec}
+*{box-sizing:border-box}
+body{margin:0;background:#eef4fb;color:var(--print-ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.bb-print-toolbar{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px max(14px,calc((100vw - 1180px)/2));background:#fff;border-bottom:1px solid var(--print-line);box-shadow:0 4px 16px #12335a12}
+.bb-print-toolbar>div:first-child{min-width:0}
+.bb-print-toolbar strong{display:block;font-size:15px}
+.bb-print-toolbar span{display:block;color:#526175;font-size:12px;margin-top:2px}
+.bb-print-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.bb-print-buttons button,.bb-print-buttons a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 14px;border-radius:9px;border:1px solid var(--print-blue);font:inherit;font-size:13px;font-weight:850;text-decoration:none;cursor:pointer}
+.bb-print-buttons button{background:var(--print-blue);color:#fff}
+.bb-print-buttons a{background:#fff;color:var(--print-blue)}
+#bb-print-status{max-width:1180px;margin:20px auto;padding:0 16px;color:#40516a}
+#bb-print-content{max-width:1180px;margin:0 auto 60px;padding:0 16px}
+.bb-print-chapter{margin:0 0 26px}
+.bb-print-chapter .sotelo-article{max-width:none}
+.bb-print-chapter+.bb-print-chapter{break-before:page;page-break-before:always}
+.bb-print-error{padding:18px;border:1px solid #e0b8b8;background:#fff3f3;border-radius:10px;color:#7c1d1d}
+@media(max-width:700px){
+  .bb-print-toolbar{align-items:stretch;flex-direction:column;padding:10px}
+  .bb-print-buttons{display:grid;grid-template-columns:1fr 1fr}
+  .bb-print-buttons button,.bb-print-buttons a{width:100%}
+  #bb-print-content{padding:0 8px}
+  .bb-print-chapter .sotelo-article{padding:1.2rem .95rem}
+}
+@media print{
+  @page{size:auto;margin:12mm}
+  body{background:#fff}
+  .bb-print-toolbar,#bb-print-status{display:none!important}
+  #bb-print-content{max-width:none;margin:0;padding:0}
+  .bb-print-chapter{margin:0}
+  .bb-print-chapter .sotelo-article{padding:0;border:0;box-shadow:none}
+  .bb-print-chapter+.bb-print-chapter{break-before:page;page-break-before:always}
+  .sotelo-pager,.sotelo-study-note,.sotelo-download{display:none!important}
+  a{color:inherit;text-decoration:none}
+  figure{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<header class="bb-print-toolbar">
+  <div>
+    <strong>Rotación con Dr. Sotelo · impresión personalizada</strong>
+    <span id="bb-print-summary">Preparando temas…</span>
+  </div>
+  <div class="bb-print-buttons">
+    <a href="../rotacion-dr-sotelo.html#impresion">← Cambiar selección</a>
+    <button type="button" id="bb-print-button" disabled>🖨️ Imprimir / guardar PDF</button>
+  </div>
+</header>
+<p id="bb-print-status">Cargando los capítulos seleccionados…</p>
+<main id="bb-print-content" aria-live="polite"></main>
+<script>
+(() => {
+  "use strict";
+  const topics = {
+    1:["01-intususcepcion-adultos.html","Intususcepción intestinal en adultos"],
+    2:["02-cd4.html","CD4: qué es y qué indica en la práctica clínica"],
+    3:["03-ganglios-tomografia.html","Cadenas ganglionares en tomografía"],
+    4:["04-gangrena-fournier.html","Gangrena de Fournier"],
+    5:["05-fistulas-anorrectales.html","Fístulas anorrectales"],
+    6:["06-signo-infante-diaz.html","Signo de Infante Díaz"],
+    7:["07-neoplasias-colon.html","Neoplasias del colon"],
+    8:["08-tratamiento-colon-zonas.html","Tratamiento del cáncer de colon según zona"],
+    9:["09-coledocolitiasis-endoscopia.html","Coledocolitiasis: extracción endoscópica"],
+    10:["10-aumento-cancer-colorrectal.html","Aumento del cáncer colorrectal"],
+    11:["11-tomografia-resonancia-via-biliar.html","TC, RM y vía biliar"],
+    12:["12-bezoares-tricobezoar.html","Bezoares y tricobezoar gástrico"],
+    13:["13-incisiones-laparotomia.html","Incisiones de laparotomía"],
+    14:["14-apendicitis-laparoscopia.html","Apendicitis y laparoscopia"],
+    15:["15-colangitis-tokio-mirizzi.html","Colangitis, colecistitis, Tokio y Mirizzi"],
+    16:["16-pcr-proteina-c-reactiva.html","Proteína C reactiva"],
+    17:["17-marcadores-hepaticos-hepatitis-b.html","Marcadores hepáticos y hepatitis B"],
+    18:["18-coagulacion-paciente-icterico.html","Coagulación en el paciente ictérico"],
+    19:["19-quistes-hepaticos-manejo.html","Quistes hepáticos"],
+    20:["20-absceso-anorrectal-drenaje.html","Absceso anorrectal y drenaje"]
+  };
+  const params = new URLSearchParams(location.search);
+  const raw = (params.get("temas") || "").split(",").map(v => Number(v)).filter(v => Number.isInteger(v) && topics[v]);
+  const ids = [...new Set(raw.length ? raw : Object.keys(topics).map(Number))].sort((a,b) => a-b);
+  const content = document.getElementById("bb-print-content");
+  const status = document.getElementById("bb-print-status");
+  const summary = document.getElementById("bb-print-summary");
+  const button = document.getElementById("bb-print-button");
+
+  const rebase = (root, base) => {
+    root.querySelectorAll("[src]").forEach(el => {
+      const v = el.getAttribute("src");
+      if (!v || v.startsWith("data:") || v.startsWith("blob:")) return;
+      try { el.setAttribute("src", new URL(v, base).href); } catch {}
+    });
+    root.querySelectorAll("a[href]").forEach(el => {
+      const v = el.getAttribute("href");
+      if (!v || v.startsWith("#") || v.startsWith("javascript:")) return;
+      try { el.setAttribute("href", new URL(v, base).href); } catch {}
+    });
+  };
+
+  const loadOne = async id => {
+    const [file,title] = topics[id];
+    const url = new URL("temas/" + file, location.href);
+    const response = await fetch(url.href, {cache:"no-cache"});
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    const html = await response.text();
+    const doc = new DOMParser().parseFromString(html,"text/html");
+    const article = doc.querySelector(".sotelo-article");
+    if (!article) throw new Error("Contenido no encontrado");
+    article.querySelectorAll(".sotelo-pager,.sotelo-study-note,.sotelo-download").forEach(el => el.remove());
+    rebase(article,response.url);
+    const wrapper = document.createElement("section");
+    wrapper.className = "bb-print-chapter";
+    wrapper.dataset.topic = String(id);
+    wrapper.appendChild(article);
+    return wrapper;
+  };
+
+  (async () => {
+    summary.textContent = ids.length + (ids.length === 1 ? " tema seleccionado" : " temas seleccionados");
+    let ok = 0;
+    for (const id of ids) {
+      status.textContent = "Cargando tema " + String(id).padStart(2,"0") + " de " + ids.length + "…";
+      try {
+        content.appendChild(await loadOne(id));
+        ok++;
+      } catch (err) {
+        const box = document.createElement("div");
+        box.className = "bb-print-error";
+        box.textContent = "No se pudo cargar el TEMA " + String(id).padStart(2,"0") + ": " + topics[id][1] + ".";
+        content.appendChild(box);
+      }
+    }
+    status.textContent = ok === ids.length ? "Listo para imprimir." : "Se cargaron " + ok + " de " + ids.length + " temas.";
+    button.disabled = ok === 0;
+  })();
+
+  button.addEventListener("click", () => window.print());
+})();
+</script>
+</body>
+</html>
