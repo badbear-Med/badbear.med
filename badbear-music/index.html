@@ -6,6 +6,12 @@
   <title>badbear.music | WAJOMEA.GROUP</title>
   <meta name="application-name" content="badbear.music">
   <meta name="description" content="Música original y proyectos musicales creados por el equipo de WAJOMEA.GROUP.">
+  <script id="badbear-shell-auto">
+    if (window.top === window.self) {
+      const page = "badbear-music/index.html" + location.search + location.hash;
+      location.replace("../app.html?page=" + encodeURIComponent(page));
+    }
+  </script>
   <link rel="stylesheet" href="../assets/css/bb-vivid-global.css?v=20260930-vivos-global3">
   <link rel="stylesheet" href="../assets/css/bb-extras.css?v=20261001-group1">
 
@@ -199,6 +205,63 @@
   }
   .music-float-btn:hover{filter:brightness(1.12)}
   .music-float-note{display:block;margin-top:7px;color:#6d7d91;font-size:11px}
+
+  /* ===== SPOTIFY-LIKE CATALOG ===== */
+  #creaciones{
+    background:linear-gradient(180deg,#1b1b1b,#121212 230px);
+    color:#fff;border:0;border-radius:24px;
+    box-shadow:0 24px 55px rgba(0,0,0,.16)
+  }
+  #creaciones h2{color:#fff}
+  #creaciones>p{color:#b3b3b3}
+  #creaciones .music-genres{margin-bottom:22px}
+  #creaciones .music-genre{
+    background:#242424;border-color:#333;color:#fff;
+    padding:9px 16px
+  }
+  #creaciones .music-genre:hover{background:#333;border-color:#444;color:#fff}
+  #creaciones .music-genre.bachata{background:#005be8;border-color:#005be8}
+  #creaciones .music-genre.orange{background:#ff6a00;border-color:#ff6a00;color:#fff}
+  #creaciones .music-category{
+    background:#181818;border:0;border-radius:16px;padding:18px;margin-top:16px
+  }
+  #creaciones .music-category-head{margin-bottom:8px}
+  #creaciones .music-category-index{
+    background:#282828!important;color:#b3b3b3;width:40px;height:40px;border-radius:8px
+  }
+  #creaciones .music-category-label{color:#8f8f8f}
+  #creaciones .music-category h3{color:#fff;font-size:24px}
+  #creaciones .music-track{
+    grid-template-columns:42px minmax(0,1fr) auto;
+    align-items:center;gap:14px;padding:11px 10px;
+    background:transparent;border:0;border-radius:8px;box-shadow:none
+  }
+  #creaciones .music-track + .music-track{margin-top:2px}
+  #creaciones .music-track:hover{background:#282828}
+  #creaciones .music-track-number{
+    width:auto;height:auto;border-radius:0;background:transparent!important;
+    color:#b3b3b3;font-size:13px;font-weight:500
+  }
+  #creaciones .music-track-kicker{display:none}
+  #creaciones .music-track h4{color:#fff;font-size:15px;margin:0 0 4px}
+  #creaciones .music-track-meta{margin:0;color:#9a9a9a;font-size:11px;font-weight:500}
+  .music-play-btn{
+    width:42px;height:42px;border:0;border-radius:50%;
+    display:grid;place-items:center;background:#1ed760;color:#000;
+    font-size:15px;font-weight:900;cursor:pointer;
+    box-shadow:0 7px 18px rgba(0,0,0,.28);
+    transition:transform .12s ease,filter .12s ease
+  }
+  .music-play-btn:hover{transform:scale(1.06);filter:brightness(1.04)}
+  .music-play-btn.is-playing{background:#fff;color:#000}
+  .music-track.is-active{background:#232323}
+  .music-track.is-active h4{color:#1ed760}
+  @media(max-width:600px){
+    #creaciones{border-radius:18px}
+    #creaciones .music-category{padding:12px}
+    #creaciones .music-track{grid-template-columns:28px minmax(0,1fr) 40px;padding:10px 6px}
+    .music-play-btn{width:38px;height:38px}
+  }
 </style>
 </head>
 <body class="bb-extra-page bb-extra-music">
@@ -347,25 +410,27 @@
       metaPosition.textContent = (trackIndex + 1) + " de " + library.tracks.length;
       meta.append(metaLibrary, metaPosition);
 
-      const audio = document.createElement("audio");
-      audio.className = "music-player";
-      audio.controls = true;
-      audio.preload = "metadata";
-      audio.src = track.src;
+      const playButton = document.createElement("button");
+      playButton.className = "music-play-btn";
+      playButton.type = "button";
+      playButton.dataset.trackId = track.id;
+      playButton.dataset.libraryId = library.id;
+      playButton.setAttribute("aria-label", "Reproducir " + track.title);
+      playButton.textContent = "▶";
 
-      const floatButton = document.createElement("button");
-      floatButton.className = "music-float-btn";
-      floatButton.type = "button";
-      floatButton.dataset.floatingTrack = track.id;
-      floatButton.dataset.floatingLibrary = library.id;
-      floatButton.textContent = "↗ Reproducir flotante";
+      playButton.addEventListener("click", () => {
+        window.parent.postMessage({
+          type: "badbear-music-play",
+          libraryId: library.id,
+          trackId: track.id
+        }, location.origin);
+      });
 
-      const note = document.createElement("span");
-      note.className = "music-float-note";
-      note.textContent = "Continuará automáticamente con las demás canciones de esta biblioteca.";
+      article.dataset.trackId = track.id;
+      article.dataset.libraryId = library.id;
 
-      info.append(kicker, h4, meta, audio, floatButton, note);
-      article.append(number, info);
+      info.append(kicker, h4, meta);
+      article.append(number, info, playButton);
       section.appendChild(article);
     });
 
@@ -572,6 +637,34 @@
       if (popup) popup.focus();
     });
   });
+})();
+</script>
+<script>
+(() => {
+  function applyState(data) {
+    document.querySelectorAll(".music-track").forEach(row => {
+      const active =
+        row.dataset.libraryId === data.libraryId &&
+        row.dataset.trackId === data.trackId;
+      row.classList.toggle("is-active", active);
+
+      const button = row.querySelector(".music-play-btn");
+      if (!button) return;
+      button.classList.toggle("is-playing", active && data.playing);
+      button.textContent = active && data.playing ? "❚❚" : "▶";
+    });
+  }
+
+  window.addEventListener("message", event => {
+    if (event.origin !== location.origin) return;
+    const data = event.data || {};
+    if (data.type === "badbear-player-state") applyState(data);
+  });
+
+  window.parent.postMessage(
+    { type: "badbear-player-request-state" },
+    location.origin
+  );
 })();
 </script>
 </body>
