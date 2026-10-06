@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="es">
+
+
+<style>
+  /* ===== ACCESO PRIVADO BADBEAR.MUSIC ===== */
+  #music-access {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background:
+      radial-gradient(circle at top left, rgba(0, 91, 232, 0.18), transparent 35%),
+      radial-gradient(circle at bottom right, rgba(255, 106, 0, 0.14), transparent 30%),
+      linear-gradient(135deg, #08111f 0%, #0d1830 45%, #111b2e 100%);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .music-login-card {
+    width: min(430px, 100%);
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 24px;
+    padding: 36px 30px 30px;
+    box-shadow:
+      0 24px 70px rgba(0, 0, 0, 0.35),
+      0 8px 18px rgba(0, 91, 232, 0.08);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .music-login-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 6px;
+    background: linear-gradient(90deg, #005be8 0%, #2a7cff 50%, #ff6a00 100%);
+  }
+
+  .music-login-card h1 {
+    margin: 8px 0 10px;
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 900;
+    letter-spacing: -1.8px;
+    line-height: 1;
+    color: #005be8;
+  }
+
+  .music-login-card h1 span {
+    color: #ff6a00;
+  }
+
+  .music-login-card p {
+    margin: 0 0 26px;
+    color: #4b5d73;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .music-login-card input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 54px;
+    border: 1.8px solid #d7e1ee;
+    border-radius: 14px;
+    padding: 0 16px;
+    font-size: 16px;
+    color: #182435;
+    background: #f8fbff;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+
+  .music-login-card input::placeholder {
+    color: #7a8797;
+  }
+
+  .music-login-card input:focus {
+    border-color: #005be8;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 91, 232, 0.12);
+  }
+
+  .music-login-card button {
+    width: 100%;
+    height: 54px;
+    margin-top: 14px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #005be8 0%, #1662e8 55%, #0048be 100%);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0, 91, 232, 0.28);
+    transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+  }
+
+  .music-login-card button:hover {
+    filter: brightness(1.04);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(0, 91, 232, 0.32);
+  }
+
+  .music-login-card button:active {
+    transform: translateY(0);
+  }
+
+  .music-login-card button:disabled {
+    opacity: 0.72;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 8px 18px rgba(0, 91, 232, 0.18);
+  }
+
+  #music-access-message {
+    min-height: 22px;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #d93025;
+  }
+
+  #badbear-music-content[hidden] {
+    display: none !important;
+  }
+
+  @media (max-width: 520px) {
+    #music-access {
+      padding: 18px;
+    }
+
+    .music-login-card {
+      padding: 30px 22px 24px;
+      border-radius: 20px;
+    }
+
+    .music-login-card p {
+      font-size: 15px;
+    }
+  }
+  .music-divider {
+  width: 72px;
+  height: 4px;
+  margin: 0 auto 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #005be8 0%, #ff6a00 100%);
+}
+/* =====================================================
+   CATÁLOGO MUSICAL · BADBEAR.MUSIC
+===================================================== */
+
+.music-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0 30px;
+}
+
+.music-genre {
+  border: 1px solid #d7e1ee;
+  background: #ffffff;
+  color: #32465d;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.music-genre:hover {
+  border-color: #005be8;
+  color: #005be8;
+}
+
+.music-genre.active {
+  background: #005be8;
+  border-color: #005be8;
+  color: #ffffff;
+}
+
+
+/* CATEGORÍA */
+
+.music-category {
+  margin-top: 18px;
+  padding: 28px;
+  border: 1px solid #dce5ef;
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      135deg,
+      #f7faff 0%,
+      #ffffff 60%
+    );
+}
+
+.music-category-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.music-category-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #005be8;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.music-category-label {
+  display: block;
+  color: #ff6a00;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.music-category-header h3 {
+  margin: 3px 0 0;
+  font-size: 27px;
+  color: #172538;
+}
+
+
+/* CANCIÓN */
+
+.music-track {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 20px;
+  padding: 25px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #dce5ef;
+  box-shadow: 0 10px 28px rgba(22, 42, 73, .08);
+}
+
+.music-track-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      135deg,
+      #005be8,
+      #0041a8
+    );
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.music-track-info {
+  min-width: 0;
+}
+
+.music-track-type {
+  display: block;
+  color: #ff6a00;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  margin-bottom: 5px;
+}
+
+.music-track-info h4 {
+  margin: 0 0 8px;
+  color: #13233a;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.15;
+}
+
+.music-track-info p {
+  margin: 0 0 15px;
+  color: #596a7e;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.music-track-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 17px;
+  color: #40536a;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* REPRODUCTOR */
+
+.music-player {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  height: 48px;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+  .music-category {
+    padding: 20px;
+  }
+
+  .music-track {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .music-track-number {
+    width: 45px;
+    height: 45px;
+  }
+
+}
+</style>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>badbear.music | WAJOMEA.GROUP</title>
+  <meta name="application-name" content="badbear.music">
+  <meta name="description" content="Música original y proyectos musicales creados por el equipo de WAJOMEA.GROUP.">
+  <link rel="stylesheet" href="../assets/css/bb-vivid-global.css?v=20260930-vivos-global3">
+  <link rel="stylesheet" href="../assets/css/bb-extras.css?v=20261001-group1">
+</head>
+<body class="bb-extra-page bb-extra-music">
+  <section id="music-access">
+  <div class="music-login-card">
+    <h1>badbear.<span>music</span></h1>
+       <div class="music-divider"></div>
+
+    <p>
+  Acceso privado a <strong>badbear.music</strong><br>
+  Ingresa tu clave para continuar.
+</p>
+
+    <input
+      type="password"
+      id="music-password"
+      placeholder="Clave de acceso"
+      autocomplete="current-password"
+      aria-label="Clave de acceso"
+    >
+
+    <button type="button" id="music-login-button">
+      INGRESAR
+    </button>
+
+    <div id="music-access-message"></div>
+  </div>
+</section>
+
+<div id="badbear-music-content" hidden>
+  <header class="bb-extra-header">
+    <a class="bb-extra-logo bb-group-logo" href="../index.html"><span>WAJOMEA.<b>GROUP</b></span></a>
+    <nav aria-label="Proyectos de WAJOMEA.GROUP">
+      <a href="../index.html">← WAJOMEA.GROUP</a>
+      <a href="../badbear-med.html">Medicina</a>
+      <a href="../badbear-music/index.html" aria-current="page">Música</a>
+            <a href="../badbear-books/index.html">Libros</a>
+    </nav>
+  </header>
+  <main class="bb-extra-main">
+    <section class="bb-extra-intro" aria-labelledby="music-title">
+      <div>
+        <span class="bb-extra-eyebrow">MÚSICA ORIGINAL · WAJOMEA.GROUP</span>
+        <h1 class="bb-extra-title" id="music-title">badbear.<em>music</em></h1>
+        <p>La música que creamos, en un solo lugar. Canciones, proyectos y lanzamientos originales del equipo de WAJOMEA.GROUP.</p>
+        <div class="bb-extra-actions"><a class="bb-extra-action" href="https://www.youtube.com/channel/UCnc55BHaNhhi2OlOKLkT01A" target="_blank" rel="noopener noreferrer">Escuchar en YouTube <span aria-hidden="true">↗</span></a><a class="bb-extra-action bb-extra-action-secondary" href="#creaciones">Nuestras creaciones</a></div>
+      </div>
+      <span class="bb-extra-icon bb-music-mark" aria-label="Isotipo BADBEAR.MUSIC">
+  <svg viewBox="0 0 64 64" aria-hidden="true">
+    <path d="M15 21c-4-1-7-5-7-10 0-5 4-9 9-9 5 0 9 4 9 9M49 21c4-1 7-5 7-10 0-5-4-9-9-9-5 0-9 4-9 9" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+    <path d="M14 25c4-9 10-14 18-14s14 5 18 14v12c0 12-8 21-18 21S14 49 14 37V25Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M21 34h4l3-7 5 15 4-10 3 5h4" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</span>
+    </section>
+    <section class="bb-extra-section" id="creaciones" aria-labelledby="music-creations-title">
+
+  <h2 id="music-creations-title">Nuestras creaciones musicales</h2>
+
+  <p>
+    Explora las canciones originales de badbear.music organizadas por género.
+  </p>
+
+  <div class="music-genres">
+
+    <button class="music-genre active" type="button">
+      Bachata
+    </button>
+
+  </div>
+
+  <div class="music-category">
+
+    <div class="music-category-header">
+      <span class="music-category-number">01</span>
+
+      <div>
+        <span class="music-category-label">GÉNERO</span>
+        <h3>Bachata</h3>
+      </div>
+    </div>
+
+
+    <!-- CANCIÓN 01 -->
+    <article class="music-track">
+
+      <div class="music-track-number">
+        01
+      </div>
+
+      <div class="music-track-info">
+
+        <span class="music-track-type">
+          BADBEAR.MUSIC · BACHATA
+        </span>
+
+        <h4>Me quedó tu voz</h4>
+
+        <p>
+          Una bachata romántica sobre aquello que termina,
+          pero permanece en la memoria.
+        </p>
+
+        <div class="music-track-meta">
+          <span>♪ Bachata romántica</span>
+          <span>5:46</span>
+        </div>
+
+        <audio
+          controls
+          preload="metadata"
+          class="music-player"
+        >
+          <source
+            src="audios/bachata/me-quedo-tu-voz.mp3"
+            type="audio/mpeg"
+          >
+
+          Tu navegador no admite reproducción de audio.
+        </audio>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+<script>
+  (() => {
+    const ACCESS_KEY = "badbear_music_access";
+
+    /*
+      PEGAREMOS AQUÍ EL SHA-256 DE TU CLAVE.
+      No escribas la contraseña directamente en este archivo.
+    */
+    const EXPECTED_HASH = "049d85c2d2941048f70d8f606fd495105b18ae97e6c5842d5dd0fedebf808d7c";
+
+    const accessScreen = document.getElementById("music-access");
+    const protectedContent = document.getElementById("badbear-music-content");
+    const passwordInput = document.getElementById("music-password");
+    const loginButton = document.getElementById("music-login-button");
+    const message = document.getElementById("music-access-message");
+
+    function showMusic() {
+      accessScreen.style.display = "none";
+      protectedContent.hidden = false;
+    }
+
+    async function sha256(text) {
+      const data = new TextEncoder().encode(text);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+
+      return Array.from(new Uint8Array(hashBuffer))
+        .map(byte => byte.toString(16).padStart(2, "0"))
+        .join("");
+    }
+
+    async function validatePassword() {
+      const password = passwordInput.value;
+
+      if (!password) {
+        message.textContent = "Ingresa la clave.";
+        return;
+      }
+
+      loginButton.disabled = true;
+      loginButton.textContent = "VERIFICANDO...";
+
+      try {
+        const enteredHash = await sha256(password);
+
+        if (enteredHash === EXPECTED_HASH) {
+          sessionStorage.setItem(ACCESS_KEY, "authorized");
+          message.textContent = "";
+          showMusic();
+        } else {
+          message.textContent = "Clave incorrecta.";
+          passwordInput.value = "";
+          passwordInput.focus();
+        }
+      } catch (error) {
+        message.textContent = "No se pudo validar el acceso.";
+      } finally {
+        loginButton.disabled = false;
+        loginButton.textContent = "INGRESAR";
+      }
+    }
+
+    if (sessionStorage.getItem(ACCESS_KEY) === "authorized") {
+      showMusic();
+    } else {
+      passwordInput.focus();
+    }
+
+    loginButton.addEventListener("click", validatePassword);
+
+    passwordInput.addEventListener("keydown", event => {
+      if (event.key === "Enter") {
+        validatePassword();
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
