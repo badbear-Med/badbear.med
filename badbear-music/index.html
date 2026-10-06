@@ -172,18 +172,18 @@
   .music-genre{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid #d6e0ec;background:#fff;color:#31455d;border-radius:999px;padding:10px 18px;font-size:14px;font-weight:900}
   .music-genre:hover{border-color:#005be8;color:#005be8}
   .music-genre.bachata{background:#005be8;border-color:#005be8;color:#fff}
-  .music-genre.latin{background:#fff3eb;border-color:#ffb07a;color:#b94a00}
+  .music-genre.latin,.music-genre.orange{background:#fff3eb;border-color:#ffb07a;color:#b94a00}
   .music-category{margin-top:24px;padding:24px;border:1px solid #dce5ef;border-radius:20px;background:linear-gradient(135deg,#f7faff,#fff 65%)}
   .music-category + .music-category{margin-top:22px}
   .music-category-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
   .music-category-index{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:#005be8;color:#fff;font-weight:900}
-  .music-category.latin .music-category-index{background:#ff6a00}
+  .music-category.latin .music-category-index,.music-category.orange .music-category-index{background:#ff6a00}
   .music-category-label{display:block;font-size:11px;font-weight:900;letter-spacing:1.4px;color:#ff6a00}
   .music-category h3{margin:2px 0 0;font-size:27px;color:#172538}
   .music-track{display:grid;grid-template-columns:54px minmax(0,1fr);gap:18px;padding:22px;background:#fff;border:1px solid #dce5ef;border-radius:17px;box-shadow:0 10px 24px rgba(20,40,70,.07)}
   .music-track + .music-track{margin-top:14px}
   .music-track-number{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#005be8,#003f9f);color:#fff;font-weight:900}
-  .music-category.latin .music-track-number{background:linear-gradient(135deg,#ff7a1a,#d84f00)}
+  .music-category.latin .music-track-number,.music-category.orange .music-track-number{background:linear-gradient(135deg,#ff7a1a,#d84f00)}
   .music-track-kicker{display:block;margin-bottom:4px;font-size:11px;font-weight:900;letter-spacing:1.2px;color:#ff6a00}
   .music-track h4{margin:0 0 8px;font-size:clamp(23px,3vw,31px);line-height:1.15;color:#13233a}
   .music-track p{margin:0 0 14px;color:#596a7e;font-size:15px;line-height:1.55}
@@ -263,86 +263,10 @@
     </section>
     <section class="bb-extra-section" id="creaciones" aria-labelledby="music-creations-title">
       <h2 id="music-creations-title">Nuestras creaciones musicales</h2>
-      <p>Explora las canciones originales de badbear.music organizadas por género.</p>
+      <p>Explora las canciones originales de badbear.music organizadas por biblioteca.</p>
 
-      <div class="music-genres" aria-label="Géneros musicales">
-        <a class="music-genre bachata" href="#bachata">Bachata</a>
-        <a class="music-genre latin" href="#badbear-latin">Badbear Latin</a>
-      </div>
-
-      <section class="music-category" id="bachata" aria-labelledby="bachata-title">
-        <div class="music-category-head">
-          <span class="music-category-index">01</span>
-          <div>
-            <span class="music-category-label">GÉNERO</span>
-            <h3 id="bachata-title">Bachata</h3>
-          </div>
-        </div>
-
-        <article class="music-track">
-          <div class="music-track-number">01</div>
-          <div>
-            <span class="music-track-kicker">BADBEAR.MUSIC · BACHATA</span>
-            <h4>Me quedó tu voz</h4>
-            <p>Bachata romántica original de badbear.music.</p>
-            <div class="music-track-meta"><span>♪ Bachata</span><span>Primera publicación de la categoría</span></div>
-            <audio class="music-player" controls preload="metadata">
-              <source src="audios/bachata/me-quedo-tu-voz.mp3" type="audio/mpeg">
-              Tu navegador no admite reproducción de audio.
-            </audio>
-            <button class="music-float-btn" type="button" data-floating-track="me-quedo-tu-voz">
-              ↗ Reproducir flotante
-            </button>
-            <span class="music-float-note">Seguirá sonando aunque cambies de sección y continuará con la siguiente canción.</span>
-          </div>
-        </article>
-      </section>
-
-      <section class="music-category latin" id="badbear-latin" aria-labelledby="latin-title">
-        <div class="music-category-head">
-          <span class="music-category-index">02</span>
-          <div>
-            <span class="music-category-label">GÉNERO</span>
-            <h3 id="latin-title">Badbear Latin</h3>
-          </div>
-        </div>
-
-        <article class="music-track">
-          <div class="music-track-number">01</div>
-          <div>
-            <span class="music-track-kicker">BADBEAR.MUSIC · LATIN</span>
-            <h4>Alas de mariposa</h4>
-            <p>Creación original de la colección Badbear Latin.</p>
-            <div class="music-track-meta"><span>♪ Badbear Latin</span></div>
-            <audio class="music-player" controls preload="metadata">
-              <source src="audios/badbear-latin/alas-de-mariposa.mp3" type="audio/mpeg">
-              Tu navegador no admite reproducción de audio.
-            </audio>
-            <button class="music-float-btn" type="button" data-floating-track="alas-de-mariposa">
-              ↗ Reproducir flotante
-            </button>
-            <span class="music-float-note">Seguirá sonando aunque cambies de sección y continuará con la siguiente canción.</span>
-          </div>
-        </article>
-
-        <article class="music-track">
-          <div class="music-track-number">02</div>
-          <div>
-            <span class="music-track-kicker">BADBEAR.MUSIC · LATIN</span>
-            <h4>No voy a volver</h4>
-            <p>Creación original de la colección Badbear Latin.</p>
-            <div class="music-track-meta"><span>♪ Badbear Latin</span></div>
-            <audio class="music-player" controls preload="metadata">
-              <source src="audios/badbear-latin/no-voy-a-volver.mp3" type="audio/mpeg">
-              Tu navegador no admite reproducción de audio.
-            </audio>
-            <button class="music-float-btn" type="button" data-floating-track="no-voy-a-volver">
-              ↗ Reproducir flotante
-            </button>
-            <span class="music-float-note">Seguirá sonando aunque cambies de sección y continuará con la siguiente canción.</span>
-          </div>
-        </article>
-      </section>
+      <div class="music-genres" id="music-genres" aria-label="Bibliotecas musicales"></div>
+      <div id="music-library-list"></div>
     </section>
     <section class="bb-extra-section" id="youtube" aria-labelledby="youtube-title">
       <h2 id="youtube-title">BADBEAR.MUSIC en YouTube</h2>
@@ -354,6 +278,101 @@
     <p><strong>BADBEAR.MUSIC</strong> · Una creación de WAJOMEA.GROUP</p>
     <a href="../index.html">Volver a WAJOMEA.GROUP</a>
   </footer>
+  <script src="catalog.js?v=20261006-catalog1"></script>
+  <script>
+(() => {
+  const catalog = Array.isArray(window.BADBEAR_MUSIC_CATALOG)
+    ? window.BADBEAR_MUSIC_CATALOG
+    : [];
+
+  const genres = document.getElementById("music-genres");
+  const list = document.getElementById("music-library-list");
+
+  if (!genres || !list) return;
+
+  catalog.forEach((library, libraryIndex) => {
+    const genreLink = document.createElement("a");
+    genreLink.className = "music-genre " + (library.accent === "orange" ? "orange" : "bachata");
+    genreLink.href = "#" + library.id;
+    genreLink.textContent = library.name;
+    genres.appendChild(genreLink);
+
+    const section = document.createElement("section");
+    section.className = "music-category " + (library.accent === "orange" ? "orange" : "");
+    section.id = library.id;
+    section.setAttribute("aria-labelledby", library.id + "-title");
+
+    const head = document.createElement("div");
+    head.className = "music-category-head";
+
+    const index = document.createElement("span");
+    index.className = "music-category-index";
+    index.textContent = String(libraryIndex + 1).padStart(2, "0");
+
+    const headCopy = document.createElement("div");
+    const label = document.createElement("span");
+    label.className = "music-category-label";
+    label.textContent = "BIBLIOTECA";
+
+    const title = document.createElement("h3");
+    title.id = library.id + "-title";
+    title.textContent = library.name;
+
+    headCopy.append(label, title);
+    head.append(index, headCopy);
+    section.appendChild(head);
+
+    library.tracks.forEach((track, trackIndex) => {
+      const article = document.createElement("article");
+      article.className = "music-track";
+
+      const number = document.createElement("div");
+      number.className = "music-track-number";
+      number.textContent = String(trackIndex + 1).padStart(2, "0");
+
+      const info = document.createElement("div");
+
+      const kicker = document.createElement("span");
+      kicker.className = "music-track-kicker";
+      kicker.textContent = "BADBEAR.MUSIC · " + library.name.toUpperCase();
+
+      const h4 = document.createElement("h4");
+      h4.textContent = track.title;
+
+      const meta = document.createElement("div");
+      meta.className = "music-track-meta";
+      const metaLibrary = document.createElement("span");
+      metaLibrary.textContent = "♪ " + library.name;
+      const metaPosition = document.createElement("span");
+      metaPosition.textContent = (trackIndex + 1) + " de " + library.tracks.length;
+      meta.append(metaLibrary, metaPosition);
+
+      const audio = document.createElement("audio");
+      audio.className = "music-player";
+      audio.controls = true;
+      audio.preload = "metadata";
+      audio.src = track.src;
+
+      const floatButton = document.createElement("button");
+      floatButton.className = "music-float-btn";
+      floatButton.type = "button";
+      floatButton.dataset.floatingTrack = track.id;
+      floatButton.dataset.floatingLibrary = library.id;
+      floatButton.textContent = "↗ Reproducir flotante";
+
+      const note = document.createElement("span");
+      note.className = "music-float-note";
+      note.textContent = "Continuará automáticamente con las demás canciones de esta biblioteca.";
+
+      info.append(kicker, h4, meta, audio, floatButton, note);
+      article.append(number, info);
+      section.appendChild(article);
+    });
+
+    list.appendChild(section);
+  });
+})();
+</script>
   <script>
 (() => {
 
@@ -543,7 +562,8 @@
   document.querySelectorAll("[data-floating-track]").forEach(button => {
     button.addEventListener("click", () => {
       const track = button.dataset.floatingTrack;
-      const url = "player.html?track=" + encodeURIComponent(track);
+      const library = button.dataset.floatingLibrary || "";
+      const url = "player.html?library=" + encodeURIComponent(library) + "&track=" + encodeURIComponent(track);
       const popup = window.open(
         url,
         "badbearMusicPlayer",
