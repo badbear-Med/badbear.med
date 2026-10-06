@@ -12,7 +12,7 @@
       radial-gradient(circle at 15% 10%,rgba(0,91,232,.28),transparent 38%),
       radial-gradient(circle at 90% 90%,rgba(255,106,0,.18),transparent 35%),
       linear-gradient(145deg,#07111f,#0c1830 60%,#111b2d)}
-    .player{width:100%;max-width:410px;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px;background:rgba(10,21,38,.94);box-shadow:0 18px 50px rgba(0,0,0,.38)}
+    .player{width:100%;max-width:430px;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px;background:rgba(10,21,38,.94);box-shadow:0 18px 50px rgba(0,0,0,.38)}
     .brand{font-weight:900;font-size:18px;letter-spacing:-.6px;color:#58a0ff}.brand span{color:#ff7a1a}
     .kicker{margin-top:14px;color:#ff8b3d;font-size:10px;font-weight:900;letter-spacing:1.4px}
     h1{margin:4px 0 4px;font-size:24px;line-height:1.15}
@@ -22,7 +22,7 @@
     .controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
     .controls button{border:1px solid rgba(255,255,255,.14);border-radius:11px;background:#111f33;color:#fff;padding:10px 12px;font-size:12px;font-weight:900;cursor:pointer}
     .controls button:hover{background:#172a45}
-    .playlist{margin-top:12px;padding:10px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:rgba(255,255,255,.03)}
+    .playlist{margin-top:12px;padding:10px;border:1px solid rgba(255,255,255,.08);border-radius:12px;background:rgba(255,255,255,.03);max-height:210px;overflow:auto}
     .playlist-title{font-size:10px;font-weight:900;letter-spacing:1.2px;color:#8093aa;margin-bottom:7px}
     .playlist ol{list-style:none;padding:0;margin:0;display:grid;gap:5px}
     .playlist button{width:100%;text-align:left;border:0;border-radius:8px;background:transparent;color:#aebed1;padding:7px 9px;font-size:12px;cursor:pointer}
@@ -32,6 +32,7 @@
     .denied{display:none;text-align:center;padding:16px}
     .denied strong{display:block;margin-bottom:8px;color:#ff8b3d}
   </style>
+  <script src="catalog.js?v=20261006-catalog1"></script>
 </head>
 <body>
   <main class="player" id="player">
@@ -57,12 +58,12 @@
       <ol id="playlist"></ol>
     </div>
 
-    <p class="note">Al terminar la última canción, la biblioteca vuelve automáticamente a la primera. Mantén esta ventana abierta mientras navegas por WAJOMEA.GROUP.</p>
+    <p class="note">La reproducción continúa hasta la última canción y vuelve automáticamente a la primera de esta biblioteca.</p>
   </main>
 
   <section class="player denied" id="denied">
     <strong>Acceso requerido</strong>
-    Abre badbear.music, ingresa la clave y usa el botón “Reproducir flotante”.
+    Abre badbear.music, ingresa la clave y usa “Reproducir flotante”.
   </section>
 
 <script>
@@ -74,45 +75,35 @@
     return;
   }
 
-  const tracks = {
-    "me-quedo-tu-voz": {
-      id: "me-quedo-tu-voz",
-      title: "Me quedó tu voz",
-      genre: "Bachata",
-      library: "bachata",
-      src: "audios/bachata/me-quedo-tu-voz.mp3"
-    },
-    "alas-de-mariposa": {
-      id: "alas-de-mariposa",
-      title: "Alas de mariposa",
-      genre: "Badbear Latin",
-      library: "badbear-latin",
-      src: "audios/badbear-latin/alas-de-mariposa.mp3"
-    },
-    "no-voy-a-volver": {
-      id: "no-voy-a-volver",
-      title: "No voy a volver",
-      genre: "Badbear Latin",
-      library: "badbear-latin",
-      src: "audios/badbear-latin/no-voy-a-volver.mp3"
-    }
-  };
-
-  const libraries = {
-    "bachata": {
-      name: "Bachata",
-      tracks: ["me-quedo-tu-voz"]
-    },
-    "badbear-latin": {
-      name: "Badbear Latin",
-      tracks: ["alas-de-mariposa", "no-voy-a-volver"]
-    }
-  };
+  const catalog = Array.isArray(window.BADBEAR_MUSIC_CATALOG)
+    ? window.BADBEAR_MUSIC_CATALOG
+    : [];
 
   const params = new URLSearchParams(location.search);
-  const requestedId = params.get("track") || "me-quedo-tu-voz";
-  const requestedTrack = tracks[requestedId] || tracks["me-quedo-tu-voz"];
-  const currentLibrary = libraries[requestedTrack.library];
+  const requestedTrackId = params.get("track");
+  const requestedLibraryId = params.get("library");
+
+  let library = catalog.find(item => item.id === requestedLibraryId);
+
+  if (!library && requestedTrackId) {
+    library = catalog.find(item =>
+      Array.isArray(item.tracks) &&
+      item.tracks.some(track => track.id === requestedTrackId)
+    );
+  }
+
+  if (!library) library = catalog[0];
+
+  if (!library || !Array.isArray(library.tracks) || !library.tracks.length) {
+    document.getElementById("track-title").textContent = "Biblioteca vacía";
+    document.getElementById("track-genre").textContent = "No hay canciones disponibles.";
+    return;
+  }
+
+  let currentIndex = Math.max(
+    0,
+    library.tracks.findIndex(track => track.id === requestedTrackId)
+  );
 
   const audio = document.getElementById("audio");
   const titleEl = document.getElementById("track-title");
@@ -121,39 +112,45 @@
   const positionEl = document.getElementById("queue-position");
   const playlistEl = document.getElementById("playlist");
 
-  let currentIndex = Math.max(0, currentLibrary.tracks.indexOf(requestedTrack.id));
-
   function renderPlaylist() {
     playlistEl.innerHTML = "";
-    currentLibrary.tracks.forEach((trackId, index) => {
-      const item = document.createElement("li");
+
+    library.tracks.forEach((track, index) => {
+      const li = document.createElement("li");
       const button = document.createElement("button");
+
       button.type = "button";
-      button.textContent = (index + 1) + ". " + tracks[trackId].title;
+      button.textContent = (index + 1) + ". " + track.title;
       button.className = index === currentIndex ? "active" : "";
-      button.addEventListener("click", () => loadTrack(index, true));
-      item.appendChild(button);
-      playlistEl.appendChild(item);
+
+      button.addEventListener("click", () => {
+        loadTrack(index, true);
+      });
+
+      li.appendChild(button);
+      playlistEl.appendChild(li);
     });
   }
 
   function updateMediaSession(track) {
     if (!("mediaSession" in navigator)) return;
+
     navigator.mediaSession.metadata = new MediaMetadata({
       title: track.title,
       artist: "badbear.music",
-      album: currentLibrary.name
+      album: library.name
     });
   }
 
   function loadTrack(index, autoplay = true) {
-    const total = currentLibrary.tracks.length;
+    const total = library.tracks.length;
     currentIndex = ((index % total) + total) % total;
 
-    const track = tracks[currentLibrary.tracks[currentIndex]];
+    const track = library.tracks[currentIndex];
+
     titleEl.textContent = track.title;
-    genreEl.textContent = track.genre;
-    libraryEl.textContent = "Biblioteca: " + currentLibrary.name;
+    genreEl.textContent = library.name;
+    libraryEl.textContent = "Biblioteca: " + library.name;
     positionEl.textContent = (currentIndex + 1) + " de " + total;
     document.title = track.title + " | badbear.music";
 
@@ -163,7 +160,12 @@
     renderPlaylist();
     updateMediaSession(track);
 
-    history.replaceState(null, "", "player.html?track=" + encodeURIComponent(track.id));
+    history.replaceState(
+      null,
+      "",
+      "player.html?library=" + encodeURIComponent(library.id) +
+      "&track=" + encodeURIComponent(track.id)
+    );
 
     if (autoplay) audio.play().catch(() => {});
   }
@@ -182,8 +184,10 @@
   audio.addEventListener("ended", nextTrack);
 
   if ("mediaSession" in navigator) {
-    navigator.mediaSession.setActionHandler("nexttrack", nextTrack);
-    navigator.mediaSession.setActionHandler("previoustrack", previousTrack);
+    try {
+      navigator.mediaSession.setActionHandler("nexttrack", nextTrack);
+      navigator.mediaSession.setActionHandler("previoustrack", previousTrack);
+    } catch (_) {}
   }
 
   loadTrack(currentIndex, true);
