@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>WAJOMEA.GROUP</title>
+  <meta name="description" content="Portal persistente de WAJOMEA.GROUP con reproductor global badbear.music.">
+  <link rel="icon" href="dermatologia/badbear_logo.png">
+  <link rel="stylesheet" href="assets/css/badbear-shell.css?v=20261006-shell1">
+  <script src="badbear-music/catalog.js?v=20261006-catalog1"></script>
+</head>
+<body>
+
+  <main class="bb-shell" aria-label="Contenido de WAJOMEA.GROUP">
+    <iframe
+      id="bb-site-frame"
+      title="WAJOMEA.GROUP"
+      src="about:blank"
+      loading="eager"
+      allow="autoplay"
+    ></iframe>
+  </main>
+
+  <section
+    class="bb-player bb-player--idle"
+    id="bb-global-player"
+    aria-label="Reproductor global de badbear.music"
+  >
+    <div class="bb-player__track">
+      <div class="bb-player__art" id="bb-track-art" aria-hidden="true">BM</div>
+      <div class="bb-player__copy">
+        <span class="bb-player__title" id="bb-track-title">Selecciona una canción</span>
+        <span class="bb-player__library" id="bb-track-library">badbear.music</span>
+      </div>
+    </div>
+
+    <div class="bb-player__center">
+      <div class="bb-player__controls">
+        <button class="bb-player__nav" id="bb-prev" type="button" aria-label="Canción anterior">⏮</button>
+        <button class="bb-player__play" id="bb-play" type="button" aria-label="Reproducir">▶</button>
+        <button class="bb-player__nav" id="bb-next" type="button" aria-label="Canción siguiente">⏭</button>
+      </div>
+
+      <div class="bb-player__timeline">
+        <span class="bb-player__time" id="bb-current-time">0:00</span>
+        <input id="bb-progress" type="range" min="0" max="0" step="0.1" value="0" aria-label="Progreso de reproducción">
+        <span class="bb-player__time" id="bb-duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="bb-player__right">
+      <span class="bb-player__speaker" aria-hidden="true">🔊</span>
+      <input id="bb-volume" type="range" min="0" max="1" step="0.01" value="0.85" aria-label="Volumen">
+    </div>
+
+    <audio id="bb-audio" preload="metadata"></audio>
+  </section>
+
+  <script src="assets/js/badbear-shell.js?v=20261006-shell1"></script>
+</body>
+</html>
