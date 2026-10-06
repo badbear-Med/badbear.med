@@ -12,3 +12,57 @@
 .bb-sotelo-item p{color:#40516a;font-size:14px;margin:8px 0 12px}
 .bb-sotelo-item span{font-size:13px;font-weight:900;color:#005be8}
 @media(max-width:600px){.bb-sotelo-entry{padding:18px;gap:12px}.bb-sotelo-entry-icon{flex-basis:42px;height:42px;font-size:23px}}
+
+
+/* BB_SOTELO_PRINT_MOBILE_V1 */
+.bb-sotelo-print-zone{margin-top:1.25rem}
+.bb-sotelo-print-picker{border:2px solid #005be8;border-radius:14px;background:#f7faff;overflow:hidden}
+.bb-sotelo-print-picker>summary{list-style:none;cursor:pointer;background:#005be8;color:#fff;padding:14px 18px;font-weight:900;font-size:15px;line-height:1.35}
+.bb-sotelo-print-picker>summary::-webkit-details-marker{display:none}
+.bb-sotelo-print-picker>summary:focus-visible{outline:3px solid #ff8616;outline-offset:-4px}
+.bb-sotelo-print-panel{padding:18px}
+.bb-sotelo-print-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px}
+.bb-sotelo-print-head strong{display:block;font-size:18px;color:#101722}
+.bb-sotelo-print-head p{margin:5px 0 0;color:#40516a;font-size:14px;line-height:1.55}
+#sotelo-print-count{flex:0 0 auto;background:#e7f0ff;color:#004bad;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:900}
+.bb-sotelo-print-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.bb-sotelo-print-actions button,.bb-sotelo-print-go{appearance:none;border:1px solid #005be8;background:#fff;color:#005be8;border-radius:9px;padding:9px 12px;font:inherit;font-weight:850;cursor:pointer}
+.bb-sotelo-print-actions button:hover{background:#edf5ff}
+.bb-sotelo-print-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:420px;overflow:auto;padding:2px}
+.bb-sotelo-print-topic{display:grid;grid-template-columns:auto auto minmax(0,1fr);align-items:start;gap:9px;border:1px solid #d4e0ef;border-radius:9px;padding:10px;background:#fff;cursor:pointer}
+.bb-sotelo-print-topic:has(input:checked){border-color:#005be8;background:#edf5ff}
+.bb-sotelo-print-topic input{margin-top:3px;width:18px;height:18px;accent-color:#005be8}
+.bb-sotelo-print-topic strong{font-size:11px;letter-spacing:.04em;color:#d71939;white-space:nowrap}
+.bb-sotelo-print-topic span{font-size:13px;line-height:1.4;color:#24354a}
+.bb-sotelo-print-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid #d4e0ef}
+.bb-sotelo-print-go{background:#005be8;color:#fff;border-color:#005be8}
+.bb-sotelo-print-go:disabled{opacity:.45;cursor:not-allowed}
+.bb-sotelo-print-footer a{font-size:12px;font-weight:800;color:#40516a}
+.bb-sotelo-docs-link{margin-top:12px}
+.bb-extra-sotelo img,.bb-extra-sotelo video,.bb-extra-sotelo iframe{max-width:100%;height:auto}
+
+@media(max-width:760px){
+  .bb-extra-sotelo .bb-extra-header{position:sticky;top:0;background:#fff;z-index:100;box-shadow:0 2px 14px #10233a15}
+  .bb-extra-sotelo .bb-extra-header nav{display:flex;flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:4px;scrollbar-width:thin}
+  .bb-extra-sotelo .bb-extra-header nav a{flex:0 0 auto;white-space:nowrap}
+  .bb-extra-sotelo .bb-extra-main{width:calc(100% - 20px);padding-top:14px}
+  .bb-extra-sotelo .bb-extra-intro{padding:20px 16px;border-radius:18px}
+  .bb-extra-sotelo .bb-extra-intro>.bb-extra-icon{display:none}
+  .bb-extra-sotelo .bb-extra-title{font-size:clamp(32px,10vw,46px)}
+  .bb-extra-sotelo .bb-extra-section{padding:20px 14px;border-radius:15px}
+  .bb-extra-sotelo .bb-extra-section h2{font-size:25px}
+  .bb-sotelo-print-head,.bb-sotelo-print-footer{flex-direction:column;align-items:stretch}
+  #sotelo-print-count{align-self:flex-start}
+  .bb-sotelo-print-topics{grid-template-columns:1fr;max-height:55vh}
+  .bb-sotelo-print-go{width:100%;min-height:46px}
+  .bb-sotelo-print-footer a{text-align:center;padding:8px}
+}
+@media(max-width:420px){
+  .bb-extra-sotelo .bb-extra-logo{font-size:18px}
+  .bb-extra-sotelo .bb-extra-logo img{width:40px;height:40px}
+  .bb-sotelo-print-panel{padding:13px}
+  .bb-sotelo-print-picker>summary{font-size:14px;padding:13px}
+  .bb-sotelo-print-topic{grid-template-columns:auto minmax(0,1fr)}
+  .bb-sotelo-print-topic strong{grid-column:2}
+  .bb-sotelo-print-topic span{grid-column:2}
+}
