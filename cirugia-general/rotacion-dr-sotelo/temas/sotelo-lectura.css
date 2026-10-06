@@ -27,3 +27,15 @@ figure{margin:2rem 0;padding:1rem;border:1px solid var(--line);border-radius:12p
   .sotelo-material-figure.sotelo-gallery{padding:.55rem;margin:1.35rem 0}
   .sotelo-material-figure.sotelo-gallery figcaption{font-size:.86rem;line-height:1.5}
 }
+
+/* BB_SOTELO_HD_IMAGES_V1 */
+.sotelo-material-figure{margin:1.35rem 0;padding:0;background:transparent;border:0;box-shadow:none}
+.sotelo-material-figure a{display:block;text-decoration:none}
+.sotelo-material-figure img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;border-radius:10px;background:#fff;cursor:zoom-in}
+.sotelo-material-figure figcaption{margin-top:.55rem;font-size:.9rem;line-height:1.45;color:#3c4a5d}
+.sotelo-source{font-weight:800;color:#0f3d8a}
+.sotelo-material-figure.is-broken{display:none!important}
+@media(max-width:700px){
+  .sotelo-material-figure{margin:1rem 0}
+  .sotelo-material-figure img{border-radius:8px}
+}
