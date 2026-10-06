@@ -39,3 +39,13 @@ figure{margin:2rem 0;padding:1rem;border:1px solid var(--line);border-radius:12p
   .sotelo-material-figure{margin:1rem 0}
   .sotelo-material-figure img{border-radius:8px}
 }
+
+/* BB_SOTELO_T20_VISUALS_V1 */
+.sotelo-svg-link{display:block;width:100%;text-decoration:none;cursor:zoom-in}
+.sotelo-hd-visual svg{display:block;width:100%;height:auto;max-width:100%;border-radius:10px;background:#fff}
+.sotelo-lightbox{display:none;margin:1rem 0;padding:1rem;background:#eef5ff;border:2px solid #b8d2f4;border-radius:12px}
+.sotelo-lightbox:target{display:block}
+.sotelo-lightbox-inner{width:100%;overflow:auto;background:#fff;border-radius:10px}
+.sotelo-lightbox-inner svg,.sotelo-lightbox-inner img{display:block;width:100%;height:auto;max-width:none}
+.sotelo-lightbox-close{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;margin:0 0 .75rem auto;border-radius:50%;background:#0f3d8a;color:#fff;font-size:28px;font-weight:900;text-decoration:none}
+@media(max-width:700px){.sotelo-hd-visual svg{border-radius:8px}.sotelo-lightbox{padding:.5rem}}
