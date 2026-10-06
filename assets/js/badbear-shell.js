@@ -120,6 +120,7 @@
 
     if (sameTrack) {
       if (audio.paused) audio.play().catch(() => {});
+      else audio.pause();
       return;
     }
 
