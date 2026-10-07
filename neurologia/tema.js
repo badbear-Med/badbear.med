@@ -52,6 +52,34 @@
       </div>
     </section>` : "";
 
+  const audioItems = Array.isArray(recurso.audios) ? recurso.audios : [];
+
+  const audioPanel = audioItems.length ? `
+    <div class="neuro-audio-list">
+      ${audioItems.map((a, index) => `
+        <article class="neuro-audio-card">
+          <div class="neuro-audio-badge">AUDIO</div>
+          <div class="neuro-audio-copy">
+            <span>AUDIO DE CLASE · NEUROLOGÍA</span>
+            <h3>${a.titulo}</h3>
+            <p>${a.descripcion || "Audio correspondiente a esta unidad."}</p>
+            <audio
+              controls
+              preload="metadata"
+              src="${a.src}"
+              data-title="${a.titulo}"
+              aria-label="Reproducir ${a.titulo}"
+            ></audio>
+            <small>Al pulsar Play, este audio pasa al reproductor global de WAJOMEA.GROUP y continúa aunque cambies de sección.</small>
+          </div>
+        </article>
+      `).join("")}
+    </div>` : `
+    <div class="resource-placeholder">
+      <b>Audio de clase</b>
+      <p>Esta unidad todavía no tiene un audio compatible sincronizado.</p>
+    </div>`;
+
   const pdfCard = recurso.pdf ? `
     <div class="source-resource-card">
       <div class="source-resource-icon">PDF</div>
@@ -92,7 +120,7 @@
         </section>
 
         <section class="tab-panel" data-panel="audio">
-          <div class="resource-placeholder"><b>Audio de clase</b><p>Se añadirá progresivamente cuando se incorpore el audio de esta unidad.</p></div>
+          ${audioPanel}
         </section>
 
         <section class="tab-panel" data-panel="pdf">
