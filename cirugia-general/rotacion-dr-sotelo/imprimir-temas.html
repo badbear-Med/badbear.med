@@ -82,7 +82,8 @@ body{margin:0;background:#eef4fb;color:var(--print-ink);font-family:system-ui,-a
     17:["17-marcadores-hepaticos-hepatitis-b.html","Marcadores hepáticos y hepatitis B"],
     18:["18-coagulacion-paciente-icterico.html","Coagulación en el paciente ictérico"],
     19:["19-quistes-hepaticos-manejo.html","Quistes hepáticos"],
-    20:["20-absceso-anorrectal-drenaje.html","Absceso anorrectal y drenaje"]
+    20:["20-absceso-anorrectal-drenaje.html","Absceso anorrectal y drenaje"],
+    21:["21-enfermedad-pilonidal.html","Enfermedad pilonidal"]
   };
   const params = new URLSearchParams(location.search);
   const raw = (params.get("temas") || "").split(",").map(v => Number(v)).filter(v => Number.isInteger(v) && topics[v]);
