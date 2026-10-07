@@ -70,22 +70,125 @@ body{font-family:Arial,Helvetica,sans-serif}
 .bb-player--idle .bb-player__play{opacity:.85}
 
 @media(max-width:760px){
-  :root{--bb-player-h:78px}
+  :root{--bb-player-h:108px}
+
   .bb-player{
-    grid-template-columns:minmax(0,1fr) auto;
-    gap:10px;padding:8px 10px
+    position:fixed;
+    grid-template-columns:1fr;
+    grid-template-rows:auto 38px;
+    align-content:center;
+    gap:4px;
+    padding:8px 12px 9px;
   }
-  .bb-player__art{width:48px;height:48px;flex-basis:48px;font-size:17px}
-  .bb-player__center{display:flex;align-items:center;gap:10px}
-  .bb-player__controls{margin:0;gap:10px}
-  .bb-player__timeline{display:none}
-  .bb-player__right{display:none}
-  .bb-player__nav{width:25px;height:25px}
-  .bb-player__play{width:32px;height:32px!important}
+
+  .bb-player__track{
+    width:100%;
+    min-width:0;
+    gap:10px;
+    padding-right:0;
+  }
+
+  .bb-player__art{
+    width:42px;
+    height:42px;
+    flex-basis:42px;
+    border-radius:7px;
+    font-size:15px;
+  }
+
+  .bb-player__copy{
+    min-width:0;
+    flex:1 1 auto;
+  }
+
+  .bb-player__title{
+    font-size:13px;
+    max-width:100%;
+  }
+
+  .bb-player__library{
+    font-size:10px;
+    margin-top:2px;
+  }
+
+  .bb-player__center{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .bb-player__controls{
+    width:100%;
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:28px;
+  }
+
+  .bb-player__timeline{
+    display:none;
+  }
+
+  .bb-player__right{
+    display:none;
+  }
+
+  .bb-player__nav{
+    display:grid!important;
+    width:30px;
+    height:30px;
+    font-size:19px;
+  }
+
+  .bb-player__play{
+    width:36px;
+    height:36px!important;
+    font-size:15px;
+  }
 }
+
 @media(max-width:430px){
-  .bb-player__library{display:none}
-  .bb-player__track{gap:9px}
-  .bb-player__art{width:44px;height:44px;flex-basis:44px}
-  .bb-player__nav{display:none!important}
+  :root{--bb-player-h:104px}
+
+  .bb-player{
+    padding:7px 10px 8px;
+  }
+
+  .bb-player__track{
+    gap:8px;
+  }
+
+  .bb-player__art{
+    width:38px;
+    height:38px;
+    flex-basis:38px;
+    font-size:14px;
+  }
+
+  .bb-player__title{
+    font-size:12.5px;
+  }
+
+  .bb-player__library{
+    display:block;
+    font-size:9.5px;
+  }
+
+  .bb-player__controls{
+    gap:24px;
+  }
+
+  .bb-player__nav{
+    display:grid!important;
+    width:28px;
+    height:28px;
+    font-size:18px;
+  }
+
+  .bb-player__play{
+    width:34px;
+    height:34px!important;
+  }
 }
