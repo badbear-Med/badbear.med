@@ -198,3 +198,85 @@ table{
     max-width:100%;
   }
 }
+
+
+/* ===== AUDIOS SINCRONIZADOS · NEUROLOGÍA ===== */
+.neuro-audio-list{
+  display:grid;
+  gap:16px;
+}
+
+.neuro-audio-card{
+  display:grid;
+  grid-template-columns:74px minmax(0,1fr);
+  gap:18px;
+  align-items:start;
+  padding:20px;
+  border:1px solid #dbe3ee;
+  border-radius:18px;
+  background:linear-gradient(180deg,#ffffff,#f8fafc);
+}
+
+.neuro-audio-badge{
+  display:grid;
+  place-items:center;
+  width:64px;
+  height:64px;
+  border-radius:16px;
+  background:#312e81;
+  color:#fff;
+  font-size:12px;
+  font-weight:950;
+  letter-spacing:.06em;
+}
+
+.neuro-audio-copy{
+  min-width:0;
+}
+
+.neuro-audio-copy>span{
+  display:block;
+  color:#6d28d9;
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.1em;
+}
+
+.neuro-audio-copy h3{
+  margin:5px 0 7px;
+  font-size:20px;
+  color:#172033;
+}
+
+.neuro-audio-copy p{
+  margin:0 0 12px;
+  color:#64748b;
+  line-height:1.55;
+}
+
+.neuro-audio-copy audio{
+  display:block;
+  width:100%;
+  max-width:720px;
+  margin:8px 0 10px;
+}
+
+.neuro-audio-copy small{
+  display:block;
+  color:#64748b;
+  font-size:11px;
+  line-height:1.45;
+}
+
+@media(max-width:640px){
+  .neuro-audio-card{
+    grid-template-columns:1fr;
+    padding:16px;
+  }
+
+  .neuro-audio-badge{
+    width:52px;
+    height:52px;
+    border-radius:13px;
+  }
+}
