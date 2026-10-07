@@ -74,3 +74,78 @@
 .bb-extra-sotelo{--extra-accent:#005be8;--extra-soft:#edf5ff;--extra-ink:#fff}
 .bb-extra-curiosidades .bb-extra-title{color:#101722}
 .bb-extra-curiosidades .bb-extra-action{color:#ffe34d}
+
+
+/* ===== MOBILE CONTAINMENT FIX · 2026-10-06 ===== */
+.bb-extra-intro,
+.bb-extra-intro > div,
+.bb-extra-actions,
+.bb-extra-action{
+  box-sizing:border-box;
+  min-width:0;
+}
+
+.bb-extra-intro{
+  max-width:100%;
+  overflow:hidden;
+}
+
+.bb-extra-actions{
+  width:100%;
+  max-width:100%;
+}
+
+.bb-extra-action{
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
+
+@media(max-width:760px){
+  .bb-extra-main{
+    width:calc(100% - 24px);
+    max-width:100%;
+  }
+
+  .bb-extra-intro{
+    width:100%;
+    max-width:100%;
+    padding:22px 16px;
+  }
+
+  .bb-extra-intro > div{
+    width:100%;
+    max-width:100%;
+  }
+
+  .bb-extra-actions{
+    width:100%;
+    max-width:100%;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .bb-extra-action,
+  .bb-extra-action.bb-extra-action-secondary{
+    width:100%;
+    max-width:100%;
+    padding-left:14px;
+    padding-right:14px;
+    justify-content:center;
+    text-align:center;
+  }
+}
+
+@media(max-width:430px){
+  .bb-extra-main{
+    width:calc(100% - 20px);
+  }
+
+  .bb-extra-intro{
+    padding:20px 14px;
+    border-radius:18px;
+  }
+
+  .bb-extra-action{
+    font-size:14px;
+  }
+}
