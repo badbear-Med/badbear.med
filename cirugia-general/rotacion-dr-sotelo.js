@@ -133,7 +133,8 @@
     [18,"Trastornos de coagulación en el paciente ictérico"],
     [19,"Quistes hepáticos: diagnóstico, intervención y postoperatorio"],
     [20,"Absceso anorrectal: drenaje, fístula y sospecha de Fournier"],
-    [21,"Enfermedad pilonidal: quiste, seno, absceso y tratamiento"]
+    [21,"Enfermedad pilonidal: quiste, seno, absceso y tratamiento"],
+    [22,"Síndrome de Chilaiditi: signo radiológico, clínica y manejo"]
   ];
   const box = document.getElementById("sotelo-print-topics");
   const count = document.getElementById("sotelo-print-count");
