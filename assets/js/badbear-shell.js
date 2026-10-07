@@ -244,7 +244,52 @@
     }
   }
 
+  function bindFrameNavigation() {
+    try {
+      const doc = frame.contentDocument;
+      if (!doc || doc.documentElement.dataset.bbShellBound === "1") return;
+
+      doc.documentElement.dataset.bbShellBound = "1";
+
+      doc.addEventListener("click", event => {
+        if (event.defaultPrevented) return;
+        if (event.button !== 0) return;
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        const anchor = event.target.closest("a[href]");
+        if (!anchor) return;
+        if (anchor.hasAttribute("download")) return;
+        if (anchor.target === "_blank") return;
+
+        const raw = anchor.getAttribute("href") || "";
+        if (!raw) return;
+        if (
+          raw.startsWith("#") ||
+          raw.startsWith("mailto:") ||
+          raw.startsWith("tel:") ||
+          raw.startsWith("javascript:")
+        ) return;
+
+        let target;
+        try {
+          target = new URL(raw, frame.contentWindow.location.href);
+        } catch {
+          return;
+        }
+
+        if (target.origin !== location.origin) return;
+        if (!target.pathname.startsWith(basePath)) return;
+        if (target.pathname.endsWith("/app.html")) return;
+
+        event.preventDefault();
+        navigateFrame(target.href, true);
+      }, true);
+    } catch (_) {}
+  }
+
   frame.addEventListener("load", () => {
+    bindFrameNavigation();
+
     try {
       const href = frame.contentWindow.location.href;
       if (!href || href === lastFrameUrl) {
