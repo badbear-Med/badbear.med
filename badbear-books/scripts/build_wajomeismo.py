@@ -62,6 +62,8 @@ def page(title,body,description,attrs=''):
 <link rel="stylesheet" href="../acceso.css?v=20261004-books-lock2">
 <script src="../acceso-config.js?v=20261004-books-lock2" defer></script>
 <script src="../acceso.js?v=20261004-books-lock2" defer></script>
+<link rel="stylesheet" href="../audiolibro.css?v=20261007-audio1">
+<script src="../audiolibro.js?v=20261007-audio1" defer></script>
 <script src="lector.js?v=20261004-books-lock2" defer></script></head><body {attrs}>
 <div id="books-access-loading" class="books-access-loading" role="status">Preparando el acceso a BADBEAR.BOOKS…</div>
 <noscript><p class="books-nojs">Activa JavaScript para verificar la clave de acceso a nuestra biblioteca.</p></noscript>
@@ -74,7 +76,7 @@ index=f'''<main id="contenido" class="book-home">
 <div class="book-presentation"><p class="eyebrow">PRIMERA PUBLICACIÓN · EDICIÓN AMPLIADA</p><h1 id="book-title">WAJOMEÍSMO<br><span>PURO</span></h1><p class="subtitle">{e(data['subtitle'])}</p><p class="book-description">Lee el texto original y profundiza cada capítulo con explicaciones, métodos, ejemplos y oportunidades de crecimiento. Veinte desarrollos editoriales te ayudan a convertir disciplina, autonomía, criterio y legado en acciones concretas.</p>
 <div class="book-facts"><span>Prólogo + 20 capítulos</span><span>20 planes de crecimiento</span><span>≈ {total_minutes} min de lectura</span></div>
 <p class="publisher">Una publicación de <strong>WAJOMEA.GROUP</strong><br>Biblioteca digital <strong>BADBEAR.BOOKS</strong></p>
-<div class="actions"><a class="button primary" href="prologo.html">Comenzar a leer <span aria-hidden="true">→</span></a><a class="button secondary" href="#indice">Ver capítulos</a><a class="button secondary" href="guia-de-lectura.html">Guía de lectura</a><a class="button resume" data-resume hidden href="prologo.html">Continuar lectura</a></div>
+<div class="actions"><a class="button primary" href="prologo.html">Comenzar a leer <span aria-hidden="true">→</span></a><a class="button secondary" href="#indice">Ver capítulos</a><a class="button secondary" href="prologo.html#audiolibro">Escuchar el libro</a><a class="button secondary" href="guia-de-lectura.html">Guía de lectura</a><a class="button resume" data-resume hidden href="prologo.html">Continuar lectura</a></div>
 </div></section>
 <section id="indice" class="index-panel" aria-labelledby="index-title"><div class="section-heading"><div><p class="eyebrow">ELIGE TU PUNTO DE PARTIDA</p><h2 id="index-title">Índice de la obra</h2></div><p>Cada capítulo tiene su propia página.<br>Puedes regresar al índice en cualquier momento.</p></div>{toc()}</section>
 <section class="growth-overview"><p class="eyebrow">DE LA LECTURA A LA PRÁCTICA</p><h2>Un desarrollo propio en cada capítulo</h2><div class="growth-overview-grid"><div><strong>Comprender</strong><p>Explicación de la idea, distinciones y un método de aplicación.</p></div><div><strong>Reconocer oportunidades</strong><p>Ejemplo desarrollado y áreas concretas donde puedes crecer.</p></div><div><strong>Actuar y revisar</strong><p>Ejercicio, plan de siete días y preguntas para evaluar tu avance.</p></div></div><a class="button secondary" href="capitulo-01.html#desarrollo">Explorar el desarrollo del capítulo 1 →</a></section>

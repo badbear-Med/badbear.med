@@ -38,3 +38,20 @@ Este mecanismo es un control visual en el navegador, adecuado al portal estátic
 ## Publicaciones siguientes
 
 Añadir una carpeta por libro con su portada, presentación, índice y contenido HTML; incorporarlo al catálogo. Cada página debe utilizar el patrón de acceso del generador: clase inicial `books-access-pending`, ocultación en línea, scripts de configuración y acceso, y contenido dentro de `#books-page`. Confirmar sus títulos y autoría a partir del material suministrado. No añadir un enlace de descarga de PDF salvo nueva instrucción del equipo.
+
+
+## WAJOMEÍSMO MASCULINO
+
+Segunda publicación: `wajomeismo-masculino/index.html`. Conserva apertura, 33 capítulos y epílogo; el capítulo 25 está en el cuerpo del original aunque falta en su índice preliminar. La portada original identifica a WAJHOUMEA. `contenido.json` conserva los bloques transcritos y sus páginas de procedencia. Se retiran índice preliminar, folios y páginas sin texto. El PDF de trabajo no se sube ni se enlaza.
+
+Cada capítulo tiene un desarrollo editorial propio en `crecimiento.json`: objetivo, dos explicaciones, método, ejemplo, tres oportunidades, ejercicio, plan de siete días, preguntas y principio final. Estas ampliaciones distinguen el lenguaje metafórico de afirmaciones biomédicas y aplican autonomía, consentimiento, responsabilidad y evaluación de conductas individuales.
+
+Reconstrucción: `python badbear-books/scripts/build_masculino.py`. Para volver a escribir exclusivamente las ampliaciones desde sus fichas editoriales: `python badbear-books/scripts/growth_masculino.py`. El CSS de lectura se comparte con el primer libro. Tamaño, tono y capítulo recordado usan almacenamiento independiente para cada obra.
+
+## Lectura en audio
+
+`audiolibro.js` y `audiolibro.css` añaden un panel a los capítulos de ambos libros, después de conceder el acceso. Requiere un clic para comenzar y utiliza Web Speech API, con voces en español disponibles en el dispositivo. No hay archivo MP3 ni grabación descargable.
+
+Incluye selección de original/desarrollo/ambos, voz, velocidad, pausa y reanudación, detención, navegación y posición por fragmentos. Los fragmentos cortos evitan enviar capítulos enteros a una sola locución. La pausa cancela la locución y conserva el desplazamiento de palabra cuando el motor emite eventos de límite; de lo contrario puede repetir el fragmento actual al reanudar. Posición y preferencias se guardan localmente si hay almacenamiento disponible. Cambiar de página o cerrar acceso cancela la voz. La escucha en segundo plano depende del navegador; la interfaz pide mantener la página abierta.
+
+La lectura original conserva las opiniones de la obra; los desarrollos editoriales pueden escucharse por separado. Los generadores incluyen las referencias al panel compartido para mantenerlo al reconstruir las páginas.
