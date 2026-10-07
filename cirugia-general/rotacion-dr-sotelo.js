@@ -132,7 +132,8 @@
     [17,"Marcadores hepáticos y serología de hepatitis B"],
     [18,"Trastornos de coagulación en el paciente ictérico"],
     [19,"Quistes hepáticos: diagnóstico, intervención y postoperatorio"],
-    [20,"Absceso anorrectal: drenaje, fístula y sospecha de Fournier"]
+    [20,"Absceso anorrectal: drenaje, fístula y sospecha de Fournier"],
+    [21,"Enfermedad pilonidal: quiste, seno, absceso y tratamiento"]
   ];
   const box = document.getElementById("sotelo-print-topics");
   const count = document.getElementById("sotelo-print-count");
