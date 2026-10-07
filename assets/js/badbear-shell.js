@@ -22,6 +22,7 @@
   let currentTrack = null;
   let seeking = false;
   let lastFrameUrl = "";
+  let pendingStartAt = 0;
 
   const baseUrl = new URL(".", location.href);
   const basePath = baseUrl.pathname;
@@ -33,6 +34,26 @@
     return m + ":" + s;
   }
 
+  function cleanText(value) {
+    return String(value || "")
+      .replace(/\s+/g, " ")
+      .replace(/\|\s*BADBEAR\.MED.*$/i, "")
+      .trim();
+  }
+
+  function humanizeFileName(url) {
+    try {
+      const name = decodeURIComponent(new URL(url).pathname.split("/").pop() || "Audio de clase")
+        .replace(/\.(mp3|m4a|wav|ogg)$/i, "")
+        .replace(/[_-]+/g, " ")
+        .replace(/^\d+[\s.-]*/, "")
+        .trim();
+      return name || "Audio de clase";
+    } catch {
+      return "Audio de clase";
+    }
+  }
+
   function findLibrary(libraryId, trackId) {
     let library = catalog.find(item => item.id === libraryId);
     if (!library && trackId) {
@@ -41,33 +62,54 @@
         item.tracks.some(track => track.id === trackId)
       );
     }
-    return library || null;
+    if (!library) return null;
+
+    return {
+      ...library,
+      kind: "music",
+      loop: true
+    };
+  }
+
+  function resolveTrackSrc(track) {
+    if (track.absoluteSrc) return track.absoluteSrc;
+    return new URL("badbear-music/" + track.src, baseUrl).href;
   }
 
   function setPlayerText() {
     if (!currentTrack || !currentLibrary) {
       player.classList.add("bb-player--idle");
-      titleEl.textContent = "Selecciona una canción";
-      libraryEl.textContent = "badbear.music";
-      artEl.textContent = "BM";
+      titleEl.textContent = "Selecciona un audio";
+      libraryEl.textContent = "WAJOMEA.GROUP";
+      artEl.textContent = "BB";
       return;
     }
 
     player.classList.remove("bb-player--idle");
     titleEl.textContent = currentTrack.title;
-    libraryEl.textContent =
-      currentLibrary.name + " · " + (currentIndex + 1) + " de " + currentLibrary.tracks.length;
-    artEl.textContent = currentLibrary.name
-      .split(/\s+/)
-      .map(word => word[0] || "")
-      .join("")
-      .slice(0, 2)
-      .toUpperCase();
+
+    const position =
+      currentLibrary.tracks.length > 1
+        ? " · " + (currentIndex + 1) + " de " + currentLibrary.tracks.length
+        : "";
+
+    libraryEl.textContent = currentLibrary.name + position;
+
+    if (currentLibrary.kind === "class") {
+      artEl.textContent = "CL";
+    } else {
+      artEl.textContent = currentLibrary.name
+        .split(/\s+/)
+        .map(word => word[0] || "")
+        .join("")
+        .slice(0, 2)
+        .toUpperCase();
+    }
 
     if ("mediaSession" in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: currentTrack.title,
-        artist: "badbear.music",
+        artist: currentLibrary.kind === "class" ? "BADBEAR.MED · Audio de clase" : "badbear.music",
         album: currentLibrary.name
       });
     }
@@ -83,20 +125,18 @@
     }, location.origin);
   }
 
-  function loadTrack(library, index, autoplay = true) {
+  function loadTrack(library, index, autoplay = true, startAt = 0) {
     if (!library || !Array.isArray(library.tracks) || !library.tracks.length) return;
 
     currentLibrary = library;
     const total = library.tracks.length;
-    currentIndex = ((index % total) + total) % total;
+    currentIndex = Math.max(0, Math.min(index, total - 1));
     currentTrack = library.tracks[currentIndex];
+    pendingStartAt = Number.isFinite(startAt) ? Math.max(0, startAt) : 0;
 
-    audio.src = new URL(
-      "badbear-music/" + currentTrack.src,
-      baseUrl
-    ).href;
-
+    audio.src = resolveTrackSrc(currentTrack);
     audio.load();
+
     setPlayerText();
     notifyFrame();
 
@@ -124,26 +164,50 @@
       return;
     }
 
-    loadTrack(library, index, true);
+    loadTrack(library, index, true, 0);
   }
 
   function nextTrack() {
     if (!currentLibrary) return;
-    loadTrack(currentLibrary, currentIndex + 1, true);
+
+    if (currentIndex + 1 < currentLibrary.tracks.length) {
+      loadTrack(currentLibrary, currentIndex + 1, true, 0);
+      return;
+    }
+
+    if (currentLibrary.loop) {
+      loadTrack(currentLibrary, 0, true, 0);
+      return;
+    }
+
+    audio.pause();
+    audio.currentTime = 0;
+    playBtn.textContent = "▶";
   }
 
   function previousTrack() {
     if (!currentLibrary) return;
+
     if (audio.currentTime > 3) {
       audio.currentTime = 0;
       return;
     }
-    loadTrack(currentLibrary, currentIndex - 1, true);
+
+    if (currentIndex > 0) {
+      loadTrack(currentLibrary, currentIndex - 1, true, 0);
+      return;
+    }
+
+    if (currentLibrary.loop && currentLibrary.tracks.length > 1) {
+      loadTrack(currentLibrary, currentLibrary.tracks.length - 1, true, 0);
+      return;
+    }
+
+    audio.currentTime = 0;
   }
 
   function togglePlay() {
     if (!currentTrack) return;
-
     if (audio.paused) audio.play().catch(() => {});
     else audio.pause();
   }
@@ -167,6 +231,10 @@
   audio.addEventListener("ended", nextTrack);
 
   audio.addEventListener("loadedmetadata", () => {
+    if (pendingStartAt > 0 && Number.isFinite(audio.duration)) {
+      audio.currentTime = Math.min(pendingStartAt, Math.max(0, audio.duration - 0.25));
+      pendingStartAt = 0;
+    }
     durationEl.textContent = formatTime(audio.duration);
     progress.max = Number.isFinite(audio.duration) ? audio.duration : 0;
   });
@@ -287,8 +355,178 @@
     } catch (_) {}
   }
 
+  function getAudioSource(audioEl, doc) {
+    const raw =
+      audioEl.currentSrc ||
+      audioEl.getAttribute("src") ||
+      audioEl.querySelector("source[src]")?.getAttribute("src") ||
+      "";
+
+    if (!raw) return "";
+
+    try {
+      return new URL(raw, doc.location.href).href;
+    } catch {
+      return "";
+    }
+  }
+
+  function getAcademicTitle(audioEl, src) {
+    const direct = cleanText(
+      audioEl.dataset.title ||
+      audioEl.getAttribute("aria-label") ||
+      audioEl.getAttribute("title")
+    );
+    if (direct) return direct;
+
+    const container = audioEl.closest(
+      "article,section,.card,.resource,.audio-card,.lesson,.tema,.topic,.module,.bloque,.contenido"
+    );
+
+    if (container) {
+      const heading = container.querySelector("h1,h2,h3,h4,h5,strong");
+      const value = cleanText(heading?.textContent);
+      if (value && value.length <= 140) return value;
+    }
+
+    let sibling = audioEl.previousElementSibling;
+    let tries = 0;
+    while (sibling && tries < 3) {
+      const value = cleanText(sibling.textContent);
+      if (value && value.length <= 140) return value;
+      sibling = sibling.previousElementSibling;
+      tries++;
+    }
+
+    return humanizeFileName(src);
+  }
+
+  function getAcademicLibraryName(doc) {
+    const h1 = cleanText(doc.querySelector("h1")?.textContent);
+    if (h1 && h1.length <= 100) return h1;
+
+    const title = cleanText(doc.title);
+    if (title) return title;
+
+    try {
+      const segment = decodeURIComponent(doc.location.pathname.split("/").filter(Boolean).slice(-2, -1)[0] || "");
+      return segment.replace(/[-_]+/g, " ") || "Audio de clase";
+    } catch {
+      return "Audio de clase";
+    }
+  }
+
+  function buildAcademicQueue(doc, targetAudio) {
+    const elements = [...doc.querySelectorAll("audio")];
+    const tracks = [];
+    let selectedIndex = 0;
+
+    elements.forEach((audioEl, index) => {
+      const src = getAudioSource(audioEl, doc);
+      if (!src) return;
+
+      const id = "class-" + btoa(unescape(encodeURIComponent(src))).replace(/[^a-z0-9]/gi, "").slice(-32);
+      const track = {
+        id,
+        title: getAcademicTitle(audioEl, src),
+        absoluteSrc: src,
+        kind: "class"
+      };
+
+      if (audioEl === targetAudio) {
+        selectedIndex = tracks.length;
+      }
+
+      tracks.push(track);
+    });
+
+    return {
+      library: {
+        id: "class-" + encodeURIComponent(doc.location.pathname),
+        name: getAcademicLibraryName(doc),
+        kind: "class",
+        loop: false,
+        tracks
+      },
+      selectedIndex
+    };
+  }
+
+  function transferInlineAudio(audioEl, doc) {
+    if (audioEl.dataset.bbTransferLock === "1") return;
+
+    const src = getAudioSource(audioEl, doc);
+    if (!src) return;
+
+    audioEl.dataset.bbTransferLock = "1";
+
+    const startAt = Number.isFinite(audioEl.currentTime) ? audioEl.currentTime : 0;
+    audioEl.pause();
+
+    const { library, selectedIndex } = buildAcademicQueue(doc, audioEl);
+    if (!library.tracks.length) {
+      delete audioEl.dataset.bbTransferLock;
+      return;
+    }
+
+    loadTrack(library, selectedIndex, true, startAt);
+
+    setTimeout(() => {
+      delete audioEl.dataset.bbTransferLock;
+    }, 250);
+  }
+
+  function bindOneInlineAudio(audioEl, doc) {
+    if (audioEl.dataset.bbGlobalAudioBound === "1") return;
+    audioEl.dataset.bbGlobalAudioBound = "1";
+
+    audioEl.addEventListener("play", () => {
+      transferInlineAudio(audioEl, doc);
+    });
+
+    audioEl.addEventListener("playing", () => {
+      if (!audioEl.paused) transferInlineAudio(audioEl, doc);
+    });
+  }
+
+  function bindFrameMedia() {
+    try {
+      const doc = frame.contentDocument;
+      if (!doc) return;
+
+      doc.querySelectorAll("audio").forEach(audioEl => {
+        bindOneInlineAudio(audioEl, doc);
+      });
+
+      if (doc.documentElement.dataset.bbMediaObserver === "1") return;
+      doc.documentElement.dataset.bbMediaObserver = "1";
+
+      const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+          mutation.addedNodes.forEach(node => {
+            if (!(node instanceof frame.contentWindow.Element)) return;
+
+            if (node.matches?.("audio")) {
+              bindOneInlineAudio(node, doc);
+            }
+
+            node.querySelectorAll?.("audio").forEach(audioEl => {
+              bindOneInlineAudio(audioEl, doc);
+            });
+          });
+        });
+      });
+
+      observer.observe(doc.body || doc.documentElement, {
+        childList: true,
+        subtree: true
+      });
+    } catch (_) {}
+  }
+
   frame.addEventListener("load", () => {
     bindFrameNavigation();
+    bindFrameMedia();
 
     try {
       const href = frame.contentWindow.location.href;
