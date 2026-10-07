@@ -2,6 +2,30 @@
 (() => {
   "use strict";
 
+  /* BB_PERSISTENT_SHELL_ENTRY
+     Si una página del portal se abre fuera del contenedor persistente,
+     volver a cargarla dentro de app.html para conservar badbear.music. */
+  if (window.self === window.top) {
+    try {
+      const scriptUrl = new URL(document.currentScript?.src || location.href, location.href);
+      const portalRoot = new URL("../../", scriptUrl);
+      const appUrl = new URL("app.html", portalRoot);
+
+      if (location.href !== appUrl.href && !location.pathname.endsWith("/app.html")) {
+        const current = new URL(location.href);
+        if (current.origin === portalRoot.origin && current.pathname.startsWith(portalRoot.pathname)) {
+          let relative = current.pathname.slice(portalRoot.pathname.length);
+          if (!relative) relative = "index.html";
+          relative += current.search + current.hash;
+
+          appUrl.searchParams.set("page", relative);
+          location.replace(appUrl.href);
+          return;
+        }
+      }
+    } catch (_) {}
+  }
+
   /* No modificar páginas que están embebidas dentro de un iframe. */
   if (window.self !== window.top) return;
 
