@@ -2,7 +2,7 @@
 (() => {
   "use strict";
   const categories = { documentos: "Abrir documento", audios: "Escuchar audio", videos: "Ver video" };
-  const catalogURL = new URL("rotacion-dr-sotelo/materiales.json?v=20261002-material1", document.baseURI);
+  const catalogURL = new URL("rotacion-dr-sotelo/materiales.json?v=20261008-r2-sotelo1", document.baseURI);
   fetch(catalogURL).then(response => {
     if (!response.ok) throw new Error("Catalog unavailable");
     return response.json();
