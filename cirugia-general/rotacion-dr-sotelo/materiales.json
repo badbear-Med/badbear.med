@@ -29,5 +29,117 @@
       "original_manifest": "audios/tricobezoares-imagen-original.json"
     }
   ],
-  "videos": []
+  "videos": [],
+  "temas": {
+    "10": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "11": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "12": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "13": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "14": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "15": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "16": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "17": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "18": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "19": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "20": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "21": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "22": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "01": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "02": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "03": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "04": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "05": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "06": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "07": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "08": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    },
+    "09": {
+      "pdfs": [],
+      "audios": [],
+      "videos": []
+    }
+  }
 }
