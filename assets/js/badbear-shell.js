@@ -13,6 +13,52 @@
   const durationEl = document.getElementById("bb-duration");
   const volume = document.getElementById("bb-volume");
 
+  const launcher = document.getElementById("bb-player-launcher");
+  const minimizeBtn = document.getElementById("bb-minimize");
+  const closeBtn = document.getElementById("bb-close");
+  let playerView = "mini";
+  try {
+    const saved = localStorage.getItem("bb-player-view");
+    if (["mini", "expanded", "closed"].includes(saved)) playerView = saved;
+  } catch (_) {}
+
+  function setPlayerView(view, moveFocus = false) {
+    playerView = view;
+    const expanded = view === "expanded";
+    document.body.dataset.bbPlayerView = view;
+    player.hidden = !expanded;
+    launcher.hidden = view !== "mini";
+    launcher.setAttribute("aria-expanded", String(expanded));
+    try { localStorage.setItem("bb-player-view", view); } catch (_) {}
+    if (moveFocus) {
+      if (expanded) minimizeBtn.focus();
+      else if (view === "mini") launcher.focus();
+      else frame.focus();
+    }
+  }
+
+  function updateLauncher() {
+    const playing = !!currentTrack && !audio.paused;
+    const label = (playing ? "Sonando: " : "Abrir reproductor: ") +
+      (currentTrack?.title || "badbear.music");
+    launcher.dataset.playing = String(playing);
+    launcher.title = label;
+    launcher.setAttribute("aria-label", label);
+  }
+
+  launcher.addEventListener("click", () => setPlayerView("expanded", true));
+  minimizeBtn.addEventListener("click", () => setPlayerView("mini", true));
+  closeBtn.addEventListener("click", () => {
+    audio.pause();
+    setPlayerView("closed", true);
+  });
+  player.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      setPlayerView("mini", true);
+    }
+  });
+
   const catalog = Array.isArray(window.BADBEAR_MUSIC_CATALOG)
     ? window.BADBEAR_MUSIC_CATALOG
     : [];
@@ -77,6 +123,7 @@
   }
 
   function setPlayerText() {
+    updateLauncher();
     if (!currentTrack || !currentLibrary) {
       player.classList.add("bb-player--idle");
       titleEl.textContent = "Selecciona un audio";
@@ -134,6 +181,7 @@
     currentTrack = library.tracks[currentIndex];
     pendingStartAt = Number.isFinite(startAt) ? Math.max(0, startAt) : 0;
 
+    if (playerView === "closed") setPlayerView("mini");
     audio.src = resolveTrackSrc(currentTrack);
     audio.load();
 
@@ -159,6 +207,7 @@
       currentTrack.id === trackId;
 
     if (sameTrack) {
+      if (playerView === "closed") setPlayerView("mini");
       if (audio.paused) audio.play().catch(() => {});
       else audio.pause();
       return;
@@ -219,12 +268,14 @@
   audio.addEventListener("play", () => {
     playBtn.textContent = "❚❚";
     playBtn.setAttribute("aria-label", "Pausar");
+    updateLauncher();
     notifyFrame();
   });
 
   audio.addEventListener("pause", () => {
     playBtn.textContent = "▶";
     playBtn.setAttribute("aria-label", "Reproducir");
+    updateLauncher();
     notifyFrame();
   });
 
@@ -302,6 +353,10 @@
 
   function navigateFrame(raw, pushHistory = false) {
     const target = sanitizePage(raw);
+    if (playerView === "closed" &&
+        new URL(target).pathname.startsWith(basePath + "badbear-music/")) {
+      setPlayerView("expanded");
+    }
     frame.src = target;
 
     if (pushHistory) {
@@ -553,6 +608,7 @@
     navigateFrame(params.get("page") || "index.html", false);
   });
 
+  setPlayerView(playerView);
   const params = new URLSearchParams(location.search);
   navigateFrame(params.get("page") || "index.html", false);
 

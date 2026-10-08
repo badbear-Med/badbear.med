@@ -6,10 +6,10 @@
   <title>WAJOMEA.GROUP</title>
   <meta name="description" content="Portal persistente de WAJOMEA.GROUP con reproductor global badbear.music.">
   <link rel="icon" href="dermatologia/badbear_logo.png">
- <link rel="stylesheet" href="assets/css/badbear-shell.css?v=20261006-shell4">
+ <link rel="stylesheet" href="assets/css/badbear-shell.css?v=20261008-mini1">
   <script src="badbear-music/catalog.js?v=20261006-catalog1"></script>
 </head>
-<body>
+<body data-bb-player-view="mini">
 
   <main class="bb-shell" aria-label="Contenido de WAJOMEA.GROUP">
     <iframe
@@ -25,7 +25,15 @@
     class="bb-player bb-player--idle"
     id="bb-global-player"
     aria-label="Reproductor global de badbear.music"
+    hidden
   >
+    <div class="bb-player__header">
+      <span>badbear.music</span>
+      <div class="bb-player__window-controls">
+        <button id="bb-minimize" type="button" aria-label="Minimizar reproductor" title="Minimizar; el audio continúa">−</button>
+        <button id="bb-close" type="button" aria-label="Cerrar reproductor y pausar audio" title="Cerrar y pausar">×</button>
+      </div>
+    </div>
     <div class="bb-player__track">
       <div class="bb-player__art" id="bb-track-art" aria-hidden="true">BM</div>
       <div class="bb-player__copy">
@@ -56,6 +64,12 @@
     <audio id="bb-audio" preload="metadata"></audio>
   </section>
 
-  <script src="assets/js/badbear-shell.js?v=20261007-shell6"></script>
+  <button class="bb-player-launcher" id="bb-player-launcher" type="button"
+    aria-label="Abrir reproductor de música" aria-controls="bb-global-player"
+    aria-expanded="false" title="Abrir reproductor">
+    <span aria-hidden="true">♪</span>
+  </button>
+
+  <script src="assets/js/badbear-shell.js?v=20261008-mini1"></script>
 </body>
 </html>
