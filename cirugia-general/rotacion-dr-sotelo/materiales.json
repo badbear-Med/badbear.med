@@ -2,29 +2,29 @@
   "documentos": [
     {
       "titulo": "Manual de la rotación: diez temas desarrollados",
-      "archivo": "documentos/manual-rotacion-sotelo.pdf",
+      "archivo": "https://media.wajomea.group/badbear-med/cirugia-general/rotacion-dr-sotelo/documentos/manual-rotacion-sotelo.pdf",
       "descripcion": "Manual completo con capítulos, cuadros, imágenes, bibliografía y repaso BADBEAR.MED FIJA:."
     },
     {
       "titulo": "Material aportado: láminas de exposición",
-      "archivo": "documentos/temas-exposicion-material.pdf",
+      "archivo": "https://media.wajomea.group/badbear-med/cirugia-general/rotacion-dr-sotelo/documentos/temas-exposicion-material.pdf",
       "descripcion": "Las 15 láminas aportadas a la rotación, conservadas sin cambios visuales. Los capítulos amplían y precisan su contenido."
     },
     {
       "titulo": "Presentación: colon, coledocolitiasis y cáncer colorrectal",
-      "archivo": "documentos/temas-colon-coledocolitiasis-original.pptx",
+      "archivo": "https://media.wajomea.group/badbear-med/cirugia-general/rotacion-dr-sotelo/documentos/temas-colon-coledocolitiasis-original.pptx",
       "descripcion": "Archivo PowerPoint original aportado para la rotación."
     },
     {
       "titulo": "Repaso intensivo de Cirugía General y Patología Digestiva",
-      "archivo": "documentos/repaso-intensivo-cirugia-digestiva.pdf",
+      "archivo": "https://media.wajomea.group/badbear-med/cirugia-general/rotacion-dr-sotelo/documentos/repaso-intensivo-cirugia-digestiva.pdf",
       "descripcion": "PDF aportado completo: 14 láminas. Sus imágenes están integradas y explicadas en los capítulos 10–15."
     }
   ],
   "audios": [
     {
       "titulo": "Tricobezoares e imagen en urgencias abdominales",
-      "archivo": "audios/tricobezoares-imagen.mp3",
+      "archivo": "https://media.wajomea.group/badbear-med/cirugia-general/rotacion-dr-sotelo/audios/tricobezoares-imagen.mp3",
       "descripcion": "Audio aportado · 16 min 25 s. Escúchalo aquí o descarga el archivo.",
       "original_manifest": "audios/tricobezoares-imagen-original.json"
     }
