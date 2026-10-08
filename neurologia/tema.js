@@ -36,7 +36,7 @@
       <div class="source-visual-grid">
         ${visuales.map(v => `
           <article class="source-page-card">
-            <button class="source-page-preview" type="button" data-pdf="${recurso.pdf || ""}" data-page="${v.page}" aria-label="Abrir página ${v.page}">
+            <button class="source-page-preview" type="button" data-pdf="${recurso.materialExtra || ""}" data-page="${v.page}" aria-label="Abrir página ${v.page}">
               <div class="source-page-placeholder">
                 <strong>PÁGINA ${v.page}</strong>
                 <span>${v.title}</span>
@@ -46,7 +46,7 @@
             <div class="source-page-copy">
               <h3>${v.title}</h3>
               <p>${v.note}</p>
-              <span>Fuente: ${recurso.nombre || recurso.pdf || "material docente"} · p. ${v.page}</span>
+              <span>Fuente: ${recurso.materialExtraNombre || recurso.materialExtra || "material docente"} · p. ${v.page}</span>
             </div>
           </article>`).join("")}
       </div>
@@ -80,22 +80,22 @@
       <p>Esta unidad todavía no tiene un audio compatible sincronizado.</p>
     </div>`;
 
-  const pdfCard = recurso.pdf ? `
+  const pdfCard = recurso.materialExtra ? `
     <div class="source-resource-card">
       <div class="source-resource-icon">PDF</div>
       <div>
         <span>${recurso.fuente || "Material extra"}</span>
-        <h3>${recurso.nombre || recurso.pdf.split("/").pop()}</h3>
+        <h3>${recurso.materialExtraNombre || recurso.materialExtra.split("/").pop()}</h3>
         <p>Documento complementario de la unidad.</p>
         <div class="pdf-actions">
           <a href="#visor-extra-neurologia">Ver material extra aquí ↓</a>
-          <a href="${recurso.pdf}" download>Descargar PDF</a>
+          <a href="${recurso.materialExtra}" download>Descargar PDF</a>
         </div>
       </div>
       <span class="sync-badge">Material extra</span>
     </div>
     <div class="pdf-embed-wrap" id="visor-extra-neurologia">
-      <iframe src="${recurso.pdf}#view=FitH" title="${recurso.nombre || "Material extra de la unidad"}" loading="lazy"></iframe>
+      <iframe src="${recurso.materialExtra}#view=FitH" title="${recurso.materialExtraNombre || "Material extra de la unidad"}" loading="lazy"></iframe>
     </div>` : "";
   const presentationCard = recurso.presentacion ? `
     <div class="source-resource-card">
