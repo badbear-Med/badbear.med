@@ -336,7 +336,7 @@
       nombre:"1. Polineuropatías.pdf",
       fuente:"Material extra",
       audios:[{
-        src:"https://pub-7e3b5900bcbc4cb1937b20f9ad852884.r2.dev/badbear-med/neurologia/audios/1.Neuropat%C3%ADas_perif%C3%A9ricas_y_miastenia_gravisA.m4a",
+        src:"https://media.wajomea.group/badbear-med/neurologia/audios/1.Neuropat%C3%ADas_perif%C3%A9ricas_y_miastenia_gravisA.m4a",
         titulo:"Neuropatías periféricas y miastenia gravis",
         descripcion:"Audio de clase compatible con el bloque de neuropatías periféricas. Incluye además contenido de miastenia gravis."
       }]
@@ -403,7 +403,7 @@
       nombre:"10. Miastenia Gravis.pdf",
       fuente:"Material extra",
       audios:[{
-        src:"https://pub-7e3b5900bcbc4cb1937b20f9ad852884.r2.dev/badbear-med/neurologia/audios/1.Neuropat%C3%ADas_perif%C3%A9ricas_y_miastenia_gravisA.m4a",
+        src:"https://media.wajomea.group/badbear-med/neurologia/audios/1.Neuropat%C3%ADas_perif%C3%A9ricas_y_miastenia_gravisA.m4a",
         titulo:"Neuropatías periféricas y miastenia gravis",
         descripcion:"Audio compartido con Polineuropatías; la segunda parte corresponde al bloque de miastenia gravis."
       }]
