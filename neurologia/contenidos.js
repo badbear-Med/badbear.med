@@ -335,8 +335,8 @@
       youtubeId:"7h7iV0zReww",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/1.Polineuropat%C3%ADas_y_Trastornos_Neuromusculares.pdf",
       presentacionNombre:"1.Polineuropatías_y_Trastornos_Neuromusculares.pdf",
-      pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/01-polineuropatias.pdf",
-      nombre:"1. Polineuropatías.pdf",
+      materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/01-polineuropatias.pdf",
+      materialExtraNombre:"1. Polineuropatías.pdf",
       fuente:"Material extra",
       audios:[{
         src:"https://media.wajomea.group/badbear-med/neurologia/audios/1.Neuropat%C3%ADas_perif%C3%A9ricas_y_miastenia_gravisA.m4a",
@@ -348,8 +348,8 @@
       youtubeId:"SFE58ySNnKk",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/2.Parkinson_y_Parkinsonismos.pdf",
       presentacionNombre:"2.Parkinson_y_Parkinsonismos.pdf",
-      pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/02-enfermedad-parkinson.pdf",
-      nombre:"2. Enfermedad Parkinson.pdf",
+      materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/02-enfermedad-parkinson.pdf",
+      materialExtraNombre:"2. Enfermedad Parkinson.pdf",
       fuente:"Material extra",
       audios:[{
         src:"https://media.wajomea.group/badbear-med/neurologia/audios/2.El_Parkinson_no_empieza_con_un_temblor.m4a",
@@ -358,16 +358,16 @@
       }]
     },
     epilepsias:{
-      pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/03-epilepsia.pdf",
-      nombre:"3. Epilepsia.pdf",
+      materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/03-epilepsia.pdf",
+      materialExtraNombre:"3. Epilepsia.pdf",
       fuente:"Material extra"
     },
     neurotuberculosis:{
       youtubeId:"Cy6KNXUbvo0",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/4.Gu%C3%ADa_de_Neurotuberculosis.pdf",
       presentacionNombre:"4.Guía_de_Neurotuberculosis.pdf",
-      pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/09-neurotuberculosis.pdf",
-      nombre:"9. Neurotuberculosis.pdf",
+      materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/09-neurotuberculosis.pdf",
+      materialExtraNombre:"9. Neurotuberculosis.pdf",
       fuente:"Material extra",
       audios:[{
         src:"https://media.wajomea.group/badbear-med/neurologia/audios/4.neurotuberculosis.m4a",
@@ -379,8 +379,8 @@
       youtubeId:"FNGvXiWkgmo",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/5.Neurocisticercosis.pdf",
       presentacionNombre:"5.Neurocisticercosis.pdf",
-      pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/08-neurocisticercosis.pdf",
-      nombre:"8. Neurocisticercosis.pdf",
+      materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/08-neurocisticercosis.pdf",
+      materialExtraNombre:"8. Neurocisticercosis.pdf",
       fuente:"Material extra",
       audios:[{
         src:"https://media.wajomea.group/badbear-med/neurologia/audios/5.neurocisticercosisA.m4a",
@@ -392,8 +392,8 @@
       youtubeId:"y8VV5zQxltE",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/6.Miopat%C3%ADas.pdf",
       presentacionNombre:"6.Miopatías.pdf",
-      pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/04-miopatias.pdf",
-      nombre:"4. Miopatías.pdf",
+      materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/04-miopatias.pdf",
+      materialExtraNombre:"4. Miopatías.pdf",
       fuente:"Material extra",
       audios:[{
         src:"https://media.wajomea.group/badbear-med/neurologia/audios/6.miopat%C3%ADas.m4a",
@@ -405,8 +405,8 @@
       youtubeId:"1YQEXyyC8OI",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/7.Infecciones_del_Sistema_Nervioso_Central.pdf",
       presentacionNombre:"7.Infecciones_del_Sistema_Nervioso_Central.pdf",
-      pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/05-enfermedades-infecciosas-snc.pdf",
-      nombre:"5. Enfermedades Infecciosas del SN.pdf",
+      materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/05-enfermedades-infecciosas-snc.pdf",
+      materialExtraNombre:"5. Enfermedades Infecciosas del SN.pdf",
       fuente:"Material extra",
       audios:[{
         src:"https://media.wajomea.group/badbear-med/neurologia/audios/7.Meningitis_y_encefalitis_en_urgencias.m4a",
@@ -414,11 +414,11 @@
         descripcion:"Audio de clase compatible con el componente de infecciones del SNC de esta unidad."
       }]
     },
-    "esclerosis-multiple":{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/06-esclerosis-multiple.pdf",nombre:"6. Esclerosis Multiple.pdf",fuente:"Material extra"},
-    "encefalitis-autoinmune":{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/07-encefalitis-autoinmunes.pdf",nombre:"7. Encefalitis AutoInmunes.pdf",fuente:"Material extra"},
+    "esclerosis-multiple":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/06-esclerosis-multiple.pdf",materialExtraNombre:"6. Esclerosis Multiple.pdf",fuente:"Material extra"},
+    "encefalitis-autoinmune":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/07-encefalitis-autoinmunes.pdf",materialExtraNombre:"7. Encefalitis AutoInmunes.pdf",fuente:"Material extra"},
     "miastenia-gravis":{
-      pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/10-miastenia-gravis.pdf",
-      nombre:"10. Miastenia Gravis.pdf",
+      materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/10-miastenia-gravis.pdf",
+      materialExtraNombre:"10. Miastenia Gravis.pdf",
       fuente:"Material extra",
       audios:[{
         src:"https://media.wajomea.group/badbear-med/neurologia/audios/1.Neuropat%C3%ADas_perif%C3%A9ricas_y_miastenia_gravisA.m4a",
@@ -426,14 +426,14 @@
         descripcion:"Audio compartido con Polineuropatías; la segunda parte corresponde al bloque de miastenia gravis."
       }]
     },
-    coma:{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/11-coma-seminario.pdf",nombre:"11. Coma - Seminario.pdf",fuente:"Material extra"},
-    demencias:{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/12-demencias.pdf",nombre:"12. Demencias.pdf",fuente:"Material extra"},
+    coma:{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/11-coma-seminario.pdf",materialExtraNombre:"11. Coma - Seminario.pdf",fuente:"Material extra"},
+    demencias:{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/12-demencias.pdf",materialExtraNombre:"12. Demencias.pdf",fuente:"Material extra"},
     cefaleas:{
       youtubeId:"h2Tem83Aj4I",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/12.%20cefaleas.pdf",
       presentacionNombre:"12. cefaleas.pdf",
-      pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/13-cefalea.pdf",
-      nombre:"13. Cefalea.pdf",
+      materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/13-cefalea.pdf",
+      materialExtraNombre:"13. Cefalea.pdf",
       fuente:"Material extra",
       audios:[{
         src:"https://media.wajomea.group/badbear-med/neurologia/audios/12.Diagn%C3%B3stico_y_manejo_de_las_cefaleas.m4a",
@@ -441,13 +441,13 @@
         descripcion:"Aunque el archivo está numerado como 12, por contenido corresponde al tema Cefaleas."
       }]
     },
-    ela:{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",nombre:"14. ELA.pdf",fuente:"Material extra"},
-    "segunda-neurona":{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",nombre:"14. ELA.pdf",fuente:"Fuente compartida"},
-    "infarto-cerebral":{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/15-infarto-cerebral.pdf",nombre:"15. Infarto Cerebral.pdf",fuente:"Material extra"},
-    "rescate-vascular":{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/15-infarto-cerebral.pdf",nombre:"15. Infarto Cerebral.pdf",fuente:"Fuente compartida"},
-    "hemorragia-intracerebral":{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/16-hemorragia-cerebral.pdf",nombre:"16. Hemorragia Cerebral.pdf",fuente:"Material extra"},
-    "neuroimagenes-infecciosas":{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/19-neuroimagenes-infecciosas-snc.pdf",nombre:"Dx por Imágenes - Enfermedades Infecciosas.pdf",fuente:"Material extra"},
-    "estado-epileptico":{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/17-estado-epileptico.pdf",nombre:"17. Estado Epiléptico.pdf",fuente:"Material extra"},
-    "neuroimagenes-vasculares":{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/21-neuroimagenes-ecv.pdf",nombre:"Dx por imágenes - ECV.pdf",fuente:"Material extra"}
+    ela:{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",materialExtraNombre:"14. ELA.pdf",fuente:"Material extra"},
+    "segunda-neurona":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",materialExtraNombre:"14. ELA.pdf",fuente:"Fuente compartida"},
+    "infarto-cerebral":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/15-infarto-cerebral.pdf",materialExtraNombre:"15. Infarto Cerebral.pdf",fuente:"Material extra"},
+    "rescate-vascular":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/15-infarto-cerebral.pdf",materialExtraNombre:"15. Infarto Cerebral.pdf",fuente:"Fuente compartida"},
+    "hemorragia-intracerebral":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/16-hemorragia-cerebral.pdf",materialExtraNombre:"16. Hemorragia Cerebral.pdf",fuente:"Material extra"},
+    "neuroimagenes-infecciosas":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/19-neuroimagenes-infecciosas-snc.pdf",materialExtraNombre:"Dx por Imágenes - Enfermedades Infecciosas.pdf",fuente:"Material extra"},
+    "estado-epileptico":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/17-estado-epileptico.pdf",materialExtraNombre:"17. Estado Epiléptico.pdf",fuente:"Material extra"},
+    "neuroimagenes-vasculares":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/21-neuroimagenes-ecv.pdf",materialExtraNombre:"Dx por imágenes - ECV.pdf",fuente:"Material extra"}
   };
 })();
