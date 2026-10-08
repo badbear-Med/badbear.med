@@ -2,11 +2,54 @@
 (() => {
   "use strict";
   const categories = { documentos: "Abrir documento", audios: "Escuchar audio", videos: "Ver video" };
-  const catalogURL = new URL("rotacion-dr-sotelo/materiales.json?v=20261008-r2-sotelo1", document.baseURI);
+  const catalogURL = new URL("rotacion-dr-sotelo/materiales.json?v=20261008-sotelo-recursos2", document.baseURI);
   fetch(catalogURL).then(response => {
     if (!response.ok) throw new Error("Catalog unavailable");
     return response.json();
   }).then(catalog => {
+    const topicCards = document.getElementById("sotelo-recursos-por-tema");
+    if (topicCards) {
+      const safeURL = raw => { try { const u = new URL(raw, catalogURL); return ["http:","https:"].includes(u.protocol) ? u.href : ""; } catch { return ""; } };
+      const ytID = raw => { try {
+        const u = new URL(raw), host = u.hostname.replace(/^www\./,"").toLowerCase();
+        const parts = u.pathname.split("/");
+        const id = host === "youtu.be" ? parts[1] : (["youtube.com","m.youtube.com","youtube-nocookie.com"].includes(host) ? (u.searchParams.get("v") || (["embed","shorts","live"].includes(parts[1]) ? parts[2] : "")) : "");
+        return /^[A-Za-z0-9_-]{11}$/.test(id || "") ? id : "";
+      } catch { return ""; } };
+      const addTitle = (parent, label) => { const h = document.createElement("h4"); h.textContent = label; parent.append(h); };
+      const topicData = catalog.temas || {};
+      const select = document.createElement("select");
+      select.setAttribute("aria-label","Seleccionar tema de la rotación");
+      Object.keys(topicData).sort((a,b)=>Number(a)-Number(b)).forEach(id => {
+        const option = document.createElement("option"); option.value=id; option.textContent="Tema "+id; select.append(option);
+      });
+      const view = document.createElement("div"); view.className="bb-sotelo-catalog";
+      topicCards.replaceChildren(select,view);
+      const draw = () => {
+        const data=topicData[select.value] || {};
+        view.replaceChildren();
+        for (const [kind,label] of [["pdfs","PDF y presentaciones"],["audios","Audios"],["videos","Videos"]]) {
+          const section=document.createElement("section"); section.className="bb-sotelo-item";
+          addTitle(section,label);
+          const items=Array.isArray(data[kind])?data[kind]:[];
+          if (!items.length) {
+            const p=document.createElement("p"); p.textContent="Pendiente de incorporar a este tema."; section.append(p);
+          }
+          for(const item of items) {
+            const url=safeURL(item.url||item.archivo||""); if(!url) continue;
+            const h=document.createElement("strong"); h.textContent=item.titulo||label; section.append(h);
+            if(kind==="videos") {
+              const id=ytID(url);
+              if(id) {const iframe=document.createElement("iframe");iframe.src="https://www.youtube.com/embed/"+id+"?origin=https%3A%2F%2Fwajomea.group";iframe.title=item.titulo||"Video";iframe.loading="lazy";iframe.referrerPolicy="strict-origin-when-cross-origin";iframe.allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen";iframe.allowFullscreen=true;iframe.style.cssText="display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:12px";section.append(iframe);}
+              else {const video=document.createElement("video");video.controls=true;video.playsInline=true;video.src=url;video.style.maxWidth="100%";section.append(video);}
+            } else if(kind==="audios"){const audio=document.createElement("audio");audio.controls=true;audio.src=url;audio.style.width="100%";section.append(audio);}
+            else {const iframe=document.createElement("iframe");iframe.src=url+"#view=FitH";iframe.title=item.titulo||"PDF";iframe.loading="lazy";iframe.style.cssText="display:block;width:100%;height:70vh;min-height:420px;border:0";section.append(iframe);}
+          }
+          view.append(section);
+        }
+      };
+      select.addEventListener("change",draw);draw();
+    }
     for (const [category, action] of Object.entries(categories)) {
       const container = document.getElementById("sotelo-" + category);
       const entries = Array.isArray(catalog[category]) ? catalog[category] : [];
