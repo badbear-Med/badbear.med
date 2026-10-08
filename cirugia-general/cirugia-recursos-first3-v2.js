@@ -6,7 +6,7 @@ const grid = (title, cards) => cards ? `<h3 class="cg-resource-title">${title}</
 window.BADBEAR_CG_RENDER_RESOURCES = function(id, element) {
   if (!element) return;
   const r = (window.BADBEAR_CG_RESOURCES || {})[id] || {};
-  const files = (items, type, label) => (items || []).filter(x => x.file).map(x => `<article class="cg-resource-card"><span class="cg-type">${type}</span><h3>${e(x.title)}</h3><a href="${fileURL(x.file)}" target="_blank" rel="noopener">${label}</a></article>`).join("");
+  const files = (items, type, label) => (items || []).filter(x => x.file).map(x => `<article class="cg-resource-card"><span class="cg-type">${type}</span><h3>${e(x.title)}</h3><a href="${fileURL(x.file)}" target="_blank" rel="noopener">${label}</a>${type === "PDF" ? `<iframe title="${e(x.title)}" src="${fileURL(x.file)}#view=FitH" loading="lazy" style="display:block;width:100%;height:550px;max-height:70vh;border:0;margin-top:12px"></iframe>` : ""}</article>`).join("");
   const audios = (r.audios || []).filter(x => x.file).map(x => `<article class="cg-resource-card"><span class="cg-type">AUDIO</span><h3>${e(x.title)}</h3><audio controls preload="metadata" src="${fileURL(x.file)}"></audio><a href="${fileURL(x.file)}" target="_blank" rel="noopener">Abrir audio</a></article>`).join("");
   const youtubeId = value => {
     try {
