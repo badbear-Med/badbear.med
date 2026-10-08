@@ -157,7 +157,7 @@
             </div>
           </div>
           <div class="pdf-embed-wrap" style="min-height:0">
-            <iframe style="width:100%;height:auto;aspect-ratio:16/9;min-height:0" src="https://www.youtube-nocookie.com/embed/${recurso.youtubeId}" title="Video de clase: ${tema.titulo}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe style="width:100%;height:auto;aspect-ratio:16/9;min-height:0" src="https://www.youtube.com/embed/${recurso.youtubeId}?origin=https%3A%2F%2Fwajomea.group" title="Video de clase: ${tema.titulo}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>` : `
           <div class="resource-placeholder"><b>Video pendiente</b><p>La clase todavía no tiene video publicado. Se incorporará cuando esté disponible.</p>
             <p><a href="https://www.youtube.com/playlist?list=PLFoUj15PJAJI" target="_blank" rel="noopener noreferrer">Consultar playlist de Neurología ↗</a></p>
