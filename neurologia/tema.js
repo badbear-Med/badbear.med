@@ -145,7 +145,23 @@
         </section>
 
         <section class="tab-panel" data-panel="video">
-          <div class="resource-placeholder"><b>Video / YouTube</b><p>Espacio preparado para el enlace o reproductor correspondiente a esta unidad.</p></div>
+          ${recurso.youtubeId ? `
+          <div class="source-resource-card">
+            <div class="source-resource-icon">▶</div>
+            <div><span>Video de la clase · BADBEAR.MED</span><h3>${tema.titulo}</h3>
+              <p>Clase vinculada al audio y a la presentación PDF de esta unidad.</p>
+              <div class="pdf-actions">
+                <a href="https://youtu.be/${recurso.youtubeId}" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a>
+                <a href="https://www.youtube.com/playlist?list=PLFoUj15PJAJI" target="_blank" rel="noopener noreferrer">Playlist Neurología ↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="pdf-embed-wrap" style="min-height:0">
+            <iframe style="width:100%;height:auto;aspect-ratio:16/9;min-height:0" src="https://www.youtube-nocookie.com/embed/${recurso.youtubeId}" title="Video de clase: ${tema.titulo}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>` : `
+          <div class="resource-placeholder"><b>Video pendiente</b><p>La clase todavía no tiene video publicado. Se incorporará cuando esté disponible.</p>
+            <p><a href="https://www.youtube.com/playlist?list=PLFoUj15PJAJI" target="_blank" rel="noopener noreferrer">Consultar playlist de Neurología ↗</a></p>
+          </div>`}
         </section>
 
         <section class="tab-panel" data-panel="extra">
