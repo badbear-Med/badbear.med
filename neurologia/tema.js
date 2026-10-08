@@ -88,13 +88,13 @@
         <h3>${recurso.nombre || recurso.pdf.split("/").pop()}</h3>
         <p>PDF docente correspondiente a esta unidad.</p>
         <div class="pdf-actions">
-          <a href="${recurso.pdf}" target="_blank" rel="noopener">Abrir PDF ↗</a>
+          <a href="#visor-pdf-neurologia" class="neuro-view-pdf">Ver PDF aquí ↓</a>
           <a href="${recurso.pdf}" download>Descargar PDF</a>
         </div>
       </div>
       <span class="sync-badge">PDF de la unidad</span>
     </div>
-    <div class="pdf-embed-wrap">
+    <div class="pdf-embed-wrap" id="visor-pdf-neurologia">
       <iframe src="${recurso.pdf}#view=FitH" title="${recurso.nombre || "PDF de la unidad"}" loading="lazy"></iframe>
     </div>` : `
     <div class="resource-placeholder"><b>PDF</b><p>Esta unidad no tiene un PDF independiente dentro del ZIP recibido.</p></div>`;
