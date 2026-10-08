@@ -332,6 +332,7 @@
 
   window.BADBEAR_NEURO_RECURSOS = {
     polineuropatias:{
+      youtubeId:"7h7iV0zReww",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/1.Polineuropat%C3%ADas_y_Trastornos_Neuromusculares.pdf",
       presentacionNombre:"1.Polineuropatías_y_Trastornos_Neuromusculares.pdf",
       pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/01-polineuropatias.pdf",
@@ -344,6 +345,7 @@
       }]
     },
     parkinson:{
+      youtubeId:"SFE58ySNnKk",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/2.Parkinson_y_Parkinsonismos.pdf",
       presentacionNombre:"2.Parkinson_y_Parkinsonismos.pdf",
       pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/02-enfermedad-parkinson.pdf",
@@ -361,6 +363,7 @@
       fuente:"Material extra"
     },
     neurotuberculosis:{
+      youtubeId:"Cy6KNXUbvo0",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/4.Gu%C3%ADa_de_Neurotuberculosis.pdf",
       presentacionNombre:"4.Guía_de_Neurotuberculosis.pdf",
       pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/09-neurotuberculosis.pdf",
@@ -373,6 +376,7 @@
       }]
     },
     neurocisticercosis:{
+      youtubeId:"FNGvXiWkgmo",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/5.Neurocisticercosis.pdf",
       presentacionNombre:"5.Neurocisticercosis.pdf",
       pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/08-neurocisticercosis.pdf",
@@ -385,6 +389,7 @@
       }]
     },
     miopatias:{
+      youtubeId:"y8VV5zQxltE",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/6.Miopat%C3%ADas.pdf",
       presentacionNombre:"6.Miopatías.pdf",
       pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/04-miopatias.pdf",
@@ -397,6 +402,7 @@
       }]
     },
     "infecciones-snc-sgb":{
+      youtubeId:"1YQEXyyC8OI",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/7.Infecciones_del_Sistema_Nervioso_Central.pdf",
       presentacionNombre:"7.Infecciones_del_Sistema_Nervioso_Central.pdf",
       pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/05-enfermedades-infecciosas-snc.pdf",
@@ -423,6 +429,7 @@
     coma:{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/11-coma-seminario.pdf",nombre:"11. Coma - Seminario.pdf",fuente:"Material extra"},
     demencias:{pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/12-demencias.pdf",nombre:"12. Demencias.pdf",fuente:"Material extra"},
     cefaleas:{
+      youtubeId:"h2Tem83Aj4I",
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/12.%20cefaleas.pdf",
       presentacionNombre:"12. cefaleas.pdf",
       pdf:"https://media.wajomea.group/badbear-med/neurologia/pdf/13-cefalea.pdf",
