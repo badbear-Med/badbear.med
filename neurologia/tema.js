@@ -86,18 +86,35 @@
       <div>
         <span>${recurso.fuente || "Material extra"}</span>
         <h3>${recurso.nombre || recurso.pdf.split("/").pop()}</h3>
-        <p>PDF docente correspondiente a esta unidad.</p>
+        <p>Documento complementario de la unidad.</p>
         <div class="pdf-actions">
-          <a href="#visor-pdf-neurologia" class="neuro-view-pdf">Ver PDF aquí ↓</a>
+          <a href="#visor-extra-neurologia">Ver material extra aquí ↓</a>
           <a href="${recurso.pdf}" download>Descargar PDF</a>
         </div>
       </div>
-      <span class="sync-badge">PDF de la unidad</span>
+      <span class="sync-badge">Material extra</span>
+    </div>
+    <div class="pdf-embed-wrap" id="visor-extra-neurologia">
+      <iframe src="${recurso.pdf}#view=FitH" title="${recurso.nombre || "Material extra de la unidad"}" loading="lazy"></iframe>
+    </div>` : "";
+  const presentationCard = recurso.presentacion ? `
+    <div class="source-resource-card">
+      <div class="source-resource-icon">PDF</div>
+      <div>
+        <span>Presentación de clase</span>
+        <h3>${recurso.presentacionNombre || "Presentación académica"}</h3>
+        <p>Diapositivas correspondientes a la clase desarrollada y su audio.</p>
+        <div class="pdf-actions">
+          <a href="#visor-pdf-neurologia">Ver presentación aquí ↓</a>
+          <a href="${recurso.presentacion}" download>Descargar presentación</a>
+        </div>
+      </div>
+      <span class="sync-badge">Clase desarrollada</span>
     </div>
     <div class="pdf-embed-wrap" id="visor-pdf-neurologia">
-      <iframe src="${recurso.pdf}#view=FitH" title="${recurso.nombre || "PDF de la unidad"}" loading="lazy"></iframe>
+      <iframe src="${recurso.presentacion}#view=FitH" title="${recurso.presentacionNombre || "Presentación de la clase"}" loading="lazy"></iframe>
     </div>` : `
-    <div class="resource-placeholder"><b>PDF</b><p>Esta unidad no tiene un PDF independiente dentro del ZIP recibido.</p></div>`;
+    <div class="resource-placeholder"><b>Presentación de clase pendiente</b><p>Las diapositivas se incorporarán cuando se desarrolle esta clase. El PDF complementario, si está disponible, permanece en Material extra.</p></div>`;
 
   app.innerHTML = `
     <div class="tema-breadcrumb">
@@ -124,7 +141,7 @@
         </section>
 
         <section class="tab-panel" data-panel="pdf">
-          ${pdfCard}
+          ${presentationCard}
         </section>
 
         <section class="tab-panel" data-panel="video">
