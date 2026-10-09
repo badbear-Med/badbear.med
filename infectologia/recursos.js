@@ -1,16 +1,16 @@
 window.BADBEAR_INFECTO_RECURSOS = {
   pdfs: [
     { nombre: "12-Brucelosis_Monografía_ClínicaPPT", archivo: "pdf/12-Brucelosis_Monografía_ClínicaPPT.pdf" },
-    { nombre: "13-Ofidismo_Clinical_MasterclassPPT", archivo: "pdf/13-Ofidismo_Clinical_MasterclassPPT.pdf" },
-    { nombre: "1-4Febrile_Patient_Clinical_Guideppt", archivo: "pdf/1-4Febrile_Patient_Clinical_Guideppt.pdf" },
+    { nombre: "13-Ofidismo_Clinical_MasterclassPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/13-Ofidismo_Clinical_MasterclassPPT.pdf" },
+    { nombre: "1-4Febrile_Patient_Clinical_Guideppt", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/1-4Febrile_Patient_Clinical_Guideppt.pdf" },
     { nombre: "14-Guía_GEAIPPT", archivo: "pdf/14-Guía_GEAIPPT.pdf" },
-    { nombre: "15-Mononucleosis_Clinical_EssentialsPPT", archivo: "pdf/15-Mononucleosis_Clinical_EssentialsPPT.pdf" },
+    { nombre: "15-Mononucleosis_Clinical_EssentialsPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/15-Mononucleosis_Clinical_EssentialsPPT.pdf" },
     { nombre: "2-Manual_Clínico_de_Arbovirosis_EmergentesPPT", archivo: "pdf/2-Manual_Clínico_de_Arbovirosis_EmergentesPPT.pdf" },
-    { nombre: "3-1HIV_AIDS_Master_ClassPPT", archivo: "pdf/3-1HIV_AIDS_Master_ClassPPT.pdf" },
+    { nombre: "3-1HIV_AIDS_Master_ClassPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/3-1HIV_AIDS_Master_ClassPPT.pdf" },
     { nombre: "3-2Guía_de_VIH_y_TARGAPPT", archivo: "pdf/3-2Guía_de_VIH_y_TARGAPPT.pdf" },
-    { nombre: "6-Microbiology_and_Antibiotics_Survival_ManualPPT", archivo: "pdf/6-Microbiology_and_Antibiotics_Survival_ManualPPT.pdf" },
-    { nombre: "7.Antiviral_Clinical_GuidePPRT", archivo: "pdf/7.Antiviral_Clinical_GuidePPRT.pdf" },
-    { nombre: "8-Systemic_Antifungal_PharmacologyPPT", archivo: "pdf/8-Systemic_Antifungal_PharmacologyPPT.pdf" }
+    { nombre: "6-Microbiology_and_Antibiotics_Survival_ManualPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/6-Microbiology_and_Antibiotics_Survival_ManualPPT.pdf" },
+    { nombre: "7.Antiviral_Clinical_GuidePPRT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/7.Antiviral_Clinical_GuidePPRT.pdf" },
+    { nombre: "8-Systemic_Antifungal_PharmacologyPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/8-Systemic_Antifungal_PharmacologyPPT.pdf" }
   ],
   audios: [
     { nombre: "12-Brucelosis_el_espía_que_secuestra_tus_célulasMP3", archivo: "audios-web/12-Brucelosis_el_espía_que_secuestra_tus_célulasMP3.mp3" },

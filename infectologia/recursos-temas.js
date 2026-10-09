@@ -1,7 +1,7 @@
 window.BADBEAR_INFECTOLOGIA_RECURSOS_TEMA = {
   "febril-sirs-sepsis": {
     pdfs: [
-      { nombre: "1-4Febrile_Patient_Clinical_Guideppt", archivo: "pdf/1-4Febrile_Patient_Clinical_Guideppt.pdf" }
+      { nombre: "1-4Febrile_Patient_Clinical_Guideppt", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/1-4Febrile_Patient_Clinical_Guideppt.pdf" }
     ],
     audios: [
       { nombre: "1-4Abordaje_clínico_del_paciente_febrilmp3", archivo: "audios-web/1-4Abordaje_clínico_del_paciente_febrilmp3.mp3" }
@@ -22,7 +22,7 @@ window.BADBEAR_INFECTOLOGIA_RECURSOS_TEMA = {
   },
   "vih-sida": {
     pdfs: [
-      { nombre: "3-1HIV_AIDS_Master_ClassPPT", archivo: "pdf/3-1HIV_AIDS_Master_ClassPPT.pdf" },
+      { nombre: "3-1HIV_AIDS_Master_ClassPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/3-1HIV_AIDS_Master_ClassPPT.pdf" },
       { nombre: "3-2Guía_de_VIH_y_TARGAPPT", archivo: "pdf/3-2Guía_de_VIH_y_TARGAPPT.pdf" }
     ],
     audios: [
@@ -36,7 +36,7 @@ window.BADBEAR_INFECTOLOGIA_RECURSOS_TEMA = {
   },
   "fungicas-invasivas": {
     pdfs: [
-      { nombre: "8-Systemic_Antifungal_PharmacologyPPT", archivo: "pdf/8-Systemic_Antifungal_PharmacologyPPT.pdf" }
+      { nombre: "8-Systemic_Antifungal_PharmacologyPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/8-Systemic_Antifungal_PharmacologyPPT.pdf" }
     ],
     audios: [
       { nombre: "8-Azoles_y_equinocandinas_frente_a_micosis_sistémicasMP3", archivo: "audios-web/8-Azoles_y_equinocandinas_frente_a_micosis_sistémicasMP3.mp3" }
@@ -48,9 +48,9 @@ window.BADBEAR_INFECTOLOGIA_RECURSOS_TEMA = {
   },
   "antimicrobianos": {
     pdfs: [
-      { nombre: "6-Microbiology_and_Antibiotics_Survival_ManualPPT", archivo: "pdf/6-Microbiology_and_Antibiotics_Survival_ManualPPT.pdf" },
-      { nombre: "7.Antiviral_Clinical_GuidePPRT", archivo: "pdf/7.Antiviral_Clinical_GuidePPRT.pdf" },
-      { nombre: "8-Systemic_Antifungal_PharmacologyPPT", archivo: "pdf/8-Systemic_Antifungal_PharmacologyPPT.pdf" }
+      { nombre: "6-Microbiology_and_Antibiotics_Survival_ManualPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/6-Microbiology_and_Antibiotics_Survival_ManualPPT.pdf" },
+      { nombre: "7.Antiviral_Clinical_GuidePPRT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/7.Antiviral_Clinical_GuidePPRT.pdf" },
+      { nombre: "8-Systemic_Antifungal_PharmacologyPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/8-Systemic_Antifungal_PharmacologyPPT.pdf" }
     ],
     audios: [
       { nombre: "7-Errores_letales_en_la_farmacocinética_de_antiviralesMP3", archivo: "audios-web/7-Errores_letales_en_la_farmacocinética_de_antiviralesMP3.mp3" },
@@ -93,7 +93,7 @@ window.BADBEAR_INFECTOLOGIA_RECURSOS_TEMA = {
   },
   "ofidismo": {
     pdfs: [
-      { nombre: "13-Ofidismo_Clinical_MasterclassPPT", archivo: "pdf/13-Ofidismo_Clinical_MasterclassPPT.pdf" }
+      { nombre: "13-Ofidismo_Clinical_MasterclassPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/13-Ofidismo_Clinical_MasterclassPPT.pdf" }
     ],
     audios: [
       { nombre: "13-Manejo_del_ofidismo_y_suero_antiofídicoMP3", archivo: "audios-web/13-Manejo_del_ofidismo_y_suero_antiofídicoMP3.mp3" }
@@ -115,7 +115,7 @@ window.BADBEAR_INFECTOLOGIA_RECURSOS_TEMA = {
   },
   "mononucleosis": {
     pdfs: [
-      { nombre: "15-Mononucleosis_Clinical_EssentialsPPT", archivo: "pdf/15-Mononucleosis_Clinical_EssentialsPPT.pdf" }
+      { nombre: "15-Mononucleosis_Clinical_EssentialsPPT", archivo: "https://media.wajomea.group/badbear-med/infectologia/pdf/15-Mononucleosis_Clinical_EssentialsPPT.pdf" }
     ],
     audios: [
       { nombre: "15-Fisiopatología_de_la_mononucleosis_infecciosa", archivo: "audios-web/15-Fisiopatología_de_la_mononucleosis_infecciosa.mp3" }
