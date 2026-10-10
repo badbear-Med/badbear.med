@@ -73,7 +73,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var
 <label>Universidad<input id="university" type="search" placeholder="Todas"></label>
 <label>Facultad<input id="faculty" type="search" placeholder="Todas"></label>
 <label>Docente<input id="teacher" type="search" placeholder="Todos"></label>
-<label>Año<select id="year"><option value="">Todos</option></select></label>
+<label>Año<select id="year"><option value="">Todos</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select></label>
 <label>Evaluación<select id="type"><option value="">Todas</option><option>Parcial</option><option>Final</option><option>Práctica</option><option>Otros</option></select></label>
 </div>
 <p class="note" id="count" aria-live="polite">Cargando catálogo...</p>
@@ -100,7 +100,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var
 <form id="contribution-form">
 <label>Curso<input name="course" placeholder="Nombre de la asignatura" required maxlength="120"></label>
 <label>Facultad o escuela<input name="faculty" placeholder="Ej. Medicina Humana" maxlength="120"></label>
-<label>Año del examen<input name="year" type="number" min="2023" max="2027" placeholder="2023 en adelante" required></label>
+<label>Año del examen<input name="year" type="number" min="2022" max="2026" placeholder="2022 a 2026" required></label>
 <label>Tipo de evaluación<select name="type" required><option value="">Selecciona</option><option>Parcial</option><option>Final</option><option>Práctica</option><option>Otros</option></select></label>
 <label>Nombre o seudónimo (opcional)<input name="contributor" maxlength="80" placeholder="Para reconocer tu colaboración"></label>
 <label>Archivo PDF o imagen<input name="file" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required></label>
@@ -141,8 +141,8 @@ const submit=document.getElementById("send-exam");
 const status=document.getElementById("form-message");
 const API="https://badbear-exams-api.wajomea-group.workers.dev/api/aportes";
 const yearInput=form.elements.namedItem("year");
-yearInput.max=String(new Date().getFullYear()+1);
-yearInput.min="2023";
+yearInput.max="2026";
+yearInput.min="2022";
 form.addEventListener("submit",async event=>{
  event.preventDefault();
  if(!form.reportValidity())return;
@@ -178,7 +178,7 @@ form.addEventListener("submit",async event=>{
 fetch("https://badbear-exams-api.wajomea-group.workers.dev/api/examenes",{cache:"no-store",mode:"cors"}).then(r=>{if(!r.ok)throw Error("API aún no disponible");return r.json()}).then(data=>{
 exams=Array.isArray(data.items)?data.items.map(e=>({...e,faculty:e.facultad||""})):[];
 const years=[...new Set(exams.map(e=>String(e.year||"")).filter(Boolean))].sort((a,b)=>Number(b)-Number(a));
-years.forEach(y=>{const o=document.createElement("option");o.value=o.textContent=y;year.append(o)});
+
 render();
 }).catch(()=>{count.textContent="Biblioteca en preparación: conectaremos pronto el catálogo de exámenes aprobados.";empty.hidden=false;document.getElementById("empty-title").textContent="Biblioteca en preparación";document.getElementById("empty-detail").textContent="La recepción de aportes es independiente. Los exámenes se mostrarán después de su revisión y aprobación.";});
 })();
