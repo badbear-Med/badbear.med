@@ -70,7 +70,9 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var
 <div class="panel">
 <div class="filters">
 <label>Buscar por curso o palabra clave<input id="q" type="search" placeholder="Ej. Fisiología, Epidemiología..."></label>
+<label>Universidad<input id="university" type="search" placeholder="Todas"></label>
 <label>Facultad<input id="faculty" type="search" placeholder="Todas"></label>
+<label>Docente<input id="teacher" type="search" placeholder="Todos"></label>
 <label>Año<select id="year"><option value="">Todos</option></select></label>
 <label>Evaluación<select id="type"><option value="">Todas</option><option>Parcial</option><option>Final</option><option>Práctica</option><option>Otros</option></select></label>
 </div>
@@ -113,15 +115,15 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var
 <script>
 (() => {
 "use strict";
-const search=document.getElementById("q"),faculty=document.getElementById("faculty"),year=document.getElementById("year"),type=document.getElementById("type"),list=document.getElementById("exam-list"),empty=document.getElementById("empty"),count=document.getElementById("count");
+const search=document.getElementById("q"),faculty=document.getElementById("faculty"),university=document.getElementById("university"),teacher=document.getElementById("teacher"),year=document.getElementById("year"),type=document.getElementById("type"),list=document.getElementById("exam-list"),empty=document.getElementById("empty"),count=document.getElementById("count");
 let exams=[];
 const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 function render(){
-const filtered=exams.filter(e=>(!search.value||norm([e.course,e.title,e.faculty,e.notes].join(" ")).includes(norm(search.value)))&&(!faculty.value||norm(e.faculty).includes(norm(faculty.value)))&&(!year.value||String(e.year)===year.value)&&(!type.value||e.type===type.value));
+const filtered=exams.filter(e=>(!search.value||norm([e.course,e.title,e.faculty,e.university,e.teacher,e.notes].join(" ")).includes(norm(search.value)))&&(!faculty.value||norm(e.faculty).includes(norm(faculty.value)))&&(!university.value||norm(e.university).includes(norm(university.value)))&&(!teacher.value||norm(e.teacher).includes(norm(teacher.value)))&&(!year.value||String(e.year)===year.value)&&(!type.value||e.type===type.value));
 list.replaceChildren();
 filtered.forEach(e=>{
  const card=document.createElement("article");card.className="exam";
- const sub=document.createElement("small");sub.textContent=[e.faculty,e.year,e.type].filter(Boolean).join(" · ");
+ const sub=document.createElement("small");sub.textContent=[e.university,e.faculty,e.teacher?("Docente: "+e.teacher):"",e.year,e.type].filter(Boolean).join(" · ");
  const title=document.createElement("h3");title.textContent=e.title||e.course;
  const course=document.createElement("p");course.textContent=e.course||"";
  card.append(sub,title,course);
@@ -172,7 +174,7 @@ form.addEventListener("submit",async event=>{
   submit.textContent="Enviar para revisión";
  }
 });
-[search,faculty,year,type].forEach(el=>el.addEventListener("input",render));
+[search,university,faculty,teacher,year,type].forEach(el=>el.addEventListener("input",render));
 fetch("https://badbear-exams-api.wajomea-group.workers.dev/api/examenes",{cache:"no-store",mode:"cors"}).then(r=>{if(!r.ok)throw Error("API aún no disponible");return r.json()}).then(data=>{
 exams=Array.isArray(data.items)?data.items.map(e=>({...e,faculty:e.facultad||""})):[];
 const years=[...new Set(exams.map(e=>String(e.year||"")).filter(Boolean))].sort((a,b)=>Number(b)-Number(a));
