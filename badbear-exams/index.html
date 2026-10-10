@@ -125,7 +125,7 @@ filtered.forEach(e=>{
  const title=document.createElement("h3");title.textContent=e.title||e.course;
  const course=document.createElement("p");course.textContent=e.course||"";
  card.append(sub,title,course);
- if(e.file&&typeof e.file==="string"&&e.file.startsWith("./archivos/")){const link=document.createElement("a");link.href=e.file;link.textContent="Consultar documento PDF →";link.target="_blank";link.rel="noopener noreferrer";card.append(link);}
+ if(e.id){const link=document.createElement("a");link.href="https://badbear-exams-api.wajomea-group.workers.dev/api/examenes/archivo?id="+encodeURIComponent(e.id);link.textContent="Descargar examen aprobado →";link.target="_blank";link.rel="noopener noreferrer";card.append(link);}else if(e.file&&typeof e.file==="string"&&e.file.startsWith("./archivos/")){const link=document.createElement("a");link.href=e.file;link.textContent="Consultar documento →";link.target="_blank";link.rel="noopener noreferrer";card.append(link);}
  list.append(card);
 });
 count.textContent=filtered.length+" examen(es) encontrado(s).";
@@ -170,8 +170,8 @@ form.addEventListener("submit",async event=>{
  }
 });
 [search,faculty,year,type].forEach(el=>el.addEventListener("input",render));
-fetch("./catalogo.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Catálogo no disponible");return r.json()}).then(data=>{
-exams=Array.isArray(data)?data.filter(e=>e&&typeof e==="object"):[];
+fetch("https://badbear-exams-api.wajomea-group.workers.dev/api/examenes",{cache:"no-store",mode:"cors"}).then(r=>{if(!r.ok)throw Error("API aún no disponible");return r.json()}).then(data=>{
+exams=Array.isArray(data.items)?data.items.map(e=>({...e,faculty:e.facultad||""})):[];
 const years=[...new Set(exams.map(e=>String(e.year||"")).filter(Boolean))].sort((a,b)=>Number(b)-Number(a));
 years.forEach(y=>{const o=document.createElement("option");o.value=o.textContent=y;year.append(o)});
 render();
