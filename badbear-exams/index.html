@@ -105,8 +105,8 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var
 <label class="wide">Información adicional<textarea name="notes" maxlength="600" placeholder="Docente, ciclo, observaciones o aclaraciones..."></textarea></label>
 <label class="wide" style="flex-direction:row;align-items:flex-start;gap:9px;font-weight:normal"><input style="width:auto;margin:4px 0" type="checkbox" name="permission" required> Confirmo que estoy autorizado para compartir este material y que he retirado datos personales de terceros.</label>
 <div class="wide"><div class="cf-turnstile" data-sitekey="0x4AAAAAAFTYENlWkdRCovId" data-theme="light"></div></div>
-<div class="wide form-message" role="status" id="form-message">Recepción de aportes en preparación. Aún no es posible enviar archivos desde esta página; habilitaremos el envío cuando esté conectado el sistema de revisión.</div>
-<div class="wide form-bottom"><button class="btn" type="submit" disabled>Enviar para revisión (próximamente)</button><span class="note">No se almacena ni transmite ningún archivo desde este formulario por ahora.</span></div>
+<div class="wide form-message" role="status" id="form-message">Los aportes serán revisados antes de publicarse. No incluyas datos personales de terceros.</div>
+<div class="wide form-bottom"><button class="btn" id="send-exam" type="submit">Enviar para revisión</button><span class="note">PDF, JPG o PNG · máximo 10 MB · publicación sujeta a aprobación.</span></div>
 </form>
 </div></section>
 </main><footer>BADBEAR.EXAMS · WAJOMEA.GROUP · Biblioteca académica colaborativa</footer>
@@ -133,6 +133,42 @@ empty.hidden=filtered.length!==0;
 document.getElementById("empty-title").textContent=exams.length?"No se encontraron coincidencias":"Aún no hay exámenes publicados";
 document.getElementById("empty-detail").textContent=exams.length?"Prueba con otros filtros o palabras clave.":"El archivo se irá construyendo con materiales autorizados y verificados.";
 }
+
+const form=document.getElementById("contribution-form");
+const submit=document.getElementById("send-exam");
+const status=document.getElementById("form-message");
+const API="https://badbear-exams-api.wajomea-group.workers.dev/api/aportes";
+form.addEventListener("submit",async event=>{
+ event.preventDefault();
+ if(!form.reportValidity())return;
+ const file=form.elements.namedItem("file").files[0];
+ if(!file||file.size===0||file.size>10*1024*1024){
+  status.textContent="Selecciona un archivo PDF, JPG o PNG de hasta 10 MB.";
+  return;
+ }
+ const formData=new FormData(form);
+ const token=formData.get("cf-turnstile-response");
+ if(typeof token!=="string"||!token){
+  status.textContent="Completa primero la verificación de seguridad Turnstile.";
+  return;
+ }
+ submit.disabled=true;
+ submit.textContent="Enviando...";
+ status.textContent="Enviando el examen de manera segura. No cierres esta pestaña...";
+ try{
+  const response=await fetch(API,{method:"POST",body:formData,mode:"cors",credentials:"omit"});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok||!data.ok)throw Error(data.error||"No se pudo enviar el examen.");
+  status.textContent="Examen recibido correctamente y pendiente de revisión. Referencia: "+String(data.referencia||"");
+  form.reset();
+ }catch(err){
+  status.textContent="No se completó el envío: "+(err.message||"Error de conexión")+". Vuelve a verificar el formulario antes de reintentar.";
+ }finally{
+  if(window.turnstile&&typeof window.turnstile.reset==="function"){try{window.turnstile.reset()}catch(_){}}
+  submit.disabled=false;
+  submit.textContent="Enviar para revisión";
+ }
+});
 [search,faculty,year,type].forEach(el=>el.addEventListener("input",render));
 fetch("./catalogo.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Catálogo no disponible");return r.json()}).then(data=>{
 exams=Array.isArray(data)?data.filter(e=>e&&typeof e==="object"):[];
