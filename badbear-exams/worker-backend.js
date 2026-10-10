@@ -43,7 +43,7 @@ if(action==="aprobar"){
 await env.DB.prepare("INSERT INTO revisiones (examen_id,accion,administrador,motivo) VALUES (?,?,?,?)").bind(id,status,"Administrador BADBEAR.EXAMS",reason||null).run();
 return json({ok:true,estado:status},200,origin)
 }
-async function publicList(env,origin){const rows=await env.DB.prepare("SELECT e.id,e.titulo,e.anio,e.tipo,c.nombre AS course,c.facultad FROM examenes e JOIN cursos c ON c.id=e.curso_id WHERE e.estado='aprobado' AND e.archivo_publicado IS NOT NULL ORDER BY e.id DESC LIMIT 200").all();return json({items:rows.results||[]},200,origin)}
+async function publicList(env,origin){const rows=await env.DB.prepare("SELECT e.id,e.titulo,e.anio,e.tipo,e.docente AS teacher,c.nombre AS course,c.facultad,c.universidad AS university FROM examenes e JOIN cursos c ON c.id=e.curso_id WHERE e.estado='aprobado' AND e.archivo_publicado IS NOT NULL ORDER BY e.id DESC LIMIT 200").all();return json({items:rows.results||[]},200,origin)}
 export default{async fetch(req,env){const path=new URL(req.url).pathname,origin=req.headers.get("Origin")||"";
 try{
  if(path==="/health")return json({servicio:"BADBEAR.EXAMS",estado:[env.DB,env.APORTES,env.PUBLICADOS,env.TURNSTILE_SECRET_KEY].every(Boolean)?"operativo":"configuracion_incompleta",conexiones:{base_de_datos:!!env.DB,aportes_privados:!!env.APORTES,examenes_publicados:!!env.PUBLICADOS,turnstile:!!env.TURNSTILE_SECRET_KEY}},200,origin);
