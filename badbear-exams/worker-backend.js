@@ -15,7 +15,7 @@ if(!(await rate(req,env)))return bad("Límite de intentos alcanzado",429,origin)
 let data;try{const bytes=await req.arrayBuffer();if(bytes.byteLength>LIMIT)return bad("Solicitud demasiado grande",413,origin);data=await new Request(req.url,{method:"POST",headers:{"Content-Type":ct},body:bytes}).formData()}catch{return bad("Formulario inválido",400,origin)}
 if(!(await turnstile(field(data,"cf-turnstile-response",4096),req,env)))return bad("Verificación Turnstile fallida",403,origin);
 const course=field(data,"course",120),faculty=field(data,"faculty",120),yearText=field(data,"year",4),year=Number(yearText),type=field(data,"type",20),contributor=field(data,"contributor",80),notes=field(data,"notes",600);
-if(!course||!/^[0-9]{4}$/.test(yearText)||year<2023||year>new Date().getUTCFullYear()+1||!["Parcial","Final","Práctica","Otros"].includes(type)||data.get("permission")===null)return bad("Datos incompletos o inválidos",400,origin);
+if(!course||!/^[0-9]{4}$/.test(yearText)||year<2022||year>2026||!["Parcial","Final","Práctica","Otros"].includes(type)||data.get("permission")===null)return bad("Datos incompletos o inválidos",400,origin);
 const file=data.get("file");if(!(file instanceof File)||!file.size||file.size>MAX)return bad("Archivo inválido o mayor de 10 MB",400,origin);
 const bytes=new Uint8Array(await file.arrayBuffer()),kind=sniff(bytes);if(!kind)return bad("Solo PDF, PNG o JPG",415,origin);
 const key="pendientes/"+crypto.randomUUID()+"."+kind[1];await env.APORTES.put(key,bytes,{httpMetadata:{contentType:kind[0]},customMetadata:{estado:"pendiente"}});
