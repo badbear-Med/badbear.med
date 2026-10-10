@@ -1,15 +1,143 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BADBEAR.EXAMS | WAJOMEA.GROUP</title><meta name="description" content="Consulta organizada de exámenes de cursos anteriores, clasificados por asignatura, año, ciclo académico y tipo de evaluación."><style>:root{--accent:#007f85}</style><style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f9fe;color:#142135;line-height:1.65}
-header{background:#fff;border-bottom:3px solid var(--accent);padding:17px max(5%,calc((100% - 1120px)/2));display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}
-a{color:inherit}header a{text-decoration:none;font-weight:800}header strong{color:#005be8;font-size:22px}
-main{max-width:1120px;margin:0 auto;padding:38px 5% 70px}.hero{padding:35px;border-radius:20px;color:#fff;background:linear-gradient(135deg,var(--accent),#192a52)}.hero span{font-size:11px;letter-spacing:.12em;font-weight:900}.hero h1{font-size:clamp(34px,5vw,57px);letter-spacing:-.05em;margin:6px 0}.hero p{max-width:740px;font-size:17px}
-h2{margin:34px 0 16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.tile{background:white;border:1px solid #d9e3f1;border-top:5px solid var(--accent);border-radius:15px;padding:20px}.tile h3{margin:0 0 8px;font-size:19px}.tile p{margin:0;color:#4d617b;font-size:14px}
-.notice{margin-top:32px;padding:20px 24px;background:#fff;border-left:5px solid var(--accent);border-radius:12px;color:#40516a}
-footer{text-align:center;padding:24px;font-size:13px;color:#607089;border-top:1px solid #dce6f2}
-@media(max-width:580px){main{padding:20px 5% 45px}.hero{padding:24px}header strong{font-size:19px}}
-</style><script src="../assets/js/wajomea-shell-entry.js" defer></script></head>
-<body><header><a href="../index.html"><strong>WAJOMEA.GROUP</strong></a><nav><a href="../index.html">← Volver a proyectos</a></nav></header><main>
-<section class="hero"><span>BIBLIOTECA DE EXÁMENES ANTERIORES</span><h1>BADBEAR.EXAMS</h1><p>Consulta organizada de exámenes de cursos anteriores, clasificados por asignatura, año, ciclo académico y tipo de evaluación.</p></section>
-<h2>Contenido de la sección</h2><div class="grid"><article class="tile"><h3>Buscar por curso</h3><p>Cada asignatura tendrá su propia carpeta de exámenes.</p></article><article class="tile"><h3>Buscar por año y ciclo</h3><p>Histórico académico ordenado para facilitar la consulta.</p></article><article class="tile"><h3>Parciales, finales y prácticas</h3><p>Clasificación por tipo de evaluación, cuando corresponda.</p></article><article class="tile"><h3>Solucionarios</h3><p>Respuestas y explicaciones únicamente cuando estén disponibles y verificadas.</p></article></div>
-<div class="notice"><strong>Estamos organizando los materiales.</strong><p>La biblioteca aún no contiene exámenes publicados. Incorporaremos únicamente materiales autorizados para compartir, identificando su curso y fecha.</p></div></main><footer>BADBEAR.EXAMS · WAJOMEA.GROUP · 2026</footer></body></html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BADBEAR.EXAMS | Biblioteca colaborativa · WAJOMEA.GROUP</title>
+<meta name="description" content="Biblioteca colaborativa de exámenes anteriores: busca por curso, facultad, año y tipo de evaluación.">
+<script src="../assets/js/wajomea-shell-entry.js" defer></script>
+<style>
+:root{--teal:#007f85;--navy:#182a4b;--line:#d8e6ed;--muted:#526980}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f9fc;font:15px/1.55 Arial,Helvetica,sans-serif;color:#172b3e}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+header{background:white;border-bottom:3px solid var(--teal);padding:15px max(5%,calc((100% - 1140px)/2));display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+header a{text-decoration:none;font-weight:800}
+.brand{color:#005be8;font-size:22px}
+main{max-width:1140px;margin:auto;padding:30px 5% 70px}
+.hero{background:linear-gradient(110deg,#007f85,#173557);color:#fff;border-radius:22px;padding:40px 34px}
+.eyebrow{font-size:11px;font-weight:900;letter-spacing:.13em}
+.hero h1{font-size:clamp(34px,5vw,58px);letter-spacing:-.05em;margin:6px 0}
+.hero p{max-width:780px;font-size:17px;margin:0 0 24px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{border:1px solid var(--teal);background:var(--teal);color:#fff;border-radius:10px;padding:11px 17px;font-weight:800;text-decoration:none;display:inline-block}
+.btn.light{background:#fff;color:#075e65;border-color:#fff}.btn.ghost{background:transparent;color:#fff;border-color:#b8e4e6}
+h2{font-size:25px;letter-spacing:-.03em;margin:36px 0 14px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px}
+.filters{display:grid;grid-template-columns:2fr repeat(3,minmax(130px,1fr));gap:12px}
+label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#3b5267;font-weight:800}
+input,select,textarea{width:100%;border:1px solid #bed1dc;border-radius:9px;background:#fff;padding:11px;color:#172b3e;min-width:0}
+input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.note{color:var(--muted);font-size:13px}
+.empty{text-align:center;padding:38px 12px;border:1px dashed #afccd2;border-radius:12px;margin-top:16px}
+.empty svg{width:46px;height:46px;color:var(--teal)}
+.empty strong{display:block;margin:8px 0 4px;font-size:18px}
+.resources{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.resource{padding:19px;border-radius:14px;background:#fff;border:1px solid var(--line);border-top:5px solid var(--teal)}
+.resource h3{font-size:17px;margin:0 0 7px}.resource p{font-size:13px;color:var(--muted);margin:0}
+.contribute{background:#eaf7f7;border:1px solid #b9dddd;border-radius:18px;padding:25px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:17px 0}
+.step{padding:15px;background:#fff;border-radius:12px}
+.step b{display:block;color:#00747a;margin-bottom:4px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.wide{grid-column:1/-1}
+textarea{min-height:80px;resize:vertical}
+.form-message{font-size:13px;color:#80501b;background:#fff6e6;padding:12px;border-radius:9px}
+.form-bottom{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+button:disabled{opacity:.55;cursor:not-allowed}
+#exam-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:16px}
+.exam{background:#fff;border:1px solid var(--line);padding:18px;border-radius:12px}
+.exam h3{margin:4px 0}.exam small{color:var(--muted)}
+.exam a{display:inline-block;margin-top:10px;color:#006d74;font-weight:800}
+footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var(--muted)}
+@media(max-width:760px){.filters{grid-template-columns:1fr 1fr}.filters label:first-child{grid-column:1/-1}.steps{grid-template-columns:1fr}form{grid-template-columns:1fr}.wide{grid-column:1}.hero{padding:28px 22px}}
+@media(max-width:440px){.filters{grid-template-columns:1fr}.filters label:first-child{grid-column:1}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="../index.html">WAJOMEA.GROUP</a><a href="../index.html">← Volver a proyectos</a></header>
+<main>
+<section class="hero">
+<span class="eyebrow">ARCHIVO ACADÉMICO COLABORATIVO</span>
+<h1>BADBEAR.EXAMS</h1>
+<p>Exámenes de ciclos anteriores, organizados para que estudiar y repasar sea más fácil. Cada aporte será revisado antes de formar parte del banco académico.</p>
+<div class="actions"><a class="btn light" href="#biblioteca">Explorar biblioteca</a><a class="btn ghost" href="#colaborar">Colabora con un examen</a></div>
+</section>
+<section id="biblioteca" aria-labelledby="library-title">
+<h2 id="library-title">Biblioteca de exámenes</h2>
+<div class="panel">
+<div class="filters">
+<label>Buscar por curso o palabra clave<input id="q" type="search" placeholder="Ej. Fisiología, Epidemiología..."></label>
+<label>Facultad<input id="faculty" type="search" placeholder="Todas"></label>
+<label>Año<select id="year"><option value="">Todos</option></select></label>
+<label>Evaluación<select id="type"><option value="">Todas</option><option>Parcial</option><option>Final</option><option>Práctica</option><option>Otros</option></select></label>
+</div>
+<p class="note" id="count" aria-live="polite">Cargando catálogo...</p>
+<div id="exam-list"></div>
+<div id="empty" class="empty" hidden>
+<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h10l5 5v11H4zM14 4v5h5M8 13h8M8 17h5"/></svg>
+<strong id="empty-title">Aún no hay exámenes publicados</strong>
+<p class="note" id="empty-detail">El archivo se irá construyendo con materiales autorizados y verificados.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="features-title"><h2 id="features-title">Cómo organizamos los materiales</h2>
+<div class="resources">
+<article class="resource"><h3>Por curso y facultad</h3><p>Cada evaluación tendrá su asignatura y procedencia académica identificadas.</p></article>
+<article class="resource"><h3>Por año y evaluación</h3><p>Parciales, finales y prácticas clasificados para encontrar lo que necesitas.</p></article>
+<article class="resource"><h3>Solucionarios</h3><p>Se publicarán por separado, únicamente si sus respuestas están verificadas.</p></article>
+<article class="resource"><h3>Créditos al colaborador</h3><p>El reconocimiento será opcional, mediante nombre o seudónimo autorizado.</p></article>
+</div></section>
+<section id="colaborar" aria-labelledby="contribute-title">
+<h2 id="contribute-title">Colabora con un examen</h2>
+<div class="contribute">
+<p>Queremos construir una biblioteca con el apoyo de estudiantes y egresados. Puedes preparar tu aporte con estos datos; un administrador deberá aprobarlo antes de publicarlo.</p>
+<div class="steps"><div class="step"><b>1. Preparar</b>PDF o fotografías claras, sin datos personales de terceros.</div><div class="step"><b>2. Revisar</b>El equipo comprueba calidad, procedencia y permiso para compartir.</div><div class="step"><b>3. Publicar</b>El material autorizado aparece en la biblioteca por curso y año.</div></div>
+<form id="contribution-form">
+<label>Curso<input name="course" placeholder="Nombre de la asignatura" required maxlength="120"></label>
+<label>Facultad o escuela<input name="faculty" placeholder="Ej. Medicina Humana" maxlength="120"></label>
+<label>Año del examen<input name="year" type="number" min="1990" max="2100" placeholder="Ej. 2025" required></label>
+<label>Tipo de evaluación<select name="type" required><option value="">Selecciona</option><option>Parcial</option><option>Final</option><option>Práctica</option><option>Otros</option></select></label>
+<label>Nombre o seudónimo (opcional)<input name="contributor" maxlength="80" placeholder="Para reconocer tu colaboración"></label>
+<label>Archivo PDF o imagen<input name="file" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required></label>
+<label class="wide">Información adicional<textarea name="notes" maxlength="600" placeholder="Docente, ciclo, observaciones o aclaraciones..."></textarea></label>
+<label class="wide" style="flex-direction:row;align-items:flex-start;gap:9px;font-weight:normal"><input style="width:auto;margin:4px 0" type="checkbox" name="permission" required> Confirmo que estoy autorizado para compartir este material y que he retirado datos personales de terceros.</label>
+<div class="wide form-message" role="status" id="form-message">Recepción de aportes en preparación. Aún no es posible enviar archivos desde esta página; habilitaremos el envío cuando esté conectado el sistema de revisión.</div>
+<div class="wide form-bottom"><button class="btn" type="submit" disabled>Enviar para revisión (próximamente)</button><span class="note">No se almacena ni transmite ningún archivo desde este formulario por ahora.</span></div>
+</form>
+</div></section>
+</main><footer>BADBEAR.EXAMS · WAJOMEA.GROUP · Biblioteca académica colaborativa</footer>
+<script>
+(() => {
+"use strict";
+const search=document.getElementById("q"),faculty=document.getElementById("faculty"),year=document.getElementById("year"),type=document.getElementById("type"),list=document.getElementById("exam-list"),empty=document.getElementById("empty"),count=document.getElementById("count");
+let exams=[];
+const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+function render(){
+const filtered=exams.filter(e=>(!search.value||norm([e.course,e.title,e.faculty,e.notes].join(" ")).includes(norm(search.value)))&&(!faculty.value||norm(e.faculty).includes(norm(faculty.value)))&&(!year.value||String(e.year)===year.value)&&(!type.value||e.type===type.value));
+list.replaceChildren();
+filtered.forEach(e=>{
+ const card=document.createElement("article");card.className="exam";
+ const sub=document.createElement("small");sub.textContent=[e.faculty,e.year,e.type].filter(Boolean).join(" · ");
+ const title=document.createElement("h3");title.textContent=e.title||e.course;
+ const course=document.createElement("p");course.textContent=e.course||"";
+ card.append(sub,title,course);
+ if(e.file&&typeof e.file==="string"&&e.file.startsWith("./archivos/")){const link=document.createElement("a");link.href=e.file;link.textContent="Consultar documento PDF →";link.target="_blank";link.rel="noopener noreferrer";card.append(link);}
+ list.append(card);
+});
+count.textContent=filtered.length+" examen(es) encontrado(s).";
+empty.hidden=filtered.length!==0;
+document.getElementById("empty-title").textContent=exams.length?"No se encontraron coincidencias":"Aún no hay exámenes publicados";
+document.getElementById("empty-detail").textContent=exams.length?"Prueba con otros filtros o palabras clave.":"El archivo se irá construyendo con materiales autorizados y verificados.";
+}
+[search,faculty,year,type].forEach(el=>el.addEventListener("input",render));
+fetch("./catalogo.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Catálogo no disponible");return r.json()}).then(data=>{
+exams=Array.isArray(data)?data.filter(e=>e&&typeof e==="object"):[];
+const years=[...new Set(exams.map(e=>String(e.year||"")).filter(Boolean))].sort((a,b)=>Number(b)-Number(a));
+years.forEach(y=>{const o=document.createElement("option");o.value=o.textContent=y;year.append(o)});
+render();
+}).catch(()=>{count.textContent="No se pudo cargar el catálogo de exámenes.";empty.hidden=false;document.getElementById("empty-title").textContent="Catálogo temporalmente no disponible";document.getElementById("empty-detail").textContent="Intenta de nuevo más tarde.";});
+})();
+</script>
+</body></html>
