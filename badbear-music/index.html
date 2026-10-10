@@ -262,6 +262,16 @@
     #creaciones .music-track{grid-template-columns:28px minmax(0,1fr) 40px;padding:10px 6px}
     .music-play-btn{width:38px;height:38px}
   }
+
+  /* Filtros de biblioteca: hasta tres filas visibles, con desplazamiento si crecen */
+  #creaciones .music-genres{display:flex;flex-wrap:wrap;align-content:flex-start;gap:10px;max-height:calc(3 * 44px + 2 * 10px);overflow-y:auto;overscroll-behavior:contain;padding:2px 2px 5px}
+  #creaciones .music-genre{min-height:40px;cursor:pointer;font:inherit;font-size:13px;font-weight:800;transition:background .15s ease}
+  #creaciones .music-genre.is-selected{background:#005be8;border-color:#005be8;color:white}
+  #creaciones .music-genre.is-selected.orange{background:#ff6a00;border-color:#ff6a00}
+  #creaciones .music-genre:focus-visible{outline:3px solid #8cbaff;outline-offset:3px}
+  #music-library-list .music-category[hidden]{display:none!important}
+  @media(max-width:600px){#creaciones .music-genres{gap:7px;max-height:calc(3 * 42px + 2 * 7px)}#creaciones .music-genre{padding:8px 11px;min-height:38px;font-size:12px}}
+
 </style>
 </head>
 <body class="bb-extra-page bb-extra-music">
@@ -341,101 +351,129 @@
     <p><strong>BADBEAR.MUSIC</strong> · Una creación de WAJOMEA.GROUP</p>
     <a href="../index.html">Volver a WAJOMEA.GROUP</a>
   </footer>
-  <script src="catalog.js?v=20261006-catalog1"></script>
+  <script src="catalog.js?v=20261010-filtros1"></script>
   <script>
 (() => {
-  const catalog = Array.isArray(window.BADBEAR_MUSIC_CATALOG)
-    ? window.BADBEAR_MUSIC_CATALOG
-    : [];
-
+  const catalog = Array.isArray(window.BADBEAR_MUSIC_CATALOG) ? window.BADBEAR_MUSIC_CATALOG : [];
   const genres = document.getElementById("music-genres");
   const list = document.getElementById("music-library-list");
-
   if (!genres || !list) return;
 
-  catalog.forEach((library, libraryIndex) => {
-    const genreLink = document.createElement("a");
-    genreLink.className = "music-genre " + (library.accent === "orange" ? "orange" : "bachata");
-    genreLink.href = "#" + library.id;
-    genreLink.textContent = library.name;
-    genres.appendChild(genreLink);
+  let selectedLibrary = "all";
+  const allTracks = catalog.flatMap(library => (library.tracks || []).map(track => ({track, library})));
+  const buttons = [];
+  const sections = [];
 
+  function showLibrary(id) {
+    selectedLibrary = id;
+    buttons.forEach(button => {
+      const active = button.dataset.libraryFilter === id;
+      button.classList.toggle("is-selected", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    sections.forEach(section => {
+      section.hidden = id !== "all" && section.dataset.libraryId !== id;
+    });
+    window.parent.postMessage({type:"badbear-music-filter", libraryId:id}, location.origin);
+  }
+
+  function addFilter(id, name, accent) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "music-genre " + (accent === "orange" ? "orange" : "bachata");
+    button.textContent = name;
+    button.dataset.libraryFilter = id;
+    button.addEventListener("click", () => showLibrary(id));
+    genres.appendChild(button);
+    buttons.push(button);
+  }
+
+  addFilter("all", "Todas las canciones", "blue");
+  catalog.forEach(library => addFilter(library.id, library.name, library.accent));
+
+  function makeSection(library, items, index, isAll = false) {
     const section = document.createElement("section");
     section.className = "music-category " + (library.accent === "orange" ? "orange" : "");
-    section.id = library.id;
-    section.setAttribute("aria-labelledby", library.id + "-title");
-
+    section.id = isAll ? "todas-las-canciones" : library.id;
+    section.dataset.libraryId = isAll ? "all" : library.id;
+    section.setAttribute("aria-labelledby", section.id + "-title");
     const head = document.createElement("div");
     head.className = "music-category-head";
-
-    const index = document.createElement("span");
-    index.className = "music-category-index";
-    index.textContent = String(libraryIndex + 1).padStart(2, "0");
-
-    const headCopy = document.createElement("div");
+    const badge = document.createElement("span");
+    badge.className = "music-category-index";
+    badge.textContent = isAll ? "♫" : String(index + 1).padStart(2, "0");
+    const copy = document.createElement("div");
     const label = document.createElement("span");
     label.className = "music-category-label";
-    label.textContent = "BIBLIOTECA";
-
+    label.textContent = isAll ? "REPRODUCCIÓN CONTINUA" : "BIBLIOTECA";
     const title = document.createElement("h3");
-    title.id = library.id + "-title";
-    title.textContent = library.name;
+    title.id = section.id + "-title";
+    title.textContent = isAll ? "Todas las canciones" : library.name;
+    copy.append(label, title);
+    head.append(badge, copy);
+    section.append(head);
 
-    headCopy.append(label, title);
-    head.append(index, headCopy);
-    section.appendChild(head);
-
-    library.tracks.forEach((track, trackIndex) => {
-      const article = document.createElement("article");
-      article.className = "music-track";
-
+    items.forEach(({track, library: sourceLibrary}, trackIndex) => {
+      const row = document.createElement("article");
+      row.className = "music-track";
+      row.dataset.trackId = track.id;
+      row.dataset.libraryId = sourceLibrary.id;
       const number = document.createElement("div");
       number.className = "music-track-number";
       number.textContent = String(trackIndex + 1).padStart(2, "0");
-
       const info = document.createElement("div");
-
-      const kicker = document.createElement("span");
-      kicker.className = "music-track-kicker";
-      kicker.textContent = "BADBEAR.MUSIC · " + library.name.toUpperCase();
-
       const h4 = document.createElement("h4");
       h4.textContent = track.title;
-
       const meta = document.createElement("div");
       meta.className = "music-track-meta";
-      const metaLibrary = document.createElement("span");
-      metaLibrary.textContent = "♪ " + library.name;
-      const metaPosition = document.createElement("span");
-      metaPosition.textContent = (trackIndex + 1) + " de " + library.tracks.length;
-      meta.append(metaLibrary, metaPosition);
-
-      const playButton = document.createElement("button");
-      playButton.className = "music-play-btn";
-      playButton.type = "button";
-      playButton.dataset.trackId = track.id;
-      playButton.dataset.libraryId = library.id;
-      playButton.setAttribute("aria-label", "Reproducir " + track.title);
-      playButton.textContent = "▶";
-
-      playButton.addEventListener("click", () => {
+      const libraryName = document.createElement("span");
+      libraryName.textContent = "♪ " + sourceLibrary.name;
+      const count = document.createElement("span");
+      count.textContent = (trackIndex + 1) + " de " + items.length;
+      meta.append(libraryName, count);
+      info.append(h4, meta);
+      const play = document.createElement("button");
+      play.type = "button";
+      play.className = "music-play-btn";
+      play.setAttribute("aria-label", "Reproducir " + track.title);
+      play.textContent = "▶";
+      play.addEventListener("click", () => {
         window.parent.postMessage({
-          type: "badbear-music-play",
-          libraryId: library.id,
-          trackId: track.id
+          type:"badbear-music-play",
+          libraryId:isAll ? "all" : library.id,
+          trackId:track.id
         }, location.origin);
       });
-
-      article.dataset.trackId = track.id;
-      article.dataset.libraryId = library.id;
-
-      info.append(kicker, h4, meta);
-      article.append(number, info, playButton);
-      section.appendChild(article);
+      row.append(number, info, play);
+      section.append(row);
     });
+    list.append(section);
+    sections.push(section);
+  }
 
-    list.appendChild(section);
+  makeSection({name:"Todas las canciones", accent:"blue"}, allTracks, 0, true);
+  catalog.forEach((library,index) => {
+    makeSection(library, (library.tracks || []).map(track => ({track,library})), index);
   });
+  buttons.forEach(button => {
+    const active = button.dataset.libraryFilter === "all";
+    button.classList.toggle("is-selected", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  sections.forEach(section => {section.hidden = section.dataset.libraryId !== "all";});
+  window.addEventListener("message", event => {
+    if (event.origin !== location.origin || event.data?.type !== "badbear-player-state") return;
+    document.querySelectorAll(".music-track").forEach(row => {
+      const active = row.dataset.trackId === event.data.trackId &&
+        (event.data.libraryId === "all" || row.dataset.libraryId === event.data.libraryId);
+      row.classList.toggle("is-active", active);
+      const button = row.querySelector(".music-play-btn");
+      button.classList.toggle("is-playing", !!(active && event.data.playing));
+      button.textContent = active && event.data.playing ? "❚❚" : "▶";
+      button.setAttribute("aria-label", (active && event.data.playing ? "Pausar " : "Reproducir ") + row.querySelector("h4").textContent);
+    });
+  });
+  window.parent.postMessage({type:"badbear-player-request-state"}, location.origin);
 })();
 </script>
   <script>
@@ -639,33 +677,6 @@
   });
 })();
 </script>
-<script>
-(() => {
-  function applyState(data) {
-    document.querySelectorAll(".music-track").forEach(row => {
-      const active =
-        row.dataset.libraryId === data.libraryId &&
-        row.dataset.trackId === data.trackId;
-      row.classList.toggle("is-active", active);
 
-      const button = row.querySelector(".music-play-btn");
-      if (!button) return;
-      button.classList.toggle("is-playing", active && data.playing);
-      button.textContent = active && data.playing ? "❚❚" : "▶";
-    });
-  }
-
-  window.addEventListener("message", event => {
-    if (event.origin !== location.origin) return;
-    const data = event.data || {};
-    if (data.type === "badbear-player-state") applyState(data);
-  });
-
-  window.parent.postMessage(
-    { type: "badbear-player-request-state" },
-    location.origin
-  );
-})();
-</script>
 </body>
 </html>

@@ -6,7 +6,7 @@
   <title>WAJOMEA.GROUP</title>
   <meta name="description" content="Portal persistente de WAJOMEA.GROUP con reproductor global badbear.music.">
   <link rel="icon" href="dermatologia/badbear_logo.png">
- <link rel="stylesheet" href="assets/css/badbear-shell.css?v=20261008-mini1">
+ <link rel="stylesheet" href="assets/css/badbear-shell.css?v=20261010-speed2">
   <script src="badbear-music/catalog.js?v=20261006-catalog1"></script>
 </head>
 <body data-bb-player-view="mini">
@@ -57,6 +57,14 @@
     </div>
 
     <div class="bb-player__right">
+      <label class="bb-player__speed-label" for="bb-speed">Velocidad</label>
+      <select id="bb-speed" aria-label="Velocidad de reproducción">
+        <option value="0.75">0,75×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.25">1,25×</option>
+        <option value="1.5">1,5×</option>
+        <option value="2">2×</option>
+      </select>
       <span class="bb-player__speaker" aria-hidden="true">🔊</span>
       <input id="bb-volume" type="range" min="0" max="1" step="0.01" value="0.85" aria-label="Volumen">
     </div>
@@ -70,6 +78,6 @@
     <span aria-hidden="true">♪</span>
   </button>
 
-  <script src="assets/js/badbear-shell.js?v=20261008-mini1"></script>
+  <script src="assets/js/badbear-shell.js?v=20261010-seek-speed2"></script>
 </body>
 </html>

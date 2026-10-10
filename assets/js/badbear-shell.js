@@ -12,6 +12,7 @@
   const currentTimeEl = document.getElementById("bb-current-time");
   const durationEl = document.getElementById("bb-duration");
   const volume = document.getElementById("bb-volume");
+  const speed = document.getElementById("bb-speed");
 
   const launcher = document.getElementById("bb-player-launcher");
   const minimizeBtn = document.getElementById("bb-minimize");
@@ -100,7 +101,18 @@
     }
   }
 
+  function allMusicLibrary() {
+    return {
+      id: "all",
+      name: "Todas las canciones",
+      kind: "music",
+      loop: true,
+      tracks: catalog.flatMap(library => library.tracks || [])
+    };
+  }
+
   function findLibrary(libraryId, trackId) {
+    if (libraryId === "all") return allMusicLibrary();
     let library = catalog.find(item => item.id === libraryId);
     if (!library && trackId) {
       library = catalog.find(item =>
@@ -296,15 +308,40 @@
     durationEl.textContent = formatTime(audio.duration);
   });
 
+  // Al arrastrar o tocar la barra, buscar inmediatamente el minuto solicitado.
+  function seekToSelectedTime() {
+    const target = Number(progress.value);
+    if (!Number.isFinite(target) || !audio.seekable || !audio.seekable.length) {
+      currentTimeEl.textContent = formatTime(target);
+      return;
+    }
+    const start = audio.seekable.start(0);
+    const end = audio.seekable.end(audio.seekable.length - 1);
+    const safeTime = Math.min(Math.max(target, start), end);
+    try {
+      audio.currentTime = safeTime;
+      currentTimeEl.textContent = formatTime(safeTime);
+    } catch (_) {}
+  }
+
   progress.addEventListener("input", () => {
     seeking = true;
-    currentTimeEl.textContent = formatTime(Number(progress.value));
+    seekToSelectedTime();
   });
 
   progress.addEventListener("change", () => {
-    audio.currentTime = Number(progress.value) || 0;
+    seekToSelectedTime();
     seeking = false;
   });
+
+  for (const eventName of ["pointerup", "keyup", "blur"]) {
+    progress.addEventListener(eventName, () => { seeking = false; });
+  }
+
+  speed.addEventListener("change", () => {
+    audio.playbackRate = Number(speed.value) || 1;
+  });
+  audio.playbackRate = Number(speed.value) || 1;
 
   volume.addEventListener("input", () => {
     audio.volume = Number(volume.value);
@@ -314,6 +351,22 @@
   window.addEventListener("message", event => {
     if (event.origin !== location.origin) return;
     const data = event.data || {};
+
+    if (data.type === "badbear-music-filter") {
+      const library = findLibrary(data.libraryId, null);
+      if (!library || !currentTrack || currentLibrary?.kind !== "music") return;
+      const index = library.tracks.findIndex(track => track.id === currentTrack.id);
+      if (index >= 0) {
+        currentLibrary = library;
+        currentIndex = index;
+        setPlayerText();
+        notifyFrame();
+      } else {
+        const wasPlaying = !audio.paused;
+        loadTrack(library, 0, wasPlaying, 0);
+      }
+      return;
+    }
 
     if (data.type === "badbear-music-play") {
       playTrackById(data.libraryId, data.trackId);
