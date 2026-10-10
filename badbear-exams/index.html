@@ -5,6 +5,7 @@
 <title>BADBEAR.EXAMS | Biblioteca colaborativa · WAJOMEA.GROUP</title>
 <meta name="description" content="Biblioteca colaborativa de exámenes anteriores: busca por curso, facultad, año y tipo de evaluación.">
 <script src="../assets/js/wajomea-shell-entry.js" defer></script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 :root{--teal:#007f85;--navy:#182a4b;--line:#d8e6ed;--muted:#526980}
 *{box-sizing:border-box}
@@ -103,6 +104,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var
 <label>Archivo PDF o imagen<input name="file" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required></label>
 <label class="wide">Información adicional<textarea name="notes" maxlength="600" placeholder="Docente, ciclo, observaciones o aclaraciones..."></textarea></label>
 <label class="wide" style="flex-direction:row;align-items:flex-start;gap:9px;font-weight:normal"><input style="width:auto;margin:4px 0" type="checkbox" name="permission" required> Confirmo que estoy autorizado para compartir este material y que he retirado datos personales de terceros.</label>
+<div class="wide"><div class="cf-turnstile" data-sitekey="0x4AAAAAAFTYENlWkdRCovId" data-theme="light"></div></div>
 <div class="wide form-message" role="status" id="form-message">Recepción de aportes en preparación. Aún no es posible enviar archivos desde esta página; habilitaremos el envío cuando esté conectado el sistema de revisión.</div>
 <div class="wide form-bottom"><button class="btn" type="submit" disabled>Enviar para revisión (próximamente)</button><span class="note">No se almacena ni transmite ningún archivo desde este formulario por ahora.</span></div>
 </form>
