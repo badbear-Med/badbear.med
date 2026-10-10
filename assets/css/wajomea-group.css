@@ -71,3 +71,9 @@ a:focus-visible{outline:3px solid var(--wg-blue);outline-offset:5px}
 .wg-curiosidades{--wg-accent:var(--wg-ink);--wg-soft:#f4f7ff;--wg-icon-ink:#ffe34d}
 .wg-lab h3 span{color:var(--wg-green)}
 .wg-curiosidades h3,.wg-curiosidades h3 span{color:var(--wg-ink)}
+
+/* Nuevas áreas de aprendizaje y archivo académico. */
+.wg-math{--wg-accent:#6841c6;--wg-soft:#f4f0ff;--wg-icon-ink:#fff}
+.wg-exams{--wg-accent:#007f85;--wg-soft:#eafafa;--wg-icon-ink:#fff}
+.wg-math h3 span{color:#6841c6}
+.wg-exams h3 span{color:#007f85}
