@@ -54,6 +54,15 @@ try{
  if(path.startsWith("/api/admin/")){
   if(!(await admin(req,env)))return bad("No autorizado",401,origin);
   if(path==="/api/admin/examenes"&&req.method==="GET")return await list(req,env,origin);
+  if(path==="/api/admin/archivo"&&req.method==="GET"){
+   const id=Number(new URL(req.url).searchParams.get("id"));
+   if(!Number.isSafeInteger(id)||id<1)return bad("Identificador inválido",400,origin);
+   const row=await env.DB.prepare("SELECT archivo_privado FROM examenes WHERE id=?").bind(id).first();
+   if(!row?.archivo_privado)return bad("Archivo no encontrado",404,origin);
+   const object=await env.APORTES.get(row.archivo_privado);
+   if(!object)return bad("Archivo no disponible",404,origin);
+   return new Response(object.body,{headers:{"Content-Type":object.httpMetadata?.contentType||"application/octet-stream","Content-Disposition":"attachment; filename=examen-"+id,"Cache-Control":"no-store","Access-Control-Allow-Origin":SITE}});
+  }
   if(path==="/api/admin/revisar"&&req.method==="POST")return await review(req,env,origin);
  }
  return bad("Ruta no encontrada",404,origin)
