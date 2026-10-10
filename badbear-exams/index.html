@@ -175,7 +175,7 @@ exams=Array.isArray(data.items)?data.items.map(e=>({...e,faculty:e.facultad||""}
 const years=[...new Set(exams.map(e=>String(e.year||"")).filter(Boolean))].sort((a,b)=>Number(b)-Number(a));
 years.forEach(y=>{const o=document.createElement("option");o.value=o.textContent=y;year.append(o)});
 render();
-}).catch(()=>{count.textContent="No se pudo cargar el catálogo de exámenes.";empty.hidden=false;document.getElementById("empty-title").textContent="Catálogo temporalmente no disponible";document.getElementById("empty-detail").textContent="Intenta de nuevo más tarde.";});
+}).catch(()=>{count.textContent="Biblioteca en preparación: conectaremos pronto el catálogo de exámenes aprobados.";empty.hidden=false;document.getElementById("empty-title").textContent="Biblioteca en preparación";document.getElementById("empty-detail").textContent="La recepción de aportes es independiente. Los exámenes se mostrarán después de su revisión y aprobación.";});
 })();
 </script>
 </body></html>
