@@ -47,6 +47,17 @@ async function publicList(env,origin){const rows=await env.DB.prepare("SELECT e.
 export default{async fetch(req,env){const path=new URL(req.url).pathname,origin=req.headers.get("Origin")||"";
 try{
  if(path==="/health")return json({servicio:"BADBEAR.EXAMS",estado:[env.DB,env.APORTES,env.PUBLICADOS,env.TURNSTILE_SECRET_KEY].every(Boolean)?"operativo":"configuracion_incompleta",conexiones:{base_de_datos:!!env.DB,aportes_privados:!!env.APORTES,examenes_publicados:!!env.PUBLICADOS,turnstile:!!env.TURNSTILE_SECRET_KEY}},200,origin);
+ if(req.method==="GET"&&path==="/api/examenes")return await publicList(env,origin);
+ if(req.method==="GET"&&path==="/api/examenes/archivo"){
+  const id=Number(new URL(req.url).searchParams.get("id"));
+  if(!Number.isSafeInteger(id)||id<1)return bad("Identificador inválido",400,origin);
+  const entry=await env.DB.prepare("SELECT archivo_publicado FROM examenes WHERE id=? AND estado='aprobado'").bind(id).first();
+  if(!entry?.archivo_publicado)return bad("Documento no disponible",404,origin);
+  const object=await env.PUBLICADOS.get(entry.archivo_publicado);
+  if(!object)return bad("Archivo no encontrado",404,origin);
+  const mime=object.httpMetadata?.contentType||"application/octet-stream";
+  return new Response(object.body,{headers:{"Content-Type":mime,"Content-Disposition":"attachment; filename=badbear-exams-"+id+(mime==="application/pdf"?".pdf":mime==="image/png"?".png":".jpg"),"X-Content-Type-Options":"nosniff","Cache-Control":"public, max-age=300",...(origin===SITE?{"Access-Control-Allow-Origin":SITE}:{})}});
+ }
  if(origin!==SITE)return bad("Origen no autorizado",403,origin);
  if(req.method==="OPTIONS")return new Response(null,{status:204,headers:{"Access-Control-Allow-Origin":SITE,"Access-Control-Allow-Methods":"GET, POST, OPTIONS","Access-Control-Allow-Headers":"Content-Type, Authorization","Access-Control-Max-Age":"600"}});
  if(path==="/api/aportes"&&req.method==="POST")return await upload(req,env,origin);
