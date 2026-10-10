@@ -98,7 +98,7 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var
 <form id="contribution-form">
 <label>Curso<input name="course" placeholder="Nombre de la asignatura" required maxlength="120"></label>
 <label>Facultad o escuela<input name="faculty" placeholder="Ej. Medicina Humana" maxlength="120"></label>
-<label>Año del examen<input name="year" type="number" min="1990" max="2100" placeholder="Ej. 2025" required></label>
+<label>Año del examen<input name="year" type="number" min="2023" max="2027" placeholder="2023 en adelante" required></label>
 <label>Tipo de evaluación<select name="type" required><option value="">Selecciona</option><option>Parcial</option><option>Final</option><option>Práctica</option><option>Otros</option></select></label>
 <label>Nombre o seudónimo (opcional)<input name="contributor" maxlength="80" placeholder="Para reconocer tu colaboración"></label>
 <label>Archivo PDF o imagen<input name="file" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required></label>
@@ -138,6 +138,9 @@ const form=document.getElementById("contribution-form");
 const submit=document.getElementById("send-exam");
 const status=document.getElementById("form-message");
 const API="https://badbear-exams-api.wajomea-group.workers.dev/api/aportes";
+const yearInput=form.elements.namedItem("year");
+yearInput.max=String(new Date().getFullYear()+1);
+yearInput.min="2023";
 form.addEventListener("submit",async event=>{
  event.preventDefault();
  if(!form.reportValidity())return;
@@ -158,11 +161,11 @@ form.addEventListener("submit",async event=>{
  try{
   const response=await fetch(API,{method:"POST",body:formData,mode:"cors",credentials:"omit"});
   const data=await response.json().catch(()=>({}));
-  if(!response.ok||!data.ok)throw Error(data.error||"No se pudo enviar el examen.");
+  if(!response.ok||!data.ok)throw Error((data.error||"No se pudo enviar el examen.")+(response.status===429?" Espera diez minutos desde tus primeros intentos y vuelve a realizar Turnstile.":""));
   status.textContent="Examen recibido correctamente y pendiente de revisión. Referencia: "+String(data.referencia||"");
   form.reset();
  }catch(err){
-  status.textContent="No se completó el envío: "+(err.message||"Error de conexión")+". Vuelve a verificar el formulario antes de reintentar.";
+  status.textContent="No se completó el envío: "+(err.message||"Error de conexión")+". El examen NO fue confirmado como recibido.";
  }finally{
   if(window.turnstile&&typeof window.turnstile.reset==="function"){try{window.turnstile.reset()}catch(_){}}
   submit.disabled=false;
