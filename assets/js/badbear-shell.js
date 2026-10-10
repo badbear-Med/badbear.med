@@ -100,7 +100,18 @@
     }
   }
 
+  function allMusicLibrary() {
+    return {
+      id: "all",
+      name: "Todas las canciones",
+      kind: "music",
+      loop: true,
+      tracks: catalog.flatMap(library => library.tracks || [])
+    };
+  }
+
   function findLibrary(libraryId, trackId) {
+    if (libraryId === "all") return allMusicLibrary();
     let library = catalog.find(item => item.id === libraryId);
     if (!library && trackId) {
       library = catalog.find(item =>
@@ -314,6 +325,22 @@
   window.addEventListener("message", event => {
     if (event.origin !== location.origin) return;
     const data = event.data || {};
+
+    if (data.type === "badbear-music-filter") {
+      const library = findLibrary(data.libraryId, null);
+      if (!library || !currentTrack || currentLibrary?.kind !== "music") return;
+      const index = library.tracks.findIndex(track => track.id === currentTrack.id);
+      if (index >= 0) {
+        currentLibrary = library;
+        currentIndex = index;
+        setPlayerText();
+        notifyFrame();
+      } else {
+        const wasPlaying = !audio.paused;
+        loadTrack(library, 0, wasPlaying, 0);
+      }
+      return;
+    }
 
     if (data.type === "badbear-music-play") {
       playTrackById(data.libraryId, data.trackId);
