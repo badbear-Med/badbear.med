@@ -58,6 +58,17 @@ document.querySelectorAll('[data-lesson]').forEach(button=>button.addEventListen
    const note=document.createElement('p');note.textContent='Esta clase todavía no tiene un PDF asociado.';inline.append(note);
    const fallback=document.createElement('a');fallback.href='../cirugia-general/index.html';fallback.className='btn secondary';fallback.textContent='Ver materiales de Cirugía General';inline.append(fallback);
  }
+ // Complemento no destructivo: pestañas de recursos, conservando el visor PDF original.
+ const tabs=document.createElement('div');tabs.className='buttons';tabs.style.marginTop='14px';
+ const detail=document.createElement('div');detail.className='lesson-empty';detail.style.marginTop='10px';
+ const resources=[
+  ['PDF',()=>{detail.textContent=file?'El documento original está visible encima de estas pestañas.':'Todavía no existe un PDF específico para esta clase.';}],
+  ['Teoría',()=>{detail.replaceChildren();const p=document.createElement('p');p.textContent='Consulta el desarrollo teórico disponible en Cirugía General. Estamos preparando la vinculación directa por tema.';const a=document.createElement('a');a.href='../cirugia-general/index.html';a.className='btn secondary';a.textContent='Abrir teoría de Cirugía General ↗';detail.append(p,a)}],
+  ['Audio',()=>{detail.textContent='No hay un audio individual verificado y asociado a esta clase. Se añadirá aquí cuando esté disponible, sin duplicar archivos.';}],
+  ['Bibliografía',()=>{detail.replaceChildren();const p=document.createElement('p');p.textContent=file?'Material de referencia: '+file:'Aún no hay un material específico asociado a esta clase.';const a=document.createElement('a');a.href='../cirugia-general/index.html';a.className='btn secondary';a.textContent='Consultar materiales y referencias del curso';detail.append(p,a)}]
+ ];
+ for(const [label,handler] of resources){const tab=document.createElement('button');tab.type='button';tab.className='btn secondary';tab.textContent=label;tab.onclick=()=>{tabs.querySelectorAll('button').forEach(b=>{b.style.background='';b.style.color='' });tab.style.background='#087e81';tab.style.color='#fff';handler()};tabs.append(tab)}
+ inline.append(tabs,detail);tabs.firstElementChild.click();
  button.insertAdjacentElement('afterend',inline);
  inline.scrollIntoView({behavior:'smooth',block:'nearest'});
 }));
