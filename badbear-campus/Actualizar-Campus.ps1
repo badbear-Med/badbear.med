@@ -24,11 +24,11 @@ try {
     for ($attempt = 0; $attempt -lt 6; $attempt++) {
         try {
             $health = Invoke-RestMethod -Uri 'https://badbear-campus-api.wajomea-group.workers.dev/api/health' -TimeoutSec 10
-            if ($health.estado -eq 'operativo' -and $health.estados_asistencia -eq $true) { $ready = $true; break }
+            if ($health.estado -eq 'operativo' -and $health.estados_asistencia -eq $true -and $health.acceso_unificado -eq $true) { $ready = $true; break }
         } catch {}
         if ($attempt -lt 5) { Start-Sleep -Seconds 5 }
     }
-    if (-not $ready) { throw 'No se confirmo el soporte de NSP y LF. No cargues la lista todavia; revisa la salida de Cloudflare.' }
-    Write-Host 'BADBEAR.CAMPUS actualizado: acepta notas de 0 a 20, NSP y LF.' -ForegroundColor Green
-    Write-Host 'Actualiza la pagina de administracion y carga tu CSV corregido.'
+    if (-not $ready) { throw 'No se confirmo el acceso unificado de Campus. Revisa la salida de Cloudflare.' }
+    Write-Host 'Campus y Examenes: entra al escritorio con el mismo correo y contrasena de Examenes.' -ForegroundColor Green
+    Start-Process 'https://wajomea.group/administracion/index.html'
 } finally { Pop-Location }

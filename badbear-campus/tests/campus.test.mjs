@@ -32,6 +32,52 @@ test('health fails closed until database and secrets are configured',async()=>{
   assert.equal((await request({},'/api/health')).status,503);
   assert.equal((await request(env(),'/api/health')).data.estado,'operativo');
 });
+const examSession=()=>String(Date.now()+3600000)+'.'+crypto.randomUUID()+'.'+'s'.repeat(43);
+test('the existing exam login issues separate Campus and Exam sessions without saving passwords',async t=>{
+  const e=env(),token=examSession(),calls=[];
+  t.mock.method(globalThis,'fetch',async(url,options)=>{calls.push({url,options});return Response.json({ok:true,token})});
+  const login=await request(e,'/api/admin/login',{method:'POST',body:{email:'Admin@Example.invalid',password:'test password'}});
+  assert.equal(login.status,200);assert.equal(login.data.token,token);assert.match(login.data.campus_token,/^campus1\./);
+  assert.ok(login.data.expira<=Math.floor(Number(token.split('.')[0])/1000));
+  assert.equal(calls.length,1);assert.equal(calls[0].url,'https://badbear-exams-api.wajomea-group.workers.dev/api/admin/login');
+  assert.equal(calls[0].options.redirect,'error');assert.deepEqual(JSON.parse(calls[0].options.body),{email:'admin@example.invalid',password:'test password'});
+  assert.equal((await request(e,'/api/admin/alumnos',{token:login.data.campus_token})).status,200);
+  assert.equal((await request(e,'/api/admin/alumnos',{token})).status,401);
+  assert.equal((await request(e,'/api/admin/publicar',{method:'POST',token:login.data.campus_token,body:{items:[row('001','Alumno Uno','NSP')]}})).status,200);
+  assert.equal((await request(e,'/api/mis-resultados',{token:login.data.campus_token})).status,401);
+  assert.equal((await request(e,'/api/health')).data.acceso_unificado,true);
+  const dumps=['campus_alumnos','campus_sesiones','campus_auditoria','campus_limites'].map(name=>e.DB.db.prepare('SELECT * FROM '+name).all());
+  assert.equal(JSON.stringify(dumps).includes('test password'),false);assert.equal(JSON.stringify(dumps).includes(login.data.campus_token),false);
+  const forged=login.data.campus_token.slice(0,-1)+(login.data.campus_token.endsWith('0')?'1':'0');
+  assert.equal((await request(e,'/api/admin/alumnos',{token:forged})).status,401);
+  const changed=login.data.campus_token.split('.');changed[1]=String(Math.floor(Date.now()/1000)+7200);
+  assert.equal((await request(e,'/api/admin/alumnos',{token:changed.join('.')})).status,401);
+  assert.equal((await request({...e,ADMIN_API_TOKEN:'z'.repeat(64)},'/api/admin/alumnos',{token:login.data.campus_token})).status,401);
+  const student=await activate(e,'001');
+  assert.equal((await request(e,'/api/admin/alumnos',{token:student.token})).status,401);
+  const clock=Date.now();t.mock.method(Date,'now',()=>clock+7200000);
+  assert.equal((await request(e,'/api/admin/alumnos',{token:login.data.campus_token})).status,401);
+});
+test('failed, malformed, expired or unavailable identity responses fail closed',async t=>{
+  const e=env();let reply;
+  t.mock.method(globalThis,'fetch',async()=>{if(reply instanceof Error)throw reply;return reply});
+  const login=()=>request(e,'/api/admin/login',{method:'POST',body:{email:'admin@example.invalid',password:'test password'}});
+  for(const status of [401,429,500]){reply=Response.json({error:'upstream'}, {status});assert.equal((await login()).status,status===500?503:status)}
+  reply=new Error('offline');assert.equal((await login()).status,503);
+  reply=Response.json({ok:true,token:'forged'});assert.equal((await login()).status,503);
+  reply=Response.json({ok:false,token:examSession()});assert.equal((await login()).status,503);
+  reply=Response.json({ok:true,token:examSession().replace(/^\d+/,String(Date.now()-10000))});assert.equal((await login()).status,503);
+  assert.equal((await request(e,'/api/admin/alumnos')).status,401);assert.equal((await admin(e,'alumnos')).data.items.length,0);
+});
+test('the unified login rejects foreign origins, missing credentials and rate-limited attempts before relaying',async t=>{
+  const e=env(),calls=[];t.mock.method(globalThis,'fetch',async()=>{calls.push(true);return Response.json({error:'invalid'}, {status:401})});
+  const body={email:'admin@example.invalid',password:'wrong password'};
+  for(const origin of ['', 'https://foreign.invalid'])assert.equal((await request(e,'/api/admin/login',{method:'POST',body,origin})).status,403);
+  for(const bad of [{email:1,password:'x'},{email:'',password:'x'},{email:'admin@example.invalid',password:'x'.repeat(257)}])assert.equal((await request(e,'/api/admin/login',{method:'POST',body:bad})).status,400);
+  assert.equal(calls.length,0);
+  for(let i=0;i<8;i++)assert.equal((await request(e,'/api/admin/login',{method:'POST',body})).status,401);
+  assert.equal((await request(e,'/api/admin/login',{method:'POST',body})).status,429);assert.equal(calls.length,8);
+});
 test('admin authorization and CORS reject foreign origins',async()=>{
   const e=env();assert.equal((await request(e,'/api/admin/alumnos')).status,401);
   assert.equal((await request(e,'/api/admin/alumnos',{token:'b'.repeat(64)})).status,401);

@@ -19,9 +19,45 @@ async function equal(a, b) {
   return diff === 0;
 }
 async function administrator(req, env) {
-  if (!env.ADMIN_API_TOKEN || !bearer(req) || !await equal(bearer(req), env.ADMIN_API_TOKEN)) {
-    throw new Problem("Credencial administrativa incorrecta.", 401);
+  const token = (req.headers.get("Authorization") || "").match(/^Bearer ([a-zA-Z0-9_.-]{32,256})$/)?.[1] || "";
+  if (!env.ADMIN_API_TOKEN || !token) throw new Problem("Inicia sesión en Administración central.", 401);
+  // Keep the existing recovery credential; students still use their separate opaque sessions.
+  if (await equal(token, env.ADMIN_API_TOKEN)) return;
+  const match = token.match(/^campus1\.(\d{10})\.([a-f0-9]{64})\.([a-f0-9]{64})$/);
+  if (!match || Number(match[1]) <= now() || Number(match[1]) > now()+28800 ||
+      !await equal(match[3], await adminSignature(token.slice(0,token.lastIndexOf(".")), env))) {
+    throw new Problem("La sesión administrativa terminó. Vuelve a ingresar al escritorio.", 401);
   }
+}
+async function adminSignature(payload, env) {
+  const key = await crypto.subtle.importKey("raw", encoder.encode(env.ADMIN_API_TOKEN), {name:"HMAC",hash:"SHA-256"}, false, ["sign"]);
+  return hex(await crypto.subtle.sign("HMAC",key,encoder.encode(payload)));
+}
+async function adminLogin(req, env) {
+  const body = await readJSON(req);
+  if (typeof body.email !== "string" || typeof body.password !== "string") throw new Problem("Introduce correo y contraseña.");
+  const email = body.email.trim().toLowerCase(), pass = body.password;
+  if (!email || email.length > 254 || !pass || pass.length > 256) throw new Problem("Introduce correo y contraseña válidos.");
+  await rate(req,env,"admin:"+email);
+  let reply, session;
+  try {
+    // Fixed trusted destination: reuse the existing administrator account, without sharing signing secrets.
+    reply = await fetch("https://badbear-exams-api.wajomea-group.workers.dev/api/admin/login", {
+      method:"POST", headers:{"Origin":SITE,"Content-Type":"application/json"},
+      body:JSON.stringify({email,password:pass}), redirect:"error", signal:AbortSignal.timeout(10000)
+    });
+    session = await reply.json();
+  } catch { throw new Problem("No se pudo verificar el acceso. Inténtalo nuevamente.",503); }
+  if (!reply.ok) {
+    if (reply.status === 401) throw new Problem("Correo o contraseña incorrectos.",401);
+    if (reply.status === 429) throw new Problem("Demasiados intentos. Vuelve a intentarlo más tarde.",429);
+    throw new Problem("El servicio de acceso no está disponible. Inténtalo más tarde.",503);
+  }
+  const match = typeof session.token === "string" && session.token.match(/^(\d{13})\.[a-zA-Z0-9_-]{16,128}\.[a-zA-Z0-9_-]{43}$/);
+  const expires = match && Math.min(Math.floor(Number(match[1])/1000),now()+28800);
+  if (session.ok !== true || !match || expires <= now()) throw new Problem("No se recibió una sesión administrativa válida.",503);
+  const payload = "campus1."+expires+"."+random();
+  return {ok:true,token:session.token,campus_token:payload+"."+await adminSignature(payload,env),expira:expires};
 }
 async function readJSON(req) {
   if (!(req.headers.get("Content-Type") || "").startsWith("application/json")) throw new Problem("Se requiere JSON.", 415);
@@ -138,10 +174,11 @@ export default {
           try { ready = !!await env.DB.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='campus_auditoria'").first(); } catch {}
         }
         let states = false; if (ready) { try { states = !!await env.DB.prepare("SELECT name FROM pragma_table_info('campus_resultados') WHERE name='estado'").first(); } catch {} }
-        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states},ready?200:503,origin);
+        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states,acceso_unificado:true},ready?200:503,origin);
       }
       if (!env.DB || env.ADMIN_API_TOKEN?.length < 32 || !env.ADMIN_API_TOKEN || env.PASSWORD_PEPPER?.length < 32 || !env.PASSWORD_PEPPER) throw new Problem("El portal está pendiente de conexión. Inténtalo más tarde.", 503);
       if (req.method === "POST" && origin !== SITE) throw new Problem("Origen no permitido.", 403);
+      if (req.method === "POST" && path === "/api/admin/login") return response(await adminLogin(req,env),200,origin);
       if (path.startsWith("/api/admin/")) {
         await administrator(req,env);
         if (req.method === "GET" && path === "/api/admin/alumnos") {
