@@ -214,7 +214,7 @@ export default {
           if(!names||!surnames||names.length>100||surnames.length>120)throw new Problem("Introduce nombres y apellidos válidos.");
           if(dni&&!/^[0-9]{8}$/.test(dni))throw new Problem("El DNI debe tener exactamente 8 dígitos.");
           if(cell&&!/^[+0-9 -]{7,20}$/.test(cell))throw new Problem("Celular inválido.");
-          if(correo&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(correo))throw new Problem("Correo inválido.");
+          if(correo&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo))throw new Problem("Correo inválido.");
           const prev=await env.DB.prepare("SELECT codigo FROM campus_alumnos WHERE codigo=?").bind(codigo).first();
           if(!prev)throw new Problem("Alumno no registrado. Publícalo primero en la lista de resultados.",404);
           try{await env.DB.prepare("UPDATE campus_alumnos SET nombre=?,nombres=?,apellidos=?,dni=?,celular=?,correo=? WHERE codigo=?").bind(names+" "+surnames,names,surnames,dni||null,cell||null,correo||null,codigo).run()}
