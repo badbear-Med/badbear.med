@@ -67,8 +67,17 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'No se guardo la credencial administrativa en Cloudflare.' }
     $pepperSecret | & $npxCampus --yes wrangler@4 secret put PASSWORD_PEPPER
     if ($LASTEXITCODE -ne 0) { throw 'No se guardo la proteccion de contrasenas en Cloudflare.' }
-    $health = Invoke-RestMethod -Uri 'https://badbear-campus-api.wajomea-group.workers.dev/api/health' -Method Get
-    if ($health.estado -ne 'operativo') { throw 'El servicio aun no confirma el estado operativo.' }
+    $campusReady = $false
+    for ($campusAttempt = 0; $campusAttempt -lt 6; $campusAttempt++) {
+        try {
+            $health = Invoke-RestMethod -Uri 'https://badbear-campus-api.wajomea-group.workers.dev/api/health' -Method Get -TimeoutSec 10
+            if ($health.estado -eq 'operativo') { $campusReady = $true; break }
+        } catch {
+            # Secret deployments can take a few seconds to become available.
+        }
+        if ($campusAttempt -lt 5) { Start-Sleep -Seconds 5 }
+    }
+    if (-not $campusReady) { throw 'Las claves se guardaron, pero el servicio aun no confirma disponibilidad. Conserva LOCALAPPDATA\BadbearCampus y comprueba el estado antes de volver a desplegar.' }
     Write-Host "`nBADBEAR.CAMPUS operativo. Abre https://wajomea.group/badbear-campus/admin.html" -ForegroundColor Green
     Write-Host 'Credencial exclusiva del administrador (copiala al panel y no la compartas):'
     Write-Host $adminSecret -ForegroundColor Yellow
