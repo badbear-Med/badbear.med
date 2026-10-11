@@ -77,3 +77,6 @@ a:focus-visible{outline:3px solid var(--wg-blue);outline-offset:5px}
 .wg-exams{--wg-accent:#007f85;--wg-soft:#eafafa;--wg-icon-ink:#fff}
 .wg-math h3 span{color:#6841c6}
 .wg-exams h3 span{color:#007f85}
+.wg-campus{--wg-accent:#145ec0;--wg-soft:#eaf2fe;--wg-icon-ink:#fff}
+.wg-campus h3 span{color:#087b79}
+

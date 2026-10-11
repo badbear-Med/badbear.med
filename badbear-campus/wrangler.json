@@ -1,0 +1,11 @@
+{
+  "name": "badbear-campus-api",
+  "main": "worker-backend.js",
+  "compatibility_date": "2026-10-10",
+  "workers_dev": true,
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "badbear-campus",
+    "database_id": "00000000-0000-0000-0000-000000000000"
+  }]
+}
