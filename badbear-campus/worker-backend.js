@@ -45,9 +45,11 @@ async function adminLogin(req, env) {
     // Explicit service binding avoids unsupported public fetches between workers.dev Workers.
     reply = await env.EXAMS_AUTH.fetch(new Request("https://badbear-exams-api.wajomea-group.workers.dev/api/admin/login", {
       method:"POST", headers:{"Origin":SITE,"Content-Type":"application/json",...(req.headers.get("CF-Connecting-IP")?{"CF-Connecting-IP":req.headers.get("CF-Connecting-IP")}: {})},
-      body:JSON.stringify({email,password:pass}), redirect:"error", signal:AbortSignal.timeout(10000)
+      // workerd accepts only follow/manual. Manual keeps credentials at this fixed service.
+      body:JSON.stringify({email,password:pass}), redirect:"manual", signal:AbortSignal.timeout(10000)
     }));
   } catch (error) { console.error("Campus: fallo de conexión interna con Exámenes",error.name);throw new Problem("No se pudo conectar con el servicio de acceso de Exámenes. Inténtalo nuevamente.",503); }
+  if (reply.status >= 300 && reply.status < 400) throw new Problem("El servicio de acceso respondió con una redirección no permitida.",503);
   try { session = await reply.json(); }
   catch { throw new Problem("El servicio de acceso respondió de forma inesperada.",503); }
   if (!reply.ok) {
@@ -64,7 +66,8 @@ async function adminLogin(req, env) {
 async function examsAvailable(env) {
   if (typeof env.EXAMS_AUTH?.fetch !== "function") return false;
   try {
-    const reply = await env.EXAMS_AUTH.fetch(new Request("https://badbear-exams-api.wajomea-group.workers.dev/health",{headers:{Origin:SITE},redirect:"error",signal:AbortSignal.timeout(5000)}));
+    const reply = await env.EXAMS_AUTH.fetch(new Request("https://badbear-exams-api.wajomea-group.workers.dev/health",{headers:{Origin:SITE},redirect:"manual",signal:AbortSignal.timeout(5000)}));
+    if (!reply.ok) return false;
     const data = await reply.json();return reply.ok && data?.servicio === "BADBEAR.EXAMS";
   } catch { return false; }
 }

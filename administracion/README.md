@@ -14,6 +14,8 @@ El escritorio envia correo y contraseña por HTTPS a `/api/admin/login` de Campu
 
 Los backends autorizan cada solicitud privada. No se guardan claves ni sesiones en localStorage, sessionStorage, URLs ni cookies. El puente comprueba origen, ventana y area. Cerrar el escritorio o desconectar una de las areas descarta ambas sesiones de la pagina. Los tokens firmados no tienen revocacion individual: un token copiado antes de cerrar permanece valido hasta su vencimiento, como en el acceso actual de Examenes.
 
+Las solicitudes internas usan `redirect: "manual"` y rechazan respuestas 3xx. El runtime workerd de Cloudflare rechaza `redirect: "error"` al construir Request, aunque Node lo admita; por eso hay que verificar tambien la conexion entre ambos Workers en workerd al cambiar estas opciones. Esta correccion se comprobo con ambos backends, D1 y el service binding en Miniflare: health confirma acceso_unificado y el inicio de sesion devuelve las dos sesiones.
+
 Los estudiantes conservan su activacion y acceso propios y solo consultan sus resultados. La credencial antigua de Campus se conserva para recuperacion y acceso directo; no concede acceso a Examenes. Las pruebas verifican que ni sesiones de estudiantes ni sesiones de Examenes sin intercambio concedan acceso administrativo a Campus.
 
 ```sh

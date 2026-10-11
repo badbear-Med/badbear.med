@@ -61,7 +61,7 @@ test('the existing exam login issues separate Campus and Exam sessions without s
   assert.equal(login.status,200);assert.equal(login.data.token,token);assert.match(login.data.campus_token,/^campus1\./);
   assert.ok(login.data.expira<=Math.floor(Number(token.split('.')[0])/1000));
   assert.equal(calls.length,1);assert.equal(calls[0].url,'https://badbear-exams-api.wajomea-group.workers.dev/api/admin/login');
-  assert.equal(calls[0].options.redirect,'error');assert.deepEqual(JSON.parse(calls[0].options.body),{email:'admin@example.invalid',password:'test password'});
+  assert.equal(calls[0].options.redirect,'manual');assert.deepEqual(JSON.parse(calls[0].options.body),{email:'admin@example.invalid',password:'test password'});
   assert.equal(calls[0].options.headers.get('Origin'),'https://wajomea.group');assert.equal(calls[0].options.headers.get('CF-Connecting-IP'),'192.0.2.1');
   assert.equal((await request(e,'/api/admin/alumnos',{token:login.data.campus_token})).status,200);
   assert.equal((await request(e,'/api/admin/alumnos',{token})).status,401);
@@ -102,6 +102,21 @@ test('the unified login rejects foreign origins, missing credentials and rate-li
   for(let i=0;i<8;i++)assert.equal((await request(e,'/api/admin/login',{method:'POST',body})).status,401);
   assert.equal((await request(e,'/api/admin/login',{method:'POST',body})).status,429);assert.equal(calls.length,8);
 });
+test('identity redirects are rejected even when their body contains a valid session',async t=>{
+  const e=env();let status=301,calls=0;
+  t.mock.method(globalThis,'fetch',()=>{throw Error('Must not follow a redirect using public fetch')});
+  t.mock.method(e.EXAMS_AUTH,'fetch',async req=>{
+    assert.equal(req.redirect,'manual');calls++;
+    return Response.json({ok:true,token:examSession(),servicio:'BADBEAR.EXAMS'},{status,headers:{Location:'https://foreign.invalid/login'}});
+  });
+  for(status of [301,302,303,307,308]){
+    const health=await request(e,'/api/health');assert.equal(health.data.acceso_unificado,false);
+    const login=await request(e,'/api/admin/login',{method:'POST',body:{email:'admin@example.invalid',password:'test password'}});
+    assert.equal(login.status,503);assert.match(login.data.error,/redirección/);
+    assert.equal(login.data.campus_token,undefined);assert.equal(login.data.token,undefined);
+  }
+  assert.equal(calls,10);
+});
 test('health checks the actual service binding and missing bindings cannot authenticate',async t=>{
   const e=env();delete e.EXAMS_AUTH;
   t.mock.method(globalThis,'fetch',()=>{throw Error('A missing service binding must not fall back to public fetch')});
@@ -112,7 +127,7 @@ test('health checks the actual service binding and missing bindings cannot authe
   assert.equal((await request(e,'/api/health')).data.acceso_unificado,false);
   e.EXAMS_AUTH={async fetch(){return new Response('unavailable',{status:503})}};
   assert.equal((await request(e,'/api/health')).data.acceso_unificado,false);
-  e.EXAMS_AUTH={async fetch(req){assert.equal(req.url,'https://badbear-exams-api.wajomea-group.workers.dev/health');assert.equal(req.headers.has('Authorization'),false);return Response.json({servicio:'BADBEAR.EXAMS'})}};
+  e.EXAMS_AUTH={async fetch(req){assert.equal(req.url,'https://badbear-exams-api.wajomea-group.workers.dev/health');assert.equal(req.redirect,'manual');assert.equal(req.headers.has('Authorization'),false);return Response.json({servicio:'BADBEAR.EXAMS'})}};
   assert.equal((await request(e,'/api/health')).data.acceso_unificado,true);
 });
 test('admin authorization and CORS reject foreign origins',async()=>{
