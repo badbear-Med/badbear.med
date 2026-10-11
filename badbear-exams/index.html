@@ -99,9 +99,12 @@ footer{border-top:1px solid var(--line);padding:25px;text-align:center;color:var
 <div class="steps"><div class="step"><b>1. Preparar</b>PDF o fotografías claras, sin datos personales de terceros.</div><div class="step"><b>2. Revisar</b>El equipo comprueba calidad, procedencia y permiso para compartir.</div><div class="step"><b>3. Publicar</b>El material autorizado aparece en la biblioteca por curso y año.</div></div>
 <form id="contribution-form">
 <label>Curso<input name="course" placeholder="Nombre de la asignatura" required maxlength="120"></label>
+<label>Universidad<input name="university" placeholder="Universidad de origen" maxlength="120" required></label>
 <label>Facultad o escuela<input name="faculty" placeholder="Ej. Medicina Humana" maxlength="120"></label>
 <label>Año del examen<input name="year" type="number" min="2022" max="2026" placeholder="2022 a 2026" required></label>
 <label>Tipo de evaluación<select name="type" required><option value="">Selecciona</option><option>Parcial</option><option>Final</option><option>Práctica</option><option>Otros</option></select></label>
+<label>Docente (opcional)<input name="teacher" maxlength="120" placeholder="Docente del curso"></label>
+<label>Ciclo académico (opcional)<input name="cycle" maxlength="40" placeholder="Ej. 2025-II"></label>
 <label>Nombre o seudónimo (opcional)<input name="contributor" maxlength="80" placeholder="Para reconocer tu colaboración"></label>
 <label>Archivo PDF o imagen<input name="file" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required></label>
 <label class="wide">Información adicional<textarea name="notes" maxlength="600" placeholder="Docente, ciclo, observaciones o aclaraciones..."></textarea></label>
