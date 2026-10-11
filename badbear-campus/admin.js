@@ -1,5 +1,5 @@
 import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-correo1";
-import { parseCSV,parseContactsCSV } from "./csv.js?v=20261011-correo1";
+import { parseCSV,parseContactsCSV,parseRosterCSV } from "./csv.js?v=20261011-padron1";
 import { centralBridge } from "../administracion/bridge.js?v=20261011-central1";
 let token="",checked=null,contactsChecked=null;
 let reportConnection=()=>{};
@@ -15,6 +15,24 @@ async function mailStatus(){
     $("email-status").textContent=text;
   }catch(error){if(error.status!==404)throw error;$("email-status").textContent="Actualiza el servicio de Campus para habilitar los correos."}
 }
+let rosterRows=null;
+$("roster-file").addEventListener("change",()=>{rosterRows=null;$("roster-area").hidden=true;$("roster-confirm").checked=false});
+$("roster-preview").addEventListener("click",()=>action(async()=>{
+ const file=$("roster-file").files[0];if(!file||file.size>512000)throw Error("Selecciona un CSV válido de hasta 500 KB.");
+ const contents=new TextDecoder("utf-8",{fatal:true}).decode(await file.arrayBuffer());
+ rosterRows=parseRosterCSV(contents);
+ const codes=new Set();for(const x of rosterRows){if(codes.has(x.codigo))throw Error("Código repetido: "+x.codigo);codes.add(x.codigo)}
+ $("roster-summary").textContent=rosterRows.length+" alumnos para registrar o actualizar. Revisa antes de guardar.";
+ $("roster-table").replaceChildren();$("roster-table").append(table([{key:"nombre",label:"Apellidos y Nombres"},{key:"codigo",label:"Código de Estudiante"},{key:"telefono",label:"Teléfono"},{key:"dni",label:"DNI"},{key:"correo",label:"Correo Institucional"}],rosterRows,"Vista previa del padrón"));
+ $("roster-area").hidden=false;
+}));
+$("roster-save").addEventListener("click",()=>action(async()=>{
+ if(!rosterRows||!$("roster-confirm").checked)throw Error("Primero revisa y confirma la lista.");
+ if(!confirm("¿Guardar "+rosterRows.length+" alumnos en la base académica privada?"))return;
+ const result=await post("/api/admin/alumnos/importar",token,{items:rosterRows});
+ message("Padrón actualizado: "+result.total+" alumnos.","success");
+ rosterRows=null;$("roster-area").hidden=true;$("roster-file").value="";await students();
+}));
 let managedStudents=[];
 function renderManagedList(){const wrap=$("manage-list");wrap.replaceChildren();const filtered=managedStudents.filter(x=>(x.codigo+" "+x.nombre+" "+(x.correo||"")).toLowerCase().includes($("manage-search").value.toLowerCase()));$("manage-total").textContent=filtered.length+" alumnos encontrados de "+managedStudents.length+" registrados.";const container=document.createElement("div");container.style.cssText="max-height:320px;overflow:auto;border:1px solid #dce6ed;border-radius:10px;margin:12px 0 20px";const t=document.createElement("table");t.style.width="100%";const h=document.createElement("thead");const tr=document.createElement("tr");for(const n of ["Código","Alumno","Correo","Resultados","Acción"]){const c=document.createElement("th");c.textContent=n;tr.append(c)}h.append(tr);t.append(h);const body=document.createElement("tbody");for(const item of filtered){const line=document.createElement("tr");for(const value of [item.codigo,item.nombre,item.correo||"Sin correo",String(item.resultados||0)]){const cell=document.createElement("td");cell.textContent=value;line.append(cell)}const cell=document.createElement("td"),btn=document.createElement("button");btn.type="button";btn.textContent="Editar";btn.className="secondary";btn.addEventListener("click",()=>{ $("manage-student").value=item.codigo;action(showManagedStudent)});cell.append(btn);line.append(cell);body.append(line)}t.append(body);container.append(t);wrap.append(container)}
 function drawManagedStudents(){const q=$("manage-search").value.trim().toLowerCase(),previous=$("manage-student").value;const select=$("manage-student");select.replaceChildren(new Option("Seleccionar alumno",""));for(const row of managedStudents.filter(x=>(x.codigo+" "+x.nombre).toLowerCase().includes(q)))select.append(new Option(row.nombre+" · "+row.codigo,row.codigo));if(managedStudents.some(x=>x.codigo===previous))select.value=previous;renderManagedList();}
