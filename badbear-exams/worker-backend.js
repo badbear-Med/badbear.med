@@ -5,7 +5,7 @@ const bad=(message,status,origin)=>json({error:message},status,origin);
 async function equal(a,b){const enc=new TextEncoder();const [x,y]=await Promise.all([crypto.subtle.digest("SHA-256",enc.encode(a)),crypto.subtle.digest("SHA-256",enc.encode(b))]);let diff=0;const aa=new Uint8Array(x),bb=new Uint8Array(y);for(let i=0;i<aa.length;i++)diff|=aa[i]^bb[i];return diff===0}
 const enc=new TextEncoder();
 const b64=u=>btoa(String.fromCharCode(...u)).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
-async function signingKey(env){return crypto.subtle.importKey("raw",enc.encode(env.ADMIN_API_TOKEN),"HMAC",false,["sign","verify"])}
+async function signingKey(env){return crypto.subtle.importKey("raw",enc.encode(env.ADMIN_API_TOKEN),{name:"HMAC",hash:"SHA-256"},false,["sign","verify"])}
 async function admin(req,env){const header=req.headers.get("Authorization")||"";if(!env.ADMIN_API_TOKEN||!header.startsWith("Bearer "))return false;const token=header.slice(7);if(await equal(token,env.ADMIN_API_TOKEN))return true;const [expiry,nonce,sig,...extra]=token.split(".");if(extra.length||!/^\d{10,13}$/.test(expiry||"")||!nonce||!sig||Number(expiry)<Date.now()||Number(expiry)>Date.now()+28800000)return false;const expected=b64(new Uint8Array(await crypto.subtle.sign("HMAC",await signingKey(env),enc.encode(expiry+"."+nonce))));return await equal(sig,expected)}
 async function login(req,env,origin){
  let phase="configuracion";try{
