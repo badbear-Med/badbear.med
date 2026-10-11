@@ -38,6 +38,19 @@ return json({ok:true,mensaje:"Recibido, pendiente de revisión",referencia:Strin
 }catch(e){await env.APORTES.delete(key).catch(()=>{});return bad("Error al registrar examen",500,origin)}
 }
 async function list(req,env,origin){const rows=await env.DB.prepare("SELECT e.id,e.titulo,e.anio,e.tipo,e.estado,e.creado_en,e.docente AS teacher,e.periodo AS cycle,c.nombre AS course,c.facultad,c.universidad AS university,co.seudonimo AS contributor FROM examenes e JOIN cursos c ON c.id=e.curso_id LEFT JOIN colaboradores co ON co.id=e.colaborador_id ORDER BY e.id DESC LIMIT 100").all();return json({items:rows.results||[]},200,origin)}
+async function editExam(req,env,origin){
+ const x=await req.json().catch(()=>null);
+ const id=Number(x?.id),year=Number(x?.anio);
+ const clean=(k,n)=>typeof x?.[k]==="string"?x[k].trim().slice(0,n):"";
+ const title=clean("titulo",150),course=clean("course",120),university=clean("university",120),faculty=clean("facultad",120),teacher=clean("teacher",120),cycle=clean("cycle",40),type=clean("tipo",20);
+ if(!Number.isSafeInteger(id)||id<1||!title||!course||!university||!Number.isInteger(year)||year<2022||year>2026||!["Parcial","Final","Práctica","Otros"].includes(type))return bad("Datos incompletos o inválidos",400,origin);
+ const row=await env.DB.prepare("SELECT e.id,e.curso_id FROM examenes e WHERE e.id=?").bind(id).first();
+ if(!row)return bad("Examen no encontrado",404,origin);
+ // Each edited examination receives its own course metadata row, avoiding changes to unrelated examinations.
+ const entry=await env.DB.prepare("INSERT INTO cursos (nombre,facultad,universidad,ciclo) VALUES (?,?,?,?)").bind(course,faculty||null,university,cycle||null).run();
+ await env.DB.prepare("UPDATE examenes SET titulo=?,curso_id=?,anio=?,tipo=?,docente=?,periodo=? WHERE id=?").bind(title,entry.meta.last_row_id,year,type,teacher||null,cycle||null,id).run();
+ return json({ok:true,mensaje:"Datos del examen actualizados",id},200,origin);
+}
 async function review(req,env,origin){const data=await req.json().catch(()=>null),id=Number(data?.id),action=data?.action,reason=String(data?.reason||"").slice(0,500);
 if(!Number.isSafeInteger(id)||id<=0||!["aprobar","rechazar"].includes(action))return bad("Datos inválidos",400,origin);
 const e=await env.DB.prepare("SELECT id,archivo_privado,archivo_publicado,estado FROM examenes WHERE id=?").bind(id).first();
@@ -103,6 +116,7 @@ try{
  if(path.startsWith("/api/admin/")){
   if(!(await admin(req,env)))return bad("No autorizado",401,origin);
   if(path==="/api/admin/examenes"&&req.method==="GET")return await list(req,env,origin);
+  if(path==="/api/admin/examenes/editar"&&req.method==="POST")return await editExam(req,env,origin);
   if(path==="/api/admin/preguntas"&&req.method==="GET")return await questions(req,env,origin,true);
   if(path==="/api/admin/preguntas"&&req.method==="POST")return await saveQuestion(req,env,origin);
   if(path==="/api/admin/archivo"&&req.method==="GET"){
