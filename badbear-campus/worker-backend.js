@@ -203,8 +203,39 @@ export default {
         if (req.method === "POST" && path === "/api/admin/correos/vista-previa") return response(await emailAccess.preview((await readJSON(req)).items,env),200,origin);
         if (req.method === "POST" && path === "/api/admin/correos") return response(await emailAccess.save(await readJSON(req),env),200,origin);
         if (req.method === "GET" && path === "/api/admin/alumnos") {
-          const users = await env.DB.prepare("SELECT a.codigo,a.nombre,a.activo,a.correo,a.correo_verificado,CASE WHEN a.password_hash IS NULL THEN 0 ELSE 1 END AS activado,COUNT(r.codigo) AS resultados FROM campus_alumnos a LEFT JOIN campus_resultados r ON r.codigo=a.codigo GROUP BY a.codigo ORDER BY a.nombre").all();
+          const users = await env.DB.prepare("SELECT a.codigo,a.nombre,a.nombres,a.apellidos,a.dni,a.celular,a.activo,a.correo,a.correo_verificado,CASE WHEN a.password_hash IS NULL THEN 0 ELSE 1 END AS activado,COUNT(r.codigo) AS resultados FROM campus_alumnos a LEFT JOIN campus_resultados r ON r.codigo=a.codigo GROUP BY a.codigo ORDER BY a.nombre").all();
           return response({items:users.results},200,origin);
+        }
+        if (req.method === "POST" && path === "/api/admin/alumnos/ficha") {
+          const body=await readJSON(req);
+          const codigo=code(body.codigo);
+          const names=String(body.nombres||"").trim(), surnames=String(body.apellidos||"").trim();
+          const dni=String(body.dni||"").trim(),cell=String(body.celular||"").trim(),correo=String(body.correo||"").trim().toLowerCase();
+          if(!names||!surnames||names.length>100||surnames.length>120)throw new Problem("Introduce nombres y apellidos válidos.");
+          if(dni&&!/^[0-9]{8}$/.test(dni))throw new Problem("El DNI debe tener exactamente 8 dígitos.");
+          if(cell&&!/^[+0-9 -]{7,20}$/.test(cell))throw new Problem("Celular inválido.");
+          if(correo&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(correo))throw new Problem("Correo inválido.");
+          const prev=await env.DB.prepare("SELECT codigo FROM campus_alumnos WHERE codigo=?").bind(codigo).first();
+          if(!prev)throw new Problem("Alumno no registrado. Publícalo primero en la lista de resultados.",404);
+          try{await env.DB.prepare("UPDATE campus_alumnos SET nombre=?,nombres=?,apellidos=?,dni=?,celular=?,correo=? WHERE codigo=?").bind(names+" "+surnames,names,surnames,dni||null,cell||null,correo||null,codigo).run()}
+          catch(err){if(/UNIQUE|constraint/i.test(err.message||""))throw new Problem("DNI o correo ya registrado, o datos incompatibles.",409);throw err}
+          return response({ok:true},200,origin);
+        }
+        if (req.method === "POST" && path === "/api/admin/nota/editar") {
+          const body=await readJSON(req);const codigo=code(body.codigo);
+          const fields=["curso","periodo","evaluacion","fecha"];
+          if(fields.some(k=>typeof body[k]!=="string"||!body[k].trim()||body[k].length>150))throw new Problem("Identificador de nota incompleto.");
+          if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(body.fecha))throw new Problem("Fecha inválida.");
+          const nota=Number(body.nota);if(!Number.isFinite(nota)||nota<0||nota>20)throw new Problem("La nota debe estar entre 0 y 20.");
+          const row=await env.DB.prepare("SELECT nota FROM campus_resultados WHERE codigo=? AND curso=? AND periodo=? AND evaluacion=?").bind(codigo,body.curso,body.periodo,body.evaluacion).first();
+          if(!row)throw new Problem("Evaluación no encontrada.",404);
+          await env.DB.prepare("UPDATE campus_resultados SET nota=?,estado=NULL,fecha=?,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE codigo=? AND curso=? AND periodo=? AND evaluacion=?").bind(nota,body.fecha,codigo,body.curso,body.periodo,body.evaluacion).run();
+          return response({ok:true},200,origin);
+        }
+        if (req.method === "GET" && path === "/api/admin/notas") {
+          const codigo=code(new URL(req.url).searchParams.get("codigo")||"");
+          const rows=await env.DB.prepare("SELECT codigo,curso,periodo,evaluacion,nota,estado,fecha FROM campus_resultados WHERE codigo=? ORDER BY periodo DESC,fecha DESC").bind(codigo).all();
+          return response({items:rows.results},200,origin);
         }
         if (req.method === "POST" && path === "/api/admin/vista-previa") return response(await preview((await readJSON(req)).items,env),200,origin);
         if (req.method === "POST" && path === "/api/admin/publicar") return response(await importResults(await readJSON(req),env),200,origin);
