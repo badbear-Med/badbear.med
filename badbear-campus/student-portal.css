@@ -133,3 +133,18 @@
  .student-portal .footer{flex-direction:column;gap:8px}
 }
 @media(prefers-reduced-motion:reduce){.student-portal *{transition:none!important}}
+
+/* Private student dashboard: progress shown separately from grades. */
+.student-portal .campus-dashboard{margin:22px 0 28px;padding:22px;border:1px solid #d8e6e9;background:#f8fbfc;border-radius:14px}
+.student-portal .campus-dashboard-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.student-portal .campus-dashboard-heading h3{margin:5px 0 0;font-size:19px;color:#173646}
+.student-portal #campus-progress-status{font-size:12px;color:#5d7682}
+.student-portal .campus-dashboard-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.student-portal .campus-course{padding:18px 20px;border:1px solid #dce6ec;background:white;border-radius:12px}
+.student-portal .campus-course strong{display:block;font-size:17px;color:#1a3649}
+.student-portal .campus-course p{font-size:13px;color:#617383;margin:7px 0 12px}
+.student-portal .campus-progress-track{height:10px;overflow:hidden;border-radius:8px;background:#e1ebee}
+.student-portal .campus-progress-track div{height:100%;width:0;background:#168786;transition:width .2s}
+.student-portal .campus-course-link{display:inline-block;margin-top:7px;padding:10px 14px;background:#12656a;color:white!important;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700}
+.student-portal .campus-course-link:hover{background:#0b5157}
+.student-portal .campus-dashboard .campus-dashboard-note{font-size:12px;color:#687f8a;margin:13px 0 0}
