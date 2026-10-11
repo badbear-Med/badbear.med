@@ -1,11 +1,11 @@
 import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-correo1";
-let token="",items=[],emailToken="";
+let token="",items=[],emailToken="";const sessionKey="badbear-campus-portal-session";try{token=sessionStorage.getItem(sessionKey)||""}catch(_){}
 const fragment=new URLSearchParams(location.hash.slice(1));
 if(fragment.has("acceso")){
   const candidate=fragment.get("acceso")||"";history.replaceState(null,"",location.pathname+location.search);
   if(/^[a-f0-9]{64}$/.test(candidate)){emailToken=candidate;$("email-finish").hidden=false;$("entry").hidden=true}else message("El enlace es inválido. Solicita uno nuevo.","error");
 }
-function clear() { $("campus-progress-count").textContent="Inicia sesión para consultar tu avance.";$("campus-progress-fill").style.width="0%";$("campus-progress-status").textContent="";token="";items=[];$("grades").replaceChildren();$("student-name").textContent="";$("student-code").textContent="";$("results").hidden=true;$("entry").hidden=false; }
+function clear() { try{sessionStorage.removeItem(sessionKey)}catch(_){} $("campus-progress-count").textContent="Inicia sesión para consultar tu avance.";$("campus-progress-fill").style.width="0%";$("campus-progress-status").textContent="";token="";items=[];$("grades").replaceChildren();$("student-name").textContent="";$("student-code").textContent="";$("results").hidden=true;$("entry").hidden=false; }
 function render() {
   const data=items.filter(x=>!$("course").value||x.curso===$("course").value);$("grades").replaceChildren();
   if(!data.length){const p=document.createElement("p");p.className="empty";p.textContent="Todavía no hay resultados publicados para esta selección.";$("grades").append(p);return}
@@ -25,7 +25,7 @@ async function load() {
   }catch(error){if(error.status===401)clear();throw error;}
 }
 $("login").addEventListener("submit",event=>{event.preventDefault();busy(async()=>{
-  message("Verificando tu acceso…");const data=await post("/api/login","",{codigo:$("codigo").value.trim(),password:$("password").value});$("password").value="";token=data.token;await load();
+  message("Verificando tu acceso…");const data=await post("/api/login","",{codigo:$("codigo").value.trim(),password:$("password").value});$("password").value="";token=data.token;try{sessionStorage.setItem(sessionKey,token)}catch(_){}await load();
 })});
 $("activation").addEventListener("submit",event=>{event.preventDefault();busy(async()=>{
   if($("new-password").value!==$("repeat-password").value)throw Error("Las contraseñas no coinciden.");
@@ -43,4 +43,6 @@ $("email-confirm").addEventListener("submit",event=>{event.preventDefault();busy
 $("email-cancel").addEventListener("click",()=>{clearEmailLink();message("Puedes solicitar otro enlace desde «Activa o recupera tu cuenta por correo».")});
 $("logout").addEventListener("click",()=>busy(async()=>{try{await post("/api/logout",token,{})}finally{clear();message("Sesión cerrada.")}}));
 $("refresh").addEventListener("click",()=>busy(load));$("course").addEventListener("change",render);
-window.addEventListener("pagehide",()=>{clear();clearEmailLink()});availability();
+document.querySelectorAll(".student-tabs button").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".student-tabs button").forEach(b=>b.classList.toggle("selected",b===btn));document.querySelectorAll(".tab-section").forEach(v=>v.hidden=v.dataset.view!==btn.dataset.section)}));
+if(token&&!emailToken){load().catch(()=>{message("Vuelve a iniciar sesión para continuar.","error")})}
+availability();
