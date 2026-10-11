@@ -187,3 +187,15 @@
 .student-portal .learning-area{margin-top:22px}
 @media(max-width:980px){.student-portal .campus-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.student-portal .portal-hero{grid-template-columns:minmax(0,1fr) 210px;padding:30px}}
 @media(max-width:650px){.student-portal main{padding:16px!important}.student-portal .portal-hero{grid-template-columns:1fr;padding:25px}.student-portal .hero-emblem{display:none}.student-portal .campus-services-grid{grid-template-columns:1fr}.student-portal .campus-services-grid a{min-height:75px}}
+
+/* Panel privado, navegación clara y con mayor jerarquía */
+.student-portal .student-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 22px;padding:9px;border-radius:14px;background:#f0f5f8;border:1px solid #dce9ec}
+.student-portal .student-tabs button{border:1px solid transparent;background:transparent;color:#34566a;padding:11px 16px;min-height:40px;cursor:pointer}
+.student-portal .student-tabs button.selected{background:#0a777b;color:#fff;box-shadow:0 3px 8px #0a777b25}
+.student-portal .tab-section{padding:18px 2px}
+.student-portal .tab-section[hidden]{display:none!important}
+.student-portal .tab-section[data-view="inicio"]{background:linear-gradient(125deg,#e8f7f3,#f2f6ff 70%,#fff3e8);border-radius:14px;padding:29px;margin-bottom:12px}
+.student-portal .tab-section[data-view="inicio"] h3{color:#133d60;font-size:25px;margin:0 0 8px}
+.student-portal .tab-section[data-view="inicio"] p{color:#536c7a;margin:0}
+.student-portal .tab-section[data-view="biblioteca"] a{display:inline-flex;background:#e8f3f7;padding:11px 16px;border-radius:9px;text-decoration:none;font-weight:700}
+@media(max-width:650px){.student-portal .student-tabs button{flex:1 1 120px}.student-portal .tab-section[data-view="inicio"]{padding:20px}}
