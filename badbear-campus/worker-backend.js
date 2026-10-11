@@ -206,6 +206,29 @@ export default {
           const users = await env.DB.prepare("SELECT a.codigo,a.nombre,a.nombres,a.apellidos,a.dni,a.celular,a.activo,a.correo,a.correo_verificado,CASE WHEN a.password_hash IS NULL THEN 0 ELSE 1 END AS activado,COUNT(r.codigo) AS resultados FROM campus_alumnos a LEFT JOIN campus_resultados r ON r.codigo=a.codigo GROUP BY a.codigo ORDER BY a.nombre").all();
           return response({items:users.results},200,origin);
         }
+        if (req.method === "POST" && path === "/api/admin/alumnos/importar") {
+          const payload=await readJSON(req);
+          if(!Array.isArray(payload.items)||!payload.items.length||payload.items.length>200)throw new Problem("Selecciona entre 1 y 200 alumnos.");
+          const seen=new Set(),validated=[];
+          for(const raw of payload.items){
+            const codigo=code(raw.codigo),nombre=String(raw.nombre||"").trim().replace(/\\s+/g," ");
+            const telefono=String(raw.telefono||"").trim(),dni=String(raw.dni||"").trim(),correo=String(raw.correo||"").trim().toLowerCase();
+            if(!nombre||nombre.length>220)throw new Problem("Nombre no válido en "+codigo);
+            if(telefono&&!/^[+0-9 ()-]{7,20}$/.test(telefono))throw new Problem("Teléfono inválido para "+codigo);
+            if(dni&&!/^[0-9]{8}$/.test(dni))throw new Problem("DNI inválido para "+codigo);
+            if(correo&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(correo))throw new Problem("Correo inválido para "+codigo);
+            if(seen.has(codigo))throw new Problem("Código duplicado en la lista: "+codigo);seen.add(codigo);
+            validated.push({codigo,nombre,telefono:telefono||null,dni:dni||null,correo:correo||null});
+          }
+          const json=JSON.stringify(validated);
+          try{
+            await env.DB.batch([
+              env.DB.prepare("INSERT INTO campus_alumnos(codigo,nombre,celular,dni,correo) SELECT json_extract(value,'$.codigo'),json_extract(value,'$.nombre'),json_extract(value,'$.telefono'),json_extract(value,'$.dni'),json_extract(value,'$.correo') FROM json_each(?) WHERE 1 ON CONFLICT(codigo) DO UPDATE SET nombre=excluded.nombre,celular=excluded.celular,dni=excluded.dni,correo=excluded.correo").bind(json),
+              env.DB.prepare("INSERT INTO campus_auditoria(accion,detalle) VALUES('importar_padron',?)").bind(JSON.stringify({total:validated.length,codigos:validated.map(x=>x.codigo)}))
+            ]);
+          }catch(err){if(/UNIQUE|constraint|El código pertenece/i.test(String(err.message)))throw new Problem("Existen DNI o correos duplicados, o datos incompatibles. No se importó la lista.",409);throw err}
+          return response({ok:true,total:validated.length},200,origin);
+        }
         if (req.method === "POST" && path === "/api/admin/alumnos/ficha") {
           const body=await readJSON(req);
           const codigo=code(body.codigo);
