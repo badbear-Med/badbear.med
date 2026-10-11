@@ -79,7 +79,7 @@
       <a href="../badbear-med.html" class="logo">BADBEAR.<span>MED</span></a>
       <nav class="menu">
         <a href="index.html">${curso.nombre}</a>
-        <a href="../badbear-med.html" class="volver">← Portal principal</a>
+        <a href="../badbear-med.html" class="volver">Portal principal</a>
       </nav>
     </header>
 
@@ -93,9 +93,9 @@
         <section class="module-main">
           <div class="breadcrumb">
             <a href="../badbear-med.html">BADBEAR.MED</a>
-            <span>›</span>
+            
             <a href="index.html">${curso.nombre}</a>
-            <span>›</span>
+            
             <strong>${modulo.nombre}</strong>
           </div>
 
@@ -116,8 +116,8 @@
               <strong>${curso.nombre}</strong> se incorporará aquí sin modificar el resto del sitio.
             </p>
             <div class="module-actions">
-              <a class="btn btn-primary" href="index.html">← Volver al curso</a>
-              <a class="btn btn-secondary" href="modulo.html?m=${modulo.siguiente}">Siguiente módulo →</a>
+              <a class="btn btn-primary" href="index.html">Volver al curso</a>
+              <a class="btn btn-secondary" href="modulo.html?m=${modulo.siguiente}">Siguiente módulo</a>
             </div>
           </div>
 

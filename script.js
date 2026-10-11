@@ -69,7 +69,7 @@
 
     const entrar = document.createElement("span");
     entrar.className = "entrar";
-    entrar.textContent = `${curso.estado === "integrado" ? "Ingresar al curso" : "Abrir estructura"} →`;
+    entrar.textContent = curso.estado === "integrado" ? "Ingresar al curso" : "Abrir estructura";
 
     a.append(top, categoria, titulo, descripcion, entrar);
     return a;

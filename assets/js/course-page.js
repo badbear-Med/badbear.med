@@ -28,7 +28,7 @@
     <header class="header">
       <a href="../badbear-med.html" class="logo">BADBEAR.<span>MED</span></a>
       <nav class="menu">
-        <a href="../badbear-med.html" class="volver">← Portal principal</a>
+        <a href="../badbear-med.html" class="volver">Portal principal</a>
       </nav>
     </header>
 
@@ -60,7 +60,7 @@
               <div class="modulo-icon">${icono}</div>
               <h3>${nombre}</h3>
               <p>${descripcion}</p>
-              <strong>Abrir módulo →</strong>
+              <strong>Abrir módulo</strong>
             </a>
           `).join("")}
         </div>
