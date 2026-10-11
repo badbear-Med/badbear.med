@@ -18,11 +18,22 @@ const course=field(data,"course",120),faculty=field(data,"faculty",120),universi
 if(!course||!/^[0-9]{4}$/.test(yearText)||year<2022||year>2026||!["Parcial","Final","Práctica","Otros"].includes(type)||data.get("permission")===null)return bad("Datos incompletos o inválidos",400,origin);
 const file=data.get("file");if(!(file instanceof File)||!file.size||file.size>MAX)return bad("Archivo inválido o mayor de 10 MB",400,origin);
 const bytes=new Uint8Array(await file.arrayBuffer()),kind=sniff(bytes);if(!kind)return bad("Solo PDF, PNG o JPG",415,origin);
+const digest=await crypto.subtle.digest("SHA-256",bytes);
+const fingerprint=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,"0")).join("");
+// Check already registered files before writing to the private bucket.
+const prior=await env.DB.prepare("SELECT examen_id FROM huellas_examenes WHERE sha256=?").bind(fingerprint).first();
+if(prior)return bad("Este archivo ya fue enviado anteriormente. Referencia: "+prior.examen_id,409,origin);
 const key="pendientes/"+crypto.randomUUID()+"."+kind[1];await env.APORTES.put(key,bytes,{httpMetadata:{contentType:kind[0]},customMetadata:{estado:"pendiente"}});
 try{
 let cid=null;if(contributor){const c=await env.DB.prepare("INSERT INTO colaboradores (seudonimo,mostrar_credito) VALUES (?,0)").bind(contributor).run();cid=c.meta.last_row_id}
 const c=await env.DB.prepare("INSERT INTO cursos (nombre,facultad,universidad,ciclo) VALUES (?,?,?,?)").bind(course,faculty||null,university||null,cycle||null).run();
 const e=await env.DB.prepare("INSERT INTO examenes (curso_id,colaborador_id,titulo,anio,tipo,archivo_privado,estado,observaciones,docente,periodo) VALUES (?,?,?,?,?,?,'pendiente',?,?,?)").bind(c.meta.last_row_id,cid,course,year,type,key,notes||null,teacher||null,cycle||null).run();
+try{
+ await env.DB.prepare("INSERT INTO huellas_examenes (sha256,examen_id) VALUES (?,?)").bind(fingerprint,e.meta.last_row_id).run();
+}catch(error){
+ if(String(error).includes("UNIQUE"))return bad("Este archivo ya está registrado en la biblioteca.",409,origin);
+ throw error;
+}
 return json({ok:true,mensaje:"Recibido, pendiente de revisión",referencia:String(e.meta.last_row_id)},201,origin)
 }catch(e){await env.APORTES.delete(key).catch(()=>{});return bad("Error al registrar examen",500,origin)}
 }
