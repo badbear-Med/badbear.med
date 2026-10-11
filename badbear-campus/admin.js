@@ -1,13 +1,21 @@
-import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-campus2";
-import { parseCSV } from "./csv.js";
+import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-correo1";
+import { parseCSV,parseContactsCSV } from "./csv.js?v=20261011-correo1";
 import { centralBridge } from "../administracion/bridge.js?v=20261011-central1";
-let token="",checked=null;
+let token="",checked=null,contactsChecked=null;
 let reportConnection=()=>{};
 const cols=[{key:"codigo",label:"Código"},{key:"nombre",label:"Alumno"},{key:"curso",label:"Curso"},{key:"periodo",label:"Periodo"},{key:"evaluacion",label:"Evaluación"},{key:"nota",label:"Resultado"},{key:"fecha",label:"Fecha"}];
 function clearPreview(){checked=null;$("preview-area").hidden=true;$("preview-table").replaceChildren();$("existing").replaceChildren();$("replace").checked=false}
 function clearInvitation(){$("invitation").hidden=true;$("invitation-code").textContent=""}
-function disconnect(){token="";clearPreview();clearInvitation();$("student").replaceChildren(new Option("Selecciona un alumno",""));$("file").value="";$("reset").checked=false;$("workspace").hidden=true;$("connection").hidden=false;reportConnection(false)}
-async function students(){const data=await call("/api/admin/alumnos",token);$("student").replaceChildren(new Option("Selecciona un alumno",""));for(const item of data.items)$("student").append(new Option(item.nombre+" · "+item.codigo+(item.activado?" · Activo":" · Por activar"),item.codigo))}
+function clearContacts(){contactsChecked=null;$("contacts-area").hidden=true;$("contacts-table").replaceChildren();$("contacts-replace").checked=false}
+function disconnect(){token="";clearPreview();clearContacts();clearInvitation();$("student").replaceChildren(new Option("Selecciona un alumno",""));$("file").value="";$("contacts-file").value="";$("email-status").textContent="";$("reset").checked=false;$("workspace").hidden=true;$("connection").hidden=false;reportConnection(false)}
+async function mailStatus(){
+  try {const data=await call("/api/admin/correos/estado",token);let text=data.configurado&&data.esquema?"Envío por correo configurado · "+data.remitente:"Envío por correo pendiente de configuración. Registra los correos y completa Configurar-Correo.ps1.";
+    text+=" · Solicitudes de envío: "+data.enviados_hoy+"/"+data.limite_diario+" hoy y "+data.enviados_mes+"/"+data.limite_mensual+" este mes.";
+    if(data.ultimo_envio){const last=data.ultimo_envio;text+=" Último envío: "+last.estado+(last.motivo?" ("+last.motivo+")":"")+". Aceptado significa recibido por el proveedor; revisa su panel para confirmar entrega."}
+    $("email-status").textContent=text;
+  }catch(error){if(error.status!==404)throw error;$("email-status").textContent="Actualiza el servicio de Campus para habilitar los correos."}
+}
+async function students(){const data=await call("/api/admin/alumnos",token);$("student").replaceChildren(new Option("Selecciona un alumno",""));for(const item of data.items)$("student").append(new Option(item.nombre+" · "+item.codigo+(item.activado?" · Activo":" · Por activar")+(item.correo?" · Con correo":" · Sin correo"),item.codigo));await mailStatus()}
 async function action(fn){await busy(async()=>{try{await fn()}catch(error){if(error.status===401)disconnect();throw error}})}
 function connect(key){return action(async()=>{token=key.trim();$("admin-token").value="";try{await students();$("connection").hidden=true;$("workspace").hidden=false;reportConnection(true);message("Administración conectada.","success")}catch(error){disconnect();throw error}})}
 $("connect").addEventListener("submit",event=>{event.preventDefault();connect($("admin-token").value)});
@@ -27,6 +35,21 @@ $("publish").addEventListener("click",()=>action(async()=>{
   message("Publicando resultados…");const result=await post("/api/admin/publicar",token,{items:checked.items,reemplazar:$("replace").checked});clearPreview();$("file").value="";message(result.publicados+" resultados publicados.","success");await students();
 }));
 $("student").addEventListener("change",clearInvitation);$("reload-students").addEventListener("click",()=>action(students));
+$("contacts-file").addEventListener("change",clearContacts);
+$("contacts-preview").addEventListener("click",()=>action(async()=>{
+  clearContacts();const file=$("contacts-file").files[0];if(!file||!file.name.toLowerCase().endsWith(".csv"))throw Error("Selecciona un CSV UTF-8 de códigos y correos.");if(file.size>512000)throw Error("El archivo supera 500 KB.");
+  let text;try{text=new TextDecoder("utf-8",{fatal:true}).decode(await file.arrayBuffer())}catch{throw Error("Guarda el archivo como CSV UTF-8.")}
+  contactsChecked=await post("/api/admin/correos/vista-previa",token,{items:parseContactsCSV(text)});
+  $("contacts-summary").textContent=contactsChecked.total+" alumnos · "+contactsChecked.cambios.length+" correos existentes se cambiarán. Comprueba cada alumno y su correo antes de guardar.";
+  $("contacts-table").append(table([{key:"codigo",label:"Código"},{key:"nombre",label:"Alumno"},{key:"correo_anterior",label:"Correo anterior"},{key:"correo",label:"Correo registrado"}],contactsChecked.items,"Vista previa de correos"));
+  $("contacts-replace-label").hidden=!contactsChecked.cambios.length;$("contacts-area").hidden=false;message("Correos revisados. Aún no se han guardado ni enviado mensajes.","success");
+}));
+$("contacts-save").addEventListener("click",()=>action(async()=>{
+  if(!contactsChecked)throw Error("Revisa los correos primero.");if(contactsChecked.cambios.length&&!$("contacts-replace").checked)throw Error("Autoriza el cambio de los correos existentes.");
+  if(!confirm("¿Guardar los correos revisados de "+contactsChecked.total+" alumnos? Estos correos permitirán activar o recuperar sus cuentas."))return;
+  const data=await post("/api/admin/correos",token,{items:contactsChecked.items,reemplazar:$("contacts-replace").checked});clearContacts();$("contacts-file").value="";await students();message(data.registrados+" correos guardados. Los alumnos podrán solicitar su enlace desde el portal cuando el envío esté configurado.","success");
+}));
+$("email-refresh").addEventListener("click",()=>action(mailStatus));
 $("invite").addEventListener("click",()=>action(async()=>{
   clearInvitation();const codigo=$("student").value;if(!codigo)throw Error("Selecciona un alumno.");
   if($("reset").checked&&!confirm("¿Generar un código de recuperación para este alumno? Sus sesiones actuales se cerrarán."))return;

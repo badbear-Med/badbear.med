@@ -1,5 +1,10 @@
-import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-campus2";
-let token="",items=[];
+import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-correo1";
+let token="",items=[],emailToken="";
+const fragment=new URLSearchParams(location.hash.slice(1));
+if(fragment.has("acceso")){
+  const candidate=fragment.get("acceso")||"";history.replaceState(null,"",location.pathname+location.search);
+  if(/^[a-f0-9]{64}$/.test(candidate)){emailToken=candidate;$("email-finish").hidden=false;$("entry").hidden=true}else message("El enlace es inválido. Solicita uno nuevo.","error");
+}
 function clear() { token="";items=[];$("grades").replaceChildren();$("student-name").textContent="";$("student-code").textContent="";$("results").hidden=true;$("entry").hidden=false; }
 function render() {
   const data=items.filter(x=>!$("course").value||x.curso===$("course").value);$("grades").replaceChildren();
@@ -20,6 +25,15 @@ $("activation").addEventListener("submit",event=>{event.preventDefault();busy(as
   const codigo=$("activation-code").value.trim();message("Activando tu cuenta…");await post("/api/activar","",{codigo,activacion:$("invite").value.trim(),password:$("new-password").value});
   $("activation").reset();$("activation-details").open=false;$("codigo").value=codigo;$("password").focus();message("Cuenta activada. Ya puedes iniciar sesión.","success");
 })});
+$("email-request").addEventListener("submit",event=>{event.preventDefault();busy(async()=>{
+  const data=await post("/api/correo/solicitar","",{codigo:$("email-code").value.trim()});message(data.mensaje,"success");
+})});
+function clearEmailLink(){emailToken="";$("email-confirm").reset();$("email-finish").hidden=true;$("entry").hidden=false}
+$("email-confirm").addEventListener("submit",event=>{event.preventDefault();busy(async()=>{
+  if(!emailToken)throw Error("Solicita un nuevo enlace por correo.");if($("email-password").value!==$("email-repeat").value)throw Error("Las contraseñas no coinciden.");
+  const data=await post("/api/correo/confirmar","",{token:emailToken,password:$("email-password").value});clearEmailLink();$("codigo").value=data.codigo;$("password").focus();message(data.mensaje,"success");
+})});
+$("email-cancel").addEventListener("click",()=>{clearEmailLink();message("Puedes solicitar otro enlace desde «Activa o recupera tu cuenta por correo».")});
 $("logout").addEventListener("click",()=>busy(async()=>{try{await post("/api/logout",token,{})}finally{clear();message("Sesión cerrada.")}}));
 $("refresh").addEventListener("click",()=>busy(load));$("course").addEventListener("change",render);
-window.addEventListener("pagehide",clear);availability();
+window.addEventListener("pagehide",()=>{clear();clearEmailLink()});availability();

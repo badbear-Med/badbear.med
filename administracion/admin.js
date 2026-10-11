@@ -1,4 +1,4 @@
-const areas={campus:{label:"Campus",title:"Campus · Alumnos y resultados",api:"https://badbear-campus-api.wajomea-group.workers.dev/api/admin/alumnos",page:"../badbear-campus/admin.html?panel=central&v=20261011-unificado1"},examenes:{label:"Exámenes",title:"Exámenes · Biblioteca y aportes",api:"https://badbear-exams-api.wajomea-group.workers.dev/api/admin/examenes",page:"../badbear-exams/admin.html?panel=central&v=20261011-unificado1"}};
+const areas={campus:{label:"Campus",title:"Campus · Alumnos y resultados",api:"https://badbear-campus-api.wajomea-group.workers.dev/api/admin/alumnos",page:"../badbear-campus/admin.html?panel=central&v=20261011-correo1"},examenes:{label:"Exámenes",title:"Exámenes · Biblioteca y aportes",api:"https://badbear-exams-api.wajomea-group.workers.dev/api/admin/examenes",page:"../badbear-exams/admin.html?panel=central&v=20261011-unificado1"}};
 const by=id=>document.getElementById(id),frames=new Map(),credentials=new Map();
 const hasArea=key=>Object.hasOwn(areas,key);
 let open=false,revision=0;

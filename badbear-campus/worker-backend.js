@@ -1,4 +1,5 @@
 /* BADBEAR.CAMPUS: private D1 binding DB; secrets ADMIN_API_TOKEN and PASSWORD_PEPPER. */
+import { createEmailAccess } from './email-access.js';
 const SITE = "https://wajomea.group";
 const encoder = new TextEncoder();
 const now = () => Math.floor(Date.now() / 1000);
@@ -172,6 +173,7 @@ async function importResults(body, env) {
   ]);
   return {ok:true,publicados:check.total,alumnos:check.alumnos};
 }
+const emailAccess=createEmailAccess({Problem,code,now,random,digest,password,passwordHash});
 export default {
   async fetch(req, env, ctx) {
     const origin = req.headers.get("Origin") || "", path = new URL(req.url).pathname;
@@ -187,15 +189,21 @@ export default {
         }
         let states = false; if (ready) { try { states = !!await env.DB.prepare("SELECT name FROM pragma_table_info('campus_resultados') WHERE name='estado'").first(); } catch {} }
         const exams = ready && await examsAvailable(env);
-        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states,acceso_unificado:exams,conexion_examenes:exams?"conectado":"pendiente"},ready?200:503,origin);
+        const emailReady=ready&&emailAccess.configuration(env)&&await emailAccess.schema(env);
+        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states,acceso_unificado:exams,conexion_examenes:exams?"conectado":"pendiente",acceso_correo:emailReady},ready?200:503,origin);
       }
       if (!env.DB || env.ADMIN_API_TOKEN?.length < 32 || !env.ADMIN_API_TOKEN || env.PASSWORD_PEPPER?.length < 32 || !env.PASSWORD_PEPPER) throw new Problem("El portal está pendiente de conexión. Inténtalo más tarde.", 503);
       if (req.method === "POST" && origin !== SITE) throw new Problem("Origen no permitido.", 403);
       if (req.method === "POST" && path === "/api/admin/login") return response(await adminLogin(req,env),200,origin);
+      if (req.method === "POST" && path === "/api/correo/solicitar") return response(await emailAccess.request(req,await readJSON(req),env,ctx),200,origin);
+      if (req.method === "POST" && path === "/api/correo/confirmar") return response(await emailAccess.complete(await readJSON(req),env),200,origin);
       if (path.startsWith("/api/admin/")) {
         await administrator(req,env);
+        if (req.method === "GET" && path === "/api/admin/correos/estado") return response(await emailAccess.status(env),200,origin);
+        if (req.method === "POST" && path === "/api/admin/correos/vista-previa") return response(await emailAccess.preview((await readJSON(req)).items,env),200,origin);
+        if (req.method === "POST" && path === "/api/admin/correos") return response(await emailAccess.save(await readJSON(req),env),200,origin);
         if (req.method === "GET" && path === "/api/admin/alumnos") {
-          const users = await env.DB.prepare("SELECT a.codigo,a.nombre,a.activo,CASE WHEN a.password_hash IS NULL THEN 0 ELSE 1 END AS activado,COUNT(r.codigo) AS resultados FROM campus_alumnos a LEFT JOIN campus_resultados r ON r.codigo=a.codigo GROUP BY a.codigo ORDER BY a.nombre").all();
+          const users = await env.DB.prepare("SELECT a.codigo,a.nombre,a.activo,a.correo,a.correo_verificado,CASE WHEN a.password_hash IS NULL THEN 0 ELSE 1 END AS activado,COUNT(r.codigo) AS resultados FROM campus_alumnos a LEFT JOIN campus_resultados r ON r.codigo=a.codigo GROUP BY a.codigo ORDER BY a.nombre").all();
           return response({items:users.results},200,origin);
         }
         if (req.method === "POST" && path === "/api/admin/vista-previa") return response(await preview((await readJSON(req)).items,env),200,origin);

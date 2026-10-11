@@ -21,3 +21,8 @@ Los estudiantes conservan su activacion y acceso propios y solo consultan sus re
 ```sh
 node --test administracion/tests/*.test.mjs badbear-campus/tests/*.test.mjs
 ```
+
+
+## Acceso de alumnos por correo
+
+Campus incluye carga privada de correos por CSV (`codigo,correo`) y activacion/recuperacion mediante enlaces de un solo uso. El alumno solicita su enlace desde el portal publico; el administrador registra y revisa los correos por lote. La configuracion inicial de Resend, el subdominio de envio y `Configurar-Correo.ps1` se explican en [BADBEAR.CAMPUS](../badbear-campus/README.md#configurar-el-envio-por-correo-una-vez). La cuenta y el dominio del proveedor deben estar configurados antes de anunciar el envio como disponible; la comprobacion de health no prueba entrega.

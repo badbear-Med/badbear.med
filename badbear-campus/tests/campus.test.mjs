@@ -8,7 +8,7 @@ import { parseCSV } from '../csv.js';
 import { resultText } from '../results.js';
 
 class D1 {
-  constructor() { this.db=new DatabaseSync(':memory:');this.db.exec(readFileSync(new URL('../schema.sql',import.meta.url),'utf8'));this.db.exec(readFileSync(new URL('../migrations/0001_estados_resultados.sql',import.meta.url),'utf8')); }
+  constructor() { this.db=new DatabaseSync(':memory:');this.db.exec(readFileSync(new URL('../schema.sql',import.meta.url),'utf8'));this.db.exec(readFileSync(new URL('../migrations/0001_estados_resultados.sql',import.meta.url),'utf8'));this.db.exec(readFileSync(new URL('../migrations/0002_acceso_correo.sql',import.meta.url),'utf8')); }
   prepare(sql) { const stmt=this.db.prepare(sql); let values=[];return {
     bind(...args){values=args;return this},
     async first(){return stmt.get(...values)||null},
