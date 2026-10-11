@@ -16,7 +16,10 @@
 const materialBase="../cirugia-general/pdf/material-pdf-cirugia-general/";
 const materials={
  "1-1":"1. Teoría 1.1 - Estudio Pre, trans y Post operatorio inmediato, diferentes patologías quirúrgicas.pdf",
+ "1-2":"1. Teoría 1.1 - Estudio Pre, trans y Post operatorio inmediato, diferentes patologías quirúrgicas.pdf",
  "1-3":"2. Teoría 2.2. - Heridas y Cicatrización, Tipos (Expo).pdf",
+ "2-1":"7. Seminario 2 - Patología quirúrgica benigna y maligna del estómago y duodeno, Clasificación oncológica del cáncer de estómago.pdf",
+ "2-2":"15. Teoría 7 - Patología quirúrgica benigna y maligna del Yeyuno - Íleon.pdf",
  "2-3":"21. Teoría 10.2. - Cirugía del tubo digestivo en Cáncer (Expo).pdf",
  "3-1":"11. Teoría 5 - Patología quirúrgica benigna y maligna de la Vesícula y Vías Biliares.pdf",
  "3-2":"11. Teoría 5 - Patología quirúrgica benigna y maligna de la Vesícula y Vías Biliares.pdf",
@@ -32,8 +35,9 @@ document.querySelectorAll('[data-lesson]').forEach(button=>button.addEventListen
  document.getElementById('lesson-description').textContent=button.dataset.unitLabel+' · Clase seleccionada';
  const panel=document.getElementById('lesson-panel');panel.replaceChildren();
  const file=materials[button.dataset.lesson];
+ const complementary={'1-2':'Material general de preoperatorio; no es una clase exclusiva sobre asepsia.','2-1':'Material complementario de patología gastrointestinal; el PDF no es específico sobre abdomen agudo ni apendicitis.'};
  if(file){
-   const description=document.createElement('p');description.textContent='Material original de Cirugía General. Puedes consultarlo aquí sin volver a cargarlo en el campus.';
+   const description=document.createElement('p');description.textContent=complementary[button.dataset.lesson]||'Material original de Cirugía General, disponible sin duplicar archivos.';
    const frame=document.createElement('iframe');frame.className='viewer';frame.title='Documento de clase: '+button.dataset.title;frame.loading='lazy';frame.src=materialBase+encodeURIComponent(file)+'#toolbar=0&navpanes=0';
    const note=document.createElement('p');note.className='muted tiny';note.textContent='El visor PDF puede variar según el navegador. El documento pertenece al repositorio de materiales de Cirugía General.';
    panel.append(description,frame,note);
@@ -47,6 +51,7 @@ document.querySelectorAll('[data-lesson]').forEach(button=>button.addEventListen
  const inline=document.createElement('div');inline.className='inline-lesson';inline.style.cssText='margin:12px 0;padding:15px;border:1px solid #b9d8dd;border-radius:12px;background:#fff';
  const h=document.createElement('h4');h.textContent=button.dataset.title;inline.append(h);
  if(file){
+   if(complementary[button.dataset.lesson]){const warning=document.createElement('p');warning.className='notice';warning.textContent=complementary[button.dataset.lesson];inline.append(warning)}
    const iframe=document.createElement('iframe');iframe.src=materialBase+encodeURIComponent(file)+'#toolbar=0&navpanes=0';iframe.title='Material PDF: '+button.dataset.title;iframe.className='viewer';inline.append(iframe);
    const fallback=document.createElement('a');fallback.href=materialBase+encodeURIComponent(file);fallback.target='_blank';fallback.rel='noopener noreferrer';fallback.className='btn secondary';fallback.textContent='Abrir PDF si el visor no carga';inline.append(fallback);
  }else{
