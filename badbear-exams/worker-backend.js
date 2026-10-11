@@ -8,19 +8,21 @@ const b64=u=>btoa(String.fromCharCode(...u)).replace(/\+/g,"-").replace(/\//g,"_
 async function signingKey(env){return crypto.subtle.importKey("raw",enc.encode(env.ADMIN_API_TOKEN),"HMAC",false,["sign","verify"])}
 async function admin(req,env){const header=req.headers.get("Authorization")||"";if(!env.ADMIN_API_TOKEN||!header.startsWith("Bearer "))return false;const token=header.slice(7);if(await equal(token,env.ADMIN_API_TOKEN))return true;const [expiry,nonce,sig,...extra]=token.split(".");if(extra.length||!/^\d{10,13}$/.test(expiry||"")||!nonce||!sig||Number(expiry)<Date.now()||Number(expiry)>Date.now()+28800000)return false;const expected=b64(new Uint8Array(await crypto.subtle.sign("HMAC",await signingKey(env),enc.encode(expiry+"."+nonce))));return await equal(sig,expected)}
 async function login(req,env,origin){
+ let phase="configuracion";try{
  if(!env.ADMIN_LOGIN_EMAIL||!env.ADMIN_LOGIN_PASSWORD||!env.ADMIN_API_TOKEN)return bad("Configure ADMIN_LOGIN_EMAIL y ADMIN_LOGIN_PASSWORD en Cloudflare",503,origin);
- const data=await req.json().catch(()=>null),email=String(data?.email||"").trim().toLowerCase(),password=String(data?.password||"");
+ phase="lectura";const data=await req.json().catch(()=>null),email=String(data?.email||"").trim().toLowerCase(),password=String(data?.password||"");
  if(email.length>254||password.length>256||!email||!password)return bad("Introduce correo y contraseña",400,origin);
- const ip=req.headers.get("CF-Connecting-IP")||"unknown";const digest=await crypto.subtle.digest("SHA-256",enc.encode("admin-login:"+ip));const identifier="admin:"+b64(new Uint8Array(digest));const window=Math.floor(Date.now()/600000);
+ phase="limite";const ip=req.headers.get("CF-Connecting-IP")||"unknown";const digest=await crypto.subtle.digest("SHA-256",enc.encode("admin-login:"+ip));const identifier="admin:"+b64(new Uint8Array(digest));const window=Math.floor(Date.now()/600000);
  let row;try{row=await env.DB.prepare("SELECT intentos FROM limites_aportes WHERE identificador=? AND ventana=?").bind(identifier,window).first()}catch(error){console.error("admin login rate lookup failed",error);return bad("Error al comprobar los intentos de acceso en D1",503,origin)}
  if((row?.intentos||0)>=5)return bad("Demasiados intentos; espera 10 minutos",429,origin);
- const validEmail=await equal(email,String(env.ADMIN_LOGIN_EMAIL).trim().toLowerCase());
+ phase="credenciales";const validEmail=await equal(email,String(env.ADMIN_LOGIN_EMAIL).trim().toLowerCase());
  const validPassword=await equal(password,env.ADMIN_LOGIN_PASSWORD);
  if(!validEmail||!validPassword){try{await env.DB.prepare("INSERT INTO limites_aportes (identificador,ventana,intentos) VALUES (?,?,1) ON CONFLICT(identificador) DO UPDATE SET ventana=excluded.ventana,intentos=CASE WHEN limites_aportes.ventana=excluded.ventana THEN limites_aportes.intentos+1 ELSE 1 END").bind(identifier,window).run()}catch(error){console.error("admin login rate write failed",error);return bad("Error al registrar intentos de acceso en D1",503,origin)}return bad("Correo o contraseña incorrectos",401,origin)}
  try{await env.DB.prepare("DELETE FROM limites_aportes WHERE identificador=? AND ventana=?").bind(identifier,window).run()}catch(error){console.error("admin login rate reset failed",error);return bad("Error al reiniciar los intentos en D1",503,origin)}
- const expiry=String(Date.now()+8*60*60*1000),nonce=crypto.randomUUID(),payload=expiry+"."+nonce;
+ phase="firma";const expiry=String(Date.now()+8*60*60*1000),nonce=crypto.randomUUID(),payload=expiry+"."+nonce;
  const signature=b64(new Uint8Array(await crypto.subtle.sign("HMAC",await signingKey(env),enc.encode(payload))));
  return json({ok:true,token:payload+"."+signature,expires_in:28800},200,origin)
+ }catch(error){console.error("BADBEAR.EXAMS login failure at "+phase,String(error));return bad("Fallo del inicio de sesión en fase: "+phase,500,origin)}
 }
 function sniff(b){if(b.length>4&&b[0]===37&&b[1]===80&&b[2]===68&&b[3]===70&&b[4]===45)return["application/pdf","pdf"];if(b.length>7&&[137,80,78,71,13,10,26,10].every((v,i)=>b[i]===v))return["image/png","png"];if(b.length>2&&b[0]===255&&b[1]===216&&b[2]===255)return["image/jpeg","jpg"];return null}
 const field=(data,key,n)=>{const x=data.get(key);return typeof x==="string"?x.trim().slice(0,n):""};
