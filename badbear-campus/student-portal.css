@@ -148,3 +148,15 @@
 .student-portal .campus-course-link{display:inline-block;margin-top:7px;padding:10px 14px;background:#12656a;color:white!important;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700}
 .student-portal .campus-course-link:hover{background:#0b5157}
 .student-portal .campus-dashboard .campus-dashboard-note{font-size:12px;color:#687f8a;margin:13px 0 0}
+
+/* Directorio dentro de la sesión estudiantil; no sustituye autorización de archivos. */
+.student-portal .campus-services{margin:22px 0 27px;padding:22px;background:#fff;border:1px solid #dce5ec;border-radius:13px}
+.student-portal .campus-services-head h3{margin:5px 0 4px;font-size:20px;color:#183a4b}
+.student-portal .campus-services-head p{margin:0 0 17px;color:#667c8b;font-size:13px}
+.student-portal .campus-services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.student-portal .campus-services-grid a{display:flex;flex-direction:column;gap:5px;text-decoration:none;border:1px solid #dce8ec;background:#f8fbfc;padding:17px;border-radius:10px;color:#1b4b62}
+.student-portal .campus-services-grid a:hover{background:#edf6f6;border-color:#9dc5c7}
+.student-portal .campus-services-grid strong{font-size:14px}
+.student-portal .campus-services-grid span{font-size:12px;color:#627887}
+.student-portal .campus-services>.hint{margin-top:14px}
+@media(max-width:650px){.student-portal .campus-services-grid{grid-template-columns:1fr}}
