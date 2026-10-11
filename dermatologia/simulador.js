@@ -5427,7 +5427,7 @@ function simRenderExamen(){
   });
 
   sim$("sim-prev").disabled = simEstado.indice === 0;
-  sim$("sim-next").textContent = simEstado.indice === simEstado.total-1 ? "Ir al inicio ↺" : "Siguiente →";
+  sim$("sim-next").textContent = simEstado.indice === simEstado.total-1 ? "Ir al inicio" : "Siguiente";
 
   simRenderPaleta();
   simGuardarActivo();

@@ -41,7 +41,7 @@
       </div>
       <h3>${t.titulo}</h3>
       <p>${t.descripcion}</p>
-      <footer>${leidos.has(t.id) ? "✓ Revisado" : "Abrir tema →"}</footer>
+      <footer>${leidos.has(t.id) ? "✓ Revisado" : "Abrir tema"}</footer>
     `;
     return a;
   }

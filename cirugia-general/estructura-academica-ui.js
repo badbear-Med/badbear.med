@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? '<source src="' + esc(url) + '" type="' + type + '">'
       : '<source src="' + esc(url) + '">';
     return '<div class="bb-cg-audio-box">' +
-      '<div class="bb-cg-audio-label"><span>🎧</span><b>Audio de la clase</b><a class="bb-cg-audio-open" href="' + esc(url) + '" target="_blank" rel="noopener">Abrir audio ↗</a></div>' +
+      '<div class="bb-cg-audio-label"><span>🎧</span><b>Audio de la clase</b><a class="bb-cg-audio-open" href="' + esc(url) + '" target="_blank" rel="noopener">Abrir audio</a></div>' +
       '<audio controls preload="metadata">' + source + 'Tu navegador no pudo reproducir este audio.</audio>' +
       '</div>';
   };

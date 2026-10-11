@@ -88,7 +88,7 @@
         <h3>${recurso.materialExtraNombre || recurso.materialExtra.split("/").pop()}</h3>
         <p>Documento complementario de la unidad.</p>
         <div class="pdf-actions">
-          <a href="#visor-extra-neurologia">Ver material extra aquí ↓</a>
+          <a href="#visor-extra-neurologia">Ver material extra aquí</a>
           <a href="${recurso.materialExtra}" download>Descargar PDF</a>
         </div>
       </div>
@@ -105,7 +105,7 @@
         <h3>${recurso.presentacionNombre || "Presentación académica"}</h3>
         <p>Diapositivas correspondientes a la clase desarrollada y su audio.</p>
         <div class="pdf-actions">
-          <a href="#visor-pdf-neurologia">Ver presentación aquí ↓</a>
+          <a href="#visor-pdf-neurologia">Ver presentación aquí</a>
           <a href="${recurso.presentacion}" download>Descargar presentación</a>
         </div>
       </div>
@@ -118,7 +118,7 @@
 
   app.innerHTML = `
     <div class="tema-breadcrumb">
-      <a href="../index.html">BADBEAR.MED</a><span>›</span><a href="index.html">Neurología</a><span>›</span><strong>${tema.titulo}</strong>
+      <a href="../index.html">BADBEAR.MED</a><a href="index.html">Neurología</a><strong>${tema.titulo}</strong>
     </div>
     <section class="tema-hero">
       <div class="tema-icon">${tema.icono}</div>
@@ -151,8 +151,8 @@
             <div><span>Video de la clase · BADBEAR.MED</span><h3>${tema.titulo}</h3>
               <p>Clase vinculada al audio y a la presentación PDF de esta unidad.</p>
               <div class="pdf-actions">
-                <a href="https://youtu.be/${recurso.youtubeId}" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a>
-                <a href="https://www.youtube.com/playlist?list=PLFoUj15PJAJI" target="_blank" rel="noopener noreferrer">Playlist Neurología ↗</a>
+                <a href="https://youtu.be/${recurso.youtubeId}" target="_blank" rel="noopener noreferrer">Ver en YouTube</a>
+                <a href="https://www.youtube.com/playlist?list=PLFoUj15PJAJI" target="_blank" rel="noopener noreferrer">Playlist Neurología</a>
               </div>
             </div>
           </div>
@@ -160,7 +160,7 @@
             <iframe style="width:100%;height:auto;aspect-ratio:16/9;min-height:0" src="https://www.youtube.com/embed/${recurso.youtubeId}?origin=https%3A%2F%2Fwajomea.group" title="Video de clase: ${tema.titulo}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>` : `
           <div class="resource-placeholder"><b>Video pendiente</b><p>La clase todavía no tiene video publicado. Se incorporará cuando esté disponible.</p>
-            <p><a href="https://www.youtube.com/playlist?list=PLFoUj15PJAJI" target="_blank" rel="noopener noreferrer">Consultar playlist de Neurología ↗</a></p>
+            <p><a href="https://www.youtube.com/playlist?list=PLFoUj15PJAJI" target="_blank" rel="noopener noreferrer">Consultar playlist de Neurología</a></p>
           </div>`}
         </section>
 
@@ -180,9 +180,9 @@
 
       <aside class="tema-side">
         <h3>Navegación</h3>
-        <a href="tema-v2.html?t=${anterior.id}">← ${anterior.titulo}</a>
+        <a href="tema-v2.html?t=${anterior.id}">${anterior.titulo}</a>
         <a href="index.html#temas">Todos los temas</a>
-        <a href="tema-v2.html?t=${siguiente.id}">${siguiente.titulo} →</a>
+        <a href="tema-v2.html?t=${siguiente.id}">${siguiente.titulo}</a>
         <hr>
         <a href="banco.html">Banco de preguntas</a>
         <a href="modulo.html?m=pdf">Biblioteca PDF</a>
@@ -208,7 +208,7 @@
     const pdf = btn.dataset.pdf;
     const page = btn.dataset.page;
     if(!modal || !modalContent || !pdf) return;
-    modalContent.innerHTML = `<div class="pdf-page-modal"><div class="pdf-page-toolbar"><strong>Página ${page} · material docente</strong><a href="${pdf}#page=${page}" target="_blank" rel="noopener">Abrir PDF ↗</a></div><iframe src="${pdf}#page=${page}&view=FitH" title="Página ${page} del material docente"></iframe></div>`;
+    modalContent.innerHTML = `<div class="pdf-page-modal"><div class="pdf-page-toolbar"><strong>Página ${page} · material docente</strong><a href="${pdf}#page=${page}" target="_blank" rel="noopener">Abrir PDF</a></div><iframe src="${pdf}#page=${page}&view=FitH" title="Página ${page} del material docente"></iframe></div>`;
     modal.classList.add("open");
     modal.setAttribute("aria-hidden","false");
   }));

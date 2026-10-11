@@ -62,7 +62,7 @@ if (bbModuloActual === "examenes") {
     moduleLinks +
     `<a href="las-reales.html">🔐 LAS REALES</a>` +
     `<a href="index.html">🏠 Temas</a>` +
-    `<a href="../index.html">← Portal</a>`;
+    `<a href="../index.html">Portal</a>`;
 
   menuBtn.addEventListener("click", () => {
     const open = menuBtn.getAttribute("aria-expanded") === "true";
@@ -84,11 +84,11 @@ if (bbModuloActual === "examenes") {
     }
     return `<div class="bb-grid">${
       temas.map(t => `<a class="bb-card" href="tema.html?t=${encodeURIComponent(t.id)}">
-        <span class="tag">${esc(t.area||t.categoria||"Infectología")}</span>
-        <h3>${esc(t.titulo||t.nombre)}</h3>
-        <p>${esc(t.descripcion||"Abrir contenido del tema.")}</p>
-        <span class="go">${action} →</span>
-      </a>`).join("")
+<span class="tag">${esc(t.area||t.categoria||"Infectología")}</span>
+<h3>${esc(t.titulo||t.nombre)}</h3>
+<p>${esc(t.descripcion||"Abrir contenido del tema.")}</p>
+<span class="go">${action}</span>
+</a>`).join("")
     }</div>`;
   }
 

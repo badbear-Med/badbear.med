@@ -317,7 +317,7 @@
 
     const canAdvance = currentAnswered();
     els.next.disabled = !canAdvance || cursor === filtered.length - 1;
-    els.next.textContent = canAdvance ? "Siguiente →" : "Responde para continuar";
+    els.next.textContent = canAdvance ? "Siguiente" : "Responde para continuar";
     els.next.title = canAdvance
       ? "Ir a la siguiente pregunta"
       : "Debes responder antes de avanzar";

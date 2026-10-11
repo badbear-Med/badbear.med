@@ -240,14 +240,14 @@
       img.classList.add("cargada");
       img.alt = `${item.titulo} — ${actual.title.replace(/^File:/i,"")}`;
       source.href = actual.source;
-      source.textContent = "Fuente de la fotografía · Wikimedia Commons →";
+      source.textContent = "Fuente de la fotografía · Wikimedia Commons";
     }catch(e){
       estadoNuevo.delete(card);
       img.classList.remove("cargada");
       loading.style.display = "flex";
       loading.textContent = "No se encontró una fotografía adecuada. Pulsa ‘Otra imagen’ para reintentar.";
       source.href = `https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=${encodeURIComponent(item.busqueda || item.titulo)}`;
-      source.textContent = "Buscar manualmente en Wikimedia Commons →";
+      source.textContent = "Buscar manualmente en Wikimedia Commons";
     }finally{
       if(boton) boton.disabled = false;
     }

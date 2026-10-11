@@ -207,7 +207,7 @@ function pRenderPrioridades(prioridades){
     const art=document.createElement("article");
     art.className=`plan-prioridad ${x.tipo}`;
     const rendimiento=Number.isFinite(x.rendimiento)?`<b>${x.rendimiento}%</b>`:`<b>#${i+1}</b>`;
-    art.innerHTML=`<div class="plan-prioridad-num">${String(i+1).padStart(2,"0")}</div><div class="plan-prioridad-body"><strong>${x.titulo}</strong><span>${x.detalle}</span></div>${rendimiento}<a href="${x.accion}">${x.boton} →</a>`;
+    art.innerHTML=`<div class="plan-prioridad-num">${String(i+1).padStart(2,"0")}</div><div class="plan-prioridad-body"><strong>${x.titulo}</strong><span>${x.detalle}</span></div>${rendimiento}<a href="${x.accion}">${x.boton}</a>`;
     c.appendChild(art);
   });
 }
@@ -216,7 +216,7 @@ function pRenderTareas(){
   const c=p$("plan-tareas"); c.innerHTML="";
   planEstado.tareas.forEach((t,i)=>{
     const art=document.createElement("article"); art.className=`plan-tarea${t.hecha?" hecha":""}`;
-    art.innerHTML=`<label class="plan-check"><input type="checkbox" ${t.hecha?"checked":""} aria-label="Marcar tarea completada"><span>✓</span></label><div class="plan-tarea-tiempo">${t.min}<small>min</small></div><div class="plan-tarea-body"><span>BLOQUE ${i+1}</span><strong>${t.titulo}</strong><p>${t.detalle}</p></div><a href="${t.href}" class="plan-tarea-link">${t.cta} →</a>`;
+    art.innerHTML=`<label class="plan-check"><input type="checkbox" ${t.hecha?"checked":""} aria-label="Marcar tarea completada"><span>✓</span></label><div class="plan-tarea-tiempo">${t.min}<small>min</small></div><div class="plan-tarea-body"><span>BLOQUE ${i+1}</span><strong>${t.titulo}</strong><p>${t.detalle}</p></div><a href="${t.href}" class="plan-tarea-link">${t.cta}</a>`;
     const input=art.querySelector("input");
     input.addEventListener("change",()=>{
       t.hecha=input.checked; art.classList.toggle("hecha",t.hecha); pGuardarEstado(planEstado); pActualizarAvance();
@@ -263,7 +263,7 @@ function pRenderEvaluacion(){
   } else {
     titulo="Consolida antes de medir"; detalle=top?`Refuerza ${top.tema} y vuelve a evaluar después de una sesión activa.`:"Genera primero un perfil resolviendo preguntas y casos."; href=top&&top.fuente==="Banco"?"banco.html":"examenes.html"; boton="Ir a practicar";
   }
-  c.innerHTML=`<span>RECOMENDACIÓN ACTUAL</span><h4>${titulo}</h4><p>${detalle}</p><a href="${href}">${boton} →</a>`;
+  c.innerHTML=`<span>RECOMENDACIÓN ACTUAL</span><h4>${titulo}</h4><p>${detalle}</p><a href="${href}">${boton}</a>`;
 }
 
 function pRender(prioridades){

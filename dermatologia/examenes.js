@@ -5744,7 +5744,7 @@ function renderPregunta() {
   $("btn-anterior-exam").disabled = indiceExamen === 0;
   $("btn-siguiente-exam").textContent = indiceExamen === listaVisible.length - 1
     ? (modoRepaso ? "Volver al primer error ↺" : "Volver al inicio ↺")
-    : "Siguiente pregunta →";
+    : "Siguiente pregunta";
 
   guardarEstado();
   resumen();

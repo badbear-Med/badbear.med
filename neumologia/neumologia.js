@@ -25,7 +25,7 @@
   }
   function tarjeta(t){
     const a = document.createElement("a"); a.className = "neumo-topic"; a.href = `tema.html?t=${encodeURIComponent(t.id)}`;
-    a.innerHTML = `<div class="neumo-topic-top"><div class="neumo-topic-icon">${t.icono}</div><span class="neumo-topic-area">${t.area}</span></div><h3>${t.titulo}</h3><p>${t.descripcion}</p><footer>${leidos.has(t.id) ? "✓ Revisado" : "Abrir tema →"}</footer>`;
+    a.innerHTML = `<div class="neumo-topic-top"><div class="neumo-topic-icon">${t.icono}</div><span class="neumo-topic-area">${t.area}</span></div><h3>${t.titulo}</h3><p>${t.descripcion}</p><footer>${leidos.has(t.id) ? "✓ Revisado" : "Abrir tema"}</footer>`;
     return a;
   }
   function render(){

@@ -91,9 +91,9 @@ function hResumen(datos){
   const t = h$("hist-tendencia");
   t.className = "";
   if(tendencia===null){ t.textContent="—"; }
-  else if(Math.abs(tendencia)<0.05){ t.textContent="→ estable"; t.classList.add("estable"); }
-  else if(tendencia>0){ t.textContent=`↑ +${hNota(tendencia)}`; t.classList.add("sube"); }
-  else { t.textContent=`↓ ${hNota(tendencia)}`; t.classList.add("baja"); }
+  else if(Math.abs(tendencia)<0.05){ t.textContent="Estable"; t.classList.add("estable"); }
+  else if(tendencia>0){ t.textContent=`Mejora de +${hNota(tendencia)}`; t.classList.add("sube"); }
+  else { t.textContent=`Cambio de ${hNota(tendencia)}`; t.classList.add("baja"); }
 }
 
 function hSvgSerie(contenedorId, series, maxY, ticks, sufijo){
@@ -217,7 +217,7 @@ function hTendenciasTemas(){
     });
     return sec;
   };
-  cont.append(grupo("↑ Mejorando",mejora,"mejora"),grupo("Prioridad de repaso",reforzar,"alerta"));
+  cont.append(grupo("Mejorando",mejora,"mejora"),grupo("Prioridad de repaso",reforzar,"alerta"));
 }
 
 function hTimeline(datos){

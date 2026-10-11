@@ -28,7 +28,7 @@
     const a = document.createElement("a");
     a.className = "cxg-topic";
     a.href = `tema.html?t=${encodeURIComponent(t.id)}`;
-    a.innerHTML = `<div class="cxg-topic-top"><div class="cxg-topic-icon">${t.icono}</div><span class="cxg-topic-area">${t.area}</span></div><h3>${t.titulo}</h3><p>${t.descripcion}</p><footer>${leidos.has(t.id) ? "✓ Revisado" : "Abrir tema →"}</footer>`;
+    a.innerHTML = `<div class="cxg-topic-top"><div class="cxg-topic-icon">${t.icono}</div><span class="cxg-topic-area">${t.area}</span></div><h3>${t.titulo}</h3><p>${t.descripcion}</p><footer>${leidos.has(t.id) ? "✓ Revisado" : "Abrir tema"}</footer>`;
     return a;
   }
   function render(){

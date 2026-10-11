@@ -40,7 +40,7 @@
       </div>
       <h3>${t.titulo}</h3>
       <p>${t.descripcion}</p>
-      <footer>${leidos.has(t.id) ? "✓ Revisado" : "Abrir clase →"}</footer>`;
+      <footer>${leidos.has(t.id) ? "✓ Revisado" : "Abrir clase"}</footer>`;
     return a;
   }
 

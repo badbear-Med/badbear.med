@@ -5470,8 +5470,8 @@ const ORDEN_MODULOS = [
       </div>
 
       <div class="nav-preguntas">
-        <button id="btn-anterior" class="secundario" type="button">← Anterior</button>
-        <button id="btn-siguiente" type="button">Siguiente pregunta →</button>
+        <button id="btn-anterior" class="secundario" type="button">Anterior</button>
+        <button id="btn-siguiente" type="button">Siguiente pregunta</button>
       </div>
     `;
 

@@ -14,7 +14,7 @@
 
   app.innerHTML = `
     <div class="tema-breadcrumb">
-      <a href="../index.html">BADBEAR.MED</a><span>›</span><a href="index.html">Infectología</a><span>›</span><strong>${tema.titulo}</strong>
+      <a href="../index.html">BADBEAR.MED</a><a href="index.html">Infectología</a><strong>${tema.titulo}</strong>
     </div>
     <section class="tema-hero">
       <div class="tema-icon">${tema.icono}</div>
@@ -46,9 +46,9 @@
       </div>
       <aside class="tema-side">
         <h3>Navegación</h3>
-        <a href="tema.html?t=${anterior.id}">← ${anterior.titulo}</a>
+        <a href="tema.html?t=${anterior.id}">${anterior.titulo}</a>
         <a href="index.html#temas">Todos los temas</a>
-        <a href="tema.html?t=${siguiente.id}">${siguiente.titulo} →</a>
+        <a href="tema.html?t=${siguiente.id}">${siguiente.titulo}</a>
         <a href="banco-preguntas.html">Banco de preguntas</a>
         <a href="modulo.html?m=pdf">PDF</a>
         <a href="modulo.html?m=audios">Audios</a>

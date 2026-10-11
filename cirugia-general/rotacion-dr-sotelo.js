@@ -140,7 +140,7 @@
           link.appendChild(description);
         }
         const label = document.createElement("span");
-        label.textContent = action + " →";
+        label.textContent = action;
         link.appendChild(label);
         resources.push(link);
       }

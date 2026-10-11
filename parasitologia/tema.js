@@ -10,7 +10,7 @@
   const i = temas.findIndex(t => t.id === tema.id), ant = temas[(i - 1 + temas.length) % temas.length], sig = temas[(i + 1) % temas.length];
 
   app.innerHTML = `
-    <div class="tema-breadcrumb"><a href="../index.html">BADBEAR.MED</a><span>›</span><a href="index.html">Parasitología</a><span>›</span><strong>${tema.area}</strong></div>
+    <div class="tema-breadcrumb"><a href="../index.html">BADBEAR.MED</a><a href="index.html">Parasitología</a><strong>${tema.area}</strong></div>
     <section class="tema-hero"><div class="tema-icon">${tema.icono}</div><div><span>${tema.area.toUpperCase()}</span><h1>${tema.titulo}</h1><p>${tema.descripcion}</p></div></section>
     <div class="tema-layout">
       <div>
@@ -19,7 +19,7 @@
         <section class="tema-note"><h3>BADBEAR.MED FIJA:</h3><p>Este bloque reunirá la forma infectante, muestra diagnóstica, hallazgo microscópico, técnica clave, tratamiento de elección y complicaciones que más se confunden en examen.</p></section>
         <p class="tema-source">Temario organizado a partir de los temas de Parasitología trabajados dentro del proyecto BADBEAR.MED; no se presenta como índice oficial de un único libro.</p>
       </div>
-      <aside class="tema-side"><h3>Navegación</h3><a href="tema.html?t=${ant.id}">← ${ant.titulo}</a><a href="index.html#temas">Todos los temas</a><a href="tema.html?t=${sig.id}">${sig.titulo} →</a><a href="modulo.html?m=preguntas">Banco de preguntas</a><a href="modulo.html?m=examenes">Exámenes pasados</a><a href="modulo.html?m=pdf">PDF</a><a href="modulo.html?m=videos">Videos</a><a href="modulo.html?m=audios">Audios</a><button id="tema-complete" class="tema-complete ${leidos.has(tema.id) ? "hecho" : ""}">${leidos.has(tema.id) ? "✓ Tema revisado" : "Marcar como revisado"}</button></aside>
+      <aside class="tema-side"><h3>Navegación</h3><a href="tema.html?t=${ant.id}">${ant.titulo}</a><a href="index.html#temas">Todos los temas</a><a href="tema.html?t=${sig.id}">${sig.titulo}</a><a href="modulo.html?m=preguntas">Banco de preguntas</a><a href="modulo.html?m=examenes">Exámenes pasados</a><a href="modulo.html?m=pdf">PDF</a><a href="modulo.html?m=videos">Videos</a><a href="modulo.html?m=audios">Audios</a><button id="tema-complete" class="tema-complete ${leidos.has(tema.id) ? "hecho" : ""}">${leidos.has(tema.id) ? "✓ Tema revisado" : "Marcar como revisado"}</button></aside>
     </div>`;
 
   document.getElementById("tema-complete")?.addEventListener("click", e => {

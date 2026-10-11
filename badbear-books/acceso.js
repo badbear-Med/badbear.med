@@ -50,10 +50,10 @@
         <form id="books-access-form">
           <label for="books-access-password">Clave de acceso</label>
           <div class="books-access-field"><input id="books-access-password" name="password" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required><button id="books-access-toggle" type="button" aria-label="Mostrar clave" aria-pressed="false">Ver</button></div>
-          <button id="books-access-submit" type="submit">Entrar a BADBEAR.BOOKS <span aria-hidden="true">→</span></button>
+          <button id="books-access-submit" type="submit">Entrar a BADBEAR.BOOKS</button>
           <p id="books-access-error" role="alert" aria-live="polite"></p>
         </form>
-        <div class="books-access-footer"><p>Tu acceso se mantiene durante esta sesión del navegador.</p><a href="${home}">← Volver a WAJOMEA.GROUP</a></div>
+        <div class="books-access-footer"><p>Tu acceso se mantiene durante esta sesión del navegador.</p><a href="${home}">Volver a WAJOMEA.GROUP</a></div>
       </section>`;
     document.body.appendChild(panel);
     const form = panel.querySelector('#books-access-form');
@@ -90,7 +90,7 @@
         } else { error.textContent = 'Clave incorrecta. Revisa e inténtalo nuevamente.'; input.select(); }
       } catch (_) {
         error.textContent = 'No se pudo verificar la clave. Inténtalo desde la página en línea o Live Server.';
-      } finally { checking = false; submit.disabled = false; submit.textContent = 'Entrar a BADBEAR.BOOKS →'; }
+      } finally { checking = false; submit.disabled = false; submit.textContent = 'Entrar a BADBEAR.BOOKS'; }
     });
     input.focus({preventScroll:true});
   }

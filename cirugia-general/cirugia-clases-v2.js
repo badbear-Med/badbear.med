@@ -22,6 +22,6 @@ const playlistSection = document.getElementById("cg-playlist-section");
 if (playlistSection) {
   const url = r.playlist && r.playlist.url;
   playlistSection.hidden = !url;
-  document.getElementById("cg-playlist").innerHTML = url ? '<a class="cg-playlist-btn" href="' + e(url) + '" target="_blank" rel="noopener">Abrir playlist →</a>' : "";
+  document.getElementById("cg-playlist").innerHTML = url ? '<a class="cg-playlist-btn" href="' + e(url) + '" target="_blank" rel="noopener">Abrir playlist</a>' : "";
 }
 })();

@@ -91,7 +91,7 @@ function tarjetaHTML(item, index) {
         <div class="atlas-loading">Buscando fotografía clínica real…</div>
         <img class="atlas-imagen" alt="Ejemplo clínico de ${item.titulo}" loading="lazy">
         <span class="atlas-real-badge">FOTO REAL · COMMONS</span>
-        <button class="atlas-otra" type="button" title="Mostrar otra fotografía">↻ Otra imagen</button>
+        <button class="atlas-otra" type="button" title="Mostrar otra fotografía">Otra imagen</button>
       </div>
 
       <div class="atlas-card-body">
@@ -108,7 +108,7 @@ function tarjetaHTML(item, index) {
         </dl>
 
         <div class="atlas-fija"><strong>BADBEAR.MED FIJA:</strong><span>${item.fija}</span></div>
-        <a class="atlas-fuente" href="#" target="_blank" rel="noopener noreferrer">Fuente de la fotografía →</a>
+        <a class="atlas-fuente" href="#" target="_blank" rel="noopener noreferrer">Fuente de la fotografía</a>
       </div>
     </article>
   `;
@@ -214,12 +214,12 @@ async function cargarImagen(card, item, avanzar = false) {
     img.src = actual.url;
     img.alt = `${item.titulo} — ${actual.title.replace(/^File:/i, "")}`;
     source.href = actual.source;
-    source.textContent = "Fuente de la fotografía · Wikimedia Commons →";
+    source.textContent = "Fuente de la fotografía · Wikimedia Commons";
   } catch (e) {
     loading.style.display = "flex";
     loading.textContent = "No se encontró una fotografía adecuada en este momento.";
     source.href = `https://commons.wikimedia.org/wiki/Special:MediaSearch?type=image&search=${encodeURIComponent(item.busqueda)}`;
-    source.textContent = "Buscar manualmente en Wikimedia Commons →";
+    source.textContent = "Buscar manualmente en Wikimedia Commons";
   }
 }
 

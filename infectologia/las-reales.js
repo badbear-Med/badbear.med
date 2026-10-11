@@ -67,7 +67,7 @@
       <div class="real-options">${q.opciones.map(o=>{let cls="real-option";if(saved){if(o.id===q.respuesta)cls+=" correct";if(o.id===saved.seleccion&&saved.seleccion!==q.respuesta)cls+=" wrong";cls+=" locked"}return`<button class="${cls}" type="button" data-option="${esc(o.id)}"><span>${esc(o.id.toUpperCase())}</span><b>${esc(o.texto)}</b></button>`}).join("")}</div>
       ${saved?`<div class="real-feedback">${saved.correcta?'<strong class="feedback-ok">Correcta.</strong>':'<strong class="feedback-bad">Incorrecta.</strong>'}<span>Respuesta: <b>${esc(q.respuesta.toUpperCase())}</b></span></div>
       <section class="badbear-fija"><div class="badbear-fija-title">BADBEAR.MED FIJA:</div><p>${esc(q.fija)}</p></section>`:""}
-      <div class="real-nav"><button id="real-prev" type="button" ${current===0?"disabled":""}>\u2190 Anterior</button><button id="real-next" type="button" ${current===list.length-1?"disabled":""}>Siguiente \u2192</button></div>
+      <div class="real-nav"><button id="real-prev" type="button" ${current===0?"disabled":""}>Anterior</button><button id="real-next" type="button" ${current===list.length-1?"disabled":""}>Siguiente</button></div>
     </article>`;
     host.querySelectorAll(".real-option").forEach(btn=>btn.addEventListener("click",()=>{const latest=getProgress();if(latest[q.id])return;const s=btn.dataset.option;latest[q.id]={seleccion:s,correcta:s===q.respuesta};saveProgress(latest);refreshStats();renderQuestion()}));
     document.querySelector("#real-prev").addEventListener("click",()=>{if(current>0){current--;renderQuestion()}});
