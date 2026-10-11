@@ -55,10 +55,37 @@ await env.DB.prepare("INSERT INTO revisiones (examen_id,accion,administrador,mot
 return json({ok:true,estado:status},200,origin)
 }
 async function publicList(env,origin){const rows=await env.DB.prepare("SELECT e.id,e.titulo,e.anio,e.tipo,e.docente AS teacher,e.periodo AS cycle,c.nombre AS course,c.facultad,c.universidad AS university FROM examenes e JOIN cursos c ON c.id=e.curso_id WHERE e.estado='aprobado' AND e.archivo_publicado IS NOT NULL ORDER BY e.id DESC LIMIT 200").all();return json({items:rows.results||[]},200,origin)}
+
+const questionId=req=>Number(new URL(req.url).searchParams.get("examen_id"));
+async function questions(req,env,origin,isAdmin){
+ const id=questionId(req);
+ if(!Number.isSafeInteger(id)||id<1)return bad("Examen inválido",400,origin);
+ const exam=await env.DB.prepare("SELECT estado FROM examenes WHERE id=?").bind(id).first();
+ if(!exam)return bad("Examen no encontrado",404,origin);
+ if(!isAdmin&&exam.estado!=="aprobado")return bad("Examen aún no publicado",404,origin);
+ const sql=isAdmin
+ ?"SELECT * FROM preguntas_examen WHERE examen_id=? ORDER BY numero"
+ :"SELECT id,examen_id,numero,enunciado,alternativa_a,alternativa_b,alternativa_c,alternativa_d,alternativa_e,correcta,explicacion,bibliografia FROM preguntas_examen WHERE examen_id=? AND estado='publicada' ORDER BY numero";
+ const rows=await env.DB.prepare(sql).bind(id).all();
+ return json({items:rows.results||[]},200,origin)
+}
+async function saveQuestion(req,env,origin){
+ const x=await req.json().catch(()=>null);if(!x)return bad("JSON inválido",400,origin);
+ const id=Number(x.examen_id),number=Number(x.numero),answer=String(x.correcta||"").trim().toUpperCase(),state=String(x.estado||"borrador");
+ const fields=["enunciado","alternativa_a","alternativa_b","alternativa_c","alternativa_d","alternativa_e","explicacion","bibliografia"];
+ const values=fields.map(k=>String(x[k]||"").trim());
+ if(!Number.isSafeInteger(id)||id<1||!Number.isSafeInteger(number)||number<1||number>300||!["borrador","publicada"].includes(state)||!["A","B","C","D","E"].includes(answer)||values.some((v,i)=>v.length>(i===0?4000:i===6?6000:1500))||values.slice(0,4).some(v=>!v)||!values[6]||(answer==="E"&&!values[5]))return bad("Pregunta incompleta o inválida",400,origin);
+ const exam=await env.DB.prepare("SELECT estado FROM examenes WHERE id=?").bind(id).first();if(!exam)return bad("Examen no encontrado",404,origin);
+ if(state==="publicada"&&exam.estado!=="aprobado")return bad("Primero aprueba el examen original",409,origin);
+ await env.DB.prepare("INSERT INTO preguntas_examen (examen_id,numero,enunciado,alternativa_a,alternativa_b,alternativa_c,alternativa_d,alternativa_e,correcta,explicacion,bibliografia,estado) VALUES (?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(examen_id,numero) DO UPDATE SET enunciado=excluded.enunciado,alternativa_a=excluded.alternativa_a,alternativa_b=excluded.alternativa_b,alternativa_c=excluded.alternativa_c,alternativa_d=excluded.alternativa_d,alternativa_e=excluded.alternativa_e,correcta=excluded.correcta,explicacion=excluded.explicacion,bibliografia=excluded.bibliografia,estado=excluded.estado,actualizado_en=CURRENT_TIMESTAMP").bind(id,number,...values.slice(0,6),answer,values[6],values[7],state).run();
+ return json({ok:true,estado:state},200,origin)
+}
+
 export default{async fetch(req,env){const path=new URL(req.url).pathname,origin=req.headers.get("Origin")||"";
 try{
  if(path==="/health")return json({servicio:"BADBEAR.EXAMS",estado:[env.DB,env.APORTES,env.PUBLICADOS,env.TURNSTILE_SECRET_KEY].every(Boolean)?"operativo":"configuracion_incompleta",conexiones:{base_de_datos:!!env.DB,aportes_privados:!!env.APORTES,examenes_publicados:!!env.PUBLICADOS,turnstile:!!env.TURNSTILE_SECRET_KEY}},200,origin);
  if(req.method==="GET"&&path==="/api/examenes")return await publicList(env,origin);
+ if(req.method==="GET"&&path==="/api/preguntas")return await questions(req,env,origin,false);
  if(req.method==="GET"&&path==="/api/examenes/archivo"){
   const id=Number(new URL(req.url).searchParams.get("id"));
   if(!Number.isSafeInteger(id)||id<1)return bad("Identificador inválido",400,origin);
@@ -76,6 +103,8 @@ try{
  if(path.startsWith("/api/admin/")){
   if(!(await admin(req,env)))return bad("No autorizado",401,origin);
   if(path==="/api/admin/examenes"&&req.method==="GET")return await list(req,env,origin);
+  if(path==="/api/admin/preguntas"&&req.method==="GET")return await questions(req,env,origin,true);
+  if(path==="/api/admin/preguntas"&&req.method==="POST")return await saveQuestion(req,env,origin);
   if(path==="/api/admin/archivo"&&req.method==="GET"){
    const id=Number(new URL(req.url).searchParams.get("id"));
    if(!Number.isSafeInteger(id)||id<1)return bad("Identificador inválido",400,origin);
