@@ -60,3 +60,6 @@ test('leaving the page closes the reader and releases its document',async()=>{
 test('fullscreen uses the document root and closing the reader leaves fullscreen',async()=>{
   const p=page();await p.ready();await p.open();await p.elements.get('reader-fullscreen').fire('click');assert.equal(p.document.fullscreenElement,p.document.documentElement);assert.equal(p.elements.get('reader-fullscreen').textContent,'Salir de pantalla completa');await p.close();assert.equal(p.document.fullscreenElement,null);
 });
+test('the deployed API fields supply titles and evaluation filters without repeating course names',async()=>{
+  const p=page(undefined,[{id:1,titulo:'Fisiología',course:'Fisiología',tipo:'Parcial',anio:2026,facultad:'Medicina'}]);await p.ready();const card=p.elements.get('exam-list').children[0];assert.equal(card.children[1].children[0].textContent,'Fisiología');assert.equal(card.children[1].children[1].hidden,true);assert.match(card.children[1].children[2].textContent,/Parcial/);p.elements.get('type').value='Final';await p.elements.get('type').fire('input');assert.equal(p.elements.get('exam-list').children.length,0);
+});

@@ -62,7 +62,7 @@
       const copy=document.createElement("div");copy.className="exam-copy";
       const title=document.createElement("h3");title.textContent=exam.title||exam.course||"Examen";
       const course=document.createElement("p");course.className="exam-course";
-      course.textContent=norm(exam.title)===norm(exam.course)?"":exam.course||"";
+      course.textContent=norm(exam.title||exam.course)===norm(exam.course)?"":exam.course||"";
       course.hidden=!course.textContent;
       const meta=document.createElement("p");meta.className="exam-meta";meta.textContent=metadata(exam);
       copy.append(title,course,meta);card.append(mark,copy);
@@ -85,7 +85,7 @@
       const response=await fetch(API+"/api/examenes",{cache:"no-store",mode:"cors",credentials:"omit",signal:AbortSignal.timeout(20000)});
       if(!response.ok)throw Error("Catálogo no disponible");
       const data=await response.json();
-      exams=Array.isArray(data.items)?data.items.map(e=>({...e,year:e.anio??e.year,faculty:e.facultad??e.faculty??""})):[];
+      exams=Array.isArray(data.items)?data.items.map(e=>({...e,title:e.titulo??e.title??"",type:e.tipo??e.type??"",year:e.anio??e.year,faculty:e.facultad??e.faculty??""})):[];
       const select=$("year"),previous=select.value;
       const years=[...new Set([...exams.map(e=>String(e.year||"")).filter(Boolean),"2026","2025","2024","2023","2022"])].sort((a,b)=>Number(b)-Number(a));
       select.replaceChildren(new Option("Todos los años",""));for(const year of years)select.append(new Option(year,year));select.value=previous;
