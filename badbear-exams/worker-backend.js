@@ -71,6 +71,37 @@ async function editExam(req,env,origin){
  await env.DB.prepare("UPDATE examenes SET titulo=?,curso_id=?,anio=?,tipo=?,docente=?,periodo=? WHERE id=?").bind(title,entry.meta.last_row_id,year,type,teacher||null,cycle||null,id).run();
  return json({ok:true,mensaje:"Datos del examen actualizados",id},200,origin);
 }
+async function manageFile(req,env,origin){
+ const url=new URL(req.url),action=url.searchParams.get("action"),id=Number(url.searchParams.get("id"));
+ if(!Number.isSafeInteger(id)||id<1||!["replace","withdraw"].includes(action))return bad("Solicitud inválida",400,origin);
+ const current=await env.DB.prepare("SELECT id,estado,archivo_privado,archivo_publicado FROM examenes WHERE id=?").bind(id).first();
+ if(!current)return bad("Examen no encontrado",404,origin);
+ if(action==="withdraw"){
+  if(current.estado!=="aprobado")return bad("Solo se pueden retirar documentos publicados",409,origin);
+  const changed=await env.DB.prepare("UPDATE examenes SET estado='retirado',archivo_publicado=NULL,revisado_en=CURRENT_TIMESTAMP WHERE id=? AND estado='aprobado'").bind(id).run();
+  if(!changed.meta.changes)return bad("El documento cambió de estado; actualiza el panel",409,origin);
+  await env.DB.prepare("INSERT INTO revisiones (examen_id,accion,administrador,motivo) VALUES (?,?,?,?)").bind(id,"retirado","Administrador BADBEAR.EXAMS","Retirado de la biblioteca pública").run();
+  return json({ok:true,mensaje:"Examen retirado de la biblioteca pública"},200,origin)
+ }
+ const ct=req.headers.get("Content-Type")||"";if(!ct.includes("multipart/form-data"))return bad("Selecciona un PDF, JPG o PNG",400,origin);
+ const total=Number(req.headers.get("Content-Length")||0);if(total>LIMIT)return bad("Archivo demasiado grande",413,origin);
+ const form=await req.formData().catch(()=>null),file=form?.get("file");
+ if(!(file instanceof File)||!file.size||file.size>MAX)return bad("Archivo inválido (máximo 10 MB)",400,origin);
+ const bytes=new Uint8Array(await file.arrayBuffer()),kind=sniff(bytes);if(!kind)return bad("Solo PDF, PNG o JPG",415,origin);
+ const hash=Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes)),b=>b.toString(16).padStart(2,"0")).join("");
+ const exists=await env.DB.prepare("SELECT examen_id FROM huellas_examenes WHERE sha256=?").bind(hash).first();
+ if(exists&&Number(exists.examen_id)!==id)return bad("Este archivo ya pertenece a otro examen (#"+exists.examen_id+")",409,origin);
+ const key="correcciones/"+id+"/"+crypto.randomUUID()+"."+kind[1];
+ await env.APORTES.put(key,bytes,{httpMetadata:{contentType:kind[0]}});
+ try{
+  const changed=await env.DB.prepare("UPDATE examenes SET archivo_privado=?,archivo_publicado=NULL,estado='pendiente',revisado_en=NULL WHERE id=? AND archivo_privado=?").bind(key,id,current.archivo_privado).run();
+  if(!changed.meta.changes){await env.APORTES.delete(key);return bad("El examen cambió; actualiza el panel",409,origin)}
+  await env.DB.prepare("DELETE FROM huellas_examenes WHERE examen_id=?").bind(id).run();
+  await env.DB.prepare("INSERT INTO huellas_examenes (sha256,examen_id) VALUES (?,?)").bind(hash,id).run();
+  await env.DB.prepare("INSERT INTO revisiones (examen_id,accion,administrador,motivo) VALUES (?,?,?,?)").bind(id,"reemplazado","Administrador BADBEAR.EXAMS","Archivo sustituido; pendiente de nueva revisión").run();
+  return json({ok:true,mensaje:"Archivo reemplazado. Debes revisarlo y aprobarlo nuevamente."},200,origin)
+ }catch(error){console.error("manage file",String(error));return bad("No se pudo completar el reemplazo; comprueba el estado antes de reintentar",500,origin)}
+}
 async function review(req,env,origin){const data=await req.json().catch(()=>null),id=Number(data?.id),action=data?.action,reason=String(data?.reason||"").slice(0,500);
 if(!Number.isSafeInteger(id)||id<=0||!["aprobar","rechazar"].includes(action))return bad("Datos inválidos",400,origin);
 const e=await env.DB.prepare("SELECT id,archivo_privado,archivo_publicado,estado FROM examenes WHERE id=?").bind(id).first();
@@ -138,6 +169,7 @@ try{
   if(!(await admin(req,env)))return bad("No autorizado",401,origin);
   if(path==="/api/admin/examenes"&&req.method==="GET")return await list(req,env,origin);
   if(path==="/api/admin/examenes/editar"&&req.method==="POST")return await editExam(req,env,origin);
+  if(path==="/api/admin/archivos"&&req.method==="POST")return await manageFile(req,env,origin);
   if(path==="/api/admin/preguntas"&&req.method==="GET")return await questions(req,env,origin,true);
   if(path==="/api/admin/preguntas"&&req.method==="POST")return await saveQuestion(req,env,origin);
   if(path==="/api/admin/archivo"&&req.method==="GET"){
