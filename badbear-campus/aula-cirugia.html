@@ -47,7 +47,7 @@ window.addEventListener('message',event=>{
  if(f&&f.dataset.youtubeListening!=='1'&&f.src){f.dataset.youtubeListening='1';f.contentWindow.postMessage(JSON.stringify({event:'listening'}),'https://www.youtube-nocookie.com')}
 });
 const progressApi='https://badbear-campus-api.wajomea-group.workers.dev';
-let studentSession='',synced=false;
+let studentSession='',synced=false;try{studentSession=sessionStorage.getItem('bb-campus-session')||''}catch(_){}
 async function progressRequest(path,method='GET',data){const response=await fetch(progressApi+path,{method,headers:{Authorization:'Bearer '+studentSession,...(data?{'Content-Type':'application/json'}:{})},body:data?JSON.stringify(data):undefined,credentials:'omit',cache:'no-store'});const payload=await response.json().catch(()=>({}));if(!response.ok)throw Error(payload.error||'No se pudo sincronizar el progreso.');return payload;}
 const studyKey='badbear-campus-cirugia-study-v1';
 let marked={};try{marked=JSON.parse(localStorage.getItem(studyKey)||'{}')||{}}catch(_){marked={}}
@@ -67,11 +67,11 @@ const logoutProgress=document.createElement('button');logoutProgress.className='
 loginWrap.append(loginForm,logoutProgress,progressStatus);progressBox.append(loginWrap);
 loginForm.addEventListener('submit',async event=>{event.preventDefault();enter.disabled=true;progressStatus.textContent='Conectando con el campus…';try{
  const response=await fetch(progressApi+'/api/login',{method:'POST',credentials:'omit',headers:{'Content-Type':'application/json'},body:JSON.stringify({codigo:code.value.trim(),password:pass.value})});const payload=await response.json().catch(()=>({}));if(!response.ok||!payload.token)throw Error(payload.error||'No se pudo iniciar sesión.');
- studentSession=payload.token;pass.value='';const remote=await progressRequest('/api/progreso/cirugia');synced=true;
+ studentSession=payload.token;try{sessionStorage.setItem('bb-campus-session',studentSession)}catch(_){}pass.value='';const remote=await progressRequest('/api/progreso/cirugia');synced=true;
  const completed=new Set(remote.clases||[]);document.querySelectorAll('.study-check').forEach(input=>{input.checked=completed.has(input.dataset.id);marked[input.dataset.id]=input.checked});try{localStorage.setItem(studyKey,JSON.stringify(marked))}catch(_){}
  progressCaption.textContent='Progreso sincronizado con tu cuenta. No representa calificaciones oficiales.';progressStatus.textContent='Cuenta vinculada: '+(payload.alumno?.nombre||code.value.trim());loginForm.hidden=true;logoutProgress.hidden=false;refreshProgress();
  }catch(error){studentSession='';synced=false;progressStatus.textContent=error.message+' Tu avance local sigue disponible.'}finally{enter.disabled=false}});
-logoutProgress.addEventListener('click',()=>{studentSession='';synced=false;loginForm.hidden=false;logoutProgress.hidden=true;progressCaption.textContent='Avance local de este navegador; no es una calificación oficial.';progressStatus.textContent='Cuenta desvinculada.';document.querySelectorAll('.study-check').forEach(input=>{input.checked=marked[input.dataset.id]===true});refreshProgress()});
+logoutProgress.addEventListener('click',()=>{studentSession='';synced=false;try{sessionStorage.removeItem('bb-campus-session')}catch(_){}loginForm.hidden=false;logoutProgress.hidden=true;progressCaption.textContent='Avance local de este navegador; no es una calificación oficial.';progressStatus.textContent='Cuenta desvinculada.';document.querySelectorAll('.study-check').forEach(input=>{input.checked=marked[input.dataset.id]===true});refreshProgress()});
 
 document.getElementById('academic-tabs').before(progressBox);
 function refreshProgress(){const all=[...document.querySelectorAll('.study-check')];const completed=all.filter(input=>input.checked).length;progressCount.textContent=completed+' de '+all.length+' clases estudiadas';progressFill.style.width=(all.length?100*completed/all.length:0)+'%';document.querySelectorAll('.academic-tab').forEach((tab,i)=>{const groupInputs=all.filter(input=>input.dataset.group===String(i));const count=tab.querySelector('span');if(count)count.textContent=groupInputs.filter(input=>input.checked).length+' de '+groupInputs.length+' estudiadas'})}
