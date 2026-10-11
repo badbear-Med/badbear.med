@@ -62,6 +62,8 @@ try {
     $utf8Campus = New-Object System.Text.UTF8Encoding($false)
     [System.IO.File]::WriteAllText((Join-Path $PSScriptRoot 'wrangler.json'), ($config | ConvertTo-Json -Depth 8), $utf8Campus)
     Invoke-CampusWrangler -Arguments @('d1', 'execute', 'badbear-campus', '--remote', '--file', 'schema.sql', '--yes')
+    'y' | & $npxCampus --yes wrangler@4 d1 migrations apply badbear-campus --remote
+    if ($LASTEXITCODE -ne 0) { throw 'No se aplicaron las migraciones de Campus.' }
     Invoke-CampusWrangler -Arguments @('deploy')
     $adminSecret | & $npxCampus --yes wrangler@4 secret put ADMIN_API_TOKEN
     if ($LASTEXITCODE -ne 0) { throw 'No se guardo la credencial administrativa en Cloudflare.' }

@@ -1,7 +1,7 @@
-import { $,call,post,message,availability,table,busy } from "./core.js";
+import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-campus2";
 import { parseCSV } from "./csv.js";
 let token="",checked=null;
-const cols=[{key:"codigo",label:"Código"},{key:"nombre",label:"Alumno"},{key:"curso",label:"Curso"},{key:"periodo",label:"Periodo"},{key:"evaluacion",label:"Evaluación"},{key:"nota",label:"Nota / 20"},{key:"fecha",label:"Fecha"}];
+const cols=[{key:"codigo",label:"Código"},{key:"nombre",label:"Alumno"},{key:"curso",label:"Curso"},{key:"periodo",label:"Periodo"},{key:"evaluacion",label:"Evaluación"},{key:"nota",label:"Resultado"},{key:"fecha",label:"Fecha"}];
 function clearPreview(){checked=null;$("preview-area").hidden=true;$("preview-table").replaceChildren();$("existing").replaceChildren();$("replace").checked=false}
 function clearInvitation(){$("invitation").hidden=true;$("invitation-code").textContent=""}
 function disconnect(){token="";clearPreview();clearInvitation();$("student").replaceChildren(new Option("Selecciona un alumno",""));$("file").value="";$("reset").checked=false;$("workspace").hidden=true;$("connection").hidden=false}
@@ -15,7 +15,7 @@ $("preview").addEventListener("click",()=>action(async()=>{
   message("Revisando la lista…");let text;try{text=new TextDecoder("utf-8",{fatal:true}).decode(await file.arrayBuffer())}catch{throw Error("Guarda el archivo como CSV UTF-8 para conservar los nombres y acentos.")}
   checked=await post("/api/admin/vista-previa",token,{items:parseCSV(text)});$("summary").textContent=checked.total+" resultados · "+checked.alumnos+" alumnos. Revisa los datos antes de publicar.";
   $("preview-table").append(table(cols,checked.items,"Vista previa de la lista"));$("replace-label").hidden=!checked.existentes.length;
-  if(checked.existentes.length)$("existing").append(table([{key:"codigo",label:"Código"},{key:"curso",label:"Curso"},{key:"periodo",label:"Periodo"},{key:"evaluacion",label:"Evaluación"},{key:"anterior",label:"Nota anterior"},{key:"nueva",label:"Nota nueva"}],checked.existentes,"Resultados existentes que se actualizarán"));
+  if(checked.existentes.length)$("existing").append(table([{key:"codigo",label:"Código"},{key:"curso",label:"Curso"},{key:"periodo",label:"Periodo"},{key:"evaluacion",label:"Evaluación"},{key:"anterior",label:"Resultado anterior"},{key:"nueva",label:"Resultado nuevo"}],checked.existentes,"Resultados existentes que se actualizarán"));
   $("preview-area").hidden=false;message("Lista validada. Aún no se ha publicado.","success");
 }));
 $("publish").addEventListener("click",()=>action(async()=>{

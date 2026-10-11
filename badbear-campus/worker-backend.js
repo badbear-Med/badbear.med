@@ -81,9 +81,20 @@ function rows(input) {
     try {
       const item = {codigo:code(row.codigo), nombre:label(row.nombre,"nombre",160), curso:label(row.curso,"curso"), periodo:label(row.periodo,"periodo",40), evaluacion:label(row.evaluacion,"evaluación"), fecha:label(row.fecha,"fecha",10)};
       if (!/^\d{4}-\d{2}-\d{2}$/.test(item.fecha) || Number.isNaN(Date.parse(item.fecha)) || new Date(item.fecha).toISOString().slice(0,10) !== item.fecha) throw new Problem("Fecha inválida: usa AAAA-MM-DD.");
-      const raw = typeof row.nota === "string" ? row.nota.trim().replace(",", ".") : row.nota;
-      if ((typeof raw !== "string" && typeof raw !== "number") || raw === "" || !/^\d{1,2}(?:\.\d{1,2})?$/.test(String(raw))) throw new Problem("Nota inválida.");
-      item.nota = Number(raw); if (item.nota < 0 || item.nota > 20) throw new Problem("La nota debe estar entre 0 y 20.");
+      const raw = typeof row.nota === "string" ? row.nota.trim().replace(",", ".").toUpperCase() : row.nota;
+      const state = row.estado ?? "";
+      if (state !== "" && state !== "NSP" && state !== "LF") throw new Problem("Estado inválido: usa NSP o LF.");
+      if (raw === "NSP" || raw === "LF") {
+        if (state && state !== raw) throw new Problem("La nota y el estado no coinciden.");
+        item.nota = null; item.estado = raw;
+      } else if (state) {
+        if (raw !== null) throw new Problem("Un estado de asistencia no puede incluir una nota numérica.");
+        item.nota = null; item.estado = state;
+      } else {
+        if ((typeof raw !== "string" && typeof raw !== "number") || raw === "" || !/^\d{1,2}(?:\.\d{1,2})?$/.test(String(raw))) throw new Problem("Nota inválida: usa una nota de 0 a 20, NSP o LF.");
+        item.nota = Number(raw); item.estado = "";
+        if (item.nota < 0 || item.nota > 20) throw new Problem("La nota debe estar entre 0 y 20.");
+      }
       const key = JSON.stringify([item.codigo,item.curso,item.periodo,item.evaluacion]);
       if (keys.has(key)) throw new Problem("Resultado duplicado para el mismo alumno y evaluación."); keys.add(key);
       if (names.has(item.codigo) && names.get(item.codigo) !== item.nombre) throw new Problem("El mismo código tiene nombres diferentes."); names.set(item.codigo,item.nombre);
@@ -96,7 +107,7 @@ async function preview(input, env) {
   const conflicts = await env.DB.prepare("SELECT a.codigo,a.nombre,json_extract(j.value,'$.nombre') AS importado FROM json_each(?) j JOIN campus_alumnos a ON a.codigo=json_extract(j.value,'$.codigo') WHERE a.nombre<>json_extract(j.value,'$.nombre') GROUP BY a.codigo")
     .bind(data).all();
   if (conflicts.results.length) throw new Problem("Los nombres no coinciden con alumnos registrados: " + conflicts.results.map(x=>x.codigo).join(", ") + ". Corrige la lista antes de publicar.", 409);
-  const prior = await env.DB.prepare("SELECT r.codigo,r.curso,r.periodo,r.evaluacion,r.nota AS anterior,json_extract(j.value,'$.nota') AS nueva FROM json_each(?) j JOIN campus_resultados r ON r.codigo=json_extract(j.value,'$.codigo') AND r.curso=json_extract(j.value,'$.curso') AND r.periodo=json_extract(j.value,'$.periodo') AND r.evaluacion=json_extract(j.value,'$.evaluacion')")
+  const prior = await env.DB.prepare("SELECT r.codigo,r.curso,r.periodo,r.evaluacion,r.nota AS anterior,r.estado AS estado_anterior,json_extract(j.value,'$.nota') AS nueva,json_extract(j.value,'$.estado') AS estado_nuevo FROM json_each(?) j JOIN campus_resultados r ON r.codigo=json_extract(j.value,'$.codigo') AND r.curso=json_extract(j.value,'$.curso') AND r.periodo=json_extract(j.value,'$.periodo') AND r.evaluacion=json_extract(j.value,'$.evaluacion')")
     .bind(data).all();
   return {items, total:items.length, alumnos:new Set(items.map(x=>x.codigo)).size, existentes:prior.results};
 }
@@ -108,7 +119,7 @@ async function importResults(body, env) {
   const data = JSON.stringify(check.items);
   await env.DB.batch([
     env.DB.prepare("INSERT INTO campus_alumnos(codigo,nombre) SELECT DISTINCT json_extract(value,'$.codigo'),json_extract(value,'$.nombre') FROM json_each(?) WHERE 1 ON CONFLICT(codigo) DO UPDATE SET nombre=excluded.nombre").bind(data),
-    env.DB.prepare("INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,fecha) SELECT json_extract(value,'$.codigo'),json_extract(value,'$.curso'),json_extract(value,'$.periodo'),json_extract(value,'$.evaluacion'),json_extract(value,'$.nota'),json_extract(value,'$.fecha') FROM json_each(?) WHERE 1 ON CONFLICT(codigo,curso,periodo,evaluacion) " + (body.reemplazar === true ? "DO UPDATE SET nota=excluded.nota,fecha=excluded.fecha,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now')" : "DO UPDATE SET nota=CASE WHEN campus_resultados.nota=excluded.nota AND campus_resultados.fecha=excluded.fecha THEN campus_resultados.nota ELSE NULL END")).bind(data),
+    env.DB.prepare("INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,estado,fecha) SELECT json_extract(value,'$.codigo'),json_extract(value,'$.curso'),json_extract(value,'$.periodo'),json_extract(value,'$.evaluacion'),json_extract(value,'$.nota'),json_extract(value,'$.estado'),json_extract(value,'$.fecha') FROM json_each(?) WHERE 1 ON CONFLICT(codigo,curso,periodo,evaluacion) " + (body.reemplazar === true ? "DO UPDATE SET nota=excluded.nota,estado=excluded.estado,fecha=excluded.fecha,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now')" : "DO UPDATE SET estado=NULL")).bind(data),
     env.DB.prepare("INSERT INTO campus_auditoria(accion,detalle) VALUES ('publicar_lista',?)").bind(JSON.stringify({total:check.total,reemplazar:body.reemplazar===true,codigos:[...new Set(check.items.map(x=>x.codigo))]}))
   ]);
   return {ok:true,publicados:check.total,alumnos:check.alumnos};
@@ -126,7 +137,8 @@ export default {
         let ready = false; if (env.DB && env.ADMIN_API_TOKEN?.length>=32 && env.PASSWORD_PEPPER?.length>=32) {
           try { ready = !!await env.DB.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='campus_auditoria'").first(); } catch {}
         }
-        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión"},ready?200:503,origin);
+        let states = false; if (ready) { try { states = !!await env.DB.prepare("SELECT name FROM pragma_table_info('campus_resultados') WHERE name='estado'").first(); } catch {} }
+        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states},ready?200:503,origin);
       }
       if (!env.DB || env.ADMIN_API_TOKEN?.length < 32 || !env.ADMIN_API_TOKEN || env.PASSWORD_PEPPER?.length < 32 || !env.PASSWORD_PEPPER) throw new Problem("El portal está pendiente de conexión. Inténtalo más tarde.", 503);
       if (req.method === "POST" && origin !== SITE) throw new Problem("Origen no permitido.", 403);
@@ -179,7 +191,7 @@ export default {
       if (req.method === "GET" && path === "/api/mis-resultados") {
         const user = await session(req,env);
         // Student ID comes only from the authenticated session, never a query parameter.
-        const result = await env.DB.prepare("SELECT curso,periodo,evaluacion,nota,fecha,actualizado_en FROM campus_resultados WHERE codigo=? ORDER BY periodo DESC,fecha DESC,curso,evaluacion").bind(user.codigo).all();
+        const result = await env.DB.prepare("SELECT curso,periodo,evaluacion,nota,estado,fecha,actualizado_en FROM campus_resultados WHERE codigo=? ORDER BY periodo DESC,fecha DESC,curso,evaluacion").bind(user.codigo).all();
         return response({alumno:user,items:result.results},200,origin);
       }
       if (req.method === "POST" && path === "/api/logout") {

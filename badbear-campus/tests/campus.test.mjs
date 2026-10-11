@@ -4,9 +4,10 @@ import { DatabaseSync } from 'node:sqlite';
 import { readFileSync } from 'node:fs';
 import worker from '../worker-backend.js';
 import { parseCSV } from '../csv.js';
+import { resultText } from '../results.js';
 
 class D1 {
-  constructor() { this.db=new DatabaseSync(':memory:');this.db.exec(readFileSync(new URL('../schema.sql',import.meta.url),'utf8')); }
+  constructor() { this.db=new DatabaseSync(':memory:');this.db.exec(readFileSync(new URL('../schema.sql',import.meta.url),'utf8'));this.db.exec(readFileSync(new URL('../migrations/0001_estados_resultados.sql',import.meta.url),'utf8')); }
   prepare(sql) { const stmt=this.db.prepare(sql); let values=[];return {
     bind(...args){values=args;return this},
     async first(){return stmt.get(...values)||null},
@@ -106,4 +107,57 @@ test('CSV preserves leading zero codes, accents, quoted delimiters and zero grad
   assert.throws(()=>parseCSV(header+'001,"unfinished'),/sin cerrar/);
   assert.throws(()=>parseCSV(header+'001,Alumno Uno'),/columnas incorrecto/);
   assert.throws(()=>parseCSV('codigo,codigo,curso,periodo,evaluacion,nota,fecha\n001,A,F,P,E,1,2026-10-10'),/columnas/);
+});
+test('NSP and LF survive preview, publication and private student retrieval without zero conversion',async()=>{
+  const e=env();const items=[row('001','Alumno Uno','NSP'),row('002','Alumno Dos','LF'),row('003','Alumno Tres','0')];
+  const check=await admin(e,'vista-previa',{items});assert.equal(check.status,200);
+  assert.equal(check.data.items[0].nota,null);assert.equal(check.data.items[0].estado,'NSP');
+  assert.equal((await admin(e,'publicar',{items:check.data.items})).status,200);
+  const alice=await activate(e,'001');
+  const result=await request(e,'/api/mis-resultados?codigo=002',{token:alice.token});
+  assert.equal(result.data.items.length,1);assert.equal(result.data.items[0].estado,'NSP');assert.equal(result.data.items[0].nota,null);
+  const stored=e.DB.db.prepare('SELECT codigo,nota,estado FROM campus_resultados ORDER BY codigo').all();
+  assert.equal(stored[1].nota,null);assert.equal(stored[1].estado,'LF');assert.equal(stored[2].nota,0);assert.equal(stored[2].estado,'');
+  assert.equal(resultText(null,'NSP'),'NSP · No se presentó');assert.equal(resultText(null,'LF'),'LF · Límite de faltas');assert.equal(resultText(0,''),'0 / 20');
+  assert.equal((await request(e,'/api/health')).data.estados_asistencia,true);
+});
+test('unknown, missing or contradictory results fail without creating students',async()=>{
+  const e=env();for(const fields of [{nota:null},{nota:'NP'},{nota:0,estado:'NSP'},{nota:'LF',estado:'NSP'},{nota:null,estado:'INVALID'},{nota:'',estado:'LF'}]) {
+    assert.equal((await admin(e,'publicar',{items:[{...row('001','Alumno Uno'),...fields}]})).status,400);
+  }
+  assert.equal((await admin(e,'alumnos')).data.items.length,0);
+});
+test('state and grade replacements require consent and audit transitions including nulls',async()=>{
+  const e=env();await admin(e,'publicar',{items:[row('001','Alumno Uno','NSP')]});
+  for(const grade of ['LF','12','NSP']) {
+    const check=await admin(e,'vista-previa',{items:[row('001','Alumno Uno',grade)]});assert.equal(check.status,200);
+    assert.equal((await admin(e,'publicar',{items:check.data.items})).status,409);
+    assert.equal((await admin(e,'publicar',{items:check.data.items,reemplazar:true})).status,200);
+  }
+  const logs=e.DB.db.prepare("SELECT detalle FROM campus_auditoria WHERE accion='corregir_resultado' ORDER BY id").all().map(r=>JSON.parse(r.detalle));
+  assert.equal(logs.length,3);assert.equal(logs[0].estado_anterior,'NSP');assert.equal(logs[0].estado_nuevo,'LF');assert.equal(logs[0].nota_anterior,null);
+  assert.equal(logs[1].estado_nuevo,'');assert.equal(logs[1].nota_nueva,12);assert.equal(logs[2].nota_nueva,null);
+  const changed={...row('001','Alumno Uno','NSP'),fecha:'2026-10-11'};
+  assert.equal((await admin(e,'publicar',{items:[changed],reemplazar:true})).status,200);
+  assert.equal(e.DB.db.prepare("SELECT COUNT(*) n FROM campus_auditoria WHERE accion='corregir_resultado'").get().n,4);
+});
+test('a concurrent import cannot silently replace results without consent',async()=>{
+  const e=env(),batch=e.DB.batch.bind(e.DB);
+  e.DB.batch=async statements=>{
+    e.DB.db.exec("INSERT INTO campus_alumnos(codigo,nombre) VALUES ('001','Alumno Uno'); INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,estado,fecha) VALUES ('001','Fisiología','2026-II','Primer parcial',NULL,'LF','2026-10-10');");
+    return batch(statements);
+  };
+  assert.equal((await admin(e,'publicar',{items:[row('001','Alumno Uno','NSP'),row('002','Alumno Dos')]})).status,500);
+  assert.equal(e.DB.db.prepare('SELECT estado FROM campus_resultados').get().estado,'LF');
+  assert.equal(e.DB.db.prepare("SELECT COUNT(*) n FROM campus_alumnos WHERE codigo='002'").get().n,0);
+});
+test('migration preserves existing grades, accounts, sessions and audit, and enforces valid state combinations',()=>{
+  const db=new DatabaseSync(':memory:');db.exec(readFileSync(new URL('../schema.sql',import.meta.url),'utf8'));
+  db.exec("INSERT INTO campus_alumnos(codigo,nombre,password_hash,salt) VALUES ('001','Alumno Uno','hash','salt'); INSERT INTO campus_sesiones(token_hash,codigo,expira) VALUES ('token','001',9999999999); INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,fecha,actualizado_en) VALUES ('001','Fisiología','2026-II','Parcial',0,'2026-10-10','2026-10-10T01:00:00Z'); INSERT INTO campus_auditoria(accion,detalle) VALUES ('anterior','{}');");
+  db.exec('BEGIN');db.exec(readFileSync(new URL('../migrations/0001_estados_resultados.sql',import.meta.url),'utf8'));db.exec('COMMIT');
+  const r=db.prepare('SELECT * FROM campus_resultados').get();assert.equal(r.nota,0);assert.equal(r.estado,'');assert.equal(r.actualizado_en,'2026-10-10T01:00:00Z');
+  assert.equal(db.prepare('SELECT password_hash FROM campus_alumnos').get().password_hash,'hash');assert.equal(db.prepare('SELECT token_hash FROM campus_sesiones').get().token_hash,'token');assert.equal(db.prepare('SELECT COUNT(*) n FROM campus_auditoria').get().n,1);
+  assert.throws(()=>db.exec("UPDATE campus_resultados SET nota=NULL"));assert.throws(()=>db.exec("UPDATE campus_resultados SET estado='NSP'"));assert.throws(()=>db.exec("UPDATE campus_resultados SET nota=NULL,estado='OTHER'"));
+  db.exec("UPDATE campus_resultados SET nota=NULL,estado='LF'");assert.equal(JSON.parse(db.prepare("SELECT detalle FROM campus_auditoria WHERE accion='corregir_resultado'").get().detalle).estado_nuevo,'LF');
+  assert.throws(()=>db.exec("UPDATE campus_alumnos SET nombre='Otro'"));db.close();
 });

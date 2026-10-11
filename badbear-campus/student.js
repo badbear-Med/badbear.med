@@ -1,10 +1,10 @@
-import { $,call,post,message,availability,table,busy } from "./core.js";
+import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-campus2";
 let token="",items=[];
 function clear() { token="";items=[];$("grades").replaceChildren();$("student-name").textContent="";$("student-code").textContent="";$("results").hidden=true;$("entry").hidden=false; }
 function render() {
   const data=items.filter(x=>!$("course").value||x.curso===$("course").value);$("grades").replaceChildren();
   if(!data.length){const p=document.createElement("p");p.className="empty";p.textContent="Todavía no hay resultados publicados para esta selección.";$("grades").append(p);return}
-  $("grades").append(table([{key:"curso",label:"Curso"},{key:"periodo",label:"Periodo"},{key:"evaluacion",label:"Evaluación"},{key:"nota",label:"Nota / 20"},{key:"fecha",label:"Fecha"}],data,"Tus evaluaciones publicadas"));
+  $("grades").append(table([{key:"curso",label:"Curso"},{key:"periodo",label:"Periodo"},{key:"evaluacion",label:"Evaluación"},{key:"nota",label:"Resultado"},{key:"fecha",label:"Fecha"}],data,"Tus evaluaciones publicadas"));
 }
 async function load() {
   try {const data=await call("/api/mis-resultados",token);items=data.items;$("student-name").textContent=data.alumno.nombre;$("student-code").textContent="Código: "+data.alumno.codigo;
