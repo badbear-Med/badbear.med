@@ -189,7 +189,7 @@ form.addEventListener("submit",async event=>{
 });
 [search,university,faculty,teacher,year,type].forEach(el=>el.addEventListener("input",render));
 fetch("https://badbear-exams-api.wajomea-group.workers.dev/api/examenes",{cache:"no-store",mode:"cors"}).then(r=>{if(!r.ok)throw Error("API aún no disponible");return r.json()}).then(data=>{
-exams=Array.isArray(data.items)?data.items.map(e=>({...e,faculty:e.facultad||""})):[];
+exams=Array.isArray(data.items)?data.items.map(e=>({...e,year:e.anio??e.year,faculty:e.facultad||""})):[];
 const years=[...new Set(exams.map(e=>String(e.year||"")).filter(Boolean))].sort((a,b)=>Number(b)-Number(a));
 
 render();
