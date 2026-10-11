@@ -246,6 +246,18 @@ export default {
         ]).catch(()=>{}));
         return response({token,alumno:{codigo:user.codigo,nombre:user.nombre},expira:expires},200,origin);
       }
+      if (path === "/api/progreso/cirugia" && req.method === "GET") {
+        const user = await session(req,env);
+        const data = await env.DB.prepare("SELECT clase_id FROM campus_progreso_cirugia WHERE codigo=? AND estudiada=1 ORDER BY clase_id").bind(user.codigo).all();
+        return response({clases:data.results.map(row=>row.clase_id)},200,origin);
+      }
+      if (path === "/api/progreso/cirugia" && req.method === "POST") {
+        const user = await session(req,env), body = await readJSON(req);
+        if(!body || !/^(sabatina|seminario|taller|teoria)-(0[1-9]|1[01])$/.test(body.clase_id||"") || typeof body.estudiada!=="boolean") throw new Problem("Progreso inválido.");
+        if(body.estudiada) await env.DB.prepare("INSERT INTO campus_progreso_cirugia(codigo,clase_id,estudiada) VALUES(?,?,1) ON CONFLICT(codigo,clase_id) DO UPDATE SET estudiada=1").bind(user.codigo,body.clase_id).run();
+        else await env.DB.prepare("DELETE FROM campus_progreso_cirugia WHERE codigo=? AND clase_id=?").bind(user.codigo,body.clase_id).run();
+        return response({ok:true},200,origin);
+      }
       if (req.method === "GET" && path === "/api/mis-resultados") {
         const user = await session(req,env);
         // Student ID comes only from the authenticated session, never a query parameter.
