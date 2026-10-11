@@ -211,12 +211,12 @@ export default {
           if(!Array.isArray(payload.items)||!payload.items.length||payload.items.length>200)throw new Problem("Selecciona entre 1 y 200 alumnos.");
           const seen=new Set(),validated=[];
           for(const raw of payload.items){
-            const codigo=code(raw.codigo),nombre=String(raw.nombre||"").trim().replace(/\\s+/g," ");
+            const codigo=code(raw.codigo),nombre=String(raw.nombre||"").trim().replace(/\s+/g," ");
             const telefono=String(raw.telefono||"").trim(),dni=String(raw.dni||"").trim(),correo=String(raw.correo||"").trim().toLowerCase();
             if(!nombre||nombre.length>220)throw new Problem("Nombre no válido en "+codigo);
             if(telefono&&!/^[+0-9 ()-]{7,20}$/.test(telefono))throw new Problem("Teléfono inválido para "+codigo);
             if(dni&&!/^[0-9]{8}$/.test(dni))throw new Problem("DNI inválido para "+codigo);
-            if(correo&&!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(correo))throw new Problem("Correo inválido para "+codigo);
+            if(correo&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo))throw new Problem("Correo inválido para "+codigo);
             if(seen.has(codigo))throw new Problem("Código duplicado en la lista: "+codigo);seen.add(codigo);
             validated.push({codigo,nombre,telefono:telefono||null,dni:dni||null,correo:correo||null});
           }
