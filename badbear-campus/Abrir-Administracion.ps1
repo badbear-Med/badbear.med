@@ -13,4 +13,4 @@ try {
     [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($campusCredentialPointer)
 }
 Write-Host 'Credencial de Campus copiada. Pegala con Ctrl+V en el campo de acceso del administrador.' -ForegroundColor Green
-Start-Process 'https://wajomea.group/badbear-campus/admin.html'
+Start-Process 'https://wajomea.group/administracion/index.html#campus'

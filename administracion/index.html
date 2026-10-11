@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src https://badbear-campus-api.wajomea-group.workers.dev https://badbear-exams-api.wajomea-group.workers.dev; frame-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Administración | WAJOMEA.GROUP</title>
+  <link rel="icon" href="../dermatologia/badbear_logo.png">
+  <link rel="stylesheet" href="admin.css?v=20261011-central1">
+  <script type="module" src="admin.js?v=20261011-central1"></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="../index.html">WAJOMEA.<span>GROUP</span></a><span class="top-label">ADMINISTRACIÓN CENTRAL</span><a class="portal-link" href="../index.html">Ver portal ↗</a></header>
+<main>
+  <section id="entry" class="entry" aria-labelledby="entry-title">
+    <div class="intro"><span class="eyebrow">TU ESPACIO DE TRABAJO</span><h1 id="entry-title">Todas tus áreas.<br>Un mismo escritorio.</h1><p>Gestiona alumnos, resultados y la biblioteca de exámenes desde la administración de WAJOMEA.GROUP.</p><div class="intro-areas"><span>BADBEAR.CAMPUS</span><span>BADBEAR.EXAMS</span></div></div>
+    <div class="login-card"><span class="eyebrow">ACCESO DEL ADMINISTRADOR</span><h2>Entrar al escritorio</h2><p class="muted">Usa el acceso de una de tus áreas. Podrás conectar la otra dentro del panel.</p>
+      <form id="login"><label for="area">Acceso de</label><select id="area" name="area"><option value="campus">BADBEAR.CAMPUS</option><option value="examenes">BADBEAR.EXAMS</option></select><input id="username" name="username" type="text" autocomplete="username" value="Administrador Campus" readonly hidden><div id="email-group" hidden><label for="email">Correo del administrador</label><input id="email" name="username" type="email" autocomplete="username" maxlength="254" disabled></div><label id="credential-label" for="credential">Credencial administrativa de Campus</label><input id="credential" name="password" type="password" autocomplete="current-password" required maxlength="512"><button id="enter" class="primary" type="submit">Ingresar al escritorio <span aria-hidden="true">→</span></button></form>
+      <p id="login-status" class="message" role="status" aria-live="polite"></p><p class="small muted">Campus utiliza su credencial administrativa; Exámenes, correo y contraseña. Al cerrar el escritorio se cierran los accesos de esta página.</p>
+    </div>
+  </section>
+  <div id="hub" class="hub" hidden>
+    <aside class="sidebar"><span class="eyebrow">ESCRITORIO</span><nav aria-label="Áreas administrativas"><button data-view="inicio" class="nav-item"><span class="nav-icon" aria-hidden="true">⌂</span><span>Inicio</span></button><span class="nav-group">ÁREAS DE GESTIÓN</span><button data-view="campus" class="nav-item"><span class="nav-icon" aria-hidden="true">01</span><span>Campus<small>Alumnos y resultados</small></span><span id="campus-badge" class="connection-dot" aria-label="Sin conectar"></span></button><button data-view="examenes" class="nav-item"><span class="nav-icon" aria-hidden="true">02</span><span>Exámenes<small>Biblioteca y aportes</small></span><span id="examenes-badge" class="connection-dot" aria-label="Sin conectar"></span></button></nav><div class="sidebar-bottom"><a href="../index.html" target="_blank" rel="noopener noreferrer">Abrir portal público ↗</a><button id="logout" class="logout" type="button">Cerrar escritorio</button></div></aside>
+    <div class="workarea"><div class="workspace-heading"><div><span class="eyebrow">WAJOMEA.GROUP</span><h1 id="view-title" tabindex="-1">Mi escritorio</h1></div><span class="private-tag">Acceso administrativo</span></div>
+      <section id="view-inicio" class="overview"><div class="welcome"><span class="eyebrow">GESTIONA TUS PROYECTOS</span><h2>Elige el área en la que vas a trabajar.</h2><p>Tu escritorio permanece abierto al cambiar de sección.</p></div><div class="area-grid"><button data-jump="campus" class="area-card campus"><span class="card-number">01</span><span class="card-brand">BADBEAR.<b>CAMPUS</b></span><span class="card-description">Publicar listas de resultados, registrar alumnos y gestionar sus códigos de activación.</span><span class="card-action">Administrar Campus <span aria-hidden="true">→</span></span></button><button data-jump="examenes" class="area-card exams"><span class="card-number">02</span><span class="card-brand">BADBEAR.<b>EXAMS</b></span><span class="card-description">Revisar aportes, aprobar o rechazar exámenes y supervisar la biblioteca publicada.</span><span class="card-action">Administrar Exámenes <span aria-hidden="true">→</span></span></button></div><div class="connection-note"><strong>Un lugar para trabajar</strong><p>Si un área aún no está conectada, inicia sesión en esa sección. La conexión se conserva mientras mantengas abierto este escritorio.</p></div></section>
+      <section id="view-campus" class="area-view" aria-label="Administración de Campus" hidden></section>
+      <section id="view-examenes" class="area-view" aria-label="Administración de Exámenes" hidden></section>
+      <p id="hub-status" class="small muted" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</main>
+</body></html>

@@ -1,13 +1,16 @@
 import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-campus2";
 import { parseCSV } from "./csv.js";
+import { centralBridge } from "../administracion/bridge.js?v=20261011-central1";
 let token="",checked=null;
+let reportConnection=()=>{};
 const cols=[{key:"codigo",label:"Código"},{key:"nombre",label:"Alumno"},{key:"curso",label:"Curso"},{key:"periodo",label:"Periodo"},{key:"evaluacion",label:"Evaluación"},{key:"nota",label:"Resultado"},{key:"fecha",label:"Fecha"}];
 function clearPreview(){checked=null;$("preview-area").hidden=true;$("preview-table").replaceChildren();$("existing").replaceChildren();$("replace").checked=false}
 function clearInvitation(){$("invitation").hidden=true;$("invitation-code").textContent=""}
-function disconnect(){token="";clearPreview();clearInvitation();$("student").replaceChildren(new Option("Selecciona un alumno",""));$("file").value="";$("reset").checked=false;$("workspace").hidden=true;$("connection").hidden=false}
+function disconnect(){token="";clearPreview();clearInvitation();$("student").replaceChildren(new Option("Selecciona un alumno",""));$("file").value="";$("reset").checked=false;$("workspace").hidden=true;$("connection").hidden=false;reportConnection(false)}
 async function students(){const data=await call("/api/admin/alumnos",token);$("student").replaceChildren(new Option("Selecciona un alumno",""));for(const item of data.items)$("student").append(new Option(item.nombre+" · "+item.codigo+(item.activado?" · Activo":" · Por activar"),item.codigo))}
 async function action(fn){await busy(async()=>{try{await fn()}catch(error){if(error.status===401)disconnect();throw error}})}
-$("connect").addEventListener("submit",event=>{event.preventDefault();action(async()=>{token=$("admin-token").value.trim();$("admin-token").value="";await students();$("connection").hidden=true;$("workspace").hidden=false;message("Administración conectada.","success")})});
+function connect(key){return action(async()=>{token=key.trim();$("admin-token").value="";try{await students();$("connection").hidden=true;$("workspace").hidden=false;reportConnection(true);message("Administración conectada.","success")}catch(error){disconnect();throw error}})}
+$("connect").addEventListener("submit",event=>{event.preventDefault();connect($("admin-token").value)});
 $("disconnect").addEventListener("click",()=>{disconnect();message("Administración cerrada.")});
 $("file").addEventListener("change",clearPreview);
 $("preview").addEventListener("click",()=>action(async()=>{
@@ -29,4 +32,5 @@ $("invite").addEventListener("click",()=>action(async()=>{
   if($("reset").checked&&!confirm("¿Generar un código de recuperación para este alumno? Sus sesiones actuales se cerrarán."))return;
   const data=await post("/api/admin/invitacion",token,{codigo,restablecer:$("reset").checked});$("invitation-label").textContent="Código de activación para el alumno "+data.codigo+":";$("invitation-code").textContent=data.activacion;$("invitation-expiry").textContent="Vence: "+new Date(data.expira).toLocaleString("es-PE",{timeZone:"America/Lima"})+" (hora de Perú).";$("invitation").hidden=false;$("reset").checked=false;message("Código generado. Entrégalo únicamente al alumno correspondiente.","success");
 }));
+reportConnection=centralBridge("campus",{connect,disconnect});
 window.addEventListener("pagehide",disconnect);availability();
