@@ -73,9 +73,23 @@ async function editExam(req,env,origin){
 }
 async function manageFile(req,env,origin){
  const url=new URL(req.url),action=url.searchParams.get("action"),id=Number(url.searchParams.get("id"));
- if(!Number.isSafeInteger(id)||id<1||!["replace","withdraw"].includes(action))return bad("Solicitud inválida",400,origin);
+ if(!Number.isSafeInteger(id)||id<1||!["replace","withdraw","restore"].includes(action))return bad("Solicitud inválida",400,origin);
  const current=await env.DB.prepare("SELECT id,estado,archivo_privado,archivo_publicado FROM examenes WHERE id=?").bind(id).first();
  if(!current)return bad("Examen no encontrado",404,origin);
+ if(action==="restore"){
+  if(current.estado!=="retirado")return bad("Solo se pueden recuperar documentos retirados",409,origin);
+  const privateDoc=await env.APORTES.get(current.archivo_privado);
+  if(!privateDoc)return bad("El archivo original no está disponible",404,origin);
+  const kind=privateDoc.httpMetadata?.contentType||"application/pdf";
+  if(!["application/pdf","image/png","image/jpeg"].includes(kind))return bad("Formato de archivo no compatible",415,origin);
+  const ext=kind==="application/pdf"?"pdf":kind==="image/png"?"png":"jpg";
+  const publicKey="aprobados/"+id+"/"+crypto.randomUUID()+"."+ext;
+  try{await env.PUBLICADOS.put(publicKey,privateDoc.body,{httpMetadata:{contentType:kind}})}catch{return bad("No se pudo restaurar el archivo publicado",500,origin)}
+  const update=await env.DB.prepare("UPDATE examenes SET estado='aprobado',archivo_publicado=?,revisado_en=CURRENT_TIMESTAMP WHERE id=? AND estado='retirado'").bind(publicKey,id).run();
+  if(!update.meta.changes){await env.PUBLICADOS.delete(publicKey).catch(()=>{});return bad("El estado cambió; actualiza la página",409,origin)}
+  try{await env.DB.prepare("INSERT INTO revisiones (examen_id,accion,administrador,motivo) VALUES (?,?,?,?)").bind(id,"restaurado","Administrador BADBEAR.EXAMS","Restaurado a la biblioteca pública").run()}catch(error){console.error("restore audit",String(error))}
+  return json({ok:true,mensaje:"Examen restaurado y visible en la biblioteca pública"},200,origin)
+ }
  if(action==="withdraw"){
   if(current.estado!=="aprobado")return bad("Solo se pueden retirar documentos publicados",409,origin);
   const changed=await env.DB.prepare("UPDATE examenes SET estado='retirado',archivo_publicado=NULL,revisado_en=CURRENT_TIMESTAMP WHERE id=? AND estado='aprobado'").bind(id).run();
@@ -176,6 +190,7 @@ try{
   if(path==="/api/admin/examenes"&&req.method==="GET")return await list(req,env,origin);
   if(path==="/api/admin/examenes/editar"&&req.method==="POST")return await editExam(req,env,origin);
   if(path==="/api/admin/archivos"&&req.method==="POST")return await manageFile(req,env,origin);
+  if(path==="/api/admin/historial"&&req.method==="GET"){const rows=await env.DB.prepare("SELECT r.id,r.examen_id,r.accion,r.administrador,r.motivo,r.creado_en,e.titulo FROM revisiones r LEFT JOIN examenes e ON e.id=r.examen_id ORDER BY r.id DESC LIMIT 200").all();return json({items:rows.results||[]},200,origin)}
   if(path==="/api/admin/preguntas"&&req.method==="GET")return await questions(req,env,origin,true);
   if(path==="/api/admin/preguntas"&&req.method==="POST")return await saveQuestion(req,env,origin);
   if(path==="/api/admin/archivo"&&req.method==="GET"){
