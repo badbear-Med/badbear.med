@@ -13,12 +13,35 @@
 </div>
 <aside class="aside-right"><section class="activity" id="actividades"><span class="eyebrow">ORGANIZA TU REPASO</span><h3>Mi lista de estudio</h3><p class="muted">Marca las unidades que ya revisaste.</p><div class="tasks"><label><input type="checkbox" data-unit="1"> Fundamentos</label><label><input type="checkbox" data-unit="2"> Gastrointestinal</label><label><input type="checkbox" data-unit="3"> Hepatobiliar</label><label><input type="checkbox" data-unit="4"> Anorrectal</label></div><div class="counter"><span id="done">0</span> / 4</div><div class="progress" aria-label="Avance del repaso"><div id="bar"></div></div><p class="muted" id="progress-desc">0% del repaso marcado.</p><div class="notice">Esta lista es visual y no almacena calificaciones ni resultados privados. Se reinicia al recargar la página.</div></section><section class="activity"><span class="eyebrow">CENTRO DE RECURSOS</span><h3>Accesos rápidos</h3><div class="buttons"><a class="btn secondary" href="../index.html">BADBEAR.MED</a><a class="btn secondary" href="../badbear-exams/index.html">BADBEAR.EXAMS</a><a class="btn secondary" href="./index.html">Mis resultados</a></div></section></aside></div></main><footer class="footer">BADBEAR.CAMPUS · WAJOMEA.GROUP · Primera aula virtual</footer>
 <script>const boxes=[...document.querySelectorAll('[data-unit]')];function update(){const completed=boxes.filter(x=>x.checked).length,percent=Math.round(completed/boxes.length*100);document.getElementById('done').textContent=completed;document.getElementById('bar').style.width=percent+'%';document.getElementById('progress-desc').textContent=percent+'% del repaso marcado.'}boxes.forEach(x=>x.addEventListener('change',update));
+const materialBase="../cirugia-general/pdf/material-pdf-cirugia-general/";
+const materials={
+ "1-1":"1. Teoría 1.1 - Estudio Pre, trans y Post operatorio inmediato, diferentes patologías quirúrgicas.pdf",
+ "1-3":"2. Teoría 2.2. - Heridas y Cicatrización, Tipos (Expo).pdf",
+ "2-3":"21. Teoría 10.2. - Cirugía del tubo digestivo en Cáncer (Expo).pdf",
+ "3-1":"11. Teoría 5 - Patología quirúrgica benigna y maligna de la Vesícula y Vías Biliares.pdf",
+ "3-2":"11. Teoría 5 - Patología quirúrgica benigna y maligna de la Vesícula y Vías Biliares.pdf",
+ "3-3":"14. Teoría 6 - Patología quirúrgica benigna y maligna del Páncreas.pdf",
+ "4-1":"17. Teoría 8 - Patología quirúrgica benigna y maligna de recto y ano..pdf",
+ "4-2":"17. Teoría 8 - Patología quirúrgica benigna y maligna de recto y ano..pdf",
+ "4-3":"17. Teoría 8 - Patología quirúrgica benigna y maligna de recto y ano..pdf"
+};
+
 document.querySelectorAll('[data-lesson]').forEach(button=>button.addEventListener('click',()=>{
  document.querySelectorAll('[data-lesson]').forEach(b=>b.classList.toggle('active',b===button));
  document.getElementById('lesson-title').textContent=button.dataset.title;
  document.getElementById('lesson-description').textContent=button.dataset.unitLabel+' · Clase seleccionada';
  const panel=document.getElementById('lesson-panel');panel.replaceChildren();
- const intro=document.createElement('p');intro.textContent='Esta clase está preparada para mostrar el material dentro del campus. El PDF específico todavía no está enlazado; no se ha duplicado ni inventado ningún documento.';
- const link=document.createElement('a');link.href='../index.html';link.className='btn secondary';link.textContent='Buscar material en BADBEAR.MED ↗';
- panel.append(intro,link);document.getElementById('clase').scrollIntoView({behavior:'smooth',block:'start'});
-}));</script></body></html>
+ const file=materials[button.dataset.lesson];
+ if(file){
+   const description=document.createElement('p');description.textContent='Material original de Cirugía General. Puedes consultarlo aquí sin volver a cargarlo en el campus.';
+   const frame=document.createElement('iframe');frame.className='viewer';frame.title='Documento de clase: '+button.dataset.title;frame.loading='lazy';frame.src=materialBase+encodeURIComponent(file)+'#toolbar=0&navpanes=0';
+   const note=document.createElement('p');note.className='muted tiny';note.textContent='El visor PDF puede variar según el navegador. El documento pertenece al repositorio de materiales de Cirugía General.';
+   panel.append(description,frame,note);
+ }else{
+   const intro=document.createElement('p');intro.textContent='Aún no hay un PDF específico asociado a esta clase. Puedes consultar el temario completo de Cirugía General.';
+   const link=document.createElement('a');link.href='../cirugia-general/index.html';link.className='btn secondary';link.textContent='Explorar Cirugía General ↗';
+   panel.append(intro,link);
+ }
+ document.getElementById('clase').scrollIntoView({behavior:'smooth',block:'start'});
+}));
+</script></body></html>
