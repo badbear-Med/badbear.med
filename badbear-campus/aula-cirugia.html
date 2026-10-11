@@ -82,7 +82,7 @@ const check=document.createElement('input');check.type='checkbox';check.classNam
 const checkText=document.createElement('span');checkText.textContent='Marcar como estudiada';
 checkLabel.append(check,checkText);li.append(checkLabel);
 check.addEventListener('change',async()=>{const selected=check.checked;
- if(synced){check.disabled=true;try{await progressRequest('/api/progreso/cirugia','POST',{clase_id:item.id,estudiada:selected});progressStatus.textContent='Avance guardado en tu cuenta.'}catch(error){check.checked=!selected;progressStatus.textContent='No se guardó el cambio: '+error.message}finally{check.disabled=false}}else{marked[item.id]=selected;try{localStorage.setItem(studyKey,JSON.stringify(marked))}catch(_){}}
+ if(synced){check.disabled=true;try{await progressRequest('/api/progreso/cirugia','POST',{clase_id:item.id,estudiada:selected});marked[item.id]=selected;try{localStorage.setItem(studyKey,JSON.stringify(marked))}catch(_){}progressStatus.textContent='Avance guardado en tu cuenta.'}catch(error){check.checked=!selected;progressStatus.textContent='No se guardó el cambio: '+error.message}finally{check.disabled=false}}else{marked[item.id]=selected;try{localStorage.setItem(studyKey,JSON.stringify(marked))}catch(_){}}
  refreshProgress()});
 const open=document.createElement('button');open.type='button';open.className='resource-toggle';open.textContent='Ver recursos en el campus';open.setAttribute('aria-expanded','false');
 const section=document.createElement('div');section.className='academic-resources';section.hidden=true;
