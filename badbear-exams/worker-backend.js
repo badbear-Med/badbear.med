@@ -14,19 +14,19 @@ const ct=req.headers.get("Content-Type")||"";if(!ct.startsWith("multipart/form-d
 if(!(await rate(req,env)))return bad("Límite de intentos alcanzado",429,origin);
 let data;try{const bytes=await req.arrayBuffer();if(bytes.byteLength>LIMIT)return bad("Solicitud demasiado grande",413,origin);data=await new Request(req.url,{method:"POST",headers:{"Content-Type":ct},body:bytes}).formData()}catch{return bad("Formulario inválido",400,origin)}
 if(!(await turnstile(field(data,"cf-turnstile-response",4096),req,env)))return bad("Verificación Turnstile fallida",403,origin);
-const course=field(data,"course",120),faculty=field(data,"faculty",120),yearText=field(data,"year",4),year=Number(yearText),type=field(data,"type",20),contributor=field(data,"contributor",80),notes=field(data,"notes",600);
+const course=field(data,"course",120),faculty=field(data,"faculty",120),university=field(data,"university",120),teacher=field(data,"teacher",120),cycle=field(data,"cycle",40),yearText=field(data,"year",4),year=Number(yearText),type=field(data,"type",20),contributor=field(data,"contributor",80),notes=field(data,"notes",600);
 if(!course||!/^[0-9]{4}$/.test(yearText)||year<2022||year>2026||!["Parcial","Final","Práctica","Otros"].includes(type)||data.get("permission")===null)return bad("Datos incompletos o inválidos",400,origin);
 const file=data.get("file");if(!(file instanceof File)||!file.size||file.size>MAX)return bad("Archivo inválido o mayor de 10 MB",400,origin);
 const bytes=new Uint8Array(await file.arrayBuffer()),kind=sniff(bytes);if(!kind)return bad("Solo PDF, PNG o JPG",415,origin);
 const key="pendientes/"+crypto.randomUUID()+"."+kind[1];await env.APORTES.put(key,bytes,{httpMetadata:{contentType:kind[0]},customMetadata:{estado:"pendiente"}});
 try{
 let cid=null;if(contributor){const c=await env.DB.prepare("INSERT INTO colaboradores (seudonimo,mostrar_credito) VALUES (?,0)").bind(contributor).run();cid=c.meta.last_row_id}
-const c=await env.DB.prepare("INSERT INTO cursos (nombre,facultad) VALUES (?,?)").bind(course,faculty||null).run();
-const e=await env.DB.prepare("INSERT INTO examenes (curso_id,colaborador_id,titulo,anio,tipo,archivo_privado,estado,observaciones) VALUES (?,?,?,?,?,?,'pendiente',?)").bind(c.meta.last_row_id,cid,course,year,type,key,notes||null).run();
+const c=await env.DB.prepare("INSERT INTO cursos (nombre,facultad,universidad,ciclo) VALUES (?,?,?,?)").bind(course,faculty||null,university||null,cycle||null).run();
+const e=await env.DB.prepare("INSERT INTO examenes (curso_id,colaborador_id,titulo,anio,tipo,archivo_privado,estado,observaciones,docente,periodo) VALUES (?,?,?,?,?,?,'pendiente',?,?,?)").bind(c.meta.last_row_id,cid,course,year,type,key,notes||null,teacher||null,cycle||null).run();
 return json({ok:true,mensaje:"Recibido, pendiente de revisión",referencia:String(e.meta.last_row_id)},201,origin)
 }catch(e){await env.APORTES.delete(key).catch(()=>{});return bad("Error al registrar examen",500,origin)}
 }
-async function list(req,env,origin){const rows=await env.DB.prepare("SELECT e.id,e.titulo,e.anio,e.tipo,e.estado,e.creado_en,c.nombre AS course,c.facultad,co.seudonimo AS contributor FROM examenes e JOIN cursos c ON c.id=e.curso_id LEFT JOIN colaboradores co ON co.id=e.colaborador_id ORDER BY e.id DESC LIMIT 100").all();return json({items:rows.results||[]},200,origin)}
+async function list(req,env,origin){const rows=await env.DB.prepare("SELECT e.id,e.titulo,e.anio,e.tipo,e.estado,e.creado_en,e.docente AS teacher,e.periodo AS cycle,c.nombre AS course,c.facultad,c.universidad AS university,co.seudonimo AS contributor FROM examenes e JOIN cursos c ON c.id=e.curso_id LEFT JOIN colaboradores co ON co.id=e.colaborador_id ORDER BY e.id DESC LIMIT 100").all();return json({items:rows.results||[]},200,origin)}
 async function review(req,env,origin){const data=await req.json().catch(()=>null),id=Number(data?.id),action=data?.action,reason=String(data?.reason||"").slice(0,500);
 if(!Number.isSafeInteger(id)||id<=0||!["aprobar","rechazar"].includes(action))return bad("Datos inválidos",400,origin);
 const e=await env.DB.prepare("SELECT id,archivo_privado,archivo_publicado,estado FROM examenes WHERE id=?").bind(id).first();
@@ -43,7 +43,7 @@ if(action==="aprobar"){
 await env.DB.prepare("INSERT INTO revisiones (examen_id,accion,administrador,motivo) VALUES (?,?,?,?)").bind(id,status,"Administrador BADBEAR.EXAMS",reason||null).run();
 return json({ok:true,estado:status},200,origin)
 }
-async function publicList(env,origin){const rows=await env.DB.prepare("SELECT e.id,e.titulo,e.anio,e.tipo,e.docente AS teacher,c.nombre AS course,c.facultad,c.universidad AS university FROM examenes e JOIN cursos c ON c.id=e.curso_id WHERE e.estado='aprobado' AND e.archivo_publicado IS NOT NULL ORDER BY e.id DESC LIMIT 200").all();return json({items:rows.results||[]},200,origin)}
+async function publicList(env,origin){const rows=await env.DB.prepare("SELECT e.id,e.titulo,e.anio,e.tipo,e.docente AS teacher,e.periodo AS cycle,c.nombre AS course,c.facultad,c.universidad AS university FROM examenes e JOIN cursos c ON c.id=e.curso_id WHERE e.estado='aprobado' AND e.archivo_publicado IS NOT NULL ORDER BY e.id DESC LIMIT 200").all();return json({items:rows.results||[]},200,origin)}
 export default{async fetch(req,env){const path=new URL(req.url).pathname,origin=req.headers.get("Origin")||"";
 try{
  if(path==="/health")return json({servicio:"BADBEAR.EXAMS",estado:[env.DB,env.APORTES,env.PUBLICADOS,env.TURNSTILE_SECRET_KEY].every(Boolean)?"operativo":"configuracion_incompleta",conexiones:{base_de_datos:!!env.DB,aportes_privados:!!env.APORTES,examenes_publicados:!!env.PUBLICADOS,turnstile:!!env.TURNSTILE_SECRET_KEY}},200,origin);
