@@ -42,6 +42,18 @@ document.querySelectorAll('[data-lesson]').forEach(button=>button.addEventListen
    const link=document.createElement('a');link.href='../cirugia-general/index.html';link.className='btn secondary';link.textContent='Explorar Cirugía General ↗';
    panel.append(intro,link);
  }
- document.getElementById('clase').scrollIntoView({behavior:'smooth',block:'start'});
+ // Mostrar el contenido debajo de la clase seleccionada, sin depender del desplazamiento al encabezado.
+ const previous=document.querySelector('.inline-lesson');if(previous)previous.remove();
+ const inline=document.createElement('div');inline.className='inline-lesson';inline.style.cssText='margin:12px 0;padding:15px;border:1px solid #b9d8dd;border-radius:12px;background:#fff';
+ const h=document.createElement('h4');h.textContent=button.dataset.title;inline.append(h);
+ if(file){
+   const iframe=document.createElement('iframe');iframe.src=materialBase+encodeURIComponent(file)+'#toolbar=0&navpanes=0';iframe.title='Material PDF: '+button.dataset.title;iframe.className='viewer';inline.append(iframe);
+   const fallback=document.createElement('a');fallback.href=materialBase+encodeURIComponent(file);fallback.target='_blank';fallback.rel='noopener noreferrer';fallback.className='btn secondary';fallback.textContent='Abrir PDF si el visor no carga';inline.append(fallback);
+ }else{
+   const note=document.createElement('p');note.textContent='Esta clase todavía no tiene un PDF asociado.';inline.append(note);
+   const fallback=document.createElement('a');fallback.href='../cirugia-general/index.html';fallback.className='btn secondary';fallback.textContent='Ver materiales de Cirugía General';inline.append(fallback);
+ }
+ button.insertAdjacentElement('afterend',inline);
+ inline.scrollIntoView({behavior:'smooth',block:'nearest'});
 }));
 </script></body></html>
