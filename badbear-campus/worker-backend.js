@@ -229,7 +229,7 @@ export default {
           const nota=Number(body.nota);if(!Number.isFinite(nota)||nota<0||nota>20)throw new Problem("La nota debe estar entre 0 y 20.");
           const row=await env.DB.prepare("SELECT nota FROM campus_resultados WHERE codigo=? AND curso=? AND periodo=? AND evaluacion=?").bind(codigo,body.curso,body.periodo,body.evaluacion).first();
           if(!row)throw new Problem("Evaluación no encontrada.",404);
-          await env.DB.prepare("UPDATE campus_resultados SET nota=?,estado=NULL,fecha=?,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE codigo=? AND curso=? AND periodo=? AND evaluacion=?").bind(nota,body.fecha,codigo,body.curso,body.periodo,body.evaluacion).run();
+          await env.DB.prepare("UPDATE campus_resultados SET nota=?,estado='',fecha=?,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now') WHERE codigo=? AND curso=? AND periodo=? AND evaluacion=?").bind(nota,body.fecha,codigo,body.curso,body.periodo,body.evaluacion).run();
           return response({ok:true},200,origin);
         }
         if (req.method === "GET" && path === "/api/admin/notas") {
