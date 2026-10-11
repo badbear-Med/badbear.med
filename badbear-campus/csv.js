@@ -21,3 +21,5 @@ function readCSV(text,expected) {
 }
 export const parseCSV=text=>readCSV(text,["codigo","nombre","curso","periodo","evaluacion","nota","fecha"]);
 export const parseContactsCSV=text=>readCSV(text,["codigo","correo"]);
+
+export const parseRosterCSV=text=>readCSV(text,["apellidos y nombres","codigo de estudiante","telefono","dni","correo institucional"]).map(row=>({nombre:row["apellidos y nombres"],codigo:row["codigo de estudiante"],telefono:row.telefono,dni:row.dni,correo:row["correo institucional"]}));
