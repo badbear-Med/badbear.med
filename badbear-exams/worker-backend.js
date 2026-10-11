@@ -31,7 +31,7 @@ const e=await env.DB.prepare("INSERT INTO examenes (curso_id,colaborador_id,titu
 try{
  await env.DB.prepare("INSERT INTO huellas_examenes (sha256,examen_id) VALUES (?,?)").bind(fingerprint,e.meta.last_row_id).run();
 }catch(error){
- if(String(error).includes("UNIQUE"))return bad("Este archivo ya está registrado en la biblioteca.",409,origin);
+ if(String(error).includes("UNIQUE")){await env.DB.prepare("DELETE FROM examenes WHERE id=? AND estado='pendiente'").bind(e.meta.last_row_id).run().catch(()=>{});await env.APORTES.delete(key).catch(()=>{});return bad("Este archivo ya está registrado en la biblioteca.",409,origin)}
  throw error;
 }
 return json({ok:true,mensaje:"Recibido, pendiente de revisión",referencia:String(e.meta.last_row_id)},201,origin)
