@@ -19,7 +19,7 @@ async function loadStudyProgress(){
  }catch(error){$("campus-progress-count").textContent="Consulta el avance en el aula de Cirugía General.";$("campus-progress-status").textContent="Avance no disponible";}
 }
 async function load() {
-  try {const data=await call("/api/mis-resultados",token);items=data.items;$("student-name").textContent=data.alumno.nombre;$("student-code").textContent="Código: "+data.alumno.codigo;
+  try {const data=await call("/api/mis-resultados",token);items=data.items;$("campus-results-count").textContent=String(items.length);$("student-name").textContent=data.alumno.nombre;$("student-code").textContent="Código: "+data.alumno.codigo;
     const previous=$("course").value;$("course").replaceChildren(new Option("Todos los cursos",""));for(const course of [...new Set(items.map(x=>x.curso))].sort())$("course").append(new Option(course,course));if(items.some(x=>x.curso===previous))$("course").value=previous;
     $("entry").hidden=true;$("results").hidden=false;render();await loadStudyProgress();message("Resultados actualizados.","success");
   }catch(error){if(error.status===401)clear();throw error;}
