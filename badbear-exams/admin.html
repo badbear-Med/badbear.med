@@ -19,12 +19,12 @@ main{max-width:1320px;margin:0 auto;padding:22px}.hidden{display:none!important}
 <button data-view="pendiente">Bandeja de pendientes</button>
 <button data-view="aprobado">Biblioteca publicada</button>
 <button data-view="rechazado">Exámenes rechazados</button><button data-view="retirado">Documentos retirados</button><button data-view="archivos">Administración de archivos</button>
-<button data-view="todos">Todos los exámenes</button>
+<button data-view="todos">Todos los exámenes</button><button data-view="historial">Historial de cambios</button>
 <button id="refresh" class="secondary">Actualizar datos</button>
 <button id="logout" class="secondary">Cerrar sesión</button>
 </nav><div>
 <section id="view-inicio" class="panel"><h2>Escritorio de administración</h2><p class="muted">Resumen de exámenes recibidos y estado de la biblioteca.</p><div id="stats" class="stats"></div><h3>Accesos rápidos</h3><div class="actions"><button data-jump="pendiente">Revisar pendientes</button><button class="secondary" data-jump="aprobado">Ver publicados</button><button class="secondary" data-jump="todos">Buscar exámenes</button></div><p class="small muted">Se muestran hasta 100 registros, según el límite actual de la API. Las cifras corresponden a esos registros.</p></section>
-<section id="view-records" class="panel hidden"><h2 id="view-title">Exámenes</h2><div class="toolbar"><input id="search" type="search" placeholder="Buscar por ID, curso, universidad, docente o año" aria-label="Buscar registros"><button id="reset-search" class="secondary">Limpiar</button></div><p id="results-count" class="small muted"></p><div id="items"></div></section>
+<section id="view-history" class="panel hidden"><h2>Historial administrativo</h2><p class="muted">Últimas decisiones de revisión, publicación, retirada y reemplazo registradas en D1.</p><div id="history-items"></div></section><section id="view-records" class="panel hidden"><h2 id="view-title">Exámenes</h2><div class="toolbar"><input id="search" type="search" placeholder="Buscar por ID, curso, universidad, docente o año" aria-label="Buscar registros"><button id="reset-search" class="secondary">Limpiar</button></div><p id="results-count" class="small muted"></p><div id="items"></div></section>
 <p id="status" role="status" class="status">Escritorio listo.</p>
 </div></div></main>
 <script type="module">
@@ -37,17 +37,18 @@ let reportConnection=()=>{};
 const status=message=>by("status").textContent=message;
 async function call(path,opts={}){const response=await fetch(API+path,{...opts,headers:{"Authorization":"Bearer "+credential,...(opts.headers||{})},credentials:"omit",cache:"no-store",signal:AbortSignal.timeout(20000)});const data=await response.json().catch(()=>({}));if(!response.ok){if(response.status===401)disconnect();throw Error(data.error||"HTTP "+response.status)}return data}
 async function load(){status("Actualizando registros…");try{const data=await call("/api/admin/examenes");records=data.items||[];render();status("Datos actualizados correctamente.")}catch(e){status("No se pudieron actualizar los registros: "+e.message)}}
-function show(which){view=which;document.querySelectorAll("[data-view]").forEach(button=>button.classList.toggle("active",button.dataset.view===view));by("view-inicio").classList.toggle("hidden",view!=="inicio");by("view-records").classList.toggle("hidden",view==="inicio");by("search").value="";render()}
+function show(which){view=which;document.querySelectorAll("[data-view]").forEach(button=>button.classList.toggle("active",button.dataset.view===view));by("view-inicio").classList.toggle("hidden",view!=="inicio");by("view-records").classList.toggle("hidden",view==="inicio"||view==="historial");by("view-history").classList.toggle("hidden",view!=="historial");if(view==="historial")loadHistory();by("search").value="";render()}
 function render(){const labels={pendiente:"Bandeja de pendientes",aprobado:"Biblioteca publicada",rechazado:"Exámenes rechazados",retirado:"Documentos retirados",archivos:"Administración de archivos",todos:"Todos los exámenes"};
 const counts={total:records.length,pendiente:0,aprobado:0,rechazado:0};for(const record of records)if(counts[record.estado]!==undefined)counts[record.estado]++;
 by("stats").replaceChildren();for(const [key,title] of [["total","Total recibidos"],["pendiente","Pendientes"],["aprobado","Publicados"],["rechazado","Rechazados"]]){const el=document.createElement("div");el.className="stat";const n=document.createElement("strong");n.textContent=counts[key];const txt=document.createElement("span");txt.textContent=title;el.append(n,txt);by("stats").append(el)}
-if(view==="inicio")return;
+if(view==="inicio"||view==="historial")return;
 by("view-title").textContent=labels[view];const term=by("search").value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 const shown=records.filter(x=>(view==="todos"||view==="archivos"||x.estado===view)&&(!term||[x.id,x.course,x.titulo,x.university,x.facultad,x.teacher,x.anio,x.tipo].join(" ").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().includes(term)));
 by("results-count").textContent=shown.length+" registro(s)";const items=by("items");items.replaceChildren();if(!shown.length){const empty=document.createElement("p");empty.className="empty";empty.textContent="No hay exámenes para mostrar en esta sección.";items.append(empty);return}
 for(const exam of shown){const card=document.createElement("article");card.className="item";const heading=document.createElement("h3");heading.textContent=(exam.course||exam.titulo||"Sin curso")+" · #"+exam.id;const badge=document.createElement("span");badge.className="badge "+exam.estado;badge.textContent=exam.estado;const description=document.createElement("p");description.className="muted small";description.textContent=[exam.university,exam.facultad,exam.teacher?"Docente: "+exam.teacher:"",exam.cycle?"Ciclo: "+exam.cycle:"",exam.anio,exam.tipo,exam.creado_en].filter(Boolean).join(" · ");card.append(heading,badge,description);const actions=document.createElement("div");actions.className="actions";
 const edit=document.createElement("button");edit.className="secondary";edit.textContent="Editar datos";edit.onclick=()=>editDetails(exam,card,edit);actions.append(edit);
 const fileManage=document.createElement("button");fileManage.className="secondary";fileManage.textContent="Reemplazar PDF / imagen";fileManage.onclick=()=>replaceFile(exam,card);actions.append(fileManage);
+if(exam.estado==="retirado"){const restore=document.createElement("button");restore.textContent="Restaurar y publicar";restore.onclick=()=>restoreFile(exam);actions.append(restore)}
 if(exam.estado==="aprobado"){const withdraw=document.createElement("button");withdraw.className="danger";withdraw.textContent="Retirar de biblioteca";withdraw.onclick=()=>withdrawFile(exam);actions.append(withdraw)}
 const open=document.createElement("button");open.className="secondary";open.textContent="Ver documento";open.onclick=()=>preview(exam,card,open);actions.append(open);
 if(exam.estado==="pendiente"){const approve=document.createElement("button");approve.textContent="Aprobar y publicar";approve.onclick=()=>decision(exam,"aprobar");const reject=document.createElement("button");reject.className="danger";reject.textContent="Rechazar";reject.onclick=()=>decision(exam,"rechazar");actions.append(approve,reject)}
@@ -66,6 +67,15 @@ function editDetails(exam,card,button){
  const note=document.createElement("p");note.className="muted small";note.textContent="Los cambios de los documentos aprobados se reflejarán en la biblioteca pública.";form.append(note);
  form.onsubmit=async event=>{event.preventDefault();if(!confirm("¿Guardar cambios en el examen #"+exam.id+"?"))return;save.disabled=true;try{const values=Object.fromEntries(new FormData(form).entries());await call("/api/admin/examenes/editar",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({...values,id:exam.id})});status("Datos del examen #"+exam.id+" actualizados.");await load()}catch(error){status("No se pudieron guardar los cambios: "+error.message)}finally{save.disabled=false}};
  card.append(form)
+}
+async function restoreFile(exam){
+ if(!confirm("¿Restaurar el examen #"+exam.id+"? Volverá a aparecer inmediatamente en la biblioteca pública."))return;
+ try{const result=await call("/api/admin/archivos?action=restore&id="+exam.id,{method:"POST"});await load();status(result.mensaje||"Examen restaurado")}catch(error){status("No se pudo restaurar: "+error.message)}
+}
+async function loadHistory(){
+ const div=by("history-items");div.textContent="Cargando historial…";
+ try{const data=await call("/api/admin/historial");div.replaceChildren();if(!data.items?.length){div.textContent="Aún no existen movimientos registrados.";return}
+ for(const x of data.items){const el=document.createElement("article");el.className="item";const name=document.createElement("h3");name.textContent=(x.accion||"Acción")+" · Examen #"+x.examen_id;const info=document.createElement("p");info.className="muted";info.textContent=[x.titulo,x.creado_en,x.administrador,x.motivo].filter(Boolean).join(" · ");el.append(name,info);div.append(el)}}catch(e){div.textContent="No se pudo consultar el historial: "+e.message}
 }
 async function withdrawFile(exam){
  if(!confirm("¿Retirar el examen #"+exam.id+" de la biblioteca pública? El archivo original se conservará y el examen dejará de ser visible para estudiantes."))return;
