@@ -92,15 +92,21 @@ async function manageFile(req,env,origin){
  const exists=await env.DB.prepare("SELECT examen_id FROM huellas_examenes WHERE sha256=?").bind(hash).first();
  if(exists&&Number(exists.examen_id)!==id)return bad("Este archivo ya pertenece a otro examen (#"+exists.examen_id+")",409,origin);
  const key="correcciones/"+id+"/"+crypto.randomUUID()+"."+kind[1];
+ const wasPublished=current.estado==="aprobado";
+ const publicKey=wasPublished?"aprobados/"+id+"/"+crypto.randomUUID()+"."+kind[1]:null;
  await env.APORTES.put(key,bytes,{httpMetadata:{contentType:kind[0]}});
+ if(wasPublished){try{await env.PUBLICADOS.put(publicKey,bytes,{httpMetadata:{contentType:kind[0]}})}catch(error){await env.APORTES.delete(key).catch(()=>{});return bad("No se pudo publicar el archivo nuevo",500,origin)}}
  try{
-  const changed=await env.DB.prepare("UPDATE examenes SET archivo_privado=?,archivo_publicado=NULL,estado='pendiente',revisado_en=NULL WHERE id=? AND archivo_privado=?").bind(key,id,current.archivo_privado).run();
-  if(!changed.meta.changes){await env.APORTES.delete(key);return bad("El examen cambió; actualiza el panel",409,origin)}
-  await env.DB.prepare("DELETE FROM huellas_examenes WHERE examen_id=?").bind(id).run();
-  await env.DB.prepare("INSERT INTO huellas_examenes (sha256,examen_id) VALUES (?,?)").bind(hash,id).run();
-  await env.DB.prepare("INSERT INTO revisiones (examen_id,accion,administrador,motivo) VALUES (?,?,?,?)").bind(id,"reemplazado","Administrador BADBEAR.EXAMS","Archivo sustituido; pendiente de nueva revisión").run();
-  return json({ok:true,mensaje:"Archivo reemplazado. Debes revisarlo y aprobarlo nuevamente."},200,origin)
- }catch(error){console.error("manage file",String(error));return bad("No se pudo completar el reemplazo; comprueba el estado antes de reintentar",500,origin)}
+  const changed=await env.DB.prepare("UPDATE examenes SET archivo_privado=?,archivo_publicado=?,estado=?,revisado_en=CURRENT_TIMESTAMP WHERE id=? AND archivo_privado=? AND estado=?").bind(key,publicKey,wasPublished?"aprobado":current.estado,id,current.archivo_privado,current.estado).run();
+  if(!changed.meta.changes){await env.APORTES.delete(key).catch(()=>{});if(publicKey)await env.PUBLICADOS.delete(publicKey).catch(()=>{});return bad("El examen cambió; actualiza el panel",409,origin)}
+  try{
+   await env.DB.prepare("DELETE FROM huellas_examenes WHERE examen_id=?").bind(id).run();
+   await env.DB.prepare("INSERT INTO huellas_examenes (sha256,examen_id) VALUES (?,?)").bind(hash,id).run();
+   await env.DB.prepare("INSERT INTO revisiones (examen_id,accion,administrador,motivo) VALUES (?,?,?,?)").bind(id,"reemplazado","Administrador BADBEAR.EXAMS",wasPublished?"Sustitución administrativa; publicación mantenida":"Sustitución administrativa del archivo").run();
+  }catch(logError){console.error("manage file audit",String(logError))}
+  return json({ok:true,mensaje:wasPublished?"Archivo reemplazado y publicado inmediatamente.":"Archivo reemplazado; se conserva su estado "+current.estado+"."},200,origin)
+ }catch(error){await env.APORTES.delete(key).catch(()=>{});if(publicKey)await env.PUBLICADOS.delete(publicKey).catch(()=>{});console.error("manage file",String(error));return bad("No se pudo completar el reemplazo",500,origin)}
+
 }
 async function review(req,env,origin){const data=await req.json().catch(()=>null),id=Number(data?.id),action=data?.action,reason=String(data?.reason||"").slice(0,500);
 if(!Number.isSafeInteger(id)||id<=0||!["aprobar","rechazar"].includes(action))return bad("Datos inválidos",400,origin);
