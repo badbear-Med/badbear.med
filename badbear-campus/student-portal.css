@@ -160,3 +160,30 @@
 .student-portal .campus-services-grid span{font-size:12px;color:#627887}
 .student-portal .campus-services>.hint{margin-top:14px}
 @media(max-width:650px){.student-portal .campus-services-grid{grid-template-columns:1fr}}
+
+/* BADBEAR.CAMPUS · visual refresh, without changing private data or routes */
+.student-portal{background:radial-gradient(ellipse 55% 32% at 4% 8%,#dff3ef 0%,transparent 100%),radial-gradient(ellipse 45% 40% at 100% 45%,#e3ecfb 0%,transparent 100%),#f4f7fc}
+.student-portal main{max-width:1440px!important;width:100%;padding:32px 28px 56px}
+.student-portal .portal-header{padding-left:max(28px,calc((100% - 1380px)/2));padding-right:max(28px,calc((100% - 1380px)/2))}
+.student-portal .portal-hero{grid-template-columns:minmax(0,1fr) 310px;min-height:285px;padding:42px 55px;background:radial-gradient(circle at 87% 25%,#17889955,transparent 35%),linear-gradient(115deg,#102a46 0%,#14516a 55%,#0c817e 100%);box-shadow:0 16px 38px #16405d22;border:1px solid #ffffff22}
+.student-portal .portal-hero::after{right:-60px;top:-210px;width:620px;height:620px;border-color:#ffffff20;box-shadow:0 0 0 56px #ffffff08,0 0 0 130px #ffffff06}
+.student-portal .portal-hero h1{font-size:clamp(32px,3.5vw,49px);font-weight:760;letter-spacing:-1.5px}
+.student-portal .portal-hero .eyebrow{color:#baf6e7}
+.student-portal .hero-emblem img{width:210px;height:210px;filter:drop-shadow(0 10px 28px #00162570)}
+.student-portal #results{background:#fff;border:1px solid #dae5ed;box-shadow:0 10px 40px #1c44630b}
+.student-portal .campus-dashboard{background:linear-gradient(112deg,#f0faf7,#edf6ff);border-color:#b9deda}
+.student-portal .campus-course{border-color:#b7dcd8;box-shadow:0 5px 16px #0b6c790b}
+.student-portal .campus-progress-track div{background:linear-gradient(90deg,#049e91,#2694da)}
+.student-portal .campus-services{background:linear-gradient(180deg,#fff,#f9fcff);border-color:#d4e6ef}
+.student-portal .campus-services-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.student-portal .campus-services-grid a{min-height:100px;padding:19px 20px;border-radius:13px;border-color:#d4e5ec;background:#fff;box-shadow:0 5px 18px #16495f0a;justify-content:center;transition:transform .16s,border-color .16s,box-shadow .16s}
+.student-portal .campus-services-grid a:nth-child(5n+1){background:linear-gradient(135deg,#e7f6f3,#f7fffd)}
+.student-portal .campus-services-grid a:nth-child(5n+2){background:linear-gradient(135deg,#eaf1ff,#fbfdff)}
+.student-portal .campus-services-grid a:nth-child(5n+3){background:linear-gradient(135deg,#fff3e8,#fffdf9)}
+.student-portal .campus-services-grid a:nth-child(5n+4){background:linear-gradient(135deg,#f2edff,#fdfbff)}
+.student-portal .campus-services-grid a:hover{transform:translateY(-2px);border-color:#70b8ba;box-shadow:0 9px 22px #16495f1b}
+.student-portal .campus-services-grid strong{font-size:15px;color:#18435c}
+.student-portal .campus-services-grid span{font-size:12px}
+.student-portal .learning-area{margin-top:22px}
+@media(max-width:980px){.student-portal .campus-services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.student-portal .portal-hero{grid-template-columns:minmax(0,1fr) 210px;padding:30px}}
+@media(max-width:650px){.student-portal main{padding:16px!important}.student-portal .portal-hero{grid-template-columns:1fr;padding:25px}.student-portal .hero-emblem{display:none}.student-portal .campus-services-grid{grid-template-columns:1fr}.student-portal .campus-services-grid a{min-height:75px}}
