@@ -59,6 +59,10 @@ try {
     }
     $config = Get-Content -LiteralPath 'wrangler.json' -Raw | ConvertFrom-Json
     $config.d1_databases[0].database_id = $database.uuid
+    $campusServices = @()
+    if ($config.PSObject.Properties['services']) { $campusServices = @($config.services | Where-Object { $_.binding -ne 'EXAMS_AUTH' }) }
+    $campusServices += [PSCustomObject]@{ binding = 'EXAMS_AUTH'; service = 'badbear-exams-api' }
+    $config | Add-Member -NotePropertyName 'services' -NotePropertyValue $campusServices -Force
     $utf8Campus = New-Object System.Text.UTF8Encoding($false)
     [System.IO.File]::WriteAllText((Join-Path $PSScriptRoot 'wrangler.json'), ($config | ConvertTo-Json -Depth 8), $utf8Campus)
     Invoke-CampusWrangler -Arguments @('d1', 'execute', 'badbear-campus', '--remote', '--file', 'schema.sql', '--yes')

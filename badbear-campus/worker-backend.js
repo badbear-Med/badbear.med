@@ -34,6 +34,7 @@ async function adminSignature(payload, env) {
   return hex(await crypto.subtle.sign("HMAC",key,encoder.encode(payload)));
 }
 async function adminLogin(req, env) {
+  if (typeof env.EXAMS_AUTH?.fetch !== "function") throw new Problem("Falta configurar la conexión interna con Exámenes.",503);
   const body = await readJSON(req);
   if (typeof body.email !== "string" || typeof body.password !== "string") throw new Problem("Introduce correo y contraseña.");
   const email = body.email.trim().toLowerCase(), pass = body.password;
@@ -41,23 +42,31 @@ async function adminLogin(req, env) {
   await rate(req,env,"admin:"+email);
   let reply, session;
   try {
-    // Fixed trusted destination: reuse the existing administrator account, without sharing signing secrets.
-    reply = await fetch("https://badbear-exams-api.wajomea-group.workers.dev/api/admin/login", {
-      method:"POST", headers:{"Origin":SITE,"Content-Type":"application/json"},
+    // Explicit service binding avoids unsupported public fetches between workers.dev Workers.
+    reply = await env.EXAMS_AUTH.fetch(new Request("https://badbear-exams-api.wajomea-group.workers.dev/api/admin/login", {
+      method:"POST", headers:{"Origin":SITE,"Content-Type":"application/json",...(req.headers.get("CF-Connecting-IP")?{"CF-Connecting-IP":req.headers.get("CF-Connecting-IP")}: {})},
       body:JSON.stringify({email,password:pass}), redirect:"error", signal:AbortSignal.timeout(10000)
-    });
-    session = await reply.json();
-  } catch { throw new Problem("No se pudo verificar el acceso. Inténtalo nuevamente.",503); }
+    }));
+  } catch (error) { console.error("Campus: fallo de conexión interna con Exámenes",error.name);throw new Problem("No se pudo conectar con el servicio de acceso de Exámenes. Inténtalo nuevamente.",503); }
+  try { session = await reply.json(); }
+  catch { throw new Problem("El servicio de acceso respondió de forma inesperada.",503); }
   if (!reply.ok) {
     if (reply.status === 401) throw new Problem("Correo o contraseña incorrectos.",401);
     if (reply.status === 429) throw new Problem("Demasiados intentos. Vuelve a intentarlo más tarde.",429);
     throw new Problem("El servicio de acceso no está disponible. Inténtalo más tarde.",503);
   }
-  const match = typeof session.token === "string" && session.token.match(/^(\d{13})\.[a-zA-Z0-9_-]{16,128}\.[a-zA-Z0-9_-]{43}$/);
+  const match = typeof session?.token === "string" && session.token.match(/^(\d{13})\.[a-zA-Z0-9_-]{16,128}\.[a-zA-Z0-9_-]{43}$/);
   const expires = match && Math.min(Math.floor(Number(match[1])/1000),now()+28800);
-  if (session.ok !== true || !match || expires <= now()) throw new Problem("No se recibió una sesión administrativa válida.",503);
+  if (session?.ok !== true || !match || expires <= now()) throw new Problem("No se recibió una sesión administrativa válida.",503);
   const payload = "campus1."+expires+"."+random();
   return {ok:true,token:session.token,campus_token:payload+"."+await adminSignature(payload,env),expira:expires};
+}
+async function examsAvailable(env) {
+  if (typeof env.EXAMS_AUTH?.fetch !== "function") return false;
+  try {
+    const reply = await env.EXAMS_AUTH.fetch(new Request("https://badbear-exams-api.wajomea-group.workers.dev/health",{headers:{Origin:SITE},redirect:"error",signal:AbortSignal.timeout(5000)}));
+    const data = await reply.json();return reply.ok && data?.servicio === "BADBEAR.EXAMS";
+  } catch { return false; }
 }
 async function readJSON(req) {
   if (!(req.headers.get("Content-Type") || "").startsWith("application/json")) throw new Problem("Se requiere JSON.", 415);
@@ -174,7 +183,8 @@ export default {
           try { ready = !!await env.DB.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name='campus_auditoria'").first(); } catch {}
         }
         let states = false; if (ready) { try { states = !!await env.DB.prepare("SELECT name FROM pragma_table_info('campus_resultados') WHERE name='estado'").first(); } catch {} }
-        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states,acceso_unificado:true},ready?200:503,origin);
+        const exams = ready && await examsAvailable(env);
+        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states,acceso_unificado:exams,conexion_examenes:exams?"conectado":"pendiente"},ready?200:503,origin);
       }
       if (!env.DB || env.ADMIN_API_TOKEN?.length < 32 || !env.ADMIN_API_TOKEN || env.PASSWORD_PEPPER?.length < 32 || !env.PASSWORD_PEPPER) throw new Problem("El portal está pendiente de conexión. Inténtalo más tarde.", 503);
       if (req.method === "POST" && origin !== SITE) throw new Problem("Origen no permitido.", 403);

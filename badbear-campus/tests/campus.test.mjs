@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { DatabaseSync } from 'node:sqlite';
 import { readFileSync } from 'node:fs';
 import worker from '../worker-backend.js';
+import examsWorker from '../../badbear-exams/worker-backend.js';
 import { parseCSV } from '../csv.js';
 import { resultText } from '../results.js';
 
@@ -16,7 +17,7 @@ class D1 {
   }; }
   async batch(statements) { this.db.exec('BEGIN');try{const result=[];for(const stmt of statements)result.push(await stmt.run());this.db.exec('COMMIT');return result}catch(error){this.db.exec('ROLLBACK');throw error} }
 }
-const ADMIN='a'.repeat(64),env=()=>({DB:new D1(),ADMIN_API_TOKEN:ADMIN,PASSWORD_PEPPER:'p'.repeat(64)});
+const ADMIN='a'.repeat(64),env=()=>({DB:new D1(),ADMIN_API_TOKEN:ADMIN,PASSWORD_PEPPER:'p'.repeat(64),EXAMS_AUTH:{async fetch(req){assert.equal(new URL(req.url).pathname,'/health');return Response.json({servicio:'BADBEAR.EXAMS'})}}});
 const row=(codigo,nombre,nota='16')=>({codigo,nombre,curso:'Fisiología',periodo:'2026-II',evaluacion:'Primer parcial',nota,fecha:'2026-10-10'});
 async function request(e,path,{method='GET',token='',body,origin='https://wajomea.group',ip='192.0.2.1'}={}) {
   const req=new Request('https://example.invalid'+path,{method,headers:{Origin:origin,'CF-Connecting-IP':ip,...(token?{Authorization:'Bearer '+token}:{}),...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{})});
@@ -33,14 +34,35 @@ test('health fails closed until database and secrets are configured',async()=>{
   assert.equal((await request(env(),'/api/health')).data.estado,'operativo');
 });
 const examSession=()=>String(Date.now()+3600000)+'.'+crypto.randomUUID()+'.'+'s'.repeat(43);
+test('both real Worker handlers exchange a signed session through the binding when public fetch is blocked',async t=>{
+  const e=env();e.DB.db.exec('CREATE TABLE limites_aportes (identificador TEXT PRIMARY KEY, ventana INTEGER, intentos INTEGER)');
+  const exams={DB:e.DB,APORTES:{},PUBLICADOS:{},TURNSTILE_SECRET_KEY:'test-turnstile',ADMIN_API_TOKEN:'e'.repeat(64),ADMIN_LOGIN_EMAIL:'admin@example.invalid',ADMIN_LOGIN_PASSWORD:'test password'};
+  e.EXAMS_AUTH={fetch:req=>examsWorker.fetch(req,exams)};
+  t.mock.method(globalThis,'fetch',()=>{throw Error('Public Worker fetch forbidden')});
+  const health=await request(e,'/api/health');assert.equal(health.data.acceso_unificado,true);
+  const body={email:'admin@example.invalid',password:'test password'};
+  const failed=await request(e,'/api/admin/login',{method:'POST',body:{...body,password:'incorrect'}});assert.equal(failed.status,401);
+  const login=await request(e,'/api/admin/login',{method:'POST',body});assert.equal(login.status,200);
+  assert.equal((await request(e,'/api/admin/alumnos',{token:login.data.campus_token})).status,200);
+  assert.equal((await request(e,'/api/admin/alumnos',{token:login.data.token})).status,401);
+  const check=new Request('https://example.invalid/api/admin/unknown',{headers:{Origin:'https://wajomea.group',Authorization:'Bearer '+login.data.token}});
+  // Auth succeeds before the nonexistent route is rejected, without querying private examination records.
+  assert.equal((await examsWorker.fetch(check,exams)).status,404);
+  check.headers.set('Authorization','Bearer '+login.data.campus_token);assert.equal((await examsWorker.fetch(check,exams)).status,401);
+});
 test('the existing exam login issues separate Campus and Exam sessions without saving passwords',async t=>{
   const e=env(),token=examSession(),calls=[];
-  t.mock.method(globalThis,'fetch',async(url,options)=>{calls.push({url,options});return Response.json({ok:true,token})});
+  t.mock.method(globalThis,'fetch',()=>{throw Error('Public Worker-to-Worker fetch is forbidden')});
+  t.mock.method(e.EXAMS_AUTH,'fetch',async(req)=>{
+    if(new URL(req.url).pathname==='/health')return Response.json({servicio:'BADBEAR.EXAMS'});
+    calls.push({url:req.url,options:{redirect:req.redirect,body:await req.text(),headers:req.headers}});return Response.json({ok:true,token})
+  });
   const login=await request(e,'/api/admin/login',{method:'POST',body:{email:'Admin@Example.invalid',password:'test password'}});
   assert.equal(login.status,200);assert.equal(login.data.token,token);assert.match(login.data.campus_token,/^campus1\./);
   assert.ok(login.data.expira<=Math.floor(Number(token.split('.')[0])/1000));
   assert.equal(calls.length,1);assert.equal(calls[0].url,'https://badbear-exams-api.wajomea-group.workers.dev/api/admin/login');
   assert.equal(calls[0].options.redirect,'error');assert.deepEqual(JSON.parse(calls[0].options.body),{email:'admin@example.invalid',password:'test password'});
+  assert.equal(calls[0].options.headers.get('Origin'),'https://wajomea.group');assert.equal(calls[0].options.headers.get('CF-Connecting-IP'),'192.0.2.1');
   assert.equal((await request(e,'/api/admin/alumnos',{token:login.data.campus_token})).status,200);
   assert.equal((await request(e,'/api/admin/alumnos',{token})).status,401);
   assert.equal((await request(e,'/api/admin/publicar',{method:'POST',token:login.data.campus_token,body:{items:[row('001','Alumno Uno','NSP')]}})).status,200);
@@ -59,24 +81,39 @@ test('the existing exam login issues separate Campus and Exam sessions without s
   assert.equal((await request(e,'/api/admin/alumnos',{token:login.data.campus_token})).status,401);
 });
 test('failed, malformed, expired or unavailable identity responses fail closed',async t=>{
-  const e=env();let reply;
-  t.mock.method(globalThis,'fetch',async()=>{if(reply instanceof Error)throw reply;return reply});
-  const login=()=>request(e,'/api/admin/login',{method:'POST',body:{email:'admin@example.invalid',password:'test password'}});
+  const e=env();let reply,attempt=0;
+  t.mock.method(e.EXAMS_AUTH,'fetch',async()=>{if(reply instanceof Error)throw reply;return reply});
+  const login=()=>request(e,'/api/admin/login',{method:'POST',body:{email:'admin'+(++attempt)+'@example.invalid',password:'test password'}});
   for(const status of [401,429,500]){reply=Response.json({error:'upstream'}, {status});assert.equal((await login()).status,status===500?503:status)}
   reply=new Error('offline');assert.equal((await login()).status,503);
   reply=Response.json({ok:true,token:'forged'});assert.equal((await login()).status,503);
   reply=Response.json({ok:false,token:examSession()});assert.equal((await login()).status,503);
   reply=Response.json({ok:true,token:examSession().replace(/^\d+/,String(Date.now()-10000))});assert.equal((await login()).status,503);
+  reply=Response.json(null);assert.equal((await login()).status,503);
+  reply=new Response('<html>Worker error</html>');assert.equal((await login()).status,503);
   assert.equal((await request(e,'/api/admin/alumnos')).status,401);assert.equal((await admin(e,'alumnos')).data.items.length,0);
 });
 test('the unified login rejects foreign origins, missing credentials and rate-limited attempts before relaying',async t=>{
-  const e=env(),calls=[];t.mock.method(globalThis,'fetch',async()=>{calls.push(true);return Response.json({error:'invalid'}, {status:401})});
+  const e=env(),calls=[];t.mock.method(e.EXAMS_AUTH,'fetch',async()=>{calls.push(true);return Response.json({error:'invalid'}, {status:401})});
   const body={email:'admin@example.invalid',password:'wrong password'};
   for(const origin of ['', 'https://foreign.invalid'])assert.equal((await request(e,'/api/admin/login',{method:'POST',body,origin})).status,403);
   for(const bad of [{email:1,password:'x'},{email:'',password:'x'},{email:'admin@example.invalid',password:'x'.repeat(257)}])assert.equal((await request(e,'/api/admin/login',{method:'POST',body:bad})).status,400);
   assert.equal(calls.length,0);
   for(let i=0;i<8;i++)assert.equal((await request(e,'/api/admin/login',{method:'POST',body})).status,401);
   assert.equal((await request(e,'/api/admin/login',{method:'POST',body})).status,429);assert.equal(calls.length,8);
+});
+test('health checks the actual service binding and missing bindings cannot authenticate',async t=>{
+  const e=env();delete e.EXAMS_AUTH;
+  t.mock.method(globalThis,'fetch',()=>{throw Error('A missing service binding must not fall back to public fetch')});
+  assert.equal((await request(e,'/api/health')).data.acceso_unificado,false);
+  const login=await request(e,'/api/admin/login',{method:'POST',body:{email:'admin@example.invalid',password:'test password'}});
+  assert.equal(login.status,503);assert.match(login.data.error,/conexión interna/);
+  e.EXAMS_AUTH={async fetch(){return Response.json({servicio:'OTHER'})}};
+  assert.equal((await request(e,'/api/health')).data.acceso_unificado,false);
+  e.EXAMS_AUTH={async fetch(){return new Response('unavailable',{status:503})}};
+  assert.equal((await request(e,'/api/health')).data.acceso_unificado,false);
+  e.EXAMS_AUTH={async fetch(req){assert.equal(req.url,'https://badbear-exams-api.wajomea-group.workers.dev/health');assert.equal(req.headers.has('Authorization'),false);return Response.json({servicio:'BADBEAR.EXAMS'})}};
+  assert.equal((await request(e,'/api/health')).data.acceso_unificado,true);
 });
 test('admin authorization and CORS reject foreign origins',async()=>{
   const e=env();assert.equal((await request(e,'/api/admin/alumnos')).status,401);
