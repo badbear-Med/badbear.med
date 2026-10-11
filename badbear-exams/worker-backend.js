@@ -3,7 +3,25 @@ const SITE="https://wajomea.group", MAX=10*1024*1024, LIMIT=12*1024*1024;
 const json=(value,status=200,origin="")=>Response.json(value,{status,headers:{"Cache-Control":"no-store","Vary":"Origin",...(origin===SITE?{"Access-Control-Allow-Origin":SITE}:{})}});
 const bad=(message,status,origin)=>json({error:message},status,origin);
 async function equal(a,b){const enc=new TextEncoder();const [x,y]=await Promise.all([crypto.subtle.digest("SHA-256",enc.encode(a)),crypto.subtle.digest("SHA-256",enc.encode(b))]);let diff=0;const aa=new Uint8Array(x),bb=new Uint8Array(y);for(let i=0;i<aa.length;i++)diff|=aa[i]^bb[i];return diff===0}
-async function admin(req,env){const authorization=req.headers.get("Authorization")||"";if(!env.ADMIN_API_TOKEN||!authorization.startsWith("Bearer "))return false;return equal(authorization.slice(7),env.ADMIN_API_TOKEN)}
+const enc=new TextEncoder();
+const b64=u=>btoa(String.fromCharCode(...u)).replace(/\\+/g,"-").replace(/\\//g,"_").replace(/=+$/,"");
+async function signingKey(env){return crypto.subtle.importKey("raw",enc.encode(env.ADMIN_API_TOKEN),"HMAC",false,["sign","verify"])}
+async function admin(req,env){const header=req.headers.get("Authorization")||"";if(!env.ADMIN_API_TOKEN||!header.startsWith("Bearer "))return false;const token=header.slice(7);if(await equal(token,env.ADMIN_API_TOKEN))return true;const [expiry,nonce,sig,...extra]=token.split(".");if(extra.length||!/^\\d{10,13}$/.test(expiry||"")||!nonce||!sig||Number(expiry)<Date.now()||Number(expiry)>Date.now()+28800000)return false;const expected=b64(new Uint8Array(await crypto.subtle.sign("HMAC",await signingKey(env),enc.encode(expiry+"."+nonce))));return await equal(sig,expected)}
+async function login(req,env,origin){
+ if(!env.ADMIN_LOGIN_EMAIL||!env.ADMIN_LOGIN_PASSWORD||!env.ADMIN_API_TOKEN)return bad("Configure ADMIN_LOGIN_EMAIL y ADMIN_LOGIN_PASSWORD en Cloudflare",503,origin);
+ const ip=req.headers.get("CF-Connecting-IP")||"unknown";const digest=await crypto.subtle.digest("SHA-256",enc.encode("admin-login:"+ip));const identifier="admin:"+b64(new Uint8Array(digest));const window=Math.floor(Date.now()/600000);
+ const row=await env.DB.prepare("SELECT intentos FROM limites_aportes WHERE identificador=? AND ventana=?").bind(identifier,window).first();
+ if((row?.intentos||0)>=5)return bad("Demasiados intentos; espera 10 minutos",429,origin);
+ const data=await req.json().catch(()=>null),email=String(data?.email||"").trim().toLowerCase(),password=String(data?.password||"");
+ if(email.length>254||password.length>256||!email||!password)return bad("Credenciales incorrectas",401,origin);
+ const validEmail=await equal(email,String(env.ADMIN_LOGIN_EMAIL).trim().toLowerCase());
+ const validPassword=await equal(password,env.ADMIN_LOGIN_PASSWORD);
+ if(!validEmail||!validPassword){await env.DB.prepare("INSERT INTO limites_aportes (identificador,ventana,intentos) VALUES (?,?,1) ON CONFLICT(identificador,ventana) DO UPDATE SET intentos=intentos+1").bind(identifier,window).run();return bad("Correo o contraseña incorrectos",401,origin)}
+ await env.DB.prepare("DELETE FROM limites_aportes WHERE identificador=? AND ventana=?").bind(identifier,window).run();
+ const expiry=String(Date.now()+8*60*60*1000),nonce=crypto.randomUUID(),payload=expiry+"."+nonce;
+ const signature=b64(new Uint8Array(await crypto.subtle.sign("HMAC",await signingKey(env),enc.encode(payload))));
+ return json({ok:true,token:payload+"."+signature,expires_in:28800},200,origin)
+}
 function sniff(b){if(b.length>4&&b[0]===37&&b[1]===80&&b[2]===68&&b[3]===70&&b[4]===45)return["application/pdf","pdf"];if(b.length>7&&[137,80,78,71,13,10,26,10].every((v,i)=>b[i]===v))return["image/png","png"];if(b.length>2&&b[0]===255&&b[1]===216&&b[2]===255)return["image/jpeg","jpg"];return null}
 const field=(data,key,n)=>{const x=data.get(key);return typeof x==="string"?x.trim().slice(0,n):""};
 async function turnstile(token,req,env){if(!token||!env.TURNSTILE_SECRET_KEY)return false;const f=new FormData();f.set("secret",env.TURNSTILE_SECRET_KEY);f.set("response",token);const ip=req.headers.get("CF-Connecting-IP");if(ip)f.set("remoteip",ip);try{const r=await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify",{method:"POST",body:f,signal:AbortSignal.timeout(8000)});const x=await r.json();return x.success===true&&x.hostname==="wajomea.group"}catch{return false}}
@@ -111,6 +129,7 @@ try{
  }
  if(origin!==SITE)return bad("Origen no autorizado",403,origin);
  if(req.method==="OPTIONS")return new Response(null,{status:204,headers:{"Access-Control-Allow-Origin":SITE,"Access-Control-Allow-Methods":"GET, POST, OPTIONS","Access-Control-Allow-Headers":"Content-Type, Authorization","Access-Control-Max-Age":"600"}});
+ if(path==="/api/admin/login"&&req.method==="POST")return await login(req,env,origin);
  if(path==="/api/aportes"&&req.method==="POST")return await upload(req,env,origin);
  if(path==="/api/examenes"&&req.method==="GET")return await publicList(env,origin);
  if(path.startsWith("/api/admin/")){
