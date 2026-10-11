@@ -97,11 +97,15 @@
     }
   }
   $("reader-close").addEventListener("click",()=>dialog.close());
-  dialog.addEventListener("close",()=>{release();if(ownsFullscreen&&document.fullscreenElement===fullscreenRoot)document.exitFullscreen().catch(()=>{});ownsFullscreen=false;});
+  dialog.addEventListener("close",()=>{release();if(ownsFullscreen&&document.fullscreenElement===fullscreenRoot)document.exitFullscreen().catch(()=>{});ownsFullscreen=false;dialog.classList.remove("expanded");fullscreen.textContent="Pantalla completa";});
   dialog.addEventListener("cancel",release);
   $("image-zoom").addEventListener("change",()=>{if(!image)return;const zoom=$("image-zoom").value;image.style.width=zoom==="fit"?"100%":zoom+"%";image.style.maxWidth=zoom==="fit"?"100%":"none";});
-  fullscreen.hidden=!document.fullscreenEnabled||typeof fullscreenRoot.requestFullscreen!=="function";
-  fullscreen.addEventListener("click",async()=>{try{if(document.fullscreenElement===fullscreenRoot)await document.exitFullscreen();else{await fullscreenRoot.requestFullscreen();if(dialog.open)ownsFullscreen=true;else await document.exitFullscreen();}}catch{status.textContent="Este navegador no permite pantalla completa aquí. Puedes seguir leyendo en el visor.";}});
+  fullscreen.addEventListener("click",async()=>{
+    if(dialog.classList.contains("expanded")){dialog.classList.remove("expanded");fullscreen.textContent="Pantalla completa";return;}
+    const expand=()=>{if(dialog.open){dialog.classList.add("expanded");fullscreen.textContent="Restaurar tamaño";}};
+    if(!document.fullscreenEnabled||typeof fullscreenRoot.requestFullscreen!=="function"){expand();return;}
+    try{if(document.fullscreenElement===fullscreenRoot)await document.exitFullscreen();else{await fullscreenRoot.requestFullscreen();if(dialog.open)ownsFullscreen=true;else await document.exitFullscreen();}}catch{expand();}
+  });
   document.addEventListener("fullscreenchange",()=>{const active=document.fullscreenElement===fullscreenRoot;fullscreen.textContent=active?"Salir de pantalla completa":"Pantalla completa";if(!active)ownsFullscreen=false;});
   window.addEventListener("pagehide",()=>{if(dialog.open)dialog.close();release();});
   filters.forEach(filter=>filter.addEventListener("input",render));

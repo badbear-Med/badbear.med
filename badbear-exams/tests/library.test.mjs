@@ -9,7 +9,7 @@ const flush=()=>new Promise(resolve=>setImmediate(resolve));
 const fixture=[{id:'first',course:'Fisiología',title:'Parcial de fisiología',university:'UNFV',facultad:'Medicina',teacher:'Docente A',anio:2026,type:'Parcial'},{id:'second',course:'Cirugía General',title:'Examen final',university:'UNFV',facultad:'Medicina',anio:2025,type:'Final'}];
 function page(fileFetch=async()=>({ok:true,blob:async()=>({type:'application/pdf'})}),catalogue=fixture){
   class Element{
-    constructor(tag){this.tag=tag;this.children=[];this.events={};this.value='';this.hidden=false;this.open=false;this.style={};this.attrs={};this.textContent='';}
+    constructor(tag){this.tag=tag;this.children=[];this.events={};this.value='';this.hidden=false;this.open=false;this.style={};this.attrs={};this.textContent='';const classes=new Set();this.classList={add:x=>classes.add(x),remove:x=>classes.delete(x),contains:x=>classes.has(x)};}
     append(...children){this.children.push(...children);}
     replaceChildren(...children){this.children=children;}
     setAttribute(name,value){this.attrs[name]=value;}
@@ -62,4 +62,7 @@ test('fullscreen uses the document root and closing the reader leaves fullscreen
 });
 test('the deployed API fields supply titles and evaluation filters without repeating course names',async()=>{
   const p=page(undefined,[{id:1,titulo:'Fisiología',course:'Fisiología',tipo:'Parcial',anio:2026,facultad:'Medicina'}]);await p.ready();const card=p.elements.get('exam-list').children[0];assert.equal(card.children[1].children[0].textContent,'Fisiología');assert.equal(card.children[1].children[1].hidden,true);assert.match(card.children[1].children[2].textContent,/Parcial/);p.elements.get('type').value='Final';await p.elements.get('type').fire('input');assert.equal(p.elements.get('exam-list').children.length,0);
+});
+test('when browser fullscreen is unavailable the reader expands within the page and restores cleanly',async()=>{
+  const p=page();await p.ready();await p.open();p.document.documentElement.requestFullscreen=async()=>{throw Error('Fullscreen unavailable')};await p.elements.get('reader-fullscreen').fire('click');assert.equal(p.elements.get('exam-reader').classList.contains('expanded'),true);assert.equal(p.elements.get('reader-fullscreen').textContent,'Restaurar tamaño');await p.elements.get('reader-fullscreen').fire('click');assert.equal(p.elements.get('exam-reader').classList.contains('expanded'),false);await p.close();
 });
