@@ -405,7 +405,11 @@
   }
 
   function navigateFrame(raw, pushHistory = false) {
-    const target = sanitizePage(raw);
+    const pageUrl = new URL(sanitizePage(raw));
+    if (pageUrl.pathname.endsWith(".html") || pageUrl.pathname.endsWith("/")) {
+      pageUrl.searchParams.set("_ui", "20261011-clean-navigation2");
+    }
+    const target = pageUrl.href;
     if (playerView === "closed" &&
         new URL(target).pathname.startsWith(basePath + "badbear-music/")) {
       setPlayerView("expanded");
