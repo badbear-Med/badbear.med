@@ -1,0 +1,42 @@
+/* BADBEAR.CAMPUS · identidad viva, solo presentacion */
+:root{--bb-deep:#09254d;--bb-blue:#1262ed;--bb-cyan:#00aeba;--bb-pink:#f33286;--bb-yellow:#ffc247;--bb-ink:#102746}
+body.student-portal{--ink:#102746;--muted:#48617b;--blue:#1262ed;--teal:#008f9d;--line:#cbdfee;background:radial-gradient(circle at 8% 12%,#bdeeff88,transparent 28%),radial-gradient(circle at 94% 28%,#f9bddb70,transparent 27%),linear-gradient(150deg,#eff8ff,#f7f7ff 46%,#e9fff8)}
+.student-portal .portal-header{background:#fff;border-bottom:3px solid #00b4bf;box-shadow:0 3px 16px #16315b12}
+.student-portal .portal-hero{background:linear-gradient(112deg,#0b2252 3%,#114ca6 51%,#00aeb4 100%);box-shadow:0 18px 40px #0b3d8633;border:1px solid #5ef4ed44}
+.student-portal .portal-hero .eyebrow,.student-portal .portal-hero .service{color:#ccfff3}
+.student-portal .portal-hero h1{color:#fff}
+.student-portal .portal-hero::before{content:"";position:absolute;inset:0;background:url("../dermatologia/badbear_logo.png") no-repeat 78% 50%;background-size:270px;opacity:.08;pointer-events:none;z-index:-1}
+.student-portal .portal-hero::after{border-color:#ffffff3a}
+.student-portal #results,.student-portal .login-panel,.student-portal .campus-dashboard,.student-portal .campus-services,.student-portal .tab-section[data-view="inicio"]{box-shadow:0 12px 35px #173c7520;border-color:#bcd9e8}
+.student-portal .student-tabs{background:linear-gradient(95deg,#edf8ff,#edfffd);border:1px solid #a4daea}
+.student-portal .student-tabs button{font-weight:750;color:#134c80}
+.student-portal .student-tabs button.selected{color:white;background:linear-gradient(115deg,#1262ed,#009fae);box-shadow:0 5px 14px #1262ed55}
+.student-portal .student-tabs button:not(.selected):hover{background:#d6edff}
+.student-portal .tab-section[data-view="inicio"]{background:linear-gradient(112deg,#d4f7fb,#ecedff 60%,#ffe8f5)}
+.student-portal .campus-dashboard{background:linear-gradient(128deg,#e6f8ff,#e7fff2 56%,#f2ecff);border-left:4px solid #00aeb9}
+.student-portal .campus-progress-track div{background:linear-gradient(90deg,#1262ed,#00b4a9)}
+.student-portal .campus-services-grid a{position:relative;overflow:hidden;border:1px solid #bcd8ee;border-top:4px solid #1262ed;box-shadow:0 5px 20px #19508c16}
+.student-portal .campus-services-grid a:nth-child(4n+2){border-top-color:#00aeb9}.student-portal .campus-services-grid a:nth-child(4n+3){border-top-color:#f33286}.student-portal .campus-services-grid a:nth-child(4n+4){border-top-color:#f5a62b}
+.student-portal .campus-services-grid a::after,.student-portal .campus-course::after,.student-portal .tab-section[data-view="inicio"]::after,.student-portal .tab-section[data-view="calificaciones"]::after,.student-portal .tab-section[data-view="biblioteca"]::after,.student-portal .tab-section[data-view="perfil"]::after{content:"";position:absolute;right:14px;bottom:12px;width:105px;height:105px;background:url("../dermatologia/badbear_logo.png") center/contain no-repeat;opacity:.055;pointer-events:none}
+.student-portal .campus-course,.student-portal .tab-section[data-view="inicio"],.student-portal .tab-section[data-view="calificaciones"],.student-portal .tab-section[data-view="biblioteca"],.student-portal .tab-section[data-view="perfil"]{position:relative;overflow:hidden}
+.student-portal .tab-section[data-view="calificaciones"]{background:linear-gradient(155deg,#ffffff,#edf9ff);border:1px solid #cce4f6;border-radius:15px;padding:22px}
+.student-portal button:not(.secondary):not(.selected),.student-portal .campus-course-link{background:linear-gradient(115deg,#125fe7,#00aeb7);color:white;border-color:transparent}
+.student-portal .table-wrap{border:1px solid #bdd7e9;border-radius:12px;overflow:auto}
+.student-portal table thead th{background:#103869;color:#fff}
+.student-portal table tbody tr:nth-child(even){background:#f1f8ff}
+.student-portal .grade.grade-low{color:#bc1d37!important}.student-portal .grade.grade-high{color:#145bdf!important}
+@media(max-width:700px){.student-portal .portal-hero::before{background-size:180px;background-position:right -50px center}.student-portal .campus-services-grid a::after{width:75px;height:75px}}
+/* Aula virtual de Cirugia: misma marca y colores, sin afectar recursos ni controles */
+body.bb-vivid-aula{background:radial-gradient(circle at 8% 4%,#bceeffaa,transparent 26%),radial-gradient(circle at 95% 30%,#ffcce2aa,transparent 30%),linear-gradient(140deg,#eef7ff,#f5f8ff 55%,#edfff9);color:#102746}
+.bb-vivid-aula header{position:relative;overflow:hidden;background:linear-gradient(110deg,#0b2456,#1058b7 55%,#00a4ad);border-bottom:4px solid #fa368a}
+.bb-vivid-aula header::after{content:"";position:absolute;top:-25px;right:8%;width:155px;height:155px;background:url("../dermatologia/badbear_logo.png") center/contain no-repeat;opacity:.11;pointer-events:none}
+.bb-vivid-aula header a{color:#d0fffb}
+.bb-vivid-aula .hero{background:linear-gradient(110deg,#daf4ff,#e9fff7 55%,#ffebf5);border-left:5px solid #1362ef}
+.bb-vivid-aula .hero h2{color:#123c80}
+.bb-vivid-aula .panel,.bb-vivid-aula .unit,.bb-vivid-aula .activity,.bb-vivid-aula .learning-view,.bb-vivid-aula .hero{position:relative;overflow:hidden;border-color:#bfdbea;box-shadow:0 7px 23px #193f7518}
+.bb-vivid-aula .panel::after,.bb-vivid-aula .unit::after,.bb-vivid-aula .activity::after,.bb-vivid-aula .learning-view::after,.bb-vivid-aula .hero::after{content:"";position:absolute;right:14px;bottom:12px;width:104px;height:104px;background:url("../dermatologia/badbear_logo.png") center/contain no-repeat;opacity:.045;pointer-events:none}
+.bb-vivid-aula .academic-tabs button[aria-selected="true"],.bb-vivid-aula .lesson-entry.active{background:linear-gradient(110deg,#176af0,#00aeb3);color:white;border-color:#0d89c9}
+.bb-vivid-aula .btn:not(.secondary){background:linear-gradient(110deg,#1662ed,#00aeba);color:#fff}
+.bb-vivid-aula .lesson-entry{border-left:3px solid #00aebb}
+.bb-vivid-aula .tag{background:#c8f5eb;color:#006d71}
+.bb-vivid-aula .grade.grade-low{color:#bc1d37!important}.bb-vivid-aula .grade.grade-high{color:#145bdf!important}
