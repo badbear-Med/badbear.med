@@ -65,3 +65,24 @@
 @keyframes wg-logo-drift{0%,100%{transform:translateY(5px) rotate(-4deg)}50%{transform:translateY(-9px) rotate(4deg)}}
 @media(max-width:650px){.wg-cinematic .wg-title-lockup{align-items:center;gap:10px}.wg-cinematic .wg-title-lockup h1{font-size:clamp(27px,7vw,48px)}.wg-cinematic .wg-floating-logo{width:clamp(80px,23vw,125px)}}
 @media(prefers-reduced-motion:reduce){.wg-cinematic .wg-floating-logo{animation:none}}
+
+/* Video 30 s a todo el ancho, contenido real superpuesto */
+.wg-video-stage{position:relative;isolation:isolate;width:100%;padding:1px 0 42px;background:#0a2449;overflow:hidden}
+.wg-video-stage::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#071b3f99,#071b3f44,#071b3f99);pointer-events:none}
+.wg-video-stage .wg-showreel{position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;z-index:-2;pointer-events:none}
+.wg-video-stage .wg-showreel[hidden]{display:block!important}
+.wg-video-stage .wg-showreel video{display:block;width:100%;height:100%;min-height:100%;object-fit:cover;object-position:center center;border-radius:0;background:#071b38}
+.wg-video-stage .wg-showreel-head{position:absolute;z-index:5;right:max(5%,calc((100% - 1180px)/2));top:24px;pointer-events:auto;margin:0;max-width:360px;display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:7px;background:#0b2558ba;color:#fff;padding:12px 16px;border:1px solid #ffffff60;border-radius:16px;backdrop-filter:blur(8px)}
+.wg-video-stage .wg-showreel-head h2{color:#fff;font-size:16px;margin:0}
+.wg-video-stage .wg-showreel-head p{color:#d8edff;font-size:12px}
+.wg-video-stage .wg-showreel-head .wg-eyebrow{color:#73e8f5}
+.wg-video-stage .wg-entry,.wg-video-stage .wg-projects,.wg-video-stage .wg-team{position:relative;z-index:2}
+.wg-video-stage .wg-entry{padding-top:134px}
+.wg-video-stage .wg-entry h2,.wg-video-stage .wg-projects h2{color:#fff;text-shadow:0 2px 14px #03102bc9}
+.wg-video-stage .wg-entry>.wg-eyebrow,.wg-video-stage .wg-projects .wg-eyebrow{color:#75eff5;text-shadow:0 2px 10px #07142a}
+.wg-video-stage .wg-entry-card{box-shadow:0 18px 44px #03183380;border:1px solid #ffffff80;backdrop-filter:blur(8px)}
+.wg-video-stage .wg-entry-campus{background:linear-gradient(115deg,#1156d9ed,#039aafe0)}
+.wg-video-stage .wg-entry-other{background:linear-gradient(115deg,#152955ed,#63309ade)}
+.wg-video-stage .wg-projects .wg-card{background:#ffffffeb;border-color:var(--wg-accent);box-shadow:0 12px 30px #02122b6a;backdrop-filter:blur(8px)}
+.wg-video-stage .wg-team{background:#fffffff0;box-shadow:0 12px 35px #031a4380}
+@media(max-width:760px){.wg-video-stage .wg-entry{padding-top:152px}.wg-video-stage .wg-showreel-head{top:18px;right:5%;left:5%;max-width:none;align-items:flex-start;text-align:left}.wg-video-stage .wg-showreel-head p{display:none}.wg-video-stage .wg-sound{width:auto}.wg-video-stage .wg-showreel video{object-position:center center}}
