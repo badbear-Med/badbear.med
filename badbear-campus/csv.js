@@ -23,3 +23,5 @@ export const parseCSV=text=>readCSV(text,["codigo","nombre","curso","periodo","e
 export const parseContactsCSV=text=>readCSV(text,["codigo","correo"]);
 
 export const parseRosterCSV=text=>readCSV(text,["apellidos y nombres","codigo de estudiante","telefono","dni","correo institucional"]).map(row=>({nombre:row["apellidos y nombres"],codigo:row["codigo de estudiante"],telefono:row.telefono,dni:row.dni,correo:row["correo institucional"]}));
+
+export function parseSimpleGradesCSV(text){const clean=text.replace(/^\uFEFF/,"");const first=clean.split(/\r?\n/,1)[0].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");const byCode=first.includes("codigo");const key=byCode?"codigo":"nombre";const expected=byCode?["codigo","nota"]:["apellidos y nombres","nota"];if(!byCode&&!first.includes("apellidos y nombres"))throw Error("Usa las columnas Código,Nota o Apellidos y Nombres,Nota.");return readCSV(clean,expected).map(x=>({[key]:x[byCode?"codigo":"apellidos y nombres"],nota:x.nota}));}
