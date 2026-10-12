@@ -1,0 +1,42 @@
+/* Inicio institucional WAJOMEA.GROUP: animacion web de 5 s, sin video externo. */
+.wg-header{background:#091d3d;border-bottom:1px solid #48dbec50}
+.wg-header .wg-brand{color:#fff}.wg-header .wg-brand span{color:#69eaf3}.wg-header nav a{color:#e7f5ff}.wg-header nav .wg-nav-med{background:#1467de}
+.wg-hero.wg-cinematic{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 110%,#156de2 0,#071b43 48%,#051025 100%);min-height:430px;padding:76px 5% 67px;color:#fff;isolation:isolate}
+.wg-cinematic .wg-hero-inner{position:relative;z-index:2;display:block;max-width:1120px}
+.wg-cinematic .wg-hero-copy{max-width:850px}
+.wg-cinematic .wg-eyebrow{color:#7beff3}
+.wg-cinematic h1,.wg-cinematic h1 span{color:#fff;text-shadow:0 0 34px #26caff55}
+.wg-cinematic h1 span{color:#65eff1}
+.wg-cinematic .wg-hero-copy>p:first-of-type{color:#fff}
+.wg-cinematic .wg-hero-description{color:#d3e7ff;max-width:650px}
+.wg-cinematic .wg-motion{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.wg-cinematic .wg-motion::before{content:"";position:absolute;inset:-30%;background:repeating-linear-gradient(90deg,transparent 0,transparent 72px,#5acfff12 73px,#5acfff12 74px),repeating-linear-gradient(0deg,transparent 0,transparent 72px,#5acfff10 73px,#5acfff10 74px);transform:perspective(450px) rotateX(55deg) translateY(14%);animation:wg-grid 5s linear infinite}
+.wg-cinematic .wg-motion::after{content:"";position:absolute;width:540px;height:540px;left:50%;top:46%;transform:translate(-50%,-50%);border:2px solid #32dfff8a;border-radius:50%;box-shadow:0 0 22px #0de4ff75,0 0 0 48px #2796ff13,0 0 0 93px #d449e90d,inset 0 0 60px #1377ed30;animation:wg-orbit 5s ease-in-out infinite}
+.wg-cinematic .wg-particle{position:absolute;width:7px;height:7px;border-radius:50%;background:#65f8ff;box-shadow:0 0 20px #3deaff;animation:wg-float 5s ease-in-out infinite}
+.wg-cinematic .wg-particle:nth-child(1){top:16%;left:12%;animation-delay:-1s}.wg-cinematic .wg-particle:nth-child(2){top:72%;left:18%;animation-delay:-2.3s;background:#ff66c8}.wg-cinematic .wg-particle:nth-child(3){top:19%;right:21%;animation-delay:-.3s}.wg-cinematic .wg-particle:nth-child(4){top:69%;right:10%;animation-delay:-3.5s;background:#ba80ff}.wg-cinematic .wg-particle:nth-child(5){top:43%;right:35%;animation-delay:-1.8s}
+.wg-cinematic .wg-hero-copy{animation:wg-reveal 5s ease-in-out infinite}
+@keyframes wg-grid{0%{opacity:.2;filter:hue-rotate(0deg)}50%{opacity:.42;filter:hue-rotate(20deg)}100%{opacity:.2;filter:hue-rotate(0deg)}}
+@keyframes wg-orbit{0%,100%{opacity:.24;transform:translate(-50%,-50%) scale(.84) rotate(0)}45%{opacity:.75;transform:translate(-50%,-50%) scale(1.02) rotate(75deg)}}
+@keyframes wg-float{0%,100%{opacity:.1;transform:translateY(16px) scale(.7)}45%{opacity:.9;transform:translateY(-21px) scale(1.2)}}
+@keyframes wg-reveal{0%,100%{opacity:.82;transform:translateY(5px)}25%,75%{opacity:1;transform:translateY(0)}}
+.wg-entry{max-width:1180px;margin:0 auto;padding:38px 5% 14px}
+.wg-entry h2{font-size:clamp(24px,3vw,35px);margin:5px 0 20px;letter-spacing:-.04em}
+.wg-entry-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:22px}
+.wg-entry-card{position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:230px;padding:28px;border-radius:22px;text-decoration:none;box-shadow:0 10px 26px #0a27541b;transition:transform .2s,box-shadow .2s}
+.wg-entry-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px #0a27542c}
+.wg-entry-card strong{font-size:clamp(24px,3vw,35px);line-height:1.1;letter-spacing:-.035em}
+.wg-entry-card p{max-width:420px;font-size:15px;margin:11px 0 24px;line-height:1.6}
+.wg-entry-card span.wg-entry-cta{margin-top:auto;font-size:13px;font-weight:800;border-radius:11px;background:#ffffff25;width:max-content;padding:11px 16px}
+.wg-entry-campus{background:linear-gradient(120deg,#1253d3,#00a9b7);color:#fff}
+.wg-entry-campus::after{content:"";position:absolute;right:-22px;bottom:-46px;width:190px;height:190px;background:url("../../dermatologia/badbear_logo.png") center/contain no-repeat;opacity:.1;pointer-events:none}
+.wg-entry-other{background:linear-gradient(120deg,#182d57,#63349e);color:#fff}
+.wg-projects{max-width:1180px;padding-top:28px}
+.wg-project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.wg-projects .wg-card{padding:19px;border-width:1px;border-top-width:4px;border-radius:16px}
+.wg-projects .wg-card-icon{width:52px;height:52px;margin-bottom:10px}
+.wg-projects .wg-card h3{font-size:23px;margin:6px 0 8px}
+.wg-projects .wg-card p{margin-bottom:10px}
+.wg-projects .wg-card-tags{display:none}
+.wg-projects .wg-card-action{padding-top:11px;margin-top:auto}
+@media(max-width:760px){.wg-entry-grid{grid-template-columns:1fr}.wg-cinematic.wg-hero{min-height:370px;padding:55px 5%}.wg-project-grid{grid-template-columns:1fr}.wg-header nav .wg-nav-med{display:none}}
+@media(prefers-reduced-motion:reduce){.wg-cinematic .wg-motion::before,.wg-cinematic .wg-motion::after,.wg-cinematic .wg-particle,.wg-cinematic .wg-hero-copy{animation:none!important}.wg-entry-card{transition:none}}
