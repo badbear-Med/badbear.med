@@ -189,3 +189,17 @@
 @media(prefers-reduced-transparency:reduce){
  .wg-video-stage .wg-projects .wg-card,.wg-video-stage .wg-team{background:#f3f8ff;-webkit-backdrop-filter:none;backdrop-filter:none}
 }
+
+/* Pie institucional animado: ciclo visual de 5 segundos, sin archivo multimedia */
+.wg-footer{position:relative;isolation:isolate;overflow:hidden;min-height:170px;padding:38px 18px 35px;background:linear-gradient(115deg,#071934,#0d3060 54%,#075e75);border-top:2px solid #4de4e3;color:#f5fbff}
+.wg-footer::before{content:"";position:absolute;inset:-70%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 30% 50%,rgba(0,223,238,.22),transparent 27%),radial-gradient(ellipse at 72% 48%,rgba(130,77,255,.21),transparent 26%);animation:wg-footer-glow 5s ease-in-out infinite}
+.wg-footer::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle,#9afaff99 1px,transparent 2px);background-size:90px 75px;opacity:.25;animation:wg-footer-stars 5s linear infinite}
+.wg-footer .wg-brand{color:#fff;text-shadow:0 0 20px #6eefff2e;font-size:clamp(23px,3vw,30px)}
+.wg-footer .wg-brand span{color:#6cf1ed}
+.wg-footer p,.wg-footer small{color:#d8edff}
+.wg-footer p{font-size:14px;margin:12px 0 9px}
+.wg-footer small{font-size:12px}
+@keyframes wg-footer-glow{0%,100%{transform:translateX(-2%) scale(.98);opacity:.65}50%{transform:translateX(2%) scale(1.04);opacity:1}}
+@keyframes wg-footer-stars{0%{background-position:0 0}100%{background-position:90px 75px}}
+@media(prefers-reduced-motion:reduce){.wg-footer::before,.wg-footer::after{animation:none}}
+@media(max-width:760px){.wg-footer{min-height:156px;padding:32px 16px}.wg-footer .wg-brand{font-size:25px}}
