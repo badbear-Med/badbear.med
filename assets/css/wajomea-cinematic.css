@@ -86,3 +86,22 @@
 .wg-video-stage .wg-projects .wg-card{background:#ffffffeb;border-color:var(--wg-accent);box-shadow:0 12px 30px #02122b6a;backdrop-filter:blur(8px)}
 .wg-video-stage .wg-team{background:#fffffff0;box-shadow:0 12px 35px #031a4380}
 @media(max-width:760px){.wg-video-stage .wg-entry{padding-top:152px}.wg-video-stage .wg-showreel-head{top:18px;right:5%;left:5%;max-width:none;align-items:flex-start;text-align:left}.wg-video-stage .wg-showreel-head p{display:none}.wg-video-stage .wg-sound{width:auto}.wg-video-stage .wg-showreel video{object-position:center center}}
+
+/* Cristal translúcido sobre el video: mantiene contraste sin cubrir la película */
+.wg-video-stage .wg-entry-campus{background:linear-gradient(130deg,rgba(12,89,200,.67),rgba(0,155,174,.55));border:1px solid rgba(152,240,255,.65);-webkit-backdrop-filter:blur(10px) saturate(135%);backdrop-filter:blur(10px) saturate(135%)}
+.wg-video-stage .wg-entry-other{background:linear-gradient(125deg,rgba(30,40,104,.70),rgba(110,43,162,.55));border:1px solid rgba(220,181,255,.62);-webkit-backdrop-filter:blur(10px) saturate(130%);backdrop-filter:blur(10px) saturate(130%)}
+.wg-video-stage .wg-campus-links a{background:rgba(2,30,75,.46);border-color:rgba(208,247,255,.55);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+.wg-video-stage .wg-campus-links a:hover{background:rgba(10,56,120,.75)}
+.wg-video-stage .wg-projects .wg-card{background:rgba(255,255,255,.79);border-top-width:4px;border-color:var(--wg-accent);-webkit-backdrop-filter:blur(11px) saturate(115%);backdrop-filter:blur(11px) saturate(115%);box-shadow:0 12px 30px rgba(1,20,48,.32)}
+.wg-video-stage .wg-team{background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+/* Solo icono de audio; no recuadro superpuesto */
+.wg-video-stage .wg-showreel-head{top:18px;right:22px;left:auto;display:block;width:auto;max-width:none;padding:0;border:0;border-radius:50%;background:transparent;box-shadow:none;backdrop-filter:none}
+.wg-video-stage .wg-sound{display:grid;place-items:center;width:44px;height:44px;padding:0;border-radius:50%;background:rgba(8,28,63,.60);border:1px solid rgba(255,255,255,.72);color:white;box-shadow:0 5px 16px rgba(0,0,0,.22);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);cursor:pointer}
+.wg-video-stage .wg-sound:hover{background:rgba(14,78,157,.82)}
+.wg-video-stage .wg-sound:focus-visible{outline:3px solid #84f4ff;outline-offset:3px}
+.wg-video-stage .wg-sound svg{width:21px;height:21px;display:block}
+.wg-video-stage .wg-sound .wg-volume-on{display:none}
+.wg-video-stage .wg-sound[aria-pressed="true"] .wg-volume-on{display:block}
+.wg-video-stage .wg-sound[aria-pressed="true"] .wg-volume-off{display:none}
+.wg-video-stage .wg-entry{padding-top:70px}
+@media(max-width:760px){.wg-video-stage .wg-showreel-head{top:12px;right:12px;left:auto}.wg-video-stage .wg-sound{width:40px;height:40px}.wg-video-stage .wg-entry{padding-top:72px}}
