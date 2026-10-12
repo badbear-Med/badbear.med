@@ -15,6 +15,14 @@ async function mailStatus(){
     $("email-status").textContent=text;
   }catch(error){if(error.status!==404)throw error;$("email-status").textContent="Actualiza el servicio de Campus para habilitar los correos."}
 }
+$("official-publish").addEventListener("click",()=>action(async()=>{
+ if(!$("official-confirm").checked)throw Error("Debes confirmar la publicación oficial.");
+ const curso=$("official-course").value.trim(),periodo=$("official-period").value.trim(),evaluacion=$("official-exam").value.trim();
+ if(!curso||!periodo||!evaluacion)throw Error("Indica curso, periodo y evaluación.");
+ if(!confirm("¿Hacer visibles las notas oficiales de "+curso+" · "+periodo+" · "+evaluacion+"? Los estudiantes podrán solicitarlas dentro de su sesión. No se enviarán correos."))return;
+ const data=await post("/api/admin/notas/hacer-visibles",token,{curso,periodo,evaluacion,confirmacion:"PUBLICAR OFICIALMENTE"});
+ $("official-confirm").checked=false;message(data.visibles+" notas oficiales habilitadas. No se enviaron correos.","success");
+}));
 let simpleResolved=null;
 $("simple-date").value=new Date().toLocaleDateString("en-CA");
 for(const id of ["simple-file","simple-course","simple-period","simple-exam","simple-date"])$(id).addEventListener("change",()=>{simpleResolved=null;$("simple-area").hidden=true});
