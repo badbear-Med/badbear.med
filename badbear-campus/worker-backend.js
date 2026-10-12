@@ -168,10 +168,10 @@ async function importResults(body, env) {
   const data = JSON.stringify(check.items);
   await env.DB.batch([
     env.DB.prepare("INSERT INTO campus_alumnos(codigo,nombre) SELECT DISTINCT json_extract(value,'$.codigo'),json_extract(value,'$.nombre') FROM json_each(?) WHERE 1 ON CONFLICT(codigo) DO UPDATE SET nombre=excluded.nombre").bind(data),
-    env.DB.prepare("INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,estado,fecha,publicada) SELECT json_extract(value,'$.codigo'),json_extract(value,'$.curso'),json_extract(value,'$.periodo'),json_extract(value,'$.evaluacion'),json_extract(value,'$.nota'),json_extract(value,'$.estado'),json_extract(value,'$.fecha'),0 FROM json_each(?) WHERE 1 ON CONFLICT(codigo,curso,periodo,evaluacion) " + (body.reemplazar === true ? "DO UPDATE SET nota=excluded.nota,estado=excluded.estado,fecha=excluded.fecha,publicada=0,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now')" : "DO NOTHING")).bind(data),
+    env.DB.prepare("INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,estado,fecha,publicada) SELECT json_extract(value,'$.codigo'),json_extract(value,'$.curso'),json_extract(value,'$.periodo'),json_extract(value,'$.evaluacion'),json_extract(value,'$.nota'),json_extract(value,'$.estado'),json_extract(value,'$.fecha'),1 FROM json_each(?) WHERE 1 ON CONFLICT(codigo,curso,periodo,evaluacion) " + (body.reemplazar === true ? "DO UPDATE SET nota=excluded.nota,estado=excluded.estado,fecha=excluded.fecha,publicada=1,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now')" : "DO NOTHING")).bind(data),
     env.DB.prepare("INSERT INTO campus_auditoria(accion,detalle) VALUES ('publicar_lista',?)").bind(JSON.stringify({total:check.total,reemplazar:body.reemplazar===true,codigos:[...new Set(check.items.map(x=>x.codigo))]}))
   ]);
-  return {ok:true,guardados:check.total,alumnos:check.alumnos,modo:"borrador"};
+  return {ok:true,publicados:check.total,alumnos:check.alumnos,modo:"visible"};
 }
 const emailAccess=createEmailAccess({Problem,code,now,random,digest,password,passwordHash});
 export default {
