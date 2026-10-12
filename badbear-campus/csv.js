@@ -24,4 +24,13 @@ export const parseContactsCSV=text=>readCSV(text,["codigo","correo"]);
 
 export const parseRosterCSV=text=>readCSV(text,["apellidos y nombres","codigo de estudiante","telefono","dni","correo institucional"]).map(row=>({nombre:row["apellidos y nombres"],codigo:row["codigo de estudiante"],telefono:row.telefono,dni:row.dni,correo:row["correo institucional"]}));
 
-export function parseSimpleGradesCSV(text){const clean=text.replace(/^\uFEFF/,"");const first=clean.split(/\r?\n/,1)[0].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");const byCode=first.includes("codigo");const key=byCode?"codigo":"nombre";const expected=byCode?["codigo","nota"]:["apellidos y nombres","nota"];if(!byCode&&!first.includes("apellidos y nombres"))throw Error("Usa las columnas Código,Nota o Apellidos y Nombres,Nota.");return readCSV(clean,expected).map(x=>({[key]:x[byCode?"codigo":"apellidos y nombres"],nota:x.nota}));}
+export function parseSimpleGradesCSV(text){
+ const clean=text.replace(/^\uFEFF/,"");
+ const first=clean.split(/\r?\n/,1)[0].toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+ const names=first.includes("apellidos y nombres")?"apellidos y nombres":first.includes("nombre")?"nombre":null;
+ const codeName=first.includes("codigo de estudiante")?"codigo de estudiante":"codigo";
+ if(first.includes("codigo")&&names){return readCSV(clean,[codeName,names,"nota"]).map(x=>({codigo:x[codeName],nombre:x[names],nota:x.nota}));}
+ if(first.includes("codigo"))return readCSV(clean,[codeName,"nota"]).map(x=>({codigo:x[codeName],nota:x.nota}));
+ if(names)return readCSV(clean,[names,"nota"]).map(x=>({nombre:x[names],nota:x.nota}));
+ throw Error("Usa Código, Nota; Apellidos y Nombres, Nota; o Código, Apellidos y Nombres, Nota.");
+}
