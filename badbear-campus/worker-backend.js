@@ -260,6 +260,31 @@ export default {
           const rows=await env.DB.prepare("SELECT codigo,curso,periodo,evaluacion,nota,estado,fecha FROM campus_resultados WHERE codigo=? ORDER BY periodo DESC,fecha DESC").bind(codigo).all();
           return response({items:rows.results},200,origin);
         }
+        if (req.method === "POST" && path === "/api/admin/notas-simples/resolver") {
+          const body=await readJSON(req), input=body.items;
+          if(!Array.isArray(input)||input.length<1||input.length>200)throw new Problem("El archivo debe contener entre 1 y 200 notas.");
+          const curso=label(body.curso,"curso",120),periodo=label(body.periodo,"periodo",80),evaluacion=label(body.evaluacion,"evaluación",120),fecha=label(body.fecha,"fecha",10);
+          if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(fecha))throw new Problem("Fecha inválida.");
+          const users=(await env.DB.prepare("SELECT codigo,nombre FROM campus_alumnos WHERE activo=1").all()).results;
+          const normalize=v=>String(v||"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").trim().replace(/\\s+/g," ").toUpperCase();
+          const byCode=new Map(users.map(x=>[x.codigo,x]));
+          const byName=new Map();
+          for(const x of users){const key=normalize(x.nombre);byName.set(key,[...(byName.get(key)||[]),x]);}
+          const failures=[],matched=[],used=new Set();
+          for(let i=0;i<input.length;i++){
+            const raw=input[i],id=String(raw.codigo||"").trim().toUpperCase(),name=String(raw.nombre||"").trim();
+            let candidates=id?[byCode.get(id)].filter(Boolean):(byName.get(normalize(name))||[]);
+            if(candidates.length!==1){failures.push({fila:i+2,identificador:id||name,motivo:candidates.length?"Nombre duplicado: requiere código":"Alumno no encontrado"});continue}
+            const alumno=candidates[0];
+            if(name&&normalize(name)!==normalize(alumno.nombre)){failures.push({fila:i+2,identificador:name,motivo:"Nombre y código no corresponden"});continue}
+            if(used.has(alumno.codigo)){failures.push({fila:i+2,identificador:id||name,motivo:"Alumno duplicado en esta evaluación"});continue}
+            used.add(alumno.codigo);
+            matched.push({codigo:alumno.codigo,nombre:alumno.nombre,curso,periodo,evaluacion,nota:raw.nota,fecha});
+          }
+          if(failures.length)return response({ok:false,fallos:failures,total:input.length},200,origin);
+          const result=await preview(matched,env);
+          return response({...result,ok:true},200,origin);
+        }
         if (req.method === "POST" && path === "/api/admin/vista-previa") return response(await preview((await readJSON(req)).items,env),200,origin);
         if (req.method === "POST" && path === "/api/admin/publicar") return response(await importResults(await readJSON(req),env),200,origin);
         if (req.method === "POST" && path === "/api/admin/invitacion") {
