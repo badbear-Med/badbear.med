@@ -1,4 +1,4 @@
-import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-correo1";
+import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-colornotas1";
 import { parseCSV,parseContactsCSV,parseRosterCSV,parseSimpleGradesCSV } from "./csv.js?v=20261011-simple1";
 import { centralBridge } from "../administracion/bridge.js?v=20261011-central1";
 let token="",checked=null,contactsChecked=null;
