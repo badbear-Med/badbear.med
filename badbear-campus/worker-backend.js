@@ -270,10 +270,11 @@ export default {
           const byCode=new Map(users.map(x=>[x.codigo,x]));
           const byName=new Map();
           for(const x of users){const key=normalize(x.nombre);byName.set(key,[...(byName.get(key)||[]),x]);}
-          const failures=[],matched=[],used=new Set();
+          const failures=[],matched=[],used=new Set(),nuevos=[];
           for(let i=0;i<input.length;i++){
             const raw=input[i],id=String(raw.codigo||"").trim().toUpperCase(),name=String(raw.nombre||"").trim();
             let candidates=id?[byCode.get(id)].filter(Boolean):(byName.get(normalize(name))||[]);
+            if(id&&!candidates.length){try{code(id)}catch(e){failures.push({fila:i+2,identificador:id,motivo:"Código inválido"});continue}candidates=[{codigo:id,nombre:"PENDIENTE DE IDENTIFICAR - "+id}];nuevos.push(id)}
             if(candidates.length!==1){failures.push({fila:i+2,identificador:id||name,motivo:candidates.length?"Nombre duplicado: requiere código":"Alumno no encontrado"});continue}
             const alumno=candidates[0];
             if(name&&normalize(name)!==normalize(alumno.nombre)){failures.push({fila:i+2,identificador:name,motivo:"Nombre y código no corresponden"});continue}
@@ -283,7 +284,7 @@ export default {
           }
           if(failures.length)return response({ok:false,fallos:failures,total:input.length},200,origin);
           const result=await preview(matched,env);
-          return response({...result,ok:true},200,origin);
+          return response({...result,ok:true,nuevos},200,origin);
         }
         if (req.method === "POST" && path === "/api/admin/vista-previa") return response(await preview((await readJSON(req)).items,env),200,origin);
         if (req.method === "POST" && path === "/api/admin/publicar") return response(await importResults(await readJSON(req),env),200,origin);
