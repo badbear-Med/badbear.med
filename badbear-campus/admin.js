@@ -32,9 +32,9 @@ $("simple-check").addEventListener("click",()=>action(async()=>{
 $("simple-publish").addEventListener("click",()=>action(async()=>{
  if(!simpleResolved)throw Error("Primero revisa la lista.");
  if(simpleResolved.existentes.length&&!$("simple-overwrite").checked)throw Error("Autoriza la corrección de notas existentes.");if(simpleResolved.nuevos?.length&&!$("simple-new-confirm").checked)throw Error("Confirma el registro provisional de los nuevos códigos.");
- if(!confirm("¿Publicar "+simpleResolved.total+" notas a los estudiantes identificados?"))return;
+ if(!confirm("¿Guardar "+simpleResolved.total+" notas como borradores? No serán visibles para los alumnos."))return;
  const data=await post("/api/admin/publicar",token,{items:simpleResolved.items,reemplazar:$("simple-overwrite").checked});
- simpleResolved=null;$("simple-area").hidden=true;$("simple-file").value="";message(data.publicados+" calificaciones publicadas.","success");await students();
+ simpleResolved=null;$("simple-area").hidden=true;$("simple-file").value="";message(data.guardados+" notas guardadas como borrador. No son visibles para los alumnos.","success");await students();
 }));
 let rosterRows=null;
 $("roster-file").addEventListener("change",()=>{rosterRows=null;$("roster-area").hidden=true;$("roster-confirm").checked=false});
@@ -81,8 +81,8 @@ $("preview").addEventListener("click",()=>action(async()=>{
 }));
 $("publish").addEventListener("click",()=>action(async()=>{
   if(!checked)throw Error("Revisa la lista primero.");if(checked.existentes.length&&!$("replace").checked)throw Error("Autoriza la actualización de los resultados existentes.");
-  if(!confirm("¿Publicar "+checked.total+" resultados para "+checked.alumnos+" alumnos?"))return;
-  message("Publicando resultados…");const result=await post("/api/admin/publicar",token,{items:checked.items,reemplazar:$("replace").checked});clearPreview();$("file").value="";message(result.publicados+" resultados publicados.","success");await students();
+  if(!confirm("¿Guardar "+checked.total+" resultados como borrador para "+checked.alumnos+" alumnos?"))return;
+  message("Publicando resultados…");const result=await post("/api/admin/publicar",token,{items:checked.items,reemplazar:$("replace").checked});clearPreview();$("file").value="";message(result.guardados+" resultados guardados como borrador.","success");await students();
 }));
 $("student").addEventListener("change",clearInvitation);$("reload-students").addEventListener("click",()=>action(students));
 $("contacts-file").addEventListener("change",clearContacts);
