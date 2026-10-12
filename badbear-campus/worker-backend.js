@@ -168,10 +168,10 @@ async function importResults(body, env) {
   const data = JSON.stringify(check.items);
   await env.DB.batch([
     env.DB.prepare("INSERT INTO campus_alumnos(codigo,nombre) SELECT DISTINCT json_extract(value,'$.codigo'),json_extract(value,'$.nombre') FROM json_each(?) WHERE 1 ON CONFLICT(codigo) DO UPDATE SET nombre=excluded.nombre").bind(data),
-    env.DB.prepare("INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,estado,fecha) SELECT json_extract(value,'$.codigo'),json_extract(value,'$.curso'),json_extract(value,'$.periodo'),json_extract(value,'$.evaluacion'),json_extract(value,'$.nota'),json_extract(value,'$.estado'),json_extract(value,'$.fecha') FROM json_each(?) WHERE 1 ON CONFLICT(codigo,curso,periodo,evaluacion) " + (body.reemplazar === true ? "DO UPDATE SET nota=excluded.nota,estado=excluded.estado,fecha=excluded.fecha,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now')" : "DO UPDATE SET estado=NULL")).bind(data),
+    env.DB.prepare("INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,estado,fecha,publicada) SELECT json_extract(value,'$.codigo'),json_extract(value,'$.curso'),json_extract(value,'$.periodo'),json_extract(value,'$.evaluacion'),json_extract(value,'$.nota'),json_extract(value,'$.estado'),json_extract(value,'$.fecha'),0 FROM json_each(?) WHERE 1 ON CONFLICT(codigo,curso,periodo,evaluacion) " + (body.reemplazar === true ? "DO UPDATE SET nota=excluded.nota,estado=excluded.estado,fecha=excluded.fecha,publicada=0,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now')" : "DO UPDATE SET estado=NULL")).bind(data),
     env.DB.prepare("INSERT INTO campus_auditoria(accion,detalle) VALUES ('publicar_lista',?)").bind(JSON.stringify({total:check.total,reemplazar:body.reemplazar===true,codigos:[...new Set(check.items.map(x=>x.codigo))]}))
   ]);
-  return {ok:true,publicados:check.total,alumnos:check.alumnos};
+  return {ok:true,guardados:check.total,alumnos:check.alumnos,modo:"borrador"};
 }
 const emailAccess=createEmailAccess({Problem,code,now,random,digest,password,passwordHash});
 export default {
@@ -288,6 +288,13 @@ export default {
         }
         if (req.method === "POST" && path === "/api/admin/vista-previa") return response(await preview((await readJSON(req)).items,env),200,origin);
         if (req.method === "POST" && path === "/api/admin/publicar") return response(await importResults(await readJSON(req),env),200,origin);
+        if (req.method === "POST" && path === "/api/admin/notas/hacer-visibles") {
+          const body=await readJSON(req),curso=label(body.curso,"curso",120),periodo=label(body.periodo,"periodo",80),evaluacion=label(body.evaluacion,"evaluación",120);
+          if(body.confirmacion!=="PUBLICAR OFICIALMENTE")throw new Problem("Se requiere autorización administrativa explícita.");
+          const result=await env.DB.prepare("UPDATE campus_resultados SET publicada=1 WHERE curso=? AND periodo=? AND evaluacion=? AND publicada=0 RETURNING codigo").bind(curso,periodo,evaluacion).all();
+          await env.DB.prepare("INSERT INTO campus_auditoria(accion,detalle) VALUES('publicar_notas_oficiales',?)").bind(JSON.stringify({curso,periodo,evaluacion,total:result.results.length})).run();
+          return response({ok:true,visibles:result.results.length},200,origin);
+        }
         if (req.method === "POST" && path === "/api/admin/invitacion") {
           const body = await readJSON(req), codigo = code(body.codigo);
           const user = await env.DB.prepare("SELECT codigo,password_hash FROM campus_alumnos WHERE codigo=? AND activo=1").bind(codigo).first();
@@ -341,7 +348,7 @@ export default {
       if (req.method === "GET" && path === "/api/mis-resultados") {
         const user = await session(req,env);
         // Student ID comes only from the authenticated session, never a query parameter.
-        const result = await env.DB.prepare("SELECT curso,periodo,evaluacion,nota,estado,fecha,actualizado_en FROM campus_resultados WHERE codigo=? ORDER BY periodo DESC,fecha DESC,curso,evaluacion").bind(user.codigo).all();
+        const result = await env.DB.prepare("SELECT curso,periodo,evaluacion,nota,estado,fecha,actualizado_en FROM campus_resultados WHERE codigo=? AND publicada=1 ORDER BY periodo DESC,fecha DESC,curso,evaluacion").bind(user.codigo).all();
         return response({alumno:user,items:result.results},200,origin);
       }
       if (req.method === "POST" && path === "/api/logout") {
