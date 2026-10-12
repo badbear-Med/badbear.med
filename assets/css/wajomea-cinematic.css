@@ -48,3 +48,12 @@
 .wg-campus-links a strong{font-size:17px;letter-spacing:0}
 .wg-campus-links a small{font-size:12px;line-height:1.4;color:#e2faff}
 @media(max-width:470px){.wg-campus-links{grid-template-columns:1fr}}
+
+.wg-showreel{max-width:1180px;margin:36px auto 12px;padding:22px;background:#fff;border:1px solid #cfe0f1;border-radius:22px;box-shadow:0 12px 36px #12326d14}
+.wg-showreel[hidden]{display:none!important}
+.wg-showreel-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:15px}
+.wg-showreel-head h2{margin:4px 0;font-size:clamp(24px,3vw,34px);color:#102b58}.wg-showreel-head p{margin:0;color:#536780}
+.wg-sound{background:#1367dc;border:0;border-radius:12px;color:#fff;font:700 13px/1.4 Arial,sans-serif;padding:12px 17px;cursor:pointer;white-space:nowrap}
+.wg-sound:hover{background:#0650b7}
+.wg-showreel video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#071b38;border-radius:15px}
+@media(max-width:760px){.wg-showreel{margin:24px 5% 8px;padding:13px}.wg-showreel-head{align-items:flex-start;flex-direction:column}.wg-sound{width:100%}}
