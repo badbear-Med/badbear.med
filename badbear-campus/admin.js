@@ -1,5 +1,5 @@
 import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-correo1";
-import { parseCSV,parseContactsCSV,parseRosterCSV } from "./csv.js?v=20261011-padron1";
+import { parseCSV,parseContactsCSV,parseRosterCSV,parseSimpleGradesCSV } from "./csv.js?v=20261011-simple1";
 import { centralBridge } from "../administracion/bridge.js?v=20261011-central1";
 let token="",checked=null,contactsChecked=null;
 let reportConnection=()=>{};
@@ -15,6 +15,27 @@ async function mailStatus(){
     $("email-status").textContent=text;
   }catch(error){if(error.status!==404)throw error;$("email-status").textContent="Actualiza el servicio de Campus para habilitar los correos."}
 }
+let simpleResolved=null;
+$("simple-date").value=new Date().toLocaleDateString("en-CA");
+for(const id of ["simple-file","simple-course","simple-period","simple-exam","simple-date"])$(id).addEventListener("change",()=>{simpleResolved=null;$("simple-area").hidden=true});
+$("simple-check").addEventListener("click",()=>action(async()=>{
+ const file=$("simple-file").files[0];if(!file||file.size>512000||!file.name.toLowerCase().endsWith(".csv"))throw Error("Selecciona un archivo CSV de hasta 500 KB.");
+ const items=parseSimpleGradesCSV(new TextDecoder("utf-8",{fatal:true}).decode(await file.arrayBuffer()));
+ const data=await post("/api/admin/notas-simples/resolver",token,{items,curso:$("simple-course").value,periodo:$("simple-period").value,evaluacion:$("simple-exam").value,fecha:$("simple-date").value});
+ simpleResolved=data.ok?data:null;$("simple-area").hidden=false;$("simple-errors").replaceChildren();$("simple-table").replaceChildren();
+ if(!data.ok){$("simple-summary").textContent="No se puede publicar: hay "+data.fallos.length+" filas por revisar."; $("simple-errors").append(table([{key:"fila",label:"Fila"},{key:"identificador",label:"Alumno"},{key:"motivo",label:"Problema"}],data.fallos,"Errores del cruce"));$("simple-publish").hidden=true;return}
+ $("simple-summary").textContent=data.total+" notas vinculadas a "+data.alumnos+" alumnos. Verifica los códigos antes de publicar.";
+ $("simple-table").append(table(cols,data.items,"Notas listas para publicar"));
+ $("simple-overwrite-label").hidden=!data.existentes.length;$("simple-overwrite").checked=false;$("simple-publish").hidden=false;
+ message("Cruce completado. Aún no se han publicado notas.","success");
+}));
+$("simple-publish").addEventListener("click",()=>action(async()=>{
+ if(!simpleResolved)throw Error("Primero revisa la lista.");
+ if(simpleResolved.existentes.length&&!$("simple-overwrite").checked)throw Error("Autoriza la corrección de notas existentes.");
+ if(!confirm("¿Publicar "+simpleResolved.total+" notas a los estudiantes identificados?"))return;
+ const data=await post("/api/admin/publicar",token,{items:simpleResolved.items,reemplazar:$("simple-overwrite").checked});
+ simpleResolved=null;$("simple-area").hidden=true;$("simple-file").value="";message(data.publicados+" calificaciones publicadas.","success");await students();
+}));
 let rosterRows=null;
 $("roster-file").addEventListener("change",()=>{rosterRows=null;$("roster-area").hidden=true;$("roster-confirm").checked=false});
 $("roster-preview").addEventListener("click",()=>action(async()=>{
