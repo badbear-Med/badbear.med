@@ -1,5 +1,5 @@
 import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-colornotas1";
-import { parseCSV,parseContactsCSV,parseRosterCSV,parseSimpleGradesCSV } from "./csv.js?v=20261011-simple1";
+import { parseCSV,parseContactsCSV,parseRosterCSV,parseSimpleGradesCSV } from "./csv.js?v=20261011-identificados2";
 import { centralBridge } from "../administracion/bridge.js?v=20261011-central1";
 let token="",checked=null,contactsChecked=null;
 let reportConnection=()=>{};
@@ -25,7 +25,7 @@ $("simple-check").addEventListener("click",()=>action(async()=>{
  simpleResolved=data.ok?data:null;$("simple-area").hidden=false;$("simple-errors").replaceChildren();$("simple-table").replaceChildren();
  if(!data.ok){$("simple-summary").textContent="No se puede publicar: hay "+data.fallos.length+" filas por revisar."; $("simple-errors").append(table([{key:"fila",label:"Fila"},{key:"identificador",label:"Alumno"},{key:"motivo",label:"Problema"}],data.fallos,"Errores del cruce"));$("simple-publish").hidden=true;return}
  $("simple-summary").textContent=data.total+" notas vinculadas a "+data.alumnos+" alumnos. Verifica los códigos antes de publicar.";
- $("simple-table").append(table(cols,data.items,"Notas listas para publicar"));
+ $("simple-table").append(table([{key:"codigo",label:"Código de estudiante"},{key:"nombre",label:"Apellidos y nombres completos"},{key:"nota",label:"Nota"}],data.items,"Notas listas para publicar"));
  $("simple-overwrite-label").hidden=!data.existentes.length;$("simple-overwrite").checked=false;$("simple-new-label").hidden=!data.nuevos?.length;$("simple-new-confirm").checked=false;if(data.nuevos?.length)$("simple-summary").textContent+=" "+data.nuevos.length+" códigos nuevos se registrarán provisionalmente."; $("simple-publish").hidden=false;
  message("Cruce completado. Aún no se han publicado notas.","success");
 }));
