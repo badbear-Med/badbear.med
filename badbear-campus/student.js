@@ -1,4 +1,4 @@
-import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-correo1";
+import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-colornotas1";
 let token="",items=[],emailToken="";const sessionKey="badbear-campus-portal-session";try{token=sessionStorage.getItem(sessionKey)||""}catch(_){}
 const fragment=new URLSearchParams(location.hash.slice(1));
 if(fragment.has("acceso")){
