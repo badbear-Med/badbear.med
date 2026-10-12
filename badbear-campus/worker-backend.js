@@ -274,7 +274,7 @@ export default {
           for(let i=0;i<input.length;i++){
             const raw=input[i],id=String(raw.codigo||"").trim().toUpperCase(),name=String(raw.nombre||"").trim();
             let candidates=id?[byCode.get(id)].filter(Boolean):(byName.get(normalize(name))||[]);
-            if(id&&!candidates.length){try{code(id)}catch(e){failures.push({fila:i+2,identificador:id,motivo:"Código inválido"});continue}candidates=[{codigo:id,nombre:"PENDIENTE DE IDENTIFICAR - "+id}];nuevos.push(id)}
+            if(id&&!candidates.length){try{code(id)}catch(e){failures.push({fila:i+2,identificador:id,motivo:"Código inválido"});continue}if(!name||name.length<5||!/\s/.test(name)){failures.push({fila:i+2,identificador:id,motivo:"Código nuevo: agrega apellidos y nombres completos en el archivo"});continue}candidates=[{codigo:id,nombre:name}];nuevos.push(id)}
             if(candidates.length!==1){failures.push({fila:i+2,identificador:id||name,motivo:candidates.length?"Nombre duplicado: requiere código":"Alumno no encontrado"});continue}
             const alumno=candidates[0];
             if(name&&normalize(name)!==normalize(alumno.nombre)){failures.push({fila:i+2,identificador:name,motivo:"Nombre y código no corresponden"});continue}
