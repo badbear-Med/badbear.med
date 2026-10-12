@@ -57,3 +57,11 @@
 .wg-sound:hover{background:#0650b7}
 .wg-showreel video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#071b38;border-radius:15px}
 @media(max-width:760px){.wg-showreel{margin:24px 5% 8px;padding:13px}.wg-showreel-head{align-items:flex-start;flex-direction:column}.wg-sound{width:100%}}
+
+/* Emblema WG junto al título, flotación respetuosa de accesibilidad */
+.wg-cinematic .wg-title-lockup{display:flex;align-items:center;gap:clamp(14px,3vw,38px);justify-content:space-between}
+.wg-cinematic .wg-title-lockup h1{min-width:0}
+.wg-cinematic .wg-floating-logo{width:clamp(112px,15vw,184px);height:auto;flex:0 0 auto;object-fit:contain;filter:drop-shadow(0 10px 24px #2be9ff3d);animation:wg-logo-drift 5s ease-in-out infinite}
+@keyframes wg-logo-drift{0%,100%{transform:translateY(5px) rotate(-4deg)}50%{transform:translateY(-9px) rotate(4deg)}}
+@media(max-width:650px){.wg-cinematic .wg-title-lockup{align-items:center;gap:10px}.wg-cinematic .wg-title-lockup h1{font-size:clamp(27px,7vw,48px)}.wg-cinematic .wg-floating-logo{width:clamp(80px,23vw,125px)}}
+@media(prefers-reduced-motion:reduce){.wg-cinematic .wg-floating-logo{animation:none}}
