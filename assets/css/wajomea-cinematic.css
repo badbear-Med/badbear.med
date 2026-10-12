@@ -105,3 +105,48 @@
 .wg-video-stage .wg-sound[aria-pressed="true"] .wg-volume-off{display:none}
 .wg-video-stage .wg-entry{padding-top:70px}
 @media(max-width:760px){.wg-video-stage .wg-showreel-head{top:12px;right:12px;left:auto}.wg-video-stage .wg-sound{width:40px;height:40px}.wg-video-stage .wg-entry{padding-top:72px}}
+
+/* Ajustes específicos para teléfonos, sin modificar el diseño de escritorio */
+@media(max-width:760px){
+  .wg-header{padding:12px 4%;gap:12px}
+  .wg-header .wg-brand{font-size:clamp(20px,6vw,26px)}
+  .wg-header nav{width:100%;display:flex;flex-wrap:wrap;gap:6px 9px;justify-content:flex-start}
+  .wg-header nav a{padding:9px 10px;font-size:12px;border-radius:9px;background:rgba(255,255,255,.10)}
+  .wg-header nav .wg-nav-med{display:inline-flex;background:#1467de;color:#fff}
+  .wg-cinematic.wg-hero{min-height:265px;padding:34px 5% 38px}
+  .wg-cinematic .wg-hero-inner{width:100%}
+  .wg-cinematic .wg-title-lockup{justify-content:flex-start;gap:10px}
+  .wg-cinematic .wg-title-lockup h1{font-size:clamp(27px,7vw,43px);letter-spacing:-.045em}
+  .wg-cinematic .wg-floating-logo{width:clamp(70px,20vw,112px)}
+  .wg-cinematic .wg-hero-copy>p:first-of-type{font-size:clamp(16px,4.6vw,22px)}
+  .wg-cinematic .wg-hero-description{font-size:13px;line-height:1.55}
+  .wg-video-stage{padding-bottom:26px}
+  .wg-video-stage .wg-showreel video{object-fit:cover;object-position:52% center}
+  .wg-video-stage .wg-entry{padding:72px 4% 20px}
+  .wg-video-stage .wg-entry h2{font-size:clamp(24px,6vw,31px);line-height:1.25;margin:6px 0 17px}
+  .wg-video-stage .wg-entry-grid{grid-template-columns:1fr;gap:14px}
+  .wg-video-stage .wg-entry-card{padding:20px;min-height:0;border-radius:18px}
+  .wg-video-stage .wg-entry-card>strong{font-size:clamp(22px,6vw,29px)}
+  .wg-video-stage .wg-entry-card p{font-size:14px;margin:10px 0 15px}
+  .wg-video-stage .wg-campus-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .wg-video-stage .wg-campus-links a{min-width:0;padding:12px;min-height:92px}
+  .wg-video-stage .wg-campus-links a strong{font-size:14px;overflow-wrap:anywhere}
+  .wg-video-stage .wg-campus-links a small{font-size:11px;line-height:1.45}
+  .wg-video-stage .wg-entry-cta{min-height:44px;display:inline-flex;align-items:center}
+  .wg-video-stage .wg-projects{padding:20px 4% 28px}
+  .wg-video-stage .wg-project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .wg-video-stage .wg-projects .wg-card{padding:15px;min-width:0;border-radius:16px}
+  .wg-video-stage .wg-projects .wg-card h3{font-size:clamp(16px,4.4vw,21px);overflow-wrap:anywhere}
+  .wg-video-stage .wg-projects .wg-card p{font-size:12px;line-height:1.5}
+  .wg-video-stage .wg-projects .wg-card-action{font-size:12px}
+  .wg-video-stage .wg-team{margin:10px 4% 25px;padding:20px}
+  .wg-video-stage .wg-sound{width:44px;height:44px}
+}
+@media(max-width:390px){
+  .wg-header nav a{font-size:11px;padding:8px}
+  .wg-cinematic .wg-title-lockup h1{font-size:clamp(23px,7vw,30px)}
+  .wg-cinematic .wg-floating-logo{width:68px}
+  .wg-video-stage .wg-campus-links{grid-template-columns:1fr}
+  .wg-video-stage .wg-campus-links a{min-height:0}
+  .wg-video-stage .wg-project-grid{grid-template-columns:1fr}
+}
