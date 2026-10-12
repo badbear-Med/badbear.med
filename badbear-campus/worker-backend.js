@@ -264,9 +264,9 @@ export default {
           const body=await readJSON(req), input=body.items;
           if(!Array.isArray(input)||input.length<1||input.length>200)throw new Problem("El archivo debe contener entre 1 y 200 notas.");
           const curso=label(body.curso,"curso",120),periodo=label(body.periodo,"periodo",80),evaluacion=label(body.evaluacion,"evaluación",120),fecha=label(body.fecha,"fecha",10);
-          if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(fecha))throw new Problem("Fecha inválida.");
+          if(!/^\d{4}-\d{2}-\d{2}$/.test(fecha))throw new Problem("Fecha inválida.");
           const users=(await env.DB.prepare("SELECT codigo,nombre FROM campus_alumnos WHERE activo=1").all()).results;
-          const normalize=v=>String(v||"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").trim().replace(/\\s+/g," ").toUpperCase();
+          const normalize=v=>String(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim().replace(/\s+/g," ").toUpperCase();
           const byCode=new Map(users.map(x=>[x.codigo,x]));
           const byName=new Map();
           for(const x of users){const key=normalize(x.nombre);byName.set(key,[...(byName.get(key)||[]),x]);}
