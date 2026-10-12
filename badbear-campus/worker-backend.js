@@ -168,7 +168,7 @@ async function importResults(body, env) {
   const data = JSON.stringify(check.items);
   await env.DB.batch([
     env.DB.prepare("INSERT INTO campus_alumnos(codigo,nombre) SELECT DISTINCT json_extract(value,'$.codigo'),json_extract(value,'$.nombre') FROM json_each(?) WHERE 1 ON CONFLICT(codigo) DO UPDATE SET nombre=excluded.nombre").bind(data),
-    env.DB.prepare("INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,estado,fecha,publicada) SELECT json_extract(value,'$.codigo'),json_extract(value,'$.curso'),json_extract(value,'$.periodo'),json_extract(value,'$.evaluacion'),json_extract(value,'$.nota'),json_extract(value,'$.estado'),json_extract(value,'$.fecha'),0 FROM json_each(?) WHERE 1 ON CONFLICT(codigo,curso,periodo,evaluacion) " + (body.reemplazar === true ? "DO UPDATE SET nota=excluded.nota,estado=excluded.estado,fecha=excluded.fecha,publicada=0,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now')" : "DO UPDATE SET estado=NULL")).bind(data),
+    env.DB.prepare("INSERT INTO campus_resultados(codigo,curso,periodo,evaluacion,nota,estado,fecha,publicada) SELECT json_extract(value,'$.codigo'),json_extract(value,'$.curso'),json_extract(value,'$.periodo'),json_extract(value,'$.evaluacion'),json_extract(value,'$.nota'),json_extract(value,'$.estado'),json_extract(value,'$.fecha'),0 FROM json_each(?) WHERE 1 ON CONFLICT(codigo,curso,periodo,evaluacion) " + (body.reemplazar === true ? "DO UPDATE SET nota=excluded.nota,estado=excluded.estado,fecha=excluded.fecha,publicada=0,actualizado_en=strftime('%Y-%m-%dT%H:%M:%fZ','now')" : "DO NOTHING")).bind(data),
     env.DB.prepare("INSERT INTO campus_auditoria(accion,detalle) VALUES ('publicar_lista',?)").bind(JSON.stringify({total:check.total,reemplazar:body.reemplazar===true,codigos:[...new Set(check.items.map(x=>x.codigo))]}))
   ]);
   return {ok:true,guardados:check.total,alumnos:check.alumnos,modo:"borrador"};
@@ -195,7 +195,7 @@ export default {
       if (!env.DB || env.ADMIN_API_TOKEN?.length < 32 || !env.ADMIN_API_TOKEN || env.PASSWORD_PEPPER?.length < 32 || !env.PASSWORD_PEPPER) throw new Problem("El portal está pendiente de conexión. Inténtalo más tarde.", 503);
       if (req.method === "POST" && origin !== SITE) throw new Problem("Origen no permitido.", 403);
       if (req.method === "POST" && path === "/api/admin/login") return response(await adminLogin(req,env),200,origin);
-      if (req.method === "POST" && path === "/api/correo/solicitar") throw new Problem("Modo simulación: los envíos de correo están desactivados.",503);
+      if (req.method === "POST" && path === "/api/correo/solicitar") return response(await emailAccess.request(req,await readJSON(req),env,ctx),200,origin);
       if (req.method === "POST" && path === "/api/correo/confirmar") return response(await emailAccess.complete(await readJSON(req),env),200,origin);
       if (path.startsWith("/api/admin/")) {
         await administrator(req,env);
