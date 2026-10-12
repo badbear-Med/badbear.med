@@ -7,3 +7,7 @@ main{max-width:1140px;margin:auto;padding:38px 5% 60px}.hero{padding-bottom:28px
 /* Embedded administration keeps the central navigation visible. */
 .central-panel>header,.central-panel .hero,.central-panel>.footer{display:none}
 .central-panel main{padding-top:20px;margin-top:0}
+
+/* Convención académica: 0–10.99 rojo; desde 11 azul. */
+.grade.grade-low{color:#ba1e34!important;font-weight:800}
+.grade.grade-high{color:#1657b8!important;font-weight:800}
