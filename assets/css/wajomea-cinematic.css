@@ -40,3 +40,11 @@
 .wg-projects .wg-card-action{padding-top:11px;margin-top:auto}
 @media(max-width:760px){.wg-entry-grid{grid-template-columns:1fr}.wg-cinematic.wg-hero{min-height:370px;padding:55px 5%}.wg-project-grid{grid-template-columns:1fr}.wg-header nav .wg-nav-med{display:none}}
 @media(prefers-reduced-motion:reduce){.wg-cinematic .wg-motion::before,.wg-cinematic .wg-motion::after,.wg-cinematic .wg-particle,.wg-cinematic .wg-hero-copy{animation:none!important}.wg-entry-card{transition:none}}
+
+/* Dos entradas reconocibles dentro del Área académica */
+.wg-campus-links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:auto;position:relative;z-index:2}
+.wg-campus-links a{display:flex;flex-direction:column;gap:5px;text-decoration:none;color:#fff;background:#071e4f77;border:1px solid #c2f7ff77;border-radius:13px;padding:14px;transition:background .18s,transform .18s}
+.wg-campus-links a:hover,.wg-campus-links a:focus-visible{background:#083676c9;transform:translateY(-2px)}
+.wg-campus-links a strong{font-size:17px;letter-spacing:0}
+.wg-campus-links a small{font-size:12px;line-height:1.4;color:#e2faff}
+@media(max-width:470px){.wg-campus-links{grid-template-columns:1fr}}
