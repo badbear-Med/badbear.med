@@ -20,7 +20,7 @@ export function table(columns, rows, caption="") {
   if(caption){const cap=document.createElement("caption");cap.textContent=caption;tab.append(cap)}
   const head=document.createElement("thead"),tr=document.createElement("tr");
   for(const column of columns){const th=document.createElement("th");th.scope="col";th.textContent=column.label;tr.append(th)}head.append(tr);tab.append(head);
-  const body=document.createElement("tbody");for(const row of rows){const line=document.createElement("tr");for(const col of columns){const cell=document.createElement("td");const stateKey={nota:"estado",anterior:"estado_anterior",nueva:"estado_nuevo"}[col.key];cell.textContent=stateKey?resultText(row[col.key],row[stateKey]):String(row[col.key]??"");if(col.key==="nota")cell.className="grade";line.append(cell)}body.append(line)}tab.append(body);wrap.append(tab);return wrap;
+  const body=document.createElement("tbody");for(const row of rows){const line=document.createElement("tr");for(const col of columns){const cell=document.createElement("td");const stateKey={nota:"estado",anterior:"estado_anterior",nueva:"estado_nuevo"}[col.key];cell.textContent=stateKey?resultText(row[col.key],row[stateKey]):String(row[col.key]??"");if(["nota","anterior","nueva"].includes(col.key)){cell.classList.add("grade");const value=row[col.key];if(value!==null&&value!==undefined&&value!==""&&Number.isFinite(Number(value))){cell.classList.add(Number(value)<=10.99?"grade-low":"grade-high")}}line.append(cell)}body.append(line)}tab.append(body);wrap.append(tab);return wrap;
 }
 export async function busy(action) {
   const buttons=[...document.querySelectorAll("button")],previous=buttons.map(x=>x.disabled);buttons.forEach(x=>x.disabled=true);
