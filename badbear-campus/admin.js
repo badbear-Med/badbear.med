@@ -26,12 +26,12 @@ $("simple-check").addEventListener("click",()=>action(async()=>{
  if(!data.ok){$("simple-summary").textContent="No se puede publicar: hay "+data.fallos.length+" filas por revisar."; $("simple-errors").append(table([{key:"fila",label:"Fila"},{key:"identificador",label:"Alumno"},{key:"motivo",label:"Problema"}],data.fallos,"Errores del cruce"));$("simple-publish").hidden=true;return}
  $("simple-summary").textContent=data.total+" notas vinculadas a "+data.alumnos+" alumnos. Verifica los códigos antes de publicar.";
  $("simple-table").append(table(cols,data.items,"Notas listas para publicar"));
- $("simple-overwrite-label").hidden=!data.existentes.length;$("simple-overwrite").checked=false;$("simple-publish").hidden=false;
+ $("simple-overwrite-label").hidden=!data.existentes.length;$("simple-overwrite").checked=false;$("simple-new-label").hidden=!data.nuevos?.length;$("simple-new-confirm").checked=false;if(data.nuevos?.length)$("simple-summary").textContent+=" "+data.nuevos.length+" códigos nuevos se registrarán provisionalmente."; $("simple-publish").hidden=false;
  message("Cruce completado. Aún no se han publicado notas.","success");
 }));
 $("simple-publish").addEventListener("click",()=>action(async()=>{
  if(!simpleResolved)throw Error("Primero revisa la lista.");
- if(simpleResolved.existentes.length&&!$("simple-overwrite").checked)throw Error("Autoriza la corrección de notas existentes.");
+ if(simpleResolved.existentes.length&&!$("simple-overwrite").checked)throw Error("Autoriza la corrección de notas existentes.");if(simpleResolved.nuevos?.length&&!$("simple-new-confirm").checked)throw Error("Confirma el registro provisional de los nuevos códigos.");
  if(!confirm("¿Publicar "+simpleResolved.total+" notas a los estudiantes identificados?"))return;
  const data=await post("/api/admin/publicar",token,{items:simpleResolved.items,reemplazar:$("simple-overwrite").checked});
  simpleResolved=null;$("simple-area").hidden=true;$("simple-file").value="";message(data.publicados+" calificaciones publicadas.","success");await students();
