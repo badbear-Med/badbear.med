@@ -195,7 +195,7 @@ export default {
       if (!env.DB || env.ADMIN_API_TOKEN?.length < 32 || !env.ADMIN_API_TOKEN || env.PASSWORD_PEPPER?.length < 32 || !env.PASSWORD_PEPPER) throw new Problem("El portal está pendiente de conexión. Inténtalo más tarde.", 503);
       if (req.method === "POST" && origin !== SITE) throw new Problem("Origen no permitido.", 403);
       if (req.method === "POST" && path === "/api/admin/login") return response(await adminLogin(req,env),200,origin);
-      if (req.method === "POST" && path === "/api/correo/solicitar") return response(await emailAccess.request(req,await readJSON(req),env,ctx),200,origin);
+      if (req.method === "POST" && path === "/api/correo/solicitar") throw new Problem("Modo simulación: los envíos de correo están desactivados.",503);
       if (req.method === "POST" && path === "/api/correo/confirmar") return response(await emailAccess.complete(await readJSON(req),env),200,origin);
       if (path.startsWith("/api/admin/")) {
         await administrator(req,env);
