@@ -150,3 +150,42 @@
   .wg-video-stage .wg-campus-links a{min-height:0}
   .wg-video-stage .wg-project-grid{grid-template-columns:1fr}
 }
+
+/* Cristal de verdad: video visible detrás de las seis tarjetas y el bloque institucional */
+.wg-video-stage .wg-projects .wg-card{
+  background:rgba(248,252,255,.56);
+  -webkit-backdrop-filter:blur(7px) saturate(125%);
+  backdrop-filter:blur(7px) saturate(125%);
+  border:1px solid rgba(255,255,255,.46);
+  border-top:4px solid var(--wg-accent);
+  box-shadow:0 10px 28px rgba(3,17,36,.26);
+  transition:background .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.wg-video-stage .wg-projects .wg-card:hover,
+.wg-video-stage .wg-projects .wg-card:focus-visible{
+  background:rgba(250,253,255,.74);
+  box-shadow:0 17px 36px rgba(3,17,36,.32);
+}
+.wg-video-stage .wg-projects .wg-card h3,
+.wg-video-stage .wg-projects .wg-card-category,
+.wg-video-stage .wg-projects .wg-card-action{color:#10233c}
+.wg-video-stage .wg-projects .wg-card p{color:#223a56}
+.wg-video-stage .wg-team{
+  background:rgba(247,252,255,.58);
+  border:1px solid rgba(255,255,255,.57);
+  border-left:5px solid #00b477;
+  -webkit-backdrop-filter:blur(8px) saturate(125%);
+  backdrop-filter:blur(8px) saturate(125%);
+  box-shadow:0 12px 30px rgba(3,17,36,.24);
+}
+.wg-video-stage .wg-team-note{
+  background:rgba(223,255,245,.60);
+  border:1px solid rgba(255,255,255,.6);
+}
+@media(max-width:760px){
+ .wg-video-stage .wg-projects .wg-card{background:rgba(248,252,255,.68)}
+ .wg-video-stage .wg-team{background:rgba(247,252,255,.72)}
+}
+@media(prefers-reduced-transparency:reduce){
+ .wg-video-stage .wg-projects .wg-card,.wg-video-stage .wg-team{background:#f3f8ff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
