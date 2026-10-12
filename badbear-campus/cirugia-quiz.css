@@ -1,0 +1,22 @@
+/* Práctica clínica ENAM · BADBEAR.CAMPUS */
+.cgq-panel{background:linear-gradient(135deg,#e9f6ff,#e8fcf5);border:1px solid #a6c9e7;border-top:5px solid #1463ef;border-radius:17px;padding:22px;margin:0 0 24px;box-shadow:0 8px 28px #13376518}
+.cgq-panel h2{font-size:clamp(21px,3vw,29px);margin:5px 0}
+.cgq-panel>p{color:#244662}
+.cgq-controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:18px 0}
+.cgq-controls label{font-weight:750}
+.cgq-controls select{min-width:250px;flex:1;padding:11px;border:1px solid #accadc;border-radius:10px;background:#fff;font:inherit}
+.cgq-controls button{min-height:45px}
+#cg-quiz-form[hidden]{display:none}
+.cgq-question{min-width:0;border:1px solid #d2e2ed;background:#ffffffec;border-radius:13px;padding:16px 18px;margin:14px 0}
+.cgq-question legend{font-weight:800;color:#153752;padding:0 5px;line-height:1.55}
+.cgq-option{display:flex;align-items:flex-start;gap:10px;padding:10px 11px;margin:6px 0;background:#f2f8fd;border-radius:9px;cursor:pointer;line-height:1.5}
+.cgq-option:hover{background:#e2f5f6}
+.cgq-option input{flex:0 0 auto;margin-top:5px;accent-color:#1161df}
+.cgq-right{border-color:#0a9a6a}
+.cgq-wrong{border-color:#e45757}
+.cgq-explain{margin-top:13px;padding:14px;border-radius:10px;background:#e5f4fa;color:#143850;font-weight:600}
+.cgq-score{padding:15px 18px;border:1px solid #70ccbe;border-radius:12px;background:#d9fbf1;color:#085f58;font-size:clamp(18px,3vw,25px);font-weight:850}
+.cgq-submit{background:linear-gradient(110deg,#145deb,#00a9ad);border:0;border-radius:10px;color:#fff;padding:14px 22px;font:700 15px system-ui;cursor:pointer}
+.cgq-submit:disabled{opacity:.65;cursor:default}
+#cg-quiz-results p{font-size:13px;color:#3f5972}
+@media(max-width:650px){.cgq-panel{padding:14px}.cgq-controls{display:grid;gap:9px}.cgq-controls select{width:100%;min-width:0}.cgq-question{padding:12px}.cgq-option{padding:9px}}
