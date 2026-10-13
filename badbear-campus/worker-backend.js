@@ -333,6 +333,51 @@ export default {
         ]).catch(()=>{}));
         return response({token,alumno:{codigo:user.codigo,nombre:user.nombre},expira:expires},200,origin);
       }
+
+      // BADBEAR.NOTES: authenticated private D1 metadata + R2 file storage.
+      if (path.startsWith("/api/notes")) {
+        const user=await session(req,env);
+        if(!env.NOTES_BUCKET)throw new Problem("El administrador debe configurar el depósito privado NOTES_BUCKET de R2.",503);
+        if(req.method==="GET" && path==="/api/notes"){
+          const found=await env.DB.prepare("SELECT id,title,specialty,topic,tags,body,file_name,file_type,file_size,created_at FROM campus_notes WHERE codigo=? ORDER BY created_at DESC LIMIT 500").bind(user.codigo).all();
+          return response({items:found.results},200,origin);
+        }
+        if(req.method==="POST" && path==="/api/notes"){
+          const b=await readJSON(req),title=String(b.title||"").trim(),id=crypto.randomUUID();
+          if(!title||title.length>140||String(b.body||"").length>25000)throw new Problem("Título o contenido inválido.");
+          const specialty=String(b.specialty||"Otras").slice(0,100),topic=String(b.topic||"").slice(0,120),tags=String(b.tags||"").slice(0,130),body=String(b.body||"");
+          await env.DB.prepare("INSERT INTO campus_notes(id,codigo,title,specialty,topic,tags,body,created_at) VALUES(?,?,?,?,?,?,?,?)").bind(id,user.codigo,title,specialty,topic,tags,body,now()).run();
+          return response({id,ok:true},201,origin);
+        }
+        const m=path.match(/^\/api\/notes\/([a-f0-9-]{36})(?:\/file)?$/);
+        if(!m)throw new Problem("Ruta de notas inválida.",404);
+        const id=m[1],item=await env.DB.prepare("SELECT * FROM campus_notes WHERE id=? AND codigo=?").bind(id,user.codigo).first();
+        if(!item)throw new Problem("Apunte no encontrado.",404);
+        const isFile=path.endsWith("/file");
+        if(req.method==="PUT" && isFile){
+          const type=req.headers.get("Content-Type")||"",filename=decodeURIComponent(req.headers.get("X-File-Name")||"archivo").slice(0,180);
+          const allowed=["application/pdf","image/png","image/jpeg","image/webp","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+          const limit=20*1024*1024,claimed=Number(req.headers.get("Content-Length")||0);
+          if(!allowed.includes(type)||claimed>limit)throw new Problem("Formato o tamaño no permitido.");
+          const bytes=await req.arrayBuffer();if(!bytes.byteLength||bytes.byteLength>limit)throw new Problem("Archivo vacío o mayor a 20 MB.");
+          const key="students/"+encodeURIComponent(user.codigo)+"/"+id;
+          await env.NOTES_BUCKET.put(key,bytes,{httpMetadata:{contentType:type}});
+          await env.DB.prepare("UPDATE campus_notes SET file_name=?,file_type=?,file_size=? WHERE id=? AND codigo=?").bind(filename,type,bytes.byteLength,id,user.codigo).run();
+          return response({ok:true},200,origin);
+        }
+        if(req.method==="GET" && isFile){
+          if(!item.file_name)throw new Problem("Apunte sin archivo adjunto.",404);
+          const object=await env.NOTES_BUCKET.get("students/"+encodeURIComponent(user.codigo)+"/"+id);
+          if(!object)throw new Problem("Archivo no disponible.",404);
+          return new Response(object.body,{headers:{"Content-Type":item.file_type,"Content-Disposition":"inline; filename*=UTF-8''"+encodeURIComponent(item.file_name),"Cache-Control":"private, no-store","X-Content-Type-Options":"nosniff",...(origin===SITE?{"Access-Control-Allow-Origin":SITE}: {})}});
+        }
+        if(req.method==="DELETE" && !isFile){
+          await env.NOTES_BUCKET.delete("students/"+encodeURIComponent(user.codigo)+"/"+id);
+          await env.DB.prepare("DELETE FROM campus_notes WHERE id=? AND codigo=?").bind(id,user.codigo).run();
+          return response({ok:true},200,origin);
+        }
+        throw new Problem("Operación no disponible.",405);
+      }
       if (path === "/api/progreso/cirugia" && req.method === "GET") {
         const user = await session(req,env);
         const data = await env.DB.prepare("SELECT clase_id FROM campus_progreso_cirugia WHERE codigo=? AND estudiada=1 ORDER BY clase_id").bind(user.codigo).all();
