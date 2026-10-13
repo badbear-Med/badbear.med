@@ -70,3 +70,5 @@
 .bb-vivid-aula .cgq-feedback{background:#fff!important;border-left:4px solid #27ae60!important}
 .bb-vivid-aula .cgq-wrong .cgq-feedback{border-left-color:#ef5a5a!important}
 @media(max-width:650px){.bb-vivid-aula .cgq-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.bb-vivid-aula .cgq-references{margin:13px 0;padding:15px;background:#f3f9f6;border:1px solid #b5dec5;border-radius:12px}.bb-vivid-aula .cgq-references h4{margin:0 0 9px}.bb-vivid-aula .cgq-references a{display:block;color:#0c6b51;text-decoration:underline;margin:7px 0;font-weight:700}.bb-vivid-aula .cgq-application p{border-bottom:1px solid #d9e4ef;padding:8px 0;line-height:1.7}.bb-vivid-aula .cgq-source-pending{font-size:12px;color:#6b7280;font-weight:500}
