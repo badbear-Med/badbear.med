@@ -19,5 +19,21 @@ for(const item of local){const mark="[local:"+item.id+"]";if(listing.items.some(
 const r=await call("/api/notes",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({title:item.title,specialty:item.specialty,topic:item.topic,tags:(item.tags||"")+" "+mark,body:item.body})});const created=await r.json();
 if(item.file?.blob){try{await call("/api/notes/"+created.id+"/file",{method:"PUT",headers:{"Content-Type":item.file.type||"application/octet-stream","X-File-Name":encodeURIComponent(item.file.name)},body:item.file.blob})}catch(e){state("No se pudo subir el archivo de "+item.title+": "+e.message+"; el apunte local permanece guardado.");return}}n++}
 state("Sincronización finalizada: "+n+" apuntes nuevos enviados.");await refresh()}catch(e){state(e.message)}}
+async function saveDirect(note){
+  if(!token())throw Error("Debes iniciar sesión en BADBEAR.CAMPUS en esta misma pestaña.");
+  const response=await call("/api/notes",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({title:note.title,specialty:note.specialty,topic:note.topic,tags:note.tags,body:note.body})});
+  const created=await response.json();
+  if(note.file?.blob){
+    try{
+      await call("/api/notes/"+created.id+"/file",{method:"PUT",headers:{"Content-Type":note.file.type||"application/octet-stream","X-File-Name":encodeURIComponent(note.file.name)},body:note.file.blob});
+    }catch(error){
+      try{await call("/api/notes/"+created.id,{method:"DELETE"})}catch{}
+      throw error;
+    }
+  }
+  await refresh();
+  return created.id;
+}
+window.BadbearNotesCloud={hasSession:()=>Boolean(token()),save:saveDirect,refresh};
 $("cloud-refresh").onclick=refresh;$("cloud-migrate").onclick=migrate;
 })();
