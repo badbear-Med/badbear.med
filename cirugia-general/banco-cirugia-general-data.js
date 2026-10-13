@@ -2472,3 +2472,10 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativas_adaptadas": true
   }
 ];
+
+/* Láminas radiológicas del banco UNFV: ocultar la clave hasta responder. */
+(()=>{const byId={"cxg-real-058":[{"src":"assets/banco-cirugia/q63_obstruccion_cuerpos_extranos.png","alt":"Radiografía abdominal con objetos radiopacos"},{"src":"assets/banco-cirugia/q63b_ileo_mecanico.png","alt":"Radiografía abdominal con asas dilatadas y niveles hidroaéreos"}],
+"cxg-real-059":[{"src":"assets/banco-cirugia/q64_higado_metastasico.png","alt":"TC abdominal axial con múltiples lesiones hepáticas"}],
+"cxg-real-060":[{"src":"assets/banco-cirugia/q65_colitis.png","alt":"TC abdominal coronal para interpretación del colon"}],
+"cxg-real-069":[{"src":"assets/banco-cirugia/q74_esplenomegalia_masiva.png","alt":"TC abdominal coronal de lesión esplénica"}],
+"cxg-real-070":[{"src":"assets/banco-cirugia/q75_coledocolitiasis_ecografia.png","alt":"Ecografía hepatobiliar para interpretación"}]};for(const q of window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO||[]){if(byId[q.id])q.imagenes=byId[q.id]}})();
