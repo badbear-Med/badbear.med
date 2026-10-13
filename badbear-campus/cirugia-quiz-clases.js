@@ -35,7 +35,7 @@ function score(){
  results.replaceChildren();
  const answered=answers.length,percent=answered?Math.round(points/answered*100):0;
  const top=el("div","cgq-score");
- top.append(el("span","", "Pregunta "+Math.min(position+1,chosen.length)+" / "+chosen.length+" · Respondidas: "+answered+" · Aciertos: "+points+" · Precisión: "+percent+"%"));
+ top.append(el("span","cgq-counter","Pregunta "+Math.min(position+1,chosen.length)+" de "+chosen.length)); const stats=el("div","cgq-stats"); [["Respondidas",answered],["Correctas",points],["Incorrectas",answered-points],["Rendimiento",percent+"%"]].forEach(([label,value])=>{const card=el("div","cgq-stat");card.append(el("strong","",String(value)),el("small","",label));stats.append(card)});top.append(stats);
  const track=el("div","cgq-progress-track"),fill=el("div","cgq-progress-fill");
  fill.style.width=(chosen.length?answered/chosen.length*100:0)+"%";
  track.setAttribute("role","progressbar");track.setAttribute("aria-label","Avance del banco");track.setAttribute("aria-valuemin","0");track.setAttribute("aria-valuemax",String(chosen.length));track.setAttribute("aria-valuenow",String(answered));
@@ -59,7 +59,7 @@ function render(){
   finish.append(review);form.append(finish);status.textContent="Terminaste el banco. Revisa tus respuestas o inicia nuevamente.";return;
  }
  const q=chosen[position],field=el("fieldset","cgq-question"),legend=el("legend","",(position+1)+". "+q.stem);
- field.append(legend);
+ field.append(el("div","cgq-question-meta","PREGUNTA "+(position+1)+" DE "+chosen.length+"  ·  CIRUGÍA GENERAL"),legend);
  q.options.forEach((option,j)=>{
   const label=el("label","cgq-option"),input=el("input");input.type="radio";input.name="cgq-current";input.value=String(j);
   label.append(input,el("span","",String.fromCharCode(65+j)+". "+option));field.append(label);
@@ -83,8 +83,10 @@ form.addEventListener("change",ev=>{
  feedback.append(el("strong","",correct?"¡Correcto!":"Respuesta incorrecta"));
  if(!correct)feedback.append(el("p","", "Tu elección: "+String.fromCharCode(65+selected)+". "+q.options[selected]+". No corresponde a la respuesta más adecuada para los datos del caso."));
  feedback.append(el("p","", "Respuesta correcta: "+String.fromCharCode(65+q.answer)+". "+q.options[q.answer]+"."));
- feedback.append(el("p","cgq-reason","Fundamento clínico: "+(q.explanation||"Revisar el razonamiento diagnóstico y terapéutico del caso.")));
- feedback.append(el("p","cgq-fija","BADBEAR.MED FIJA: "+(q.explanation||"Identifica el dato decisivo del caso clínico antes de elegir el manejo.")));
+ const explanation=q.explanation||"Esta pregunta aún necesita un argumento clínico específico revisado.";
+ const why=el("section","cgq-why");why.append(el("h4","","¿Por qué es correcta la respuesta?"),el("p","",explanation));feedback.append(why);
+ const application=el("section","cgq-application");application.append(el("h4","","Razonamiento de la alternativa marcada"),el("p","",correct?"Tu elección coincide con la clave del caso y su fundamento clínico.":"La opción que marcaste no coincide con la clave. Contrasta el dato decisivo del caso con el fundamento de la respuesta correcta; todavía no hay una justificación individual validada para este distractor."));feedback.append(application);
+ const pearl=el("section","cgq-fija");pearl.append(el("strong","","BADBEAR.MED FIJA:"),el("p","",explanation));feedback.append(pearl);
  field.append(feedback);
  const next=el("button","cgq-next",position===chosen.length-1?"Finalizar y ver resultados":"Siguiente pregunta →");
  next.type="button";next.addEventListener("click",()=>{position++;render();form.scrollIntoView({behavior:"smooth",block:"start"})},{once:true});
