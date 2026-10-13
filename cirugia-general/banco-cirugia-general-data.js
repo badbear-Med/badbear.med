@@ -7,7 +7,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "opciones": [
       "Inguinal",
       "Femoral",
-      "De Petit"
+      "De Petit",
+      "Obturatriz"
     ],
     "clave": "A",
     "respuesta": "Inguinal",
@@ -15,7 +16,11 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "No confundas “más característica de la mujer” con “más frecuente en la mujer”: la inguinal sigue predominando.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativa_agregada": {
+      "letra": "D",
+      "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
+    }
   },
   {
     "id": "cxg-real-002",
@@ -25,7 +30,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "opciones": [
       "250 a 350 mEq/día",
       "1 a 2 g por día",
-      "2 a 4 g por día"
+      "2 a 4 g por día",
+      "12 a 15 g de sal por día"
     ],
     "clave": "C",
     "respuesta": "2 a 4 g por día",
@@ -33,7 +39,11 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "En clínica actual calcula sodio, agua y potasio según peso, pérdidas y estado fisiológico; no uses una cifra fija de “sal” para todos.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": "Ítem con unidades/terminología ambigua; se conserva la clave esperada del banco histórico.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativa_agregada": {
+      "letra": "D",
+      "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
+    }
   },
   {
     "id": "cxg-real-003",
@@ -43,7 +53,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "opciones": [
       "10%",
       "15–25%",
-      "30%"
+      "30%",
+      "Más del 70%"
     ],
     "clave": "B",
     "respuesta": "15–25%",
@@ -51,7 +62,11 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "ATLS: el deterioro hemodinámico aumenta con el porcentaje de pérdida sanguínea; no esperes hipotensión para reconocer hipovolemia.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativa_agregada": {
+      "letra": "D",
+      "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
+    }
   },
   {
     "id": "cxg-real-004",
@@ -61,15 +76,20 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "opciones": [
       "Hipotensión venosa, acidosis metabólica, coagulopatía",
       "Hipotensión tisular, acidosis metabólica, coagulopatía",
-      "Hipotensión vascular, acidosis metabólica, coagulopatía"
+      "Hipotensión vascular, acidosis metabólica, coagulopatía",
+      "Hipotermia, acidosis metabólica y coagulopatía"
     ],
-    "clave": null,
-    "respuesta": "Hipotermia, acidosis y coagulopatía.",
+    "clave": "D",
+    "respuesta": "Hipotermia, acidosis metabólica y coagulopatía",
     "explicacion": "La tríada letal clásica del trauma es hipotermia, acidosis y coagulopatía. Las alternativas del documento sustituyen erróneamente la hipotermia por distintas formas de “hipotensión”, por lo que ninguna opción es técnicamente correcta.",
     "badbear_fija": "Trauma grave: HIPOTERMIA + ACIDOSIS + COAGULOPATÍA. Si aparece, cada componente empeora a los otros.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
-    "nota": "Pregunta defectuosa en la fuente: ninguna alternativa reproduce la tríada letal correcta.",
-    "estado": "revisar"
+    "nota": "Las alternativas A-C del documento original son incorrectas. Se añadió una alternativa D correcta para permitir la práctica, sin atribuirla al examen fuente.",
+    "estado": "corregido_para_practica",
+    "alternativa_agregada": {
+      "letra": "D",
+      "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
+    }
   },
   {
     "id": "cxg-real-005",
@@ -214,7 +234,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "opciones": [
       "CPRE",
       "Colangiografía intraoperatoria",
-      "Colangiorresonancia"
+      "Colangiorresonancia",
+      "Ecografía abdominal convencional"
     ],
     "clave": "B",
     "respuesta": "Colangiografía intraoperatoria",
@@ -222,7 +243,11 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Sospecha de cálculo en colédoco DURANTE colecistectomía → colangiografía intraoperatoria.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativa_agregada": {
+      "letra": "D",
+      "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
+    }
   },
   {
     "id": "cxg-real-013",
@@ -327,7 +352,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "opciones": [
       "Gastrectomía oncológica con linfadenectomía D2",
       "Gastrectomía subtotal con D1 en todos los casos",
-      "Gastrectomía más quimio-radioterapia obligatoria en todos"
+      "Gastrectomía más quimio-radioterapia obligatoria en todos",
+      "Gastrectomía paliativa sin intención R0 para cualquier estadio"
     ],
     "clave": "A",
     "respuesta": "Gastrectomía oncológica con linfadenectomía D2",
@@ -335,7 +361,11 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Cáncer gástrico resecable: objetivo quirúrgico = R0 + linfadenectomía adecuada; la extensión gástrica depende de la localización.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativa_agregada": {
+      "letra": "D",
+      "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
+    }
   },
   {
     "id": "cxg-real-019",
@@ -345,7 +375,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "opciones": [
       "Sonda nasogástrica",
       "Sonda nasoyeyunal",
-      "Catéter venoso central"
+      "Catéter venoso central",
+      "Nutrición parenteral total como primera elección"
     ],
     "clave": "A",
     "respuesta": "Sonda nasogástrica",
@@ -353,7 +384,11 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Pancreatitis aguda: ENTERAL antes que parenteral. Nasogástrica suele ser suficiente; nasoyeyunal se reserva para intolerancia o situaciones seleccionadas.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": "En enseñanza histórica se prefería con frecuencia la sonda nasoyeyunal; la evidencia moderna acepta nasogástrica.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativa_agregada": {
+      "letra": "D",
+      "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
+    }
   },
   {
     "id": "cxg-real-020",
@@ -363,7 +398,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "opciones": [
       "Ecografía abdominal",
       "TC con contraste",
-      "Resonancia magnética"
+      "Resonancia magnética",
+      "Radiografía simple de abdomen"
     ],
     "clave": "A",
     "respuesta": "Ecografía abdominal",
@@ -371,7 +407,11 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Colangitis sospechada: ecografía inicial; si es grave, no retrases la descompresión biliar por completar estudios innecesarios.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativa_agregada": {
+      "letra": "D",
+      "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
+    }
   },
   {
     "id": "cxg-real-021",
@@ -1881,7 +1921,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "opciones": [
       "La respuesta proinflamatoria aguda depende del sistema adaptativo",
       "La respuesta antiinflamatoria devuelve a homeostasis por supresión innata",
-      "El grado de inflamación se relaciona con la gravedad de la lesión"
+      "El grado de inflamación se relaciona con la gravedad de la lesión",
+      "La magnitud de la respuesta inflamatoria es siempre independiente de la lesión"
     ],
     "clave": "C",
     "respuesta": "El grado de inflamación se relaciona con la gravedad de la lesión",
@@ -1889,6 +1930,10 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Trauma → DAMPs → inmunidad innata → inflamación sistémica proporcional a la carga de lesión.",
     "fuente": "cirugia general-preguntas reales.jpeg",
     "nota": "En la fotografía solo se observan alternativas A–C.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativa_agregada": {
+      "letra": "D",
+      "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
+    }
   }
 ];
