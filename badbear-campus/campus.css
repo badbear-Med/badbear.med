@@ -11,3 +11,22 @@ main{max-width:1140px;margin:auto;padding:38px 5% 60px}.hero{padding-bottom:28px
 /* Convención académica: 0–10.99 rojo; desde 11 azul. */
 .grade.grade-low{color:#ba1e34!important;font-weight:800}
 .grade.grade-high{color:#1657b8!important;font-weight:800}
+
+/* BADBEAR CAMPUS | Grafito 60/30/10 | 2026-10-13 */
+:root{--blue:#242424;--teal:#242424;--ink:#242424;--muted:#666b73;--line:#e3e5e9;--bg:#f5f6f8;--bb-deep:#242424;--bb-blue:#242424;--bb-ink:#242424;--bb-cyan:#ff7043;--bb-pink:#ff7043;color-scheme:light}
+body{background:#f5f6f8;color:#242424}
+a{color:#292929}
+.brand span{color:#ef5350}
+header{border-bottom-color:#e5e7eb}
+.panel,.campus-course,.campus-services,.campus-dashboard{border-color:#e4e6e9;border-radius:18px;box-shadow:0 8px 24px #2020200d}
+.panel.accent{background:linear-gradient(145deg,#fff,#f3f4f6)}
+button,.button{background:#242424;border-radius:12px;box-shadow:0 4px 12px #20202018;transition:transform .18s,box-shadow .18s,background .18s}
+button:hover:not(:disabled),.button:hover{transform:translateY(-2px);box-shadow:0 8px 20px #20202022}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ff7043;outline-offset:3px}
+.secondary{background:#eceef1;color:#242424}
+.service{background:#f2f3f5}
+th{background:#f0f1f3;color:#282828}
+tbody tr:nth-child(even){background:#fafafb}
+summary,.eyebrow{color:#242424}
+.grade.grade-high{color:#218658!important}
+.grade.grade-low{color:#be3046!important}
