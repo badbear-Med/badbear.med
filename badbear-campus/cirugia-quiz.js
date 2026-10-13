@@ -5,7 +5,17 @@ if(!root||!Array.isArray(banks))return;
 const sel=document.getElementById("cg-quiz-topic"),form=document.getElementById("cg-quiz-form"),status=document.getElementById("cg-quiz-status"),results=document.getElementById("cg-quiz-results"),start=document.getElementById("cg-quiz-start");
 let active=null,checked=false;
 const E=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
-banks.forEach(b=>{const opt=E("option","",b.title+" · "+b.questions.length+" preguntas");opt.value=b.id;sel.append(opt)});
+const courseGroups=window.BADBEAR_CG_CLASSES||[];
+courseGroups.forEach(group=>{
+ const title=E("optgroup");title.label=group.title+" · 80 preguntas previstas";
+ group.ids.forEach(item=>{
+  const opt=E("option","",item.label+" · "+item.name+(item.status==="missing"?" (material pendiente)":""));
+  opt.value="class:"+item.id;opt.disabled=true;title.append(opt);
+ });
+ sel.append(title);
+});
+banks.forEach(b=>{const opt=E("option","",b.title+" · "+b.questions.length+" preguntas disponibles");opt.value=b.id;sel.append(opt)});
+
 function launch(){
  active=banks.find(b=>b.id===sel.value)||banks[0];checked=false;form.replaceChildren();results.replaceChildren();status.textContent="Responde las 20 preguntas y presiona Corregir examen. No se muestran las claves antes de finalizar.";
  active.questions.forEach((q,i)=>{
