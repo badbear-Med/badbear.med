@@ -88,3 +88,21 @@
 .bb-vivid-aula #banco-enam{background:linear-gradient(120deg,#fff,#fffaf3)!important}
 .bb-vivid-aula #programa-real{background:linear-gradient(130deg,#fff,#f9fffb)!important}
 .bb-vivid-aula .cgq-question{background:#fff!important;border-left:4px solid #f28c28!important}
+
+/* Logo de marca visible y sin superposiciones en la cabecera. */
+.bb-vivid-aula header{position:relative!important;isolation:isolate;min-height:156px;padding-right:max(160px,calc((100vw - 1180px)/2))!important}
+.bb-vivid-aula header::after{content:none!important;display:none!important}
+.bb-vivid-aula header::before{
+ content:""!important;position:absolute!important;display:block!important;
+ top:50%!important;right:max(22px,calc((100vw - 1180px)/2))!important;
+ width:118px!important;height:118px!important;transform:translateY(-50%)!important;
+ background:#ffffff url("../dermatologia/badbear_logo.png") center/85% no-repeat!important;
+ opacity:1!important;border:2px solid #ffffffb8!important;border-radius:24px!important;
+ box-shadow:0 8px 22px #10101440!important;z-index:0!important;pointer-events:none!important;
+}
+.bb-vivid-aula header>a,.bb-vivid-aula header>h1,.bb-vivid-aula header>p{position:relative;z-index:1}
+@media(max-width:700px){
+ .bb-vivid-aula header{padding-right:98px!important;min-height:130px}
+ .bb-vivid-aula header::before{width:72px!important;height:72px!important;right:12px!important;border-radius:15px!important}
+ .bb-vivid-aula header h1{font-size:clamp(21px,6vw,32px)}
+}
