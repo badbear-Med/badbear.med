@@ -3,9 +3,17 @@
   "main": "worker-backend.js",
   "compatibility_date": "2026-10-10",
   "workers_dev": true,
-  "d1_databases": [{
-    "binding": "DB",
-    "database_name": "badbear-campus",
-    "database_id": "00000000-0000-0000-0000-000000000000"
-  }]
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "badbear-campus",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "NOTES_BUCKET",
+      "bucket_name": "badbear-campus-notes"
+    }
+  ]
 }
