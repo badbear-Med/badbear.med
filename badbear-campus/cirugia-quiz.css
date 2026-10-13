@@ -20,3 +20,14 @@
 .cgq-submit:disabled{opacity:.65;cursor:default}
 #cg-quiz-results p{font-size:13px;color:#3f5972}
 @media(max-width:650px){.cgq-panel{padding:14px}.cgq-controls{display:grid;gap:9px}.cgq-controls select{width:100%;min-width:0}.cgq-question{padding:12px}.cgq-option{padding:9px}}
+
+/* Respuesta inmediata con argumento tipo BADBEAR.MED FIJA */
+.cgq-question .cgq-correct-option{background:#dcf8e8;border:1px solid #47af78;color:#0a5732;font-weight:750}
+.cgq-question .cgq-incorrect-option{background:#ffeded;border:1px solid #db6472;color:#9b1d32;font-weight:750}
+.cgq-question .cgq-explain{background:#eaf6ff;border-left:4px solid #1565dc;padding:15px;margin-top:14px}
+.cgq-question.cgq-right .cgq-explain{border-left-color:#15815b}
+.cgq-question.cgq-wrong .cgq-explain{border-left-color:#d23f55}
+.cgq-explain strong{display:block;font-weight:850;margin-bottom:8px}
+.cgq-explain p{margin:6px 0;line-height:1.55}
+#cg-quiz-results{position:sticky;top:6px;z-index:4}
+#cg-quiz-results .cgq-score{box-shadow:0 5px 18px #0e3d5833}
