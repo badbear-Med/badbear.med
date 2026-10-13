@@ -1,0 +1,40 @@
+/* Cirugía General · Grafito 60/30/10. Exclusivo del aula. */
+.bb-vivid-aula{--blue:#27282c;--teal:#24262a;--bg:#f4f4f3;--line:#e2e2e0;--muted:#60646a;color:#222428;background:radial-gradient(circle at 8% 12%,#fff2e9 0,transparent 26%),radial-gradient(circle at 95% 34%,#f0ecfa 0,transparent 30%),#f4f4f3}
+.bb-vivid-aula header{background:linear-gradient(110deg,#151619,#2e3035 75%,#3a3c42)!important;border-bottom:3px solid #ffad68!important;color:#fff;box-shadow:0 8px 26px #18181824}
+.bb-vivid-aula header a,.bb-vivid-aula header p{color:#e8e8e8}
+.bb-vivid-aula h1,.bb-vivid-aula h2,.bb-vivid-aula h3,.bb-vivid-aula strong{letter-spacing:-.012em}
+.bb-vivid-aula .hero,.bb-vivid-aula .panel,.bb-vivid-aula .unit,.bb-vivid-aula .activity,.bb-vivid-aula .learning-view,.bb-vivid-aula .academic-card,.bb-vivid-aula .study-progress,.bb-vivid-aula .cgq-panel{background:#fff!important;border:1px solid #e6e5e3!important;border-radius:22px!important;box-shadow:0 9px 28px #17171712!important;color:#292a2e;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.bb-vivid-aula .hero:hover,.bb-vivid-aula .unit:hover,.bb-vivid-aula .academic-card:hover,.bb-vivid-aula .cgq-panel:hover{box-shadow:0 16px 40px #1717171d!important}
+.bb-vivid-aula .hero h2,.bb-vivid-aula .panel h2,.bb-vivid-aula .unit h3,.bb-vivid-aula .learning-view h3{color:#242428!important}
+.bb-vivid-aula .eyebrow{color:#a24f33!important}
+.bb-vivid-aula .muted,.bb-vivid-aula .academic-list .muted{color:#686a70!important}
+.bb-vivid-aula a{color:#333439}
+.bb-vivid-aula .nav a,.bb-vivid-aula .lesson-entry,.bb-vivid-aula .class-tab,.bb-vivid-aula .academic-tab,.bb-vivid-aula .resource-toggle,.bb-vivid-aula .cgq-option{border-radius:15px!important;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease!important}
+.bb-vivid-aula .nav a{color:#303137;background:#f5f5f3}
+.bb-vivid-aula .nav a:hover,.bb-vivid-aula .lesson-entry:hover,.bb-vivid-aula .class-tab:hover,.bb-vivid-aula .academic-tab:hover,.bb-vivid-aula .resource-toggle:hover{background:#fff1e7!important;border-color:#edb38b!important;box-shadow:0 7px 19px #b3663525!important;transform:translateY(-2px)}
+.bb-vivid-aula .academic-tab[aria-selected="true"],.bb-vivid-aula .class-tab[aria-selected="true"],.bb-vivid-aula .lesson-entry.active{background:#292a2e!important;border-color:#292a2e!important;color:#fff!important;box-shadow:0 7px 20px #15151535!important}
+.bb-vivid-aula .academic-tab[aria-selected="true"] span{color:#e8e8e8!important}
+.bb-vivid-aula .btn:not(.secondary),.bb-vivid-aula #cg-quiz-start,.bb-vivid-aula .cgq-submit{background:linear-gradient(115deg,#e9693d,#f49f50)!important;color:#181818!important;font-weight:800;border:0;border-radius:15px!important;box-shadow:0 7px 17px #cb743d39;transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+.bb-vivid-aula button:hover,.bb-vivid-aula .btn:hover{transform:translateY(-2px);filter:brightness(1.035);box-shadow:0 11px 24px #25252520}
+.bb-vivid-aula .btn.secondary{background:#efefee;color:#28292d;border-radius:15px}
+.bb-vivid-aula .tag,.bb-vivid-aula .study-label{background:#fff0df;color:#83431e;border-radius:99px}
+.bb-vivid-aula .study-track,.bb-vivid-aula .progress{background:#ebebe8}
+.bb-vivid-aula .study-track div,.bb-vivid-aula .progress>div{background:linear-gradient(90deg,#e77546,#f5a05b)}
+.bb-vivid-aula .class-audio-dock,.bb-vivid-aula .academic-resources,.bb-vivid-aula .extra-material{background:#f8f8f6!important;border-color:#e8e4de!important;border-radius:17px}
+.bb-vivid-aula .cgq-panel{border-top:4px solid #e77749!important;padding:23px}
+.bb-vivid-aula .cgq-panel>p{color:#52545a}
+.bb-vivid-aula .cgq-controls select,.bb-vivid-aula .study-login-form input{background:#fff!important;border:1px solid #d6d5d2!important;border-radius:14px;padding:11px;color:#25262a}
+.bb-vivid-aula .cgq-question{border:1px solid #e0e0dc;background:#fbfbfa;border-radius:19px;padding:18px}
+.bb-vivid-aula .cgq-question legend{color:#242428}
+.bb-vivid-aula .cgq-option{background:#fff;border:1px solid #e9e8e5;padding:13px 14px}
+.bb-vivid-aula .cgq-option:hover{background:#fff0e4;border-color:#edb284;box-shadow:0 8px 17px #bf7d4524;transform:translateY(-1px)}
+.bb-vivid-aula .cgq-option input{accent-color:#e56b3e}
+.bb-vivid-aula .cgq-question .cgq-correct-option{background:#e1f7e8!important;border-color:#36a06a!important;color:#185b39}
+.bb-vivid-aula .cgq-question .cgq-incorrect-option{background:#ffebee!important;border-color:#d65a68!important;color:#84283a}
+.bb-vivid-aula .cgq-explain{background:#f6f5f1;color:#2d302f;border-left:4px solid #e77749}
+.bb-vivid-aula .cgq-right .cgq-explain{border-left-color:#2d9b62}
+.bb-vivid-aula .cgq-wrong .cgq-explain{border-left-color:#d65a68}
+.bb-vivid-aula .cgq-score{background:#292a2e;color:white;border-color:#292a2e;border-radius:15px}
+.bb-vivid-aula button:focus-visible,.bb-vivid-aula a:focus-visible,.bb-vivid-aula select:focus-visible{outline:3px solid #ef9a51;outline-offset:3px}
+@media(max-width:700px){.bb-vivid-aula .cgq-panel{padding:15px}.bb-vivid-aula .hero,.bb-vivid-aula .panel,.bb-vivid-aula .unit{border-radius:18px!important}.bb-vivid-aula .cgq-option{min-height:48px}}
+@media(prefers-reduced-motion:reduce){.bb-vivid-aula *{transition:none!important}.bb-vivid-aula button:hover,.bb-vivid-aula .btn:hover,.bb-vivid-aula .cgq-option:hover{transform:none!important}}
