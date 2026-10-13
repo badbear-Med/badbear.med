@@ -52,3 +52,21 @@
 .bb-vivid-aula .cgq-review-item{background:#fff;border:1px solid #e3e5e8;border-radius:12px;padding:14px;margin:10px 0}
 .bb-vivid-aula .cgq-review-item summary{cursor:pointer;font-weight:750}
 @media(max-width:700px){.bb-vivid-aula #cg-quiz-form .cgq-question{padding:15px!important}.bb-vivid-aula #cg-quiz-form .cgq-next{width:100%}}
+
+/* Referencia visual: banco interactivo, limpio y progresivo */
+.bb-vivid-aula #cg-quiz-results .cgq-score{background:transparent!important;color:#25282c!important;box-shadow:none!important;padding:0!important}
+.bb-vivid-aula .cgq-counter{display:block;padding:10px 2px;font-size:14px;font-weight:800}
+.bb-vivid-aula .cgq-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.bb-vivid-aula .cgq-stat{padding:14px;background:#fff;border:1px solid #dde2e8;border-radius:12px;box-shadow:0 3px 8px #2020200a}
+.bb-vivid-aula .cgq-stat strong{display:block;font-size:22px;color:#171d25}.bb-vivid-aula .cgq-stat small{display:block;font-size:12px;color:#657080}
+.bb-vivid-aula .cgq-progress-track{background:#e5e9ee!important}
+.bb-vivid-aula .cgq-question-meta{font-size:11px;font-weight:850;letter-spacing:.07em;color:#0c8079;margin-bottom:12px}
+.bb-vivid-aula .cgq-why,.bb-vivid-aula .cgq-application,.bb-vivid-aula .cgq-fija{display:block;margin:12px 0;padding:15px 17px;border-radius:12px;font-weight:400}
+.bb-vivid-aula .cgq-why{background:#f9fbff;border:1px solid #d0dbe8}
+.bb-vivid-aula .cgq-application{background:#edf5ff;border:1px solid #99c4ff}
+.bb-vivid-aula .cgq-fija{background:#ffe36c!important;border:1px solid #e8b620!important;border-left:5px solid #e48d18!important;color:#32280f!important}
+.bb-vivid-aula .cgq-why h4,.bb-vivid-aula .cgq-application h4{font-size:14px;margin:0 0 8px;color:#242a31}
+.bb-vivid-aula .cgq-fija p{margin:7px 0 0}
+.bb-vivid-aula .cgq-feedback{background:#fff!important;border-left:4px solid #27ae60!important}
+.bb-vivid-aula .cgq-wrong .cgq-feedback{border-left-color:#ef5a5a!important}
+@media(max-width:650px){.bb-vivid-aula .cgq-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
