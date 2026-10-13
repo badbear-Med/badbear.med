@@ -10,7 +10,7 @@ const create=(tag,cl,t)=>{const x=document.createElement(tag);if(cl)x.className=
 const clsLabel=create("label","","Clase"),clsSelect=create("select");clsLabel.htmlFor="cg-quiz-class";clsSelect.id="cg-quiz-class";clsSelect.setAttribute("aria-label","Seleccionar clase");
 const controls=start.parentNode;controls.insertBefore(clsLabel,start);controls.insertBefore(clsSelect,start);
 sectionSelect.replaceChildren();banks.forEach(b=>{const o=new Option(b.title+" · "+b.questions.length+" preguntas",b.id);sectionSelect.add(o)});
-let chosen=[],corrected=false;
+let chosen=[],answered=new Set(),points=0;
 function updateClasses(){
  const section=banks.find(b=>b.id===sectionSelect.value)||banks[0],meta=groups.find(g=>g.id===section.id),items=meta?.ids||[];
  clsSelect.replaceChildren(new Option("Todas las clases de la sección · 80 preguntas",""));
@@ -27,7 +27,7 @@ clsSelect.addEventListener("change",()=>{const section=banks.find(b=>b.id===sect
 function shuffleQuestion(q){const arr=q.options.map((text,i)=>({text,i}));arr.sort(()=>Math.random()-.5);return {...q,options:arr.map(x=>x.text),answer:arr.findIndex(x=>x.i===q.answer)}}
 function launch(){
  const section=banks.find(b=>b.id===sectionSelect.value),id=clsSelect.value;
- chosen=section.questions.filter(q=>!id||q.classId===id).map(shuffleQuestion);corrected=false;
+ chosen=section.questions.filter(q=>!id||q.classId===id).map(shuffleQuestion);answered=new Set();points=0;
  form.replaceChildren();results.replaceChildren();
  if(!chosen.length){status.textContent="Aún no hay preguntas aprobadas para esta clase.";form.hidden=true;return}
  chosen.forEach((q,i)=>{
@@ -35,26 +35,33 @@ function launch(){
   q.options.forEach((option,j)=>{const l=create("label","cgq-option"),input=create("input");input.type="radio";input.name="cgq"+i;input.value=String(j);l.append(input,create("span","",String.fromCharCode(65+j)+". "+option));f.append(l)});
   form.append(f)
  });
- const button=create("button","cgq-submit","Corregir práctica");button.type="submit";form.append(button);
- form.hidden=false;status.textContent="Responde las "+chosen.length+" preguntas. Las claves y fundamentos aparecen al corregir.";
+ form.hidden=false;updateScore();
+ status.textContent="Selecciona una alternativa para descubrir inmediatamente la clave y el argumento clínico BADBEAR.MED FIJA.";
  form.scrollIntoView({behavior:"smooth",block:"start"});
 }
 start.addEventListener("click",launch);
-form.addEventListener("submit",ev=>{
- ev.preventDefault();if(corrected||!chosen.length)return;
- const answers=chosen.map((q,i)=>form.querySelector('input[name="cgq'+i+'"]:checked'));
- const remaining=answers.filter(a=>!a).length;if(remaining){status.textContent="Faltan "+remaining+" respuestas. Completa la práctica para corregir.";return}
- corrected=true;let points=0;
- chosen.forEach((q,i)=>{
-  const valid=Number(answers[i].value)===q.answer;if(valid)points++;
-  const field=form.querySelectorAll("fieldset")[i];field.classList.add(valid?"cgq-right":"cgq-wrong");
-  field.querySelectorAll("input").forEach(input=>input.disabled=true);
-  const exp=create("div","cgq-explain",(valid?"Correcto. ":"Incorrecto. ")+"Clave: "+String.fromCharCode(65+q.answer)+". "+q.options[q.answer]+". "+q.explanation);
-  field.append(exp);
- });
- results.replaceChildren(create("div","cgq-score",points+" / "+chosen.length+" correctas · "+Math.round(100*points/chosen.length)+"%"),create("p","","Evaluación formativa, no equivale a una calificación oficial."));
- form.querySelector(".cgq-submit").disabled=true;status.textContent="Práctica corregida. Revisa la explicación clínica debajo de cada pregunta.";
- results.scrollIntoView({behavior:"smooth",block:"center"});
+function updateScore(){
+ results.replaceChildren(create("div","cgq-score","Respondidas: "+answered.size+" / "+chosen.length+" · Aciertos: "+points+" · "+(answered.size?Math.round(points/answered.size*100):0)+"% de precisión"));
+ if(answered.size===chosen.length){results.append(create("p","","Práctica finalizada. Resultado: "+points+" / "+chosen.length+". Entrenamiento formativo, no nota oficial."));status.textContent="Práctica completada. Puedes elegir otra clase o reiniciar esta sección."}
+}
+form.addEventListener("change",ev=>{
+ const input=ev.target;if(!(input instanceof HTMLInputElement)||input.type!=="radio")return;
+ const match=/^cgq(\\d+)$/.exec(input.name);if(!match)return;
+ const i=Number(match[1]);if(!chosen[i]||answered.has(i))return;
+ const q=chosen[i],correct=Number(input.value)===q.answer;
+ answered.add(i);if(correct)points++;
+ const field=form.querySelectorAll("fieldset")[i];
+ field.classList.add(correct?"cgq-right":"cgq-wrong");
+ field.querySelectorAll("input").forEach(x=>x.disabled=true);
+ field.querySelectorAll(".cgq-option").forEach((label,j)=>{if(j===q.answer)label.classList.add("cgq-correct-option");else if(j===Number(input.value)&&!correct)label.classList.add("cgq-incorrect-option")});
+ const feedback=create("div","cgq-explain");
+ feedback.setAttribute("role","status");
+ const heading=create("strong","",correct?"CORRECTO":"INCORRECTO");
+ const key=create("p","","Respuesta correcta: "+String.fromCharCode(65+q.answer)+". "+q.options[q.answer]);
+ const reason=create("p","","BADBEAR.MED FIJA: "+q.explanation);
+ feedback.append(heading,key,reason);field.append(feedback);
+ updateScore();
+ if(answered.size!==chosen.length)status.textContent="Respondidas: "+answered.size+" de "+chosen.length+". Cada respuesta se corrige al seleccionarla.";
 });
 updateClasses();
 })();
