@@ -191,6 +191,9 @@
           <p>${esc(q.explicacion || "La respuesta se sostiene en el concepto quirúrgico central evaluado en esta pregunta.")}</p>
         </section>
 
+        ${Array.isArray(q.argumentos) && q.argumentos.length ? `<section class="bb-theory-box"><h3>Análisis de cada alternativa (A–E)</h3>${q.argumentos.map(a=>`<p>${esc(a)}</p>`).join("")}</section>` : ""}
+        ${Array.isArray(q.referencias) && q.referencias.length ? `<section class="bb-answer-box"><h3>Fuentes científicas de consulta</h3>${q.referencias.map(([name,url])=>`<p><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(name)}</a></p>`).join("")}</section>` : ""}
+
         <section class="bb-theory-box">
           <h3>Desarrollo teórico</h3>
           <p>${esc(theoryFor(q.tema))}</p>
