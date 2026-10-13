@@ -18,9 +18,27 @@ function show(n){if(activeURL){URL.revokeObjectURL(activeURL);activeURL=null}con
 if(n.body){const p=document.createElement("p");p.style.whiteSpace="pre-wrap";p.textContent=n.body;wrap.append(p)}
 if(n.file){activeURL=URL.createObjectURL(n.file.blob);if(n.file.type==="application/pdf"){const iframe=document.createElement("iframe");iframe.src=activeURL;iframe.title=n.file.name;wrap.append(iframe)}else if(n.file.type.startsWith("image/")){const img=document.createElement("img");img.src=activeURL;img.alt=n.file.name;wrap.append(img)}else{const p=document.createElement("p");p.textContent="Documento de Word: usa el botón Descargar archivo en la tarjeta para abrirlo en tu editor.";wrap.append(p)}}$("viewer").showModal()}
 $("close").onclick=()=>$("viewer").close();$("viewer").addEventListener("close",()=>{if(activeURL){URL.revokeObjectURL(activeURL);activeURL=null}$("viewer-content").replaceChildren()});
-$("note-form").addEventListener("submit",async ev=>{ev.preventDefault();if(!db)return;const file=$("attachment").files[0];if(file&&file.size>100*1000*1000){$("status").textContent="Máximo 100 MB por archivo";return}const allowed=["application/pdf","image/png","image/jpeg","image/webp","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];if(file&&!allowed.includes(file.type)&&!/\.(pdf|png|jpe?g|webp|docx?)$/i.test(file.name)){$("status").textContent="Formato no admitido";return}
+$("note-form").addEventListener("submit",async ev=>{ev.preventDefault();const file=$("attachment").files[0];if(file&&file.size>100*1000*1000){$("status").textContent="Máximo 100 MB por archivo";return}const allowed=["application/pdf","image/png","image/jpeg","image/webp","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];if(file&&!allowed.includes(file.type)&&!/\.(pdf|png|jpe?g|webp|docx?)$/i.test(file.name)){$("status").textContent="Formato no admitido";return}
 const note={id:crypto.randomUUID(),created:Date.now(),title:$("title").value.trim(),specialty:$("specialty").value,topic:$("topic").value.trim(),tags:$("tags").value.trim(),body:$("body").value.trim(),file:file?{name:file.name,type:file.type||"application/octet-stream",blob:file}:null};
-try{await put(note);$("note-form").reset();$("status").textContent="Guardado en este dispositivo";await load()}catch(e){$("status").textContent="No se pudo guardar. Revisa el espacio disponible del navegador."}});
+const cloud=window.BadbearNotesCloud;
+const saveButton=$("save");
+saveButton.disabled=true;
+try{
+  if(cloud?.hasSession()){
+    $("status").textContent="Subiendo el apunte a la nube…";
+    await cloud.save(note);
+    $("note-form").reset();
+    $("status").textContent="Guardado en la nube. Puedes verlo en «Mis archivos en la nube».";
+    document.querySelector('[data-target="panel-cloud"]')?.click();
+  }else{
+    await put(note);
+    $("note-form").reset();
+    $("status").textContent="Guardado solo en este dispositivo. Inicia sesión en CAMPUS para sincronizarlo.";
+    await load();
+  }
+}catch(e){
+  $("status").textContent="No se pudo guardar en la nube: "+(e.message||"Error de conexión")+". El formulario sigue intacto; vuelve a intentarlo.";
+}finally{saveButton.disabled=false}});
 $("search").addEventListener("input",render);$("filter").addEventListener("change",render);
 openDB().then(x=>{db=x;return load()}).catch(()=>{$("status").textContent="Este navegador no permite almacenamiento local en este momento."});
 })();
