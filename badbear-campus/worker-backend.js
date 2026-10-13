@@ -180,8 +180,8 @@ export default {
     try {
       if (origin && origin !== SITE) throw new Problem("Origen no permitido.", 403);
       if (req.method === "OPTIONS") return new Response(null, {status:204,headers:{
-        "Access-Control-Allow-Origin":SITE,"Access-Control-Allow-Methods":"GET, POST, OPTIONS",
-        "Access-Control-Allow-Headers":"Authorization, Content-Type","Access-Control-Max-Age":"600","Vary":"Origin"
+        "Access-Control-Allow-Origin":SITE,"Access-Control-Allow-Methods":"GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers":"Authorization, Content-Type, X-File-Name","Access-Control-Max-Age":"600","Vary":"Origin"
       }});
       if (req.method === "GET" && path === "/api/health") {
         let ready = false; if (env.DB && env.ADMIN_API_TOKEN?.length>=32 && env.PASSWORD_PEPPER?.length>=32) {
@@ -193,7 +193,7 @@ export default {
         return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states,acceso_unificado:exams,conexion_examenes:exams?"conectado":"pendiente",acceso_correo:emailReady},ready?200:503,origin);
       }
       if (!env.DB || env.ADMIN_API_TOKEN?.length < 32 || !env.ADMIN_API_TOKEN || env.PASSWORD_PEPPER?.length < 32 || !env.PASSWORD_PEPPER) throw new Problem("El portal está pendiente de conexión. Inténtalo más tarde.", 503);
-      if (req.method === "POST" && origin !== SITE) throw new Problem("Origen no permitido.", 403);
+      if (["POST","PUT","DELETE"].includes(req.method) && origin !== SITE) throw new Problem("Origen no permitido.", 403);
       if (req.method === "POST" && path === "/api/admin/login") return response(await adminLogin(req,env),200,origin);
       if (req.method === "POST" && path === "/api/correo/solicitar") return response(await emailAccess.request(req,await readJSON(req),env,ctx),200,origin);
       if (req.method === "POST" && path === "/api/correo/confirmar") return response(await emailAccess.complete(await readJSON(req),env),200,origin);
