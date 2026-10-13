@@ -29,7 +29,7 @@ clsSelect.addEventListener("change",()=>{reset();const b=banks.find(x=>x.id===se
 function shuffle(q){
  const a=q.options.map((text,i)=>({text,i}));
  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
- return {...q,options:a.map(x=>x.text),answer:a.findIndex(x=>x.i===q.answer)};
+ return {...q,options:a.map(x=>x.text),originalIndices:a.map(x=>x.i),answer:a.findIndex(x=>x.i===q.answer)};
 }
 function score(){
  results.replaceChildren();
@@ -83,10 +83,13 @@ form.addEventListener("change",ev=>{
  feedback.append(el("strong","",correct?"¡Correcto!":"Respuesta incorrecta"));
  if(!correct)feedback.append(el("p","", "Tu elección: "+String.fromCharCode(65+selected)+". "+q.options[selected]+". No corresponde a la respuesta más adecuada para los datos del caso."));
  feedback.append(el("p","", "Respuesta correcta: "+String.fromCharCode(65+q.answer)+". "+q.options[q.answer]+"."));
- const explanation=q.explanation||"Esta pregunta aún necesita un argumento clínico específico revisado.";
+ const evidence=(window.BADBEAR_CG_EVIDENCE||{})[q.id];
+ const explanation=evidence?.detail||q.explanation||"Esta pregunta aún necesita un argumento clínico específico revisado.";
  const why=el("section","cgq-why");why.append(el("h4","","¿Por qué es correcta la respuesta?"),el("p","",explanation));feedback.append(why);
- const application=el("section","cgq-application");application.append(el("h4","","Razonamiento de la alternativa marcada"),el("p","",correct?"Tu elección coincide con la clave del caso y su fundamento clínico.":"La opción que marcaste no coincide con la clave. Contrasta el dato decisivo del caso con el fundamento de la respuesta correcta; todavía no hay una justificación individual validada para este distractor."));feedback.append(application);
- const pearl=el("section","cgq-fija");pearl.append(el("strong","","BADBEAR.MED FIJA:"),el("p","",explanation));feedback.append(pearl);
+ const application=el("section","cgq-application");application.append(el("h4","","Análisis de las alternativas"));
+ q.options.forEach((option,j)=>{const originalIndex=q.originalIndices?.[j]??j;const detail=j===q.answer?"Correcta: "+explanation:(evidence?.wrong?.[originalIndex]||"Esta alternativa todavía no cuenta con una explicación individual revisada; compara sus implicaciones con los hallazgos clínicos.");application.append(el("p","",String.fromCharCode(65+j)+". "+option+" — "+detail))});feedback.append(application);
+ const pearl=el("section","cgq-fija");pearl.append(el("strong","","BADBEAR.MED FIJA:"),el("p","",evidence?.pearl||"Repasa el dato clínico decisivo: "+(q.explanation||"justifica la clave a partir del caso.")));feedback.append(pearl);
+ if(evidence?.refs?.length){const references=el("section","cgq-references");references.append(el("h4","","Fuentes y guías para ampliar"));evidence.refs.forEach(([label,url])=>{const a=el("a","",label);a.href=url;a.target="_blank";a.rel="noopener noreferrer";references.append(a)});feedback.append(references)}else{feedback.append(el("p","cgq-source-pending","Referencia bibliográfica específica pendiente de verificación para esta pregunta."))}
  field.append(feedback);
  const next=el("button","cgq-next",position===chosen.length-1?"Finalizar y ver resultados":"Siguiente pregunta →");
  next.type="button";next.addEventListener("click",()=>{position++;render();form.scrollIntoView({behavior:"smooth",block:"start"})},{once:true});
