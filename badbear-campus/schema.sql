@@ -36,3 +36,19 @@ BEGIN
       'evaluacion',OLD.evaluacion,'nota_anterior',OLD.nota,'nota_nueva',NEW.nota,
       'fecha_anterior',OLD.fecha,'fecha_nueva',NEW.fecha));
 END;
+
+-- BADBEAR.NOTES private student-owned metadata; files stored in private R2.
+CREATE TABLE IF NOT EXISTS campus_notes(
+ id TEXT PRIMARY KEY,
+ codigo TEXT NOT NULL REFERENCES campus_alumnos(codigo) ON DELETE CASCADE,
+ title TEXT NOT NULL,
+ specialty TEXT NOT NULL DEFAULT 'Otras',
+ topic TEXT NOT NULL DEFAULT '',
+ tags TEXT NOT NULL DEFAULT '',
+ body TEXT NOT NULL DEFAULT '',
+ file_name TEXT,
+ file_type TEXT,
+ file_size INTEGER,
+ created_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS campus_notes_owner ON campus_notes(codigo,created_at);
