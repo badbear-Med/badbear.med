@@ -220,6 +220,14 @@
 
     let html = `<h2>${esc(q.orden)}. ${esc(q.pregunta)}</h2>`;
     html += `<p class="question-format">${hasOptions ? `${q.opciones.length} alternativas · Selecciona una respuesta` : "Pregunta abierta · Escribe tu respuesta"}</p>`;
+    if (Array.isArray(q.imagenes) && q.imagenes.length) {
+      html += '<div class="cg-radiology-images" aria-label="Imágenes de diagnóstico para interpretar">';
+      for (const img of q.imagenes) {
+        html += '<figure><a href="'+esc(img.src)+'" target="_blank" rel="noopener noreferrer" title="Ampliar imagen radiológica"><img src="'+esc(img.src)+'" alt="'+esc(img.alt||"Imagen radiológica del examen")+'" loading="lazy"></a><figcaption>Imagen del examen · Haz clic para ampliar</figcaption></figure>';
+      }
+      html += '</div><p class="cg-radiology-note">Interpreta las imágenes antes de marcar la respuesta. El diagnóstico aparecerá al corregir.</p>';
+    }
+
 
     if (hasOptions) {
       html += `<div class="options" role="radiogroup" aria-label="Alternativas de respuesta">`;
