@@ -38,3 +38,38 @@
 .bb-vivid-aula button:focus-visible,.bb-vivid-aula a:focus-visible,.bb-vivid-aula select:focus-visible{outline:3px solid #ef9a51;outline-offset:3px}
 @media(max-width:700px){.bb-vivid-aula .cgq-panel{padding:15px}.bb-vivid-aula .hero,.bb-vivid-aula .panel,.bb-vivid-aula .unit{border-radius:18px!important}.bb-vivid-aula .cgq-option{min-height:48px}}
 @media(prefers-reduced-motion:reduce){.bb-vivid-aula *{transition:none!important}.bb-vivid-aula button:hover,.bb-vivid-aula .btn:hover,.bb-vivid-aula .cgq-option:hover{transform:none!important}}
+
+/* Campus amable multicolor · 2026-10-13 · solo presentacion */
+.bb-vivid-aula{
+  --orange:#f28c28;--yellow:#f5c542;--red:#ef5a5a;--green:#27ae60;
+  background:radial-gradient(circle at 1% 25%,#d6f4ff 0,transparent 30%),radial-gradient(circle at 98% 70%,#ffe5f0 0,transparent 32%),#f6f7f9!important;
+}
+.bb-vivid-aula header{
+  background:linear-gradient(105deg,#292b31 0%,#353941 60%,#463943 100%)!important;
+  border-bottom:4px solid #f28c28!important;
+}
+.bb-vivid-aula header::after{
+  top:50%!important;right:max(18px,calc((100vw - 1120px)/2))!important;
+  width:115px!important;height:115px!important;transform:translateY(-50%);
+  opacity:.045!important;background-size:contain!important;
+}
+.bb-vivid-aula .hero,.bb-vivid-aula .panel,.bb-vivid-aula .unit,.bb-vivid-aula .activity,.bb-vivid-aula .academic-card,.bb-vivid-aula .cgq-panel{
+  border-radius:22px!important;box-shadow:0 10px 26px #22222212!important;
+}
+.bb-vivid-aula .cgq-panel{border-top:5px solid #f28c28!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+1),.bb-vivid-aula .class-tab:nth-child(4n+1){border-top:4px solid #f28c28!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+2),.bb-vivid-aula .class-tab:nth-child(4n+2){border-top:4px solid #27ae60!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+3),.bb-vivid-aula .class-tab:nth-child(4n+3){border-top:4px solid #ef5a5a!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+4),.bb-vivid-aula .class-tab:nth-child(4n+4){border-top:4px solid #f5c542!important}
+.bb-vivid-aula .academic-tab[aria-selected="true"],.bb-vivid-aula .class-tab[aria-selected="true"]{background:#303139!important;color:#fff!important}
+.bb-vivid-aula .btn:not(.secondary),.bb-vivid-aula #cg-quiz-start,.bb-vivid-aula .cgq-submit{
+ background:linear-gradient(120deg,#f28c28,#ffad61)!important;color:#211c16!important;
+ box-shadow:0 8px 20px #e7863338!important;
+}
+.bb-vivid-aula .cgq-controls select:focus,.bb-vivid-aula .study-login-form input:focus{
+ outline:2px solid #f28c28;outline-offset:2px;
+}
+.bb-vivid-aula .cgq-option:hover{background:#fff3e6!important;border-color:#f28c28!important}
+.bb-vivid-aula .tag{background:#fff3db!important;color:#855015!important}
+.bb-vivid-aula .study-track div,.bb-vivid-aula .progress>div{background:linear-gradient(90deg,#27ae60,#f5c542)!important}
+@media(max-width:700px){.bb-vivid-aula header::after{width:65px!important;height:65px!important;right:12px!important;opacity:.035!important}}
