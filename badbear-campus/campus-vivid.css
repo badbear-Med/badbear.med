@@ -40,3 +40,37 @@ body.bb-vivid-aula{background:radial-gradient(circle at 8% 4%,#bceeffaa,transpar
 .bb-vivid-aula .lesson-entry{border-left:3px solid #00aebb}
 .bb-vivid-aula .tag{background:#c8f5eb;color:#006d71}
 .bb-vivid-aula .grade.grade-low{color:#bc1d37!important}.bb-vivid-aula .grade.grade-high{color:#145bdf!important}
+
+/* Grafito & coral: los acentos semanticos siguen diferenciados. */
+body.student-portal{--ink:#242424;--muted:#626771;--blue:#242424;--teal:#242424;--line:#e3e5e9;background:#f5f6f8}
+.student-portal .portal-header{background:#fff;border-bottom:2px solid #242424;box-shadow:0 3px 14px #2222220d}
+.student-portal .portal-hero{background:linear-gradient(118deg,#242424,#363636 75%,#444);border:1px solid #444;box-shadow:0 15px 35px #24242426}
+.student-portal .portal-hero .eyebrow,.student-portal .portal-hero .service{color:#ffbea6}
+.student-portal #results,.student-portal .login-panel,.student-portal .campus-dashboard,.student-portal .campus-services,.student-portal .tab-section[data-view="inicio"]{border-color:#e3e5e9;box-shadow:0 8px 25px #20202012}
+.student-portal .student-tabs{background:#f0f1f3;border:1px solid #e3e5e9}
+.student-portal .student-tabs button{color:#242424}
+.student-portal .student-tabs button.selected{background:#242424;color:#fff;box-shadow:0 4px 12px #24242424}
+.student-portal .student-tabs button:not(.selected):hover{background:#e2e4e7}
+.student-portal .tab-section[data-view="inicio"],.student-portal .campus-dashboard,.student-portal .tab-section[data-view="calificaciones"]{background:#fff;border-color:#e3e5e9}
+.student-portal .campus-dashboard{border-left:4px solid #ff7043}
+.student-portal .campus-progress-track div{background:linear-gradient(90deg,#242424,#ff7043)}
+.student-portal .campus-services-grid a{border-color:#e3e5e9;border-top-color:#242424;box-shadow:0 5px 15px #2222220e;border-radius:16px;transition:transform .18s,box-shadow .18s}
+.student-portal .campus-services-grid a:hover,.student-portal .campus-course:hover{transform:translateY(-3px);box-shadow:0 12px 24px #22222218}
+.student-portal .campus-services-grid a:nth-child(4n+2){border-top-color:#27a774}
+.student-portal .campus-services-grid a:nth-child(4n+3){border-top-color:#ff7043}
+.student-portal .campus-services-grid a:nth-child(4n+4){border-top-color:#f5b83d}
+.student-portal button:not(.secondary):not(.selected),.student-portal .campus-course-link{background:#242424;color:#fff;border-radius:12px}
+.student-portal table thead th{background:#242424;color:#fff}
+.student-portal table tbody tr:nth-child(even){background:#f8f9fa}
+.student-portal .grade.grade-high{color:#218658!important}
+body.bb-vivid-aula{background:#f5f6f8;color:#242424}
+.bb-vivid-aula header{background:linear-gradient(115deg,#242424,#393939);border-bottom:4px solid #ff7043}
+.bb-vivid-aula header a{color:#fff}
+.bb-vivid-aula .hero{background:#fff;border-left:5px solid #ff7043}
+.bb-vivid-aula .hero h2{color:#242424}
+.bb-vivid-aula .panel,.bb-vivid-aula .unit,.bb-vivid-aula .activity,.bb-vivid-aula .learning-view,.bb-vivid-aula .hero{border-color:#e4e6e9;box-shadow:0 7px 20px #22222212;border-radius:16px}
+.bb-vivid-aula .academic-tabs button[aria-selected="true"],.bb-vivid-aula .lesson-entry.active{background:#242424;color:#fff;border-color:#242424}
+.bb-vivid-aula .btn:not(.secondary){background:#242424;color:#fff}
+.bb-vivid-aula .lesson-entry{border-left:3px solid #ff7043}
+.bb-vivid-aula .tag{background:#e8f7ee;color:#186c45}
+.bb-vivid-aula .grade.grade-high{color:#218658!important}
