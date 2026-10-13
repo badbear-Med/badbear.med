@@ -24,9 +24,10 @@ function updateClasses(){
 }
 sectionSelect.addEventListener("change",updateClasses);
 clsSelect.addEventListener("change",()=>{const section=banks.find(b=>b.id===sectionSelect.value);const n=section.questions.filter(q=>!clsSelect.value||q.classId===clsSelect.value).length;status.textContent=n+" preguntas disponibles para la selección. Pulsa Iniciar práctica.";form.hidden=true;results.replaceChildren()});
+function shuffleQuestion(q){const arr=q.options.map((text,i)=>({text,i}));arr.sort(()=>Math.random()-.5);return {...q,options:arr.map(x=>x.text),answer:arr.findIndex(x=>x.i===q.answer)}}
 function launch(){
  const section=banks.find(b=>b.id===sectionSelect.value),id=clsSelect.value;
- chosen=section.questions.filter(q=>!id||q.classId===id);corrected=false;
+ chosen=section.questions.filter(q=>!id||q.classId===id).map(shuffleQuestion);corrected=false;
  form.replaceChildren();results.replaceChildren();
  if(!chosen.length){status.textContent="Aún no hay preguntas aprobadas para esta clase.";form.hidden=true;return}
  chosen.forEach((q,i)=>{
