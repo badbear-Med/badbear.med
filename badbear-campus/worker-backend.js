@@ -357,9 +357,9 @@ export default {
         if(req.method==="PUT" && isFile){
           const type=req.headers.get("Content-Type")||"",filename=decodeURIComponent(req.headers.get("X-File-Name")||"archivo").slice(0,180);
           const allowed=["application/pdf","image/png","image/jpeg","image/webp","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
-          const limit=20*1024*1024,claimed=Number(req.headers.get("Content-Length")||0);
+          const limit=100*1000*1000,claimed=Number(req.headers.get("Content-Length")||0);
           if(!allowed.includes(type)||claimed>limit)throw new Problem("Formato o tamaño no permitido.");
-          const bytes=await req.arrayBuffer();if(!bytes.byteLength||bytes.byteLength>limit)throw new Problem("Archivo vacío o mayor a 20 MB.");
+          const bytes=await req.arrayBuffer();if(!bytes.byteLength||bytes.byteLength>limit)throw new Problem("Archivo vacío o mayor a 100 MB.");
           const key="students/"+encodeURIComponent(user.codigo)+"/"+id;
           await env.NOTES_BUCKET.put(key,bytes,{httpMetadata:{contentType:type}});
           await env.DB.prepare("UPDATE campus_notes SET file_name=?,file_type=?,file_size=? WHERE id=? AND codigo=?").bind(filename,type,bytes.byteLength,id,user.codigo).run();
