@@ -73,3 +73,18 @@
 .bb-vivid-aula .tag{background:#fff3db!important;color:#855015!important}
 .bb-vivid-aula .study-track div,.bb-vivid-aula .progress>div{background:linear-gradient(90deg,#27ae60,#f5c542)!important}
 @media(max-width:700px){.bb-vivid-aula header::after{width:65px!important;height:65px!important;right:12px!important;opacity:.035!important}}
+
+/* Paleta perceptible en tarjetas del programa, conservando estado activo */
+.bb-vivid-aula .academic-tabs{gap:12px!important}
+.bb-vivid-aula .academic-tab{position:relative;background:#fff!important;color:#292a30!important;border:1px solid #e5e6e8!important;border-top-width:6px!important;padding:16px 18px!important;box-shadow:0 7px 18px #2323230e!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+1){background:#fff0e4!important;border-top-color:#f28c28!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+2){background:#e9f9f0!important;border-top-color:#27ae60!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+3){background:#ffedef!important;border-top-color:#ef5a5a!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+4){background:#fff8d9!important;border-top-color:#f5c542!important}
+.bb-vivid-aula .academic-tab span{color:#515862!important;font-weight:600!important}
+.bb-vivid-aula .academic-tab[aria-selected="true"]{outline:2px solid #303139!important;outline-offset:1px;box-shadow:0 10px 25px #22222220!important}
+.bb-vivid-aula .academic-tab:hover{transform:translateY(-3px)!important;box-shadow:0 12px 25px #2222221a!important}
+.bb-vivid-aula .study-progress{background:linear-gradient(120deg,#fff,#fffaf0)!important;border-left:5px solid #27ae60!important}
+.bb-vivid-aula #banco-enam{background:linear-gradient(120deg,#fff,#fffaf3)!important}
+.bb-vivid-aula #programa-real{background:linear-gradient(130deg,#fff,#f9fffb)!important}
+.bb-vivid-aula .cgq-question{background:#fff!important;border-left:4px solid #f28c28!important}
