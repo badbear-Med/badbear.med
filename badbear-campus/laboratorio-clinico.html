@@ -1,0 +1,71 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Laboratorio clínico | BADBEAR.CAMPUS</title><style>
+:root{font-family:system-ui,Arial,sans-serif;color:#252930;background:#f5f7f9}*{box-sizing:border-box}body{margin:0}header{background:linear-gradient(110deg,#282b31,#423b45);color:white;padding:22px max(5%,calc((100% - 1120px)/2));border-bottom:4px solid #ef9138}header a{color:#fff}main{max-width:1120px;margin:auto;padding:25px 18px 65px}.hero{background:#fff;border-radius:22px;padding:26px;border:1px solid #e4e7eb;box-shadow:0 9px 26px #1111}h1{font-size:clamp(28px,4vw,42px);margin:7px 0}h2{font-size:22px}.muted{color:#616a75;line-height:1.6}.filters{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}.filters a{padding:9px 13px;background:#fff;border:1px solid #dce1e7;border-radius:14px;color:#24282f;text-decoration:none;font-weight:650}.filters a:hover{background:#ffeedc}.panel{background:#fff;border:1px solid #e1e5e9;border-radius:18px;overflow:hidden;margin:20px 0;box-shadow:0 6px 18px #1111}.panel h2{padding:17px 20px;margin:0;background:#f4f5f7;border-left:6px solid #f28c28}.panel:nth-of-type(3n+2) h2{border-left-color:#27ae60}.panel:nth-of-type(3n+3) h2{border-left-color:#ef5a5a}table{border-collapse:collapse;width:100%;text-align:left}th,td{padding:11px 17px;border-bottom:1px solid #e8eaed;vertical-align:top}th{background:#fafafb}tr:last-child td{border:0}td:first-child{font-weight:650}td:nth-child(2){white-space:normal}.note{font-size:13px;color:#626b74;padding:0 19px 14px}.tip{padding:16px 20px;background:#fff4d5;border-radius:15px;border-left:5px solid #e6a621;margin:20px 0}#search{width:100%;padding:14px;border:1px solid #ccd3dc;border-radius:13px;font:inherit;margin:18px 0 0}footer{font-size:13px;color:#666;line-height:1.7;margin-top:24px}a{color:#14635c}@media(max-width:580px){th,td{padding:10px;font-size:13px}.panel{overflow-x:auto}table{min-width:410px}}
+</style></head><body><header><a href="./index.html">← BADBEAR.CAMPUS</a><h1>Laboratorio Clínico</h1><div>Valores de referencia e interpretación · BADBEAR.MED</div></header><main><section class="hero"><strong>GUÍA ACADÉMICA DE CONSULTA</strong><p class="muted">Rangos orientativos para adultos, generalmente al nivel del mar. El intervalo del laboratorio que procesó la muestra prevalece; los resultados varían según edad, sexo, embarazo, altitud, método y situación clínica. No se deben interpretar aisladamente ni usar como umbrales universales de tratamiento.</p><input id="search" aria-label="Buscar parámetro" placeholder="Buscar: creatinina, sodio, leucocitos, pH…"><div class="filters"><a href="#hemograma">Hemograma</a><a href="#renal">Renal</a><a href="#quimica">Química</a><a href="#gases">Gasometría</a><a href="#orina">Orina</a><a href="#hepatico">Hepático</a><a href="#lipidos">Lípidos</a><a href="#coagulacion">Coagulación</a></div></section><div id="tables"></div><div class="tip"><strong>BADBEAR.MED FIJA:</strong> un resultado fuera del intervalo no equivale por sí solo a enfermedad. En gasometría, interpreta conjuntamente pH, PaCO₂, HCO₃⁻ y oxigenación; en función renal, calcula eGFR y evalúa tendencia de creatinina.</div><footer><strong>Fuentes de consulta:</strong> <a href="https://medlineplus.gov/lab-tests/" target="_blank" rel="noopener">MedlinePlus, pruebas de laboratorio</a> · <a href="https://kdigo.org/guidelines/ckd-evaluation-and-management/" target="_blank" rel="noopener">KDIGO, enfermedad renal crónica</a> · <a href="https://www.heart.org/en/health-topics/cholesterol/about-cholesterol" target="_blank" rel="noopener">American Heart Association, lípidos</a> · <a href="https://www.merckmanuals.com/professional" target="_blank" rel="noopener">Merck Manual Professional</a>.<p>Esta guía es educativa; no sustituye los intervalos específicos del laboratorio, ni la interpretación médica en una situación clínica.</p></footer></main><script>
+const sections=[
+["hemograma","Hemograma",[
+["Eritrocitos","Hombres: 4,5–5,9 millones/µL; mujeres: 4,1–5,1 millones/µL","Cambian con altitud, hidratación y embarazo"],
+["Leucocitos","4.000–11.000/µL","Interpretar junto con diferencial y clínica"],
+["Plaquetas","150.000–450.000/µL","Trombocitopenia y trombocitosis dependen del contexto"],
+["Hemoglobina","Hombres: 13,5–17,5 g/dL; mujeres: 12,0–15,5 g/dL","En altitud pueden observarse cifras mayores"],
+["Hematocrito","Hombres: 41–53%; mujeres: 36–46%","Afectado por volemia y masa eritrocitaria"],
+["Neutrófilos","40–70%","Preferir recuento absoluto para interpretar citopenias"],
+["Linfocitos","20–40%","El porcentaje aislado puede engañar"],
+["Monocitos","2–8%","Consultar intervalo local"],
+["Eosinófilos","1–4%","Interpretar recuento absoluto"],
+["Basófilos","0–1%","Consultar intervalo local"]]],
+["renal","Función renal y minerales",[
+["Urea (BUN, nitrógeno ureico)","7–20 mg/dL","No confundir BUN con urea total: las unidades no son equivalentes"],
+["Urea total","Aprox. 15–43 mg/dL","Depende del método y del aporte proteico"],
+["Creatinina","Hombres: aprox. 0,7–1,3 mg/dL; mujeres: 0,6–1,1 mg/dL","La masa muscular condiciona el valor; estimar eGFR"],
+["Ácido úrico","Hombres: 3,4–7,0 mg/dL; mujeres: 2,4–6,0 mg/dL","Intervalos variables entre laboratorios"],
+["Calcio total","8,5–10,5 mg/dL","Depende de albúmina y pH; considerar calcio ionizado"],
+["Sodio","135–145 mmol/L (mEq/L)","Interpretar según estado hídrico y síntomas"],
+["Potasio","3,5–5,0 mmol/L (mEq/L)","Hemólisis puede causar pseudohiperpotasemia"],
+["Fósforo","2,5–4,5 mg/dL","Varía según edad y función renal"],
+["Magnesio","1,7–2,2 mg/dL","Equivalente aproximado: 1,4–1,8 mEq/L"]]],
+["quimica","Química sanguínea",[
+["Albúmina","3,5–5,0 g/dL","Disminuye en inflamación y otras condiciones, no solo por malnutrición"],
+["Glucosa en ayunas","70–99 mg/dL","100–125 mg/dL: rango de prediabetes según criterios ADA; confirmar según contexto"],
+["Proteínas totales","6,0–8,3 g/dL","Evaluar albúmina y globulinas"]]],
+["gases","Gasometría arterial (a nivel del mar)",[
+["pH","7,35–7,45","Acidemia versus alcalemia"],
+["PaCO₂","35–45 mmHg","Componente respiratorio del equilibrio ácido-base"],
+["HCO₃⁻","22–26 mEq/L","Componente metabólico; puede estimarse a partir de pH/PaCO₂"],
+["PaO₂","Aprox. 80–100 mmHg en adultos jóvenes","Disminuye con edad y altitud; interpretar FiO₂"],
+["SaO₂","Aprox. 95–100%","Depende del contexto respiratorio y altitud"],
+["Exceso de base","−2 a +2 mEq/L","El rango puede variar ligeramente"]]],
+["orina","Análisis de orina",[
+["Color","Amarillo pálido a ámbar","Afectado por hidratación, fármacos y pigmentos"],
+["Densidad relativa","1,005–1,030","Sin unidades g/L; depende de solutos y concentración"],
+["pH","4,5–8,0","Relacionar con dieta, tiempo de muestra e infección"],
+["Glucosa","Negativa","Una tira positiva requiere correlación metabólica"],
+["Cetonas","Negativas","Pueden aparecer con ayuno prolongado o cetoacidosis"],
+["Proteínas en tira","Negativas o trazas","Albuminuria se cuantifica preferentemente mediante ACR"],
+["Sangre","Negativa","Confirmar hematuria por microscopia"],
+["Bilirrubina","Negativa","Bilirrubinuria indica presencia de bilirrubina conjugada"],
+["Urobilinógeno","Aprox. 0,2–1,0 mg/dL","Intervalo dependiente de técnica"],
+["Leucocitos/nitritos","Negativos","Interpretar con clínica y cultivo cuando esté indicado"]]],
+["hepatico","Perfil hepático",[
+["Bilirrubina total","0,2–1,2 mg/dL","Puede elevarse a predominio directo o indirecto"],
+["Bilirrubina directa","0–0,3 mg/dL","Interpretar fracción conjugada"],
+["Bilirrubina indirecta","Aprox. 0,2–0,9 mg/dL","Calculada como total menos directa"],
+["ALT (TGP)","Aprox. 7–56 U/L","El límite normal depende de método, sexo y laboratorio"],
+["AST (TGO)","Aprox. 10–40 U/L","También aumenta en daño muscular"],
+["Fosfatasa alcalina","Aprox. 40–130 U/L","Afectada por edad, hueso y embarazo"],
+["GGT","Aprox. 9–48 U/L","Intervalos con gran variabilidad"],
+["Proteínas totales","6,0–8,3 g/dL","Incluye albúmina y globulinas"],
+["Albúmina","3,5–5,0 g/dL","Marcador inespecífico de síntesis, pérdidas e inflamación"]]],
+["lipidos","Perfil lipídico: objetivos, no rangos universales",[
+["Colesterol total","Deseable: <200 mg/dL","200–239 límite alto; ≥240 alto"],
+["HDL-C","Bajo: <40 mg/dL hombres; <50 mg/dL mujeres","No interpretar aisladamente como objetivo terapéutico"],
+["LDL-C","Óptimo general: <100 mg/dL","Objetivos más bajos según riesgo cardiovascular"],
+["Triglicéridos","Normal: <150 mg/dL en ayunas","≥500 mg/dL incrementa preocupación por pancreatitis"]]],
+["coagulacion","Coagulación",[
+["TP","Aprox. 11–13,5 segundos","Muy dependiente del reactivo"],
+["INR (sin anticoagulantes)","Aprox. 0,8–1,2","Los objetivos terapéuticos con warfarina son distintos"],
+["TTPa","Aprox. 25–35 segundos","Varía por laboratorio, método y anticoagulantes"]]]
+];
+const mount=document.getElementById("tables");const nodeList=[];
+for(const [id,title,entries] of sections){const panel=document.createElement("section");panel.className="panel";panel.id=id;const h=document.createElement("h2");h.textContent=title;panel.append(h);const t=document.createElement("table"),thead=document.createElement("thead"),tr=document.createElement("tr");for(const label of ["Parámetro","Referencia orientativa","Interpretación"]){const th=document.createElement("th");th.textContent=label;tr.append(th)}thead.append(tr);t.append(thead);const tb=document.createElement("tbody");for(const e of entries){const tr=document.createElement("tr");for(const val of e){const td=document.createElement("td");td.textContent=val;tr.append(td)}tb.append(tr);nodeList.push({tr,query:e.join(" ").toLocaleLowerCase("es")})}t.append(tb);panel.append(t);mount.append(panel)}
+document.getElementById("search").addEventListener("input",ev=>{const q=ev.target.value.trim().toLocaleLowerCase("es");nodeList.forEach(x=>x.tr.hidden=!!q&&!x.query.includes(q));mount.querySelectorAll(".panel").forEach(p=>p.hidden=!Array.from(p.querySelectorAll("tbody tr")).some(x=>!x.hidden))});
+</script></body></html>
