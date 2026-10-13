@@ -1,7 +1,176 @@
 window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   {
-    "id": "cxg-real-001",
+    "id": "cxg-foto-20260909-1",
     "orden": 1,
+    "tema": "Meckel",
+    "pregunta": "¿Cuál de las siguientes afirmaciones sobre el divertículo de Meckel es incorrecta?",
+    "opciones": [
+      "Puede contener mucosa gástrica ectópica.",
+      "Es vestigio del conducto onfalomesentérico.",
+      "Es un divertículo falso que carece de túnica muscular.",
+      "Se localiza generalmente en el íleon distal, próximo a la válvula ileocecal.",
+      "Puede complicarse con hemorragia, especialmente en niños."
+    ],
+    "clave": "C",
+    "respuesta": "Es un divertículo falso que carece de túnica muscular.",
+    "explicacion": "Meckel es un divertículo verdadero con mucosa, submucosa y muscular propia, derivado del conducto vitelino. La mucosa gástrica ectópica puede secretar ácido y ulcerar íleon vecino, provocando sangrado. Su posición clásica es el borde antimesentérico del íleon distal, pero la distancia es variable.",
+    "argumentos": [
+      "A: Verdadera; la mucosa ectópica gástrica explica parte de las hemorragias.",
+      "B: Verdadera; resulta de persistencia del conducto vitelino embrionario.",
+      "C: Falsa; contiene todas las capas de pared, incluida muscular propia.",
+      "D: Verdadera en general; el sitio anatómico es íleon distal, aunque varía la distancia.",
+      "E: Verdadera como complicación clásica; en adultos puede predominar obstrucción o inflamación."
+    ],
+    "badbear_fija": "Meckel = divertículo VERDADERO + conducto vitelino + íleon antimesentérico.",
+    "referencias": [
+      [
+        "Clinical Anatomy 2011",
+        "https://doi.org/10.1002/ca.21094"
+      ]
+    ],
+    "fuente": "Fotografía del examen de Cirugía, 09-09-2026; opciones adaptadas para práctica",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-foto-20260909-2",
+    "orden": 2,
+    "tema": "Crohn",
+    "pregunta": "¿Qué entidad se asocia clásicamente a ulceraciones múltiples del duodeno y yeyuno?",
+    "opciones": [
+      "Enfermedad de Crohn.",
+      "Tuberculosis intestinal.",
+      "Ingesta de cáusticos.",
+      "Infección por Yersinia.",
+      "Enteropatía por antiinflamatorios no esteroideos."
+    ],
+    "clave": "A",
+    "respuesta": "Enfermedad de Crohn.",
+    "explicacion": "Crohn puede comprometer cualquier segmento gastrointestinal y dar lesiones discontinuas y úlceras profundas incluso en duodeno y yeyuno, aunque predomina el territorio ileocolónico. IMPORTANTE: los AINE también pueden ocasionar úlceras múltiples de intestino delgado; sin otros datos esta pregunta no tiene especificidad suficiente para una única respuesta inequívoca. A es una clave docente probable, no una discriminación universal.",
+    "argumentos": [
+      "A: Compatible con Crohn de intestino delgado proximal.",
+      "B: La tuberculosis intestinal afecta más típicamente región ileocecal, aunque puede variar.",
+      "C: Los cáusticos suelen dañar esófago y estómago, dependiendo de exposición.",
+      "D: Yersinia causa sobre todo ileítis terminal y adenitis mesentérica.",
+      "E: También plausible; los AINE provocan erosiones y úlceras yeyunales, por lo que el ítem es ambiguo."
+    ],
+    "badbear_fija": "Crohn: lesiones salteadas y transmurales; diferenciar de enteropatía por AINE.",
+    "referencias": [
+      [
+        "ECCO guidelines",
+        "https://www.ecco-ibd.eu/publications/ecco-guidelines-science.html"
+      ]
+    ],
+    "fuente": "Fotografía del examen de Cirugía, 09-09-2026; opciones adaptadas para práctica",
+    "estado": "revisar",
+    "nota": "Pregunta ambigua: AINE también producen ulceración yeyunal."
+  },
+  {
+    "id": "cxg-foto-20260909-3",
+    "orden": 3,
+    "tema": "Pólipos colorrectales",
+    "pregunta": "Paciente de 75 años con hematoquecia y pólipo único pediculado de 25 mm en sigma, ulcerado superficialmente y técnicamente resecable, sin datos de invasión profunda. ¿Conducta?",
+    "opciones": [
+      "Vigilancia semestral sin resección.",
+      "Cirugía inmediata en todo caso.",
+      "Biopsia aislada como tratamiento definitivo.",
+      "Polipectomía endoscópica completa con análisis anatomopatológico.",
+      "Fotocoagulación láser sin recuperar espécimen."
+    ],
+    "clave": "D",
+    "respuesta": "Polipectomía endoscópica completa con análisis anatomopatológico.",
+    "explicacion": "La resección en bloque con asa caliente permite tratar y valorar histológicamente la lesión, incluyendo pedículo, márgenes e invasión submucosa. Para cabeza de pólipo ≥20 mm o pedículo ≥5 mm, las guías aconsejan ligadura o clips profilácticos del tallo para disminuir hemorragia. Cirugía ulterior depende de criterios de invasión profunda o histología de alto riesgo.",
+    "argumentos": [
+      "A: Retrasa diagnóstico y resección de un pólipo grande potencialmente neoplásico.",
+      "B: No es universal; la endoscopia es adecuada cuando no hay signos de invasión profunda.",
+      "C: La muestra parcial puede pasar por alto carcinoma invasor y no extirpa lesión.",
+      "D: Correcta; combina tratamiento y evaluación histológica íntegra.",
+      "E: Destruir sin pieza impide estudiar margen e invasión."
+    ],
+    "badbear_fija": "Pólipo pediculado ≥10 mm: asa caliente; cabeza ≥20 mm: prevenir sangrado del pedículo.",
+    "referencias": [
+      [
+        "USMSTF 2020 Gastroenterology",
+        "https://gastro.org/clinical-guidance/endoscopic-removal-of-colorectal-lesions-recommendations-from-the-u-s-multi-society-task-force-on-colorectal-cancer/"
+      ]
+    ],
+    "fuente": "Fotografía del examen de Cirugía, 09-09-2026; opciones adaptadas para práctica",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-foto-20260909-4",
+    "orden": 4,
+    "tema": "Hemorragia digestiva alta",
+    "pregunta": "HDA por úlcera gástrica con punto plano de hematina, sin sangrado activo ni vaso visible, y ureasa positiva. ¿Conducta actual más adecuada?",
+    "opciones": [
+      "Esclerosis endoscópica rutinaria y omeprazol 28 días.",
+      "Esclerosis más triple terapia anti-H. pylori por 7 días.",
+      "Omeprazol durante un mes, sin erradicación.",
+      "Ranitidina y erradicación solo si biopsia histológica positiva.",
+      "IBP y erradicación de H. pylori con esquema vigente y prueba de curación; sin hemostasia rutinaria de Forrest IIc."
+    ],
+    "clave": "E",
+    "respuesta": "IBP y erradicación de H. pylori con esquema vigente y prueba de curación; sin hemostasia rutinaria de Forrest IIc.",
+    "explicacion": "Un punto pigmentado plano (Forrest IIc) es estigma de bajo riesgo de resangrado y no exige hemostasia endoscópica rutinaria; ello es distinto de sangrado activo o vaso visible. La ureasa positiva justifica erradicar H. pylori. La guía ACG 2024 recomienda a menudo terapia cuádruple optimizada con bismuto durante 14 días cuando se desconoce sensibilidad. Confirmar erradicación al menos 4 semanas tras antibióticos y tras retirar IBP por 2 semanas.",
+    "argumentos": [
+      "A: Esclerosis de rutina no indicada para punto plano; IBP aislado no erradica infección.",
+      "B: Endoterapia innecesaria y esquema de 7 días desactualizado en muchos lugares.",
+      "C: No erradica una infección diagnosticada y favorece recidiva ulcerosa.",
+      "D: No hay que esperar histología adicional si ureasa es positiva; ranitidina no es primera elección.",
+      "E: Correcta para práctica actual: estratifica Forrest, erradica germen y comprueba curación."
+    ],
+    "badbear_fija": "Forrest IIc: no hemostasia rutinaria. H. pylori: tratar con esquema actualizado y confirmar erradicación.",
+    "referencias": [
+      [
+        "ACG 2021 upper GI bleeding",
+        "https://doi.org/10.14309/AJG.0000000000001245"
+      ],
+      [
+        "ACG 2024 H. pylori",
+        "https://gi.org/journals-publications/ebgi/schoenfeld_sep2024/"
+      ]
+    ],
+    "fuente": "Fotografía del examen de Cirugía, 09-09-2026; opciones adaptadas para práctica",
+    "estado": "listo",
+    "nota": "Se actualizó el tratamiento de H. pylori frente a opciones históricas."
+  },
+  {
+    "id": "cxg-foto-20260909-5",
+    "orden": 5,
+    "tema": "Trauma e inflamación",
+    "pregunta": "¿Cuál afirmación describe mejor la respuesta inflamatoria posterior a una lesión traumática?",
+    "opciones": [
+      "Depende primariamente de inmunidad adaptativa desde el inicio.",
+      "La respuesta antiinflamatoria siempre suprime totalmente la inmunidad innata.",
+      "La intensidad inflamatoria suele relacionarse con gravedad de lesión y factores del huésped.",
+      "Solo aparece si hay infección bacteriana comprobada.",
+      "La inmunidad innata no interviene en inflamación estéril."
+    ],
+    "clave": "C",
+    "respuesta": "La intensidad inflamatoria suele relacionarse con gravedad de lesión y factores del huésped.",
+    "explicacion": "La lesión tisular libera DAMP que activan receptores de reconocimiento de patrones y células de inmunidad innata, con citocinas, neutrófilos y activación endotelial. Las lesiones mayores suelen acompañarse de respuesta más intensa, pero no existe proporcionalidad lineal absoluta: influyen perfusión, comorbilidades, edad y transfusiones. Se activa también contrarregulación antiinflamatoria.",
+    "argumentos": [
+      "A: Incorrecta; el inicio depende fundamentalmente de inmunidad innata.",
+      "B: Incorrecta; la contrarregulación no suprime inevitablemente toda inmunidad innata.",
+      "C: Correcta, matizada por los factores individuales y el mecanismo traumático.",
+      "D: Incorrecta; los DAMP desencadenan inflamación estéril sin infección.",
+      "E: Incorrecta; inmunidad innata es mecanismo central tras trauma."
+    ],
+    "badbear_fija": "TRAUMA → DAMP → inmunidad innata → citocinas; correlación con lesión no implica proporcionalidad absoluta.",
+    "referencias": [
+      [
+        "Nature Reviews Immunology, portal de revisiones",
+        "https://www.nature.com/nri/"
+      ]
+    ],
+    "fuente": "Fotografía del examen de Cirugía, 09-09-2026; opciones adaptadas para práctica",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-real-001",
+    "orden": 6,
     "tema": "Hernias",
     "pregunta": "Hernia más frecuente en mujeres:",
     "opciones": [
@@ -26,7 +195,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-002",
-    "orden": 2,
+    "orden": 7,
     "tema": "Líquidos y electrolitos",
     "pregunta": "Requerimiento diario de sal en adultos:",
     "opciones": [
@@ -51,7 +220,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-003",
-    "orden": 3,
+    "orden": 8,
     "tema": "Shock",
     "pregunta": "Shock hipovolémico: ¿a partir de qué porcentaje de pérdida sanguínea aparecen manifestaciones clínicas?",
     "opciones": [
@@ -76,7 +245,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-004",
-    "orden": 4,
+    "orden": 9,
     "tema": "Trauma",
     "pregunta": "¿Cuál es la tríada letal del trauma?",
     "opciones": [
@@ -101,7 +270,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-005",
-    "orden": 5,
+    "orden": 10,
     "tema": "Apendicitis",
     "pregunta": "Paciente de 18 años operado de apendicitis aguda no complicada, primer día postoperatorio sin síntomas. ¿Qué tratamiento antibiótico se recomienda?",
     "opciones": [
@@ -122,7 +291,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-006",
-    "orden": 6,
+    "orden": 11,
     "tema": "Vía biliar",
     "pregunta": "Síndrome de Courvoisier-Terrier: ¿cuál es la causa clásica más representativa?",
     "opciones": [
@@ -142,7 +311,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-007",
-    "orden": 7,
+    "orden": 12,
     "tema": "Peritonitis",
     "pregunta": "Paciente en diálisis peritoneal, sin foco infeccioso intraabdominal localizado. ¿Qué tipo de peritonitis es más probable?",
     "opciones": [
@@ -163,7 +332,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-008",
-    "orden": 8,
+    "orden": 13,
     "tema": "Pancreatitis",
     "pregunta": "Necrosis pancreática estéril: si existe una colección sintomática que requiere intervención, ¿qué abordaje de drenaje es preferible dentro de una estrategia mínimamente invasiva?",
     "opciones": [
@@ -184,7 +353,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-009",
-    "orden": 9,
+    "orden": 14,
     "tema": "Ictericia obstructiva",
     "pregunta": "¿De qué función orgánica debe asegurarse inicialmente el cirujano en un paciente con ictericia obstructiva?",
     "opciones": [
@@ -204,7 +373,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-010",
-    "orden": 10,
+    "orden": 15,
     "tema": "Obstrucción intestinal",
     "pregunta": "¿Qué síntoma suele ser más precoz y prominente en la obstrucción de intestino delgado que en la obstrucción de colon?",
     "opciones": [
@@ -225,7 +394,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-011",
-    "orden": 11,
+    "orden": 16,
     "tema": "Farmacología",
     "pregunta": "El ciprofloxacino es una fluoroquinolona. ¿Cuál es su mecanismo de acción?",
     "opciones": [
@@ -246,7 +415,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-012",
-    "orden": 12,
+    "orden": 17,
     "tema": "Vía biliar",
     "pregunta": "Durante una colecistectomía laparoscópica existe sospecha de coledocolitiasis. ¿Qué estudio intraoperatorio permite evaluar la vía biliar?",
     "opciones": [
@@ -271,7 +440,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-013",
-    "orden": 13,
+    "orden": 18,
     "tema": "Cirugía bariátrica",
     "pregunta": "Paciente al día siguiente de cirugía con banda gástrica presenta fiebre y pus por el drenaje. ¿Cuál es la conducta más adecuada ante sospecha de fuga o infección intraabdominal?",
     "opciones": [
@@ -292,7 +461,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-014",
-    "orden": 14,
+    "orden": 19,
     "tema": "Laparoscopía",
     "pregunta": "¿Cuál NO es una indicación habitual de laparoscopía?",
     "opciones": [
@@ -313,7 +482,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-015",
-    "orden": 15,
+    "orden": 20,
     "tema": "Trauma abdominal",
     "pregunta": "Trauma penetrante por arma blanca en el flanco. ¿Qué órganos retroperitoneales pueden lesionarse?",
     "opciones": [
@@ -334,7 +503,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-016",
-    "orden": 16,
+    "orden": 21,
     "tema": "Preoperatorio",
     "pregunta": "¿Qué grupo farmacológico suele continuarse en el perioperatorio cuando está indicado y estable, con excepciones según el fármaco?",
     "opciones": [
@@ -355,7 +524,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-017",
-    "orden": 17,
+    "orden": 22,
     "tema": "Apendicitis",
     "pregunta": "¿Cuál NO corresponde a un signo radiológico asociado a apendicitis aguda?",
     "opciones": [
@@ -376,7 +545,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-018",
-    "orden": 18,
+    "orden": 23,
     "tema": "Cáncer gástrico",
     "pregunta": "¿Cuál es el componente quirúrgico curativo fundamental del cáncer gástrico resecable?",
     "opciones": [
@@ -401,7 +570,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-019",
-    "orden": 19,
+    "orden": 24,
     "tema": "Pancreatitis",
     "pregunta": "Paciente con pancreatitis aguda: ¿qué vía de nutrición se recomienda si requiere soporte enteral?",
     "opciones": [
@@ -426,7 +595,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-020",
-    "orden": 20,
+    "orden": 25,
     "tema": "Colangitis",
     "pregunta": "Ante sospecha de colangitis, ¿cuál es el estudio de imagen inicial más apropiado?",
     "opciones": [
@@ -451,7 +620,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-021",
-    "orden": 21,
+    "orden": 26,
     "tema": "Trauma abdominal",
     "pregunta": "En trauma abdominal cerrado, ¿qué órgano sólido se lesiona con mayor frecuencia?",
     "opciones": [
@@ -472,7 +641,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-022",
-    "orden": 22,
+    "orden": 27,
     "tema": "Trauma abdominal",
     "pregunta": "¿Cómo difieren las lesiones diafragmáticas por traumatismo cerrado y penetrante?",
     "opciones": [
@@ -493,7 +662,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-023",
-    "orden": 23,
+    "orden": 28,
     "tema": "Trauma abdominal",
     "pregunta": "En lavado peritoneal diagnóstico, ¿qué recuento de eritrocitos se considera criterio clásico de positividad?",
     "opciones": [
@@ -514,7 +683,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-024",
-    "orden": 24,
+    "orden": 29,
     "tema": "Hemorragia digestiva",
     "pregunta": "¿Cuál es la causa más frecuente de hemorragia digestiva alta no variceal?",
     "opciones": [
@@ -535,7 +704,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-025",
-    "orden": 25,
+    "orden": 30,
     "tema": "Cáncer gástrico",
     "pregunta": "Según Borrmann, ¿qué tipo corresponde a un carcinoma gástrico ulcerado con bordes definidos y sin infiltración difusa?",
     "opciones": [
@@ -556,7 +725,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-026",
-    "orden": 26,
+    "orden": 31,
     "tema": "Intestino delgado",
     "pregunta": "Mujer mayor usuaria crónica de AINE con anemia y estudios endoscópicos convencionales no concluyentes. ¿Qué estudio permite evaluar intestino delgado?",
     "opciones": [
@@ -577,7 +746,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-027",
-    "orden": 27,
+    "orden": 32,
     "tema": "Cáncer anal",
     "pregunta": "¿Cuál es el tratamiento de elección del carcinoma epidermoide del canal anal?",
     "opciones": [
@@ -598,7 +767,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-028",
-    "orden": 28,
+    "orden": 33,
     "tema": "Hemorragia digestiva baja",
     "pregunta": "Paciente con hematoquecia, hipotensión y hemoglobina muy baja. ¿Cuál es la prioridad inicial?",
     "opciones": [
@@ -619,7 +788,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-029",
-    "orden": 29,
+    "orden": 34,
     "tema": "Técnica quirúrgica",
     "pregunta": "Defina anastomosis intestinal.",
     "opciones": [
@@ -640,7 +809,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-030",
-    "orden": 30,
+    "orden": 35,
     "tema": "Ostomías",
     "pregunta": "Defina gastrostomía.",
     "opciones": [
@@ -661,7 +830,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-031",
-    "orden": 31,
+    "orden": 36,
     "tema": "Ostomías",
     "pregunta": "Defina colostomía.",
     "opciones": [
@@ -682,7 +851,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-032",
-    "orden": 32,
+    "orden": 37,
     "tema": "Vía biliar",
     "pregunta": "Defina derivación biliodigestiva.",
     "opciones": [
@@ -703,7 +872,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-033",
-    "orden": 33,
+    "orden": 38,
     "tema": "Cáncer colorrectal",
     "pregunta": "¿Cuál NO es un factor de riesgo reconocido para carcinoma colorrectal?",
     "opciones": [
@@ -724,7 +893,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-034",
-    "orden": 34,
+    "orden": 39,
     "tema": "Poliposis",
     "pregunta": "Entre los síndromes de poliposis hereditaria, ¿cuál confiere un riesgo casi inevitable de cáncer colorrectal si no se trata?",
     "opciones": [
@@ -745,7 +914,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-035",
-    "orden": 35,
+    "orden": 40,
     "tema": "Hernias",
     "pregunta": "¿Qué es una hernia epigástrica?",
     "opciones": [
@@ -766,7 +935,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-036",
-    "orden": 36,
+    "orden": 41,
     "tema": "Enfermedad inflamatoria intestinal",
     "pregunta": "¿Cuál NO es una característica típica de la enfermedad de Crohn?",
     "opciones": [
@@ -787,7 +956,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-037",
-    "orden": 37,
+    "orden": 42,
     "tema": "Colitis ulcerosa",
     "pregunta": "Paciente con colitis ulcerosa de larga evolución, diarrea sanguinolenta, distensión, dolor y fiebre. ¿Qué estudio debe realizarse primero ante sospecha de megacolon tóxico?",
     "opciones": [
@@ -808,7 +977,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-038",
-    "orden": 38,
+    "orden": 43,
     "tema": "Hernias",
     "pregunta": "¿Qué significa incarceración de una hernia?",
     "opciones": [
@@ -829,7 +998,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-039",
-    "orden": 39,
+    "orden": 44,
     "tema": "Heridas",
     "pregunta": "Fases de cicatrización de las heridas. ¿Cuál NO corresponde a una fase estándar?",
     "opciones": [
@@ -850,7 +1019,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-040",
-    "orden": 40,
+    "orden": 45,
     "tema": "Heridas",
     "pregunta": "Factores que contribuyen a dehiscencia de heridas: señale lo incorrecto.",
     "opciones": [
@@ -870,7 +1039,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-041",
-    "orden": 41,
+    "orden": 46,
     "tema": "Heridas",
     "pregunta": "Defina seroma.",
     "opciones": [
@@ -891,7 +1060,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-042",
-    "orden": 42,
+    "orden": 47,
     "tema": "Postoperatorio",
     "pregunta": "Mencione causas de fiebre postoperatoria.",
     "opciones": [
@@ -912,7 +1081,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-043",
-    "orden": 43,
+    "orden": 48,
     "tema": "Síndrome compartimental abdominal",
     "pregunta": "Mencione causas del síndrome compartimental abdominal.",
     "opciones": [
@@ -933,7 +1102,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-044",
-    "orden": 44,
+    "orden": 49,
     "tema": "Proctología",
     "pregunta": "¿Qué es el prolapso rectal?",
     "opciones": [
@@ -954,7 +1123,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-045",
-    "orden": 45,
+    "orden": 50,
     "tema": "Acalasia",
     "pregunta": "¿Cuál es la exploración con mayor rendimiento diagnóstico para confirmar acalasia?",
     "opciones": [
@@ -975,7 +1144,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-046",
-    "orden": 46,
+    "orden": 51,
     "tema": "Enfermedad inflamatoria intestinal",
     "pregunta": "Paciente joven con diarrea, moco, sangre y dolor abdominal sin antecedente epidemiológico. ¿Diagnóstico sindrómico y estudio confirmatorio más probable?",
     "opciones": [
@@ -996,7 +1165,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-047",
-    "orden": 47,
+    "orden": 52,
     "tema": "Obstrucción de salida gástrica",
     "pregunta": "En radiografía simple, ¿qué hallazgo puede observarse en una obstrucción pilórica marcada?",
     "opciones": [
@@ -1017,7 +1186,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-048",
-    "orden": 48,
+    "orden": 53,
     "tema": "Estómago",
     "pregunta": "Señale lo falso con respecto al músculo gástrico.",
     "opciones": [
@@ -1037,7 +1206,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-049",
-    "orden": 49,
+    "orden": 54,
     "tema": "Isquemia mesentérica",
     "pregunta": "¿Qué estudio vascular se utiliza para detectar estenosis u oclusión de la arteria mesentérica superior y tronco celíaco?",
     "opciones": [
@@ -1058,7 +1227,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-050",
-    "orden": 50,
+    "orden": 55,
     "tema": "Colecistitis",
     "pregunta": "Paciente anciano con comorbilidades y colecistitis aguda litiásica persistente pese a tratamiento, con alto riesgo quirúrgico. ¿Qué método de drenaje puede utilizarse?",
     "opciones": [
@@ -1079,7 +1248,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-051",
-    "orden": 51,
+    "orden": 56,
     "tema": "Preoperatorio",
     "pregunta": "¿Para qué sirve la clasificación ASA?",
     "opciones": [
@@ -1100,7 +1269,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-052",
-    "orden": 52,
+    "orden": 57,
     "tema": "Heridas",
     "pregunta": "Diferencie herida abierta y herida cerrada.",
     "opciones": [
@@ -1121,7 +1290,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-053",
-    "orden": 53,
+    "orden": 58,
     "tema": "Isquemia mesentérica",
     "pregunta": "Señale la causa más frecuente de isquemia mesentérica aguda.",
     "opciones": [
@@ -1141,7 +1310,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-054",
-    "orden": 54,
+    "orden": 59,
     "tema": "Diverticulosis",
     "pregunta": "Respecto a la diverticulosis colónica, todo es verdadero EXCEPTO:",
     "opciones": [
@@ -1161,7 +1330,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-055",
-    "orden": 55,
+    "orden": 60,
     "tema": "Apendicitis",
     "pregunta": "La presentación inicial más típica de apendicitis aguda es:",
     "opciones": [
@@ -1182,7 +1351,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-056",
-    "orden": 56,
+    "orden": 61,
     "tema": "Linfoma gástrico",
     "pregunta": "Varón de 40 años con linfoma gástrico diagnosticado por endoscopia y biopsia. ¿Tratamiento de elección entre las opciones?",
     "opciones": [
@@ -1203,7 +1372,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-057",
-    "orden": 57,
+    "orden": 62,
     "tema": "Trauma abdominal",
     "pregunta": "Son criterios de lavado peritoneal diagnóstico positivo:",
     "opciones": [
@@ -1224,7 +1393,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-058",
-    "orden": 58,
+    "orden": 63,
     "tema": "Radiología abdominal",
     "pregunta": "En una imagen abdominal del examen se solicita aproximar el diagnóstico de una obstrucción intestinal.",
     "opciones": [
@@ -1245,7 +1414,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-059",
-    "orden": 59,
+    "orden": 64,
     "tema": "Hígado",
     "pregunta": "En una imagen del examen se solicita aproximar el diagnóstico de múltiples lesiones hepáticas hipodensas.",
     "opciones": [
@@ -1266,7 +1435,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-060",
-    "orden": 60,
+    "orden": 65,
     "tema": "Colon",
     "pregunta": "En una imagen del examen se solicita aproximar el diagnóstico de colitis.",
     "opciones": [
@@ -1287,7 +1456,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-061",
-    "orden": 61,
+    "orden": 66,
     "tema": "Colangitis",
     "pregunta": "Paciente con fiebre, ictericia, dolor en HCD, hipotensión, alteración del sensorio y vía biliar dilatada por probable coledocolitiasis. ¿Manejo inicial más adecuado?",
     "opciones": [
@@ -1307,7 +1476,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-062",
-    "orden": 62,
+    "orden": 67,
     "tema": "Intestino delgado",
     "pregunta": "¿Cuál entidad produce con mayor frecuencia ulceraciones múltiples en duodeno y yeyuno?",
     "opciones": [
@@ -1327,7 +1496,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-063",
-    "orden": 63,
+    "orden": 68,
     "tema": "Hemorragia digestiva baja",
     "pregunta": "Paciente de 71 años con angiodisplasia de colon. ¿Cuál afirmación del examen es considerada correcta?",
     "opciones": [
@@ -1347,7 +1516,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-064",
-    "orden": 64,
+    "orden": 69,
     "tema": "Tumores neuroendocrinos",
     "pregunta": "Con respecto al tumor carcinoide, señale la afirmación correcta:",
     "opciones": [
@@ -1367,7 +1536,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-065",
-    "orden": 65,
+    "orden": 70,
     "tema": "Pólipos colorrectales",
     "pregunta": "Paciente de 75 años con pólipo pediculado de 25 mm en sigma y ulceración apical. ¿Conducta más adecuada?",
     "opciones": [
@@ -1387,7 +1556,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-066",
-    "orden": 66,
+    "orden": 71,
     "tema": "Poliposis",
     "pregunta": "¿En cuál de las siguientes poliposis ofrecidas en el examen es mayor el riesgo de cáncer colorrectal?",
     "opciones": [
@@ -1408,7 +1577,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-067",
-    "orden": 67,
+    "orden": 72,
     "tema": "Divertículo de Meckel",
     "pregunta": "¿Cuál afirmación sobre divertículo de Meckel es INCORRECTA?",
     "opciones": [
@@ -1428,7 +1597,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-068",
-    "orden": 68,
+    "orden": 73,
     "tema": "Apendicitis",
     "pregunta": "Mencione los síntomas iniciales clásicos de apendicitis aguda.",
     "opciones": [
@@ -1449,7 +1618,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-069",
-    "orden": 69,
+    "orden": 74,
     "tema": "Bazo",
     "pregunta": "En un estudio de imagen del examen se observa una masa homogénea en hemiabdomen superior izquierdo que sobrepasa la línea media. ¿Diagnóstico probable?",
     "opciones": [
@@ -1470,7 +1639,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-070",
-    "orden": 70,
+    "orden": 75,
     "tema": "Vía biliar",
     "pregunta": "En la ecografía del examen se observa vía biliar extrahepática dilatada con defecto ecogénico y sombra posterior. ¿Diagnóstico?",
     "opciones": [
@@ -1491,7 +1660,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-071",
-    "orden": 71,
+    "orden": 76,
     "tema": "Pancreatitis",
     "pregunta": "¿Qué es el signo de Grey Turner?",
     "opciones": [
@@ -1512,7 +1681,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-072",
-    "orden": 72,
+    "orden": 77,
     "tema": "Cáncer gástrico",
     "pregunta": "¿Qué indica el nódulo de la hermana María José?",
     "opciones": [
@@ -1533,7 +1702,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-073",
-    "orden": 73,
+    "orden": 78,
     "tema": "Trauma",
     "pregunta": "Paciente con trauma abdominal y hemoglobina 6 g/dL. ¿Qué prioridad debe considerarse?",
     "opciones": [
@@ -1554,7 +1723,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-074",
-    "orden": 74,
+    "orden": 79,
     "tema": "Coagulación",
     "pregunta": "¿Qué factor de coagulación no es sintetizado principalmente por el hepatocito?",
     "opciones": [
@@ -1575,7 +1744,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-075",
-    "orden": 75,
+    "orden": 80,
     "tema": "Postoperatorio",
     "pregunta": "La presencia de fiebre en el primer día postoperatorio, según el esquema clásico del examen, se asocia a:",
     "opciones": [
@@ -1595,7 +1764,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-076",
-    "orden": 76,
+    "orden": 81,
     "tema": "Diverticulitis",
     "pregunta": "Según el criterio histórico del examen, ¿cuándo se indicaba cirugía electiva por enfermedad diverticular recurrente?",
     "opciones": [
@@ -1615,7 +1784,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-077",
-    "orden": 77,
+    "orden": 82,
     "tema": "Nervio vago",
     "pregunta": "Las dos primeras ramas principales del tronco vagal anterior (derivado predominantemente del vago izquierdo) son:",
     "opciones": [
@@ -1635,7 +1804,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-078",
-    "orden": 78,
+    "orden": 83,
     "tema": "Obstrucción intestinal",
     "pregunta": "¿En cuál de estas patologías puede presentarse vómito fecaloide o muy tardío por estasis intestinal?",
     "opciones": [
@@ -1655,7 +1824,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-079",
-    "orden": 79,
+    "orden": 84,
     "tema": "Pancreatitis",
     "pregunta": "En el manejo escalonado de pancreatitis necrotizante infectada, ¿cuál es el primer componente terapéutico?",
     "opciones": [
@@ -1675,7 +1844,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-080",
-    "orden": 80,
+    "orden": 85,
     "tema": "Hemorragia digestiva alta",
     "pregunta": "Mujer con vómitos intensos que luego presenta hematemesis roja. ¿Diagnóstico más probable?",
     "opciones": [
@@ -1695,7 +1864,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-081",
-    "orden": 81,
+    "orden": 86,
     "tema": "Trauma",
     "pregunta": "En eFAST, ¿qué se busca principalmente en el abdomen y pericardio?",
     "opciones": [
@@ -1715,7 +1884,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-082",
-    "orden": 82,
+    "orden": 87,
     "tema": "Cáusticos",
     "pregunta": "En esofagitis cáustica recién instalada, ¿cuál conducta del examen es la más cercana al manejo inicial?",
     "opciones": [
@@ -1735,7 +1904,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-083",
-    "orden": 83,
+    "orden": 88,
     "tema": "Hernias",
     "pregunta": "¿Qué hernia sigue el trayecto del cordón espermático dentro del conducto inguinal?",
     "opciones": [
@@ -1755,7 +1924,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-084",
-    "orden": 84,
+    "orden": 89,
     "tema": "Colecistectomía",
     "pregunta": "La visión crítica de seguridad de Strasberg se utiliza principalmente para:",
     "opciones": [
@@ -1775,7 +1944,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-085",
-    "orden": 85,
+    "orden": 90,
     "tema": "UCI",
     "pregunta": "Mencione principios básicos de soporte inicial en un paciente quirúrgico grave en UCI.",
     "opciones": [
@@ -1796,7 +1965,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-086",
-    "orden": 86,
+    "orden": 91,
     "tema": "Diverticulitis",
     "pregunta": "¿Cuál NO es una manifestación típica de diverticulitis aguda no complicada?",
     "opciones": [
@@ -1817,7 +1986,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-087",
-    "orden": 87,
+    "orden": 92,
     "tema": "Hernias",
     "pregunta": "¿Cuál es la base embriológica de la hernia inguinal indirecta?",
     "opciones": [
@@ -1838,7 +2007,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-088",
-    "orden": 88,
+    "orden": 93,
     "tema": "Heridas",
     "pregunta": "Defina dehiscencia, evisceración y eventración.",
     "opciones": [
@@ -1859,7 +2028,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-089",
-    "orden": 89,
+    "orden": 94,
     "tema": "Esófago",
     "pregunta": "El anillo de Schatzki se localiza a nivel de:",
     "opciones": [
@@ -1879,7 +2048,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-090",
-    "orden": 90,
+    "orden": 95,
     "tema": "Páncreas",
     "pregunta": "En relación con páncreas divisum, señale lo INCORRECTO:",
     "opciones": [
@@ -1899,7 +2068,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-091",
-    "orden": 91,
+    "orden": 96,
     "tema": "Obstrucción intestinal",
     "pregunta": "¿Qué manifestación sugiere estrangulación de una obstrucción de intestino delgado?",
     "opciones": [
@@ -1919,7 +2088,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-092",
-    "orden": 92,
+    "orden": 97,
     "tema": "Esófago",
     "pregunta": "¿Cuál es la víscera más utilizada para sustituir el esófago después de una esofagectomía?",
     "opciones": [
@@ -1939,7 +2108,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-093",
-    "orden": 93,
+    "orden": 98,
     "tema": "Cáncer de páncreas",
     "pregunta": "¿Cuál NO es una característica correcta del cáncer de páncreas?",
     "opciones": [
@@ -1959,7 +2128,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-094",
-    "orden": 94,
+    "orden": 99,
     "tema": "Nervio vago",
     "pregunta": "Las dos primeras ramas principales del tronco vagal posterior (predominantemente vago derecho) son:",
     "opciones": [
@@ -1979,7 +2148,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-095",
-    "orden": 95,
+    "orden": 100,
     "tema": "Paciente agudo",
     "pregunta": "En un cuadro quirúrgico agudo complicado, la monitorización inicial debe dirigirse principalmente a:",
     "opciones": [
@@ -1999,7 +2168,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-096",
-    "orden": 96,
+    "orden": 101,
     "tema": "GIST",
     "pregunta": "En inmunohistoquímica de GIST, ¿qué afirmación de las opciones es más compatible con el perfil clásico?",
     "opciones": [
@@ -2019,7 +2188,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-097",
-    "orden": 97,
+    "orden": 102,
     "tema": "Shock",
     "pregunta": "¿En qué tipo de shock puede aparecer sangrado digestivo y en otros territorios por coagulopatía de consumo?",
     "opciones": [
@@ -2039,7 +2208,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-098",
-    "orden": 98,
+    "orden": 103,
     "tema": "Tuberculosis abdominal",
     "pregunta": "En tuberculosis enteroperitoneal, ¿qué manifestación es compatible con compromiso peritoneal?",
     "opciones": [
@@ -2059,7 +2228,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-099",
-    "orden": 99,
+    "orden": 104,
     "tema": "Hipertensión portal",
     "pregunta": "Paciente con hematemesis, ictericia y matidez en espacio de Traube sugerente de esplenomegalia. ¿Diagnóstico más probable?",
     "opciones": [
@@ -2079,7 +2248,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-100",
-    "orden": 100,
+    "orden": 105,
     "tema": "Shock",
     "pregunta": "Sin pérdida de eritrocitos, ¿cuál de las opciones produce típicamente shock hipovolémico por disminución del volumen plasmático?",
     "opciones": [
@@ -2099,7 +2268,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-101",
-    "orden": 101,
+    "orden": 106,
     "tema": "CPRE",
     "pregunta": "En relación con la CPRE, marque lo correcto:",
     "opciones": [
@@ -2119,7 +2288,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-102",
-    "orden": 102,
+    "orden": 107,
     "tema": "Úlcera péptica",
     "pregunta": "Mujer con dolor epigástrico súbito, irradiación a hombro, rebote generalizado y abolición de matidez hepática. ¿Diagnóstico más probable?",
     "opciones": [
@@ -2139,7 +2308,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-103",
-    "orden": 103,
+    "orden": 108,
     "tema": "Obstrucción intestinal",
     "pregunta": "En radiografía, ¿qué diámetros apoyan dilatación de intestino delgado y colon, respectivamente?",
     "opciones": [
@@ -2159,7 +2328,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-104",
-    "orden": 104,
+    "orden": 109,
     "tema": "Hernias",
     "pregunta": "¿Qué vasos permiten diferenciar hernia inguinal directa de indirecta?",
     "opciones": [
@@ -2179,7 +2348,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-105",
-    "orden": 105,
+    "orden": 110,
     "tema": "Cirugía bariátrica",
     "pregunta": "Mujer en segundo día tras manga gástrica laparoscópica presenta taquicardia y palidez. ¿Conducta inicial más apropiada entre las opciones?",
     "opciones": [
@@ -2199,7 +2368,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-106",
-    "orden": 106,
+    "orden": 111,
     "tema": "Poliposis",
     "pregunta": "Con respecto a poliposis adenomatosa familiar, marque lo verdadero:",
     "opciones": [
@@ -2219,7 +2388,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-107",
-    "orden": 107,
+    "orden": 112,
     "tema": "Heridas",
     "pregunta": "Apendicitis aguda flemonosa no perforada sometida a apendicectomía: ¿cómo se clasifica la herida por contaminación según el esquema del examen?",
     "opciones": [
@@ -2239,7 +2408,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-108",
-    "orden": 108,
+    "orden": 113,
     "tema": "Colangitis",
     "pregunta": "Paciente con dolor cólico, ictericia, fiebre, escalofríos, leucocitosis y colestasis. ¿Cuál es el diagnóstico principal?",
     "opciones": [
@@ -2259,7 +2428,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-109",
-    "orden": 109,
+    "orden": 114,
     "tema": "Úlcera péptica",
     "pregunta": "Paciente con HDA, úlcera gástrica con punto de hematina y prueba rápida de ureasa positiva. ¿Cuál es la conducta más adecuada entre las alternativas históricas?",
     "opciones": [
@@ -2279,7 +2448,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
   },
   {
     "id": "cxg-real-110",
-    "orden": 110,
+    "orden": 115,
     "tema": "Trauma",
     "pregunta": "Respecto a la respuesta inflamatoria secundaria a una lesión traumática, ¿cuál afirmación es verdadera entre las opciones visibles?",
     "opciones": [
