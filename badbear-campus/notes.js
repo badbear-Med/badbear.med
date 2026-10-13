@@ -1,0 +1,26 @@
+(()=>{
+"use strict";const $=id=>document.getElementById(id);let db,items=[],activeURL=null;
+const request=index=>new Promise((resolve,reject)=>{index.onsuccess=()=>resolve(index.result);index.onerror=()=>reject(index.error)});
+async function openDB(){return new Promise((resolve,reject)=>{const req=indexedDB.open("BADBEAR_NOTES_LOCAL",1);req.onupgradeneeded=()=>{req.result.createObjectStore("notes",{keyPath:"id"})};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+async function put(note){const tx=db.transaction("notes","readwrite");await request(tx.objectStore("notes").put(note))}
+async function del(id){const tx=db.transaction("notes","readwrite");await request(tx.objectStore("notes").delete(id))}
+async function load(){items=await request(db.transaction("notes","readonly").objectStore("notes").getAll());render()}
+const escape=s=>{const d=document.createElement("div");d.textContent=String(s??"");return d.innerHTML};
+function render(){const text=$("search").value.toLocaleLowerCase("es"),specialty=$("filter").value;$("count").textContent=items.length;const specialties=[...new Set(items.map(n=>n.specialty))].sort();$("filter").replaceChildren(new Option("Todas las especialidades",""),...specialties.map(s=>new Option(s,s)));$("filter").value=specialty;
+const result=items.filter(n=>(!specialty||n.specialty===specialty)&&[n.title,n.specialty,n.topic,n.tags,n.body].join(" ").toLocaleLowerCase("es").includes(text)).sort((a,b)=>b.created-a.created);
+$("items").replaceChildren();if(!result.length){$("items").innerHTML='<div class="empty">Aún no hay apuntes que coincidan. Crea tu primer apunte arriba.</div>';return}
+for(const n of result){const card=document.createElement("article");card.className="card";card.innerHTML='<small>'+escape(n.specialty)+' · '+new Date(n.created).toLocaleDateString("es-PE")+'</small><h3>'+escape(n.title)+'</h3><small>'+escape(n.topic)+'</small><p>'+escape(n.body.slice(0,220))+'</p><small>'+escape(n.tags)+(n.file?' · Archivo: '+escape(n.file.name):'')+'</small><div class="buttons"></div>';const buttons=card.querySelector(".buttons");
+const view=document.createElement("button");view.textContent="Abrir";view.onclick=()=>show(n);buttons.append(view);
+if(n.file){const download=document.createElement("button");download.className="secondary";download.textContent="Descargar archivo";download.onclick=()=>{const u=URL.createObjectURL(n.file.blob),a=document.createElement("a");a.href=u;a.download=n.file.name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)};buttons.append(download)}
+const remove=document.createElement("button");remove.className="delete";remove.textContent="Eliminar";remove.onclick=async()=>{if(!confirm("¿Eliminar permanentemente este apunte de este navegador?"))return;await del(n.id);await load()};buttons.append(remove);$("items").append(card)}
+}
+function show(n){if(activeURL){URL.revokeObjectURL(activeURL);activeURL=null}const wrap=$("viewer-content");wrap.replaceChildren();$("viewer-title").textContent=n.title;
+if(n.body){const p=document.createElement("p");p.style.whiteSpace="pre-wrap";p.textContent=n.body;wrap.append(p)}
+if(n.file){activeURL=URL.createObjectURL(n.file.blob);if(n.file.type==="application/pdf"){const iframe=document.createElement("iframe");iframe.src=activeURL;iframe.title=n.file.name;wrap.append(iframe)}else if(n.file.type.startsWith("image/")){const img=document.createElement("img");img.src=activeURL;img.alt=n.file.name;wrap.append(img)}else{const p=document.createElement("p");p.textContent="Documento de Word: usa el botón Descargar archivo en la tarjeta para abrirlo en tu editor.";wrap.append(p)}}$("viewer").showModal()}
+$("close").onclick=()=>$("viewer").close();$("viewer").addEventListener("close",()=>{if(activeURL){URL.revokeObjectURL(activeURL);activeURL=null}$("viewer-content").replaceChildren()});
+$("note-form").addEventListener("submit",async ev=>{ev.preventDefault();if(!db)return;const file=$("attachment").files[0];if(file&&file.size>20*1024*1024){$("status").textContent="Máximo 20 MB por archivo";return}const allowed=["application/pdf","image/png","image/jpeg","image/webp","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];if(file&&!allowed.includes(file.type)&&!/\.(pdf|png|jpe?g|webp|docx?)$/i.test(file.name)){$("status").textContent="Formato no admitido";return}
+const note={id:crypto.randomUUID(),created:Date.now(),title:$("title").value.trim(),specialty:$("specialty").value,topic:$("topic").value.trim(),tags:$("tags").value.trim(),body:$("body").value.trim(),file:file?{name:file.name,type:file.type||"application/octet-stream",blob:file}:null};
+try{await put(note);$("note-form").reset();$("status").textContent="Guardado en este dispositivo";await load()}catch(e){$("status").textContent="No se pudo guardar. Revisa el espacio disponible del navegador."}});
+$("search").addEventListener("input",render);$("filter").addEventListener("change",render);
+openDB().then(x=>{db=x;return load()}).catch(()=>{$("status").textContent="Este navegador no permite almacenamiento local en este momento."});
+})();
