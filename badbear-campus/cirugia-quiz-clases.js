@@ -83,7 +83,8 @@ form.addEventListener("change",ev=>{
  feedback.append(el("strong","",correct?"¡Correcto!":"Respuesta incorrecta"));
  if(!correct)feedback.append(el("p","", "Tu elección: "+String.fromCharCode(65+selected)+". "+q.options[selected]+". No corresponde a la respuesta más adecuada para los datos del caso."));
  feedback.append(el("p","", "Respuesta correcta: "+String.fromCharCode(65+q.answer)+". "+q.options[q.answer]+"."));
- const evidence=(window.BADBEAR_CG_EVIDENCE||{})[q.id];
+ const evidence=(window.BADBEAR_CG_EVIDENCE||{})[q.id]||(window.BADBEAR_CG_EVIDENCE_DRAFT||{})[q.id];
+ if(evidence?.reviewStatus==="borrador")feedback.append(el("p","cgq-source-pending","Análisis preliminar: el comentario de las alternativas está incorporado, pero todavía requiere revisión clínica y bibliográfica individual."));
  const explanation=evidence?.detail||q.explanation||"Esta pregunta aún necesita un argumento clínico específico revisado.";
  const why=el("section","cgq-why");why.append(el("h4","","Interpretación clínica del caso"),el("p","",evidence?.case||explanation));if(evidence?.physio){why.append(el("h4","","Fundamento fisiopatológico"),el("p","",evidence.physio))}if(evidence?.conduct){why.append(el("h4","","Conducta clínica y prioridades"),el("p","",evidence.conduct))}feedback.append(why);
  const application=el("section","cgq-application");application.append(el("h4","","Análisis de las alternativas"));
