@@ -8,7 +8,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Inguinal",
       "Femoral",
       "De Petit",
-      "Obturatriz"
+      "Obturatriz",
+      "Hernia epigástrica"
     ],
     "clave": "A",
     "respuesta": "Inguinal",
@@ -20,7 +21,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativa_agregada": {
       "letra": "D",
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
-    }
+    },
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-002",
@@ -31,7 +33,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "250 a 350 mEq/día",
       "1 a 2 g por día",
       "2 a 4 g por día",
-      "12 a 15 g de sal por día"
+      "12 a 15 g de sal por día",
+      "20 a 25 g de sal al día"
     ],
     "clave": "C",
     "respuesta": "2 a 4 g por día",
@@ -43,7 +46,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativa_agregada": {
       "letra": "D",
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
-    }
+    },
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-003",
@@ -54,7 +58,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "10%",
       "15–25%",
       "30%",
-      "Más del 70%"
+      "Más del 70%",
+      "Más del 90%"
     ],
     "clave": "B",
     "respuesta": "15–25%",
@@ -66,7 +71,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativa_agregada": {
       "letra": "D",
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
-    }
+    },
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-004",
@@ -77,7 +83,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Hipotensión venosa, acidosis metabólica, coagulopatía",
       "Hipotensión tisular, acidosis metabólica, coagulopatía",
       "Hipotensión vascular, acidosis metabólica, coagulopatía",
-      "Hipotermia, acidosis metabólica y coagulopatía"
+      "Hipotermia, acidosis metabólica y coagulopatía",
+      "Hipervolemia, alcalosis y trombocitosis"
     ],
     "clave": "D",
     "respuesta": "Hipotermia, acidosis metabólica y coagulopatía",
@@ -89,7 +96,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativa_agregada": {
       "letra": "D",
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
-    }
+    },
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-005",
@@ -100,7 +108,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "No requiere antibióticos posoperatorios",
       "Esquema de 3 días",
       "Basta que cubra aerobios",
-      "Dos medicamentos"
+      "Dos medicamentos",
+      "Continuar antibióticos hasta 14 días en todos"
     ],
     "clave": "A",
     "respuesta": "No requiere antibióticos posoperatorios",
@@ -108,7 +117,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Apendicitis NO complicada: profilaxis perioperatoria; no prolongues antibióticos sin foco residual.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-006",
@@ -139,7 +149,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Peritonitis primaria",
       "Peritonitis secundaria",
       "Peritonitis terciaria",
-      "Apendicitis aguda"
+      "Apendicitis aguda",
+      "Peritonitis por perforación colónica demostrada"
     ],
     "clave": "A",
     "respuesta": "Peritonitis primaria",
@@ -147,7 +158,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Peritonitis secundaria = busca perforación, necrosis o foco anatómico; en diálisis peritoneal puede existir infección sin perforación visceral.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-008",
@@ -158,7 +170,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Drenaje endoscópico",
       "Drenaje percutáneo",
       "Drenaje laparoscópico",
-      "Cirugía abierta"
+      "Cirugía abierta",
+      "Antibióticos como único método de drenaje"
     ],
     "clave": "A",
     "respuesta": "Drenaje endoscópico",
@@ -166,7 +179,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Necrosis pancreática estéril ≠ intervención automática. Intervén solo por indicación clínica y prioriza estrategias mínimamente invasivas.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": "La fuente pregunta por 'procedimiento de drenaje' sin especificar indicación ni encapsulación.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-009",
@@ -197,7 +211,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Vómitos",
       "Distensión abdominal",
       "Dolor abdominal",
-      "Constipación"
+      "Constipación",
+      "Hematoquecia precoz como presentación constante"
     ],
     "clave": "A",
     "respuesta": "Vómitos",
@@ -205,7 +220,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Obstrucción alta → vómitos tempranos. Obstrucción baja/colónica → mayor distensión y vómitos tardíos.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-011",
@@ -216,7 +232,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Inhibe síntesis de ARN",
       "Inhibe ADN-girasa/topoisomerasa II y topoisomerasa IV",
       "Interfiere con la síntesis de metabolitos",
-      "Todas"
+      "Todas",
+      "Inhibición de síntesis de pared bacteriana"
     ],
     "clave": "B",
     "respuesta": "Inhibe ADN-girasa/topoisomerasa II y topoisomerasa IV",
@@ -224,7 +241,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Fluoroquinolonas → ADN-girasa/topoisomerasa II + topoisomerasa IV.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": "La fuente escribe 'topoisomerasa I y IV'; se corrige el probable error tipográfico.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-012",
@@ -235,7 +253,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "CPRE",
       "Colangiografía intraoperatoria",
       "Colangiorresonancia",
-      "Ecografía abdominal convencional"
+      "Ecografía abdominal convencional",
+      "Radiografía simple del hipocondrio derecho"
     ],
     "clave": "B",
     "respuesta": "Colangiografía intraoperatoria",
@@ -247,7 +266,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativa_agregada": {
       "letra": "D",
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
-    }
+    },
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-013",
@@ -258,7 +278,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Relaparoscopía",
       "Laparotomía exploratoria",
       "Administrar azul de metileno como única conducta",
-      "Antibióticos y observación"
+      "Antibióticos y observación",
+      "Alta inmediata sin estudios ni tratamiento"
     ],
     "clave": "A",
     "respuesta": "Relaparoscopía",
@@ -266,7 +287,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Después de cirugía gastrointestinal, taquicardia, fiebre o contenido anormal por drenaje = sospecha fuga hasta demostrar lo contrario.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-014",
@@ -277,7 +299,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Trauma abdominal seleccionado",
       "Colangitis supurativa como tratamiento definitivo de la obstrucción",
       "Reintervención laparoscópica seleccionada",
-      "Estadiaje"
+      "Estadiaje",
+      "Colecistectomía laparoscópica electiva"
     ],
     "clave": "B",
     "respuesta": "Colangitis supurativa como tratamiento definitivo de la obstrucción",
@@ -285,7 +308,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Colangitis grave: el objetivo urgente es DRENAR la vía biliar, no realizar laparoscopia diagnóstica como primera medida.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-015",
@@ -296,7 +320,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Solo colon",
       "Riñón, duodeno y colon",
       "Sigmoide y colon",
-      "Bazo e hígado"
+      "Bazo e hígado",
+      "Solo vejiga urinaria"
     ],
     "clave": "B",
     "respuesta": "Riñón, duodeno y colon",
@@ -304,7 +329,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Herida de flanco → piensa en RETROPERITONEO: riñón, colon y duodeno.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-016",
@@ -315,7 +341,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Insulina sin ajuste",
       "Antihipertensivos",
       "Anticoagulantes",
-      "Hipoglucemiantes orales"
+      "Hipoglucemiantes orales",
+      "Suspender todas las medicaciones crónicas"
     ],
     "clave": "B",
     "respuesta": "Antihipertensivos",
@@ -323,7 +350,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "No suspendas automáticamente todos los antihipertensivos. Beta-bloqueador crónico suele continuarse; anticoagulantes y antidiabéticos requieren plan específico.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": "Pregunta amplia: no todos los antihipertensivos se manejan igual.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-017",
@@ -334,7 +362,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Neumoperitoneo",
       "Signo de grano de café",
       "Asa centinela",
-      "Borramiento del psoas derecho"
+      "Borramiento del psoas derecho",
+      "Apendicolito en fosa ilíaca derecha"
     ],
     "clave": "B",
     "respuesta": "Signo de grano de café",
@@ -342,7 +371,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Grano de café = vólvulo de sigmoides, no apendicitis.",
     "fuente": "EXAMEN CIRUGÍA (2).docx — Examen Cx General 1",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-018",
@@ -353,7 +383,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Gastrectomía oncológica con linfadenectomía D2",
       "Gastrectomía subtotal con D1 en todos los casos",
       "Gastrectomía más quimio-radioterapia obligatoria en todos",
-      "Gastrectomía paliativa sin intención R0 para cualquier estadio"
+      "Gastrectomía paliativa sin intención R0 para cualquier estadio",
+      "Gastrectomía sin resección de ganglios en todos los casos"
     ],
     "clave": "A",
     "respuesta": "Gastrectomía oncológica con linfadenectomía D2",
@@ -365,7 +396,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativa_agregada": {
       "letra": "D",
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
-    }
+    },
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-019",
@@ -376,7 +408,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Sonda nasogástrica",
       "Sonda nasoyeyunal",
       "Catéter venoso central",
-      "Nutrición parenteral total como primera elección"
+      "Nutrición parenteral total como primera elección",
+      "Ayuno prolongado como primera elección"
     ],
     "clave": "A",
     "respuesta": "Sonda nasogástrica",
@@ -388,7 +421,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativa_agregada": {
       "letra": "D",
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
-    }
+    },
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-020",
@@ -399,7 +433,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Ecografía abdominal",
       "TC con contraste",
       "Resonancia magnética",
-      "Radiografía simple de abdomen"
+      "Radiografía simple de abdomen",
+      "ECG como prueba inicial de la vía biliar"
     ],
     "clave": "A",
     "respuesta": "Ecografía abdominal",
@@ -411,455 +446,678 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativa_agregada": {
       "letra": "D",
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
-    }
+    },
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-021",
     "orden": 21,
     "tema": "Trauma abdominal",
     "pregunta": "En trauma abdominal cerrado, ¿qué órgano sólido se lesiona con mayor frecuencia?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Bazo",
+      "Hígado",
+      "Riñón",
+      "Páncreas",
+      "Vejiga"
+    ],
+    "clave": "A",
     "respuesta": "Bazo.",
     "explicacion": "El bazo es clásicamente el órgano sólido más lesionado en el traumatismo abdominal cerrado. En trauma penetrante cambia el patrón y el intestino puede afectarse con mayor frecuencia.",
     "badbear_fija": "Trauma cerrado → bazo. Trauma penetrante → piensa en víscera hueca según trayecto.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-022",
     "orden": 22,
     "tema": "Trauma abdominal",
     "pregunta": "¿Cómo difieren las lesiones diafragmáticas por traumatismo cerrado y penetrante?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "El trauma cerrado tiende a producir desgarros por aumento brusco de presión; el penetrante produce perforaciones focales según el trayecto",
+      "Ambos producen siempre heridas puntiformes",
+      "El trauma cerrado afecta únicamente músculo intercostal",
+      "El penetrante no lesiona el diafragma",
+      "Ambos generan solo lesión frénica funcional"
+    ],
+    "clave": "A",
     "respuesta": "El trauma cerrado tiende a producir desgarros por aumento brusco de presión; el penetrante produce perforaciones focales según el trayecto.",
     "explicacion": "El trauma cerrado genera un gradiente de presión que puede desgarrar el diafragma, con predominio izquierdo. Las heridas penetrantes producen defectos más focales y su localización depende del trayecto.",
     "badbear_fija": "Diafragma: cerrado = desgarro por presión; penetrante = defecto focal por trayecto.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-023",
     "orden": 23,
     "tema": "Trauma abdominal",
     "pregunta": "En lavado peritoneal diagnóstico, ¿qué recuento de eritrocitos se considera criterio clásico de positividad?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "≥100 000 eritrocitos/mm³",
+      "≥1 000 eritrocitos/mm³",
+      "≥10 000 eritrocitos/mm³",
+      "≥500 eritrocitos/mm³",
+      "≥1 000 000 eritrocitos/mm³"
+    ],
+    "clave": "A",
     "respuesta": "≥100 000 eritrocitos/mm³.",
     "explicacion": "El criterio clásico de positividad del lavado peritoneal diagnóstico en trauma cerrado incluye un recuento de eritrocitos igual o mayor de 100 000/mm³.",
     "badbear_fija": "LPD clásico: GR ≥100 000/mm³; también importan leucocitos, bilis, bacterias, contenido entérico y aspiración de sangre.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-024",
     "orden": 24,
     "tema": "Hemorragia digestiva",
     "pregunta": "¿Cuál es la causa más frecuente de hemorragia digestiva alta no variceal?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Enfermedad ulcerosa péptica",
+      "Síndrome de Mallory-Weiss",
+      "Esofagitis erosiva",
+      "Angiodisplasia",
+      "Várices esofágicas"
+    ],
+    "clave": "A",
     "respuesta": "Enfermedad ulcerosa péptica.",
     "explicacion": "La úlcera gástrica o duodenal constituye una de las causas más frecuentes de hemorragia digestiva alta no variceal. El contexto epidemiológico puede modificar la frecuencia relativa.",
     "badbear_fija": "HDA no variceal: piensa primero en úlcera péptica; en cirrótico, varices cambian la prioridad.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-025",
     "orden": 25,
     "tema": "Cáncer gástrico",
     "pregunta": "Según Borrmann, ¿qué tipo corresponde a un carcinoma gástrico ulcerado con bordes definidos y sin infiltración difusa?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Borrmann II",
+      "Borrmann I",
+      "Borrmann III",
+      "Borrmann IV",
+      "Lauren difuso"
+    ],
+    "clave": "A",
     "respuesta": "Borrmann II.",
     "explicacion": "Borrmann II corresponde a un cáncer ulcerado con límites relativamente bien definidos. Borrmann III es ulceroinfiltrante y Borrmann IV es infiltrante difuso o linitis plástica.",
     "badbear_fija": "Borrmann I: polipoide; II: ulcerado delimitado; III: ulceroinfiltrante; IV: infiltrante difuso.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-026",
     "orden": 26,
     "tema": "Intestino delgado",
     "pregunta": "Mujer mayor usuaria crónica de AINE con anemia y estudios endoscópicos convencionales no concluyentes. ¿Qué estudio permite evaluar intestino delgado?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Cápsula endoscópica",
+      "Urografía excretora",
+      "Colonoscopia repetida como único estudio",
+      "Radiografía simple de abdomen",
+      "Manometría esofágica"
+    ],
+    "clave": "A",
     "respuesta": "Cápsula endoscópica.",
     "explicacion": "La cápsula endoscópica permite estudiar la mucosa del intestino delgado cuando endoscopia alta y colonoscopia no explican un sangrado oculto o anemia ferropénica.",
     "badbear_fija": "Sangrado oscuro tras EDA + colonoscopia negativas → piensa en intestino delgado y cápsula endoscópica.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-027",
     "orden": 27,
     "tema": "Cáncer anal",
     "pregunta": "¿Cuál es el tratamiento de elección del carcinoma epidermoide del canal anal?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Quimiorradioterapia concurrente",
+      "Resección abdominoperineal obligatoria inicial en todos",
+      "Hemorroidectomía",
+      "Antibióticos aislados",
+      "Observación exclusiva"
+    ],
+    "clave": "A",
     "respuesta": "Quimiorradioterapia concurrente.",
     "explicacion": "El tratamiento estándar es quimiorradiación definitiva, preservando el esfínter. La amputación abdominoperineal se reserva principalmente para enfermedad persistente o recurrente.",
     "badbear_fija": "Carcinoma escamoso anal → quimiorradiación primero; cirugía radical es rescate.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / Exámenes 2025 Cx General - PDF.pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-028",
     "orden": 28,
     "tema": "Hemorragia digestiva baja",
     "pregunta": "Paciente con hematoquecia, hipotensión y hemoglobina muy baja. ¿Cuál es la prioridad inicial?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Reanimación hemodinámica con accesos venosos, cristaloides según necesidad y transfusión de hemoderivados de acuerdo con el estado clínico",
+      "Colonoscopia inmediata sin estabilización",
+      "Alta con suplemento oral de hierro",
+      "Solo antiácidos",
+      "Laxantes como primera medida"
+    ],
+    "clave": "A",
     "respuesta": "Reanimación hemodinámica con accesos venosos, cristaloides según necesidad y transfusión de hemoderivados de acuerdo con el estado clínico.",
     "explicacion": "Antes de definir la etiología debe estabilizarse la circulación. La endoscopia o intervención definitiva se realiza después o en paralelo según la gravedad y la respuesta a la reanimación.",
     "badbear_fija": "Hemorragia + inestabilidad = ABC y reanimación antes que diagnóstico sofisticado.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-029",
     "orden": 29,
     "tema": "Técnica quirúrgica",
     "pregunta": "Defina anastomosis intestinal.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Unión quirúrgica entre dos segmentos del tubo digestivo para restablecer continuidad o crear una derivación",
+      "Resección intestinal sin reconstrucción",
+      "Exteriorización del colon a la piel",
+      "Drenaje de cavidad peritoneal",
+      "Sutura exclusiva de piel abdominal"
+    ],
+    "clave": "A",
     "respuesta": "Unión quirúrgica entre dos segmentos del tubo digestivo para restablecer continuidad o crear una derivación.",
     "explicacion": "Puede configurarse término-terminal, término-lateral, latero-lateral, entre otras, según la operación y la anatomía.",
     "badbear_fija": "Anastomosis describe una unión quirúrgica entre dos estructuras huecas; su configuración depende del objetivo reconstructivo.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-030",
     "orden": 30,
     "tema": "Ostomías",
     "pregunta": "Defina gastrostomía.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Creación de un acceso desde la pared abdominal hasta el estómago, habitualmente para alimentación o descompresión",
+      "Anastomosis del colon con íleon",
+      "Resección completa de estómago",
+      "Drenaje pleural",
+      "Cierre del píloro sin acceso externo"
+    ],
+    "clave": "A",
     "respuesta": "Creación de un acceso desde la pared abdominal hasta el estómago, habitualmente para alimentación o descompresión.",
     "explicacion": "Puede realizarse por vía endoscópica, radiológica o quirúrgica. No debe confundirse con gastrectomía, que es resección del estómago.",
     "badbear_fija": "Gastrostomía = acceso al estómago; gastrectomía = resección gástrica.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": "En una de las fuentes aparece escrito 'gastroctomía' cuando la definición corresponde a gastrostomía.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-031",
     "orden": 31,
     "tema": "Ostomías",
     "pregunta": "Defina colostomía.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Exteriorización del colon a través de la pared abdominal para formar un estoma",
+      "Acceso del estómago a pared abdominal",
+      "Exteriorización de íleon en fosa ilíaca",
+      "Anastomosis esófago-yeyunal",
+      "Resección completa de colon"
+    ],
+    "clave": "A",
     "respuesta": "Exteriorización del colon a través de la pared abdominal para formar un estoma.",
     "explicacion": "Puede ser temporal o definitiva y su configuración depende de la indicación quirúrgica.",
     "badbear_fija": "Colostomía = colon exteriorizado como estoma en pared abdominal.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-032",
     "orden": 32,
     "tema": "Vía biliar",
     "pregunta": "Defina derivación biliodigestiva.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Anastomosis entre la vía biliar y el tubo digestivo para permitir drenaje de bilis cuando existe obstrucción o necesidad reconstructiva",
+      "Conexión de dos asas del colon",
+      "Drenaje externo de pleura",
+      "Anastomosis del páncreas al bazo",
+      "Derivación urinaria al intestino"
+    ],
+    "clave": "A",
     "respuesta": "Anastomosis entre la vía biliar y el tubo digestivo para permitir drenaje de bilis cuando existe obstrucción o necesidad reconstructiva.",
     "explicacion": "Ejemplos frecuentes incluyen hepaticoyeyunostomía y coledocoyeyunostomía. El objetivo es restablecer el flujo biliar hacia el intestino.",
     "badbear_fija": "Derivación biliodigestiva = vía biliar + intestino para restaurar drenaje.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-033",
     "orden": 33,
     "tema": "Cáncer colorrectal",
     "pregunta": "¿Cuál NO es un factor de riesgo reconocido para carcinoma colorrectal?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "El exceso de vitamina E",
+      "Antecedente familiar de cáncer colorrectal",
+      "Síndrome de Lynch",
+      "Enfermedad inflamatoria intestinal extensa",
+      "Consumo de carnes procesadas"
+    ],
+    "clave": "A",
     "respuesta": "El exceso de vitamina E.",
     "explicacion": "Los factores establecidos incluyen edad, antecedentes familiares, síndromes hereditarios, enfermedad inflamatoria intestinal y ciertos patrones dietéticos y metabólicos. El 'exceso de vitamina E' no es un factor clásico.",
     "badbear_fija": "CRC: edad + genética + EII + estilo de vida; vitamina E no es un factor de riesgo clásico.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-034",
     "orden": 34,
     "tema": "Poliposis",
     "pregunta": "Entre los síndromes de poliposis hereditaria, ¿cuál confiere un riesgo casi inevitable de cáncer colorrectal si no se trata?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Poliposis adenomatosa familiar (PAF/FAP)",
+      "Peutz–Jeghers",
+      "Poliposis juvenil",
+      "Cronkhite–Canada",
+      "Síndrome de Cowden"
+    ],
+    "clave": "A",
     "respuesta": "Poliposis adenomatosa familiar (PAF/FAP).",
     "explicacion": "La PAF se debe generalmente a mutaciones de APC y produce cientos a miles de adenomas; sin tratamiento profiláctico el riesgo de cáncer colorrectal se aproxima al 100%.",
     "badbear_fija": "FAP = APC + cientos/miles de adenomas + riesgo casi 100% de CRC sin colectomía profiláctica.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-035",
     "orden": 35,
     "tema": "Hernias",
     "pregunta": "¿Qué es una hernia epigástrica?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Protrusión a través de un defecto de la línea alba por encima del ombligo",
+      "Defecto por debajo del ligamento inguinal",
+      "Protrusión por el hiato esofágico",
+      "Defecto lumbar inferior",
+      "Hernia a través del anillo femoral"
+    ],
+    "clave": "A",
     "respuesta": "Protrusión a través de un defecto de la línea alba por encima del ombligo.",
     "explicacion": "Suele contener grasa preperitoneal y, menos frecuentemente, saco peritoneal. Se ubica entre xifoides y ombligo.",
     "badbear_fija": "Hernia epigástrica = defecto de línea alba supraumbilical.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-036",
     "orden": 36,
     "tema": "Enfermedad inflamatoria intestinal",
     "pregunta": "¿Cuál NO es una característica típica de la enfermedad de Crohn?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Afectación continua del colon",
+      "Lesiones salteadas",
+      "Afectación transmural",
+      "Fístulas perianales",
+      "Granulomas no caseificantes"
+    ],
+    "clave": "A",
     "respuesta": "Afectación continua del colon.",
     "explicacion": "Crohn suele producir afectación segmentaria con áreas sanas interpuestas y puede comprometer cualquier parte del tubo digestivo. La afectación continua desde el recto es más característica de colitis ulcerosa.",
     "badbear_fija": "Crohn = lesiones salteadas y transmural. Colitis ulcerosa = continua y mucosa.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-037",
     "orden": 37,
     "tema": "Colitis ulcerosa",
     "pregunta": "Paciente con colitis ulcerosa de larga evolución, diarrea sanguinolenta, distensión, dolor y fiebre. ¿Qué estudio debe realizarse primero ante sospecha de megacolon tóxico?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Radiografía simple de abdomen",
+      "Colonoscopia completa de urgencia con insuflación",
+      "Enteroscopia con cápsula",
+      "Colangiografía",
+      "Urografía"
+    ],
+    "clave": "A",
     "respuesta": "Radiografía simple de abdomen.",
     "explicacion": "Permite valorar rápidamente dilatación colónica y signos de complicación. En una colitis grave con riesgo de megacolon, estudios invasivos como colonoscopia completa pueden aumentar el riesgo de perforación.",
     "badbear_fija": "CU grave + distensión + fiebre → descarta megacolon tóxico con radiografía simple de abdomen.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / Exámenes 2025 Cx General - PDF.pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-038",
     "orden": 38,
     "tema": "Hernias",
     "pregunta": "¿Qué significa incarceración de una hernia?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Contenido del saco herniario irreductible, sin implicar necesariamente compromiso vascular",
+      "Interrupción definitiva del flujo arterial",
+      "Hernia con asas gangrenadas siempre",
+      "Defecto sin saco ni contenido",
+      "Reducción espontánea del contenido"
+    ],
+    "clave": "A",
     "respuesta": "Contenido del saco herniario irreductible, sin implicar necesariamente compromiso vascular.",
     "explicacion": "La estrangulación agrega compromiso vascular e isquemia. Una hernia incarcerada puede progresar a estrangulación.",
     "badbear_fija": "Incarcerada = irreductible. Estrangulada = irreductible + compromiso vascular.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-039",
     "orden": 39,
     "tema": "Heridas",
     "pregunta": "Fases de cicatrización de las heridas. ¿Cuál NO corresponde a una fase estándar?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Fase de consolidación",
+      "Hemostasia",
+      "Inflamación",
+      "Proliferación",
+      "Remodelación"
+    ],
+    "clave": "A",
     "respuesta": "Fase de consolidación.",
     "explicacion": "Las fases clásicas son hemostasia/inflamación, proliferación y remodelación o maduración. 'Consolidación' no es una fase estándar de cicatrización cutánea.",
     "badbear_fija": "Cicatrización: inflamación → proliferación → remodelación.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-040",
     "orden": 40,
     "tema": "Heridas",
     "pregunta": "Factores que contribuyen a dehiscencia de heridas: señale lo incorrecto.",
-    "opciones": [],
-    "clave": null,
-    "respuesta": "El material fuente marca 'insuficiencia renal aguda', pero el enunciado está incompleto y la insuficiencia renal/uremia sí puede deteriorar la cicatrización.",
+    "opciones": [
+      "Hiperglucemia mal controlada",
+      "Infección de herida",
+      "Desnutrición proteica",
+      "Tensión excesiva de la sutura",
+      "No puede establecerse la respuesta sin el enunciado/opciones originales completos"
+    ],
+    "clave": "E",
+    "respuesta": "No puede establecerse la respuesta sin el enunciado/opciones originales completos",
     "explicacion": "Dehiscencia se asocia con infección, malnutrición, aumento de presión intraabdominal, anemia, corticoides, técnica deficiente y enfermedades sistémicas. La opción indicada en la fuente no es clínicamente sólida sin conocer las alternativas completas.",
     "badbear_fija": "Dehiscencia: busca infección, malnutrición, tensión, aumento de presión y mala calidad tisular.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
-    "nota": "Pregunta incompleta/ambigua en la fuente.",
-    "estado": "revisar"
+    "nota": "Pregunta incompleta/ambigua en la fuente. Ítem incompleto en la fuente: opción E es advertencia didáctica, no clave clínica original.",
+    "estado": "fuente_incompleta"
   },
   {
     "id": "cxg-real-041",
     "orden": 41,
     "tema": "Heridas",
     "pregunta": "Defina seroma.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Colección de líquido seroso en un espacio muerto quirúrgico o traumático",
+      "Colección purulenta infectada",
+      "Hemorragia arterial activa",
+      "Necrosis de toda la fascia",
+      "Protrusión de vísceras"
+    ],
+    "clave": "A",
     "respuesta": "Colección de líquido seroso en un espacio muerto quirúrgico o traumático.",
     "explicacion": "Suele aparecer después de disección extensa y puede manifestarse como fluctuación o aumento de volumen. Debe diferenciarse de hematoma y absceso.",
     "badbear_fija": "Seroma = líquido seroso; hematoma = sangre; absceso = pus/infección.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-042",
     "orden": 42,
     "tema": "Postoperatorio",
     "pregunta": "Mencione causas de fiebre postoperatoria.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Respuesta inflamatoria al trauma quirúrgico, infección de sitio quirúrgico, ITU, neumonía, bacteriemia/catéter, TVP/TEP, absceso intraabdominal y reacción medicamentosa, según tiempo y contexto",
+      "Únicamente infección del sitio quirúrgico",
+      "Solo fiebre medicamentosa",
+      "Toda fiebre implica bacteriemia",
+      "Solo neumonía"
+    ],
+    "clave": "A",
     "respuesta": "Respuesta inflamatoria al trauma quirúrgico, infección de sitio quirúrgico, ITU, neumonía, bacteriemia/catéter, TVP/TEP, absceso intraabdominal y reacción medicamentosa, según tiempo y contexto.",
     "explicacion": "El momento de aparición orienta, pero no debe usarse de forma rígida. La evaluación se guía por clínica, tipo de cirugía, dispositivos y signos focales.",
     "badbear_fija": "Fiebre posoperatoria: el tiempo orienta, la clínica manda. No atribuyas fiebre temprana automáticamente a atelectasia.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / Exámenes 2025 Cx General - PDF.pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-043",
     "orden": 43,
     "tema": "Síndrome compartimental abdominal",
     "pregunta": "Mencione causas del síndrome compartimental abdominal.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Hemoperitoneo o ascitis masiva, edema visceral por reanimación, pancreatitis grave, peritonitis, obstrucción/distensión, cierre abdominal tenso y disminución de la compliance de la pared abdominal",
+      "Hipotiroidismo compensado sin distensión",
+      "Rinitis alérgica",
+      "Migraña",
+      "Otitis externa"
+    ],
+    "clave": "A",
     "respuesta": "Hemoperitoneo o ascitis masiva, edema visceral por reanimación, pancreatitis grave, peritonitis, obstrucción/distensión, cierre abdominal tenso y disminución de la compliance de la pared abdominal.",
     "explicacion": "El síndrome aparece cuando la presión intraabdominal elevada produce disfunción orgánica. Puede resultar de aumento de contenido, edema visceral o reducción de la capacidad de la cavidad.",
     "badbear_fija": "Compartimental abdominal = hipertensión intraabdominal + disfunción orgánica.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-044",
     "orden": 44,
     "tema": "Proctología",
     "pregunta": "¿Qué es el prolapso rectal?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Protrusión del recto, parcial o de espesor completo, a través del canal anal",
+      "Hernia femoral de intestino",
+      "Protrusión de mucosa gástrica",
+      "Descenso del útero exclusivamente",
+      "Hemorroides externas trombosadas"
+    ],
+    "clave": "A",
     "respuesta": "Protrusión del recto, parcial o de espesor completo, a través del canal anal.",
     "explicacion": "El prolapso completo incluye todas las capas de la pared rectal y debe diferenciarse de prolapso mucoso y hemorroides.",
     "badbear_fija": "Prolapso rectal completo = salida de toda la pared rectal por el ano.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-045",
     "orden": 45,
     "tema": "Acalasia",
     "pregunta": "¿Cuál es la exploración con mayor rendimiento diagnóstico para confirmar acalasia?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Manometría esofágica de alta resolución",
+      "Endoscopia alta aislada",
+      "Radiografía simple abdominal",
+      "Urocultivo",
+      "Ecografía hepatobiliar"
+    ],
+    "clave": "A",
     "respuesta": "Manometría esofágica de alta resolución.",
     "explicacion": "La manometría demuestra alteración de la relajación del esfínter esofágico inferior y ausencia o alteración de la peristalsis. Endoscopia y esofagograma complementan y descartan pseudoacalasia.",
     "badbear_fija": "Acalasia: manometría confirma; endoscopia descarta causa mecánica; esofagograma muestra morfología.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-046",
     "orden": 46,
     "tema": "Enfermedad inflamatoria intestinal",
     "pregunta": "Paciente joven con diarrea, moco, sangre y dolor abdominal sin antecedente epidemiológico. ¿Diagnóstico sindrómico y estudio confirmatorio más probable?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Enfermedad inflamatoria intestinal; colonoscopia con biopsias",
+      "Apendicitis confirmada solo con hemograma",
+      "Cólico renal con urografía",
+      "Síndrome de intestino irritable sin biopsias",
+      "Dispepsia funcional con ECG"
+    ],
+    "clave": "A",
     "respuesta": "Enfermedad inflamatoria intestinal; colonoscopia con biopsias.",
     "explicacion": "La presencia de diarrea inflamatoria con sangre y moco orienta a EII. La colonoscopia permite valorar distribución y obtener biopsias para diferenciar colitis ulcerosa, Crohn y otras causas.",
     "badbear_fija": "Diarrea crónica con sangre/moco → colonoscopia con biopsias, tras excluir infección según el contexto.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-047",
     "orden": 47,
     "tema": "Obstrucción de salida gástrica",
     "pregunta": "En radiografía simple, ¿qué hallazgo puede observarse en una obstrucción pilórica marcada?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Gran burbuja gástrica con escaso o nulo gas distal",
+      "Aire libre subdiafragmático obligatorio",
+      "Signo del grano de café",
+      "Gas distal abundante en todos los casos",
+      "Calcificaciones pancreáticas difusas"
+    ],
+    "clave": "A",
     "respuesta": "Gran burbuja gástrica con escaso o nulo gas distal.",
     "explicacion": "La distensión del estómago con ausencia relativa de gas intestinal puede sugerir obstrucción de salida gástrica. En estenosis pilórica infantil, la ecografía es el estudio diagnóstico preferido.",
     "badbear_fija": "Obstrucción pilórica → estómago distendido y poco gas distal; la imagen definitiva depende de la edad y etiología.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": "La fuente resume el hallazgo como 'una sola burbuja'.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-048",
     "orden": 48,
     "tema": "Estómago",
     "pregunta": "Señale lo falso con respecto al músculo gástrico.",
-    "opciones": [],
-    "clave": null,
-    "respuesta": null,
+    "opciones": [
+      "El músculo gástrico tiene solo una capa circular",
+      "La musculatura gástrica no participa en la mezcla alimentaria",
+      "La capa longitudinal es exclusiva del esófago",
+      "La motilidad gástrica no depende de la musculatura lisa",
+      "No puede establecerse la respuesta sin el enunciado/opciones originales completos"
+    ],
+    "clave": "E",
+    "respuesta": "No puede establecerse la respuesta sin el enunciado/opciones originales completos",
     "explicacion": "La fuente no conserva las alternativas, por lo que no es posible identificar de forma fiable la opción solicitada sin inventarla.",
     "badbear_fija": "La pared muscular gástrica tiene capas longitudinal, circular y oblicua.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
-    "nota": "Alternativas ausentes en el documento.",
-    "estado": "revisar"
+    "nota": "Alternativas ausentes en el documento. Ítem incompleto en la fuente: opción E es advertencia didáctica, no clave clínica original.",
+    "estado": "fuente_incompleta"
   },
   {
     "id": "cxg-real-049",
     "orden": 49,
     "tema": "Isquemia mesentérica",
     "pregunta": "¿Qué estudio vascular se utiliza para detectar estenosis u oclusión de la arteria mesentérica superior y tronco celíaco?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Angio-TC es actualmente el estudio inicial de elección en sospecha aguda; la angio-RM es una alternativa en escenarios seleccionados",
+      "Radiografía simple",
+      "Doppler venoso de miembros inferiores",
+      "Urografía",
+      "Endoscopia digestiva alta"
+    ],
+    "clave": "A",
     "respuesta": "Angio-TC es actualmente el estudio inicial de elección en sospecha aguda; la angio-RM es una alternativa en escenarios seleccionados.",
     "explicacion": "La fuente antigua señala resonancia magnética, pero en sospecha de isquemia mesentérica aguda la angiografía por TC ofrece rapidez, alta resolución y disponibilidad.",
     "badbear_fija": "Isquemia mesentérica aguda → angio-TC temprana. No retrases el diagnóstico si el dolor es desproporcionado.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": "Se actualiza la respuesta respecto del apunte histórico.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-050",
     "orden": 50,
     "tema": "Colecistitis",
     "pregunta": "Paciente anciano con comorbilidades y colecistitis aguda litiásica persistente pese a tratamiento, con alto riesgo quirúrgico. ¿Qué método de drenaje puede utilizarse?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Colecistostomía percutánea en pacientes seleccionados no aptos para cirugía inmediata",
+      "Colecistectomía electiva inmediata en todo paciente",
+      "Esplenectomía",
+      "Drenaje pleural",
+      "Colonoscopia"
+    ],
+    "clave": "A",
     "respuesta": "Colecistostomía percutánea en pacientes seleccionados no aptos para cirugía inmediata.",
     "explicacion": "En un paciente con alto riesgo operatorio y colecistitis no controlada, la colecistostomía percutánea puede servir como control del foco. La indicación depende de gravedad y posibilidad de colecistectomía temprana.",
     "badbear_fija": "Colecistitis + alto riesgo quirúrgico + sepsis persistente → considera drenaje vesicular percutáneo.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-051",
     "orden": 51,
     "tema": "Preoperatorio",
     "pregunta": "¿Para qué sirve la clasificación ASA?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Para clasificar el estado físico preoperatorio del paciente según la carga de enfermedad sistémica",
+      "Estimar exclusivamente el riesgo de sangrado",
+      "Clasificar la extensión de cáncer",
+      "Medir dolor posoperatorio",
+      "Establecer dosis exacta de anestésico"
+    ],
+    "clave": "A",
     "respuesta": "Para clasificar el estado físico preoperatorio del paciente según la carga de enfermedad sistémica.",
     "explicacion": "ASA-PS facilita comunicación y estratificación global, pero no es por sí sola una calculadora de riesgo quirúrgico específico.",
     "badbear_fija": "ASA describe ESTADO FÍSICO; no reemplaza la evaluación cardiaca, pulmonar ni el riesgo del procedimiento.",
     "fuente": "EXAMEN CIRUGÍA (2).docx / cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-052",
     "orden": 52,
     "tema": "Heridas",
     "pregunta": "Diferencie herida abierta y herida cerrada.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Abierta: existe pérdida de continuidad de piel/mucosa y comunicación con el exterior. Cerrada: no hay solución de continuidad externa evidente, aunque puede existir lesión profunda",
+      "Toda herida cerrada tiene comunicación visible con exterior",
+      "Las heridas abiertas no afectan mucosa",
+      "No puede haber lesión profunda si piel está intacta",
+      "Ambas categorías significan lo mismo"
+    ],
+    "clave": "A",
     "respuesta": "Abierta: existe pérdida de continuidad de piel/mucosa y comunicación con el exterior. Cerrada: no hay solución de continuidad externa evidente, aunque puede existir lesión profunda.",
     "explicacion": "Ejemplos de cerradas son contusiones y hematomas; las abiertas incluyen incisiones, laceraciones y heridas penetrantes.",
     "badbear_fija": "Herida cerrada puede ocultar lesión profunda importante pese a piel intacta.",
     "fuente": "EXAMEN CIRUGÍA (2).docx",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-053",
@@ -910,7 +1168,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Dolor en fosa ilíaca derecha y fiebre desde el inicio",
       "Anorexia y dolor periumbilical",
       "Astenia, anorexia y vómito",
-      "Ninguna"
+      "Ninguna",
+      "Ictericia progresiva indolora como presentación típica"
     ],
     "clave": "B",
     "respuesta": "Anorexia y dolor periumbilical",
@@ -918,7 +1177,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Apendicitis clásica: dolor periumbilical → migra a FID; anorexia es muy frecuente.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Primer grupo",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-056",
@@ -929,7 +1189,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Gastrectomía subtotal",
       "Radioterapia",
       "Resección local",
-      "Quimioterapia"
+      "Quimioterapia",
+      "Antibioterapia aislada para cualquier subtipo"
     ],
     "clave": "D",
     "respuesta": "Quimioterapia",
@@ -937,7 +1198,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "Linfoma gástrico no se maneja como adenocarcinoma gástrico. Define subtipo histológico antes de elegir tratamiento.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Primer grupo",
     "nota": "La fuente asume linfoma no-Hodgkin susceptible de quimioterapia.",
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-057",
@@ -948,7 +1210,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Amilasa >175 U/dL",
       "Bilis, bacterias o materia vegetal",
       ">500 leucocitos/mm³",
-      "Todo es correcto"
+      "Todo es correcto",
+      "Recuento de 50 eritrocitos/mm³ como criterio definitivo único"
     ],
     "clave": "D",
     "respuesta": "Todo es correcto",
@@ -956,49 +1219,71 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "LPD positivo: GR altos, GB >500, bilis/bacterias/contenido entérico o aspiración franca de sangre.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Primer grupo",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-058",
     "orden": 58,
     "tema": "Radiología abdominal",
     "pregunta": "En una imagen abdominal del examen se solicita aproximar el diagnóstico de una obstrucción intestinal.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Obstrucción intestinal mecánica; en la fuente una de las imágenes se atribuye a cuerpos extraños",
+      "Íleo paralítico confirmado en todos los casos",
+      "Pancreatitis necrosante confirmada",
+      "Cáncer colorrectal siempre",
+      "Perforación gastroduodenal confirmada"
+    ],
+    "clave": "A",
     "respuesta": "Obstrucción intestinal mecánica; en la fuente una de las imágenes se atribuye a cuerpos extraños.",
     "explicacion": "El diagnóstico radiológico se basa en dilatación de asas, niveles hidroaéreos y patrón de gas. Para precisar la causa se necesita ver la imagen original.",
     "badbear_fija": "En obstrucción no basta decir 'íleo': diferencia mecánica de funcional y busca punto de transición.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Primer grupo, pregunta con imagen",
     "nota": null,
-    "estado": "imagen"
+    "estado": "imagen",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-059",
     "orden": 59,
     "tema": "Hígado",
     "pregunta": "En una imagen del examen se solicita aproximar el diagnóstico de múltiples lesiones hepáticas hipodensas.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Hígado metastásico, según la clave del material",
+      "Quiste hepático simple siempre",
+      "Hemangioma hepático confirmado",
+      "Colecistitis",
+      "Absceso único demostrado"
+    ],
+    "clave": "A",
     "respuesta": "Hígado metastásico, según la clave del material.",
     "explicacion": "Múltiples lesiones focales hepáticas en un paciente oncológico pueden corresponder a metástasis; la caracterización depende de fase de contraste, primario y patrón radiológico.",
     "badbear_fija": "Múltiples lesiones hepáticas no son automáticamente metástasis: integra contexto y patrón de realce.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Primer grupo, pregunta con imagen",
     "nota": null,
-    "estado": "imagen"
+    "estado": "imagen",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-060",
     "orden": 60,
     "tema": "Colon",
     "pregunta": "En una imagen del examen se solicita aproximar el diagnóstico de colitis.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Colitis, según la clave del material",
+      "Neumotórax",
+      "Litiasis renal",
+      "Pancreatitis biliar confirmada",
+      "Cáncer de tiroides"
+    ],
+    "clave": "A",
     "respuesta": "Colitis, según la clave del material.",
     "explicacion": "La interpretación definitiva requiere la imagen original y correlación con clínica. Engrosamiento mural y cambios pericolónicos pueden verse en múltiples tipos de colitis.",
     "badbear_fija": "Colitis en imagen es un patrón; la etiología se define con clínica, laboratorio y, cuando corresponde, endoscopia.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Primer grupo, pregunta con imagen",
     "nota": null,
-    "estado": "imagen"
+    "estado": "imagen",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-061",
@@ -1109,7 +1394,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Peutz–Jeghers",
       "Cronkhite–Canada",
       "Poliposis juvenil",
-      "Poliposis hiperplásica"
+      "Poliposis hiperplásica",
+      "Poliposis adenomatosa familiar clásica"
     ],
     "clave": "C",
     "respuesta": "Poliposis juvenil",
@@ -1117,7 +1403,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "badbear_fija": "No confundas poliposis juvenil con pólipo juvenil solitario: el síndrome hereditario sí aumenta riesgo de cáncer.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Segundo grupo",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-067",
@@ -1144,98 +1431,147 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "orden": 68,
     "tema": "Apendicitis",
     "pregunta": "Mencione los síntomas iniciales clásicos de apendicitis aguda.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Dolor periumbilical o epigástrico, anorexia y náuseas; luego el dolor migra a fosa ilíaca derecha",
+      "Dolor inicial único en hipocondrio derecho",
+      "Hematemesis inicial obligatoria",
+      "Ictericia indolora típica",
+      "Disfagia progresiva a líquidos"
+    ],
+    "clave": "A",
     "respuesta": "Dolor periumbilical o epigástrico, anorexia y náuseas; luego el dolor migra a fosa ilíaca derecha.",
     "explicacion": "La migración del dolor refleja el cambio de dolor visceral a irritación parietal. La fiebre suele aparecer posteriormente.",
     "badbear_fija": "Secuencia clásica: periumbilical → FID; anorexia es muy frecuente.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Segundo grupo",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-069",
     "orden": 69,
     "tema": "Bazo",
     "pregunta": "En un estudio de imagen del examen se observa una masa homogénea en hemiabdomen superior izquierdo que sobrepasa la línea media. ¿Diagnóstico probable?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Esplenomegalia masiva, según la clave del material",
+      "Tumoración renal derecha",
+      "Litiasis vesicular",
+      "Hígado de tamaño normal",
+      "Ascitis a tensión confirmada"
+    ],
+    "clave": "A",
     "respuesta": "Esplenomegalia masiva, según la clave del material.",
     "explicacion": "Un bazo marcadamente aumentado puede extenderse caudalmente y cruzar la línea media. La etiología debe estudiarse según clínica y laboratorio.",
     "badbear_fija": "Esplenomegalia masiva: piensa en enfermedades hematológicas, hipertensión portal e infecciones según contexto.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Segundo grupo, imagen",
     "nota": null,
-    "estado": "imagen"
+    "estado": "imagen",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-070",
     "orden": 70,
     "tema": "Vía biliar",
     "pregunta": "En la ecografía del examen se observa vía biliar extrahepática dilatada con defecto ecogénico y sombra posterior. ¿Diagnóstico?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Coledocolitiasis con dilatación de la vía biliar extrahepática",
+      "Colecistitis sin obstrucción de vía biliar",
+      "Quiste renal simple",
+      "Hemangioma hepático",
+      "Acalasia"
+    ],
+    "clave": "A",
     "respuesta": "Coledocolitiasis con dilatación de la vía biliar extrahepática.",
     "explicacion": "Un cálculo en colédoco puede verse como foco ecogénico con sombra acústica y acompañarse de dilatación proximal.",
     "badbear_fija": "Coledocolitiasis + fiebre/dolor/ictericia → piensa en colangitis y necesidad de drenaje.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Segundo grupo, imagen",
     "nota": null,
-    "estado": "imagen"
+    "estado": "imagen",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-071",
     "orden": 71,
     "tema": "Pancreatitis",
     "pregunta": "¿Qué es el signo de Grey Turner?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Equimosis en los flancos por hemorragia retroperitoneal, asociada clásicamente a pancreatitis grave",
+      "Equimosis periumbilical",
+      "Dolor a la descompresión en fosa ilíaca derecha",
+      "Equimosis escrotal",
+      "Rigidez cervical"
+    ],
+    "clave": "A",
     "respuesta": "Equimosis en los flancos por hemorragia retroperitoneal, asociada clásicamente a pancreatitis grave.",
     "explicacion": "Es un signo tardío y poco sensible que puede verse en pancreatitis necrohemorrágica u otras causas de sangrado retroperitoneal.",
     "badbear_fija": "Grey Turner = flancos. Cullen = periumbilical.",
     "fuente": "cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-072",
     "orden": 72,
     "tema": "Cáncer gástrico",
     "pregunta": "¿Qué indica el nódulo de la hermana María José?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Metástasis umbilical de una neoplasia intraabdominal o pélvica, clásicamente gastrointestinal u ovárica",
+      "Metástasis de ganglio supraclavicular izquierdo",
+      "Nódulo tiroideo benigno",
+      "Lesión granulomatosa del hígado",
+      "Pólipo rectal"
+    ],
+    "clave": "A",
     "respuesta": "Metástasis umbilical de una neoplasia intraabdominal o pélvica, clásicamente gastrointestinal u ovárica.",
     "explicacion": "Es un hallazgo de enfermedad metastásica y suele asociarse con neoplasia avanzada.",
     "badbear_fija": "Nódulo umbilical duro en adulto → piensa en metástasis de cáncer gastrointestinal/ovárico.",
     "fuente": "cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-073",
     "orden": 73,
     "tema": "Trauma",
     "pregunta": "Paciente con trauma abdominal y hemoglobina 6 g/dL. ¿Qué prioridad debe considerarse?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Reanimación inmediata, control de hemorragia y transfusión según inestabilidad/hemodinámica; no basta una cifra aislada de hemoglobina",
+      "Prescribir hierro oral y alta sin evaluación",
+      "Retrasar tratamiento hasta nueva cifra de Hb",
+      "Solo analgesia y observación",
+      "Anticoagulación empírica"
+    ],
+    "clave": "A",
     "respuesta": "Reanimación inmediata, control de hemorragia y transfusión según inestabilidad/hemodinámica; no basta una cifra aislada de hemoglobina.",
     "explicacion": "En trauma, la decisión se guía por perfusión, shock y sangrado activo. La hemoglobina temprana puede no reflejar toda la pérdida sanguínea.",
     "badbear_fija": "Trauma hemorrágico: controla la fuente y reanima con estrategia hemostática; no trates solo un número de Hb.",
     "fuente": "cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-074",
     "orden": 74,
     "tema": "Coagulación",
     "pregunta": "¿Qué factor de coagulación no es sintetizado principalmente por el hepatocito?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Factor VIII",
+      "Factor II",
+      "Factor VII",
+      "Factor IX",
+      "Factor X"
+    ],
+    "clave": "A",
     "respuesta": "Factor VIII.",
     "explicacion": "El factor VIII se produce principalmente en células endoteliales, especialmente sinusoidales hepáticas, a diferencia de numerosos factores de coagulación sintetizados por hepatocitos.",
     "badbear_fija": "Factor VIII suele preservarse o elevarse en hepatopatía; ayuda a recordar que no depende principalmente del hepatocito.",
     "fuente": "cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-075",
@@ -1442,56 +1778,84 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "orden": 85,
     "tema": "UCI",
     "pregunta": "Mencione principios básicos de soporte inicial en un paciente quirúrgico grave en UCI.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Asegurar oxigenación/ventilación, perfusión y fluidoterapia individualizada, analgesia, control de infección y soporte nutricional, además de monitorización y control del foco",
+      "Solo administrar antibióticos sin evaluar perfusión",
+      "Ayuno indefinido sin nutrición",
+      "Sedación profunda sin monitorización",
+      "Omitir control del foco infeccioso"
+    ],
+    "clave": "A",
     "respuesta": "Asegurar oxigenación/ventilación, perfusión y fluidoterapia individualizada, analgesia, control de infección y soporte nutricional, además de monitorización y control del foco.",
     "explicacion": "El tratamiento se organiza por prioridades fisiológicas y por la causa de la enfermedad. El soporte no reemplaza el control definitivo del foco quirúrgico.",
     "badbear_fija": "Paciente grave: oxígeno, perfusión, analgesia, infección, nutrición y CONTROL DEL FOCO.",
     "fuente": "cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-086",
     "orden": 86,
     "tema": "Diverticulitis",
     "pregunta": "¿Cuál NO es una manifestación típica de diverticulitis aguda no complicada?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Rectorragia significativa",
+      "Dolor en fosa ilíaca izquierda",
+      "Fiebre",
+      "Alteración del tránsito intestinal",
+      "Leucocitosis"
+    ],
+    "clave": "A",
     "respuesta": "Rectorragia significativa.",
     "explicacion": "La diverticulitis izquierda suele presentar dolor en fosa ilíaca izquierda, fiebre y alteraciones inflamatorias. El sangrado diverticular se relaciona más con diverticulosis y a menudo aparece sin inflamación.",
     "badbear_fija": "Diverticulitis = dolor + fiebre. Sangrado diverticular suele ser indoloro.",
     "fuente": "cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-087",
     "orden": 87,
     "tema": "Hernias",
     "pregunta": "¿Cuál es la base embriológica de la hernia inguinal indirecta?",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Persistencia del proceso vaginal en el varón o del conducto de Nuck en la mujer",
+      "Cierre completo del proceso vaginal",
+      "Debilidad del triángulo de Hesselbach exclusivamente",
+      "Defecto del anillo femoral",
+      "Rotura del diafragma"
+    ],
+    "clave": "A",
     "respuesta": "Persistencia del proceso vaginal en el varón o del conducto de Nuck en la mujer.",
     "explicacion": "La persistencia de esta comunicación peritoneal permite el paso de contenido a través del anillo inguinal profundo.",
     "badbear_fija": "Indirecta congénita = proceso vaginal/Nuck persistente.",
     "fuente": "cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-088",
     "orden": 88,
     "tema": "Heridas",
     "pregunta": "Defina dehiscencia, evisceración y eventración.",
-    "opciones": [],
-    "clave": null,
+    "opciones": [
+      "Dehiscencia: separación de una herida quirúrgica; evisceración: salida de vísceras a través de una dehiscencia aguda; eventración: hernia incisional tardía por debilidad de la pared",
+      "Dehiscencia, evisceración y eventración son sinónimos",
+      "Eventración es evisceración inmediata",
+      "La dehiscencia exige siempre salida de asas",
+      "La evisceración nunca implica defecto fascial"
+    ],
+    "clave": "A",
     "respuesta": "Dehiscencia: separación de una herida quirúrgica; evisceración: salida de vísceras a través de una dehiscencia aguda; eventración: hernia incisional tardía por debilidad de la pared.",
     "explicacion": "Son entidades relacionadas pero temporal y anatómicamente distintas. La evisceración es una urgencia quirúrgica.",
     "badbear_fija": "Dehiscencia = apertura. Evisceración = vísceras expuestas. Eventración = hernia incisional tardía.",
     "fuente": "cx general (1).pdf",
     "nota": null,
-    "estado": "listo"
+    "estado": "listo",
+    "alternativas_adaptadas": true
   },
   {
     "id": "cxg-real-089",
@@ -1922,7 +2286,8 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "La respuesta proinflamatoria aguda depende del sistema adaptativo",
       "La respuesta antiinflamatoria devuelve a homeostasis por supresión innata",
       "El grado de inflamación se relaciona con la gravedad de la lesión",
-      "La magnitud de la respuesta inflamatoria es siempre independiente de la lesión"
+      "La magnitud de la respuesta inflamatoria es siempre independiente de la lesión",
+      "La inflamación no involucra inmunidad innata"
     ],
     "clave": "C",
     "respuesta": "El grado de inflamación se relaciona con la gravedad de la lesión",
@@ -1934,6 +2299,7 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
     "alternativa_agregada": {
       "letra": "D",
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
-    }
+    },
+    "alternativas_adaptadas": true
   }
 ];
