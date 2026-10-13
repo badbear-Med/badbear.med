@@ -1395,14 +1395,14 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "Cronkhite–Canada",
       "Poliposis juvenil",
       "Poliposis hiperplásica",
-      "Poliposis adenomatosa familiar clásica"
+      "Pólipos inflamatorios esporádicos no neoplásicos"
     ],
     "clave": "C",
     "respuesta": "Poliposis juvenil",
     "explicacion": "Entre estas opciones, la poliposis juvenil hereditaria confiere un riesgo sustancial de cáncer colorrectal y otros cánceres gastrointestinales. Esto es distinto de la PAF, que no aparece entre las opciones y tiene un riesgo aún mayor.",
     "badbear_fija": "No confundas poliposis juvenil con pólipo juvenil solitario: el síndrome hereditario sí aumenta riesgo de cáncer.",
     "fuente": "Exámenes 2025 Cx General - PDF.pdf — Segundo grupo",
-    "nota": null,
+    "nota": " Alternativa E incorporada para práctica; comparación basada en opciones históricas del examen.",
     "estado": "listo",
     "alternativas_adaptadas": true
   },
