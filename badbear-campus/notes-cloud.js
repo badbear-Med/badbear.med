@@ -4,7 +4,7 @@ const API="https://badbear-campus-api.wajomea-group.workers.dev";
 const TOKEN_KEY="badbear-campus-portal-session";
 const $=id=>document.getElementById(id);
 const container=document.createElement("section");container.className="form-panel";container.innerHTML='<h2>Mis apuntes en la nube</h2><p class="hint">Tus documentos privados están disponibles desde otros dispositivos cuando inicias sesión en BADBEAR.CAMPUS. Para migrar apuntes de este navegador, utiliza «Subir apuntes locales».</p><div class="actions"><button id="cloud-refresh" type="button">Ver mis archivos en la nube</button><button id="cloud-migrate" type="button" class="secondary">Subir apuntes locales</button><span id="cloud-state" role="status" aria-live="polite"></span></div><div id="cloud-items" class="cards"></div>';
-document.querySelector(".library")?.before(container);
+document.getElementById("cloud-panel-anchor")?.appendChild(container);
 const esc=s=>{const e=document.createElement("div");e.textContent=String(s??"");return e.innerHTML};
 const token=()=>{try{return sessionStorage.getItem(TOKEN_KEY)||""}catch{return ""}};
 async function call(path,options={}){if(!token())throw Error("Inicia sesión en BADBEAR.CAMPUS en esta misma pestaña. Desde NOTES puedes regresar al portal y entrar a tu cuenta.");const response=await fetch(API+path,{...options,headers:{"Authorization":"Bearer "+token(),...(options.headers||{})}});const type=response.headers.get("content-type")||"";if(!response.ok){const err=type.includes("application/json")?await response.json().catch(()=>({})):{};throw Error(err.error||"El servidor no está disponible (HTTP "+response.status+").")}return response}
