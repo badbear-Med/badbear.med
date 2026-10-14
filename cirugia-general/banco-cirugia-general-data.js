@@ -1,4 +1,5 @@
-window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
+window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO =
+[
   {
     "id": "cxg-foto-20260909-1",
     "orden": 1,
@@ -2470,6 +2471,407 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO = [
       "motivo": "Alternativa didáctica añadida por BADBEAR.MED; no pertenece a las opciones originales de la fuente."
     },
     "alternativas_adaptadas": true
+  },
+  {
+    "id": "cxg-bnco4-01",
+    "orden": 116,
+    "tema": "Hemorragia variceal",
+    "pregunta": "En un episodio agudo de sangrado por várices esofágicas, ¿qué intervención es la mejor opción entre las propuestas del examen?",
+    "opciones": [
+      "Uso exclusivo de láseres endoscópicos",
+      "Ligadura endoscópica más octreótido",
+      "Escleroterapia endoscópica como primera opción obligatoria",
+      "Derivación portosistémica inicial en todos los casos",
+      "Sonda de Sengstaken–Blakemore como tratamiento definitivo"
+    ],
+    "clave": "B",
+    "respuesta": "Ligadura endoscópica más octreótido",
+    "explicacion": "La ligadura endoscópica y un fármaco vasoactivo como octreótido son pilares del manejo de la hemorragia variceal; además se requiere reanimación, antibiótico profiláctico y evaluación de rescate mediante TIPS en casos seleccionados.",
+    "badbear_fija": "Hemorragia variceal: vasoactivo precoz + antibiótico + ligadura endoscópica.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-02",
+    "orden": 117,
+    "tema": "Tumor de páncreas",
+    "pregunta": "Según el examen, ¿cuál de las siguientes afirmaciones sobre un tumor de cabeza de páncreas se considera correcta?",
+    "opciones": [
+      "Es asintomático siempre",
+      "Puede causar obstrucción intestinal alta",
+      "No produce hemorragia digestiva alta",
+      "Nunca produce fenómenos tromboembólicos",
+      "No puede producir prurito"
+    ],
+    "clave": "B",
+    "respuesta": "Puede causar obstrucción intestinal alta",
+    "explicacion": "Una neoplasia de cabeza de páncreas puede comprimir o invadir el duodeno y causar obstrucción de la salida gástrica; asimismo puede ocasionar ictericia obstructiva, prurito y estado protrombótico.",
+    "badbear_fija": "Cáncer de cabeza pancreática: ictericia indolora, Courvoisier y posible obstrucción duodenal.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-03",
+    "orden": 118,
+    "tema": "Colecistectomía",
+    "pregunta": "Durante una colecistectomía laparoscópica, tras 45 minutos de disección difícil se observa vesícula muy inflamada y con pus. ¿Cuál fue la conducta marcada como correcta en el examen?",
+    "opciones": [
+      "Continuar disección peligrosa sin identificar anatomía",
+      "Realizar colangiografía siempre como única medida",
+      "Realizar coledocoscopia de rutina",
+      "Conversión a cirugía abierta",
+      "Diferir siempre la intervención"
+    ],
+    "clave": "D",
+    "respuesta": "Conversión a cirugía abierta",
+    "explicacion": "La conversión a cirugía abierta es una opción de seguridad ante una disección laparoscópica difícil. Actualmente también se valoran estrategias de rescate como colecistectomía subtotal y evitar continuar disecciones inseguras; convertir no garantiza por sí solo reconocer la anatomía.",
+    "badbear_fija": "Cuando no se obtiene visión crítica de seguridad, NO continuar una disección peligrosa.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-04",
+    "orden": 119,
+    "tema": "Cáncer gástrico",
+    "pregunta": "¿Cuál de las siguientes combinaciones constituye criterio de irresecabilidad del cáncer gástrico según el examen?",
+    "opciones": [
+      "Metástasis a distancia e infiltración retroperitoneal extensa",
+      "Ausencia de afección pulmonar y ganglios regionales",
+      "Infiltración aislada de vasos esplénicos en todos los casos",
+      "Solo anemia ferropénica",
+      "Solo pérdida de peso"
+    ],
+    "clave": "A",
+    "respuesta": "Metástasis a distancia e infiltración retroperitoneal extensa",
+    "explicacion": "Las metástasis a distancia implican enfermedad no curable mediante gastrectomía convencional; la invasión de estructuras retroperitoneales no resecables puede impedir una resección R0. La resecabilidad concreta se decide mediante estadificación y evaluación multidisciplinaria.",
+    "badbear_fija": "Cáncer gástrico: M1 o invasión no resecable impiden cirugía curativa estándar.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-05",
+    "orden": 120,
+    "tema": "Isquemia mesentérica",
+    "pregunta": "Respecto a embolia mesentérica aguda, ¿qué dato clínico es característico?",
+    "opciones": [
+      "Dolor abdominal únicamente posprandial crónico",
+      "La causa principal es siempre ateromatosis crónica fija",
+      "Dolor intenso desproporcionado al examen abdominal inicial",
+      "Ausencia de riesgo en pacientes con fibrilación auricular",
+      "Hemorragia digestiva como único síntoma"
+    ],
+    "clave": "C",
+    "respuesta": "Dolor intenso desproporcionado al examen abdominal inicial",
+    "explicacion": "La embolia de la arteria mesentérica superior puede causar dolor súbito intenso con exploración abdominal inicialmente poco llamativa. La angiografía por TC es la prueba inicial de elección en la mayoría de pacientes con sospecha.",
+    "badbear_fija": "Isquemia mesentérica: dolor desproporcionado → angio-TC urgente.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-06",
+    "orden": 121,
+    "tema": "Hemorragia digestiva baja",
+    "pregunta": "En el examen histórico, ¿qué estudio se proponía para localizar hemorragia digestiva baja masiva por divertículos cuando el sangrado estaba activo?",
+    "opciones": [
+      "Gammagrafía sin relevancia clínica",
+      "Radiografía abdominal",
+      "Ecografía convencional",
+      "Angiografía selectiva",
+      "Enema a doble contraste"
+    ],
+    "clave": "D",
+    "respuesta": "Angiografía selectiva",
+    "explicacion": "La angiografía selectiva permite localizar sangrado activo y embolizarlo. En la práctica actual, la angio-TC suele ser el estudio inicial para hemorragia digestiva baja hemodinámicamente significativa y activa, seguida de angiografía terapéutica cuando corresponde.",
+    "badbear_fija": "HDB activa importante: angio-TC localizadora; angiografía intervencionista para embolización.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": "Enunciado del examen adaptado para precisión clínica actual."
+  },
+  {
+    "id": "cxg-bnco4-07",
+    "orden": 122,
+    "tema": "Trauma abdominal",
+    "pregunta": "Varón de 32 años tras accidente de tránsito, con dolor abdominal, signos peritoneales y líquido libre en ecografía. ¿Conducta indicada?",
+    "opciones": [
+      "Ecografía FAST repetida como único manejo",
+      "TC antes de operar incluso con peritonitis",
+      "Laparotomía exploratoria urgente",
+      "Resonancia magnética",
+      "Exploración física seriada únicamente"
+    ],
+    "clave": "C",
+    "respuesta": "Laparotomía exploratoria urgente",
+    "explicacion": "Los signos de peritonitis en un trauma abdominal obligan a evaluación quirúrgica urgente; la estabilización y control de la fuente hemorrágica o de contaminación son prioritarios, y no se debe retrasar una intervención necesaria por imagen adicional.",
+    "badbear_fija": "Trauma + peritonitis = indicación de exploración quirúrgica urgente.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-08",
+    "orden": 123,
+    "tema": "Pancreatitis",
+    "pregunta": "En el examen, ¿qué causa se identificaba como la más común de muerte en un paciente con pancreatitis aguda grave?",
+    "opciones": [
+      "Hemorragia externa aislada",
+      "Infarto de miocardio como regla",
+      "Encefalopatía primaria",
+      "Atelectasia simple",
+      "Falla renal aislada siempre",
+      "Infección de necrosis pancreática"
+    ],
+    "clave": "F",
+    "respuesta": "Infección de necrosis pancreática",
+    "explicacion": "La fuente marca infección. Debe matizarse: en pancreatitis aguda grave, la falla orgánica persistente causa muchas muertes tempranas; la necrosis infectada y la sepsis adquieren especial importancia en fases tardías. El enunciado original no distingue fase.",
+    "badbear_fija": "Pancreatitis grave: muerte temprana por falla orgánica; tardía, infección de necrosis y sepsis.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": "Enunciado del examen adaptado para precisión clínica actual."
+  },
+  {
+    "id": "cxg-bnco4-09",
+    "orden": 124,
+    "tema": "Nutrición perioperatoria",
+    "pregunta": "En el soporte nutricional postoperatorio, ¿cuál es la estrategia preferida cuando el intestino funciona?",
+    "opciones": [
+      "Nutrición parenteral total universal",
+      "Evitar nutrición enteral a todos los pacientes quirúrgicos",
+      "Nutrición enteral y añadir parenteral solo si es insuficiente o imposible alcanzar necesidades",
+      "Sonda nasogástrica obligatoria en toda cirugía pancreática",
+      "Ayuno prolongado por rutina"
+    ],
+    "clave": "C",
+    "respuesta": "Nutrición enteral y añadir parenteral solo si es insuficiente o imposible alcanzar necesidades",
+    "explicacion": "En el paciente quirúrgico, la vía oral o enteral se prefiere cuando es factible; la nutrición parenteral es suplementaria o alternativa cuando los requerimientos no pueden cubrirse por vía gastrointestinal.",
+    "badbear_fija": "Si el intestino funciona, priorizar vía enteral.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-10",
+    "orden": 125,
+    "tema": "Ampuloma",
+    "pregunta": "Respecto al tumor de ampolla de Vater, ¿cuál hallazgo clínico puede presentarse?",
+    "opciones": [
+      "Jamás produce hemorragia digestiva alta",
+      "Ictericia fluctuante",
+      "Se presenta exclusivamente entre 30 y 40 años",
+      "Siempre requiere gastrectomía subtotal",
+      "La ecografía establece siempre el diagnóstico histológico"
+    ],
+    "clave": "B",
+    "respuesta": "Ictericia fluctuante",
+    "explicacion": "Un tumor ampular puede producir ictericia obstructiva intermitente por obstrucción variable del flujo biliar. La evaluación incluye endoscopia, ecoendoscopia y estudios de estadificación; el procedimiento definitivo depende de estadio y resecabilidad.",
+    "badbear_fija": "Ampuloma: ictericia fluctuante por obstrucción ampular.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-11",
+    "orden": 126,
+    "tema": "Shock",
+    "pregunta": "En shock inminente, ¿qué tres órganos diana deben priorizarse en el reconocimiento de hipoperfusión?",
+    "opciones": [
+      "Cerebro, corazón y sistema nervioso como entidades independientes",
+      "Cerebro, riñones y sistema nervioso",
+      "Cerebro, corazón y riñones",
+      "Cerebro, riñones y circulación sanguínea",
+      "Cerebro, corazón y coagulación"
+    ],
+    "clave": "C",
+    "respuesta": "Cerebro, corazón y riñones",
+    "explicacion": "El cerebro, el miocardio y el riñón son órganos particularmente sensibles a hipoperfusión; alteraciones de conciencia, isquemia miocárdica y oliguria orientan a compromiso orgánico.",
+    "badbear_fija": "Shock: conciencia, perfusión cardíaca y diuresis son indicadores clave.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-12",
+    "orden": 127,
+    "tema": "Hipertensión portal",
+    "pregunta": "En hipertensión portal con esplenomegalia e hiperesplenismo, ¿cuál alteración hematológica puede presentarse?",
+    "opciones": [
+      "Leucopenia",
+      "Eritrocitosis sostenida",
+      "Trombocitosis",
+      "Poliglobulia",
+      "Eosinofilia obligatoria"
+    ],
+    "clave": "A",
+    "respuesta": "Leucopenia",
+    "explicacion": "El hiperesplenismo puede secuestrar plaquetas y leucocitos, provocando trombocitopenia y leucopenia. La trombocitopenia es frecuentemente el hallazgo más temprano.",
+    "badbear_fija": "Hiperesplenismo: trombocitopenia ± leucopenia.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-13",
+    "orden": 128,
+    "tema": "Esplenectomía",
+    "pregunta": "¿Cuál fue la indicación más frecuente de esplenectomía electiva entre las alternativas de este examen?",
+    "opciones": [
+      "Linfoma de Hodgkin",
+      "Linfoma no Hodgkin",
+      "Absceso esplénico",
+      "Quiste esplénico parasitario",
+      "Púrpura trombocitopénica inmunitaria"
+    ],
+    "clave": "E",
+    "respuesta": "Púrpura trombocitopénica inmunitaria",
+    "explicacion": "La púrpura trombocitopénica inmunitaria puede requerir esplenectomía en casos seleccionados, resistentes o recidivantes. Hoy se prefiere valorar tratamientos médicos y decisiones individualizadas antes de operar.",
+    "badbear_fija": "PTI refractaria: esplenectomía es opción seleccionada, no primera línea universal.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-14",
+    "orden": 129,
+    "tema": "Apendicitis",
+    "pregunta": "¿Qué grupos requieren especial atención ante el riesgo de diagnóstico tardío y perforación de apendicitis aguda?",
+    "opciones": [
+      "Adultos jóvenes sin factores de riesgo exclusivamente",
+      "Personas mayores y gestantes, entre otros grupos de presentación atípica",
+      "Solo deportistas",
+      "Únicamente pacientes con colelitiasis",
+      "Solo pacientes con hepatitis"
+    ],
+    "clave": "B",
+    "respuesta": "Personas mayores y gestantes, entre otros grupos de presentación atípica",
+    "explicacion": "En personas mayores, gestantes y también niños pequeños puede haber manifestaciones menos típicas y retraso diagnóstico. La indicación de cirugía no depende solo del grupo de edad sino de gravedad y evaluación clínica.",
+    "badbear_fija": "Apendicitis: extremos de edad y embarazo pueden retrasar el reconocimiento.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": "Enunciado del examen adaptado para precisión clínica actual."
+  },
+  {
+    "id": "cxg-bnco4-15",
+    "orden": 130,
+    "tema": "Pancreatitis biliar",
+    "pregunta": "Mujer de 35 años, una semana después de pancreatitis aguda biliar, afebril, tolera dieta, lipasa casi normal y sin dilatación de vía biliar. ¿Qué intervención definitiva previene recurrencia durante el mismo ingreso si pancreatitis leve?",
+    "opciones": [
+      "Alta sin plan de colecistectomía",
+      "Colecistectomía laparoscópica durante el mismo ingreso",
+      "CPRE obligatoria sin colangitis ni obstrucción",
+      "Resonancia de rutina antes de toda cirugía",
+      "Ayuno por dos semanas"
+    ],
+    "clave": "B",
+    "respuesta": "Colecistectomía laparoscópica durante el mismo ingreso",
+    "explicacion": "En pancreatitis biliar leve que mejora y sin obstrucción persistente se recomienda colecistectomía en el mismo ingreso. La CPRE no se indica rutinariamente sin colangitis u obstrucción biliar.",
+    "badbear_fija": "Pancreatitis biliar leve: colecistectomía en la hospitalización índice.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-16",
+    "orden": 131,
+    "tema": "Cáncer de esófago",
+    "pregunta": "¿Cuál es una característica epidemiológica del cáncer de esófago?",
+    "opciones": [
+      "Predomina en el sexo masculino",
+      "El adenocarcinoma predomina en esófago superior",
+      "Su evolución siempre es lenta",
+      "El alcohol no es factor de riesgo del carcinoma escamoso",
+      "La quimioterapia nunca tiene rol"
+    ],
+    "clave": "A",
+    "respuesta": "Predomina en el sexo masculino",
+    "explicacion": "La incidencia del cáncer de esófago es mayor en hombres; el adenocarcinoma predomina en esófago distal, mientras el carcinoma escamoso se relaciona con alcohol y tabaco.",
+    "badbear_fija": "Esófago: adenocarcinoma distal; epidermoide asociado a alcohol y tabaco.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-17",
+    "orden": 132,
+    "tema": "Hernias",
+    "pregunta": "¿Qué hernia atraviesa el triángulo de Hesselbach?",
+    "opciones": [
+      "Inguinal indirecta",
+      "Inguinal directa",
+      "De Littre exclusivamente",
+      "De Spiegel",
+      "Femoral"
+    ],
+    "clave": "B",
+    "respuesta": "Inguinal directa",
+    "explicacion": "La hernia inguinal directa protruye medial a los vasos epigástricos inferiores a través de la pared posterior del conducto inguinal (triángulo de Hesselbach).",
+    "badbear_fija": "Directa = medial a epigástricos inferiores, triángulo de Hesselbach.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-18",
+    "orden": 133,
+    "tema": "Hernia diafragmática",
+    "pregunta": "Tras una lesión del hemidiafragma izquierdo, ¿qué órgano puede visualizarse desplazado dentro del hemitórax izquierdo?",
+    "opciones": [
+      "Solo discontinuidad diafragmática, sin herniación posible",
+      "Corazón siempre desplazado a derecha",
+      "Vasos hepáticos como único contenido",
+      "Estómago herniado al tórax izquierdo",
+      "Únicamente el bazo sin otras vísceras"
+    ],
+    "clave": "D",
+    "respuesta": "Estómago herniado al tórax izquierdo",
+    "explicacion": "En rotura diafragmática izquierda, el estómago y otras vísceras pueden herniarse al tórax. La discontinuidad del diafragma también es un signo de imagen, pero no siempre es visible.",
+    "badbear_fija": "Trauma diafragmático izquierdo: buscar estómago o colon en tórax.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-19",
+    "orden": 134,
+    "tema": "Lesión cáustica esofágica",
+    "pregunta": "¿Cuál es la secuela tardía más frecuente de quemadura esofágica por cáusticos?",
+    "opciones": [
+      "Sangrado digestivo como secuela tardía principal",
+      "Estenosis esofágica",
+      "Perforación tardía en todos los casos",
+      "Fístula inevitable",
+      "Displasia inmediata"
+    ],
+    "clave": "B",
+    "respuesta": "Estenosis esofágica",
+    "explicacion": "Las lesiones cáusticas profundas cicatrizan con fibrosis y estrechamiento de la luz esofágica, produciendo disfagia progresiva. La perforación es complicación aguda grave.",
+    "badbear_fija": "Lesión cáustica: estenosis cicatricial es complicación tardía típica.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
+  },
+  {
+    "id": "cxg-bnco4-20",
+    "orden": 135,
+    "tema": "Esplenectomía",
+    "pregunta": "¿Qué intervención preventiva es esencial antes de una esplenectomía electiva?",
+    "opciones": [
+      "Antibioterapia profiláctica como única medida",
+      "Vacunación frente a bacterias encapsuladas",
+      "Transfusión sanguínea universal",
+      "Fisioterapia respiratoria como única prevención",
+      "Todas las anteriores obligatorias en todos"
+    ],
+    "clave": "B",
+    "respuesta": "Vacunación frente a bacterias encapsuladas",
+    "explicacion": "Vacunar frente a neumococo, meningococo y Haemophilus influenzae tipo b según esquema y situación individual reduce infecciones graves postesplenectomía. Idealmente administrar vacunas al menos 14 días antes de cirugía electiva cuando es posible.",
+    "badbear_fija": "Asplenia: alto riesgo por encapsulados; vacunación preesplenectomía.",
+    "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
+    "estado": "listo",
+    "nota": null
   }
 ];
 
