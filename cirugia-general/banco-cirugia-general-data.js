@@ -103,25 +103,25 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO =
     "id": "cxg-foto-20260909-4",
     "orden": 4,
     "tema": "Hemorragia digestiva alta",
-    "pregunta": "HDA por úlcera gástrica con punto plano de hematina, sin sangrado activo ni vaso visible, y ureasa positiva. ¿Conducta actual más adecuada?",
+    "pregunta": "Paciente ingresa por hemorragia digestiva alta. No hay antecedentes de consumo de AINE. La endoscopia revela úlcera gástrica en incisura angularis con un punto de hematina y mínimos restos de sangre oscura en el estómago. Se realizan biopsias del margen de la úlcera y una biopsia antral para prueba rápida de ureasa con resultado positivo. ¿Cuál de las siguientes actitudes es la más correcta?:",
     "opciones": [
-      "Esclerosis endoscópica rutinaria y omeprazol 28 días.",
-      "Esclerosis más triple terapia anti-H. pylori por 7 días.",
-      "Omeprazol durante un mes, sin erradicación.",
-      "Ranitidina y erradicación solo si biopsia histológica positiva.",
-      "IBP y erradicación de H. pylori con esquema vigente y prueba de curación; sin hemostasia rutinaria de Forrest IIc."
+      "Esclerosis endoscópica de la úlcera seguida de tx con omeprazol, 20 mg/día durante 28 días.",
+      "Esclerosis endoscópica de la úlcera seguida de tx triple anti Helicobacter pylori durante 7 días.",
+      "Omeprazol, 20 mg/día durante 1 mes.",
+      "Ranitidina 150 mg/día inicialmente y tratamiento triple anti-Helicobacter pylori si la histología confirma la presencia del germen.",
+      "Tratamiento triple anti-Helicobacter pylori durante 7 días, seguido de un antisecretor hasta que se confirme la erradicación del germen"
     ],
     "clave": "E",
-    "respuesta": "IBP y erradicación de H. pylori con esquema vigente y prueba de curación; sin hemostasia rutinaria de Forrest IIc.",
-    "explicacion": "Un punto pigmentado plano (Forrest IIc) es estigma de bajo riesgo de resangrado y no exige hemostasia endoscópica rutinaria; ello es distinto de sangrado activo o vaso visible. La ureasa positiva justifica erradicar H. pylori. La guía ACG 2024 recomienda a menudo terapia cuádruple optimizada con bismuto durante 14 días cuando se desconoce sensibilidad. Confirmar erradicación al menos 4 semanas tras antibióticos y tras retirar IBP por 2 semanas.",
+    "respuesta": "Tratamiento triple anti-Helicobacter pylori durante 7 días, seguido de un antisecretor hasta que se confirme la erradicación del germen",
+    "explicacion": "Según las opciones del examen original, la alternativa E es la más adecuada: el paciente tiene infección por H. pylori documentada mediante ureasa positiva y se debe indicar erradicación además de tratamiento antisecretor. El punto de hematina (Forrest IIc), sin sangrado activo ni vaso visible, no exige esclerosis endoscópica de rutina. En la práctica actual, se utiliza un esquema de erradicación vigente, habitualmente de 14 días según resistencias y guías locales, con confirmación posterior de curación.",
     "argumentos": [
-      "A: Esclerosis de rutina no indicada para punto plano; IBP aislado no erradica infección.",
-      "B: Endoterapia innecesaria y esquema de 7 días desactualizado en muchos lugares.",
-      "C: No erradica una infección diagnosticada y favorece recidiva ulcerosa.",
-      "D: No hay que esperar histología adicional si ureasa es positiva; ranitidina no es primera elección.",
-      "E: Correcta para práctica actual: estratifica Forrest, erradica germen y comprueba curación."
+      "A: No trata la infección documentada por H. pylori y plantea esclerosis sin estigmas endoscópicos de alto riesgo.",
+      "B: Añade tratamiento erradicador, pero prescribe esclerosis endoscópica no indicada en un Forrest IIc.",
+      "C: Omite la erradicación de H. pylori.",
+      "D: Pospone innecesariamente la erradicación pese a una prueba rápida de ureasa positiva; ranitidina no es el enfoque actual.",
+      "E: Es la mejor alternativa del examen histórico porque contempla erradicación y supresión ácida; la duración de siete días está desactualizada."
     ],
-    "badbear_fija": "Forrest IIc: no hemostasia rutinaria. H. pylori: tratar con esquema actualizado y confirmar erradicación.",
+    "badbear_fija": "Úlcera gástrica con H. pylori positivo: erradicar y confirmar curación. Forrest IIc no requiere hemostasia endoscópica rutinaria.",
     "referencias": [
       [
         "ACG 2021 upper GI bleeding",
@@ -132,9 +132,9 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO =
         "https://gi.org/journals-publications/ebgi/schoenfeld_sep2024/"
       ]
     ],
-    "fuente": "Fotografía del examen de Cirugía, 09-09-2026; opciones adaptadas para práctica",
+    "fuente": "Fotografía original de pregunta 4 del examen de Cirugía, transcripción íntegra del enunciado y alternativas",
     "estado": "listo",
-    "nota": "Se actualizó el tratamiento de H. pylori frente a opciones históricas."
+    "nota": "La clave E corresponde a las opciones del examen histórico. La duración de 7 días no debe interpretarse como recomendación terapéutica actual; los esquemas de erradicación vigentes suelen tener una duración mayor y requieren prueba de curación."
   },
   {
     "id": "cxg-foto-20260909-5",
