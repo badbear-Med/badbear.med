@@ -2872,6 +2872,492 @@ window.BADBEAR_CIRUGIA_GENERAL_BANCO_COMPLETO =
     "fuente": "Banco Cx General - 4-bnco.pdf (examen histórico, respuestas explicadas/adaptadas)",
     "estado": "listo",
     "nota": null
+  },
+  {
+    "id": "cxg-temas-cxgeneral-01",
+    "orden": 136,
+    "tema": "Preoperatorio · ASA",
+    "pregunta": "Paciente con insuficiencia cardíaca descompensada que representa una amenaza constante para la vida. ¿Qué clase de estado físico ASA corresponde?",
+    "opciones": [
+      "ASA I",
+      "ASA II",
+      "ASA III",
+      "ASA IV",
+      "ASA V"
+    ],
+    "clave": "D",
+    "respuesta": "ASA IV",
+    "explicacion": "ASA IV representa enfermedad sistémica grave que constituye una amenaza constante para la vida.",
+    "argumentos": [
+      "A: ASA I: paciente sano, sin enfermedad sistémica.",
+      "B: ASA II: enfermedad sistémica leve sin limitación funcional importante.",
+      "C: ASA III: enfermedad sistémica grave, pero no necesariamente amenaza constante para la vida.",
+      "D: ASA IV: correcta; amenaza constante para la vida.",
+      "E: ASA V: paciente moribundo que probablemente no sobrevivirá sin operación."
+    ],
+    "badbear_fija": "ASA evalúa estado físico preanestésico, no predice por sí sola mortalidad operatoria.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-02",
+    "orden": 137,
+    "tema": "Trauma · ABCDE",
+    "pregunta": "En la evaluación primaria de un politraumatizado con ronquido respiratorio, posible lesión cervical y presión arterial de 85/50 mmHg, ¿qué intervención corresponde al primer paso del ABCDE?",
+    "opciones": [
+      "Solicitar inmediatamente una tomografía abdominal",
+      "Asegurar vía aérea con protección cervical",
+      "Clasificar lesiones cutáneas superficiales",
+      "Completar exploración neurológica extensa antes de actuar",
+      "Indicar dieta enteral"
+    ],
+    "clave": "B",
+    "respuesta": "Asegurar vía aérea con protección cervical",
+    "explicacion": "El primer componente de ABCDE es Airway: permeabilidad de la vía aérea y protección cervical simultánea.",
+    "argumentos": [
+      "A: TC: puede ser necesaria luego de estabilizar prioridades vitales.",
+      "B: Correcta: resolver obstrucción de vía aérea y limitar movimiento cervical.",
+      "C: Exploración cutánea pertenece a exposición, no supera la prioridad aérea.",
+      "D: Evaluación neurológica corresponde a D, después de prioridades iniciales.",
+      "E: Nutrición no forma parte de la reanimación inmediata."
+    ],
+    "badbear_fija": "A → vía aérea y columna cervical; B → ventilación; C → circulación; D → neurología; E → exposición.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-03",
+    "orden": 138,
+    "tema": "Trauma abdominal",
+    "pregunta": "Tras traumatismo abdominal cerrado con inestabilidad, FAST positivo y signos de peritonitis, ¿cuál es la conducta definitiva prioritaria?",
+    "opciones": [
+      "Observación por 48 horas sin intervenciones",
+      "Laparotomía urgente tras reanimación inicial",
+      "Colonoscopia de urgencia",
+      "Enema opaco",
+      "Alta cuando se controle el dolor"
+    ],
+    "clave": "B",
+    "respuesta": "Laparotomía urgente tras reanimación inicial",
+    "explicacion": "Hemoperitoneo probable en paciente inestable o peritonitis después de trauma requiere control quirúrgico del foco junto con reanimación.",
+    "argumentos": [
+      "A: Observación es insegura ante inestabilidad y signos peritoneales.",
+      "B: Correcta: exploración operatoria o control de hemorragia según lesiones y recursos.",
+      "C: Colonoscopia no resuelve sangrado intraabdominal traumático.",
+      "D: Enema opaco puede agravar lesiones.",
+      "E: El control del dolor no equivale a estabilidad hemodinámica."
+    ],
+    "badbear_fija": "Trauma abdominal inestable con peritonitis: no retrasar cirugía por pruebas adicionales.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-04",
+    "orden": 139,
+    "tema": "Trauma diafragmático",
+    "pregunta": "¿Qué mecanismo de lesión diafragmática es más característico de un trauma penetrante frente al trauma cerrado?",
+    "opciones": [
+      "Perforación focal según trayecto del objeto lesivo",
+      "Ausencia de lesión cuando el tórax está indemne",
+      "Ruptura idéntica a toda lesión contusa",
+      "Hernia inguinal por debilidad abdominal",
+      "Desgarro intrínseco por fibrosis cirrótica"
+    ],
+    "clave": "A",
+    "respuesta": "Perforación focal según trayecto del objeto lesivo",
+    "explicacion": "El trauma penetrante puede generar defectos focales o perforaciones del diafragma según trayectoria. El trauma cerrado suele producir roturas por cambios bruscos de presión y fuerzas de cizallamiento.",
+    "argumentos": [
+      "A: Correcta: define lesión penetrante.",
+      "B: Puede haber lesión diafragmática aunque no sea evidente en examen inicial.",
+      "C: Los mecanismos y patrones difieren entre traumatismos.",
+      "D: Hernia inguinal no constituye mecanismo de lesión diafragmática.",
+      "E: La fibrosis hepática es ajena al mecanismo del trauma agudo."
+    ],
+    "badbear_fija": "Herida toracoabdominal penetrante: sospechar lesión diafragmática aun con imagen inicial poco concluyente.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-05",
+    "orden": 140,
+    "tema": "Cáncer gástrico · Lauren",
+    "pregunta": "¿Qué patrón histológico se asocia típicamente al tipo difuso de Lauren en cáncer gástrico?",
+    "opciones": [
+      "Formación glandular intestinal bien definida",
+      "Células poco cohesivas, a menudo en anillo de sello",
+      "Adenoma tubular benigno",
+      "Queratinización epidermoide",
+      "Lesión vascular cavernosa"
+    ],
+    "clave": "B",
+    "respuesta": "Células poco cohesivas, a menudo en anillo de sello",
+    "explicacion": "El tipo difuso de Lauren se caracteriza por células con escasa cohesión y patrón infiltrativo; puede presentar células en anillo de sello.",
+    "argumentos": [
+      "A: Glandular intestinal: corresponde más al tipo intestinal.",
+      "B: Correcta: patrón difuso y células poco cohesivas.",
+      "C: Adenoma no describe carcinoma difuso.",
+      "D: Queratinización orienta a carcinoma escamoso.",
+      "E: No es lesión vascular benigna."
+    ],
+    "badbear_fija": "Lauren: intestinal forma glándulas; difuso infiltra con células poco cohesivas.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-06",
+    "orden": 141,
+    "tema": "Diverticulitis · Hinchey",
+    "pregunta": "Una diverticulitis perforada con peritonitis fecaloidea generalizada corresponde a ¿qué grado de Hinchey?",
+    "opciones": [
+      "I",
+      "II",
+      "III",
+      "IV",
+      "0"
+    ],
+    "clave": "D",
+    "respuesta": "IV",
+    "explicacion": "Hinchey IV describe peritonitis fecaloidea generalizada; la III describe peritonitis purulenta.",
+    "argumentos": [
+      "A: I: absceso pericólico.",
+      "B: II: absceso distante, pélvico o retroperitoneal.",
+      "C: III: peritonitis purulenta.",
+      "D: Correcta: peritonitis fecaloidea.",
+      "E: 0 no representa peritonitis fecaloidea."
+    ],
+    "badbear_fija": "Hinchey III = pus; Hinchey IV = materia fecal libre.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-07",
+    "orden": 142,
+    "tema": "Diverticulitis · Hinchey",
+    "pregunta": "Paciente estable con diverticulitis y absceso pélvico de 6 cm accesible por radiología intervencionista. ¿Qué tratamiento es razonable inicialmente?",
+    "opciones": [
+      "Enema con bario",
+      "Antibióticos y drenaje percutáneo del absceso",
+      "Colectomía total obligatoria en todos",
+      "Alta sin antibióticos ni seguimiento",
+      "AINE sin evaluación adicional"
+    ],
+    "clave": "B",
+    "respuesta": "Antibióticos y drenaje percutáneo del absceso",
+    "explicacion": "Los abscesos diverticulares grandes y accesibles suelen requerir antibióticos más drenaje percutáneo, con individualización según estabilidad y recursos.",
+    "argumentos": [
+      "A: Bario contraindicado en proceso inflamatorio complicado.",
+      "B: Correcta en paciente estable con absceso accesible.",
+      "C: No todos requieren colectomía total.",
+      "D: Sin seguimiento ni terapia no es adecuado.",
+      "E: AINE no sustituye control de infección."
+    ],
+    "badbear_fija": "Absceso diverticular grande: valorar drenaje percutáneo + antibióticos.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-08",
+    "orden": 143,
+    "tema": "Hernias · Nyhus",
+    "pregunta": "Una hernia inguinal directa con defecto de la pared posterior corresponde a ¿qué grupo en clasificación de Nyhus?",
+    "opciones": [
+      "Tipo I",
+      "Tipo II",
+      "Tipo IIIA",
+      "Tipo IIIC",
+      "Tipo IV"
+    ],
+    "clave": "C",
+    "respuesta": "Tipo IIIA",
+    "explicacion": "En Nyhus el tipo IIIA es hernia inguinal directa por defecto de pared posterior.",
+    "argumentos": [
+      "A: Tipo I: indirecta con anillo profundo normal.",
+      "B: Tipo II: indirecta con anillo profundo dilatado sin defecto posterior significativo.",
+      "C: Correcta: directa con defecto de pared posterior.",
+      "D: Tipo IIIC: femoral.",
+      "E: Tipo IV: hernia recurrente."
+    ],
+    "badbear_fija": "Nyhus IIIA = directa; IIIB = indirecta con defecto posterior; IIIC = femoral.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-09",
+    "orden": 144,
+    "tema": "Hernias · Nyhus",
+    "pregunta": "¿Qué tipo de Nyhus corresponde a una hernia femoral?",
+    "opciones": [
+      "I",
+      "II",
+      "IIIA",
+      "IIIC",
+      "IVB"
+    ],
+    "clave": "D",
+    "respuesta": "IIIC",
+    "explicacion": "La hernia femoral se ubica por debajo del ligamento inguinal y pertenece a Nyhus IIIC.",
+    "argumentos": [
+      "A: I: indirecta con anillo profundo normal.",
+      "B: II: indirecta con anillo profundo dilatado.",
+      "C: IIIA: directa.",
+      "D: Correcta: femoral.",
+      "E: IVB: recurrencia de hernia indirecta."
+    ],
+    "badbear_fija": "Nyhus IIIC corresponde a la hernia crural o femoral.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-10",
+    "orden": 145,
+    "tema": "Suturas quirúrgicas",
+    "pregunta": "¿Cuál de los siguientes materiales de sutura es monofilamento sintético absorbible de larga duración?",
+    "opciones": [
+      "Seda",
+      "Algodón",
+      "Polidioxanona (PDS)",
+      "Acero inoxidable",
+      "Lino"
+    ],
+    "clave": "C",
+    "respuesta": "Polidioxanona (PDS)",
+    "explicacion": "La polidioxanona es un material monofilamento sintético absorbible de lenta absorción, útil para tejidos que precisan soporte prolongado.",
+    "argumentos": [
+      "A: Seda: natural, trenzada y no absorbible en práctica clínica.",
+      "B: Algodón: natural no absorbible.",
+      "C: Correcta: PDS es absorbible y monofilamento.",
+      "D: Acero: metálico no absorbible.",
+      "E: Lino: natural no absorbible."
+    ],
+    "badbear_fija": "PDS = sintética absorbible monofilamento; polipropileno = sintética no absorbible.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-11",
+    "orden": 146,
+    "tema": "Suturas quirúrgicas",
+    "pregunta": "¿Cuál es un ejemplo de sutura natural de origen animal?",
+    "opciones": [
+      "Polipropileno",
+      "Poliglactina 910",
+      "Catgut",
+      "Polidioxanona",
+      "Polietileno"
+    ],
+    "clave": "C",
+    "respuesta": "Catgut",
+    "explicacion": "El catgut es colágeno natural obtenido de tejido animal y se clasifica como sutura absorbible de origen natural.",
+    "argumentos": [
+      "A: Polipropileno: sintético.",
+      "B: Poliglactina 910: sintética absorbible.",
+      "C: Correcta: catgut natural animal.",
+      "D: Polidioxanona: sintética.",
+      "E: Polietileno: sintético."
+    ],
+    "badbear_fija": "Catgut = natural; poliglactina, PDS y polipropileno = sintéticos.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-12",
+    "orden": 147,
+    "tema": "Anatomía biliar",
+    "pregunta": "¿En qué segmento del colédoco se sitúa el conducto posterior al duodeno y antes del trayecto pancreático?",
+    "opciones": [
+      "Supraduodenal",
+      "Retroduodenal",
+      "Intraparenquimatoso hepático",
+      "Intramural únicamente",
+      "Conducto cístico"
+    ],
+    "clave": "B",
+    "respuesta": "Retroduodenal",
+    "explicacion": "En su trayecto extrahepático, el colédoco posee segmentos supraduodenal, retroduodenal, pancreático e intramural.",
+    "argumentos": [
+      "A: Supraduodenal: segmento proximal antes del duodeno.",
+      "B: Correcta: por detrás de la primera porción duodenal.",
+      "C: Intrahepático corresponde a los conductos hepáticos.",
+      "D: Intramural es el segmento terminal duodenal.",
+      "E: Conducto cístico une vesícula con vía biliar."
+    ],
+    "badbear_fija": "Colédoco: supraduodenal → retroduodenal → pancreático → intramural.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-13",
+    "orden": 148,
+    "tema": "Derivación biliodigestiva",
+    "pregunta": "¿Cuál es el principio anatómico de una hepaticoyeyunostomía en Y de Roux?",
+    "opciones": [
+      "Anastomosar conducto hepático con yeyuno para permitir drenaje de bilis",
+      "Anastomosar uréter a colon",
+      "Resecar el bazo sin reconstrucción",
+      "Unir dos extremos de esófago en el cuello",
+      "Conectar conducto pancreático con vejiga"
+    ],
+    "clave": "A",
+    "respuesta": "Anastomosar conducto hepático con yeyuno para permitir drenaje de bilis",
+    "explicacion": "Es una derivación biliodigestiva que facilita la salida de bilis al intestino desde los conductos biliares, indicada según lesión u obstrucción.",
+    "argumentos": [
+      "A: Correcta: conexión biliar-yeyunal.",
+      "B: No pertenece a cirugía de vía biliar.",
+      "C: Esplenectomía no deriva bilis.",
+      "D: Anastomosis esofágica no deriva bilis.",
+      "E: No hay derivación habitual a vejiga."
+    ],
+    "badbear_fija": "Derivación biliodigestiva: vía biliar proximal → asa intestinal.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-14",
+    "orden": 149,
+    "tema": "Hipertensión portal",
+    "pregunta": "¿Qué consecuencia hematológica es característica de esplenomegalia por hipertensión portal con hiperesplenismo?",
+    "opciones": [
+      "Trombocitosis sostenida",
+      "Trombocitopenia por secuestro esplénico",
+      "Policitemia absoluta inevitable",
+      "Déficit aislado de factor VIII por ausencia de síntesis hepática",
+      "Hemoconcentración permanente"
+    ],
+    "clave": "B",
+    "respuesta": "Trombocitopenia por secuestro esplénico",
+    "explicacion": "El hiperesplenismo se asocia con secuestro y destrucción periférica de plaquetas, con trombocitopenia que puede coexistir con leucopenia.",
+    "argumentos": [
+      "A: Hipersplenismo suele disminuir, no elevar plaquetas.",
+      "B: Correcta: trombocitopenia.",
+      "C: Policitemia absoluta no es consecuencia típica.",
+      "D: Factor VIII no tiene síntesis exclusiva hepatocitaria.",
+      "E: No implica hemoconcentración permanente."
+    ],
+    "badbear_fija": "Hipertensión portal + bazo grande + plaquetas bajas = hiperesplenismo.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-15",
+    "orden": 150,
+    "tema": "Carcinoma hepatocelular",
+    "pregunta": "En un paciente cirrótico con nódulo hepático sospechoso, ¿qué patrón de realce en TC o RM multifásica es característico de carcinoma hepatocelular?",
+    "opciones": [
+      "Hipocaptación arterial y relleno venoso progresivo siempre",
+      "Hiperrealce arterial no periférico y lavado en fase portal/tardía",
+      "Ausencia universal de vascularización",
+      "Calcificación pura como criterio diagnóstico definitivo",
+      "Captación idéntica en todas las fases"
+    ],
+    "clave": "B",
+    "respuesta": "Hiperrealce arterial no periférico y lavado en fase portal/tardía",
+    "explicacion": "La hipervascularización arterial con lavado en fase portal o tardía es un patrón importante de diagnóstico no invasivo de hepatocarcinoma en poblaciones de riesgo, dentro de criterios estandarizados.",
+    "argumentos": [
+      "A: No corresponde al patrón típico de hepatocarcinoma.",
+      "B: Correcta: arterial hyperenhancement más washout, según técnica y criterios.",
+      "C: No es universalmente avascular.",
+      "D: Calcificación aislada no basta.",
+      "E: La dinámica de realce importa."
+    ],
+    "badbear_fija": "HCC en cirrosis: hiperrealce arterial + lavado portal/tardío.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-16",
+    "orden": 151,
+    "tema": "Carcinoma hepatocelular",
+    "pregunta": "¿Cuál de los siguientes factores etiológicos se asocia con carcinoma hepatocelular?",
+    "opciones": [
+      "Hepatitis B crónica",
+      "Asma leve",
+      "Apendicitis no complicada",
+      "Acalasia",
+      "Hernia umbilical"
+    ],
+    "clave": "A",
+    "respuesta": "Hepatitis B crónica",
+    "explicacion": "La infección por VHB es un factor de riesgo importante de HCC; otros incluyen cirrosis por VHC, alcohol y enfermedad hepática metabólica.",
+    "argumentos": [
+      "A: Correcta: VHB puede provocar carcinogénesis hepática incluso sin cirrosis.",
+      "B: Asma no es un factor específico.",
+      "C: Apendicitis no se relaciona.",
+      "D: Acalasia afecta esófago.",
+      "E: Hernia no es etiología de HCC."
+    ],
+    "badbear_fija": "HCC: VHB, VHC, cirrosis y enfermedad hepática metabólica.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-17",
+    "orden": 152,
+    "tema": "Hemorragia digestiva oculta",
+    "pregunta": "Mujer de 65 años con anemia ferropénica persistente, endoscopia alta y colonoscopia sin causa identificada. ¿Qué prueba puede explorar la mucosa del intestino delgado?",
+    "opciones": [
+      "Ecografía tiroidea",
+      "Cápsula endoscópica",
+      "Espirometría",
+      "Urocultivo",
+      "Electroencefalograma"
+    ],
+    "clave": "B",
+    "respuesta": "Cápsula endoscópica",
+    "explicacion": "La cápsula endoscópica permite visualizar mucosa de intestino delgado si persiste sospecha de sangrado de origen oscuro tras endoscopias convencionales adecuadas.",
+    "argumentos": [
+      "A: No estudia mucosa intestinal.",
+      "B: Correcta: evalúa lesiones mucosas de intestino delgado.",
+      "C: Explora función pulmonar.",
+      "D: Estudia infección urinaria.",
+      "E: Evalúa actividad eléctrica cerebral."
+    ],
+    "badbear_fija": "Anemia ferropénica sin foco tras endoscopia bidireccional: valorar cápsula de intestino delgado.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
+  },
+  {
+    "id": "cxg-temas-cxgeneral-18",
+    "orden": 153,
+    "tema": "Resucitación hemorrágica",
+    "pregunta": "Paciente politraumatizada con Hb de 6 g/dL, hipotensión y signos de hipoperfusión tras hemorragia activa. ¿Cuál es la prioridad?",
+    "opciones": [
+      "Esperar estudio definitivo sin reanimar",
+      "Reanimación con control urgente de hemorragia y hemoderivados según protocolo",
+      "Administrar solo dextrosa por vía oral",
+      "Diuréticos antes de evaluar volemia",
+      "Alta tras analgesia"
+    ],
+    "clave": "B",
+    "respuesta": "Reanimación con control urgente de hemorragia y hemoderivados según protocolo",
+    "explicacion": "El choque hemorrágico exige enfoque ABCDE, hemostasia urgente y reanimación hemostática individualizada; una Hb de 6 g/dL con inestabilidad apoya transfusión, evitando infusión indiscriminada de cristaloides.",
+    "argumentos": [
+      "A: Demorar control del sangrado aumenta mortalidad.",
+      "B: Correcta: soporte circulatorio y control de fuente paralelos.",
+      "C: Dextrosa oral no corrige hipoperfusión.",
+      "D: Diuréticos pueden agravar shock.",
+      "E: Alta es peligrosa."
+    ],
+    "badbear_fija": "Shock hemorrágico: controlar el sangrado y reanimar simultáneamente.",
+    "fuente": "Pregunta elaborada por BADBEAR.MED a partir de tema/apunte de cx general (1).pdf; NO es transcripción literal de examen",
+    "estado": "listo",
+    "nota": "Pregunta nueva basada en tema del apunte; no corresponde a una pregunta textual del examen."
   }
 ];
 
