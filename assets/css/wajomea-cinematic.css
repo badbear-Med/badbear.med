@@ -203,3 +203,18 @@
 @keyframes wg-footer-stars{0%{background-position:0 0}100%{background-position:90px 75px}}
 @media(prefers-reduced-motion:reduce){.wg-footer::before,.wg-footer::after{animation:none}}
 @media(max-width:760px){.wg-footer{min-height:156px;padding:32px 16px}.wg-footer .wg-brand{font-size:25px}}
+
+
+/* Tarjetas publicas informativas: el contenido se abre solo en BADBEAR.CAMPUS. */
+.wg-projects details.wg-card{display:block}
+.wg-project-summary{list-style:none;display:flex;flex-direction:column;min-height:185px;cursor:pointer;outline:none}
+.wg-project-summary::-webkit-details-marker{display:none}
+.wg-project-summary::marker{display:none}
+.wg-project-summary .wg-card-action{margin-top:auto}
+.wg-project-summary .wg-card-action::after{content:"+";font-size:20px;line-height:1;font-weight:900}
+.wg-projects details[open] .wg-project-summary .wg-card-action::after{content:"−"}
+.wg-project-detail{margin-top:13px;padding-top:15px;border-top:1px solid rgba(16,35,60,.22)}
+.wg-project-detail p{margin:0 0 12px!important}
+.wg-campus-button{display:inline-flex;align-items:center;justify-content:center;margin-top:4px;padding:10px 13px;border-radius:10px;background:#0f63d8;color:#fff!important;text-decoration:none;font-size:12px;font-weight:900;line-height:1.35;box-shadow:0 6px 16px rgba(5,51,119,.18)}
+.wg-campus-button:hover,.wg-campus-button:focus-visible{background:#084ca9}
+@media(max-width:760px){.wg-project-summary{min-height:165px}.wg-campus-button{width:100%}}
