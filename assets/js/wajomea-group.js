@@ -1,12 +1,6 @@
-/* Conserva los marcadores de la antigua portada médica. */
+/* Compatibilidad de enlaces antiguos: todo el contenido académico entra por BADBEAR.CAMPUS. */
 (() => {
-  const medicalSections = new Set(["#cursos", "#recursos", "#proyecto"]);
-  function preserveMedicalLink() {
-    if (!medicalSections.has(window.location.hash)) return;
-    const destination = new URL("badbear-med.html", window.location.href);
-    destination.hash = window.location.hash;
-    window.location.replace(destination.href);
-  }
-  preserveMedicalLink();
-  window.addEventListener("hashchange", preserveMedicalLink);
+  const protectedSections = new Set(["#cursos", "#recursos", "#proyecto"]);
+  if (!protectedSections.has(window.location.hash)) return;
+  window.location.replace(new URL("badbear-campus/index.html", window.location.href).href);
 })();
