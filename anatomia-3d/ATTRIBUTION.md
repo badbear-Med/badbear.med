@@ -50,3 +50,50 @@ La vista general de **Cerebro** utiliza el archivo abierto **Model of a human br
 - El atlas segmentado Brain Project se conserva para módulos como lóbulos, ganglios basales, diencéfalo, tronco, cerebelo, ventrículos y pares craneales.
 
 BADBEAR.MED mantiene separada la capa visual general de la capa anatómica segmentada para no sacrificar calidad de render ni capacidad de estudio.
+
+
+## HuBMAP / Human Reference Atlas
+
+BADBEAR.MED puede cargar modelos 3D abiertos del **HuBMAP Human Reference Atlas (HRA) CCF 3D Reference Object Library** para ampliar la cobertura anatómica.
+
+Modelos integrados en el visor:
+- corazón y vasculatura sanguínea;
+- pulmones;
+- hígado;
+- páncreas;
+- intestino delgado y colon;
+- riñones y vejiga urinaria;
+- médula espinal;
+- timo;
+- útero y ovarios;
+- próstata.
+
+Licencia indicada por la biblioteca HRA: **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+
+Fuente: `hubmapconsortium/ccf-releases`, biblioteca de objetos anatómicos de referencia 3D.
+
+## Corazón segmentado
+
+La vista detallada del corazón utiliza el modelo distribuido por **OrganUI Heart**, derivado de **BodyParts3D**.
+
+Crédito requerido:
+`BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.`
+
+El modelo incluye estructuras separables como aurículas, ventrículos, aorta, tronco pulmonar, vena cava superior y arterias coronarias.
+
+## Órganos internos BodyParts3D
+
+La vista general de órganos internos puede cargar el recurso `anatomy-organs.glb` publicado por `yamz8/human-body-simulator`, derivado de BodyParts3D.
+
+- Fuente anatómica original: BodyParts3D, Database Center for Life Science.
+- Licencia indicada para ese derivado: **CC BY-SA 2.1 Japan**.
+- La obligación ShareAlike aplica al activo derivado identificado y sus adaptaciones, no al código independiente de BADBEAR.MED.
+
+## Estómago
+
+La vista de estómago utiliza el GLB preparado por **MedPath 3D** a partir de BodyParts3D.
+
+Crédito:
+`BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.`
+
+BADBEAR.MED consume estos archivos como modelos anatómicos abiertos y conserva sus avisos de procedencia y licencia en este documento.
