@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anatomía 3D | BADBEAR.MED</title>
   <meta name="description" content="Atlas anatómico 3D interactivo de BADBEAR.MED para explorar huesos y músculos por estructura.">
-  <link rel="stylesheet" href="anatomia.css?v=20261018-brain1">
+  <link rel="stylesheet" href="anatomia.css?v=20261019-label1">
 </head>
 <body>
   <header class="topbar">
@@ -89,6 +89,13 @@
 
     <section class="viewer-shell" aria-label="Visor anatómico 3D">
       <canvas id="anatomyCanvas"></canvas>
+      <div id="structureLabel" class="structure-label" aria-hidden="true">
+        <span class="structure-label__pin" aria-hidden="true"></span>
+        <span class="structure-label__card">
+          <strong id="structureLabelName">Estructura anatómica</strong>
+          <small id="structureLabelMeta"></small>
+        </span>
+      </div>
       <div id="loadingOverlay" class="loading-overlay">
         <div class="loader"></div>
         <strong>Cargando anatomía 3D</strong>
@@ -143,6 +150,6 @@
     }
   }
   </script>
-  <script type="module" src="anatomia.js?v=20261019-hybrid1"></script>
+  <script type="module" src="anatomia.js?v=20261019-label1"></script>
 </body>
 </html>
