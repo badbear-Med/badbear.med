@@ -176,18 +176,16 @@ export const MODEL_REGISTRY = {
       systemLabel: "Urinario",
       category: "Urinario",
       urls: [
-        HRA + "VH_M_Kidney_L.glb",
-        HRA + "VH_M_Kidney_R.glb",
+        MEDPATH + "kidneys.glb",
         HRA + "VH_M_Urinary_Bladder.glb"
       ],
-      partLabels: ["Riñón izquierdo", "Riñón derecho", "Vejiga urinaria"],
+      partLabels: ["Riñones", "Vejiga urinaria"],
       composeParts: true,
       composition: [
-        { position: [-0.52, 0.36, 0], scale: 0.82, color: "#a65a58" },
-        { position: [0.52, 0.36, 0], scale: 0.82, color: "#a65a58" },
-        { position: [0, -0.80, 0.10], scale: 0.56, color: "#d7c6aa" }
+        { position: [0, 0.34, 0], scale: 1.00, color: "#9b4f55", rotation: [0, 0, 0] },
+        { position: [0, -0.72, 0.10], scale: 0.34, color: "#c88a95", rotation: [0, 0, 0] }
       ],
-      source: "HuBMAP Human Reference Atlas",
+      source: "HuBMAP Human Reference Atlas · MedPath 3D assembly",
       license: "CC BY 4.0"
     },
 
@@ -196,14 +194,9 @@ export const MODEL_REGISTRY = {
       label: "Riñones",
       systemLabel: "Urinario",
       category: "Riñones",
-      urls: [HRA + "VH_M_Kidney_L.glb", HRA + "VH_M_Kidney_R.glb"],
-      partLabels: ["Riñón izquierdo", "Riñón derecho"],
-      composeParts: true,
-      composition: [
-        { position: [-0.46, 0, 0], scale: 0.92, color: "#a65a58" },
-        { position: [0.46, 0, 0], scale: 0.92, color: "#a65a58" }
-      ],
-      source: "HuBMAP Human Reference Atlas",
+      urls: [MEDPATH + "kidneys.glb"],
+      partLabels: ["Riñones"],
+      source: "HuBMAP Human Reference Atlas · MedPath 3D assembly",
       license: "CC BY 4.0"
     },
 
