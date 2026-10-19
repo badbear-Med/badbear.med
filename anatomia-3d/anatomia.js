@@ -81,6 +81,9 @@ const brainOpacitySection = document.getElementById("brainOpacitySection");
 const sourceNoteTitle = document.getElementById("sourceNoteTitle");
 const sourceNoteText = document.getElementById("sourceNoteText");
 const viewerBadgeText = document.getElementById("viewerBadgeText");
+const structureLabel = document.getElementById("structureLabel");
+const structureLabelName = document.getElementById("structureLabelName");
+const structureLabelMeta = document.getElementById("structureLabelMeta");
 const anatomyCatalog = Array.isArray(window.BADBEAR_ANATOMY_CATALOG)
   ? window.BADBEAR_ANATOMY_CATALOG
   : [];
@@ -151,6 +154,7 @@ let selectedMesh = null;
 let selectedRecord = null;
 let activeSystemId = "cuerpo-completo";
 let activeOrganId = "";
+let selectedLabelLocalPoint = null;
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
@@ -262,6 +266,7 @@ function clearSelectionVisual() {
 
 function resetSelectionPanel() {
   clearSelectionVisual();
+  hideStructureLabel();
   selectedMesh = null;
   emptySelection.hidden = false;
   selectionCard.hidden = true;
@@ -513,7 +518,68 @@ function cameraPreset(view) {
   controls.update();
 }
 
-function selectMesh(mesh) {
+
+function hideStructureLabel() {
+  selectedLabelLocalPoint = null;
+  if (structureLabel) {
+    structureLabel.classList.remove("visible");
+    structureLabel.setAttribute("aria-hidden", "true");
+  }
+}
+
+function labelMetaForRecord(record) {
+  if (!record) return "";
+  if (isNeuroDataset()) return prettyBrainCategory(record.category);
+  if (record.layer === "skeleton") return "Esqueleto";
+  if (record.layer === "muscles") return "Músculo";
+  return "Estructura anatómica";
+}
+
+function setStructureLabelAnchor(mesh, worldPoint = null) {
+  if (!mesh || !structureLabel) return;
+
+  let point = worldPoint?.clone?.() || null;
+
+  if (!point) {
+    const box = new THREE.Box3().setFromObject(mesh);
+    point = box.getCenter(new THREE.Vector3());
+  }
+
+  selectedLabelLocalPoint = mesh.worldToLocal(point.clone());
+
+  if (structureLabelName) structureLabelName.textContent = selectedRecord?.name || "Estructura anatómica";
+  if (structureLabelMeta) structureLabelMeta.textContent = labelMetaForRecord(selectedRecord);
+
+  structureLabel.classList.add("visible");
+  structureLabel.setAttribute("aria-hidden", "false");
+  updateStructureLabelPosition();
+}
+
+function updateStructureLabelPosition() {
+  if (!structureLabel || !selectedMesh || !selectedLabelLocalPoint || !structureLabel.classList.contains("visible")) return;
+
+  const world = selectedMesh.localToWorld(selectedLabelLocalPoint.clone());
+  const projected = world.clone().project(camera);
+
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  if (!width || !height) return;
+
+  const x = (projected.x * 0.5 + 0.5) * width;
+  const y = (-projected.y * 0.5 + 0.5) * height;
+  const onScreen =
+    projected.z > -1 && projected.z < 1 &&
+    x >= 0 && x <= width &&
+    y >= 0 && y <= height;
+
+  structureLabel.classList.toggle("offscreen", !onScreen);
+  if (!onScreen) return;
+
+  structureLabel.style.left = x + "px";
+  structureLabel.style.top = y + "px";
+}
+
+function selectMesh(mesh, worldPoint = null) {
   if (!mesh) return;
 
   const record = records.find((item) => item.mesh === mesh);
@@ -571,6 +637,8 @@ function selectMesh(mesh) {
       pretty(record.meta.tissue || (record.layer === "muscles" ? "muscle" : ""));
     document.getElementById("structureFma").textContent = record.meta.fma || "—";
   }
+
+  setStructureLabelAnchor(mesh, worldPoint);
 }
 
 function focusMesh(mesh) {
@@ -1354,7 +1422,7 @@ renderer.domElement.addEventListener("pointerup", (event) => {
 
   const hits = raycaster.intersectObjects(visibleMeshes, false);
 
-  if (hits.length) selectMesh(hits[0].object);
+  if (hits.length) selectMesh(hits[0].object, hits[0].point);
 });
 
 window.addEventListener("popstate", () => {
@@ -1381,6 +1449,7 @@ window.addEventListener("resize", resize);
 function animate() {
   resize();
   controls.update();
+  updateStructureLabelPosition();
 
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
