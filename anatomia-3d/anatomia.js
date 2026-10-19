@@ -392,6 +392,7 @@ function applyBrainFilter(organId = "") {
     const ghostOpacity = filter ? brainGhostOpacity(record, organId) : 0;
 
     record.contextGhost = false;
+    record.pickable = true;
 
     if (isPrimary) {
       record.mesh.visible = true;
@@ -402,10 +403,12 @@ function applyBrainFilter(organId = "") {
     if (ghostOpacity > 0) {
       record.mesh.visible = true;
       record.contextGhost = true;
+      record.pickable = false;
       forceBrainMaterial(record, Math.min(record.baseOpacity, ghostOpacity));
       continue;
     }
 
+    record.pickable = false;
     record.mesh.visible = false;
   }
 
@@ -712,7 +715,8 @@ function buildBrainRecords(root) {
       region,
       baseOpacity,
       core: meta.bx_core === 1 || meta.bx_core === true,
-      contextGhost: false
+      contextGhost: false,
+      pickable: true
     });
   });
 
@@ -898,6 +902,7 @@ function selectCatalogOrgan(system, organ, button) {
   document.querySelectorAll(".organ-chip").forEach((chip) => chip.classList.remove("active"));
   if (button) button.classList.add("active");
 
+  resetSelectionPanel();
   activeOrganId = organ?.id || "";
   updateAnatomyRoute(system.id, activeOrganId);
 
@@ -917,6 +922,7 @@ function renderCatalog(systemId, organId = "", options = {}) {
 
   const system = anatomyCatalog.find((item) => item.id === systemId) || anatomyCatalog[0];
 
+  resetSelectionPanel();
   activeSystemId = system.id;
   activeOrganId = organId || "";
 
@@ -1075,7 +1081,11 @@ renderer.domElement.addEventListener("pointerup", (event) => {
   raycaster.setFromCamera(pointer, camera);
 
   const visibleMeshes = records
-    .filter((record) => record.mesh.visible)
+    .filter((record) => {
+      if (!record.mesh.visible) return false;
+      if (activeDataset === "brain" && record.pickable === false) return false;
+      return true;
+    })
     .map((record) => record.mesh);
 
   const hits = raycaster.intersectObjects(visibleMeshes, false);
