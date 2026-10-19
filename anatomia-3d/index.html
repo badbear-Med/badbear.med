@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anatomía 3D | BADBEAR.MED</title>
   <meta name="description" content="Atlas anatómico 3D interactivo de BADBEAR.MED para explorar huesos y músculos por estructura.">
-  <link rel="stylesheet" href="anatomia.css?v=20261018-1">
+  <link rel="stylesheet" href="anatomia.css?v=20261018-sistemas1">
 </head>
 <body>
   <header class="topbar">
@@ -24,10 +24,21 @@
     <aside class="panel panel-left">
       <div class="eyebrow">CIENCIAS BÁSICAS · ATLAS INTERACTIVO</div>
       <h1>Anatomía <span>3D</span></h1>
-      <p class="lead">Explora estructuras anatómicas, cambia capas, busca por nombre y selecciona directamente sobre el modelo.</p>
+      <p class="lead">Explora el cuerpo por sistemas y órganos. La base osteomuscular ya es interactiva; cerebro, corazón, pulmones y demás órganos quedan organizados para incorporar sus modelos 3D progresivamente.</p>
+
+      <section class="control-group anatomy-catalog">
+        <div class="catalog-heading">
+          <h2>Sistema anatómico</h2>
+          <span id="systemStatus" class="system-status">Disponible</span>
+        </div>
+        <select id="systemSelect" aria-label="Seleccionar sistema anatómico"></select>
+        <p id="systemDescription" class="system-description"></p>
+        <div id="organGrid" class="organ-grid" aria-label="Órganos y regiones del sistema"></div>
+        <p id="systemNotice" class="system-notice" hidden></p>
+      </section>
 
       <section class="control-group">
-        <h2>Capas</h2>
+        <h2>Capas del modelo actual</h2>
         <div class="segmented" id="layerControls">
           <button type="button" data-layer="both" class="active">Todo</button>
           <button type="button" data-layer="skeleton">Esqueleto</button>
@@ -38,6 +49,7 @@
       <section class="control-group search-wrap">
         <label for="structureSearch">Buscar estructura</label>
         <input id="structureSearch" type="search" placeholder="Ej. femur, atlas, deltoid..." autocomplete="off">
+        <small class="search-help">El modelo osteomuscular conserva por ahora la nomenclatura original en inglés.</small>
         <div id="searchResults" class="search-results" hidden></div>
       </section>
 
@@ -88,6 +100,7 @@
       <div id="selectionCard" class="selection-card" hidden>
         <span id="structureLayer" class="structure-layer">—</span>
         <h2 id="structureName">—</h2>
+        <p id="structureOriginalName" class="structure-original"></p>
         <dl>
           <div><dt>Lado</dt><dd id="structureSide">—</dd></div>
           <div><dt>Tejido</dt><dd id="structureTissue">—</dd></div>
@@ -112,6 +125,7 @@
     <p><a href="https://github.com/Charleeh/ecorche" target="_blank" rel="noopener noreferrer">Fuente y licencia del modelo</a> · <a href="ATTRIBUTION.md">Atribución completa</a></p>
   </footer>
 
+  <script src="catalogo.js?v=20261018-sistemas1"></script>
   <script type="importmap">
   {
     "imports": {
@@ -120,6 +134,6 @@
     }
   }
   </script>
-  <script type="module" src="anatomia.js?v=20261018-1"></script>
+  <script type="module" src="anatomia.js?v=20261018-sistemas1"></script>
 </body>
 </html>
