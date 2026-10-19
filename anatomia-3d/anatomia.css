@@ -103,3 +103,22 @@ footer a{color:#63dcff}
   .panel-right{order:3;display:block}
   .viewer-hint{font-size:.62rem;max-width:92%;white-space:normal;text-align:center}
 }
+
+
+/* Navegación por sistemas y órganos */
+.catalog-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.catalog-heading h2{margin-bottom:0}
+.system-status{font-size:.64rem;font-weight:900;text-transform:uppercase;letter-spacing:.07em;padding:5px 8px;border-radius:999px;background:rgba(76,224,173,.12);border:1px solid rgba(76,224,173,.24);color:#91f0d0}
+.system-status.preparado{background:rgba(155,140,255,.10);border-color:rgba(155,140,255,.22);color:#c4baff}
+.anatomy-catalog select{width:100%;margin-top:10px;border:1px solid var(--line);background:#061522;color:#fff;border-radius:11px;padding:11px 12px;outline:none}
+.anatomy-catalog select:focus{border-color:rgba(50,215,255,.62);box-shadow:0 0 0 3px rgba(50,215,255,.08)}
+.system-description{margin:9px 0 0;color:#8fa8bc;font-size:.78rem;line-height:1.45}
+.organ-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.organ-chip{appearance:none;border:1px solid var(--line);background:#091d30;color:#cbddeb;border-radius:999px;padding:7px 9px;font-size:.71rem;cursor:pointer;transition:.16s ease}
+.organ-chip:hover{border-color:#38cfff;color:#fff;background:#0d2a44}
+.organ-chip[data-state="disponible"]{border-color:rgba(76,224,173,.28);background:rgba(76,224,173,.08);color:#a8f4dc}
+.organ-chip.active{outline:2px solid rgba(50,215,255,.24);border-color:#3fd6ff;background:#103454;color:#fff}
+.organ-chip[data-state="preparado"]::after{content:" · pronto";color:#7f91a4;font-size:.62rem}
+.system-notice{margin:10px 0 0;padding:9px 10px;border-radius:10px;border:1px solid rgba(155,140,255,.18);background:rgba(155,140,255,.07);color:#aeb6cf;font-size:.72rem;line-height:1.4}
+.search-help{display:block;margin-top:6px;color:#6f879a;font-size:.67rem;line-height:1.35}
+.structure-original{margin:-10px 0 16px;color:#7f98aa;font-size:.72rem;font-style:italic}
