@@ -100,7 +100,7 @@ renderer.toneMappingExposure = 1.05;
 const scene = new THREE.Scene();
 scene.fog = new THREE.FogExp2(0x06111f, 0.075);
 
-const camera = new THREE.PerspectiveCamera(34, 1, 0.01, 100);
+const camera = new THREE.PerspectiveCamera(38, 1, 0.01, 100);
 camera.position.set(0, 0.95, 3.7);
 
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -114,12 +114,20 @@ const hemiLight = new THREE.HemisphereLight(0xbfeaff, 0x1a2030, 2.1);
 scene.add(hemiLight);
 
 const keyLight = new THREE.DirectionalLight(0xffffff, 2.8);
-keyLight.position.set(3, 5, 4);
+keyLight.position.set(4.5, 6.5, 7);
 scene.add(keyLight);
 
+const fillLight = new THREE.DirectionalLight(0x9fc7ff, 0);
+fillLight.position.set(-5.5, 2.5, 4);
+scene.add(fillLight);
+
 const rimLight = new THREE.DirectionalLight(0x61c8ff, 2.0);
-rimLight.position.set(-4, 2, -4);
+rimLight.position.set(-4, 3, -6);
 scene.add(rimLight);
+
+const warmRimLight = new THREE.DirectionalLight(0xffa46b, 0);
+warmRimLight.position.set(5, -1.5, -5);
+scene.add(warmRimLight);
 
 const floor = new THREE.Mesh(
   new THREE.CircleGeometry(1.7, 96),
@@ -285,15 +293,21 @@ function setActiveDataset(type) {
   records = datasets[type].records;
 
   if (type === "brain") {
-    hemiLight.intensity = 0.72;
-    keyLight.intensity = 1.35;
-    rimLight.intensity = 0.95;
-    renderer.toneMappingExposure = 0.92;
+    hemiLight.intensity = 0.78;
+    keyLight.intensity = 2.15;
+    fillLight.intensity = 0.72;
+    rimLight.intensity = 1.15;
+    warmRimLight.intensity = 0.38;
+    renderer.toneMappingExposure = 1.02;
+    if (scene.fog) scene.fog.density = 0.018;
   } else {
     hemiLight.intensity = 2.1;
     keyLight.intensity = 2.8;
+    fillLight.intensity = 0;
     rimLight.intensity = 2.0;
+    warmRimLight.intensity = 0;
     renderer.toneMappingExposure = 1.05;
+    if (scene.fog) scene.fog.density = 0.075;
   }
 
   isolatedMesh = null;
@@ -634,17 +648,22 @@ function buildBodyRecords(root) {
 
 function brainMaterial(category) {
   const baseHex = BRAIN_PALETTE[category] || "#8C9BAD";
-  const opacity = BRAIN_MAX_OPACITY[category] ?? 1;
+  const base = new THREE.Color(baseHex);
+  const vessel = ["arteries", "veins_sinuses", "cranial_nerves", "tracts"].includes(category);
 
-  const material = new THREE.MeshBasicMaterial({
-    color: baseHex,
-    transparent: true,
-    opacity,
+  const material = new THREE.MeshStandardMaterial({
+    color: base,
+    roughness: vessel ? 0.48 : 0.72,
+    metalness: 0.0,
+    transparent: false,
+    opacity: 1,
+    emissive: base.clone().multiplyScalar(vessel ? 0.10 : 0.025),
+    emissiveIntensity: 1,
     side: category === "meninges_dura" ? THREE.DoubleSide : THREE.FrontSide,
     depthTest: true,
-    depthWrite: opacity >= 0.35,
-    toneMapped: false,
-    fog: false
+    depthWrite: true,
+    toneMapped: true,
+    flatShading: false
   });
 
   material.name = "BADBEAR_BRAIN_" + (category || "other");
@@ -655,12 +674,7 @@ function forceBrainMaterial(record, opacity = 1, selected = false) {
   if (!record?.mesh) return;
 
   const category = record.category || "other";
-  const baseColor = new THREE.Color(BRAIN_PALETTE[category] || "#8C9BAD");
-
-  // La selección conserva el color anatómico: solo se vuelve más luminosa.
-  if (selected) {
-    baseColor.offsetHSL(0, 0, 0.16);
-  }
+  const base = new THREE.Color(BRAIN_PALETTE[category] || "#8C9BAD");
 
   const materials = Array.isArray(record.mesh.material)
     ? record.mesh.material
@@ -669,18 +683,29 @@ function forceBrainMaterial(record, opacity = 1, selected = false) {
   materials.forEach((material) => {
     if (!material) return;
 
-    if (material.color) material.color.copy(baseColor);
-    if (material.emissive) material.emissive.set(0x000000);
+    if (material.color) {
+      material.color.copy(base);
+      if (selected) material.color.offsetHSL(0, 0.025, 0.08);
+    }
+
+    if (material.emissive) {
+      material.emissive.copy(base);
+      material.emissive.multiplyScalar(selected ? 0.34 : 0.025);
+      material.emissiveIntensity = 1;
+    }
+
+    if ("roughness" in material) material.roughness = selected ? 0.56 : 0.72;
+    if ("metalness" in material) material.metalness = 0;
 
     material.vertexColors = false;
     material.wireframe = false;
     material.transparent = opacity < 0.999;
     material.opacity = opacity;
     material.depthTest = true;
-    material.depthWrite = opacity >= 0.35;
+    material.depthWrite = selected || opacity >= 0.58;
     material.blending = THREE.NormalBlending;
-    material.toneMapped = false;
-    material.fog = false;
+    material.toneMapped = true;
+    material.fog = true;
     material.polygonOffset = false;
     material.needsUpdate = true;
   });
@@ -694,7 +719,9 @@ function applyBrainRecordVisual(record) {
   if (!record?.mesh || !record.mesh.visible) return;
 
   const baseViewOpacity = record.viewOpacity ?? 1;
-  const opacity = Math.max(0.05, Math.min(1, baseViewOpacity * brainOpacityFactor()));
+  const opacity = record.isSelected
+    ? 1
+    : Math.max(0.04, Math.min(1, baseViewOpacity * brainOpacityFactor()));
 
   forceBrainMaterial(record, opacity, record.isSelected === true);
 }
@@ -712,6 +739,7 @@ function restoreBrainPalette() {
     applyBrainRecordVisual(record);
   });
 }
+
 function buildBrainRecords(root) {
   const result = [];
 
@@ -735,6 +763,11 @@ function buildBrainRecords(root) {
     const region = String(meta.bx_region || meta.region || "").trim();
     const baseOpacity = 1;
 
+    if (object.geometry) {
+      if (!object.geometry.attributes.normal) object.geometry.computeVertexNormals();
+      object.geometry.computeBoundingSphere();
+    }
+
     if (Array.isArray(object.material)) {
       object.material.forEach((material) => material?.dispose?.());
     } else {
@@ -742,6 +775,8 @@ function buildBrainRecords(root) {
     }
 
     object.material = brainMaterial(category);
+    object.castShadow = false;
+    object.receiveShadow = false;
 
     result.push({
       mesh: object,
