@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anatomía 3D | BADBEAR.MED</title>
   <meta name="description" content="Atlas anatómico 3D interactivo de BADBEAR.MED para explorar huesos y músculos por estructura.">
-  <link rel="stylesheet" href="anatomia.css?v=20261018-sistemas1">
+  <link rel="stylesheet" href="anatomia.css?v=20261018-sistemas2">
 </head>
 <body>
   <header class="topbar">
@@ -31,7 +31,7 @@
           <h2>Sistema anatómico</h2>
           <span id="systemStatus" class="system-status">Disponible</span>
         </div>
-        <select id="systemSelect" aria-label="Seleccionar sistema anatómico"></select>
+        <div id="systemGrid" class="system-grid" aria-label="Seleccionar sistema anatómico"></div>
         <p id="systemDescription" class="system-description"></p>
         <div id="organGrid" class="organ-grid" aria-label="Órganos y regiones del sistema"></div>
         <p id="systemNotice" class="system-notice" hidden></p>
@@ -134,6 +134,6 @@
     }
   }
   </script>
-  <script type="module" src="anatomia.js?v=20261018-sistemas1"></script>
+  <script type="module" src="anatomia.js?v=20261018-sistemas2"></script>
 </body>
 </html>
