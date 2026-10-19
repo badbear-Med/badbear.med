@@ -896,9 +896,12 @@ function buildGenericRecords(root, spec) {
       /^(mesh|node|object|geometry|scene)[-_ ]*\d*$/i.test(rawText) ||
       /^primitive[-_ ]*\d*$/i.test(rawText);
 
-    const name = looksGeneric
-      ? fallbackName
-      : cleanGenericName(rawText, fallbackName);
+    const name =
+      spec.composeParts && inherited.badbearPartLabel
+        ? fallbackName
+        : looksGeneric
+          ? fallbackName
+          : cleanGenericName(rawText, fallbackName);
 
     if (Array.isArray(object.material)) {
       object.material = object.material.map((material) => material?.clone?.() || material);
