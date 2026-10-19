@@ -22,6 +22,7 @@ const systemDescription = document.getElementById("systemDescription");
 const systemStatus = document.getElementById("systemStatus");
 const systemNotice = document.getElementById("systemNotice");
 const organGrid = document.getElementById("organGrid");
+const panelLeft = document.querySelector(".panel-left");
 const anatomyCatalog = Array.isArray(window.BADBEAR_ANATOMY_CATALOG) ? window.BADBEAR_ANATOMY_CATALOG : [];
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
@@ -53,7 +54,13 @@ scene.add(rimLight);
 
 const floor = new THREE.Mesh(
   new THREE.CircleGeometry(1.7, 96),
-  new THREE.MeshStandardMaterial({ color: 0x0a1a29, roughness: 1, metalness: 0, transparent: true, opacity: 0.7 })
+  new THREE.MeshStandardMaterial({
+    color: 0x0a1a29,
+    roughness: 1,
+    metalness: 0,
+    transparent: true,
+    opacity: 0.7
+  })
 );
 floor.rotation.x = -Math.PI / 2;
 floor.position.y = -0.003;
@@ -66,6 +73,7 @@ let isolatedMesh = null;
 let selectedMesh = null;
 let selectionHelper = null;
 let bounds = null;
+let activeSystemId = "cuerpo-completo";
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
@@ -110,6 +118,7 @@ function pretty(value) {
 function setMaterialOpacity(mesh, opacity) {
   const materials = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
   materials.forEach((material) => {
+    if (!material) return;
     material.transparent = opacity < 0.999;
     material.opacity = opacity;
     material.depthWrite = opacity > 0.55;
@@ -133,24 +142,37 @@ function updateVisibility() {
 function setLayer(layer) {
   currentLayer = layer;
   isolatedMesh = null;
-  
-function updateAnatomyRoute(systemId, organId) {
+  document.querySelectorAll("[data-layer]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.layer === layer);
+  });
+  updateVisibility();
+}
+
+function updateAnatomyRoute(systemId, organId = "") {
   const url = new URL(window.location.href);
   if (systemId) url.searchParams.set("sistema", systemId);
   else url.searchParams.delete("sistema");
+
   if (organId) url.searchParams.set("organo", organId);
   else url.searchParams.delete("organo");
-  history.replaceState(null, "", url);
+
+  history.replaceState({ systemId, organId }, "", url);
+}
+
+function showSystemNotice(message) {
+  systemNotice.textContent = message;
+  systemNotice.hidden = !message;
 }
 
 function selectCatalogOrgan(system, organ, button) {
   document.querySelectorAll(".organ-chip").forEach((chip) => chip.classList.remove("active"));
   if (button) button.classList.add("active");
+
   updateAnatomyRoute(system.id, organ?.id || "");
 
   if (organ?.layer) {
     setLayer(organ.layer);
-    systemNotice.hidden = true;
+    showSystemNotice("");
     if (model) fitModel();
     return;
   }
@@ -160,21 +182,24 @@ function selectCatalogOrgan(system, organ, button) {
   }
 
   if (organ?.estado === "preparado" || system.estado === "preparado") {
-    systemNotice.textContent =
-      "Este espacio ya está organizado dentro del atlas. El siguiente paso es incorporar su modelo 3D específico y su ficha anatómica BADBEAR.MED.";
-    systemNotice.hidden = false;
+    showSystemNotice(
+      "Este espacio ya está organizado dentro del atlas. El siguiente paso es incorporar su modelo 3D específico y su ficha anatómica BADBEAR.MED."
+    );
   } else {
-    systemNotice.hidden = true;
+    showSystemNotice("");
   }
 }
 
-function renderCatalog(systemId, organId = "") {
+function renderCatalog(systemId, organId = "", options = {}) {
   if (!anatomyCatalog.length || !systemGrid || !organGrid) return;
+
   const system = anatomyCatalog.find((item) => item.id === systemId) || anatomyCatalog[0];
+  activeSystemId = system.id;
 
   systemGrid.querySelectorAll(".system-button").forEach((button) => {
     button.classList.toggle("active", button.dataset.systemId === system.id);
   });
+
   systemDescription.textContent = system.descripcion || "";
   systemStatus.textContent = system.estado === "disponible" ? "Disponible" : "Preparado";
   systemStatus.classList.toggle("preparado", system.estado !== "disponible");
@@ -186,25 +211,38 @@ function renderCatalog(systemId, organId = "") {
     button.className = "organ-chip";
     button.dataset.state = organ.estado || "preparado";
     button.textContent = organ.nombre;
+
     if (organ.id === organId) button.classList.add("active");
-    button.addEventListener("click", () => selectCatalogOrgan(system, organ, button));
+
+    button.addEventListener("click", () => {
+      selectCatalogOrgan(system, organ, button);
+    });
+
     organGrid.appendChild(button);
   });
 
+  updateAnatomyRoute(system.id, organId);
+
   const selectedOrgan = (system.organos || []).find((organ) => organ.id === organId);
   if (selectedOrgan) {
-    const activeButton = [...organGrid.querySelectorAll(".organ-chip")].find((button) => button.classList.contains("active"));
+    const activeButton = [...organGrid.querySelectorAll(".organ-chip")].find((button) =>
+      button.classList.contains("active")
+    );
     selectCatalogOrgan(system, selectedOrgan, activeButton);
   } else {
-    updateAnatomyRoute(system.id, "");
     if (system.layer && system.estado === "disponible") setLayer(system.layer);
+
     if (system.estado === "preparado") {
-      systemNotice.textContent =
-        "La arquitectura de este sistema está lista. Falta incorporar el modelo 3D específico para activar sus órganos y subestructuras.";
-      systemNotice.hidden = false;
+      showSystemNotice(
+        "La arquitectura de este sistema está lista. Falta incorporar el modelo 3D específico para activar sus órganos y subestructuras."
+      );
     } else {
-      systemNotice.hidden = true;
+      showSystemNotice("");
     }
+  }
+
+  if (options.scrollPanelTop && panelLeft) {
+    panelLeft.scrollTo({ top: 0, behavior: "smooth" });
   }
 }
 
@@ -212,6 +250,7 @@ function initialiseCatalog() {
   if (!anatomyCatalog.length || !systemGrid) return;
 
   systemGrid.innerHTML = "";
+
   anatomyCatalog.forEach((system) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -236,7 +275,11 @@ function initialiseCatalog() {
 
     copy.append(name, status);
     button.append(icon, copy);
-    button.addEventListener("click", () => renderCatalog(system.id));
+
+    button.addEventListener("click", () => {
+      renderCatalog(system.id, "", { scrollPanelTop: true });
+    });
+
     systemGrid.appendChild(button);
   });
 
@@ -245,67 +288,69 @@ function initialiseCatalog() {
   const requestedOrgan = params.get("organo");
   const firstSystem = anatomyCatalog.find((item) => item.id === requestedSystem)?.id || anatomyCatalog[0].id;
 
+  if (panelLeft) panelLeft.scrollTop = 0;
   renderCatalog(firstSystem, requestedOrgan || "");
-}
-
-initialiseCatalog();
-
-document.querySelectorAll("[data-layer]").forEach((button) => {
-    button.classList.toggle("active", button.dataset.layer === layer);
-  });
-  updateVisibility();
 }
 
 function fitModel() {
   if (!model) return;
+
   bounds = new THREE.Box3().setFromObject(model);
   const size = bounds.getSize(new THREE.Vector3());
   const center = bounds.getCenter(new THREE.Vector3());
   const maxDim = Math.max(size.x, size.y, size.z);
+
   controls.target.copy(center);
   camera.position.set(center.x, center.y + size.y * 0.02, center.z + maxDim * 1.72);
   camera.near = Math.max(maxDim / 1000, 0.001);
   camera.far = maxDim * 20;
   camera.updateProjectionMatrix();
   controls.update();
+
   floor.scale.setScalar(Math.max(size.x, size.z) * 0.72);
   floor.position.y = bounds.min.y - 0.006;
 }
 
 function cameraPreset(view) {
   if (!bounds) return;
+
   const size = bounds.getSize(new THREE.Vector3());
   const center = bounds.getCenter(new THREE.Vector3());
   const distance = Math.max(size.x, size.y, size.z) * 1.55;
+
   const positions = {
     front: [center.x, center.y, center.z + distance],
     back: [center.x, center.y, center.z - distance],
     left: [center.x - distance, center.y, center.z],
     right: [center.x + distance, center.y, center.z]
   };
+
   const target = positions[view];
   if (!target) return;
+
   camera.position.set(...target);
   controls.target.copy(center);
   controls.update();
 }
 
 function clearSelectionHelper() {
-  if (selectionHelper) {
-    scene.remove(selectionHelper);
-    selectionHelper.geometry?.dispose();
-    selectionHelper.material?.dispose();
-    selectionHelper = null;
-  }
+  if (!selectionHelper) return;
+
+  scene.remove(selectionHelper);
+  selectionHelper.geometry?.dispose();
+  selectionHelper.material?.dispose();
+  selectionHelper = null;
 }
 
 function selectMesh(mesh) {
   if (!mesh) return;
+
   selectedMesh = mesh;
   const record = records.find((item) => item.mesh === mesh);
   if (!record) return;
 
   clearSelectionHelper();
+
   selectionHelper = new THREE.BoxHelper(mesh, 0x2fd9ff);
   selectionHelper.material.transparent = true;
   selectionHelper.material.opacity = 0.82;
@@ -313,12 +358,19 @@ function selectMesh(mesh) {
 
   emptySelection.hidden = true;
   selectionCard.hidden = false;
+
   document.getElementById("structureName").textContent = record.name;
   const originalName = document.getElementById("structureOriginalName");
   if (originalName) originalName.textContent = "Nomenclatura original del modelo";
-  document.getElementById("structureLayer").textContent = record.layer === "skeleton" ? "Esqueleto" : record.layer === "muscles" ? "Músculo" : "Estructura";
+
+  document.getElementById("structureLayer").textContent =
+    record.layer === "skeleton" ? "Esqueleto" :
+    record.layer === "muscles" ? "Músculo" :
+    "Estructura";
+
   document.getElementById("structureSide").textContent = pretty(record.meta.side);
-  document.getElementById("structureTissue").textContent = pretty(record.meta.tissue || (record.layer === "muscles" ? "muscle" : ""));
+  document.getElementById("structureTissue").textContent =
+    pretty(record.meta.tissue || (record.layer === "muscles" ? "muscle" : ""));
   document.getElementById("structureFma").textContent = record.meta.fma || "—";
 }
 
@@ -327,6 +379,7 @@ function focusMesh(mesh) {
   const size = box.getSize(new THREE.Vector3());
   const center = box.getCenter(new THREE.Vector3());
   const distance = Math.max(size.x, size.y, size.z, 0.08) * 3.3;
+
   controls.target.copy(center);
   camera.position.set(center.x, center.y + distance * 0.15, center.z + distance);
   controls.update();
@@ -334,17 +387,20 @@ function focusMesh(mesh) {
 
 function renderSearch() {
   const query = searchInput.value.trim().toLowerCase();
+
   if (query.length < 2) {
     searchResults.hidden = true;
     searchResults.innerHTML = "";
     return;
   }
+
   const matches = records
     .filter((record) => record.name.toLowerCase().includes(query))
     .sort((a, b) => a.name.localeCompare(b.name))
     .slice(0, 28);
 
   searchResults.innerHTML = "";
+
   if (!matches.length) {
     const item = document.createElement("button");
     item.type = "button";
@@ -356,19 +412,25 @@ function renderSearch() {
       const item = document.createElement("button");
       item.type = "button";
       item.textContent = record.name;
+
       item.addEventListener("click", () => {
         isolatedMesh = null;
+
         if (record.layer === "skeleton") setLayer("skeleton");
         else if (record.layer === "muscles") setLayer("muscles");
+
         updateVisibility();
         selectMesh(record.mesh);
         focusMesh(record.mesh);
+
         searchInput.value = record.name;
         searchResults.hidden = true;
       });
+
       searchResults.appendChild(item);
     });
   }
+
   searchResults.hidden = false;
 }
 
@@ -388,7 +450,9 @@ function prepareModel(root) {
 
     const meta = getMetadata(object);
     const layer = normaliseLayer(meta.layer);
-    const name = String(meta.name || object.name || "Estructura anatómica").replace(/_/g, " ").trim();
+    const name = String(meta.name || object.name || "Estructura anatómica")
+      .replace(/_/g, " ")
+      .trim();
 
     object.userData.badbearPickable = true;
     records.push({ mesh: object, meta, layer, name });
@@ -443,6 +507,7 @@ opacityInput.addEventListener("input", () => {
 
 searchInput.addEventListener("input", renderSearch);
 searchInput.addEventListener("focus", renderSearch);
+
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".search-wrap")) searchResults.hidden = true;
 });
@@ -462,33 +527,51 @@ document.getElementById("showAllButton").addEventListener("click", () => {
 
 renderer.domElement.addEventListener("pointerup", (event) => {
   if (!records.length) return;
+
   const rect = renderer.domElement.getBoundingClientRect();
   pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
   pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
   raycaster.setFromCamera(pointer, camera);
-  const visibleMeshes = records.filter((record) => record.mesh.visible).map((record) => record.mesh);
+
+  const visibleMeshes = records
+    .filter((record) => record.mesh.visible)
+    .map((record) => record.mesh);
+
   const hits = raycaster.intersectObjects(visibleMeshes, false);
   if (hits.length) selectMesh(hits[0].object);
+});
+
+window.addEventListener("popstate", () => {
+  const params = new URLSearchParams(window.location.search);
+  const requestedSystem = params.get("sistema") || activeSystemId;
+  const requestedOrgan = params.get("organo") || "";
+  renderCatalog(requestedSystem, requestedOrgan);
 });
 
 function resize() {
   const width = canvas.clientWidth;
   const height = canvas.clientHeight;
   if (!width || !height) return;
+
   renderer.setSize(width, height, false);
   camera.aspect = width / height;
   camera.updateProjectionMatrix();
 }
+
 window.addEventListener("resize", resize);
 
 function animate() {
   resize();
   controls.update();
+
   if (selectionHelper) selectionHelper.update();
+
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
 
+initialiseCatalog();
 resize();
 loadModel();
 animate();
