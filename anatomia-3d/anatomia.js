@@ -143,7 +143,8 @@ scene.add(floor);
 const datasets = {
   body: { root: null, records: [], loaded: false },
   brain: { root: null, records: [], loaded: false },
-  brainBeauty: { root: null, records: [], loaded: false }
+  brainBeauty: { root: null, records: [], loaded: false },
+  generic: { root: null, records: [], loaded: false, key: null }
 };
 
 let records = [];
@@ -155,6 +156,8 @@ let selectedRecord = null;
 let activeSystemId = "cuerpo-completo";
 let activeOrganId = "";
 let selectedLabelLocalPoint = null;
+let currentGenericSpec = null;
+let currentGenericFilterTerms = [];
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
@@ -259,6 +262,9 @@ function clearSelectionVisual() {
   } else if (selectedRecord && activeDataset === "brainBeauty") {
     selectedRecord.isSelected = false;
     applyBeautyRecordVisual(selectedRecord);
+  } else if (selectedRecord && activeDataset === "generic") {
+    selectedRecord.isSelected = false;
+    applyGenericRecordVisual(selectedRecord);
   } else if (selectedRecord) {
     selectedRecord.isSelected = false;
     applyBodyRecordVisual(selectedRecord, false);
@@ -290,6 +296,13 @@ function updateBodyControls() {
       sourceNoteTitle.textContent = "Modelo cerebral visual";
       sourceNoteText.textContent = "Science Museum Group · MediaWiki3D · CC0";
       viewerBadgeText.textContent = "Cerebro 3D · vista realista";
+    } else if (activeDataset === "generic" && currentGenericSpec) {
+      sourceNoteTitle.textContent = currentGenericSpec.label || "Modelo anatómico 3D";
+      sourceNoteText.textContent =
+        (currentGenericSpec.source || "Fuente anatómica abierta") +
+        " · " +
+        (currentGenericSpec.license || "Licencia abierta");
+      viewerBadgeText.textContent = (currentGenericSpec.systemLabel || "Anatomía") + " 3D";
     } else {
       sourceNoteTitle.textContent = "Atlas neuroanatómico segmentado";
       sourceNoteText.textContent = "Brain Project · Z-Anatomy · BodyParts3D";
@@ -304,6 +317,7 @@ function setActiveDataset(type) {
   if (datasets.body.root) datasets.body.root.visible = type === "body";
   if (datasets.brain.root) datasets.brain.root.visible = type === "brain";
   if (datasets.brainBeauty.root) datasets.brainBeauty.root.visible = type === "brainBeauty";
+  if (datasets.generic.root) datasets.generic.root.visible = type === "generic";
 
   floor.visible = type === "body";
   records = datasets[type].records;
@@ -316,6 +330,14 @@ function setActiveDataset(type) {
     warmRimLight.intensity = 0.38;
     renderer.toneMappingExposure = 1.02;
     if (scene.fog) scene.fog.density = 0.018;
+  } else if (type === "generic") {
+    hemiLight.intensity = 1.05;
+    keyLight.intensity = 2.35;
+    fillLight.intensity = 0.82;
+    rimLight.intensity = 1.2;
+    warmRimLight.intensity = 0.34;
+    renderer.toneMappingExposure = 1.04;
+    if (scene.fog) scene.fog.density = 0.02;
   } else {
     hemiLight.intensity = 2.1;
     keyLight.intensity = 2.8;
@@ -360,6 +382,36 @@ function setLayer(layer) {
   });
 
   updateBodyVisibility();
+}
+
+function applyBodyRegionFilter(terms = [], layer = "both") {
+  setActiveDataset("body");
+  currentLayer = layer || "both";
+  isolatedMesh = null;
+
+  const normalizedTerms = (terms || []).map((term) => String(term).toLowerCase());
+
+  datasets.body.records.forEach((record) => {
+    const layerMatch =
+      currentLayer === "both" ||
+      (currentLayer === "skeleton" && record.layer === "skeleton") ||
+      (currentLayer === "muscles" && record.layer === "muscles");
+
+    const haystack = [
+      record.name,
+      record.meta?.name,
+      record.meta?.region,
+      record.meta?.fma
+    ].filter(Boolean).join(" ").toLowerCase();
+
+    const termMatch = !normalizedTerms.length || normalizedTerms.some((term) => haystack.includes(term));
+    record.mesh.visible = layerMatch && termMatch;
+  });
+
+  const matched = datasets.body.records.filter((record) => record.mesh.visible);
+  if (!matched.length) updateBodyVisibility();
+
+  fitVisibleRecords();
 }
 
 function brainFilterForOrgan(organId) {
@@ -533,6 +585,7 @@ function hideStructureLabel() {
 function labelMetaForRecord(record) {
   if (!record) return "";
   if (isNeuroDataset()) return prettyBrainCategory(record.category);
+  if (activeDataset === "generic") return currentGenericSpec?.category || record.category || "Anatomía";
 
   if (record.meta?.label_es) return String(record.meta.label_es);
   if (record.meta?.system) return pretty(record.meta.system);
@@ -659,6 +712,9 @@ function selectMesh(mesh, worldPoint = null) {
   } else if (activeDataset === "brainBeauty") {
     record.isSelected = true;
     applyBeautyRecordVisual(record);
+  } else if (activeDataset === "generic") {
+    record.isSelected = true;
+    applyGenericRecordVisual(record);
   } else {
     record.isSelected = true;
     applyBodyRecordVisual(record, true);
@@ -686,6 +742,15 @@ function selectMesh(mesh, worldPoint = null) {
     document.getElementById("structureSide").textContent = pretty(record.side);
     document.getElementById("structureTissue").textContent = prettyBrainCategory(record.category);
     document.getElementById("structureFma").textContent = pretty(record.region);
+  } else if (activeDataset === "generic") {
+    if (originalName) originalName.textContent = currentGenericSpec?.source || "Modelo anatómico abierto";
+    if (labelTissue) labelTissue.textContent = "Sistema";
+    if (labelRef) labelRef.textContent = "Fuente";
+
+    document.getElementById("structureLayer").textContent = currentGenericSpec?.category || "Anatomía 3D";
+    document.getElementById("structureSide").textContent = pretty(record.side);
+    document.getElementById("structureTissue").textContent = currentGenericSpec?.systemLabel || "Anatomía";
+    document.getElementById("structureFma").textContent = currentGenericSpec?.source || "—";
   } else {
     if (originalName) originalName.textContent = "Nomenclatura original del modelo";
     if (labelTissue) labelTissue.textContent = "Tejido";
@@ -768,6 +833,256 @@ function renderSearch() {
   }
 
   searchResults.hidden = false;
+}
+
+
+const GENERIC_NAME_ALIASES = new Map([
+  ["right-atrium", "Aurícula derecha"],
+  ["left-atrium", "Aurícula izquierda"],
+  ["ventricular-wall", "Pared ventricular"],
+  ["right-ventricle", "Ventrículo derecho"],
+  ["left-ventricle", "Ventrículo izquierdo"],
+  ["ascending-aorta", "Aorta ascendente"],
+  ["aortic-arch", "Arco aórtico"],
+  ["pulmonary-trunk", "Tronco pulmonar"],
+  ["superior-vena-cava", "Vena cava superior"],
+  ["left-coronary", "Arteria coronaria izquierda"],
+  ["right-coronary", "Arteria coronaria derecha"]
+]);
+
+function cleanGenericName(raw, fallback = "Estructura anatómica") {
+  const value = String(raw || "").trim();
+  if (!value) return fallback;
+
+  const normalized = value.toLowerCase();
+  if (GENERIC_NAME_ALIASES.has(normalized)) return GENERIC_NAME_ALIASES.get(normalized);
+
+  const cleaned = value
+    .replace(/^https?:\/\/[^/]+\//i, "")
+    .replace(/^(mesh|node|object|geometry)[-_ ]*\d*$/i, "")
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (!cleaned || /^[0-9.]+$/.test(cleaned)) return fallback;
+
+  return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+}
+
+function genericSideFromName(name) {
+  const value = String(name || "").toLowerCase();
+  if (/\b(left|izquierd[oa])\b/.test(value) || /(^|[_.-])l($|[_.-])/.test(value)) return "left";
+  if (/\b(right|derech[oa])\b/.test(value) || /(^|[_.-])r($|[_.-])/.test(value)) return "right";
+  return "median";
+}
+
+function genericMaterials(mesh) {
+  return Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+}
+
+function buildGenericRecords(root, spec) {
+  const result = [];
+  let counter = 0;
+
+  root.traverse((object) => {
+    if (!object.isMesh) return;
+
+    const inherited = getMetadata(object, root);
+    const fallbackName = inherited.badbearPartLabel || spec.label || "Estructura anatómica";
+    const rawName = object.name || inherited.name || fallbackName;
+    const name = cleanGenericName(rawName, fallbackName);
+
+    if (Array.isArray(object.material)) {
+      object.material = object.material.map((material) => material?.clone?.() || material);
+    } else if (object.material) {
+      object.material = object.material.clone();
+    }
+
+    const materials = genericMaterials(object);
+    const baseMaterialStates = materials.map((material) => ({
+      color: material?.color?.clone?.() || null,
+      emissive: material?.emissive?.clone?.() || null,
+      emissiveIntensity: material?.emissiveIntensity ?? 1,
+      opacity: material?.opacity ?? 1,
+      transparent: material?.transparent ?? false,
+      depthWrite: material?.depthWrite ?? true
+    }));
+
+    materials.forEach((material) => {
+      if (!material) return;
+      if ("roughness" in material) material.roughness = Math.max(0.38, Math.min(0.72, material.roughness ?? 0.55));
+      if ("metalness" in material) material.metalness = Math.min(0.08, material.metalness ?? 0);
+      material.needsUpdate = true;
+    });
+
+    result.push({
+      mesh: object,
+      meta: inherited,
+      name,
+      rawName,
+      category: spec.category || spec.systemLabel || "Anatomía",
+      side: genericSideFromName(name + " " + rawName),
+      region: spec.systemLabel || spec.category || "",
+      pickable: true,
+      isSelected: false,
+      baseMaterialStates,
+      searchText: (name + " " + rawName + " " + fallbackName).toLowerCase(),
+      order: counter++
+    });
+  });
+
+  return result.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function applyGenericRecordVisual(record) {
+  if (!record?.mesh) return;
+
+  const opacity = record.isSelected ? 1 : brainOpacityFactor();
+  const materials = genericMaterials(record.mesh);
+
+  materials.forEach((material, index) => {
+    if (!material) return;
+    const base = record.baseMaterialStates?.[index];
+
+    if (base?.color && material.color) {
+      material.color.copy(base.color);
+      if (record.isSelected) material.color.offsetHSL(0.01, 0.04, 0.10);
+    }
+
+    if (material.emissive) {
+      if (base?.emissive) material.emissive.copy(base.emissive);
+      else material.emissive.set(0x000000);
+
+      if (record.isSelected) {
+        material.emissive.lerp(new THREE.Color("#42d9ff"), 0.32);
+        material.emissiveIntensity = 0.75;
+      } else {
+        material.emissiveIntensity = base?.emissiveIntensity ?? 1;
+      }
+    }
+
+    material.transparent = opacity < 0.999 || base?.transparent === true;
+    material.opacity = Math.min(base?.opacity ?? 1, opacity);
+    material.depthWrite = record.isSelected || (material.opacity >= 0.62 && (base?.depthWrite ?? true));
+    material.needsUpdate = true;
+  });
+}
+
+function applyGenericVisuals() {
+  if (!datasets.generic.loaded) return;
+  datasets.generic.records.forEach((record) => applyGenericRecordVisual(record));
+}
+
+function applyGenericFilter(terms = []) {
+  currentGenericFilterTerms = Array.isArray(terms) ? terms : [];
+  const normalizedTerms = currentGenericFilterTerms.map((term) => String(term).toLowerCase());
+
+  datasets.generic.records.forEach((record) => {
+    const matches =
+      !normalizedTerms.length ||
+      normalizedTerms.some((term) => record.searchText.includes(term));
+
+    record.mesh.visible = matches;
+    record.pickable = matches;
+    if (matches) applyGenericRecordVisual(record);
+  });
+
+  const anyVisible = datasets.generic.records.some((record) => record.mesh.visible);
+  if (!anyVisible) {
+    datasets.generic.records.forEach((record) => {
+      record.mesh.visible = true;
+      record.pickable = true;
+      applyGenericRecordVisual(record);
+    });
+  }
+
+  isolatedMesh = null;
+  resetSelectionPanel();
+}
+
+function disposeGenericDataset() {
+  if (!datasets.generic.root) return;
+
+  scene.remove(datasets.generic.root);
+  datasets.generic.root.traverse((object) => {
+    if (!object.isMesh) return;
+    object.geometry?.dispose?.();
+    genericMaterials(object).forEach((material) => material?.dispose?.());
+  });
+
+  datasets.generic = { root: null, records: [], loaded: false, key: null };
+}
+
+function loadGltfUrl(url, loader) {
+  return new Promise((resolve, reject) => {
+    loader.load(url, resolve, undefined, reject);
+  });
+}
+
+async function loadGenericModel(modelKey) {
+  const spec = MODEL_REGISTRY.organModels?.[modelKey];
+  if (!spec) throw new Error("Modelo 3D no registrado: " + modelKey);
+
+  if (datasets.generic.loaded && datasets.generic.key === modelKey) {
+    currentGenericSpec = spec;
+    return datasets.generic.root;
+  }
+
+  showLoading("Cargando " + spec.label + " 3D...");
+
+  disposeGenericDataset();
+
+  const dracoLoader = new DRACOLoader();
+  dracoLoader.setDecoderPath(DRACO_DECODER_PATH);
+
+  const loader = new GLTFLoader();
+  loader.setDRACOLoader(dracoLoader);
+  loader.setMeshoptDecoder(MeshoptDecoder);
+
+  try {
+    const scenes = await Promise.all(
+      spec.urls.map((url) => loadGltfUrl(url, loader))
+    );
+
+    const root = new THREE.Group();
+    root.name = "BADBEAR_" + spec.id;
+
+    scenes.forEach((gltf, index) => {
+      const wrapper = new THREE.Group();
+      wrapper.name = spec.partLabels?.[index] || spec.label;
+      wrapper.userData.badbearPartLabel = spec.partLabels?.[index] || spec.label;
+      wrapper.add(gltf.scene);
+      root.add(wrapper);
+    });
+
+    root.updateMatrixWorld(true);
+
+    const box = new THREE.Box3().setFromObject(root);
+    const center = box.getCenter(new THREE.Vector3());
+    const radius = box.getBoundingSphere(new THREE.Sphere()).radius || 1;
+
+    root.position.sub(center);
+    root.scale.setScalar(1.62 / radius);
+    root.updateMatrixWorld(true);
+
+    const recordsForModel = buildGenericRecords(root, spec);
+
+    datasets.generic = {
+      root,
+      records: recordsForModel,
+      loaded: true,
+      key: modelKey
+    };
+
+    currentGenericSpec = spec;
+    scene.add(root);
+    root.visible = false;
+
+    hideLoading(recordsForModel.length + " estructuras listas");
+    return root;
+  } finally {
+    dracoLoader.dispose();
+  }
 }
 
 function buildBodyRecords(root) {
@@ -898,6 +1213,9 @@ function applyBrainVisuals() {
   }
   if (datasets.brainBeauty.loaded) {
     datasets.brainBeauty.records.forEach((record) => applyBeautyRecordVisual(record));
+  }
+  if (datasets.generic.loaded) {
+    applyGenericVisuals();
   }
 }
 
@@ -1231,6 +1549,24 @@ function showSystemNotice(message) {
 }
 
 async function applySystemModel(system, organ) {
+  const requestedModelKey = organ?.modelKey || (!organ ? system.defaultModelKey : null);
+
+  if (requestedModelKey) {
+    try {
+      await loadGenericModel(requestedModelKey);
+      if (activeSystemId !== system.id) return;
+
+      setActiveDataset("generic");
+      applyGenericFilter(organ?.filterTerms || []);
+      fitVisibleRecords();
+      showSystemNotice("");
+    } catch (error) {
+      console.error(error);
+      showSystemNotice("No se pudo cargar este modelo 3D desde su fuente anatómica abierta.");
+    }
+    return;
+  }
+
   if (system.id === "nervioso") {
     const organId = organ?.id || "cerebro";
 
@@ -1295,9 +1631,7 @@ async function applySystemModel(system, organ) {
   if (system.id === "cuerpo-completo" || system.id === "osteomuscular") {
     showSystemNotice("");
   } else {
-    showSystemNotice(
-      "Este sistema ya está organizado en BADBEAR.MED. Falta incorporar su modelo 3D específico."
-    );
+    showSystemNotice("Selecciona una estructura disponible del sistema para abrir su modelo 3D.");
   }
 }
 
@@ -1309,9 +1643,23 @@ function selectCatalogOrgan(system, organ, button) {
   activeOrganId = organ?.id || "";
   updateAnatomyRoute(system.id, activeOrganId);
 
+  if (system.id === "osteomuscular" && organ?.bodyTerms?.length) {
+    applyBodyRegionFilter(organ.bodyTerms, organ.layer || "both");
+    showSystemNotice("");
+    return;
+  }
+
   if (system.id === "osteomuscular" && organ?.layer) {
     setActiveDataset("body");
     setLayer(organ.layer);
+    fitVisibleRecords();
+    showSystemNotice("");
+    return;
+  }
+
+  if (system.id === "cuerpo-completo" && organ?.id === "vista-global") {
+    setActiveDataset("body");
+    setLayer("both");
     fitVisibleRecords();
     showSystemNotice("");
     return;
@@ -1478,6 +1826,8 @@ document.getElementById("showAllButton").addEventListener("click", () => {
       record.mesh.visible = true;
       applyBeautyRecordVisual(record);
     });
+  } else if (activeDataset === "generic") {
+    applyGenericFilter(currentGenericFilterTerms);
   } else {
     applyBrainFilter(activeOrganId);
   }
