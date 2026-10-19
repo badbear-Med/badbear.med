@@ -122,3 +122,66 @@ footer a{color:#63dcff}
 .system-notice{margin:10px 0 0;padding:9px 10px;border-radius:10px;border:1px solid rgba(155,140,255,.18);background:rgba(155,140,255,.07);color:#aeb6cf;font-size:.72rem;line-height:1.4}
 .search-help{display:block;margin-top:6px;color:#6f879a;font-size:.67rem;line-height:1.35}
 .structure-original{margin:-10px 0 16px;color:#7f98aa;font-size:.72rem;font-style:italic}
+
+
+/* Menú visual de sistemas anatómicos */
+.system-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:7px;
+  margin-top:10px;
+}
+.system-button{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid var(--line);
+  background:#081a2b;
+  color:#cfe3f2;
+  border-radius:12px;
+  padding:10px 11px;
+  cursor:pointer;
+  text-align:left;
+  transition:.16s ease;
+}
+.system-button:hover{
+  border-color:#3fd6ff;
+  background:#0d2942;
+  color:#fff;
+  transform:translateY(-1px);
+}
+.system-button.active{
+  border-color:#40d8ff;
+  background:linear-gradient(135deg,rgba(50,215,255,.17),rgba(80,136,255,.14));
+  color:#fff;
+  box-shadow:0 0 0 2px rgba(50,215,255,.08) inset;
+}
+.system-button .system-icon{
+  width:28px;
+  height:28px;
+  flex:0 0 28px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  background:rgba(255,255,255,.06);
+  font-size:1rem;
+}
+.system-button .system-copy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.system-button .system-name{
+  font-size:.78rem;
+  font-weight:800;
+  line-height:1.2;
+}
+.system-button .system-mini-status{
+  font-size:.62rem;
+  color:#7891a4;
+}
+.system-button[data-state="disponible"] .system-mini-status{
+  color:#8debc9;
+}
