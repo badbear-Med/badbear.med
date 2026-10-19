@@ -50,6 +50,11 @@ export const MODEL_REGISTRY = {
       category: "Cardiovascular",
       urls: [HRA + "VH_M_Heart.glb", HRA + "VH_M_Blood_Vasculature.glb"],
       partLabels: ["Corazón", "Vasculatura sanguínea"],
+      composeParts: true,
+      composition: [
+        { position: [0, 0.12, 0.22], scale: 0.42, color: "#b84f5e" },
+        { position: [0, 0, -0.16], scale: 1.08, opacity: 0.72 }
+      ],
       source: "HuBMAP Human Reference Atlas",
       license: "CC BY 4.0"
     },
@@ -99,6 +104,13 @@ export const MODEL_REGISTRY = {
         HRA + "SBU_M_Intestine_Large.glb"
       ],
       partLabels: ["Hígado", "Páncreas", "Intestino delgado", "Colon"],
+      composeParts: true,
+      composition: [
+        { position: [-0.48, 0.48, 0.05], scale: 0.76, color: "#7a3f47" },
+        { position: [0.08, 0.17, 0.16], scale: 0.48, color: "#d9a66f" },
+        { position: [0.02, -0.46, 0.06], scale: 0.92, color: "#d89a82" },
+        { position: [0.02, -0.42, -0.05], scale: 1.08, color: "#b8796d", opacity: 0.82 }
+      ],
       source: "HuBMAP Human Reference Atlas",
       license: "CC BY 4.0"
     },
@@ -169,6 +181,12 @@ export const MODEL_REGISTRY = {
         HRA + "VH_M_Urinary_Bladder.glb"
       ],
       partLabels: ["Riñón izquierdo", "Riñón derecho", "Vejiga urinaria"],
+      composeParts: true,
+      composition: [
+        { position: [-0.52, 0.36, 0], scale: 0.82, color: "#a65a58" },
+        { position: [0.52, 0.36, 0], scale: 0.82, color: "#a65a58" },
+        { position: [0, -0.80, 0.10], scale: 0.56, color: "#d7c6aa" }
+      ],
       source: "HuBMAP Human Reference Atlas",
       license: "CC BY 4.0"
     },
@@ -180,6 +198,11 @@ export const MODEL_REGISTRY = {
       category: "Riñones",
       urls: [HRA + "VH_M_Kidney_L.glb", HRA + "VH_M_Kidney_R.glb"],
       partLabels: ["Riñón izquierdo", "Riñón derecho"],
+      composeParts: true,
+      composition: [
+        { position: [-0.46, 0, 0], scale: 0.92, color: "#a65a58" },
+        { position: [0.46, 0, 0], scale: 0.92, color: "#a65a58" }
+      ],
       source: "HuBMAP Human Reference Atlas",
       license: "CC BY 4.0"
     },
@@ -213,6 +236,11 @@ export const MODEL_REGISTRY = {
       category: "Endocrino",
       urls: [HRA + "VH_M_Thymus.glb", HRA + "VH_M_Pancreas.glb"],
       partLabels: ["Timo", "Páncreas"],
+      composeParts: true,
+      composition: [
+        { position: [0, 0.52, 0], scale: 0.68, color: "#c58e9b" },
+        { position: [0, -0.48, 0.08], scale: 0.76, color: "#d9a66f" }
+      ],
       source: "HuBMAP Human Reference Atlas",
       license: "CC BY 4.0"
     },
@@ -239,6 +267,12 @@ export const MODEL_REGISTRY = {
         HRA + "VH_F_Ovary_R.glb"
       ],
       partLabels: ["Útero", "Ovario izquierdo", "Ovario derecho"],
+      composeParts: true,
+      composition: [
+        { position: [0, -0.04, 0], scale: 0.90, color: "#b85f73" },
+        { position: [-0.72, 0.08, 0.04], scale: 0.44, color: "#d69679" },
+        { position: [0.72, 0.08, 0.04], scale: 0.44, color: "#d69679" }
+      ],
       source: "HuBMAP Human Reference Atlas",
       license: "CC BY 4.0"
     },
