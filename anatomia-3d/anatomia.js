@@ -890,7 +890,15 @@ function buildGenericRecords(root, spec) {
     const inherited = getMetadata(object, root);
     const fallbackName = inherited.badbearPartLabel || spec.label || "Estructura anatómica";
     const rawName = object.name || inherited.name || fallbackName;
-    const name = cleanGenericName(rawName, fallbackName);
+    const rawText = String(rawName || "").trim();
+    const looksGeneric =
+      !rawText ||
+      /^(mesh|node|object|geometry|scene)[-_ ]*\d*$/i.test(rawText) ||
+      /^primitive[-_ ]*\d*$/i.test(rawText);
+
+    const name = looksGeneric
+      ? fallbackName
+      : cleanGenericName(rawText, fallbackName);
 
     if (Array.isArray(object.material)) {
       object.material = object.material.map((material) => material?.clone?.() || material);
@@ -910,8 +918,25 @@ function buildGenericRecords(root, spec) {
 
     materials.forEach((material) => {
       if (!material) return;
-      if ("roughness" in material) material.roughness = Math.max(0.38, Math.min(0.72, material.roughness ?? 0.55));
-      if ("metalness" in material) material.metalness = Math.min(0.08, material.metalness ?? 0);
+
+      if (inherited.badbearColor && material.color) {
+        material.color.set(inherited.badbearColor);
+      }
+
+      const partOpacity = Number(inherited.badbearOpacity ?? 1);
+      if (Number.isFinite(partOpacity) && partOpacity < 0.999) {
+        material.transparent = true;
+        material.opacity = Math.min(material.opacity ?? 1, partOpacity);
+        material.depthWrite = partOpacity >= 0.62;
+      }
+
+      if ("roughness" in material) {
+        material.roughness = Math.max(0.38, Math.min(0.72, material.roughness ?? 0.55));
+      }
+      if ("metalness" in material) {
+        material.metalness = Math.min(0.08, material.metalness ?? 0);
+      }
+
       material.needsUpdate = true;
     });
 
@@ -937,7 +962,14 @@ function buildGenericRecords(root, spec) {
 function applyGenericRecordVisual(record) {
   if (!record?.mesh) return;
 
-  const opacity = record.isSelected ? 1 : brainOpacityFactor();
+  const basePartOpacity = Number(record.meta?.badbearOpacity ?? 1);
+  const globalOpacity = brainOpacityFactor();
+  const opacity = record.isSelected
+    ? 1
+    : Math.min(
+        Number.isFinite(basePartOpacity) ? basePartOpacity : 1,
+        globalOpacity
+      );
   const materials = genericMaterials(record.mesh);
 
   materials.forEach((material, index) => {
@@ -1049,8 +1081,31 @@ async function loadGenericModel(modelKey) {
 
     scenes.forEach((gltf, index) => {
       const wrapper = new THREE.Group();
-      wrapper.name = spec.partLabels?.[index] || spec.label;
-      wrapper.userData.badbearPartLabel = spec.partLabels?.[index] || spec.label;
+      const partLabel = spec.partLabels?.[index] || spec.label;
+      const layout = spec.composition?.[index] || {};
+
+      wrapper.name = partLabel;
+      wrapper.userData.badbearPartLabel = partLabel;
+      wrapper.userData.badbearColor = layout.color || "";
+      wrapper.userData.badbearOpacity =
+        typeof layout.opacity === "number" ? layout.opacity : 1;
+
+      gltf.scene.updateMatrixWorld(true);
+
+      if (spec.composeParts) {
+        const partBox = new THREE.Box3().setFromObject(gltf.scene);
+        const partCenter = partBox.getCenter(new THREE.Vector3());
+        const partRadius = Math.max(
+          partBox.getBoundingSphere(new THREE.Sphere()).radius || 1,
+          0.0001
+        );
+
+        gltf.scene.position.sub(partCenter);
+        wrapper.scale.setScalar((layout.scale || 1) / partRadius);
+        wrapper.position.fromArray(layout.position || [0, 0, 0]);
+        wrapper.rotation.set(...(layout.rotation || [0, 0, 0]));
+      }
+
       wrapper.add(gltf.scene);
       root.add(wrapper);
     });
@@ -1059,7 +1114,10 @@ async function loadGenericModel(modelKey) {
 
     const box = new THREE.Box3().setFromObject(root);
     const center = box.getCenter(new THREE.Vector3());
-    const radius = box.getBoundingSphere(new THREE.Sphere()).radius || 1;
+    const radius = Math.max(
+      box.getBoundingSphere(new THREE.Sphere()).radius || 1,
+      0.0001
+    );
 
     root.position.sub(center);
     root.scale.setScalar(1.62 / radius);
