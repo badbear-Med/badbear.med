@@ -16,18 +16,18 @@ const DRACO_DECODER_PATH =
   "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/libs/draco/";
 
 const BRAIN_PALETTE = {
-  cortex: "#E7DEC9",
-  white_matter: "#D7DDE8",
-  deep_grey: "#B57BE0",
-  diencephalon: "#7E8CF2",
-  brainstem: "#E8B24A",
-  cerebellum: "#F0894E",
-  ventricles: "#3FC8D6",
-  arteries: "#F05068",
-  veins_sinuses: "#5078E8",
-  cranial_nerves: "#D9D24A",
-  meninges_dura: "#CC63CC",
-  tracts: "#5FB6C9"
+  cortex: "#CBBEA4",
+  white_matter: "#D9DFEA",
+  deep_grey: "#A768E8",
+  diencephalon: "#687CFF",
+  brainstem: "#F0A52E",
+  cerebellum: "#E9783B",
+  ventricles: "#24C6D8",
+  arteries: "#F0445E",
+  veins_sinuses: "#426FE8",
+  cranial_nerves: "#E2D83D",
+  meninges_dura: "#C75BC7",
+  tracts: "#4FAFC4"
 };
 
 const BRAIN_EMISSIVE = {
@@ -395,14 +395,14 @@ function applyBrainFilter(organId = "") {
 
     if (isPrimary) {
       record.mesh.visible = true;
-      setMaterialOpacity(record.mesh, record.baseOpacity);
+      forceBrainMaterial(record, record.baseOpacity);
       continue;
     }
 
     if (ghostOpacity > 0) {
       record.mesh.visible = true;
       record.contextGhost = true;
-      setMaterialOpacity(record.mesh, Math.min(record.baseOpacity, ghostOpacity));
+      forceBrainMaterial(record, Math.min(record.baseOpacity, ghostOpacity));
       continue;
     }
 
@@ -619,16 +619,56 @@ function buildBodyRecords(root) {
 }
 
 function brainMaterial(category) {
-  const baseHex = BRAIN_PALETTE[category] || "#9AA9BA";
+  const baseHex = BRAIN_PALETTE[category] || "#8C9BAD";
   const opacity = BRAIN_MAX_OPACITY[category] ?? 1;
 
-  return new THREE.MeshBasicMaterial({
-    color: new THREE.Color(baseHex),
+  const material = new THREE.MeshBasicMaterial({
+    color: baseHex,
     transparent: true,
     opacity,
     side: category === "meninges_dura" ? THREE.DoubleSide : THREE.FrontSide,
+    depthTest: true,
     depthWrite: opacity >= 0.35,
-    toneMapped: false
+    toneMapped: false,
+    fog: false
+  });
+
+  material.name = "BADBEAR_BRAIN_" + (category || "other");
+  return material;
+}
+
+function forceBrainMaterial(record, opacity = record.baseOpacity) {
+  if (!record?.mesh) return;
+
+  const category = record.category || "other";
+  const hex = BRAIN_PALETTE[category] || "#8C9BAD";
+  const materials = Array.isArray(record.mesh.material)
+    ? record.mesh.material
+    : [record.mesh.material];
+
+  materials.forEach((material) => {
+    if (!material) return;
+
+    if (material.color) material.color.set(hex);
+    if (material.emissive) material.emissive.set(0x000000);
+
+    material.vertexColors = false;
+    material.transparent = true;
+    material.opacity = opacity;
+    material.depthTest = true;
+    material.depthWrite = opacity >= 0.35;
+    material.blending = THREE.NormalBlending;
+    material.toneMapped = false;
+    material.fog = false;
+    material.needsUpdate = true;
+  });
+}
+
+function restoreBrainPalette() {
+  if (!datasets.brain.loaded) return;
+
+  datasets.brain.records.forEach((record) => {
+    forceBrainMaterial(record, record.baseOpacity);
   });
 }
 
@@ -769,6 +809,8 @@ function loadBrainModel() {
         datasets.brain.records = buildBrainRecords(gltf.scene);
         datasets.brain.loaded = true;
 
+        restoreBrainPalette();
+
         scene.add(gltf.scene);
         gltf.scene.visible = false;
 
@@ -819,6 +861,7 @@ async function applySystemModel(system, organ) {
       if (activeSystemId !== "nervioso") return;
 
       setActiveDataset("brain");
+      restoreBrainPalette();
       applyBrainFilter(organ?.id || "");
       fitVisibleRecords();
 
