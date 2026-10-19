@@ -24,3 +24,17 @@ La interfaz y lógica de este módulo fueron implementadas específicamente para
 ## Uso
 
 Este atlas es un recurso educativo. No es un dispositivo médico ni está destinado a planificación diagnóstica, terapéutica o quirúrgica.
+
+
+## Cerebro 3D
+
+El módulo de **Sistema nervioso / Cerebro 3D** utiliza el activo neuroanatómico del proyecto abierto **Brain Project**.
+
+**Brain Project**  
+Repositorio: https://github.com/itayinbarr/brainproject  
+Modelo utilizado: `brain-atlas/models/brain.glb`  
+Licencia de los activos anatómicos: **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
+
+El proyecto declara que el modelo deriva principalmente de **Z-Anatomy** y **BodyParts3D / DBCLS**, e integra estructuras adicionales registradas a partir de atlas de neuroimagen abiertos. Determinadas estructuras profundas y tractos son aproximaciones educativas registradas en espacio MNI y no deben utilizarse con fines clínicos.
+
+BADBEAR.MED utiliza este modelo únicamente como recurso educativo interactivo y conserva la atribución y condiciones ShareAlike aplicables al activo 3D.
