@@ -259,6 +259,9 @@ function clearSelectionVisual() {
   } else if (selectedRecord && activeDataset === "brainBeauty") {
     selectedRecord.isSelected = false;
     applyBeautyRecordVisual(selectedRecord);
+  } else if (selectedRecord) {
+    selectedRecord.isSelected = false;
+    applyBodyRecordVisual(selectedRecord, false);
   }
 
   selectedRecord = null;
@@ -530,8 +533,14 @@ function hideStructureLabel() {
 function labelMetaForRecord(record) {
   if (!record) return "";
   if (isNeuroDataset()) return prettyBrainCategory(record.category);
+
+  if (record.meta?.label_es) return String(record.meta.label_es);
+  if (record.meta?.system) return pretty(record.meta.system);
+  if (record.meta?.organ) return pretty(record.meta.organ);
   if (record.layer === "skeleton") return "Esqueleto";
   if (record.layer === "muscles") return "Músculo";
+  if (record.category) return pretty(record.category);
+
   return "Estructura anatómica";
 }
 
@@ -579,17 +588,69 @@ function updateStructureLabelPosition() {
   structureLabel.style.top = y + "px";
 }
 
+function recordForObject(object) {
+  if (!object) return null;
+
+  let node = object;
+  while (node) {
+    const direct = records.find((item) => item.mesh === node);
+    if (direct) return direct;
+    node = node.parent;
+  }
+
+  return records.find((item) => {
+    let current = object.parent;
+    while (current) {
+      if (current === item.mesh) return true;
+      current = current.parent;
+    }
+    return false;
+  }) || null;
+}
+
+function applyBodyRecordVisual(record, selected = false) {
+  if (!record?.mesh) return;
+
+  const materials = Array.isArray(record.mesh.material)
+    ? record.mesh.material
+    : [record.mesh.material];
+
+  materials.forEach((material, index) => {
+    if (!material) return;
+    const base = record.baseMaterialStates?.[index];
+
+    if (base?.color && material.color) {
+      material.color.copy(base.color);
+      if (selected) material.color.offsetHSL(0.01, 0.05, 0.10);
+    }
+
+    if (material.emissive) {
+      if (base?.emissive) material.emissive.copy(base.emissive);
+      else material.emissive.set(0x000000);
+
+      if (selected) {
+        material.emissive.lerp(new THREE.Color("#39d7ff"), 0.34);
+        material.emissiveIntensity = 0.75;
+      } else {
+        material.emissiveIntensity = base?.emissiveIntensity ?? 1;
+      }
+    }
+
+    material.needsUpdate = true;
+  });
+}
+
 function selectMesh(mesh, worldPoint = null) {
   if (!mesh) return;
 
-  const record = records.find((item) => item.mesh === mesh);
+  const record = recordForObject(mesh);
   if (!record) return;
 
-  if (activeDataset === "brain" && record.pickable === false) return;
+  if (record.pickable === false) return;
 
   clearSelectionVisual();
 
-  selectedMesh = mesh;
+  selectedMesh = record.mesh;
   selectedRecord = record;
 
   if (activeDataset === "brain") {
@@ -598,6 +659,9 @@ function selectMesh(mesh, worldPoint = null) {
   } else if (activeDataset === "brainBeauty") {
     record.isSelected = true;
     applyBeautyRecordVisual(record);
+  } else {
+    record.isSelected = true;
+    applyBodyRecordVisual(record, true);
   }
 
   emptySelection.hidden = true;
@@ -638,7 +702,7 @@ function selectMesh(mesh, worldPoint = null) {
     document.getElementById("structureFma").textContent = record.meta.fma || "—";
   }
 
-  setStructureLabelAnchor(mesh, worldPoint);
+  setStructureLabelAnchor(record.mesh, worldPoint);
 }
 
 function focusMesh(mesh) {
@@ -693,6 +757,7 @@ function renderSearch() {
 
         selectMesh(record.mesh);
         focusMesh(record.mesh);
+        updateStructureLabelPosition();
 
         searchInput.value = record.name;
         searchResults.hidden = true;
@@ -723,7 +788,25 @@ function buildBodyRecords(root) {
       .replace(/_/g, " ")
       .trim();
 
-    result.push({ mesh: object, meta, layer, name });
+    const bodyMaterials = Array.isArray(object.material) ? object.material : [object.material];
+    const baseMaterialStates = bodyMaterials.map((material) => ({
+      color: material?.color?.clone?.() || null,
+      emissive: material?.emissive?.clone?.() || null,
+      emissiveIntensity: material?.emissiveIntensity ?? 1
+    }));
+
+    result.push({
+      mesh: object,
+      meta,
+      layer,
+      name,
+      category: layer,
+      side: String(meta.side || "").trim(),
+      region: String(meta.region || meta.fma || "").trim(),
+      pickable: true,
+      isSelected: false,
+      baseMaterialStates
+    });
   });
 
   return result.sort((a, b) => a.name.localeCompare(b.name));
@@ -1420,9 +1503,14 @@ renderer.domElement.addEventListener("pointerup", (event) => {
     })
     .map((record) => record.mesh);
 
-  const hits = raycaster.intersectObjects(visibleMeshes, false);
+  const hits = raycaster.intersectObjects(visibleMeshes, true);
 
-  if (hits.length) selectMesh(hits[0].object, hits[0].point);
+  const hit = hits.find((candidate) => {
+    const record = recordForObject(candidate.object);
+    return record && record.pickable !== false;
+  });
+
+  if (hit) selectMesh(hit.object, hit.point);
 });
 
 window.addEventListener("popstate", () => {
