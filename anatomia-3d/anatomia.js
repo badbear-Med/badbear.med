@@ -17,6 +17,12 @@ const opacityInput = document.getElementById("muscleOpacity");
 const opacityValue = document.getElementById("opacityValue");
 const emptySelection = document.getElementById("emptySelection");
 const selectionCard = document.getElementById("selectionCard");
+const systemSelect = document.getElementById("systemSelect");
+const systemDescription = document.getElementById("systemDescription");
+const systemStatus = document.getElementById("systemStatus");
+const systemNotice = document.getElementById("systemNotice");
+const organGrid = document.getElementById("organGrid");
+const anatomyCatalog = Array.isArray(window.BADBEAR_ANATOMY_CATALOG) ? window.BADBEAR_ANATOMY_CATALOG : [];
 
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -88,7 +94,17 @@ function normaliseLayer(value) {
 function pretty(value) {
   const text = String(value || "").trim();
   if (!text) return "—";
-  return text.charAt(0).toUpperCase() + text.slice(1);
+  const dictionary = {
+    left: "Izquierdo",
+    right: "Derecho",
+    midline: "Línea media",
+    muscle: "Músculo",
+    bone: "Hueso",
+    cartilage: "Cartílago",
+    tooth: "Diente",
+    eye: "Ojo"
+  };
+  return dictionary[text.toLowerCase()] || (text.charAt(0).toUpperCase() + text.slice(1));
 }
 
 function setMaterialOpacity(mesh, opacity) {
@@ -117,7 +133,101 @@ function updateVisibility() {
 function setLayer(layer) {
   currentLayer = layer;
   isolatedMesh = null;
-  document.querySelectorAll("[data-layer]").forEach((button) => {
+  
+function updateAnatomyRoute(systemId, organId) {
+  const url = new URL(window.location.href);
+  if (systemId) url.searchParams.set("sistema", systemId);
+  else url.searchParams.delete("sistema");
+  if (organId) url.searchParams.set("organo", organId);
+  else url.searchParams.delete("organo");
+  history.replaceState(null, "", url);
+}
+
+function selectCatalogOrgan(system, organ, button) {
+  document.querySelectorAll(".organ-chip").forEach((chip) => chip.classList.remove("active"));
+  if (button) button.classList.add("active");
+  updateAnatomyRoute(system.id, organ?.id || "");
+
+  if (organ?.layer) {
+    setLayer(organ.layer);
+    systemNotice.hidden = true;
+    if (model) fitModel();
+    return;
+  }
+
+  if (system.layer && system.estado === "disponible") {
+    setLayer(system.layer);
+  }
+
+  if (organ?.estado === "preparado" || system.estado === "preparado") {
+    systemNotice.textContent =
+      "Este espacio ya está organizado dentro del atlas. El siguiente paso es incorporar su modelo 3D específico y su ficha anatómica BADBEAR.MED.";
+    systemNotice.hidden = false;
+  } else {
+    systemNotice.hidden = true;
+  }
+}
+
+function renderCatalog(systemId, organId = "") {
+  if (!anatomyCatalog.length || !systemSelect || !organGrid) return;
+  const system = anatomyCatalog.find((item) => item.id === systemId) || anatomyCatalog[0];
+
+  systemSelect.value = system.id;
+  systemDescription.textContent = system.descripcion || "";
+  systemStatus.textContent = system.estado === "disponible" ? "Disponible" : "Preparado";
+  systemStatus.classList.toggle("preparado", system.estado !== "disponible");
+
+  organGrid.innerHTML = "";
+  (system.organos || []).forEach((organ) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "organ-chip";
+    button.dataset.state = organ.estado || "preparado";
+    button.textContent = organ.nombre;
+    if (organ.id === organId) button.classList.add("active");
+    button.addEventListener("click", () => selectCatalogOrgan(system, organ, button));
+    organGrid.appendChild(button);
+  });
+
+  const selectedOrgan = (system.organos || []).find((organ) => organ.id === organId);
+  if (selectedOrgan) {
+    const activeButton = [...organGrid.querySelectorAll(".organ-chip")].find((button) => button.classList.contains("active"));
+    selectCatalogOrgan(system, selectedOrgan, activeButton);
+  } else {
+    updateAnatomyRoute(system.id, "");
+    if (system.layer && system.estado === "disponible") setLayer(system.layer);
+    if (system.estado === "preparado") {
+      systemNotice.textContent =
+        "La arquitectura de este sistema está lista. Falta incorporar el modelo 3D específico para activar sus órganos y subestructuras.";
+      systemNotice.hidden = false;
+    } else {
+      systemNotice.hidden = true;
+    }
+  }
+}
+
+function initialiseCatalog() {
+  if (!anatomyCatalog.length || !systemSelect) return;
+
+  anatomyCatalog.forEach((system) => {
+    const option = document.createElement("option");
+    option.value = system.id;
+    option.textContent = system.icono + "  " + system.nombre;
+    systemSelect.appendChild(option);
+  });
+
+  const params = new URLSearchParams(window.location.search);
+  const requestedSystem = params.get("sistema");
+  const requestedOrgan = params.get("organo");
+  const firstSystem = anatomyCatalog.find((item) => item.id === requestedSystem)?.id || anatomyCatalog[0].id;
+
+  systemSelect.addEventListener("change", () => renderCatalog(systemSelect.value));
+  renderCatalog(firstSystem, requestedOrgan || "");
+}
+
+initialiseCatalog();
+
+document.querySelectorAll("[data-layer]").forEach((button) => {
     button.classList.toggle("active", button.dataset.layer === layer);
   });
   updateVisibility();
@@ -130,7 +240,7 @@ function fitModel() {
   const center = bounds.getCenter(new THREE.Vector3());
   const maxDim = Math.max(size.x, size.y, size.z);
   controls.target.copy(center);
-  camera.position.set(center.x, center.y + size.y * 0.02, center.z + maxDim * 1.55);
+  camera.position.set(center.x, center.y + size.y * 0.02, center.z + maxDim * 1.72);
   camera.near = Math.max(maxDim / 1000, 0.001);
   camera.far = maxDim * 20;
   camera.updateProjectionMatrix();
@@ -181,6 +291,8 @@ function selectMesh(mesh) {
   emptySelection.hidden = true;
   selectionCard.hidden = false;
   document.getElementById("structureName").textContent = record.name;
+  const originalName = document.getElementById("structureOriginalName");
+  if (originalName) originalName.textContent = "Nomenclatura original del modelo";
   document.getElementById("structureLayer").textContent = record.layer === "skeleton" ? "Esqueleto" : record.layer === "muscles" ? "Músculo" : "Estructura";
   document.getElementById("structureSide").textContent = pretty(record.meta.side);
   document.getElementById("structureTissue").textContent = pretty(record.meta.tissue || (record.layer === "muscles" ? "muscle" : ""));
