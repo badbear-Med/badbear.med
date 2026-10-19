@@ -185,3 +185,17 @@ footer a{color:#63dcff}
 .system-button[data-state="disponible"] .system-mini-status{
   color:#8debc9;
 }
+
+
+/* Ajustes de navegación anatómica */
+.panel-left{scroll-behavior:smooth}
+.anatomy-catalog{scroll-margin-top:12px}
+.system-grid{
+  max-height:310px;
+  overflow-y:auto;
+  padding-right:3px;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(83,216,255,.35) transparent;
+}
+.system-grid::-webkit-scrollbar{width:6px}
+.system-grid::-webkit-scrollbar-thumb{background:rgba(83,216,255,.28);border-radius:999px}
