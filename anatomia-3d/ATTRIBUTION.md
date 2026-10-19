@@ -38,3 +38,15 @@ Licencia de los activos anatómicos: **Creative Commons Attribution-ShareAlike 4
 El proyecto declara que el modelo deriva principalmente de **Z-Anatomy** y **BodyParts3D / DBCLS**, e integra estructuras adicionales registradas a partir de atlas de neuroimagen abiertos. Determinadas estructuras profundas y tractos son aproximaciones educativas registradas en espacio MNI y no deben utilizarse con fines clínicos.
 
 BADBEAR.MED utiliza este modelo únicamente como recurso educativo interactivo y conserva la atribución y condiciones ShareAlike aplicables al activo 3D.
+
+
+## Cerebro visual de alta calidad
+
+La vista general de **Cerebro** utiliza el archivo abierto **Model of a human brain.glb**, publicado en MediaWiki3D a partir de una obra del **Science Museum Group**.
+
+- Fuente: MediaWiki3D, `Model of a human brain.glb`.
+- Licencia indicada para el archivo: **CC0 / dominio público**.
+- Uso en BADBEAR.MED: vista visual general del cerebro.
+- El atlas segmentado Brain Project se conserva para módulos como lóbulos, ganglios basales, diencéfalo, tronco, cerebelo, ventrículos y pares craneales.
+
+BADBEAR.MED mantiene separada la capa visual general de la capa anatómica segmentada para no sacrificar calidad de render ni capacidad de estudio.
