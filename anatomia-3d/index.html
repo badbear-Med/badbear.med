@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatomía 3D | BADBEAR.MED</title>
+  <meta name="description" content="Atlas anatómico 3D interactivo de BADBEAR.MED para explorar huesos y músculos por estructura.">
+  <link rel="stylesheet" href="anatomia.css?v=20261018-1">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../badbear-med.html" aria-label="Volver a BADBEAR.MED">
+      <img src="../dermatologia/badbear_logo.png" alt="">
+      <span>BADBEAR.<strong>MED</strong></span>
+    </a>
+    <nav>
+      <a href="../badbear-med.html">BADBEAR.MED</a>
+      <a href="../badbear-campus/index.html">Campus</a>
+      <a href="#creditos">Créditos</a>
+    </nav>
+  </header>
+
+  <main class="anatomy-app">
+    <aside class="panel panel-left">
+      <div class="eyebrow">CIENCIAS BÁSICAS · ATLAS INTERACTIVO</div>
+      <h1>Anatomía <span>3D</span></h1>
+      <p class="lead">Explora estructuras anatómicas, cambia capas, busca por nombre y selecciona directamente sobre el modelo.</p>
+
+      <section class="control-group">
+        <h2>Capas</h2>
+        <div class="segmented" id="layerControls">
+          <button type="button" data-layer="both" class="active">Todo</button>
+          <button type="button" data-layer="skeleton">Esqueleto</button>
+          <button type="button" data-layer="muscles">Músculos</button>
+        </div>
+      </section>
+
+      <section class="control-group search-wrap">
+        <label for="structureSearch">Buscar estructura</label>
+        <input id="structureSearch" type="search" placeholder="Ej. femur, atlas, deltoid..." autocomplete="off">
+        <div id="searchResults" class="search-results" hidden></div>
+      </section>
+
+      <section class="control-group">
+        <div class="range-head">
+          <label for="muscleOpacity">Transparencia muscular</label>
+          <output id="opacityValue">100%</output>
+        </div>
+        <input id="muscleOpacity" type="range" min="10" max="100" value="100" step="5">
+      </section>
+
+      <section class="control-group">
+        <h2>Vista</h2>
+        <div class="view-grid">
+          <button type="button" data-view="front">Anterior</button>
+          <button type="button" data-view="back">Posterior</button>
+          <button type="button" data-view="left">Izquierda</button>
+          <button type="button" data-view="right">Derecha</button>
+        </div>
+        <button id="resetView" class="wide-button" type="button">Restablecer cámara</button>
+      </section>
+
+      <div class="source-note">
+        <strong>Modelo anatómico abierto</strong>
+        <span>Écorché · BodyParts3D · Z-Anatomy</span>
+      </div>
+    </aside>
+
+    <section class="viewer-shell" aria-label="Visor anatómico 3D">
+      <canvas id="anatomyCanvas"></canvas>
+      <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader"></div>
+        <strong>Cargando anatomía 3D</strong>
+        <span id="loadingText">Preparando modelo...</span>
+      </div>
+      <div class="viewer-hint">Arrastra para rotar · rueda para zoom · clic para identificar</div>
+      <div class="viewer-badge"><span></span> Modelo interactivo</div>
+    </section>
+
+    <aside class="panel panel-right">
+      <div class="eyebrow">ESTRUCTURA SELECCIONADA</div>
+      <div id="emptySelection" class="empty-selection">
+        <div class="selection-icon">◎</div>
+        <h2>Selecciona una estructura</h2>
+        <p>Haz clic sobre un hueso o músculo para ver su identificación anatómica.</p>
+      </div>
+
+      <div id="selectionCard" class="selection-card" hidden>
+        <span id="structureLayer" class="structure-layer">—</span>
+        <h2 id="structureName">—</h2>
+        <dl>
+          <div><dt>Lado</dt><dd id="structureSide">—</dd></div>
+          <div><dt>Tejido</dt><dd id="structureTissue">—</dd></div>
+          <div><dt>FMA</dt><dd id="structureFma">—</dd></div>
+        </dl>
+        <div class="selection-actions">
+          <button id="isolateButton" type="button">Aislar estructura</button>
+          <button id="showAllButton" type="button">Mostrar capa</button>
+        </div>
+      </div>
+
+      <section class="clinical-note">
+        <span>BADBEAR.MED FIJA:</span>
+        <p>Este módulo es para aprendizaje anatómico y visualización educativa. No sustituye material de disección, atlas de referencia ni uso clínico.</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer id="creditos">
+    <strong>BADBEAR.MED · Anatomía 3D</strong>
+    <p>Modelo: Écorché, CC BY-SA 4.0; basado en BodyParts3D © The Database Center for Life Science, CC BY 4.0, y Z-Anatomy, CC BY-SA 4.0.</p>
+    <p><a href="https://github.com/Charleeh/ecorche" target="_blank" rel="noopener noreferrer">Fuente y licencia del modelo</a> · <a href="ATTRIBUTION.md">Atribución completa</a></p>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="anatomia.js?v=20261018-1"></script>
+</body>
+</html>
