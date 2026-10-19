@@ -232,7 +232,7 @@ function setMaterialOpacity(mesh, opacity) {
     if (!material) return;
     material.transparent = opacity < 0.999;
     material.opacity = opacity;
-    material.depthWrite = opacity > 0.55;
+    material.depthWrite = opacity >= 0.35;
     material.needsUpdate = true;
   });
 }
@@ -336,8 +336,8 @@ function brainFilterForOrgan(organId) {
     lobulos: (record) => record.category === "cortex",
 
     "ganglios-basales": (record) =>
-      (record.category === "deep_grey" && BASAL_GANGLIA_LABELS.has(record.name)) ||
-      (record.category === "brainstem" && BASAL_GANGLIA_BRAINSTEM_LABELS.has(record.name)),
+      BASAL_GANGLIA_LABELS.has(record.name) ||
+      BASAL_GANGLIA_BRAINSTEM_LABELS.has(record.name),
 
     diencefalo: (record) => record.category === "diencephalon",
     tronco: (record) => record.category === "brainstem",
@@ -391,6 +391,8 @@ function applyBrainFilter(organId = "") {
     const isPrimary = filter ? filter(record) : true;
     const ghostOpacity = filter ? brainGhostOpacity(record, organId) : 0;
 
+    record.contextGhost = false;
+
     if (isPrimary) {
       record.mesh.visible = true;
       setMaterialOpacity(record.mesh, record.baseOpacity);
@@ -399,6 +401,7 @@ function applyBrainFilter(organId = "") {
 
     if (ghostOpacity > 0) {
       record.mesh.visible = true;
+      record.contextGhost = true;
       setMaterialOpacity(record.mesh, Math.min(record.baseOpacity, ghostOpacity));
       continue;
     }
@@ -410,41 +413,43 @@ function applyBrainFilter(organId = "") {
   resetSelectionPanel();
 }
 
-function visibleRecords() {
-  return records.filter((record) => record.mesh.visible);
+function visibleRecords(includeContext = true) {
+  return records.filter((record) =>
+    record.mesh.visible && (includeContext || !record.contextGhost)
+  );
 }
 
 function fitVisibleRecords() {
-  const visible = visibleRecords();
+  let visible = visibleRecords(activeDataset !== "brain");
+
+  if (!visible.length) visible = visibleRecords(true);
   if (!visible.length) return;
 
   const box = new THREE.Box3();
-
-  visible.forEach((record) => {
-    box.expandByObject(record.mesh);
-  });
-
+  visible.forEach((record) => box.expandByObject(record.mesh));
   if (box.isEmpty()) return;
 
-  const size = box.getSize(new THREE.Vector3());
-  const center = box.getCenter(new THREE.Vector3());
-  const maxDim = Math.max(size.x, size.y, size.z);
+  const sphere = box.getBoundingSphere(new THREE.Sphere());
+  const center = sphere.center;
+  const radius = Math.max(sphere.radius, 0.02);
+
+  const aspect = Math.max(canvas.clientWidth / Math.max(canvas.clientHeight, 1), 0.2);
+  const vFov = THREE.MathUtils.degToRad(camera.fov);
+  const hFov = 2 * Math.atan(Math.tan(vFov / 2) * aspect);
+  const limitingFov = Math.min(vFov, hFov);
+  const padding = activeDataset === "brain" ? 1.22 : 1.16;
+  const distance = (radius / Math.sin(limitingFov / 2)) * padding;
 
   controls.target.copy(center);
+  camera.position.set(center.x, center.y, center.z + distance);
 
-  const distanceMultiplier = activeDataset === "brain" ? 1.62 : 1.72;
-  camera.position.set(
-    center.x,
-    center.y + size.y * 0.02,
-    center.z + Math.max(maxDim * distanceMultiplier, 0.18)
-  );
-
-  camera.near = Math.max(maxDim / 2500, 0.0005);
-  camera.far = Math.max(maxDim * 30, 10);
+  camera.near = Math.max(distance / 500, 0.001);
+  camera.far = Math.max(distance * 20, 20);
   camera.updateProjectionMatrix();
   controls.update();
 
   if (activeDataset === "body") {
+    const size = box.getSize(new THREE.Vector3());
     floor.scale.setScalar(Math.max(size.x, size.z) * 0.72);
     floor.position.y = box.min.y - 0.006;
   }
@@ -614,25 +619,16 @@ function buildBodyRecords(root) {
 }
 
 function brainMaterial(category) {
-  const baseHex = BRAIN_PALETTE[category] || "#BFC7D5";
-  const base = new THREE.Color(baseHex);
-
-  if (category === "cortex") base.multiplyScalar(0.62);
-  if (category === "white_matter") base.multiplyScalar(0.80);
-
-  const emissiveStrength = BRAIN_EMISSIVE[category] ?? 0.06;
+  const baseHex = BRAIN_PALETTE[category] || "#9AA9BA";
   const opacity = BRAIN_MAX_OPACITY[category] ?? 1;
-  const vessel = ["arteries", "veins_sinuses", "cranial_nerves", "tracts"].includes(category);
 
-  return new THREE.MeshStandardMaterial({
-    color: base.clone(),
-    roughness: vessel ? 0.50 : 0.82,
-    metalness: 0,
+  return new THREE.MeshBasicMaterial({
+    color: new THREE.Color(baseHex),
     transparent: true,
     opacity,
-    emissive: base.clone().multiplyScalar(emissiveStrength),
     side: category === "meninges_dura" ? THREE.DoubleSide : THREE.FrontSide,
-    depthWrite: opacity > 0.55
+    depthWrite: opacity >= 0.35,
+    toneMapped: false
   });
 }
 
@@ -675,7 +671,8 @@ function buildBrainRecords(root) {
       side,
       region,
       baseOpacity,
-      core: meta.bx_core === 1 || meta.bx_core === true
+      core: meta.bx_core === 1 || meta.bx_core === true,
+      contextGhost: false
     });
   });
 
