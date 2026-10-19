@@ -402,3 +402,32 @@
   .cursos .cursos-intro{padding:22px 18px;border-radius:18px}
   .cursos .cursos-intro h2{font-size:32px}
 }
+
+
+/* BADBEAR.MED · acceso destacado a Anatomía 3D */
+.recursos-grid>.recurso-card{
+  display:block;
+  background:linear-gradient(145deg,#071f38,#0d3557);
+  padding:28px;
+  border:1px solid rgba(56,189,248,.38);
+  border-radius:16px;
+  text-decoration:none;
+  color:#fff;
+  box-shadow:0 18px 42px rgba(2,12,27,.14);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.recursos-grid>.recurso-card:hover{
+  transform:translateY(-3px);
+  border-color:#67e8f9;
+  box-shadow:0 22px 48px rgba(2,12,27,.22);
+}
+.recursos-grid>.recurso-card>span{font-size:32px}
+.recursos-grid>.recurso-card h3{color:#fff}
+.recursos-grid>.recurso-card p{color:#b9d8eb}
+.recursos-grid>.recurso-card strong{
+  display:inline-block;
+  margin-top:14px;
+  color:#67e8f9;
+  font-size:13px;
+  letter-spacing:.02em;
+}
