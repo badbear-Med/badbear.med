@@ -199,3 +199,77 @@ footer a{color:#63dcff}
 }
 .system-grid::-webkit-scrollbar{width:6px}
 .system-grid::-webkit-scrollbar-thumb{background:rgba(83,216,255,.28);border-radius:999px}
+
+
+/* Etiqueta anatómica flotante: aparece exactamente sobre la estructura seleccionada. */
+.structure-label{
+  position:absolute;
+  z-index:8;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translate(10px,-50%);
+  transition:opacity .14s ease,visibility .14s ease;
+  will-change:left,top;
+}
+.structure-label.visible:not(.offscreen){
+  opacity:1;
+  visibility:visible;
+}
+.structure-label.offscreen{
+  opacity:0;
+  visibility:hidden;
+}
+.structure-label__pin{
+  width:11px;
+  height:11px;
+  flex:0 0 11px;
+  border-radius:50%;
+  background:#61e5ff;
+  border:2px solid #e9fbff;
+  box-shadow:0 0 0 5px rgba(55,211,255,.16),0 0 18px rgba(55,211,255,.72);
+}
+.structure-label__card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-width:120px;
+  max-width:240px;
+  padding:8px 11px 7px;
+  border:1px solid rgba(113,222,255,.46);
+  border-radius:10px;
+  background:rgba(3,17,31,.91);
+  box-shadow:0 8px 26px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.05);
+  backdrop-filter:blur(10px);
+}
+.structure-label__card::before{
+  content:"";
+  position:absolute;
+  left:-9px;
+  top:50%;
+  width:9px;
+  height:1px;
+  background:rgba(113,222,255,.65);
+}
+.structure-label__card strong{
+  color:#f4fbff;
+  font-size:.82rem;
+  line-height:1.18;
+  letter-spacing:.005em;
+}
+.structure-label__card small{
+  margin-top:3px;
+  color:#81cbe1;
+  font-size:.62rem;
+  line-height:1.2;
+  text-transform:uppercase;
+  letter-spacing:.075em;
+}
+@media(max-width:780px){
+  .structure-label__card{max-width:180px;padding:7px 9px}
+  .structure-label__card strong{font-size:.75rem}
+  .structure-label__card small{font-size:.58rem}
+}
