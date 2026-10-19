@@ -145,7 +145,6 @@ let activeDataset = "body";
 let currentLayer = "both";
 let isolatedMesh = null;
 let selectedMesh = null;
-let selectionHelper = null;
 let selectedRecord = null;
 let activeSystemId = "cuerpo-completo";
 let activeOrganId = "";
@@ -241,14 +240,7 @@ function setMaterialOpacity(mesh, opacity) {
   });
 }
 
-function clearSelectionHelper() {
-  if (selectionHelper) {
-    scene.remove(selectionHelper);
-    selectionHelper.geometry?.dispose?.();
-    selectionHelper.material?.dispose?.();
-    selectionHelper = null;
-  }
-
+function clearSelectionVisual() {
   if (selectedRecord && activeDataset === "brain") {
     selectedRecord.isSelected = false;
     applyBrainRecordVisual(selectedRecord);
@@ -258,7 +250,7 @@ function clearSelectionHelper() {
 }
 
 function resetSelectionPanel() {
-  clearSelectionHelper();
+  clearSelectionVisual();
   selectedMesh = null;
   emptySelection.hidden = false;
   selectionCard.hidden = true;
@@ -507,7 +499,7 @@ function selectMesh(mesh) {
 
   if (activeDataset === "brain" && record.pickable === false) return;
 
-  clearSelectionHelper();
+  clearSelectionVisual();
 
   selectedMesh = mesh;
   selectedRecord = record;
@@ -665,8 +657,9 @@ function forceBrainMaterial(record, opacity = 1, selected = false) {
   const category = record.category || "other";
   const baseColor = new THREE.Color(BRAIN_PALETTE[category] || "#8C9BAD");
 
+  // La selección conserva el color anatómico: solo se vuelve más luminosa.
   if (selected) {
-    baseColor.lerp(new THREE.Color("#43E4FF"), 0.42);
+    baseColor.offsetHSL(0, 0, 0.16);
   }
 
   const materials = Array.isArray(record.mesh.material)
@@ -680,6 +673,7 @@ function forceBrainMaterial(record, opacity = 1, selected = false) {
     if (material.emissive) material.emissive.set(0x000000);
 
     material.vertexColors = false;
+    material.wireframe = false;
     material.transparent = opacity < 0.999;
     material.opacity = opacity;
     material.depthTest = true;
@@ -687,6 +681,7 @@ function forceBrainMaterial(record, opacity = 1, selected = false) {
     material.blending = THREE.NormalBlending;
     material.toneMapped = false;
     material.fog = false;
+    material.polygonOffset = false;
     material.needsUpdate = true;
   });
 }
