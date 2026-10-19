@@ -139,6 +139,15 @@ window.BADBEAR_COURSES = [
     estado: "integrado"
   },
   {
+    id: "anatomia-3d",
+    nombre: "Anatomía 3D",
+    categoria: "Ciencias básicas",
+    icono: "🦴",
+    descripcion: "Atlas anatómico 3D interactivo para explorar huesos y músculos, buscar estructuras, aislarlas y cambiar vistas anatómicas.",
+    href: "anatomia-3d/index.html",
+    estado: "integrado"
+  },
+  {
     id: "fisiologia",
     nombre: "Fisiología",
     categoria: "Ciencias básicas",
