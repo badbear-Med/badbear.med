@@ -45,6 +45,18 @@ $("email-confirm").addEventListener("submit",event=>{event.preventDefault();busy
 $("email-cancel").addEventListener("click",()=>{clearEmailLink();message("Puedes solicitar otro enlace desde «Activa o recupera tu cuenta por correo».")});
 $("logout").addEventListener("click",()=>busy(async()=>{try{await post("/api/logout",token,{})}finally{clear();message("Sesión cerrada.")}}));
 $("refresh").addEventListener("click",()=>busy(requestGrades));$("course").addEventListener("change",render);
-document.querySelectorAll(".student-tabs button").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".student-tabs button").forEach(b=>b.classList.toggle("selected",b===btn));document.querySelectorAll(".tab-section").forEach(v=>v.hidden=v.dataset.view!==btn.dataset.section)}));
+function selectCampusSection(section){
+  const target=[...document.querySelectorAll(".student-tabs button")].find(button=>button.dataset.section===section);
+  if(!target||$("results").hidden)return false;
+  document.querySelectorAll(".student-tabs button").forEach(button=>button.classList.toggle("selected",button===target));
+  document.querySelectorAll(".tab-section").forEach(view=>view.hidden=view.dataset.view!==section);
+  $("results").scrollIntoView({behavior:"smooth",block:"start"});
+  return true;
+}
+document.querySelectorAll(".student-tabs button").forEach(button=>button.addEventListener("click",()=>selectCampusSection(button.dataset.section)));
+document.querySelectorAll("[data-campus-section]").forEach(link=>link.addEventListener("click",event=>{
+  const section=link.dataset.campusSection;
+  if(selectCampusSection(section))event.preventDefault();
+}));
 if(token&&!emailToken){load().catch(()=>{message("Vuelve a iniciar sesión para continuar.","error")})}
 availability();
