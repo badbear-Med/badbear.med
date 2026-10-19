@@ -71,6 +71,8 @@ const searchInput = document.getElementById("structureSearch");
 const searchResults = document.getElementById("searchResults");
 const opacityInput = document.getElementById("muscleOpacity");
 const opacityValue = document.getElementById("opacityValue");
+const brainOpacityInput = document.getElementById("brainOpacity");
+const brainOpacityValue = document.getElementById("brainOpacityValue");
 const emptySelection = document.getElementById("emptySelection");
 const selectionCard = document.getElementById("selectionCard");
 const systemGrid = document.getElementById("systemGrid");
@@ -81,6 +83,7 @@ const organGrid = document.getElementById("organGrid");
 const panelLeft = document.querySelector(".panel-left");
 const bodyLayersSection = document.getElementById("bodyLayersSection");
 const muscleOpacitySection = document.getElementById("muscleOpacitySection");
+const brainOpacitySection = document.getElementById("brainOpacitySection");
 const sourceNoteTitle = document.getElementById("sourceNoteTitle");
 const sourceNoteText = document.getElementById("sourceNoteText");
 const viewerBadgeText = document.getElementById("viewerBadgeText");
@@ -143,6 +146,7 @@ let currentLayer = "both";
 let isolatedMesh = null;
 let selectedMesh = null;
 let selectionHelper = null;
+let selectedRecord = null;
 let activeSystemId = "cuerpo-completo";
 let activeOrganId = "";
 
@@ -238,17 +242,24 @@ function setMaterialOpacity(mesh, opacity) {
 }
 
 function clearSelectionHelper() {
-  if (!selectionHelper) return;
+  if (selectionHelper) {
+    scene.remove(selectionHelper);
+    selectionHelper.geometry?.dispose?.();
+    selectionHelper.material?.dispose?.();
+    selectionHelper = null;
+  }
 
-  scene.remove(selectionHelper);
-  selectionHelper.geometry?.dispose();
-  selectionHelper.material?.dispose();
-  selectionHelper = null;
+  if (selectedRecord && activeDataset === "brain") {
+    selectedRecord.isSelected = false;
+    applyBrainRecordVisual(selectedRecord);
+  }
+
+  selectedRecord = null;
 }
 
 function resetSelectionPanel() {
-  selectedMesh = null;
   clearSelectionHelper();
+  selectedMesh = null;
   emptySelection.hidden = false;
   selectionCard.hidden = true;
 }
@@ -257,6 +268,7 @@ function updateBodyControls() {
   const isBody = activeDataset === "body";
   if (bodyLayersSection) bodyLayersSection.hidden = !isBody;
   if (muscleOpacitySection) muscleOpacitySection.hidden = !isBody;
+  if (brainOpacitySection) brainOpacitySection.hidden = isBody;
 
   if (sourceNoteTitle && sourceNoteText && viewerBadgeText) {
     if (isBody) {
@@ -396,7 +408,8 @@ function applyBrainFilter(organId = "") {
 
     if (isPrimary) {
       record.mesh.visible = true;
-      forceBrainMaterial(record, record.baseOpacity);
+      record.viewOpacity = 1;
+      applyBrainRecordVisual(record);
       continue;
     }
 
@@ -404,10 +417,12 @@ function applyBrainFilter(organId = "") {
       record.mesh.visible = true;
       record.contextGhost = true;
       record.pickable = false;
-      forceBrainMaterial(record, Math.min(record.baseOpacity, ghostOpacity));
+      record.viewOpacity = ghostOpacity;
+      applyBrainRecordVisual(record);
       continue;
     }
 
+    record.viewOpacity = 0;
     record.pickable = false;
     record.mesh.visible = false;
   }
@@ -487,16 +502,20 @@ function cameraPreset(view) {
 function selectMesh(mesh) {
   if (!mesh) return;
 
-  selectedMesh = mesh;
   const record = records.find((item) => item.mesh === mesh);
   if (!record) return;
 
+  if (activeDataset === "brain" && record.pickable === false) return;
+
   clearSelectionHelper();
 
-  selectionHelper = new THREE.BoxHelper(mesh, 0x2fd9ff);
-  selectionHelper.material.transparent = true;
-  selectionHelper.material.opacity = 0.82;
-  scene.add(selectionHelper);
+  selectedMesh = mesh;
+  selectedRecord = record;
+
+  if (activeDataset === "brain") {
+    record.isSelected = true;
+    applyBrainRecordVisual(record);
+  }
 
   emptySelection.hidden = true;
   selectionCard.hidden = false;
@@ -640,11 +659,16 @@ function brainMaterial(category) {
   return material;
 }
 
-function forceBrainMaterial(record, opacity = record.baseOpacity) {
+function forceBrainMaterial(record, opacity = 1, selected = false) {
   if (!record?.mesh) return;
 
   const category = record.category || "other";
-  const hex = BRAIN_PALETTE[category] || "#8C9BAD";
+  const baseColor = new THREE.Color(BRAIN_PALETTE[category] || "#8C9BAD");
+
+  if (selected) {
+    baseColor.lerp(new THREE.Color("#43E4FF"), 0.42);
+  }
+
   const materials = Array.isArray(record.mesh.material)
     ? record.mesh.material
     : [record.mesh.material];
@@ -652,11 +676,11 @@ function forceBrainMaterial(record, opacity = record.baseOpacity) {
   materials.forEach((material) => {
     if (!material) return;
 
-    if (material.color) material.color.set(hex);
+    if (material.color) material.color.copy(baseColor);
     if (material.emissive) material.emissive.set(0x000000);
 
     material.vertexColors = false;
-    material.transparent = true;
+    material.transparent = opacity < 0.999;
     material.opacity = opacity;
     material.depthTest = true;
     material.depthWrite = opacity >= 0.35;
@@ -667,14 +691,32 @@ function forceBrainMaterial(record, opacity = record.baseOpacity) {
   });
 }
 
+function brainOpacityFactor() {
+  return brainOpacityInput ? Number(brainOpacityInput.value) / 100 : 1;
+}
+
+function applyBrainRecordVisual(record) {
+  if (!record?.mesh || !record.mesh.visible) return;
+
+  const baseViewOpacity = record.viewOpacity ?? 1;
+  const opacity = Math.max(0.05, Math.min(1, baseViewOpacity * brainOpacityFactor()));
+
+  forceBrainMaterial(record, opacity, record.isSelected === true);
+}
+
+function applyBrainVisuals() {
+  if (!datasets.brain.loaded) return;
+  datasets.brain.records.forEach((record) => applyBrainRecordVisual(record));
+}
+
 function restoreBrainPalette() {
   if (!datasets.brain.loaded) return;
 
   datasets.brain.records.forEach((record) => {
-    forceBrainMaterial(record, record.baseOpacity);
+    record.viewOpacity = record.contextGhost ? (record.viewOpacity ?? 0.08) : 1;
+    applyBrainRecordVisual(record);
   });
 }
-
 function buildBrainRecords(root) {
   const result = [];
 
@@ -696,7 +738,7 @@ function buildBrainRecords(root) {
     const category = String(meta.bx_cat || meta.category || "").trim();
     const side = String(meta.bx_side || meta.side || "").trim();
     const region = String(meta.bx_region || meta.region || "").trim();
-    const baseOpacity = BRAIN_MAX_OPACITY[category] ?? 1;
+    const baseOpacity = 1;
 
     if (Array.isArray(object.material)) {
       object.material.forEach((material) => material?.dispose?.());
@@ -714,9 +756,11 @@ function buildBrainRecords(root) {
       side,
       region,
       baseOpacity,
+      viewOpacity: 1,
       core: meta.bx_core === 1 || meta.bx_core === true,
       contextGhost: false,
-      pickable: true
+      pickable: true,
+      isSelected: false
     });
   });
 
@@ -1039,6 +1083,13 @@ opacityInput.addEventListener("input", () => {
   updateBodyVisibility();
 });
 
+if (brainOpacityInput) {
+  brainOpacityInput.addEventListener("input", () => {
+    if (brainOpacityValue) brainOpacityValue.textContent = brainOpacityInput.value + "%";
+    applyBrainVisuals();
+  });
+}
+
 searchInput.addEventListener("input", renderSearch);
 searchInput.addEventListener("focus", renderSearch);
 
@@ -1117,8 +1168,6 @@ window.addEventListener("resize", resize);
 function animate() {
   resize();
   controls.update();
-
-  if (selectionHelper) selectionHelper.update();
 
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
