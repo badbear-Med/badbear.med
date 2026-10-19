@@ -17,7 +17,7 @@ const opacityInput = document.getElementById("muscleOpacity");
 const opacityValue = document.getElementById("opacityValue");
 const emptySelection = document.getElementById("emptySelection");
 const selectionCard = document.getElementById("selectionCard");
-const systemSelect = document.getElementById("systemSelect");
+const systemGrid = document.getElementById("systemGrid");
 const systemDescription = document.getElementById("systemDescription");
 const systemStatus = document.getElementById("systemStatus");
 const systemNotice = document.getElementById("systemNotice");
@@ -169,10 +169,12 @@ function selectCatalogOrgan(system, organ, button) {
 }
 
 function renderCatalog(systemId, organId = "") {
-  if (!anatomyCatalog.length || !systemSelect || !organGrid) return;
+  if (!anatomyCatalog.length || !systemGrid || !organGrid) return;
   const system = anatomyCatalog.find((item) => item.id === systemId) || anatomyCatalog[0];
 
-  systemSelect.value = system.id;
+  systemGrid.querySelectorAll(".system-button").forEach((button) => {
+    button.classList.toggle("active", button.dataset.systemId === system.id);
+  });
   systemDescription.textContent = system.descripcion || "";
   systemStatus.textContent = system.estado === "disponible" ? "Disponible" : "Preparado";
   systemStatus.classList.toggle("preparado", system.estado !== "disponible");
@@ -207,13 +209,35 @@ function renderCatalog(systemId, organId = "") {
 }
 
 function initialiseCatalog() {
-  if (!anatomyCatalog.length || !systemSelect) return;
+  if (!anatomyCatalog.length || !systemGrid) return;
 
+  systemGrid.innerHTML = "";
   anatomyCatalog.forEach((system) => {
-    const option = document.createElement("option");
-    option.value = system.id;
-    option.textContent = system.icono + "  " + system.nombre;
-    systemSelect.appendChild(option);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "system-button";
+    button.dataset.systemId = system.id;
+    button.dataset.state = system.estado || "preparado";
+
+    const icon = document.createElement("span");
+    icon.className = "system-icon";
+    icon.textContent = system.icono || "•";
+
+    const copy = document.createElement("span");
+    copy.className = "system-copy";
+
+    const name = document.createElement("span");
+    name.className = "system-name";
+    name.textContent = system.nombre;
+
+    const status = document.createElement("span");
+    status.className = "system-mini-status";
+    status.textContent = system.estado === "disponible" ? "Modelo activo" : "Preparado";
+
+    copy.append(name, status);
+    button.append(icon, copy);
+    button.addEventListener("click", () => renderCatalog(system.id));
+    systemGrid.appendChild(button);
   });
 
   const params = new URLSearchParams(window.location.search);
@@ -221,7 +245,6 @@ function initialiseCatalog() {
   const requestedOrgan = params.get("organo");
   const firstSystem = anatomyCatalog.find((item) => item.id === requestedSystem)?.id || anatomyCatalog[0].id;
 
-  systemSelect.addEventListener("change", () => renderCatalog(systemSelect.value));
   renderCatalog(firstSystem, requestedOrgan || "");
 }
 
