@@ -3,17 +3,11 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 import { MeshoptDecoder } from "three/addons/libs/meshopt_decoder.module.js";
+import { MODEL_REGISTRY, DRACO_DECODER_PATH } from "./engine/model-registry.js";
 
-const BODY_MODEL_URLS = [
-  "https://raw.githubusercontent.com/Charleeh/ecorche/main/model/ecorche.meshopt.glb",
-  "https://raw.githubusercontent.com/Charleeh/ecorche/main/model/ecorche.glb"
-];
-
-const BRAIN_MODEL_URL =
-  "https://raw.githubusercontent.com/itayinbarr/brainproject/main/brain-atlas/models/brain.glb";
-
-const DRACO_DECODER_PATH =
-  "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/libs/draco/";
+const BODY_MODEL_URLS = MODEL_REGISTRY.body.urls;
+const BRAIN_MODEL_URL = MODEL_REGISTRY.brainAtlas.url;
+const BRAIN_BEAUTY_MODEL_URL = MODEL_REGISTRY.brainBeauty.url;
 
 const BRAIN_PALETTE = {
   cortex: "#CBBEA4",
@@ -145,7 +139,8 @@ scene.add(floor);
 
 const datasets = {
   body: { root: null, records: [], loaded: false },
-  brain: { root: null, records: [], loaded: false }
+  brain: { root: null, records: [], loaded: false },
+  brainBeauty: { root: null, records: [], loaded: false }
 };
 
 let records = [];
@@ -159,6 +154,10 @@ let activeOrganId = "";
 
 const raycaster = new THREE.Raycaster();
 const pointer = new THREE.Vector2();
+
+function isNeuroDataset(type = activeDataset) {
+  return type === "brain" || type === "brainBeauty";
+}
 
 function showLoading(message) {
   loadingText.textContent = message;
@@ -230,7 +229,8 @@ function prettyBrainCategory(value) {
     white_matter: "Sustancia blanca",
     arteries: "Arterias cerebrales",
     veins_sinuses: "Venas y senos durales",
-    meninges_dura: "Duramadre"
+    meninges_dura: "Duramadre",
+    brain: "Cerebro"
   };
 
   return labels[key] || pretty(value);
@@ -252,6 +252,9 @@ function clearSelectionVisual() {
   if (selectedRecord && activeDataset === "brain") {
     selectedRecord.isSelected = false;
     applyBrainRecordVisual(selectedRecord);
+  } else if (selectedRecord && activeDataset === "brainBeauty") {
+    selectedRecord.isSelected = false;
+    applyBeautyRecordVisual(selectedRecord);
   }
 
   selectedRecord = null;
@@ -275,10 +278,14 @@ function updateBodyControls() {
       sourceNoteTitle.textContent = "Modelo osteomuscular abierto";
       sourceNoteText.textContent = "Écorché · BodyParts3D · Z-Anatomy";
       viewerBadgeText.textContent = "Cuerpo 3D interactivo";
+    } else if (activeDataset === "brainBeauty") {
+      sourceNoteTitle.textContent = "Modelo cerebral visual";
+      sourceNoteText.textContent = "Science Museum Group · MediaWiki3D · CC0";
+      viewerBadgeText.textContent = "Cerebro 3D · vista realista";
     } else {
-      sourceNoteTitle.textContent = "Modelo neuroanatómico abierto";
+      sourceNoteTitle.textContent = "Atlas neuroanatómico segmentado";
       sourceNoteText.textContent = "Brain Project · Z-Anatomy · BodyParts3D";
-      viewerBadgeText.textContent = "Cerebro 3D interactivo";
+      viewerBadgeText.textContent = "Neuroanatomía 3D interactiva";
     }
   }
 }
@@ -288,11 +295,12 @@ function setActiveDataset(type) {
 
   if (datasets.body.root) datasets.body.root.visible = type === "body";
   if (datasets.brain.root) datasets.brain.root.visible = type === "brain";
+  if (datasets.brainBeauty.root) datasets.brainBeauty.root.visible = type === "brainBeauty";
 
   floor.visible = type === "body";
   records = datasets[type].records;
 
-  if (type === "brain") {
+  if (isNeuroDataset(type)) {
     hemiLight.intensity = 0.78;
     keyLight.intensity = 2.15;
     fillLight.intensity = 0.72;
@@ -521,6 +529,9 @@ function selectMesh(mesh) {
   if (activeDataset === "brain") {
     record.isSelected = true;
     applyBrainRecordVisual(record);
+  } else if (activeDataset === "brainBeauty") {
+    record.isSelected = true;
+    applyBeautyRecordVisual(record);
   }
 
   emptySelection.hidden = true;
@@ -532,8 +543,12 @@ function selectMesh(mesh) {
   const labelTissue = document.getElementById("detailLabelTissue");
   const labelRef = document.getElementById("detailLabelRef");
 
-  if (activeDataset === "brain") {
-    if (originalName) originalName.textContent = "Brain Project · nomenclatura anatómica original";
+  if (isNeuroDataset()) {
+    if (originalName) {
+      originalName.textContent = activeDataset === "brainBeauty"
+        ? "Modelo visual general del cerebro"
+        : "Brain Project · nomenclatura anatómica original";
+    }
     if (labelTissue) labelTissue.textContent = "Categoría";
     if (labelRef) labelRef.textContent = "Región";
 
@@ -727,8 +742,12 @@ function applyBrainRecordVisual(record) {
 }
 
 function applyBrainVisuals() {
-  if (!datasets.brain.loaded) return;
-  datasets.brain.records.forEach((record) => applyBrainRecordVisual(record));
+  if (datasets.brain.loaded) {
+    datasets.brain.records.forEach((record) => applyBrainRecordVisual(record));
+  }
+  if (datasets.brainBeauty.loaded) {
+    datasets.brainBeauty.records.forEach((record) => applyBeautyRecordVisual(record));
+  }
 }
 
 function restoreBrainPalette() {
@@ -841,6 +860,135 @@ function loadBodyModel(index = 0) {
   });
 }
 
+
+function buildBeautyBrainRecords(root) {
+  const result = [];
+
+  root.traverse((object) => {
+    if (!object.isMesh) return;
+
+    const materials = Array.isArray(object.material)
+      ? object.material.map((material) => material.clone())
+      : [object.material ? object.material.clone() : new THREE.MeshStandardMaterial()];
+
+    materials.forEach((material) => {
+      if ("roughness" in material) material.roughness = 0.46;
+      if ("metalness" in material) material.metalness = 0;
+      if ("clearcoat" in material) material.clearcoat = 0.18;
+      if ("clearcoatRoughness" in material) material.clearcoatRoughness = 0.55;
+      if (!material.map && material.color) material.color.set("#b8897f");
+      material.transparent = false;
+      material.opacity = 1;
+      material.depthWrite = true;
+      material.needsUpdate = true;
+    });
+
+    object.material = Array.isArray(object.material) ? materials : materials[0];
+
+    const baseStates = materials.map((material) => ({
+      color: material.color?.clone?.() || null,
+      emissive: material.emissive?.clone?.() || null
+    }));
+
+    result.push({
+      mesh: object,
+      meta: {},
+      name: "Cerebro",
+      category: "brain",
+      side: "median",
+      region: "Encéfalo",
+      pickable: true,
+      isSelected: false,
+      baseStates
+    });
+  });
+
+  return result;
+}
+
+function applyBeautyRecordVisual(record) {
+  if (!record?.mesh) return;
+
+  const opacity = brainOpacityFactor();
+  const materials = Array.isArray(record.mesh.material)
+    ? record.mesh.material
+    : [record.mesh.material];
+
+  materials.forEach((material, index) => {
+    if (!material) return;
+    const base = record.baseStates?.[index];
+
+    if (base?.color && material.color) {
+      material.color.copy(base.color);
+      if (record.isSelected) material.color.offsetHSL(0, 0.02, 0.08);
+    }
+
+    if (material.emissive) {
+      if (base?.emissive) material.emissive.copy(base.emissive);
+      if (record.isSelected) {
+        material.emissive.lerp(new THREE.Color("#5bc8ff"), 0.20);
+        material.emissiveIntensity = 0.55;
+      } else {
+        material.emissiveIntensity = 1;
+      }
+    }
+
+    material.transparent = opacity < 0.999;
+    material.opacity = opacity;
+    material.depthWrite = opacity >= 0.6;
+    material.needsUpdate = true;
+  });
+}
+
+function loadBeautyBrainModel() {
+  return new Promise((resolve, reject) => {
+    if (datasets.brainBeauty.loaded) {
+      resolve(datasets.brainBeauty.root);
+      return;
+    }
+
+    showLoading("Cargando cerebro anatómico de alta calidad...");
+
+    const loader = new GLTFLoader();
+
+    loader.load(
+      BRAIN_BEAUTY_MODEL_URL,
+      (gltf) => {
+        gltf.scene.updateMatrixWorld(true);
+
+        const box = new THREE.Box3().setFromObject(gltf.scene);
+        const center = box.getCenter(new THREE.Vector3());
+        const radius = box.getBoundingSphere(new THREE.Sphere()).radius || 1;
+
+        gltf.scene.position.sub(center);
+        gltf.scene.scale.setScalar(1.65 / radius);
+        gltf.scene.rotation.y = -0.22;
+        gltf.scene.updateMatrixWorld(true);
+
+        datasets.brainBeauty.root = gltf.scene;
+        datasets.brainBeauty.records = buildBeautyBrainRecords(gltf.scene);
+        datasets.brainBeauty.loaded = true;
+
+        scene.add(gltf.scene);
+        gltf.scene.visible = false;
+
+        hideLoading("Cerebro visual listo");
+        resolve(gltf.scene);
+      },
+      (event) => {
+        if (event.total) {
+          const percent = Math.round((event.loaded / event.total) * 100);
+          loadingText.textContent = "Cargando cerebro visual · " + percent + "%";
+        }
+      },
+      (error) => {
+        loadingText.textContent = "No se pudo cargar el cerebro visual.";
+        reject(error);
+      }
+    );
+  });
+}
+
 function loadBrainModel() {
   return new Promise((resolve, reject) => {
     if (datasets.brain.loaded) {
@@ -933,6 +1081,36 @@ function showSystemNotice(message) {
 
 async function applySystemModel(system, organ) {
   if (system.id === "nervioso") {
+    const organId = organ?.id || "cerebro";
+
+    if (organId === "cerebro") {
+      try {
+        await loadBeautyBrainModel();
+        if (activeSystemId !== "nervioso") return;
+
+        setActiveDataset("brainBeauty");
+        datasets.brainBeauty.records.forEach((record) => {
+          record.mesh.visible = true;
+          applyBeautyRecordVisual(record);
+        });
+        fitVisibleRecords();
+        showSystemNotice(
+          "Vista general de alta calidad. Para lóbulos y estructuras profundas usa los módulos neuroanatómicos del panel."
+        );
+      } catch {
+        await loadBrainModel();
+        if (activeSystemId !== "nervioso") return;
+
+        setActiveDataset("brain");
+        restoreBrainPalette();
+        applyBrainFilter("cerebro");
+        fitVisibleRecords();
+        showSystemNotice("Se cargó el atlas segmentado como respaldo del cerebro general.");
+      }
+
+      return;
+    }
+
     try {
       await loadBrainModel();
 
@@ -940,7 +1118,7 @@ async function applySystemModel(system, organ) {
 
       setActiveDataset("brain");
       restoreBrainPalette();
-      applyBrainFilter(organ?.id || "");
+      applyBrainFilter(organId);
       fitVisibleRecords();
 
       if (organ && brainFilterForOrgan(organ.id)) {
@@ -952,7 +1130,7 @@ async function applySystemModel(system, organ) {
       }
     } catch {
       showSystemNotice(
-        "No se pudo cargar el modelo cerebral desde su fuente abierta. Revisa la conexión e inténtalo nuevamente."
+        "No se pudo cargar el atlas neuroanatómico desde su fuente abierta. Revisa la conexión e inténtalo nuevamente."
       );
     }
 
@@ -1144,6 +1322,11 @@ document.getElementById("showAllButton").addEventListener("click", () => {
 
   if (activeDataset === "body") {
     updateBodyVisibility();
+  } else if (activeDataset === "brainBeauty") {
+    datasets.brainBeauty.records.forEach((record) => {
+      record.mesh.visible = true;
+      applyBeautyRecordVisual(record);
+    });
   } else {
     applyBrainFilter(activeOrganId);
   }
@@ -1164,7 +1347,7 @@ renderer.domElement.addEventListener("pointerup", (event) => {
   const visibleMeshes = records
     .filter((record) => {
       if (!record.mesh.visible) return false;
-      if (activeDataset === "brain" && record.pickable === false) return false;
+      if (isNeuroDataset() && record.pickable === false) return false;
       return true;
     })
     .map((record) => record.mesh);
