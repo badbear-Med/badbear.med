@@ -358,6 +358,7 @@
       }]
     },
     epilepsias:{
+      audios:[{src:"https://media.wajomea.group/badbear-med/neurologia/audios/3.Epilepsia.m4a",titulo:"Epilepsia",descripcion:"Audioclase específica de Epilepsia."}],
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/3.EPILEPSIAPP.pdf",
       presentacionNombre:"3.EPILEPSIAPP.pdf",
       youtubeId:"m5exY-zJbY8",
@@ -418,9 +419,11 @@
       }]
     },
     "esclerosis-multiple":{
+      audios:[{src:"https://media.wajomea.group/badbear-med/neurologia/audios/8.Esclerosis_multiple.m4a",titulo:"Esclerosis múltiple",descripcion:"Audioclase específica de Esclerosis múltiple."}],
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/8.ESCLEROSIS%20MULTIPLE.pdf",
       presentacionNombre:"8.ESCLEROSIS MULTIPLE.pdf",youtubeId:"g8d6BnTkGo8",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/06-esclerosis-multiple.pdf",materialExtraNombre:"6. Esclerosis Multiple.pdf",fuente:"Material extra"},
     "encefalitis-autoinmune":{
+      audios:[{src:"https://media.wajomea.group/badbear-med/neurologia/audios/9.Encefalitis_autoinmune.m4a",titulo:"Encefalitis autoinmune",descripcion:"Audioclase específica de Encefalitis autoinmune."}],
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/9.%20ENCEFALITIS%20AUTOINMUNE.pdf",
       presentacionNombre:"9. ENCEFALITIS AUTOINMUNE.pdf",youtubeId:"9MUPR9xiykA",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/07-encefalitis-autoinmunes.pdf",materialExtraNombre:"7. Encefalitis AutoInmunes.pdf",fuente:"Material extra"},
     "miastenia-gravis":{
@@ -430,7 +433,7 @@
       materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/10-miastenia-gravis.pdf",
       materialExtraNombre:"10. Miastenia Gravis.pdf",
       fuente:"Material extra",
-      audios:[{
+      audios:[{src:"https://media.wajomea.group/badbear-med/neurologia/audios/10.Miastenia_gravis.m4a",titulo:"Miastenia gravis",descripcion:"Audioclase específica de Miastenia gravis."},{
         src:"https://media.wajomea.group/badbear-med/neurologia/audios/1.Neuropat%C3%ADas_perif%C3%A9ricas_y_miastenia_gravisA.m4a",
         titulo:"Neuropatías periféricas y miastenia gravis",
         descripcion:"Audio compartido con Polineuropatías; la segunda parte corresponde al bloque de miastenia gravis."
@@ -452,6 +455,7 @@
       }]
     },
     ela:{
+      audios:[{src:"https://media.wajomea.group/badbear-med/neurologia/audios/13.ELA.m4a",titulo:"Esclerosis lateral amiotrófica (ELA)",descripcion:"Audioclase específica de Esclerosis lateral amiotrófica (ELA)."}],
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/13.ELAPP.pdf",
       presentacionNombre:"13.ELAPP.pdf",youtubeId:"0y7-MX1nrSA",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",materialExtraNombre:"14. ELA.pdf",fuente:"Material extra"},
     "segunda-neurona":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",materialExtraNombre:"14. ELA.pdf",fuente:"Fuente compartida"},
