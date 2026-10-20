@@ -1,0 +1,50 @@
+{
+  "curso": "Neurología",
+  "estado": "archivos recibidos; publicación en R2 pendiente de carga y verificación",
+  "base_propuesta": "badbear-med/neurologia/badbearpdfs/",
+  "items": [
+    {
+      "tema": "epilepsias",
+      "unidad": "03",
+      "archivo_original": "3.EPILEPSIAPP.pdf",
+      "archivo_destino": "3.EPILEPSIAPP.pdf",
+      "youtubeId": "m5exY-zJbY8"
+    },
+    {
+      "tema": "esclerosis-multiple",
+      "unidad": "08",
+      "archivo_original": "8.ESCLEROSIS MULTIPLE.pdf",
+      "archivo_destino": "8.ESCLEROSIS_MULTIPLE.pdf",
+      "youtubeId": "g8d6BnTkGo8"
+    },
+    {
+      "tema": "encefalitis-autoinmune",
+      "unidad": "09",
+      "archivo_original": "9. ENCEFALITIS AUTOINMUNE.pdf",
+      "archivo_destino": "9.ENCEFALITIS_AUTOINMUNE.pdf",
+      "youtubeId": "9MUPR9xiykA"
+    },
+    {
+      "tema": "miastenia-gravis",
+      "unidad": "10",
+      "archivo_original": "10.MIASTEMIA GRAVIS.pdf",
+      "archivo_destino": "10.MIASTENIA_GRAVIS.pdf",
+      "youtubeId": "hIi4cLrRrXk"
+    },
+    {
+      "tema": "ela",
+      "unidad": "14",
+      "archivo_original": "13.ELAPP.pdf",
+      "archivo_destino": "13.ELAPP.pdf",
+      "youtubeId": "0y7-MX1nrSA"
+    },
+    {
+      "tema": "infarto-cerebral",
+      "unidad": "16",
+      "archivo_original": "14.INFARTO CEREBRALPP.pdf",
+      "archivo_destino": "14.INFARTO_CEREBRALPP.pdf",
+      "youtubeId": "QSNzkSBbyIY"
+    }
+  ],
+  "nota": "No incorporar enlaces a contenidos.js hasta verificar la carga de los seis objetos en R2. Conservar materialExtra de cada unidad."
+}
