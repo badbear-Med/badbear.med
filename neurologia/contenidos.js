@@ -358,6 +358,8 @@
       }]
     },
     epilepsias:{
+      presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/3.EPILEPSIAPP.pdf",
+      presentacionNombre:"3.EPILEPSIAPP.pdf",
       youtubeId:"m5exY-zJbY8",
       materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/03-epilepsia.pdf",
       materialExtraNombre:"3. Epilepsia.pdf",
@@ -415,9 +417,15 @@
         descripcion:"Audio de clase compatible con el componente de infecciones del SNC de esta unidad."
       }]
     },
-    "esclerosis-multiple":{youtubeId:"g8d6BnTkGo8",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/06-esclerosis-multiple.pdf",materialExtraNombre:"6. Esclerosis Multiple.pdf",fuente:"Material extra"},
-    "encefalitis-autoinmune":{youtubeId:"9MUPR9xiykA",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/07-encefalitis-autoinmunes.pdf",materialExtraNombre:"7. Encefalitis AutoInmunes.pdf",fuente:"Material extra"},
+    "esclerosis-multiple":{
+      presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/8.ESCLEROSIS%20MULTIPLE.pdf",
+      presentacionNombre:"8.ESCLEROSIS MULTIPLE.pdf",youtubeId:"g8d6BnTkGo8",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/06-esclerosis-multiple.pdf",materialExtraNombre:"6. Esclerosis Multiple.pdf",fuente:"Material extra"},
+    "encefalitis-autoinmune":{
+      presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/9.%20ENCEFALITIS%20AUTOINMUNE.pdf",
+      presentacionNombre:"9. ENCEFALITIS AUTOINMUNE.pdf",youtubeId:"9MUPR9xiykA",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/07-encefalitis-autoinmunes.pdf",materialExtraNombre:"7. Encefalitis AutoInmunes.pdf",fuente:"Material extra"},
     "miastenia-gravis":{
+      presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/10.MIASTEMIA%20GRAVIS.pdf",
+      presentacionNombre:"10.MIASTEMIA GRAVIS.pdf",
       youtubeId:"hIi4cLrRrXk",
       materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/10-miastenia-gravis.pdf",
       materialExtraNombre:"10. Miastenia Gravis.pdf",
@@ -443,9 +451,13 @@
         descripcion:"Aunque el archivo está numerado como 12, por contenido corresponde al tema Cefaleas."
       }]
     },
-    ela:{youtubeId:"0y7-MX1nrSA",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",materialExtraNombre:"14. ELA.pdf",fuente:"Material extra"},
+    ela:{
+      presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/13.ELAPP.pdf",
+      presentacionNombre:"13.ELAPP.pdf",youtubeId:"0y7-MX1nrSA",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",materialExtraNombre:"14. ELA.pdf",fuente:"Material extra"},
     "segunda-neurona":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",materialExtraNombre:"14. ELA.pdf",fuente:"Fuente compartida"},
-    "infarto-cerebral":{youtubeId:"QSNzkSBbyIY",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/15-infarto-cerebral.pdf",materialExtraNombre:"15. Infarto Cerebral.pdf",fuente:"Material extra"},
+    "infarto-cerebral":{
+      presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/14.INFARTO%20CEREBRALPP.pdf",
+      presentacionNombre:"14.INFARTO CEREBRALPP.pdf",youtubeId:"QSNzkSBbyIY",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/15-infarto-cerebral.pdf",materialExtraNombre:"15. Infarto Cerebral.pdf",fuente:"Material extra"},
     "rescate-vascular":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/15-infarto-cerebral.pdf",materialExtraNombre:"15. Infarto Cerebral.pdf",fuente:"Fuente compartida"},
     "hemorragia-intracerebral":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/16-hemorragia-cerebral.pdf",materialExtraNombre:"16. Hemorragia Cerebral.pdf",fuente:"Material extra"},
     "neuroimagenes-infecciosas":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/19-neuroimagenes-infecciosas-snc.pdf",materialExtraNombre:"Dx por Imágenes - Enfermedades Infecciosas.pdf",fuente:"Material extra"},
