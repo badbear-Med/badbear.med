@@ -460,6 +460,7 @@
       presentacionNombre:"13.ELAPP.pdf",youtubeId:"0y7-MX1nrSA",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",materialExtraNombre:"14. ELA.pdf",fuente:"Material extra"},
     "segunda-neurona":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/14-ela.pdf",materialExtraNombre:"14. ELA.pdf",fuente:"Fuente compartida"},
     "infarto-cerebral":{
+      audios:[{src:"https://media.wajomea.group/badbear-med/neurologia/audios/14.infarto_cerebral.m4a",titulo:"Infarto cerebral",descripcion:"Audioclase sobre infarto cerebral."}],
       presentacion:"https://media.wajomea.group/badbear-med/neurologia/badbearpdfs/14.INFARTO%20CEREBRALPP.pdf",
       presentacionNombre:"14.INFARTO CEREBRALPP.pdf",youtubeId:"QSNzkSBbyIY",materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/15-infarto-cerebral.pdf",materialExtraNombre:"15. Infarto Cerebral.pdf",fuente:"Material extra"},
     "rescate-vascular":{materialExtra:"https://media.wajomea.group/badbear-med/neurologia/pdf/15-infarto-cerebral.pdf",materialExtraNombre:"15. Infarto Cerebral.pdf",fuente:"Fuente compartida"},
