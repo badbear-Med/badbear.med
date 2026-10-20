@@ -1,0 +1,27 @@
+(()=>{"use strict";
+const units=[{name:"Cirugía cardiovascular y de tórax",titles:["Tuberculosis pulmonar"],color:"#f28a36",tint:"#fff1e5"},{name:"Anestesiología",titles:[],color:"#17a776",tint:"#eaf9f2"},{name:"Cirugía de cabeza y cuello",titles:[],color:"#ea6178",tint:"#fff0f2"},{name:"Técnicas quirúrgicas",titles:[],color:"#eab52f",tint:"#fff8db"},{name:"Cirugía plástica",titles:[],color:"#4288db",tint:"#edf5ff"}];
+const lessonName=(u,i)=>units[u].titles[i]||"Tema por definir";
+const lessonId=(u,i)=>"BATIMIX-U"+(u+1)+"-C"+(i+1);
+const key="badbear_batimix_campus_studied_v1";
+let studied;try{studied=new Set(JSON.parse(localStorage.getItem(key)||"[]"))}catch{studied=new Set()}
+const tabs=document.getElementById("unit-tabs"),content=document.getElementById("unit-content"),progress=document.getElementById("progress-label"),fill=document.getElementById("progress-fill"),qu=document.getElementById("quiz-unit"),ql=document.getElementById("quiz-lesson");
+let selected=0;
+function progressUpdate(){progress.textContent=studied.size+" de 25 clases estudiadas";fill.style.width=(studied.size/25*100)+"%";[...tabs.children].forEach((t,u)=>t.querySelector("small").textContent=[...studied].filter(id=>id.startsWith("BATIMIX-U"+(u+1)+"-")).length+" de 5 estudiadas")}
+function render(){tabs.innerHTML="";units.forEach((unit,u)=>{const b=document.createElement("button");b.type="button";b.className="unit-tab";b.style.setProperty("--accent",unit.color);b.style.setProperty("--tint",unit.tint);b.setAttribute("role","tab");b.setAttribute("aria-selected",String(u===selected));b.textContent=unit.name;const small=document.createElement("small");b.appendChild(small);b.addEventListener("click",()=>{selected=u;render()});tabs.appendChild(b)});
+content.innerHTML="";const h=document.createElement("h3");h.textContent="Unidad "+(selected+1)+" · "+units[selected].name;content.appendChild(h);
+const p=document.createElement("p");p.className="intro";p.textContent="5 clases · 5 recursos por clase: teoría, audio, video, diapositivas y PDF adicional.";content.appendChild(p);
+for(let i=0;i<5;i++){const u=selected,id=lessonId(u,i),available=u===0&&i===0;const art=document.createElement("article");art.className="lesson";const title=document.createElement("h4");title.textContent="CLASE "+String(i+1).padStart(2,"0")+" · "+lessonName(u,i);art.appendChild(title);
+const meta=document.createElement("p");meta.className="lesson-meta";meta.textContent="Teoría + audio + video + PPT + PDF extra"+(available?" · Teoría inicial disponible":" · Pendiente de contenido");art.appendChild(meta);
+const actions=document.createElement("div");actions.className="lesson-actions";const check=document.createElement("label");check.className="check-label";const input=document.createElement("input");input.type="checkbox";input.checked=studied.has(id);input.addEventListener("change",()=>{if(input.checked)studied.add(id);else studied.delete(id);localStorage.setItem(key,JSON.stringify([...studied]));progressUpdate()});check.append(input,document.createTextNode("Marcar como estudiada"));actions.appendChild(check);
+const toggle=document.createElement("button");toggle.type="button";toggle.textContent="Ver recursos en el campus";toggle.setAttribute("aria-expanded","false");actions.appendChild(toggle);art.appendChild(actions);
+const resources=document.createElement("section");resources.className="resources";resources.hidden=true;const tabsRes=document.createElement("div");tabsRes.className="resource-tabs";const pane=document.createElement("div");pane.className="resource-pane";const types=["Teoría","Audio","Video","Diapositivas","PDF adicional"];
+function displayResource(n){pane.replaceChildren();[...tabsRes.children].forEach((button,k)=>button.setAttribute("aria-selected",String(k===n)));const desc=document.createElement("p");
+if(available&&n===0){desc.textContent="Introducción teórica publicada en BADBEAR.MED. El capítulo ampliado está en preparación.";pane.appendChild(desc);const link=document.createElement("a");link.className="resource-link";link.href="../cirugia-batimix/clases/u1-c1-tuberculosis.html";link.textContent="Leer teoría en BADBEAR.MED ↗";pane.appendChild(link)}
+else{desc.textContent=types[n]+" pendiente de publicación. No existe todavía un archivo o enlace oficial para este recurso.";pane.appendChild(desc)}}
+types.forEach((name,n)=>{const b=document.createElement("button");b.type="button";b.textContent=name;b.addEventListener("click",()=>displayResource(n));tabsRes.appendChild(b)});resources.append(tabsRes,pane);displayResource(0);toggle.addEventListener("click",()=>{resources.hidden=!resources.hidden;toggle.textContent=resources.hidden?"Ver recursos en el campus":"Ocultar recursos";toggle.setAttribute("aria-expanded",String(!resources.hidden))});art.appendChild(resources);content.appendChild(art)}
+progressUpdate()}
+units.forEach((unit,u)=>{const option=document.createElement("option");option.value=u;option.textContent="Unidad "+(u+1)+" · "+unit.name;qu.appendChild(option)});
+function quizUpdate(){ql.replaceChildren();for(let i=0;i<5;i++){let o=document.createElement("option");o.value=i;o.textContent="Clase "+(i+1)+" · "+lessonName(Number(qu.value),i);ql.appendChild(o)}}
+qu.addEventListener("change",quizUpdate);quizUpdate();document.getElementById("quiz-start").addEventListener("click",()=>{document.getElementById("quiz-status").textContent="El banco de preguntas de esta clase todavía no está publicado. No se generarán preguntas ficticias ni resultados de evaluación."});
+render();
+})();
