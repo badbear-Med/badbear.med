@@ -106,3 +106,17 @@
  .bb-vivid-aula header::before{width:72px!important;height:72px!important;right:12px!important;border-radius:15px!important}
  .bb-vivid-aula header h1{font-size:clamp(21px,6vw,32px)}
 }
+
+/* Corrección de accesibilidad: pestañas pastel seleccionadas (móvil y escritorio). */
+.bb-vivid-aula .academic-tab[aria-selected="true"]{
+  color:#202831!important;
+  border-color:#66717c!important;
+  background:#fff0e4!important;
+}
+.bb-vivid-aula .academic-tab:nth-child(4n+2)[aria-selected="true"]{background:#e9f9f0!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+3)[aria-selected="true"]{background:#ffedef!important}
+.bb-vivid-aula .academic-tab:nth-child(4n+4)[aria-selected="true"]{background:#fff8d9!important}
+.bb-vivid-aula .academic-tab[aria-selected="true"] span{
+ color:#344353!important;
+}
+.bb-vivid-aula .academic-tab[aria-selected="true"]:focus-visible{outline:3px solid #185faf!important;outline-offset:3px}
