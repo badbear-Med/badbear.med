@@ -18,13 +18,16 @@
 <!-- BB_GLOBAL_COURSE_LOCK_END -->
   <link rel="stylesheet" href="../assets/css/bb-vivid-global.css?v=20260930-vivos-global3">
   <link rel="stylesheet" href="../assets/css/clean-navigation.css?v=20261011-clean-navigation2">
+<style>
+.bat-program{max-width:1100px;margin:0 auto;padding:44px 20px 90px;color:#18263b}.bat-program h1{font-size:clamp(2rem,5vw,3.2rem);margin:8px 0}.bat-program .lead{max-width:760px;line-height:1.7;color:#45556e}.program-stats{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0}.program-stats span{border:1px solid #d7e2f3;padding:13px 19px;border-radius:14px;background:#fff;font-weight:700}.unit{background:#fff;border:1px solid #d6e2f1;border-radius:18px;padding:24px;margin:24px 0;box-shadow:0 4px 18px #132a4c0c}.unit h2{margin:0 0 16px;color:#064ab4}.class-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.class-card{border:1px solid #dfe6f1;border-radius:12px;padding:16px;background:#f8fbff}.class-card h3{font-size:1.06rem;margin:8px 0}.class-card p{font-size:.91rem;line-height:1.5;color:#53637a}.class-card a{display:inline-block;margin-top:8px;background:#0754dc;color:#fff;padding:9px 13px;text-decoration:none;border-radius:9px;font-weight:650}.class-card .pending{display:inline-block;margin-top:8px;color:#5e6a79;font-size:.87rem}.class-code{font-size:.75rem;color:#315a9c;font-weight:700;letter-spacing:.05em}.program-note{padding:18px;border-left:4px solid #1466e3;background:#f0f6ff;border-radius:8px;line-height:1.6}@media(max-width:600px){.unit{padding:17px}}
+</style>
 </head>
 <body>
   <header class="bat-header">
     <div class="inner">
       <a href="../badbear-med.html" class="bat-brand"><img src="../dermatologia/badbear_logo.png" alt="Logo BADBEAR.MED">BADBEAR.<span>MED</span></a>
       <nav class="bat-nav">
-        <a href="programa.html">Programa de 5 unidades</a><a href="#temas">Temas anteriores</a>
+        <a href="#programa">5 unidades</a>
         <a href="modulo.html?m=preguntas">Banco</a>
         <a href="modulo.html?m=examenes">Exámenes</a>
         <a href="modulo.html?m=progreso">Progreso</a>
@@ -39,27 +42,20 @@
         <span class="bat-kicker">BADBEAR.MED · REPASO QUIRÚRGICO MIXTO</span>
         <h1>Cirugía BATIMIX</h1>
         <p>Programa académico de 5 unidades, 25 clases y 125 recursos: teoría, audioclases, videoclases, presentaciones y PDF complementarios.</p>
-        <div class="bat-actions"><a href="programa.html" class="bat-btn primary">Explorar las 5 unidades</a><a href="modulo.html?m=preguntas" class="bat-btn secondary">Banco de preguntas</a></div>
+        <div class="bat-actions"><a href="#programa" class="bat-btn primary">Explorar las 5 unidades</a><a href="modulo.html?m=preguntas" class="bat-btn secondary">Banco de preguntas</a></div>
       </div>
       <div class="bat-visual" aria-hidden="true" data-bb-course-hero-logo></div>
     </div>
   </section>
 
-  <section class="bat-section" style="padding-top:26px;padding-bottom:10px"><div class="bat-note" style="max-width:1100px;margin:auto"><h2>Programa académico BATIMIX — 5 unidades</h2><p>Cirugía cardiovascular y de tórax · Anestesiología · Cirugía de cabeza y cuello · Técnicas quirúrgicas · Cirugía plástica. Cada unidad contiene 5 clases y cada clase 5 recursos. Iniciamos con Tuberculosis pulmonar.</p><div class="bat-actions"><a href="programa.html" class="bat-btn primary">Entrar al programa académico</a><a href="clases/u1-c1-tuberculosis.html" class="bat-btn secondary">Clase 01: Tuberculosis pulmonar</a></div></div></section>
-  <section class="bat-dashboard"><div class="bat-stats"><div class="bat-stat"><strong id="bat-total-temas">18</strong><span>Temas integrados</span></div><div class="bat-stat"><strong id="bat-total-areas">0</strong><span>Áreas</span></div><div class="bat-stat"><strong id="bat-completados">0</strong><span>Temas revisados</span></div><div class="bat-stat"><strong id="bat-porcentaje">0%</strong><span>Progreso</span></div></div></section>
-
-  <section id="temas" class="bat-section">
-    <div class="bat-section-head"><div><h2>Repaso quirúrgico BATIMIX · Archivo de temas</h2><p>Esta estructura no sustituye los temarios oficiales de Cirugía General, Cirugía Pediátrica o Traumatología. Su función es mezclarlos para practicar integración clínica y decisiones quirúrgicas.</p></div><div class="bat-tools"><input id="bat-buscar" type="search" placeholder="Buscar abdomen, trauma, shock..." aria-label="Buscar tema"><select id="bat-filtro" aria-label="Filtrar por área"><option value="todos">Todas las áreas</option></select></div></div>
-    <div id="bat-temas" class="bat-grid"></div>
-  </section>
-
-  <section class="bat-section">
-    <div class="bat-note"><h3>BADBEAR.MED FIJA:</h3><p>BATIMIX se usará para juntar clasificaciones, signos radiológicos, decisiones de urgencia y preguntas que cruzan más de una rama quirúrgica.</p></div>
-    <div class="bat-actions"><a href="modulo.html?m=teoria" class="bat-btn secondary">Teoría</a><a href="modulo.html?m=resumenes" class="bat-btn secondary">Resúmenes</a><a href="modulo.html?m=preguntas" class="bat-btn secondary">Banco</a><a href="modulo.html?m=examenes" class="bat-btn secondary">Exámenes pasados</a><a href="modulo.html?m=pdf" class="bat-btn secondary">PDF</a><a href="modulo.html?m=videos" class="bat-btn secondary">Videos</a><a href="modulo.html?m=audios" class="bat-btn secondary">Audios</a><a href="modulo.html?m=progreso" class="bat-btn secondary">Progreso</a></div>
-  </section>
-
-  <script src="temas.js"></script>
-  <script src="batimix.js?ui=20261011-clean-navigation2"></script>
+  <main class="bat-program" id="programa">
+    <p class="class-code">BADBEAR.MED · PROGRAMA DE CIRUGÍA BATIMIX</p>
+    <h1>Las cinco unidades de BATIMIX</h1>
+    <p class="lead">Cada unidad contiene cinco clases. Cada clase cuenta con cinco recursos previstos: teoría médica, audioclase, videoclase del canal, PowerPoint y material complementario PDF.</p>
+    <div class="program-stats"><span>5 unidades</span><span>25 clases</span><span>125 recursos previstos</span></div>
+    <div id="programa-unidades"></div>
+  </main>
+  <script src="programa.js"></script>
   <script src="../assets/js/course-branding.js"></script>
   <script src="../assets/js/bb-responsive-global-v21.js"></script>
 </body>
