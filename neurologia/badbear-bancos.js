@@ -16,7 +16,7 @@ function counts(){const answered=qs.filter(q=>answers[q.id]!==undefined),grad=an
 function explain(q){let lines=String(q.explicacion||"La fuente no incluye explicación clínica desarrollada.");let ci=answerIndex(q);
 if(q.tipo==="choice"&&q.alternativas.length>1&&ci>=0){
 lines+="\n\nANÁLISIS DE LAS ALTERNATIVAS:\n";
-q.alternativas.forEach((opt,i)=>{lines+=String.fromCharCode(65+i)+". "+(i===ci?"CORRECTA: se corresponde con la clave original. ":"NO ES LA CLAVE: debe diferenciarse de la opción correcta según los datos clínicos. ")+opt+"\n"});
+q.alternativas.forEach((opt,i)=>{const why=q.razonesAlternativas?.[i];lines+=String.fromCharCode(65+i)+". "+(why||((i===ci?"CORRECTA según la clave histórica: ":"No es la respuesta indicada por la clave histórica: ")+opt+". La justificación médica específica de esta opción está pendiente de revisión editorial."))+"\n"});
 }else if(q.tipo==="choice"&&ci<0){lines+="\n\nEsta pregunta no tiene una clave única comprobada; no se penaliza la respuesta. Para decidir se requieren datos adicionales o validar el examen original."}
 else{lines+="\n\nEn respuesta libre, compara los elementos esenciales de tu contestación con la clave mostrada. La plataforma no califica automáticamente respuestas escritas por coincidencia de palabras."}
 return lines}
