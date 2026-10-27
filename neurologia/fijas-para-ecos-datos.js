@@ -1,10 +1,10 @@
-/* Estaciones simuladas de estudio: no son enunciados originales de exámenes. */
+/* Casos clínicos simulados: aprendizaje progresivo por estación. */
 window.FIJAS_ECOS_DATA={
-  "version": "20261026-1",
+  "version": "20261026-2",
   "fields": [
     {
       "id": "datos",
-      "label": "1. Datos clínicos relevantes",
+      "label": "1. Datos positivos y negativos",
       "hint": "Identifica hallazgos positivos, negativos, cronología y signos de alarma."
     },
     {
@@ -28,19 +28,49 @@ window.FIJAS_ECOS_DATA={
       "hint": "Explica el mecanismo y distingue sospecha de confirmación."
     },
     {
+      "id": "probabilidades",
+      "label": "6. Probabilidad clínica de cada hipótesis",
+      "hint": "Prioriza diagnósticos como alta, intermedia o baja con argumentos. No inventes porcentajes."
+    },
+    {
       "id": "examenes",
-      "label": "6. Exámenes auxiliares: cuáles y por qué",
+      "label": "7. Exámenes auxiliares y su justificación",
       "hint": "Prioriza estudios urgentes, hallazgos esperados y precauciones."
     },
     {
+      "id": "prioridad",
+      "label": "8. Orden, urgencia y seguridad de los exámenes",
+      "hint": "Qué solicitar primero, contraindicaciones y qué decisiones no pueden esperar."
+    },
+    {
+      "id": "esperados",
+      "label": "9. Hallazgos que esperas encontrar",
+      "hint": "Qué resultado apoyaría o debilitaría tus diagnósticos."
+    },
+    {
+      "id": "interpretacion",
+      "label": "10. Interpretación de los resultados del estudio",
+      "hint": "Explica qué significa cada resultado y sus limitaciones."
+    },
+    {
+      "id": "diagnostico_final",
+      "label": "11. Diagnóstico integrado y probabilidad actualizada",
+      "hint": "Actualiza las hipótesis y distingue lo confirmado de lo probable."
+    },
+    {
       "id": "manejo",
-      "label": "7. Manejo y tratamiento",
-      "hint": "Describe estabilización, medidas iniciales, fármacos y dosis pertinentes."
+      "label": "12. Manejo inicial y prioridades",
+      "hint": "Estabilización, urgencias, seguimiento y complicaciones. Separa manejo del fármaco específico."
+    },
+    {
+      "id": "tratamiento",
+      "label": "13. Tratamiento específico, dosis y alternativas",
+      "hint": "Elige tratamiento, dosis y vía cuando corresponda; menciona alternativas y vigilancia."
     },
     {
       "id": "justificacion",
-      "label": "8. Justificación clínica final",
-      "hint": "Relaciona datos, exámenes, fisiopatología y decisión terapéutica."
+      "label": "14. Justificación de las decisiones",
+      "hint": "Integra fisiopatología, criterios diagnósticos y razones del tratamiento."
     }
   ],
   "cases": [
@@ -109,6 +139,50 @@ window.FIJAS_ECOS_DATA={
       "title": "Dolor de dientes y hemicara derecha: diagnóstico abierto",
       "stem": "Paciente adulto que consulta por episodios de dolor en dientes y hemicara derecha. El enunciado disponible no precisa si son dientes superiores o inferiores, duración exacta, desencadenantes, presencia de caries ni examen neurológico.\nEsta estación reproduce deliberadamente la incertidumbre de la variante de examen que se comentó en clase. NO debes dar un diagnóstico definitivo únicamente por la distribución inespecífica del dolor.\nDesarrolla diagnósticos diferenciales y preguntas que completarían la anamnesis.",
       "extra": "No se aportaron estudios complementarios del caso original. Propón qué preguntas, exploración odontológica y examen neurológico permitirían distinguir dolor odontógeno, neuralgia de V2/V3 y otras causas. No inventes hallazgos de resonancia."
+    }
+  ],
+  "stages": [
+    {
+      "id": "clinica",
+      "title": "1 · Análisis clínico",
+      "description": "Extrae información, localiza el síndrome y ordena tus sospechas sin conocer todavía los exámenes.",
+      "fields": [
+        "datos",
+        "sindromico",
+        "topografico",
+        "nosologico",
+        "etiologico",
+        "probabilidades"
+      ]
+    },
+    {
+      "id": "estudios",
+      "title": "2 · Plan de estudios",
+      "description": "Decide qué pruebas pides, en qué orden y qué resultados esperas. Luego se desbloquean los resultados del caso.",
+      "fields": [
+        "examenes",
+        "prioridad",
+        "esperados"
+      ]
+    },
+    {
+      "id": "interpretar",
+      "title": "3 · Interpretación de resultados",
+      "description": "Ya puedes revisar los resultados simulados. Interprétalos y reajusta tus probabilidades diagnósticas.",
+      "fields": [
+        "interpretacion",
+        "diagnostico_final"
+      ]
+    },
+    {
+      "id": "terapeutica",
+      "title": "4 · Manejo y tratamiento",
+      "description": "Explica estabilización, manejo de complicaciones, tratamiento con dosis y justificación. Al terminar se muestra la corrección de este caso.",
+      "fields": [
+        "manejo",
+        "tratamiento",
+        "justificacion"
+      ]
     }
   ]
 };
