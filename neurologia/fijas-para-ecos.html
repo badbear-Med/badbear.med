@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="FIJAS PARA ECOS: casos clínicos de Neurología con respuestas escritas y solucionario que se habilita solo al finalizar el simulacro.">
+<title>FIJAS PARA ECOS | Neurología | BADBEAR.MED</title>
+<link rel="stylesheet" href="../assets/css/course.css">
+<link rel="stylesheet" href="neurologia.css?v=20261006-mobile2">
+<link rel="stylesheet" href="../assets/css/course-lock.css">
+<script src="../assets/js/course-lock-config.js"></script>
+<script src="../assets/js/course-lock.js" data-course="neurologia"></script>
+<link rel="stylesheet" href="fijas-para-ecos.css?v=20261026-1">
+<link rel="icon" type="image/png" href="../assets/logos/cursos/neurologia/logo.png">
+</head>
+<body>
+<header class="neuro-header"><div class="inner"><a href="../badbear-med.html" class="neuro-brand">BADBEAR.<span>MED</span></a><nav class="neuro-nav" aria-label="Navegación"><a href="index.html">Neurología</a><a href="badbear-bancos.html">BADBEAR.BANCOS</a><a href="bancos-historicos.html">Bancos históricos</a></nav></div></header>
+<main class="ecos-shell">
+<section class="ecos-hero">
+  <span class="ecos-kicker">NEUROLOGÍA · ENTRENAMIENTO CLÍNICO</span>
+  <h1>FIJAS PARA ECOS</h1>
+  <p>Resuelve casos clínicos con espacios en blanco, como en una evaluación clínica estructurada. El solucionario completo permanece oculto <strong>hasta finalizar todos los casos</strong>.</p>
+  <div class="ecos-hero-stats"><span id="ecos-case-count">Cargando casos…</span><span id="ecos-completed-count">0 completados</span><span id="ecos-saved-label">Respuestas guardadas en este dispositivo</span></div>
+</section>
+<div class="ecos-note"><strong>Modo examen:</strong> lee cada historia sin diagnóstico anunciado. Completa los ocho apartados; puedes navegar y volver después. Los resultados de laboratorio incluidos en algunas estaciones son parte del enunciado, no la solución. <strong>Los casos son simulados, basados en el temario estudiado; no son transcripciones literales del examen histórico.</strong></div>
+<section id="ecos-workspace" class="ecos-workspace" aria-label="Simulacro ECOS">
+  <aside class="ecos-side">
+    <h2>Estaciones</h2>
+    <p>Elige un caso para desarrollar.</p>
+    <div id="ecos-case-nav" class="ecos-case-nav"></div>
+    <div class="ecos-progress-label"><span>Avance del simulacro</span><strong id="ecos-progress-text">0 %</strong></div>
+    <div class="ecos-progress-track"><div id="ecos-progress-fill" class="ecos-progress-fill"></div></div>
+  </aside>
+  <div class="ecos-content">
+    <article id="ecos-station" aria-live="polite"></article>
+    <div class="ecos-bottom-nav"><button type="button" id="ecos-prev" class="ecos-btn secondary">← Caso anterior</button><button type="button" id="ecos-next" class="ecos-btn secondary">Siguiente caso →</button></div>
+  </div>
+</section>
+<section id="ecos-finish-section" class="ecos-finish">
+  <h2>Entrega del simulacro</h2>
+  <p id="ecos-finish-help">Para habilitar el solucionario, completa los ocho apartados de cada caso. Si no sabes algo, escribe «No sé» y continúa.</p>
+  <div class="ecos-finish-line"><strong id="ecos-finish-count">0/0 respuestas</strong><button class="ecos-btn primary" type="button" id="ecos-finish-button" disabled>Finalizar y ver todas las respuestas</button></div>
+  <p class="ecos-small">Las respuestas abiertas no se califican por coincidencia de palabras. Al finalizar podrás comparar tus razonamientos con respuestas modelo justificadas.</p>
+</section>
+<section id="ecos-results" class="ecos-results" hidden></section>
+<footer class="ecos-foot"><a href="index.html">← Regresar al temario de Neurología</a><span>BADBEAR.MED · WAJOMEA.GROUP</span></footer>
+</main>
+<script src="fijas-para-ecos-datos.js?v=20261026-1"></script>
+<script src="fijas-para-ecos.js?v=20261026-1"></script>
+</body></html>
