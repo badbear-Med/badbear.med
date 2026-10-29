@@ -54,3 +54,7 @@ button,select,a,input{touch-action:manipulation}button:focus-visible,a:focus-vis
 .anesthesia-group .resource-tabs.anesthesia-tabs-with-theory button[aria-selected=true]{background:#0b664d;color:#fff}
 @media(max-width:720px){.anesthesia-group .resource-tabs.anesthesia-tabs-with-theory{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:390px){.anesthesia-group .resource-tabs.anesthesia-tabs-with-theory{grid-template-columns:1fr}}
+
+/* Reproductor YouTube dentro de Anestesiología */
+.anesthesia-youtube-viewer{display:block;width:100%;aspect-ratio:16/9;height:auto;min-height:0;max-height:780px;margin:14px 0;border:1px solid #c7d9e3;border-radius:11px;background:#111}
+@media(max-width:600px){.anesthesia-youtube-viewer{border-radius:7px}}
