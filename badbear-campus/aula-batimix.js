@@ -74,7 +74,7 @@ function resourcePanel(article,available,anestItem=null){
    const fileHint=n===3?"Material identificado en el listado: "+anestItem.archivoReferencia+
     ". Formato original: "+anestItem.formatoReferencia.toUpperCase()+".":"";
    if(typeof resourceUrl==="string"&&resourceUrl.trim()){
-    desc.textContent=types[n]+" disponible para este apartado.";pane.appendChild(desc);
+    desc.textContent="Enlace de "+types[n]+" configurado para este apartado.";pane.appendChild(desc);
     const link=document.createElement("a");link.className="resource-link";link.href=resourceUrl;
     link.textContent="Abrir "+types[n];if(/^https?:\/\//i.test(resourceUrl)){link.target="_blank";link.rel="noopener noreferrer"}
     pane.appendChild(link);
@@ -106,7 +106,7 @@ function renderAnesthesia(){
    const type=section.id==="teoria"?"CLASE":"SEMINARIO";
    article.appendChild(text("h4",type+" "+String(item.numero).padStart(2,"0")+" · "+item.titulo));
    article.appendChild(text("p","PPT + audio + video de YouTube + material extra.","lesson-meta"));
-   article.appendChild(text("p","Archivo de referencia: "+item.archivoReferencia+" (pendiente de subir)","anesthesia-file-name"));
+   article.appendChild(text("p","Archivo de referencia: "+item.archivoReferencia+(item.recursos?.extra?" · Enlace configurado":" · Pendiente de subir"),"anesthesia-file-name"));
    resourcePanel(article,false,item);
    group.appendChild(article);
   }
