@@ -13,6 +13,11 @@ const completeTheory={
   href:"../cirugia-batimix/clases/u2-t02-oxigenoterapia-relajantes-neuromusculares.html",
   name:"Clase 2",
   description:"Oxigenoterapia y relajantes neuromusculares: unión neuromuscular, TOF, reversión, insuficiencia respiratoria y dispositivos de oxígeno."
+ },
+ "BATIMIX-U2-T04":{
+  href:"../cirugia-batimix/clases/u2-t04-anestesia-general-endovenosa.html",
+  name:"Clase 4",
+  description:"Anestesia general endovenosa I y II: hipnóticos IV, opioides, TIVA, TCI, dosis orientativas, monitorización, casos y complicaciones."
  }
 };
 const units=[
