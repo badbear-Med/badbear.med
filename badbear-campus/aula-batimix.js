@@ -3,6 +3,18 @@
 const anesthesia=window.BATIMIX_ANESTESIOLOGIA;
 const anestSections=anesthesia?.secciones||[];
 const anestItems=anestSections.flatMap(s=>s.items);
+const completeTheory={
+ "BATIMIX-U2-T01":{
+  href:"../cirugia-batimix/clases/u2-t01-conceptos-basicos-anestesia.html",
+  name:"Clase 1",
+  description:"Conceptos básicos, anestesia inhalatoria y espinal: fundamentos, circuitos, farmacocinética y técnicas neuroaxiales."
+ },
+ "BATIMIX-U2-T02":{
+  href:"../cirugia-batimix/clases/u2-t02-oxigenoterapia-relajantes-neuromusculares.html",
+  name:"Clase 2",
+  description:"Oxigenoterapia y relajantes neuromusculares: unión neuromuscular, TOF, reversión, insuficiencia respiratoria y dispositivos de oxígeno."
+ }
+};
 const units=[
 {name:"Cirugía cardiovascular y de tórax",titles:["Tuberculosis pulmonar"],color:"#f28a36",tint:"#fff1e5"},
 {name:"Anestesiología",titles:[],color:"#17a776",tint:"#eaf9f2"},
@@ -63,7 +75,8 @@ function resourcePanel(article,available,anestItem=null){
  const tabsRes=document.createElement("div");tabsRes.className="resource-tabs";
  const pane=document.createElement("div");pane.className="resource-pane";
  const isAnest=Boolean(anestItem);
- const hasFullTheory=isAnest&&anestItem.id==="BATIMIX-U2-T01";
+ const theory=isAnest?completeTheory[anestItem.id]:null;
+ const hasFullTheory=Boolean(theory);
  const types=isAnest
   ?(hasFullTheory?["Teoría completa","PPT","Audio","Video YouTube","Material extra"]:["PPT","Audio","Video YouTube","Material extra"])
   :["Teoría","Audio","Video","Diapositivas","PDF adicional"];
@@ -74,12 +87,12 @@ function resourcePanel(article,available,anestItem=null){
   [...tabsRes.children].forEach((button,k)=>button.setAttribute("aria-selected",String(k===n)));
   const desc=document.createElement("p");
   if(hasFullTheory&&n===0){
-   desc.textContent="Clase 1 desarrollada: conceptos básicos, anestesia inhalatoria y espinal, con explicación extensa, cuadros comparativos y aplicación clínica.";
+   desc.textContent=theory.description;
    pane.appendChild(desc);
    const link=document.createElement("a");
    link.className="anesthesia-theory-link";
-   link.href="../cirugia-batimix/clases/u2-t01-conceptos-basicos-anestesia.html";
-   link.textContent="Abrir teoría completa de la Clase 1";
+   link.href=theory.href;
+   link.textContent="Abrir teoría completa de la "+theory.name;
    pane.appendChild(link);
    return;
   }
@@ -161,13 +174,13 @@ function renderAnesthesia(){
    const article=document.createElement("article");article.className="lesson anesthesia-lesson";article.id=item.id;
    const type=section.id==="teoria"?"CLASE":"SEMINARIO";
    article.appendChild(text("h4",type+" "+String(item.numero).padStart(2,"0")+" · "+item.titulo));
-   article.appendChild(text("p",(item.id==="BATIMIX-U2-T01"?"Teoría completa + ":"")+"PPT + audio + video de YouTube + material extra.","lesson-meta"));
+   article.appendChild(text("p",(completeTheory[item.id]?"Teoría completa + ":"")+"PPT + audio + video de YouTube + material extra.","lesson-meta"));
    article.appendChild(text("p","Archivo de referencia: "+item.archivoReferencia+(item.recursos?.extra?" · Enlace configurado":" · Pendiente de subir"),"anesthesia-file-name"));
-   if(item.id==="BATIMIX-U2-T01"){
+   if(completeTheory[item.id]){
     const theoryLink=document.createElement("a");
-    theoryLink.href="../cirugia-batimix/clases/u2-t01-conceptos-basicos-anestesia.html";
+    theoryLink.href=completeTheory[item.id].href;
     theoryLink.className="anesthesia-theory-link";
-    theoryLink.textContent="Leer teoría médica completa · Clase 1";
+    theoryLink.textContent="Leer teoría médica completa · "+completeTheory[item.id].name;
     article.appendChild(theoryLink);
    }
    resourcePanel(article,false,item);
