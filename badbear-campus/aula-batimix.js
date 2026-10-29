@@ -113,12 +113,32 @@ function resourcePanel(article,available,anestItem=null){
     ". Formato original: "+anestItem.formatoReferencia.toUpperCase()+".":"";
    if(typeof resourceUrl==="string"&&resourceUrl.trim()){
     const urlBase=resourceUrl.split("?")[0].split("#")[0].toLowerCase();
+    const isAudio=resourceIndex===1&&/\.(mp3|m4a|aac|ogg|oga|wav|webm)$/.test(urlBase);
     const isPowerPoint=/\.(ppt|pptx|pps|ppsx)$/.test(urlBase);
     const isPdf=urlBase.endsWith(".pdf");
     const youtubeMatch=resourceIndex===2
      ?resourceUrl.match(/^https:\/\/(?:www\.)?youtu\.be\/([a-zA-Z0-9_-]{11})(?:[/?#].*)?$/i)
      :null;
-    if(youtubeMatch){
+    if(isAudio){
+     desc.textContent="Escucha la grabación de esta clase desde el aula. Formato de audio original: "+urlBase.split(".").pop().toUpperCase()+".";
+     pane.appendChild(desc);
+     const audio=document.createElement("audio");
+     audio.className="anesthesia-audio-player";
+     audio.src=resourceUrl;
+     audio.controls=true;
+     audio.preload="metadata";
+     audio.setAttribute("aria-label","Audio de "+anestItem.titulo);
+     pane.appendChild(audio);
+     const note=text("p","Si tu navegador no reproduce el archivo, utiliza el enlace para abrirlo directamente.","anesthesia-viewer-note");
+     pane.appendChild(note);
+     const link=document.createElement("a");
+     link.className="resource-link";
+     link.href=resourceUrl;
+     link.target="_blank";
+     link.rel="noopener noreferrer";
+     link.textContent="Abrir grabación de audio";
+     pane.appendChild(link);
+    }else if(youtubeMatch){
      desc.textContent="Reproduce la clase directamente en BADBEAR.CAMPUS. Si el canal no permite insertar el video, ábrelo en YouTube.";
      pane.appendChild(desc);
      const frame=document.createElement("iframe");
