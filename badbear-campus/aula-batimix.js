@@ -115,7 +115,32 @@ function resourcePanel(article,available,anestItem=null){
     const urlBase=resourceUrl.split("?")[0].split("#")[0].toLowerCase();
     const isPowerPoint=/\.(ppt|pptx|pps|ppsx)$/.test(urlBase);
     const isPdf=urlBase.endsWith(".pdf");
-    if(isPowerPoint||isPdf){
+    const youtubeMatch=resourceIndex===2
+     ?resourceUrl.match(/^https:\/\/(?:www\.)?youtu\.be\/([a-zA-Z0-9_-]{11})(?:[/?#].*)?$/i)
+     :null;
+    if(youtubeMatch){
+     desc.textContent="Reproduce la clase directamente en BADBEAR.CAMPUS. Si el canal no permite insertar el video, ábrelo en YouTube.";
+     pane.appendChild(desc);
+     const frame=document.createElement("iframe");
+     frame.className="anesthesia-youtube-viewer";
+     frame.src="https://www.youtube-nocookie.com/embed/"+youtubeMatch[1];
+     frame.title="Video YouTube · "+anestItem.titulo;
+     frame.loading="lazy";
+     frame.setAttribute("allowfullscreen","");
+     frame.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+     frame.setAttribute("referrerpolicy","strict-origin-when-cross-origin");
+     pane.appendChild(frame);
+     const actions=document.createElement("div");
+     actions.className="anesthesia-viewer-actions";
+     const link=document.createElement("a");
+     link.className="resource-link";
+     link.href=resourceUrl;
+     link.target="_blank";
+     link.rel="noopener noreferrer";
+     link.textContent="Ver directamente en YouTube";
+     actions.appendChild(link);
+     pane.appendChild(actions);
+    }else if(isPowerPoint||isPdf){
      desc.textContent=isPowerPoint
       ?"Presentación en línea: consulta las diapositivas sin descargar el archivo. El visor funciona mediante Microsoft Office Web Viewer."
       :"Documento PDF: consulta el material directamente dentro del aula.";
