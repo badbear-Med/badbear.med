@@ -133,6 +133,8 @@ function resourcePanel(article,available,anestItem=null){
    const link=document.createElement("a");
    link.className="anesthesia-theory-link";
    link.href=theory.href;
+   link.target="_blank";
+   link.rel="noopener noreferrer";
    link.textContent="Abrir teoría completa de la "+theory.name;
    pane.appendChild(link);
    return;
@@ -266,6 +268,8 @@ function renderAnesthesia(){
    if(completeTheory[item.id]){
     const theoryLink=document.createElement("a");
     theoryLink.href=completeTheory[item.id].href;
+    theoryLink.target="_blank";
+    theoryLink.rel="noopener noreferrer";
     theoryLink.className="anesthesia-theory-link";
     theoryLink.textContent="Leer teoría médica completa · "+completeTheory[item.id].name;
     article.appendChild(theoryLink);
