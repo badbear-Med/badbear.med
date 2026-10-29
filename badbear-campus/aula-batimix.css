@@ -62,3 +62,34 @@ button,select,a,input{touch-action:manipulation}button:focus-visible,a:focus-vis
 /* Reproductor nativo para grabaciones M4A/MP3 de Anestesiología */
 .anesthesia-audio-player{display:block;width:100%;max-width:960px;min-height:54px;margin:14px 0 10px;border-radius:12px;background:#f1f6f8}
 @media(max-width:600px){.anesthesia-audio-player{max-width:100%;border-radius:8px}}
+
+
+/* Barra de reproducción general: independiente de los paneles de recursos. */
+body.has-batimix-global-player{padding-bottom:148px}
+.batimix-global-player{
+ position:fixed;bottom:0;left:0;right:0;z-index:9999;
+ display:grid;grid-template-columns:minmax(240px,1fr) minmax(270px,500px) auto;
+ gap:15px;align-items:center;padding:13px max(17px,calc((100vw - 1160px)/2));
+ background:#152a35;color:#fff;border-top:3px solid #28c293;
+ box-shadow:0 -8px 28px #112c3b3d;
+}
+.batimix-global-player[hidden]{display:none!important}
+.batimix-player-details{min-width:0;display:grid;gap:3px}
+.batimix-player-eyebrow{font-size:10px;font-weight:800;letter-spacing:.07em;color:#76e1c3}
+.batimix-player-details strong{font-size:14px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.batimix-player-hint{color:#d7e4e8;font-size:11px;line-height:1.4}
+.batimix-global-player audio{display:block;width:100%;min-width:0;height:49px}
+#batimix-player-close{border:1px solid #91afbd;border-radius:8px;padding:10px 14px;font-size:12px;font-weight:800;background:#f5fafb;color:#153240;min-height:43px}
+#batimix-player-close:hover{background:#dff7ee}
+.anesthesia-select-global-audio{display:inline-flex;align-items:center;justify-content:center;margin:8px 12px 8px 0;padding:11px 15px;min-height:44px;border:1px solid #0c7a61;border-radius:9px;color:#fff;background:#116b54;font-weight:800}
+.anesthesia-select-global-audio:hover{background:#09563f}
+@media(max-width:720px){
+ body.has-batimix-global-player{padding-bottom:225px}
+ .batimix-global-player{grid-template-columns:minmax(0,1fr) auto;gap:9px;padding:12px 12px max(12px,env(safe-area-inset-bottom))}
+ .batimix-player-details{grid-column:1;grid-row:1}
+ .batimix-player-details strong{font-size:12px;white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .batimix-player-hint{display:none}
+ .batimix-global-player audio{grid-column:1/-1;grid-row:2;height:50px}
+ #batimix-player-close{grid-column:2;grid-row:1;padding:8px 12px;min-height:40px}
+ .anesthesia-select-global-audio{width:100%;margin-right:0}
+}
