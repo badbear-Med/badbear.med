@@ -33,6 +33,13 @@ function hacerAnestesiologia(section){
    const extraLinked=Boolean(item.recursos?.extra);
    const state=encabezado("span",extraLinked?"Enlace de material extra configurado":"Material extra pendiente de subir");
    state.className="pending";article.appendChild(state);
+   if(item.id==="BATIMIX-U2-T01"){
+    const theory=document.createElement("a");
+    theory.href="clases/u2-t01-conceptos-basicos-anestesia.html";
+    theory.textContent="Leer teoría médica completa";
+    theory.style.marginRight="8px";
+    article.appendChild(theory);
+   }
    const link=document.createElement("a");link.href="../badbear-campus/aula-batimix.html?unidad=2&recurso="+encodeURIComponent(item.id);link.textContent="Ver los 4 recursos";article.appendChild(link);
    grid.appendChild(article);
   }
