@@ -148,6 +148,13 @@ function renderAnesthesia(){
    article.appendChild(text("h4",type+" "+String(item.numero).padStart(2,"0")+" · "+item.titulo));
    article.appendChild(text("p","PPT + audio + video de YouTube + material extra.","lesson-meta"));
    article.appendChild(text("p","Archivo de referencia: "+item.archivoReferencia+(item.recursos?.extra?" · Enlace configurado":" · Pendiente de subir"),"anesthesia-file-name"));
+   if(item.id==="BATIMIX-U2-T01"){
+    const theoryLink=document.createElement("a");
+    theoryLink.href="../cirugia-batimix/clases/u2-t01-conceptos-basicos-anestesia.html";
+    theoryLink.className="anesthesia-theory-link";
+    theoryLink.textContent="Leer teoría médica completa · Clase 1";
+    article.appendChild(theoryLink);
+   }
    resourcePanel(article,false,item);
    group.appendChild(article);
   }
