@@ -52,6 +52,37 @@ const text=(tag,value,cls)=>{
  const element=document.createElement(tag);element.textContent=value;
  if(cls)element.className=cls;return element
 };
+/* El único elemento <audio> vive fuera de los paneles que se reemplazan al navegar.
+   Cambiar a PPT, PDF, video, material extra o incluso de unidad no lo destruye. */
+const globalPlayer=document.getElementById("batimix-global-player");
+const globalAudio=document.getElementById("batimix-global-audio");
+const globalTitle=document.getElementById("batimix-player-title");
+const globalClose=document.getElementById("batimix-player-close");
+let currentAudioUrl="";
+function selectGlobalAudio(item,url){
+ if(!globalPlayer||!globalAudio||!globalTitle)return;
+ const name=(completeTheory[item.id]?.name||"Seminario "+item.numero)+" · "+item.titulo;
+ // No modificar src ni invocar load() si el mismo audio ya se estaba escuchando.
+ if(currentAudioUrl!==url){
+  globalAudio.pause();
+  globalAudio.src=url;
+  currentAudioUrl=url;
+  globalAudio.load();
+ }
+ globalTitle.textContent=name;
+ globalPlayer.hidden=false;
+ document.body.classList.add("has-batimix-global-player");
+}
+if(globalClose&&globalAudio&&globalPlayer){
+ globalClose.addEventListener("click",()=>{
+  globalAudio.pause();
+  globalAudio.removeAttribute("src");
+  globalAudio.load();
+  currentAudioUrl="";
+  globalPlayer.hidden=true;
+  document.body.classList.remove("has-batimix-global-player");
+ });
+}
 function countStudy(u){
  return u===1?anestItems.filter(i=>studied.has(i.id)).length:
  Array.from({length:5},(_,i)=>lessonId(u,i)).filter(id=>studied.has(id)).length;
@@ -120,23 +151,22 @@ function resourcePanel(article,available,anestItem=null){
      ?resourceUrl.match(/^https:\/\/(?:www\.)?youtu\.be\/([a-zA-Z0-9_-]{11})(?:[/?#].*)?$/i)
      :null;
     if(isAudio){
-     desc.textContent="Escucha la grabación de esta clase desde el aula. Formato de audio original: "+urlBase.split(".").pop().toUpperCase()+".";
+     // El audio nunca se inserta en pane: pane.replaceChildren() detendría la reproducción.
+     selectGlobalAudio(anestItem,resourceUrl);
+     desc.textContent="Este audio se controla desde el reproductor general fijo en la parte inferior de la página. Puedes abrir PPT, PDF, material extra o cambiar de clase sin interrumpirlo. Pulsa Reproducir en la barra inferior.";
      pane.appendChild(desc);
-     const audio=document.createElement("audio");
-     audio.className="anesthesia-audio-player";
-     audio.src=resourceUrl;
-     audio.controls=true;
-     audio.preload="metadata";
-     audio.setAttribute("aria-label","Audio de "+anestItem.titulo);
-     pane.appendChild(audio);
-     const note=text("p","Si tu navegador no reproduce el archivo, utiliza el enlace para abrirlo directamente.","anesthesia-viewer-note");
-     pane.appendChild(note);
+     const button=document.createElement("button");
+     button.type="button";
+     button.className="anesthesia-select-global-audio";
+     button.textContent="Seleccionar este audio en el reproductor general";
+     button.addEventListener("click",()=>selectGlobalAudio(anestItem,resourceUrl));
+     pane.appendChild(button);
      const link=document.createElement("a");
-     link.className="resource-link";
+     link.className="anesthesia-original-link";
      link.href=resourceUrl;
      link.target="_blank";
      link.rel="noopener noreferrer";
-     link.textContent="Abrir grabación de audio";
+     link.textContent="Abrir archivo de audio directamente";
      pane.appendChild(link);
     }else if(youtubeMatch){
      desc.textContent="Reproduce la clase directamente en BADBEAR.CAMPUS. Si el canal no permite insertar el video, ábrelo en YouTube.";
