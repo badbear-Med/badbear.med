@@ -58,3 +58,7 @@ button,select,a,input{touch-action:manipulation}button:focus-visible,a:focus-vis
 /* Reproductor YouTube dentro de Anestesiología */
 .anesthesia-youtube-viewer{display:block;width:100%;aspect-ratio:16/9;height:auto;min-height:0;max-height:780px;margin:14px 0;border:1px solid #c7d9e3;border-radius:11px;background:#111}
 @media(max-width:600px){.anesthesia-youtube-viewer{border-radius:7px}}
+
+/* Reproductor nativo para grabaciones M4A/MP3 de Anestesiología */
+.anesthesia-audio-player{display:block;width:100%;max-width:960px;min-height:54px;margin:14px 0 10px;border-radius:12px;background:#f1f6f8}
+@media(max-width:600px){.anesthesia-audio-player{max-width:100%;border-radius:8px}}
