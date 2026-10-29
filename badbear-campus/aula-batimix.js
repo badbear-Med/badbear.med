@@ -63,15 +63,30 @@ function resourcePanel(article,available,anestItem=null){
  const tabsRes=document.createElement("div");tabsRes.className="resource-tabs";
  const pane=document.createElement("div");pane.className="resource-pane";
  const isAnest=Boolean(anestItem);
- const types=isAnest?["PPT","Audio","Video YouTube","Material extra"]:["Teoría","Audio","Video","Diapositivas","PDF adicional"];
+ const hasFullTheory=isAnest&&anestItem.id==="BATIMIX-U2-T01";
+ const types=isAnest
+  ?(hasFullTheory?["Teoría completa","PPT","Audio","Video YouTube","Material extra"]:["PPT","Audio","Video YouTube","Material extra"])
+  :["Teoría","Audio","Video","Diapositivas","PDF adicional"];
+ if(hasFullTheory)tabsRes.classList.add("anesthesia-tabs-with-theory");
  const keys=["ppt","audio","youtube","extra"];
  function displayResource(n){
   pane.replaceChildren();
   [...tabsRes.children].forEach((button,k)=>button.setAttribute("aria-selected",String(k===n)));
   const desc=document.createElement("p");
+  if(hasFullTheory&&n===0){
+   desc.textContent="Clase 1 desarrollada: conceptos básicos, anestesia inhalatoria y espinal, con explicación extensa, cuadros comparativos y aplicación clínica.";
+   pane.appendChild(desc);
+   const link=document.createElement("a");
+   link.className="anesthesia-theory-link";
+   link.href="../cirugia-batimix/clases/u2-t01-conceptos-basicos-anestesia.html";
+   link.textContent="Abrir teoría completa de la Clase 1";
+   pane.appendChild(link);
+   return;
+  }
   if(isAnest){
-   const resourceUrl=anestItem.recursos?.[keys[n]];
-   const fileHint=n===3?"Material identificado en el listado: "+anestItem.archivoReferencia+
+   const resourceIndex=hasFullTheory?n-1:n;
+   const resourceUrl=anestItem.recursos?.[keys[resourceIndex]];
+   const fileHint=resourceIndex===3?"Material identificado en el listado: "+anestItem.archivoReferencia+
     ". Formato original: "+anestItem.formatoReferencia.toUpperCase()+".":"";
    if(typeof resourceUrl==="string"&&resourceUrl.trim()){
     const urlBase=resourceUrl.split("?")[0].split("#")[0].toLowerCase();
@@ -146,7 +161,7 @@ function renderAnesthesia(){
    const article=document.createElement("article");article.className="lesson anesthesia-lesson";article.id=item.id;
    const type=section.id==="teoria"?"CLASE":"SEMINARIO";
    article.appendChild(text("h4",type+" "+String(item.numero).padStart(2,"0")+" · "+item.titulo));
-   article.appendChild(text("p","PPT + audio + video de YouTube + material extra.","lesson-meta"));
+   article.appendChild(text("p",(item.id==="BATIMIX-U2-T01"?"Teoría completa + ":"")+"PPT + audio + video de YouTube + material extra.","lesson-meta"));
    article.appendChild(text("p","Archivo de referencia: "+item.archivoReferencia+(item.recursos?.extra?" · Enlace configurado":" · Pendiente de subir"),"anesthesia-file-name"));
    if(item.id==="BATIMIX-U2-T01"){
     const theoryLink=document.createElement("a");
