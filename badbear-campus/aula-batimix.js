@@ -74,10 +74,51 @@ function resourcePanel(article,available,anestItem=null){
    const fileHint=n===3?"Material identificado en el listado: "+anestItem.archivoReferencia+
     ". Formato original: "+anestItem.formatoReferencia.toUpperCase()+".":"";
    if(typeof resourceUrl==="string"&&resourceUrl.trim()){
-    desc.textContent="Enlace de "+types[n]+" configurado para este apartado.";pane.appendChild(desc);
-    const link=document.createElement("a");link.className="resource-link";link.href=resourceUrl;
-    link.textContent="Abrir "+types[n];if(/^https?:\/\//i.test(resourceUrl)){link.target="_blank";link.rel="noopener noreferrer"}
-    pane.appendChild(link);
+    const urlBase=resourceUrl.split("?")[0].split("#")[0].toLowerCase();
+    const isPowerPoint=/\.(ppt|pptx|pps|ppsx)$/.test(urlBase);
+    const isPdf=urlBase.endsWith(".pdf");
+    if(isPowerPoint||isPdf){
+     desc.textContent=isPowerPoint
+      ?"Presentación en línea: consulta las diapositivas sin descargar el archivo. El visor funciona mediante Microsoft Office Web Viewer."
+      :"Documento PDF: consulta el material directamente dentro del aula.";
+     pane.appendChild(desc);
+     const viewerUrl=isPowerPoint
+      ?"https://view.officeapps.live.com/op/embed.aspx?src="+encodeURIComponent(resourceUrl)
+      :resourceUrl+"#toolbar=1&navpanes=0";
+     const frame=document.createElement("iframe");
+     frame.className="anesthesia-embedded-viewer";
+     frame.src=viewerUrl;
+     frame.title="Visor de "+types[n]+" · "+anestItem.titulo;
+     frame.loading="lazy";
+     frame.setAttribute("allowfullscreen","");
+     frame.setAttribute("allow","fullscreen");
+     pane.appendChild(frame);
+     const actions=document.createElement("div");
+     actions.className="anesthesia-viewer-actions";
+     const expand=document.createElement("a");
+     expand.className="resource-link";
+     expand.href=viewerUrl;
+     expand.target="_blank";
+     expand.rel="noopener noreferrer";
+     expand.textContent="Abrir visor en otra pestaña";
+     actions.appendChild(expand);
+     const original=document.createElement("a");
+     original.className="anesthesia-original-link";
+     original.href=resourceUrl;
+     original.target="_blank";
+     original.rel="noopener noreferrer";
+     original.textContent="Descargar original ("+(isPowerPoint?"PPTX":"PDF")+")";
+     actions.appendChild(original);
+     pane.appendChild(actions);
+     if(isPowerPoint){
+      pane.appendChild(text("p","Si Microsoft no logra mostrar la presentación, utiliza el enlace para abrir el visor en otra pestaña. La visualización depende del servicio externo.","anesthesia-viewer-note"));
+     }
+    }else{
+     desc.textContent="Recurso disponible para este apartado.";pane.appendChild(desc);
+     const link=document.createElement("a");link.className="resource-link";link.href=resourceUrl;
+     link.textContent="Abrir "+types[n];if(/^https?:\/\//i.test(resourceUrl)){link.target="_blank";link.rel="noopener noreferrer"}
+     pane.appendChild(link);
+    }
    }else{desc.textContent=types[n]+" pendiente de vinculación. "+fileHint;pane.appendChild(desc)}
   }else if(available&&n===0){
    desc.textContent="Introducción teórica publicada en BADBEAR.MED. El capítulo ampliado está en preparación.";pane.appendChild(desc);
