@@ -36,6 +36,7 @@ function hacerAnestesiologia(section){
    const theoryPages={
     "BATIMIX-U2-T01":"clases/u2-t01-conceptos-basicos-anestesia.html",
     "BATIMIX-U2-T02":"clases/u2-t02-oxigenoterapia-relajantes-neuromusculares.html",
+    "BATIMIX-U2-T03":"clases/u2-t03-monitorizacion-ventilacion-epidural.html",
     "BATIMIX-U2-T04":"clases/u2-t04-anestesia-general-endovenosa.html"
    };
    if(theoryPages[item.id]){
