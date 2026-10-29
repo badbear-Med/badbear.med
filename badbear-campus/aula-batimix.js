@@ -14,6 +14,11 @@ const completeTheory={
   name:"Clase 2",
   description:"Oxigenoterapia y relajantes neuromusculares: unión neuromuscular, TOF, reversión, insuficiencia respiratoria y dispositivos de oxígeno."
  },
+ "BATIMIX-U2-T03":{
+  href:"../cirugia-batimix/clases/u2-t03-monitorizacion-ventilacion-epidural.html",
+  name:"Clase 3",
+  description:"Monitorización, ventilación mecánica y anestesia epidural: capnografía, ECG, PEEP, ventilación protectora, farmacología neuroaxial, seguridad y casos."
+ },
  "BATIMIX-U2-T04":{
   href:"../cirugia-batimix/clases/u2-t04-anestesia-general-endovenosa.html",
   name:"Clase 4",
