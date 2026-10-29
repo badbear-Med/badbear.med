@@ -33,9 +33,13 @@ function hacerAnestesiologia(section){
    const extraLinked=Boolean(item.recursos?.extra);
    const state=encabezado("span",extraLinked?"Enlace de material extra configurado":"Material extra pendiente de subir");
    state.className="pending";article.appendChild(state);
-   if(item.id==="BATIMIX-U2-T01"){
+   const theoryPages={
+    "BATIMIX-U2-T01":"clases/u2-t01-conceptos-basicos-anestesia.html",
+    "BATIMIX-U2-T02":"clases/u2-t02-oxigenoterapia-relajantes-neuromusculares.html"
+   };
+   if(theoryPages[item.id]){
     const theory=document.createElement("a");
-    theory.href="clases/u2-t01-conceptos-basicos-anestesia.html";
+    theory.href=theoryPages[item.id];
     theory.textContent="Leer teoría médica completa";
     theory.style.marginRight="8px";
     article.appendChild(theory);
