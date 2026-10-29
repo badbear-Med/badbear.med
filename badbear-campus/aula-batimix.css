@@ -47,3 +47,10 @@ button,select,a,input{touch-action:manipulation}button:focus-visible,a:focus-vis
 .anesthesia-theory-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;margin:10px 0 2px;border-radius:9px;background:#0b785c;color:#fff!important;font-weight:800;text-decoration:none;line-height:1.4}
 .anesthesia-theory-link:hover{background:#09563f}
 @media(max-width:700px){.anesthesia-theory-link{display:flex;width:100%;text-align:center;min-height:48px}}
+
+/* Clase 1: la teoría desarrollada debe ser el acceso principal y no confundirse con el PPT */
+.anesthesia-group .resource-tabs.anesthesia-tabs-with-theory{grid-template-columns:repeat(5,minmax(0,1fr))}
+.anesthesia-group .resource-tabs.anesthesia-tabs-with-theory button:first-child{background:#e8f9f3;border-color:#5cb99b;color:#075b44}
+.anesthesia-group .resource-tabs.anesthesia-tabs-with-theory button[aria-selected=true]{background:#0b664d;color:#fff}
+@media(max-width:720px){.anesthesia-group .resource-tabs.anesthesia-tabs-with-theory{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.anesthesia-group .resource-tabs.anesthesia-tabs-with-theory{grid-template-columns:1fr}}
