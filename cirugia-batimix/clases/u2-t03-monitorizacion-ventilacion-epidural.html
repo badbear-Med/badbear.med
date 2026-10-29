@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Clase 3 de Anestesiología: monitorización intraoperatoria, ventilación mecánica y anestesia epidural, con fisiología aplicada, seguridad y casos clínicos.">
+<title>Clase 3 · Monitorización, ventilación mecánica y anestesia epidural | Cirugía BATIMIX</title>
+<link rel="icon" href="../../assets/logos/cursos/cirugia-batimix/logo.png">
+<link rel="stylesheet" href="../../assets/css/course-lock.css">
+<script src="../../assets/js/course-lock-config.js"></script>
+<script src="../../assets/js/course-lock.js" data-course="cirugia-batimix"></script>
+<style>
+:root{color-scheme:light;--ink:#1c2e42;--muted:#536982;--line:#dce6f0;--sky:#eaf4ff;--soft:#f6f9fd;--blue:#1464ba;--green:#0c7959;font:16px/1.78 system-ui,-apple-system,"Segoe UI",sans-serif;background:#f3f7fb;color:var(--ink)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0}
+a{color:var(--blue)}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #1870db;outline-offset:3px}
+.topbar{background:#152d48;color:#f8fbff}.top-inner{max-width:1260px;margin:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:12px 20px}.topbar a{color:#f3f8ff;text-decoration:none;font-weight:650;font-size:.91rem}.top-links{display:flex;gap:18px;flex-wrap:wrap}
+.hero{background:linear-gradient(120deg,#0e416f,#0b695f);color:#fff}.hero-inner{max-width:1260px;margin:auto;padding:51px 20px 49px}.eyebrow{font-size:.77rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#bcf9e8}
+.hero h1{max-width:970px;font-size:clamp(2rem,4.8vw,3.3rem);line-height:1.15;margin:12px 0 17px}.hero p{max-width:920px;font-size:1.08rem;color:#e0f1f8;line-height:1.66}
+.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:21px}.hero-tags span{display:inline-block;border:1px solid #a8d7d0;border-radius:999px;padding:4px 11px;font-weight:650;font-size:.81rem;background:#ffffff12}
+.wrapper{max-width:1260px;margin:auto;display:grid;grid-template-columns:280px minmax(0,1fr);gap:25px;padding:24px 20px 72px}
+.sidebar{position:sticky;top:18px;align-self:start;max-height:calc(100vh - 36px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;box-shadow:0 5px 24px #0c3e6609}
+.sidebar strong{display:block;font-size:.93rem;margin-bottom:12px}.sidebar a{display:block;text-decoration:none;padding:6px 8px;margin:2px 0;font-size:.84rem;line-height:1.35;color:#40586c;border-radius:7px}.sidebar a:hover,.sidebar a:focus{background:#e7f2fb;color:#0a5687}
+.chapter{min-width:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(20px,4.5vw,48px);box-shadow:0 8px 30px #0e29470a}
+.lead{font-size:1.08rem;color:#355470;line-height:1.9}
+.chapter h2{font-size:clamp(1.35rem,2.3vw,1.8rem);line-height:1.3;color:#104b7e;margin:52px 0 16px;padding-top:12px;border-top:1px solid var(--line)}
+.chapter h2:first-of-type{margin-top:35px}
+.chapter h3{font-size:1.19rem;line-height:1.4;color:#0f6655;margin:27px 0 12px}
+.chapter h4{font-size:1rem;margin:20px 0 8px}
+.chapter p{margin:0 0 16px}
+.chapter ul,.chapter ol{padding-left:22px;margin:0 0 18px}.chapter li{margin:7px 0}
+.tablewrap{overflow-x:auto;margin:16px 0 24px;border:1px solid var(--line);border-radius:11px}
+table{border-collapse:collapse;width:100%;min-width:580px;font-size:.92rem;line-height:1.62}
+th{background:#e9f3fb;color:#164f79;text-align:left}td,th{padding:11px 13px;border-bottom:1px solid #dfe7ef;vertical-align:top}tr:last-child td{border-bottom:none}
+.callout{background:#edf7ff;border-left:4px solid #3086c5;border-radius:9px;padding:15px 19px;margin:19px 0 24px}
+.callout.green{background:#edf9f4;border-left-color:#17966d}.callout.amber{background:#fff8e9;border-left-color:#d39028}
+.callout p:last-child{margin:0}
+.flowchart{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:20px;margin:23px 0;text-align:center}
+.flowchart strong{display:block;margin:6px auto;color:#145d79}.flowchart .arrow{display:block;font-size:24px;line-height:1.2;color:#228c81}
+.quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.quick-grid .tile{background:#f7fbff;border:1px solid #dbeaf3;border-radius:11px;padding:16px}
+.tile strong{color:#0b6e5d;display:block;margin-bottom:5px}
+details{border:1px solid #d5e4ed;border-radius:10px;margin:14px 0;background:#fbfdff;overflow:hidden}
+summary{cursor:pointer;padding:14px 17px;font-weight:750;color:#135b7c}
+details div{padding:0 17px 17px}
+.glossary dt{font-weight:750;color:#126253;margin-top:12px}
+.glossary dd{margin:3px 0 9px 0}
+.reference-list{font-size:.92rem;overflow-wrap:anywhere}
+.bottomnav{display:flex;gap:12px;flex-wrap:wrap;margin-top:38px}.bottomnav a{display:inline-block;padding:10px 15px;border-radius:9px;text-decoration:none;background:#0d6b68;color:white;font-weight:700}.bottomnav a.secondary{background:#eaf3f9;color:#145173}
+.note{font-size:.88rem;color:#5d7084}
+@media(max-width:850px){.wrapper{grid-template-columns:1fr}.sidebar{position:static;max-height:none}.sidebar nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px}}
+@media(max-width:600px){.hero-inner{padding:32px 16px}.wrapper{padding:12px 10px 40px}.chapter{padding:21px 16px}.sidebar{padding:12px}.sidebar nav{grid-template-columns:1fr}.quick-grid{grid-template-columns:1fr}.top-inner{padding:12px 16px}}
+@media print{.topbar,.sidebar,.bottomnav{display:none!important}.wrapper{display:block;padding:0}.chapter{border:0;box-shadow:none}.hero{background:#fff;color:#12394f}.hero p,.eyebrow{color:#12394f}h2{break-after:avoid}table{font-size:10pt}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="top-inner"><a href="../index.html">BADBEAR.MED · CIRUGÍA BATIMIX</a><div class="top-links"><a href="../../badbear-campus/aula-batimix.html?unidad=2&amp;recurso=BATIMIX-U2-T03">Volver al aula</a><a href="../index.html#programa">Ver programa</a></div></div></header>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">Unidad 2 · Anestesiología · Teoría · Clase 03</div>
+<h1>Monitorización, ventilación mecánica y anestesia epidural</h1>
+<p>Monitorización fisiológica y cerebral, mecánica ventilatoria y lectura del ventilador, modalidades de soporte respiratorio y fundamentos anatómicos, técnicos y clínicos del bloqueo epidural.</p>
+<div class="hero-tags"><span>ECG, SpO₂ y capnografía</span><span>EEG y TOF</span><span>Curvas y presiones</span><span>VCV / PCV</span><span>Anatomía epidural</span></div></div></section>
+<div class="wrapper"><aside class="sidebar" aria-label="Índice"><strong>Contenido de la Clase 3</strong><nav>
+<!--TOC-->
+</nav></aside><main class="chapter">
+<p class="lead">La monitorización anestésica y el control de la ventilación mecánica permiten anticipar alteraciones fisiológicas durante una operación; el bloqueo epidural permite modular la conducción nerviosa regional con consecuencias sensitivas, motoras y autonómicas. Comprender estas técnicas exige vincular los mecanismos con su expresión clínica y elegir intervenciones seguras, no memorizar parámetros desconectados.</p>
+<section id="objetivos"><h2>Objetivos de aprendizaje</h2>
+<p>La atención anestésica exige interpretar múltiples datos de manera integrada. La monitorización permite identificar cambios de oxigenación, ventilación, circulación, temperatura y actividad neuromuscular; la ventilación mecánica requiere comprender los principios de presión, volumen, flujo, resistencia y distensibilidad; y la anestesia epidural exige conocimiento anatómico preciso, valoración del riesgo y supervisión de las respuestas fisiológicas que produce el bloqueo simpático.</p>
+<p>Al completar este capítulo, el estudiante podrá identificar los elementos de la vigilancia anestésica básica y avanzada, reconocer patrones capnográficos y hemodinámicos, diferenciar modalidades ventilatorias controladas por volumen o presión, interpretar presiones pico, meseta y PEEP, calcular distensibilidad y presión de distensión, y describir el acceso y las complicaciones del espacio epidural. Además, será capaz de integrar estos hallazgos en casos quirúrgicos con decisiones justificadas.</p>
+<div class="callout green"><strong>Tres principios.</strong> Una saturación normal no excluye hipoventilación; una presión pico elevada no equivale por sí sola a lesión alveolar; y una epidural correctamente localizada no garantiza ausencia de efectos simpáticos o complicaciones.</div></section>
+<section id="fundamentos-monitor"><h2>1. Fundamentos y finalidad de la monitorización anestésica</h2>
+<p>La monitorización anestésica consiste en la observación continua o periódica de variables fisiológicas y de parámetros relacionados con la anestesia. Su propósito no es obtener números «normales» de manera aislada, sino detectar desviaciones respecto del estado basal, reconocer sus mecanismos y orientar intervenciones que mantengan la homeostasis durante el acto quirúrgico.</p>
+<p>La inducción anestésica altera el tono vascular y los mecanismos de protección de la vía aérea; la ventilación a presión positiva modifica el retorno venoso; la intubación puede estimular respuestas adrenérgicas; el neumoperitoneo durante la laparoscopia eleva la presión intraabdominal y puede afectar distensibilidad, ventilación y hemodinamia. La observación de ECG, saturación, presión arterial y capnografía permite asociar los cambios a cada evento y elegir la respuesta adecuada.</p>
+<p>La seguridad actual es el resultado de muchos factores: mejores agentes, formación, protocolos, controles previos del equipo, monitorización, prevención de errores y atención posoperatoria. Por ello, las cifras históricas de mortalidad anestésica deben interpretarse con cautela: varían con la definición de muerte relacionada con anestesia, población, contexto quirúrgico y periodo analizado. No puede atribuirse toda la reducción del riesgo a un único monitor.</p>
+<h3>1.1. Del monitor al juicio clínico</h3>
+<p>Una alerta técnica necesita verificación. Una SpO₂ que cae puede representar hipoxemia verdadera o pérdida de señal por vasoconstricción. Una caída del EtCO₂ puede representar desconexión del circuito, obstrucción o caída del gasto cardíaco. La función del anestesiólogo es contrastar valores, ondas, exploración del paciente, condiciones quirúrgicas y funcionamiento de los dispositivos. Una monitorización técnicamente correcta nunca sustituye la vigilancia profesional permanente.</p></section>
+<section id="estandares"><h2>2. Vigilancia básica: oxigenación, ventilación, circulación y temperatura</h2>
+<p>Durante la anestesia debe mantenerse una valoración continua de la oxigenación, la ventilación y la circulación, además de la temperatura cuando se prevean, anticipen o sospechen alteraciones clínicamente significativas. El conjunto de medios necesarios depende del tipo de anestesia, del riesgo y de los estándares institucionales; para anestesia general con vía aérea instrumentada son esenciales el análisis del oxígeno inspirado, la pulsioximetría y la monitorización continua del CO₂ exhalado.</p>
+<div class="tablewrap"><table><thead><tr><th>Dominio</th><th>Monitor / observación</th><th>Dato relevante</th><th>Evento que permite reconocer</th></tr></thead><tbody>
+<tr><td>Oxigenación</td><td>Pulsioximetría y analizador de O₂ inspirado</td><td>SpO₂, onda pletismográfica, FiO₂</td><td>Desaturación, mezcla hipóxica, pérdida de señal</td></tr>
+<tr><td>Ventilación</td><td>Capnografía, volumen y presión ventilatoria</td><td>EtCO₂, forma de onda, Vt, presiones</td><td>Apnea, desconexión, hipoventilación, obstrucción</td></tr>
+<tr><td>Circulación</td><td>ECG, presión arterial, pulso y perfusión</td><td>Ritmo, FC, PA, onda de pulso</td><td>Arritmias, hipotensión, perfusión deficiente</td></tr>
+<tr><td>Temperatura</td><td>Sensor apropiado al procedimiento</td><td>Temperatura central o estimada</td><td>Hipotermia, hipertermia, calentamiento insuficiente</td></tr>
+</tbody></table></div>
+<p>La presión arterial y la frecuencia cardiaca se evalúan como mínimo cada <strong>cinco minutos</strong> en anestesia general conforme a estándares ampliamente adoptados; en muchas cirugías el monitor automático se programa cada tres o cinco minutos. La frecuencia debe aumentarse si existe inestabilidad. La observación del pulso, el registro de saturación y la vigilancia electrocardiográfica aportan información continua, pero cada parámetro tiene limitaciones.</p>
+<p>La capnografía resulta indispensable en la confirmación y la vigilancia de una vía aérea artificial, y también es muy útil durante sedación profunda y situaciones con riesgo de hipoventilación. La exploración del movimiento torácico y la auscultación complementan estos datos y ayudan a reconocer problemas mecánicos o de posición del dispositivo.</p></section>
+<section id="oxigenacion-monitor"><h2>3. Pulsioximetría y concentración inspirada de oxígeno</h2>
+<h3>3.1. Principio físico de la pulsioximetría</h3>
+<p>La pulsioximetría utiliza luz roja e infrarroja y calcula, mediante la absorción diferencial de hemoglobina oxigenada y desoxigenada en una señal pulsátil, una estimación de saturación periférica de oxígeno (SpO₂). Se coloca con frecuencia en un dedo, aunque existen sensores para otros sitios. La onda pletismográfica ayuda a confirmar que la señal capta pulso periférico; no constituye una medición directa del gasto cardíaco.</p>
+<p>La precisión varía en presencia de movimiento, hipotermia, vasoconstricción, baja perfusión, luz intensa y pigmentación cutánea. La intoxicación por monóxido de carbono puede dar lecturas falsamente tranquilizadoras, porque la pulsioximetría de dos longitudes de onda no discrimina adecuadamente carboxihemoglobina. La meta de saturación depende del paciente y del escenario: una SpO₂ mayor de 95 % no es una regla universal cuando existe riesgo de hipercapnia.</p>
+<h3>3.2. ¿Por qué monitorizar también la FiO₂?</h3>
+<p>Una saturación adecuada no confirma que el aparato esté entregando la mezcla inspiratoria prevista. El analizador de oxígeno, colocado en el circuito de anestesia, verifica la FiO₂ real y advierte mezclas hipóxicas. Una FiO₂ excesivamente elevada de forma prolongada también puede producir atelectasia por absorción y estrés oxidativo. La indicación correcta es administrar suficiente oxígeno para alcanzar la oxigenación objetivo, con ajustes dinámicos durante inducción, mantenimiento y recuperación.</p>
+<div class="callout"><strong>Diagnóstico diferencial rápido.</strong> Una caída de la onda pletismográfica y del pulso detectado sin cambio simultáneo en capnografía puede sugerir pérdida de señal o perfusión reducida. Una desaturación real exige revisar vía aérea, ventilación, FiO₂, circulación y situación pulmonar.</div></section>
+<section id="capnografia"><h2>4. Capnografía y capnometría: estudio del CO₂ espirado</h2>
+<p>La <strong>capnometría</strong> expresa numéricamente la concentración o presión parcial de CO₂ en el gas espirado; la <strong>capnografía</strong> registra su evolución en una onda a lo largo del ciclo respiratorio. El valor al final de la espiración, EtCO₂, suele aproximarse a 35–45 mmHg en adultos sanos ventilados adecuadamente, aunque depende de perfusión, metabolismo y relación ventilación/perfusión. La PaCO₂ de una gasometría arterial no es exactamente igual a EtCO₂: existe habitualmente un gradiente que puede aumentar en enfermedad pulmonar, shock o aumento del espacio muerto.</p>
+<h3>4.1. Morfología de la onda capnográfica</h3>
+<p>La fase inicial de espiración proviene del espacio muerto anatómico y contiene poco CO₂. Le sigue una fase ascendente por mezcla de gas de espacio muerto con gas alveolar; después aparece la meseta alveolar, donde la concentración se estabiliza parcialmente. El punto al final de esta meseta representa el EtCO₂. Durante la inspiración el CO₂ normalmente desciende hasta una línea basal cercana a cero.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="Esquema de capnograma con línea basal, ascenso espiratorio, meseta alveolar y valor de CO2 al final de espiración" style="max-width:100%;background:#f5faff;border:1px solid #dce6f0;border-radius:12px;margin:12px 0 24px">
+<line x1="58" y1="192" x2="674" y2="192" stroke="#597b90" stroke-width="2"/><line x1="58" y1="25" x2="58" y2="197" stroke="#597b90" stroke-width="2"/>
+<path d="M65 188 L145 188 L184 177 L207 82 L274 78 L390 70 L407 188 L482 188 L518 177 L541 82 L614 79 L650 72" fill="none" stroke="#0f8071" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="15" y="32" font-size="13" fill="#23465d">CO₂</text><text x="620" y="219" font-size="13" fill="#23465d">Tiempo</text>
+<text x="86" y="175" font-size="12" fill="#23465d">I · basal</text><text x="181" y="57" font-size="12" fill="#23465d">II · ascenso</text><text x="275" y="53" font-size="12" fill="#23465d">III · meseta</text>
+<circle cx="390" cy="70" r="6" fill="#df7c2f"/><text x="381" y="28" font-size="13" fill="#b45b1c">EtCO₂</text>
+</svg>
+<p>La onda resulta más informativa que una cifra aislada. Una línea que no regresa a cero indica probable reinhalación de CO₂, como puede ocurrir con absorbente agotado o válvulas defectuosas. Una línea espiratoria muy inclinada y una meseta en «aleta de tiburón» sugieren obstrucción bronquial o alteración del vaciamiento alveolar. Una desaparición súbita de la onda requiere revisar de inmediato la ventilación y la circulación.</p>
+<h3>4.2. Diferenciar cambios en EtCO₂</h3>
+<div class="tablewrap"><table><thead><tr><th>Hallazgo</th><th>Causas posibles</th><th>Qué comprobar</th></tr></thead><tbody>
+<tr><td>EtCO₂ elevado</td><td>Hipoventilación, aumento de producción de CO₂, absorción de CO₂ laparoscópico</td><td>Ventilación minuto, temperatura, gasometría, momento quirúrgico</td></tr>
+<tr><td>EtCO₂ bajo</td><td>Hiperventilación, caída del gasto cardiaco, aumento del espacio muerto</td><td>Presión arterial, capnografía, conexión y perfusión</td></tr>
+<tr><td>Onda desaparecida</td><td>Apnea, desconexión, desplazamiento del tubo, paro circulatorio</td><td>Ventilación, posición de vía aérea, bolsa y pulso</td></tr>
+<tr><td>Meseta inclinada</td><td>Broncoespasmo, obstrucción y vaciamiento desigual</td><td>Presiones, auscultación, secreciones y flujo</td></tr>
+<tr><td>Línea basal elevada</td><td>Reinhalación de CO₂ o error del sistema</td><td>Absorbente, válvulas y circuito</td></tr>
+</tbody></table></div>
+<p>La capnografía es indispensable para reconocer el intercambio respiratorio y confirmar la ventilación de un dispositivo de vía aérea, pero no es un medidor directo de la saturación ni una gasometría arterial continua. En shock o embolia pulmonar, por ejemplo, puede existir un gradiente PaCO₂−EtCO₂ amplio.</p></section>
+<section id="ecg"><h2>5. Electrocardiografía intraoperatoria y vigilancia del ritmo</h2>
+<p>El ECG de quirófano permite monitorizar frecuencia y ritmo, detectar alteraciones de conducción y reconocer ciertos cambios sugestivos de isquemia. Un paciente bajo anestesia general no puede comunicar dolor torácico de forma fiable; por ello, cambios del segmento ST, arritmias nuevas e inestabilidad hemodinámica obligan a valorar lesión miocárdica o causas alternativas.</p>
+<p>El monitor puede utilizar tres o cinco electrodos. Los sistemas de cinco electrodos permiten registrar más derivaciones, incluida alguna precordial, y pueden mejorar la sensibilidad de vigilancia frente a cambios isquémicos en pacientes seleccionados. La ubicación puede adaptarse a la cirugía y al acceso del campo estéril. El monitor de ritmo continuo no sustituye un ECG diagnóstico de 12 derivaciones cuando se sospecha un evento coronario.</p>
+<p>Taquicardia sinusal, bradicardia y fibrilación auricular son alteraciones frecuentes de encontrar en contextos perioperatorios. La frecuencia cardiaca por sí sola no determina la causa: deben valorarse hipovolemia, estimulación quirúrgica, dolor, hipoxemia, medicamentos, temperatura, trastornos electrolíticos y enfermedad cardiaca.</p>
+<h3>5.1. Segmento ST y lectura contextual</h3>
+<p>La depresión o elevación del ST puede orientar a isquemia, pero también a trastornos de conducción, alteraciones electrolíticas, artefactos y otras enfermedades. La interpretación se relaciona con el trazado basal, derivaciones, dinámica temporal y estabilidad circulatoria. Debe evitarse diagnosticar infarto únicamente por un segmento ST aislado en una pantalla de monitorización.</p></section>
+<section id="presionarterial"><h2>6. Presión arterial: monitorización no invasiva e invasiva</h2>
+<h3>6.1. Presión arterial no invasiva</h3>
+<p>El manguito automático oscilométrico detecta oscilaciones de presión durante su inflado o desinflado para estimar la presión arterial media y calcular presiones sistólica y diastólica mediante algoritmos. No reproduce directamente el método auscultatorio de Korotkoff, que se utiliza en la medición manual. El tamaño incorrecto del manguito, la posición del brazo y el movimiento producen errores significativos.</p>
+<p>Una presión arterial media muy reducida durante tiempo prolongado se asocia a riesgo de hipoperfusión renal, miocárdica y cerebral, aunque el umbral tolerable depende de la presión habitual, la autorregulación, las enfermedades cardiovasculares y la magnitud del sangrado. La decisión terapéutica exige analizar profundidad anestésica, volumen circulante, pérdidas de sangre, tono vascular y contractilidad.</p>
+<h3>6.2. Catéter arterial y transducción de presión</h3>
+<p>En cirugía de alto riesgo, hemodinamia inestable o cuando se requieren gases arteriales frecuentes puede colocarse un catéter en una arteria, habitualmente la radial. El sistema lleno de solución transmite el pulso a un transductor, que convierte la presión mecánica en señal eléctrica y permite visualizar presión latido a latido. La medición requiere nivelación del transductor respecto del punto de referencia, puesta a cero, vigilancia de burbujas y comprobación de una onda apropiada.</p>
+<p>La onda arterial tiene un ascenso sistólico, un pico, un descenso y, cuando se aprecia, una incisura dícrota asociada al cierre valvular aórtico. Un sistema sobreamortiguado o infraamortiguado puede distorsionar especialmente las presiones sistólica y diastólica. El catéter arterial aporta tendencia continua y facilita muestras, pero también implica riesgos de sangrado, trombosis, infección y lesión vascular.</p>
+<div class="callout"><strong>Diferencia clave.</strong> El monitor no invasivo obtiene estimaciones intermitentes; la línea arterial permite registrar cambios de un latido a otro. La segunda opción se justifica por beneficio clínico, no porque deba colocarse a todos los pacientes.</div></section>
+<section id="tof-mon"><h2>7. Bloqueo neuromuscular y monitorización TOF cuantitativa</h2>
+<p>Cuando se emplean bloqueadores neuromusculares, la evaluación de la respuesta a cuatro estímulos (tren de cuatro, TOF) permite reconocer la intensidad del bloqueo y la recuperación. Se recomienda monitorización cuantitativa, preferentemente mediante estimulación del nervio cubital y respuesta del aductor del pulgar cuando se decide la reversión y extubación.</p>
+<p>El conteo TOF indica cuántas contracciones se detectan entre cuatro estímulos. El cociente TOF compara la cuarta con la primera (T4/T1). <strong>Cuatro contracciones visibles no garantizan recuperación suficiente</strong>: se necesita un cociente cuantitativo de al menos 0,9 para confirmar que el bloqueo residual se ha resuelto a un nivel compatible con extubación, junto con otros requisitos clínicos.</p>
+<p>La respuesta del diafragma no se infiere de forma exacta a partir de un simple movimiento del pulgar. Los distintos grupos musculares muestran sensibilidades y velocidades de recuperación diferentes; precisamente por ello, usar un sitio y umbral validados ayuda a proteger los músculos faríngeos y la función respiratoria.</p>
+<div class="callout amber"><strong>Antes de extubar.</strong> Además de TOF ≥0,9, verificar conciencia y reflejos protectores cuando correspondan, ventilación y oxigenación adecuadas, estabilidad circulatoria y un plan de rescate de vía aérea.</div></section>
+<section id="temperatura"><h2>8. Temperatura corporal durante anestesia</h2>
+<p>La temperatura central suele mantenerse cerca de 36–37,5 °C, pero durante la anestesia existe riesgo de descenso por vasodilatación, redistribución del calor central hacia la periferia, exposición quirúrgica, fluidos fríos y pérdida de termorregulación. La hipotermia perioperatoria se asocia con mayor sangrado, alteraciones de la coagulación, escalofríos y recuperación farmacológica menos predecible.</p>
+<p>Los sensores esofágicos, nasofaríngeos, vesicales y otros métodos centrales o próximos a temperatura central se seleccionan según situación y procedimiento. En pacientes despiertos bajo anestesia regional pueden utilizarse sensores no invasivos apropiados, reconociendo sus limitaciones. Las mantas de calentamiento por aire forzado, el manejo de temperatura ambiental y el calentamiento de fluidos son herramientas de prevención y tratamiento individualizadas.</p>
+<p>Una elevación inesperada de temperatura, aumento rápido de EtCO₂, rigidez o inestabilidad durante exposición a agentes desencadenantes obliga a considerar hipertermia maligna entre los diagnósticos diferenciales. La temperatura aislada puede ser un signo tardío; el reconocimiento exige correlación con capnografía y el resto de datos.</p></section>
+<section id="eeg"><h2>9. Profundidad anestésica: EEG procesado, BIS y sistemas multicanal</h2>
+<p>Los monitores de electroencefalograma (EEG) procesado analizan actividad eléctrica cortical para aportar índices de respuesta cerebral a agentes hipnóticos. El índice biespectral (BIS) representa una escala numérica entre 0 y 100; durante anestesia general se suele buscar un intervalo aproximado de <strong>40–60</strong>, interpretado junto con el agente usado, el contexto clínico y la calidad de la señal.</p>
+<p><strong>El BIS no mide directamente flujo sanguíneo cerebral ni diagnostica isquemia cerebral.</strong> Un valor bajo puede reflejar anestesia profunda, disminución de actividad cerebral u otros fenómenos, pero no demuestra por sí mismo lesión neuronal. Un valor alto no prueba que el paciente esté consciente. Hay interferencias por actividad muscular, electrocauterio, hipoperfusión, edad, hipotermia y fármacos con firmas EEG particulares, como ketamina.</p>
+<p>Los monitores con EEG frontal de varios canales, como sistemas de densidad espectral, permiten estudiar potencia de frecuencias, supresión de ráfagas y asimetrías entre regiones muestreadas. Los mapas espectrales de colores representan distribución de actividad eléctrica por frecuencia y tiempo, <strong>no un mapa de zonas cerebrales isquémicas</strong>. El objetivo es complementar la titulación hipnótica y comprender la dinámica cerebral, especialmente en casos seleccionados.</p>
+<h3>9.1. Riesgo de conciencia intraoperatoria y disfunción cognitiva</h3>
+<p>En situaciones de riesgo, como empleo de relajantes neuromusculares, la dosificación adecuada de hipnóticos y la vigilancia de la concentración espirada del agente anestésico siguen siendo importantes. El EEG procesado puede aportar información adicional, sin convertir una cifra en garantía absoluta de ausencia de recuerdo. La prevención de alteraciones cognitivas posoperatorias incluye también evitar hipotensión sostenida, hipoxemia, hipercapnia extrema, hipotermia y otros factores potencialmente modificables.</p></section>
+<section id="avanzada"><h2>10. Monitorización hemodinámica avanzada y balance de sangre</h2>
+<p>En procedimientos complejos o de alto riesgo pueden emplearse dispositivos que estiman gasto cardíaco, volumen sistólico y sus variaciones. El Doppler esofágico mide características del flujo en la aorta descendente y, mediante modelos hemodinámicos, estima volumen sistólico y gasto cardíaco; los datos deben interpretarse de acuerdo con la técnica, el equipo y la estabilidad de la señal. También existen sistemas de análisis de contorno de pulso, termodilución y ecocardiografía.</p>
+<p>La variación de presión de pulso y de volumen sistólico puede orientar sobre respuesta a fluidos en condiciones muy específicas: ventilación controlada, ritmo cardíaco regular, volúmenes respiratorios adecuados para el método y ausencia de limitaciones clínicas importantes. No se debe administrar líquido solo porque aparezca una cifra alta sin revisar sus condiciones de validez.</p>
+<p>La estimación de pérdidas sanguíneas integra aspirado quirúrgico descontando líquidos de irrigación, gasas, compresas, campo quirúrgico, parámetros hemodinámicos, hemoglobina, coagulación y signos de perfusión. El registro acumulado ayuda a decidir la reposición, pero ninguna de esas medidas es perfecta por sí sola.</p>
+<div class="tablewrap"><table><thead><tr><th>Situación clínica</th><th>Monitor adicional posible</th><th>Pregunta clínica</th></tr></thead><tbody>
+<tr><td>Cirugía con riesgo de sangrado importante</td><td>Línea arterial, gases, hemoglobina seriada</td><td>¿Cómo evolucionan perfusión y pérdida de sangre?</td></tr>
+<tr><td>Cirugía de alto riesgo hemodinámico</td><td>Gasto cardíaco y volumen sistólico</td><td>¿El problema es volumen, tono vascular o función cardiaca?</td></tr>
+<tr><td>Anestesia con relajantes</td><td>TOF cuantitativo</td><td>¿Persiste bloqueo neuromuscular?</td></tr>
+<tr><td>Riesgo de conciencia o hipnosis compleja</td><td>EEG procesado</td><td>¿Cuál es la tendencia cortical y la respuesta hipnótica?</td></tr>
+</tbody></table></div></section>
+<!--NEXT_PARTS-->
+</main></div></body></html>
