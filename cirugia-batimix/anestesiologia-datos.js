@@ -23,7 +23,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-01.pptx"
           }
         },
         {
@@ -36,7 +36,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-02.pptx"
           }
         },
         {
@@ -49,7 +49,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-03.pdf"
           }
         },
         {
@@ -62,7 +62,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-04.pptx"
           }
         }
       ]
@@ -82,7 +82,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-01.pdf"
           }
         },
         {
@@ -95,7 +95,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-02.pdf"
           }
         },
         {
@@ -108,7 +108,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-03.pdf"
           }
         },
         {
@@ -121,7 +121,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-04.pdf"
           }
         },
         {
@@ -134,7 +134,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-05.pptx"
           }
         },
         {
@@ -147,7 +147,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-06.pdf"
           }
         },
         {
@@ -160,7 +160,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-07.pdf"
           }
         },
         {
@@ -173,7 +173,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-08.pdf"
           }
         },
         {
@@ -186,7 +186,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-09.pdf"
           }
         },
         {
@@ -199,7 +199,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-10.pdf"
           }
         },
         {
@@ -212,7 +212,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
             "ppt": null,
             "audio": null,
             "youtube": null,
-            "extra": null
+            "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/seminarios/seminario-11.pdf"
           }
         }
       ]
