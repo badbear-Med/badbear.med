@@ -35,3 +35,10 @@ button,select,a,input{touch-action:manipulation}button:focus-visible,a:focus-vis
 .anesthesia-group .resource-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:720px){.anesthesia-group{padding:12px}.anesthesia-group .resource-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:390px){.anesthesia-group .resource-tabs{grid-template-columns:1fr}}
+
+/* Visores en línea para materiales extra de Anestesiología */
+.anesthesia-embedded-viewer{display:block;width:100%;height:clamp(420px,70vh,820px);min-height:420px;border:1px solid #c7d9e3;border-radius:11px;background:#fff;margin:14px 0}
+.anesthesia-viewer-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0}
+.anesthesia-original-link{font-size:.85rem;color:#506a7b;text-decoration:underline;overflow-wrap:anywhere}
+.anesthesia-viewer-note{font-size:.82rem;color:#62778b;line-height:1.55;margin:9px 0 0}
+@media(max-width:700px){.anesthesia-embedded-viewer{height:60vh;min-height:380px}.anesthesia-viewer-actions{align-items:stretch;flex-direction:column}.anesthesia-viewer-actions .resource-link{text-align:center;justify-content:center}}
