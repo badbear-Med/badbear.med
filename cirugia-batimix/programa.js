@@ -31,7 +31,7 @@ function hacerAnestesiologia(section){
    const resources=encabezado("p","PPT · Audio · Video de YouTube · Material extra");article.appendChild(resources);
    const original=encabezado("p","Material de referencia identificado: "+item.archivoReferencia);original.className="bat-anest-filename";article.appendChild(original);
    const extraLinked=Boolean(item.recursos?.extra);
-   const state=encabezado("span",extraLinked?"Material extra disponible":"Material extra pendiente de subir");
+   const state=encabezado("span",extraLinked?"Enlace de material extra configurado":"Material extra pendiente de subir");
    state.className="pending";article.appendChild(state);
    const link=document.createElement("a");link.href="../badbear-campus/aula-batimix.html?unidad=2&recurso="+encodeURIComponent(item.id);link.textContent="Ver los 4 recursos";article.appendChild(link);
    grid.appendChild(article);
