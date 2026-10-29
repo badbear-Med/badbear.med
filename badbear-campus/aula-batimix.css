@@ -42,3 +42,8 @@ button,select,a,input{touch-action:manipulation}button:focus-visible,a:focus-vis
 .anesthesia-original-link{font-size:.85rem;color:#506a7b;text-decoration:underline;overflow-wrap:anywhere}
 .anesthesia-viewer-note{font-size:.82rem;color:#62778b;line-height:1.55;margin:9px 0 0}
 @media(max-width:700px){.anesthesia-embedded-viewer{height:60vh;min-height:380px}.anesthesia-viewer-actions{align-items:stretch;flex-direction:column}.anesthesia-viewer-actions .resource-link{text-align:center;justify-content:center}}
+
+/* Acceso a capítulo extenso de Anestesiología: Clase 1 */
+.anesthesia-theory-link{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;margin:10px 0 2px;border-radius:9px;background:#0b785c;color:#fff!important;font-weight:800;text-decoration:none;line-height:1.4}
+.anesthesia-theory-link:hover{background:#09563f}
+@media(max-width:700px){.anesthesia-theory-link{display:flex;width:100%;text-align:center;min-height:48px}}
