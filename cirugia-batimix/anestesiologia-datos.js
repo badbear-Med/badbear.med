@@ -4,7 +4,7 @@
    Cuando se reciba cada archivo, se añadirá URL verificada a recursos.extra.
 */
 window.BATIMIX_ANESTESIOLOGIA = {
-  "version": "2026-10-29",
+  "version": "2026-10-29-audio",
   "unidad": 2,
   "nombre": "Anestesiología",
   "secciones": [
@@ -21,7 +21,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
           "formatoReferencia": "pptx",
           "recursos": {
             "ppt": null,
-            "audio": null,
+            "audio": "https://media.wajomea.group/cirugia-batimix/anestesiologia/audio/teoria/clase-01.m4a",
             "youtube": "https://youtu.be/kTNYSePGWG8",
             "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-01.pptx"
           }
@@ -34,7 +34,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
           "formatoReferencia": "pptx",
           "recursos": {
             "ppt": null,
-            "audio": null,
+            "audio": "https://media.wajomea.group/cirugia-batimix/anestesiologia/audio/teoria/clase-02.m4a",
             "youtube": "https://youtu.be/UM7NUtu7X0I",
             "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-02.pptx"
           }
@@ -47,7 +47,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
           "formatoReferencia": "pdf",
           "recursos": {
             "ppt": null,
-            "audio": null,
+            "audio": "https://media.wajomea.group/cirugia-batimix/anestesiologia/audio/teoria/clase-03.m4a",
             "youtube": "https://youtu.be/nLb_Y6HCAk8",
             "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-03.pdf"
           }
@@ -60,7 +60,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
           "formatoReferencia": "pptx",
           "recursos": {
             "ppt": null,
-            "audio": null,
+            "audio": "https://media.wajomea.group/cirugia-batimix/anestesiologia/audio/teoria/clase-04.m4a",
             "youtube": "https://youtu.be/xuTMNbckimQ",
             "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-04.pptx"
           }
