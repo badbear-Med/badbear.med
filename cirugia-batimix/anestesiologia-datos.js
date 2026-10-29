@@ -4,7 +4,7 @@
    Cuando se reciba cada archivo, se añadirá URL verificada a recursos.extra.
 */
 window.BATIMIX_ANESTESIOLOGIA = {
-  "version": "2026-10-29-audio",
+  "version": "2026-10-29-ppt-pdf",
   "unidad": 2,
   "nombre": "Anestesiología",
   "secciones": [
@@ -20,7 +20,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
           "archivoReferencia": "Clase 1 - Conceptos Básicos. Anestesia Inhalatoria. Anestesia Espinal.pptx",
           "formatoReferencia": "pptx",
           "recursos": {
-            "ppt": null,
+            "ppt": "https://media.wajomea.group/cirugia-batimix/anestesiologia/ppt/teoria/clase-01.pdf",
             "audio": "https://media.wajomea.group/cirugia-batimix/anestesiologia/audio/teoria/clase-01.m4a",
             "youtube": "https://youtu.be/kTNYSePGWG8",
             "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-01.pptx"
@@ -33,7 +33,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
           "archivoReferencia": "Clase 2 - Oxigenoterapia. Relajantes Neuromusculares.pptx",
           "formatoReferencia": "pptx",
           "recursos": {
-            "ppt": null,
+            "ppt": "https://media.wajomea.group/cirugia-batimix/anestesiologia/ppt/teoria/clase-02.pdf",
             "audio": "https://media.wajomea.group/cirugia-batimix/anestesiologia/audio/teoria/clase-02.m4a",
             "youtube": "https://youtu.be/UM7NUtu7X0I",
             "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-02.pptx"
@@ -46,7 +46,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
           "archivoReferencia": "Clase 3 - Monitorización. Anestesia Epidural. Ventilación Mecánica.pdf",
           "formatoReferencia": "pdf",
           "recursos": {
-            "ppt": null,
+            "ppt": "https://media.wajomea.group/cirugia-batimix/anestesiologia/ppt/teoria/clase-03.pdf",
             "audio": "https://media.wajomea.group/cirugia-batimix/anestesiologia/audio/teoria/clase-03.m4a",
             "youtube": "https://youtu.be/nLb_Y6HCAk8",
             "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-03.pdf"
@@ -59,7 +59,7 @@ window.BATIMIX_ANESTESIOLOGIA = {
           "archivoReferencia": "Clase 4 - Anestesia General Endovenosa I y II.pptx",
           "formatoReferencia": "pptx",
           "recursos": {
-            "ppt": null,
+            "ppt": "https://media.wajomea.group/cirugia-batimix/anestesiologia/ppt/teoria/clase-04.pdf",
             "audio": "https://media.wajomea.group/cirugia-batimix/anestesiologia/audio/teoria/clase-04.m4a",
             "youtube": "https://youtu.be/xuTMNbckimQ",
             "extra": "https://media.wajomea.group/cirugia-batimix/anestesiologia/material-extra/teoria/clase-04.pptx"
