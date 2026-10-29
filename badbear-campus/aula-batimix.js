@@ -163,7 +163,9 @@ function resourcePanel(article,available,anestItem=null){
     }else if(isPowerPoint||isPdf){
      desc.textContent=isPowerPoint
       ?"Presentación en línea: consulta las diapositivas sin descargar el archivo. El visor funciona mediante Microsoft Office Web Viewer."
-      :"Documento PDF: consulta el material directamente dentro del aula.";
+      :resourceIndex===0
+       ?"Presentación de la clase en formato PDF. Consulta las diapositivas directamente dentro del aula."
+       :"Documento PDF: consulta el material directamente dentro del aula.";
      pane.appendChild(desc);
      const viewerUrl=isPowerPoint
       ?"https://view.officeapps.live.com/op/embed.aspx?src="+encodeURIComponent(resourceUrl)
