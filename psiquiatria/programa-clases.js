@@ -23,7 +23,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "titulo": "Trastornos depresivos",
     "area": "Trastornos del ánimo",
     "descripcion": "Evaluación clínica, clasificación y tratamiento de los trastornos depresivos.",
-    "teoria": null,
+    "teoria": "../psiquiatria/clases/clase-02-trastornos-depresivos.html",
     "recursos": {
       "ppt": null,
       "audio": null,
