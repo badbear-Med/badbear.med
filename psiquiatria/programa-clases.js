@@ -64,8 +64,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 5,
     "titulo": "Trastornos de ansiedad y relacionados con el estrés",
     "area": "Ansiedad y estrés",
-    "descripcion": "Cuadros ansiosos y relacionados con el estrés, evaluación y manejo.",
-    "teoria": null,
+    "descripcion": "Pánico, TAG, fobias, trauma y disociación: criterios, diagnóstico diferencial, tratamiento y casos razonados.",
+    "teoria": "../psiquiatria/clases/clase-05-trastornos-de-ansiedad-y-estres.html",
     "recursos": {
       "ppt": null,
       "audio": null,
