@@ -6,7 +6,7 @@
   <meta name="description" content="Curso de Psiquiatría del proyecto BADBEAR.MED del grupo WAJOMEA.GROUP: psicopatología, examen mental, trastornos del ánimo, ansiedad, psicosis, personalidad, psicofarmacología y urgencias.">
   <title>Psiquiatría | BADBEAR.MED</title>
   <link rel="stylesheet" href="../assets/css/course.css">
-  <link rel="stylesheet" href="psiquiatria.css">
+  <link rel="stylesheet" href="psiquiatria.css?v=20261029-clases18">
   <link rel="stylesheet" href="../assets/css/brand-watermark.css">
   <link rel="icon" type="image/png" href="../assets/logos/cursos/psiquiatria/logo.png" data-bb-course-favicon>
   <link rel="stylesheet" href="../assets/css/bb-responsive-global-v21.css">
@@ -23,7 +23,8 @@
     <div class="inner">
       <a href="../badbear-med.html" class="psiq-brand">BADBEAR.<span>MED</span></a>
       <nav class="psiq-nav">
-        <a href="#temas">Temas</a>
+        <a href="#clases">18 clases</a>
+        <a href="#temas">Biblioteca temática</a>
         <a href="modulo.html?m=preguntas">Banco</a>
         <a href="modulo.html?m=examenes">Exámenes</a>
         <a href="modulo.html?m=pdf">PDF</a>
@@ -39,9 +40,9 @@
         <div>
           <span class="psiq-kicker">MEDICINA · BADBEAR.MED</span>
           <h1>Psiquiatría</h1>
-          <p>Portal de estudio organizado para examen mental, psicopatología, trastornos del ánimo, ansiedad, psicosis, personalidad, adicciones, urgencias y psicofarmacología.</p>
+          <p>Programa de 18 clases de Psiquiatría, organizado para desarrollar teoría completa, presentaciones, audios, videos y recursos clínicos por clase.</p>
           <div class="psiq-actions">
-            <a class="psiq-btn primary" href="#temas">Comenzar a estudiar</a>
+            <a class="psiq-btn primary" href="#clases">Explorar las 18 clases</a>
             <a class="psiq-btn secondary" href="modulo.html?m=preguntas">Resolver preguntas</a>
           </div>
         </div>
@@ -51,18 +52,31 @@
 
     <section class="psiq-dashboard">
       <div class="psiq-stats">
-        <div class="psiq-stat"><strong id="psiq-total-temas">0</strong><span>Temas planificados</span></div>
-        <div class="psiq-stat"><strong id="psiq-total-areas">0</strong><span>Áreas temáticas</span></div>
-        <div class="psiq-stat"><strong id="psiq-completados">0</strong><span>Temas revisados</span></div>
+        <div class="psiq-stat"><strong id="psiq-total-temas">0</strong><span>Clases del programa</span></div>
+        <div class="psiq-stat"><strong id="psiq-total-areas">0</strong><span>Áreas de estudio</span></div>
+        <div class="psiq-stat"><strong id="psiq-completados">0</strong><span>Clases estudiadas</span></div>
         <div class="psiq-stat"><strong id="psiq-porcentaje">0%</strong><span>Progreso personal</span></div>
       </div>
+    </section>
+
+    <section class="psiq-section psiq-programa-section" id="clases">
+      <div class="psiq-section-head">
+        <div>
+          <span class="psiq-kicker">PROGRAMA ACADÉMICO · 18 CLASES</span>
+          <h2>Clases de Psiquiatría</h2>
+          <p>El orden de estas 18 clases corresponde al temario proporcionado. Cada clase cuenta con un aula independiente para teoría médica completa, diapositivas, audio, video de YouTube y material extra, que se irán incorporando progresivamente.</p>
+        </div>
+        <a class="psiq-btn primary" href="../badbear-campus/aula-psiquiatria.html">Abrir aula de Psiquiatría</a>
+      </div>
+      <p class="psiq-program-count" id="psiq-programa-count">18 clases</p>
+      <div class="psiq-program-grid" id="psiq-programa-clases"></div>
     </section>
 
     <section class="psiq-section" id="temas">
       <div class="psiq-section-head">
         <div>
-          <h2>Temario de Psiquiatría</h2>
-          <p>Catálogo temático central con rutas estables para integrar teoría, resúmenes, preguntas, exámenes y recursos multimedia.</p>
+          <h2>Biblioteca temática complementaria</h2>
+          <p>Los 16 temas generales de la versión anterior se conservan como biblioteca complementaria. El programa principal de 18 clases está organizado arriba.</p>
         </div>
         <div class="psiq-tools">
           <input id="psiq-buscar" type="search" placeholder="Buscar tema..." aria-label="Buscar tema">
@@ -80,7 +94,7 @@
         </div>
       </div>
       <div class="psiq-modules">
-        <a class="psiq-module" href="modulo.html?m=teoria"><span>📚</span><h3>Teoría</h3><p>Desarrollo por unidades y temas.</p></a>
+        <a class="psiq-module" href="../badbear-campus/aula-psiquiatria.html"><span>📚</span><h3>Teoría</h3><p>Desarrollo por unidades y temas.</p></a>
         <a class="psiq-module" href="modulo.html?m=resumenes"><span>📖</span><h3>Resúmenes</h3><p>Repaso y BADBEAR.MED FIJA.</p></a>
         <a class="psiq-module" href="modulo.html?m=preguntas"><span>🧠</span><h3>Banco</h3><p>Preguntas y seguimiento de errores.</p></a>
         <a class="psiq-module" href="modulo.html?m=examenes"><span>📝</span><h3>Exámenes</h3><p>Banco histórico depurado.</p></a>
@@ -96,8 +110,10 @@
     </section>
   </main>
 
+  <script src="programa-clases.js?v=20261029-clases18"></script>
+  <script src="programa-inicio.js?v=20261029-clases18"></script>
   <script src="temas.js"></script>
-  <script src="psiquiatria.js?ui=20261011-clean-navigation2"></script>
+  <script src="psiquiatria.js?ui=20261029-clases18"></script>
   <script src="../assets/js/course-branding.js"></script>
   <script src="../assets/js/bb-responsive-global-v21.js"></script>
 </body>
