@@ -373,6 +373,34 @@
       return;
     }
 
+    if (data.type === "badbear-class-audio-play" && event.source === frame.contentWindow) {
+      const incoming = Array.isArray(data.tracks) ? data.tracks : [];
+      const tracks = incoming.slice(0, 100).map((track, index) => {
+        if (!track || typeof track.src !== "string") return null;
+        let url;
+        try { url = new URL(track.src, frame.contentWindow.location.href); } catch { return null; }
+        if (url.protocol !== "https:" || (url.hostname !== "media.wajomea.group" && url.origin !== location.origin)) return null;
+        return {
+          id: "academic-" + index,
+          title: cleanText(track.title).slice(0, 140) || humanizeFileName(url.href),
+          absoluteSrc: url.href,
+          kind: "class"
+        };
+      }).filter(Boolean);
+      if (!tracks.length) return;
+      const library = {
+        id: "academic-" + encodeURIComponent(frame.contentWindow.location.pathname),
+        name: cleanText(data.libraryName).slice(0, 100) || "Audios de clase",
+        kind: "class",
+        loop: false,
+        tracks
+      };
+      const index = Math.max(0, Math.min(Number(data.index) || 0, tracks.length - 1));
+      loadTrack(library, index, true, 0);
+      setPlayerView("expanded");
+      return;
+    }
+
     if (data.type === "badbear-player-request-state") {
       notifyFrame();
       return;
