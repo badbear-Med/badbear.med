@@ -37,7 +37,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "titulo": "Trastorno afectivo bipolar",
     "area": "Trastornos del ánimo",
     "descripcion": "Episodios afectivos, diagnóstico diferencial y estrategias terapéuticas.",
-    "teoria": null,
+    "teoria": "../psiquiatria/clases/clase-03-trastorno-afectivo-bipolar.html",
     "recursos": {
       "ppt": null,
       "audio": null,
