@@ -1,6 +1,7 @@
 (() => {
   "use strict";
   const temas = Array.isArray(window.BADBEAR_PSIQUIATRIA_TEMAS) ? window.BADBEAR_PSIQUIATRIA_TEMAS : [];
+  const clases = Array.isArray(window.BADBEAR_PSIQUIATRIA_CLASES) ? window.BADBEAR_PSIQUIATRIA_CLASES : [];
   const grid = document.getElementById("psiq-temas");
   const buscar = document.getElementById("psiq-buscar");
   const filtro = document.getElementById("psiq-filtro");
@@ -13,11 +14,19 @@
   const leidos = new Set(JSON.parse(localStorage.getItem("badbear_psiquiatria_leidos") || "[]"));
 
   function actualizarEstadisticas(){
-    const areas = new Set(temas.map(t => t.area));
-    if(totalTemas) totalTemas.textContent = temas.length;
+    const catalogo = clases.length ? clases : temas;
+    const areas = new Set(catalogo.map(t => t.area));
+    let estudiadas = 0;
+    try {
+      const saved = JSON.parse(localStorage.getItem("badbear_psiquiatria_clases_estudiadas_v1") || "[]");
+      estudiadas = Array.isArray(saved) ? new Set(saved.filter(id => clases.some(c => c.id === id))).size : 0;
+    } catch (_) {}
+    const total = catalogo.length;
+    if(totalTemas) totalTemas.textContent = total;
     if(totalAreas) totalAreas.textContent = areas.size;
-    if(completados) completados.textContent = leidos.size;
-    if(porcentaje) porcentaje.textContent = `${temas.length ? Math.round((leidos.size/temas.length)*100) : 0}%`;
+    if(completados) completados.textContent = clases.length ? estudiadas : leidos.size;
+    const done = clases.length ? estudiadas : leidos.size;
+    if(porcentaje) porcentaje.textContent = `${total ? Math.round((done/total)*100) : 0}%`;
   }
 
   function poblarFiltro(){
