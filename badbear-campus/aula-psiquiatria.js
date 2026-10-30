@@ -41,9 +41,42 @@
  function link(href, title, cls) {
   const el = node("a", title, cls || "psiq-resource-link");
   el.href = href;
-  el.target = "_blank";
-  el.rel = "noopener noreferrer";
+  el.target = "_self";
   return el;
+ }
+ function theoryReader(item, url, panel) {
+  panel.appendChild(node("p", "Lee la teoría aquí mismo. Puedes cambiar de recurso o de clase sin salir del aula ni detener el audio.", "psiq-resource-description"));
+  const frame = node("iframe", null, "psiq-theory-frame");
+  frame.title = "Teoría completa · Clase " + item.numero + " · " + item.titulo;
+  // Sin allow-popups ni navegación superior: el capítulo permanece en el aula.
+  frame.setAttribute("sandbox", "allow-scripts allow-same-origin");
+  frame.addEventListener("load", () => {
+   try {
+    const doc = frame.contentDocument;
+    if (!doc) return;
+    const style = doc.createElement("style");
+    style.textContent = ".topbar,.top{display:none!important}.wrapper,.layout{display:block!important;max-width:none!important;margin:0!important;padding:12px!important}.sidebar{position:static!important;max-height:none!important;margin-bottom:16px}.sidebar nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.chapter{padding:clamp(16px,3vw,32px)!important}";
+    doc.head.appendChild(style);
+    doc.querySelectorAll("a").forEach(anchor => {
+     anchor.target = "_self";
+     anchor.addEventListener("click", event => {
+      if (event.defaultPrevented) return;
+      const destination = new URL(anchor.href, doc.baseURI);
+      if (destination.origin !== window.location.origin) return;
+      if (!destination.pathname.endsWith("/aula-psiquiatria.html")) return;
+      const id = destination.searchParams.get("clase") || item.id;
+      if (!classes.some(c => c.id === id)) return;
+      event.preventDefault();
+      selectClass(id);
+     });
+    });
+   } catch (_) {
+    // Un documento externo puede impedir inspeccionar su contenido; el visor
+    // sigue confinado al panel y nunca obtiene permiso para abrir pestañas.
+   }
+  });
+  frame.src = url;
+  panel.appendChild(frame);
  }
  function normalize(str) {
   return String(str || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -112,9 +145,7 @@
   }
   const raw = value.trim();
   if(key === "teoria") {
-   panel.appendChild(node("p", "Capítulo médico desarrollado para estudiar en profundidad.", "psiq-resource-description"));
-   panel.appendChild(link(raw, "Abrir teoría médica completa de la Clase " + item.numero));
-   panel.appendChild(node("p", "Se abre en otra pestaña para conservar el audio del aula.", "psiq-hint"));
+   theoryReader(item, raw, panel);
    return;
   }
   if(key === "audio") {
@@ -151,7 +182,7 @@
    frame.title = labels.find(x=>x.key===key).title + " · " + item.titulo;
    frame.loading = "lazy";
    panel.appendChild(frame);
-   panel.appendChild(link(raw, "Abrir archivo original en otra pestaña"));
+   panel.appendChild(link(raw, "Abrir archivo original en esta pestaña"));
    return;
   }
   panel.appendChild(link(raw, "Abrir " + labels.find(x => x.key === key).title));
