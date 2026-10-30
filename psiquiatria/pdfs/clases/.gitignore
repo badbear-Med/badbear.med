@@ -1,0 +1,3 @@
+# Estos PDF se cargan a Cloudflare R2 y no se guardan en GitHub.
+*.pdf
+*.PDF
