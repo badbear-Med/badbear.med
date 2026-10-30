@@ -79,7 +79,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "titulo": "Trastornos somatomorfos",
     "area": "Psicosomática",
     "descripcion": "Presentaciones con síntomas somáticos y abordaje clínico integral.",
-    "teoria": null,
+    "teoria": "../psiquiatria/clases/clase-06-trastornos-somatomorfos.html",
     "recursos": {
       "ppt": null,
       "audio": null,
