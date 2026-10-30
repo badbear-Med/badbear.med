@@ -108,7 +108,6 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "area": "Alimentación y sexualidad",
     "descripcion": "TCA, riesgo médico y realimentación; disfunciones sexuales, consentimiento y diversidad, con casos razonados.",
     "teoria": "../psiquiatria/clases/clase-08-conducta-alimentaria-y-salud-sexual.html",
-    "teoriaIntegrada": true,
     "recursos": {
       "ppt": null,
       "audio": null,
@@ -128,8 +127,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
       "audio": null,
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-09.pdf"
-    },
-    "teoriaIntegrada": true
+    }
   },
   {
     "id": "PSIQ-C10",

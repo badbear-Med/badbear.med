@@ -45,49 +45,11 @@
   return el;
  }
  function theoryReader(item, url, panel) {
-  if (item.teoriaIntegrada) {
-   embeddedTheoryReader(item, url, panel);
-   return;
-  }
   panel.appendChild(node("p", "La teoría completa se lee en una pestaña nueva, a pantalla completa.", "psiq-resource-description"));
   const anchor = link(new URL(url, document.baseURI).href, "Abrir teoría completa ↗", "psiq-resource-link");
   anchor.target = "_blank";
   anchor.rel = "noopener noreferrer";
   panel.appendChild(anchor);
- }
- function embeddedTheoryReader(item, url, panel) {
-  panel.appendChild(node("p", "Lee la teoría aquí mismo. Puedes cambiar de recurso o de clase sin salir del aula ni detener el audio.", "psiq-resource-description"));
-  const frame = node("iframe", null, "psiq-theory-frame");
-  frame.title = "Teoría completa · Clase " + item.numero + " · " + item.titulo;
-  // Sin allow-popups ni navegación superior: el capítulo permanece en el aula.
-  frame.setAttribute("sandbox", "allow-scripts allow-same-origin");
-  frame.addEventListener("load", () => {
-   try {
-    const doc = frame.contentDocument;
-    if (!doc) return;
-    const style = doc.createElement("style");
-    style.textContent = ".topbar,.top{display:none!important}.wrapper,.layout{display:block!important;max-width:none!important;margin:0!important;padding:12px!important}.sidebar{position:static!important;max-height:none!important;margin-bottom:16px}.sidebar nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}.chapter{padding:clamp(16px,3vw,32px)!important}";
-    doc.head.appendChild(style);
-    doc.querySelectorAll("a").forEach(anchor => {
-     anchor.target = "_self";
-     anchor.addEventListener("click", event => {
-      if (event.defaultPrevented) return;
-      const destination = new URL(anchor.href, doc.baseURI);
-      if (destination.origin !== window.location.origin) return;
-      if (!destination.pathname.endsWith("/aula-psiquiatria.html")) return;
-      const id = destination.searchParams.get("clase") || item.id;
-      if (!classes.some(c => c.id === id)) return;
-      event.preventDefault();
-      selectClass(id);
-     });
-    });
-   } catch (_) {
-    // Un documento externo puede impedir inspeccionar su contenido; el visor
-    // sigue confinado al panel y nunca obtiene permiso para abrir pestañas.
-   }
-  });
-  frame.src = url;
-  panel.appendChild(frame);
  }
  function normalize(str) {
   return String(str || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -231,7 +193,7 @@
    tab.setAttribute("role", "tab");
    tab.setAttribute("aria-selected", String(idx === 0));
    tab.addEventListener("click", () => {
-    if (label.key === "teoria" && !current.teoriaIntegrada && typeof current.teoria === "string" && current.teoria.trim()) {
+    if (label.key === "teoria" && typeof current.teoria === "string" && current.teoria.trim()) {
      window.open(new URL(current.teoria.trim(), document.baseURI).href, "_blank", "noopener,noreferrer");
     }
     [...navTabs.children].forEach(btn => btn.setAttribute("aria-selected", String(btn === tab)));
@@ -274,3 +236,4 @@
  renderList();
  renderCurrent();
 })();
+

@@ -41,17 +41,20 @@ function aula(integrated = true) {
  return { Element, document, ids, audio, historyChanges, newTabs, all, tab };
 }
 
-test('opening a class renders its theory inside the aula without a new-tab link', () => {
- const a = aula();
- const frame = a.all().find(e => e.className === 'psiq-theory-frame');
- assert.equal(frame.tag, 'iframe');
- assert.equal(frame.src, '../psiquiatria/clases/clase-01.html');
- assert.equal(frame.attributes.sandbox.includes('allow-popups'), false);
- assert.equal(frame.attributes.sandbox.includes('allow-top-navigation'), false);
- assert.equal(a.all().some(e => e.target === '_blank'), false);
+test('every theory opens in a new tab even with an old integrated flag', () => {
+ for (const legacyFlag of [true, false]) {
+  const a = aula(legacyFlag);
+  assert.equal(a.all().some(e => e.className === 'psiq-theory-frame'), false);
+  const link = a.all().find(e => e.target === '_blank');
+  assert.equal(link.href, 'https://example.test/psiquiatria/clases/clase-01.html');
+  assert.equal(link.rel, 'noopener noreferrer');
+  assert.equal(a.newTabs.length, 0, 'selecting a class must not open unsolicited tabs');
+  a.tab('Teoría completa').click();
+  assert.deepEqual(a.newTabs[0], ['https://example.test/psiquiatria/clases/clase-01.html', '_blank', 'noopener,noreferrer']);
+ }
 });
 
-test('switching from audio to theory and another class preserves the global audio', () => {
+test('opening theory and selecting another class preserves the global audio', () => {
  const a = aula();
  a.tab('Audio').click();
  a.audio.currentTime = 123;
@@ -62,29 +65,8 @@ test('switching from audio to theory and another class preserves the global audi
  assert.equal(a.audio.currentTime, 123);
  assert.equal(a.audio.loadCalls, loaded);
  assert.equal(a.audio.pauseCalls, paused);
- assert.equal(a.all().find(e => e.className === 'psiq-theory-frame').src, '../psiquiatria/clases/clase-02.html');
  assert.equal(a.historyChanges.at(-1), 'aula-psiquiatria.html?clase=PSIQ-C02');
-});
-
-test('chapter links stay in their frame; next-class links select the class in the existing aula', () => {
- const a = aula();
- const frame = a.all().find(e => e.className === 'psiq-theory-frame');
- const next = new a.Element('a'); next.href = 'https://example.test/badbear-campus/aula-psiquiatria.html?clase=PSIQ-C02'; next.target = '_blank';
- const reference = new a.Element('a'); reference.href = 'https://reference.test/book'; reference.target = '_blank';
- frame.contentDocument = { baseURI: 'https://example.test/psiquiatria/clases/clase-01.html', head: new a.Element('head'), createElement: a.document.createElement, querySelectorAll: () => [next, reference] };
- frame.events.load();
- assert.equal(next.target, '_self'); assert.equal(reference.target, '_self');
- let prevented = false;
- next.events.click({ defaultPrevented: false, preventDefault() { prevented = true; } });
- assert.equal(prevented, true);
- assert.equal(a.all().find(e => e.className === 'psiq-theory-frame').src, '../psiquiatria/clases/clase-02.html');
-});
-
-test('other lessons retain their existing separate-tab reading mode', () => {
- const a = aula(false);
- assert.equal(a.all().some(e => e.className === 'psiq-theory-frame'), false);
- assert.equal(a.all().some(e => e.target === '_blank'), true);
- a.tab('Teoría completa').click();
  assert.equal(a.newTabs.length, 1);
- assert.equal(a.newTabs[0][1], '_blank');
+ a.tab('Teoría completa').click();
+ assert.equal(a.newTabs[1][0], 'https://example.test/psiquiatria/clases/clase-02.html');
 });
