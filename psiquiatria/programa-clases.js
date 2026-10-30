@@ -106,8 +106,9 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 8,
     "titulo": "Trastornos de la conducta alimentaria y de la sexualidad",
     "area": "Alimentación y sexualidad",
-    "descripcion": "Evaluación integral de los trastornos alimentarios y de la sexualidad.",
-    "teoria": null,
+    "descripcion": "TCA, riesgo médico y realimentación; disfunciones sexuales, consentimiento y diversidad, con casos razonados.",
+    "teoria": "../psiquiatria/clases/clase-08-conducta-alimentaria-y-salud-sexual.html",
+    "teoriaIntegrada": true,
     "recursos": {
       "ppt": null,
       "audio": null,

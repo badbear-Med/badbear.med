@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 
 const source = readFileSync(new URL('../aula-psiquiatria.js', import.meta.url), 'utf8');
 
-function aula() {
+function aula(integrated = true) {
  class Element {
   constructor(tag) { this.tag = tag; this.children = []; this.attributes = {}; this.events = {}; this.style = {}; this.textContent = ''; this.value = ''; }
   append(...children) { this.children.push(...children); }
@@ -18,6 +18,7 @@ function aula() {
  }
  const ids = new Map();
  const document = {
+  baseURI: "https://example.test/badbear-campus/aula-psiquiatria.html",
   getElementById(id) { if (!ids.has(id)) ids.set(id, new Element('div')); return ids.get(id); },
   createElement(tag) { return new Element(tag); },
   body: { classList: { add() {}, remove() {} } }
@@ -26,9 +27,10 @@ function aula() {
  audio.loadCalls = 0; audio.pauseCalls = 0;
  audio.load = () => audio.loadCalls++;
  audio.pause = () => audio.pauseCalls++;
- let historyChanges = [];
+ let historyChanges = [], newTabs = [];
  const window = {
-  BADBEAR_PSIQUIATRIA_CLASES: [1, 2].map(n => ({ id: 'PSIQ-C0' + n, numero: n, titulo: 'Clase ' + n, teoria: '../psiquiatria/clases/clase-0' + n + '.html', recursos: { audio: '/audio-test.mp3', extra: '/document-test.pdf' } })),
+  open: (...args) => newTabs.push(args),
+  BADBEAR_PSIQUIATRIA_CLASES: [1, 2].map(n => ({ id: 'PSIQ-C0' + n, numero: n, titulo: 'Clase ' + n, teoriaIntegrada: integrated, teoria: '../psiquiatria/clases/clase-0' + n + '.html', recursos: { audio: '/audio-test.mp3', extra: '/document-test.pdf' } })),
   location: { search: '?clase=PSIQ-C01', origin: 'https://example.test' },
   history: { replaceState(_, __, url) { historyChanges.push(url); } }
  };
@@ -36,7 +38,7 @@ function aula() {
  function descendants(element) { return [element, ...element.children.flatMap(descendants)]; }
  const all = () => descendants(ids.get('psiq-class-content'));
  const tab = name => all().find(e => e.attributes.role === 'tab' && e.textContent === name);
- return { Element, document, ids, audio, historyChanges, all, tab };
+ return { Element, document, ids, audio, historyChanges, newTabs, all, tab };
 }
 
 test('opening a class renders its theory inside the aula without a new-tab link', () => {
@@ -76,4 +78,13 @@ test('chapter links stay in their frame; next-class links select the class in th
  next.events.click({ defaultPrevented: false, preventDefault() { prevented = true; } });
  assert.equal(prevented, true);
  assert.equal(a.all().find(e => e.className === 'psiq-theory-frame').src, '../psiquiatria/clases/clase-02.html');
+});
+
+test('other lessons retain their existing separate-tab reading mode', () => {
+ const a = aula(false);
+ assert.equal(a.all().some(e => e.className === 'psiq-theory-frame'), false);
+ assert.equal(a.all().some(e => e.target === '_blank'), true);
+ a.tab('Teoría completa').click();
+ assert.equal(a.newTabs.length, 1);
+ assert.equal(a.newTabs[0][1], '_blank');
 });
