@@ -121,14 +121,15 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 9,
     "titulo": "Psiquiatría de enlace y medicina psicosomática: manifestaciones psiquiátricas de patologías orgánicas",
     "area": "Psiquiatría de enlace",
-    "descripcion": "Interconsulta psiquiátrica y manifestaciones mentales de enfermedades orgánicas.",
-    "teoria": null,
+    "descripcion": "Causas médicas de síntomas mentales, delirium, medicina psicosomática y crisis funcionales, con ocho casos razonados.",
+    "teoria": "../psiquiatria/clases/clase-09-psiquiatria-de-enlace-y-medicina-psicosomatica.html",
     "recursos": {
       "ppt": null,
       "audio": null,
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-09.pdf"
-    }
+    },
+    "teoriaIntegrada": true
   },
   {
     "id": "PSIQ-C10",
