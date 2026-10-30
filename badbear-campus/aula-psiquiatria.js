@@ -7,10 +7,6 @@
  const count = document.getElementById("psiq-class-count");
  const progressLabel = document.getElementById("psiq-progress-label");
  const progressFill = document.getElementById("psiq-progress-fill");
- const player = document.getElementById("psiq-global-player");
- const audio = document.getElementById("psiq-global-audio");
- const playerTitle = document.getElementById("psiq-global-player-title");
- const playerClose = document.getElementById("psiq-global-player-close");
  if (!list || !content || !classes.length) return;
 
  const progressKey = "badbear_psiquiatria_clases_estudiadas_v1";
@@ -22,7 +18,6 @@
  const params = new URLSearchParams(window.location.search);
  const requested = params.get("clase");
  let current = classes.find(c => c.id === requested) || classes[0];
- let currentAudioUrl = "";
 
  const labels = [
   {key:"teoria",title:"Teoría completa"},
@@ -63,27 +58,24 @@
   try { localStorage.setItem(progressKey, JSON.stringify([...studied])); } catch (_) {}
   updateProgress();
  }
- function setGlobalAudio(item, url) {
-  if (!player || !audio || !playerTitle) return;
-  if (currentAudioUrl !== url) {
-   audio.pause();
-   audio.src = url;
-   currentAudioUrl = url;
-   audio.load();
+ function playOnSharedPlayer(item) {
+  const tracks = classes
+   .filter(entry => typeof entry.recursos?.audio === "string" && entry.recursos.audio.trim())
+   .map(entry => ({ id: entry.id, title: "Clase " + String(entry.numero).padStart(2, "0") + " · " + entry.titulo, src: entry.recursos.audio.trim() }));
+  const index = tracks.findIndex(track => track.id === item.id);
+  if (index < 0) return;
+  if (window.parent !== window) {
+   window.parent.postMessage({
+    type: "badbear-class-audio-play",
+    libraryName: "Psiquiatría · BADBEAR.MED",
+    tracks: tracks.map(({title, src}) => ({title, src})),
+    index
+   }, window.location.origin);
+   return;
   }
-  playerTitle.textContent = "Clase " + item.numero + " · " + item.titulo;
-  player.hidden = false;
-  document.body.classList.add("psiq-audio-active");
- }
- if(playerClose && audio && player) {
-  playerClose.addEventListener("click", () => {
-   audio.pause();
-   audio.removeAttribute("src");
-   audio.load();
-   currentAudioUrl = "";
-   player.hidden = true;
-   document.body.classList.remove("psiq-audio-active");
-  });
+  const target = new URL("../app.html", document.baseURI);
+  target.searchParams.set("page", "badbear-campus/aula-psiquiatria.html?clase=" + encodeURIComponent(item.id));
+  window.location.href = target.href;
  }
 
  function renderList() {
@@ -122,13 +114,14 @@
    return;
   }
   if(key === "audio") {
-   setGlobalAudio(item, raw);
-   panel.appendChild(node("p", "Escucha desde la barra de reproducción general, situada en la parte inferior. Puedes cambiar a diapositivas, PDF u otra clase sin interrumpir la grabación.", "psiq-resource-description"));
-   const choose = node("button", "Seleccionar esta grabación en el reproductor general", "psiq-select-audio");
+   const withinShell = window.parent !== window;
+   panel.appendChild(node("p", withinShell
+    ? "Escucha esta clase con el reproductor global de BADBEAR.MED. La grabación continúa mientras cambias de sección."
+    : "Para utilizar el reproductor flotante compartido, abre primero el aula dentro del portal BADBEAR.MED.", "psiq-resource-description"));
+   const choose = node("button", withinShell ? "Reproducir en el reproductor general" : "Abrir aula con reproductor general", "psiq-select-audio");
    choose.type = "button";
-   choose.addEventListener("click", () => setGlobalAudio(item, raw));
+   choose.addEventListener("click", () => playOnSharedPlayer(item));
    panel.appendChild(choose);
-   panel.appendChild(link(raw, "Abrir archivo de audio", "psiq-resource-secondary-link"));
    return;
   }
   if(key === "youtube") {
