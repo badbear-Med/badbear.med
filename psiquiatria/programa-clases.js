@@ -8,8 +8,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 1,
     "titulo": "Psiquiatría comunitaria",
     "area": "Comunidad y salud mental",
-    "descripcion": "Atención comunitaria, prevención, promoción y continuidad asistencial.",
-    "teoria": null,
+    "descripcion": "Epistemología, modelo biopsicosocial, realidad peruana, interculturalidad y atención comunitaria con casos razonados.",
+    "teoria": "../psiquiatria/clases/clase-01-psiquiatria-comunitaria.html",
     "recursos": {
       "ppt": null,
       "audio": null,
