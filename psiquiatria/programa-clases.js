@@ -12,7 +12,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-01-psiquiatria-comunitaria.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-01.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-01.pdf"
     }
@@ -26,7 +26,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-02-trastornos-depresivos.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-02.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-02.pdf"
     }
@@ -40,7 +40,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-03-trastorno-afectivo-bipolar.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-03.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-03.pdf"
     }
@@ -54,7 +54,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-04-esquizofrenia-y-otros-trastornos-psicoticos.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-04.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-04.pdf"
     }
@@ -68,7 +68,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-05-trastornos-de-ansiedad-y-estres.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-05.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-05.pdf"
     }
@@ -82,7 +82,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-06-trastornos-somatomorfos.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-06.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-06.pdf"
     }
@@ -96,7 +96,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-07-trastornos-de-la-personalidad.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-07.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-07.pdf"
     }
@@ -110,7 +110,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-08-conducta-alimentaria-y-salud-sexual.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-08.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-08.pdf"
     }
@@ -124,7 +124,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-09-psiquiatria-de-enlace-y-medicina-psicosomatica.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-09.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-09.pdf"
     }
@@ -138,7 +138,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": "../psiquiatria/clases/clase-10-trastornos-por-consumo-de-sustancias-y-adicciones-comportamentales.html",
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-10.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-10.pdf"
     }
@@ -152,7 +152,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": null,
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-11.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-11.pdf"
     }
@@ -166,7 +166,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": null,
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-12.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-12.pdf"
     }
@@ -180,7 +180,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": null,
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-13.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-13.pdf"
     }
@@ -194,7 +194,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": null,
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-14.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-14.pdf"
     }
@@ -208,7 +208,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": null,
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-15.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-15.pdf"
     }
@@ -222,7 +222,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": null,
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-16.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-16.pdf"
     }
@@ -236,7 +236,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": null,
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-17.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-17.pdf"
     }
@@ -250,7 +250,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "teoria": null,
     "recursos": {
       "ppt": null,
-      "audio": null,
+      "audio": "https://media.wajomea.group/psiquiatria/audio/clase-18.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-18.pdf"
     }
