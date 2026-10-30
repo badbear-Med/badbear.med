@@ -137,7 +137,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "titulo": "Trastornos por consumo de sustancias y adicciones comportamentales",
     "area": "Adicciones",
     "descripcion": "Evaluación y manejo de problemas por consumo de sustancias y adicciones conductuales.",
-    "teoria": null,
+    "teoria": "../psiquiatria/clases/clase-10-trastornos-por-consumo-de-sustancias-y-adicciones-comportamentales.html",
     "recursos": {
       "ppt": null,
       "audio": null,
