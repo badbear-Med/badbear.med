@@ -1,0 +1,36 @@
+(() => {
+ "use strict";
+ const classes = Array.isArray(window.BADBEAR_PSIQUIATRIA_CLASES) ? window.BADBEAR_PSIQUIATRIA_CLASES : [];
+ const grid = document.getElementById("psiq-programa-clases");
+ const label = document.getElementById("psiq-programa-count");
+ if(!grid) return;
+ if(label) label.textContent = classes.length + " clases";
+ grid.replaceChildren();
+ classes.forEach(item => {
+  const card = document.createElement("article");
+  card.className = "psiq-program-card";
+  const header = document.createElement("div");
+  header.className = "psiq-program-card-header";
+  const number = document.createElement("span");
+  number.className = "psiq-program-card-num";
+  number.textContent = "CLASE " + String(item.numero).padStart(2,"0");
+  const area = document.createElement("span");
+  area.className = "psiq-program-card-area";
+  area.textContent = item.area;
+  header.append(number, area);
+  const title = document.createElement("h3");
+  title.textContent = item.titulo;
+  const desc = document.createElement("p");
+  desc.textContent = item.descripcion;
+  const available = Boolean(item.teoria);
+  const info = document.createElement("p");
+  info.className = "psiq-program-status";
+  info.textContent = available ? "Teoría publicada · Recursos organizados" : "Espacio de estudio preparado · Teoría en desarrollo";
+  const link = document.createElement("a");
+  link.className = "psiq-program-open";
+  link.href = "../badbear-campus/aula-psiquiatria.html?clase=" + encodeURIComponent(item.id);
+  link.textContent = "Entrar a Clase " + String(item.numero).padStart(2,"0");
+  card.append(header, title, desc, info, link);
+  grid.appendChild(card);
+ });
+})();
