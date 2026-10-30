@@ -92,8 +92,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 7,
     "titulo": "Trastornos de la personalidad: clasificación, epidemiología, clínica y tratamiento",
     "area": "Personalidad",
-    "descripcion": "Clasificación clínica y enfoques terapéuticos de los trastornos de personalidad.",
-    "teoria": null,
+    "descripcion": "Grupos A, B y C, modelo dimensional, evaluación longitudinal, psicoterapia, seguridad y casos razonados.",
+    "teoria": "../psiquiatria/clases/clase-07-trastornos-de-la-personalidad.html",
     "recursos": {
       "ppt": null,
       "audio": null,
