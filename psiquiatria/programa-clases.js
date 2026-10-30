@@ -51,7 +51,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "titulo": "Esquizofrenia y otros trastornos psicóticos",
     "area": "Trastornos psicóticos",
     "descripcion": "Presentaciones psicóticas, evaluación clínica y tratamiento.",
-    "teoria": null,
+    "teoria": "../psiquiatria/clases/clase-04-esquizofrenia-y-otros-trastornos-psicoticos.html",
     "recursos": {
       "ppt": null,
       "audio": null,
