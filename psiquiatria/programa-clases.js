@@ -190,8 +190,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 14,
     "titulo": "Trastornos del neurodesarrollo: trastorno del espectro autista y déficit de atención",
     "area": "Neurodesarrollo",
-    "descripcion": "Epidemiología y clínica de los trastornos del neurodesarrollo. El nombre del archivo de referencia está truncado.",
-    "teoria": null,
+    "descripcion": "TDAH y autismo: criterios actuales, evaluación, tratamiento, comunicación, apoyos y ocho casos clínicos razonados.",
+    "teoria": "../psiquiatria/clases/clase-14-neurodesarrollo-tdah-y-autismo.html",
     "recursos": {
       "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-14.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-14.m4a",
