@@ -11,7 +11,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Epistemología, modelo biopsicosocial, realidad peruana, interculturalidad y atención comunitaria con casos razonados.",
     "teoria": "../psiquiatria/clases/clase-01-psiquiatria-comunitaria.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-01.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-01.m4a",
       "youtube": "https://youtu.be/PWEWYmDc6cQ",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-01.pdf"
@@ -25,7 +25,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Evaluación clínica, clasificación y tratamiento de los trastornos depresivos.",
     "teoria": "../psiquiatria/clases/clase-02-trastornos-depresivos.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-02.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-02.m4a",
       "youtube": "https://youtu.be/WzIcAnuFBts",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-02.pdf"
@@ -39,7 +39,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Episodios afectivos, diagnóstico diferencial y estrategias terapéuticas.",
     "teoria": "../psiquiatria/clases/clase-03-trastorno-afectivo-bipolar.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-03.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-03.m4a",
       "youtube": "https://youtu.be/EQ-g--EfkW0",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-03.pdf"
@@ -53,7 +53,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Presentaciones psicóticas, evaluación clínica y tratamiento.",
     "teoria": "../psiquiatria/clases/clase-04-esquizofrenia-y-otros-trastornos-psicoticos.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-04.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-04.m4a",
       "youtube": "https://youtu.be/kNs1eCx-NbY",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-04.pdf"
@@ -67,7 +67,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Pánico, TAG, fobias, trauma y disociación: criterios, diagnóstico diferencial, tratamiento y casos razonados.",
     "teoria": "../psiquiatria/clases/clase-05-trastornos-de-ansiedad-y-estres.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-05.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-05.m4a",
       "youtube": "https://youtu.be/PPkXjondA44",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-05.pdf"
@@ -81,7 +81,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Presentaciones con síntomas somáticos y abordaje clínico integral.",
     "teoria": "../psiquiatria/clases/clase-06-trastornos-somatomorfos.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-06.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-06.m4a",
       "youtube": "https://youtu.be/OR0KmzUrOQc",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-06.pdf"
@@ -95,7 +95,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Grupos A, B y C, modelo dimensional, evaluación longitudinal, psicoterapia, seguridad y casos razonados.",
     "teoria": "../psiquiatria/clases/clase-07-trastornos-de-la-personalidad.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-07.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-07.m4a",
       "youtube": null,
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-07.pdf"
@@ -109,7 +109,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "TCA, riesgo médico y realimentación; disfunciones sexuales, consentimiento y diversidad, con casos razonados.",
     "teoria": "../psiquiatria/clases/clase-08-conducta-alimentaria-y-salud-sexual.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-08.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-08.m4a",
       "youtube": "https://youtu.be/bwlzdvew47w",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-08.pdf"
@@ -123,7 +123,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Causas médicas de síntomas mentales, delirium, medicina psicosomática y crisis funcionales, con ocho casos razonados.",
     "teoria": "../psiquiatria/clases/clase-09-psiquiatria-de-enlace-y-medicina-psicosomatica.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-09.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-09.m4a",
       "youtube": "https://youtu.be/0-ZOAMwLpzU",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-09.pdf"
@@ -137,7 +137,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Evaluación y manejo de problemas por consumo de sustancias y adicciones conductuales.",
     "teoria": "../psiquiatria/clases/clase-10-trastornos-por-consumo-de-sustancias-y-adicciones-comportamentales.html",
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-10.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-10.m4a",
       "youtube": "https://youtu.be/7t7XgVNNdA0",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-10.pdf"
@@ -151,7 +151,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Fenómenos obsesivos, compulsivos y trastornos relacionados.",
     "teoria": null,
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-11.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-11.m4a",
       "youtube": "https://youtu.be/1SyF-FiF_xM",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-11.pdf"
@@ -165,7 +165,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Evaluación cognitiva, curso clínico y diagnósticos diferenciales.",
     "teoria": null,
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-12.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-12.m4a",
       "youtube": "https://youtu.be/TqXqdKS6ZU0",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-12.pdf"
@@ -179,7 +179,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Consideraciones éticas y legales en la práctica psiquiátrica.",
     "teoria": null,
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-13.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-13.m4a",
       "youtube": "https://youtu.be/L-js4x5cZ9A",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-13.pdf"
@@ -193,7 +193,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Epidemiología y clínica de los trastornos del neurodesarrollo. El nombre del archivo de referencia está truncado.",
     "teoria": null,
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-14.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-14.m4a",
       "youtube": "https://youtu.be/6_5iYdn5Qpk",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-14.pdf"
@@ -207,7 +207,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Trastornos de tics, desarrollo intelectual y eliminación. El archivo original utiliza el término «retardo mental».",
     "teoria": null,
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-15.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-15.m4a",
       "youtube": "https://youtu.be/17O1eoBY3uc",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-15.pdf"
@@ -221,7 +221,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Intervenciones psicoterapéuticas y recursos psicosociales de la atención mental.",
     "teoria": null,
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-16.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-16.m4a",
       "youtube": "https://youtu.be/6Hl7xBTsJFc",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-16.pdf"
@@ -235,7 +235,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Evaluación de los problemas de sueño y opciones terapéuticas.",
     "teoria": null,
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-17.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-17.m4a",
       "youtube": "https://youtu.be/TV6YD0RGgcM",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-17.pdf"
@@ -249,7 +249,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "descripcion": "Evaluación de trastornos emocionales y de conducta durante el desarrollo.",
     "teoria": null,
     "recursos": {
-      "ppt": null,
+      "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-18.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-18.m4a",
       "youtube": "https://youtu.be/6LioKGX5Duc",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-18.pdf"
