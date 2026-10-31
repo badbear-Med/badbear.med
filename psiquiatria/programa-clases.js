@@ -204,8 +204,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 15,
     "titulo": "Trastornos de tics, discapacidad intelectual, enuresis y encopresis",
     "area": "Neurodesarrollo",
-    "descripcion": "Trastornos de tics, desarrollo intelectual y eliminación. El archivo original utiliza el término «retardo mental».",
-    "teoria": null,
+    "descripcion": "Discapacidad intelectual, tics y Tourette, enuresis y encopresis: evaluación, apoyos, tratamiento y ocho casos razonados.",
+    "teoria": "../psiquiatria/clases/clase-15-discapacidad-intelectual-tics-y-eliminacion.html",
     "recursos": {
       "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-15.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-15.m4a",
