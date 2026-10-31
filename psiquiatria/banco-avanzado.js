@@ -12,10 +12,15 @@ function button(text,callback,disabled=false){const b=el("button",text);b.type="
 function addLink(parent,url,text){if(!url)return;const a=el("a",text);a.href=url;a.target="_blank";a.rel="noopener noreferrer";parent.appendChild(a);}
 function explain(q,chosen){const box=el("div",undefined,"response");
 const right=chosen===q.correcta;box.append(el("h3",right?"Respuesta correcta":"Respuesta incorrecta. Respuesta esperada: "+letter(q.correcta)));
-box.append(el("p",q.fundamento));box.append(el("h4","Análisis de las cinco alternativas"));
-const ul=el("ol");q.opciones.forEach((opt,i)=>{const li=el("li");const strong=el("strong",letter(i)+". "+opt+" — ");li.append(strong,document.createTextNode(i===q.correcta?q.fundamento:q.analisis[i]));ul.append(li);});box.append(ul);
+box.append(el("h4","Interpretación clínica del caso"));box.append(el("p",q.fundamento));
+if(q.desarrollo?.razonamiento){box.append(el("h4","Razonamiento diagnóstico y fisiopatológico"));box.append(el("p",q.desarrollo.razonamiento));}
+if(q.desarrollo?.conducta){box.append(el("h4","Conducta, seguridad y aplicación práctica"));box.append(el("p",q.desarrollo.conducta));}
+box.append(el("h4","Análisis individual de las cinco alternativas"));
+const ul=el("ol");q.opciones.forEach((opt,i)=>{const li=el("li");const strong=el("strong",letter(i)+". "+opt+" — ");li.append(strong,document.createTextNode(q.analisis[i] || q.fundamento));ul.append(li);});box.append(ul);
 box.append(el("h4","Fundamento bibliográfico"));box.append(el("p",q.bibliografia));
-const unit=units.find(x=>Number(x.numero)===Number(q.unidad));if(unit&&unit.teoria){const p=el("p");addLink(p,new URL(unit.teoria,document.baseURI).href,"Consultar teoría de la unidad "+q.unidad+" ↗");box.append(p);}else box.append(el("p","Teoría propia de esta unidad: pendiente de publicación y verificación editorial."));
+const unit=units.find(x=>Number(x.numero)===Number(q.unidad));if(unit&&unit.teoria){const p=el("p");
+const theoryUrl=new URL(unit.teoria,document.baseURI);if(q.desarrollo?.ancla)theoryUrl.hash=q.desarrollo.ancla;
+addLink(p,theoryUrl.href,q.desarrollo?.ancla?"Consultar directamente el apartado relevante de la teoría · Unidad "+q.unidad+" ↗":"Consultar teoría de la unidad "+q.unidad+" ↗");box.append(p);}else box.append(el("p","Teoría propia de esta unidad: pendiente de publicación y verificación editorial."));
 return box;}
 function render(){const list=getList();root.replaceChildren();document.getElementById("total").textContent=bank.length;counter.textContent=Object.keys(selected).filter(k=>list.some(q=>q.id===k)).length;
 if(!list.length){root.append(el("p","No hay preguntas para esta selección.","empty"));return;}
