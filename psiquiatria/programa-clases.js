@@ -13,7 +13,7 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "recursos": {
       "ppt": null,
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-01.m4a",
-      "youtube": null,
+      "youtube": "https://youtu.be/PWEWYmDc6cQ",
       "extra": "https://media.wajomea.group/psiquiatria/pdfs/clases/clase-01.pdf"
     }
   },
