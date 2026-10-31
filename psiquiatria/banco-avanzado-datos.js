@@ -1,4 +1,4 @@
-/* Banco original de Psiquiatría: 18 unidades; referencias DSM-5-TR y Kaplan & Sadock. */
+/* Banco clínico original: referencias conceptuales, sin citas de páginas no comprobadas. */
 window.BADBEAR_PSIQ_BANCO = [
   {
     "id": "PSQ-01-001",
@@ -16,13 +16,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 2,
     "fundamento": "La atención comunitaria prioriza accesibilidad, continuidad, pertinencia cultural, trabajo interdisciplinario y evaluación de riesgos. La formulación cultural ayuda a diferenciar experiencias culturalmente compartidas de fenómenos psicopatológicos sin descuidar condiciones clínicas tratables.",
     "analisis": [
-      "Descalificar la interpretación cultural compromete la alianza terapéutica y la validez de la evaluación.",
-      "La derivación puede ser necesaria según gravedad, pero no sustituye una evaluación inicial comunitaria segura.",
-      "",
-      "Una explicación cultural no es por sí sola delirio ni indicación de antipsicótico.",
-      "El sufrimiento y deterioro requieren atención aun cuando no se complete un síndrome depresivo."
+      "Descalificar la interpretación cultural compromete la alianza terapéutica y la validez de la evaluación. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La derivación puede ser necesaria según gravedad, pero no sustituye una evaluación inicial comunitaria segura. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Primero se exploran idioma, explicaciones culturales, trauma y funcionamiento previo. Una creencia compartida en un marco cultural no constituye automáticamente un delirio. La secuencia razonable es descartar urgencias, formular el problema con participación familiar autorizada y acordar seguimiento comunitario.",
+      "Una explicación cultural no es por sí sola delirio ni indicación de antipsicótico. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El sufrimiento y deterioro requieren atención aun cuando no se complete un síndrome depresivo. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Primero se exploran idioma, explicaciones culturales, trauma y funcionamiento previo. Una creencia compartida en un marco cultural no constituye automáticamente un delirio.",
+      "conducta": "La secuencia razonable es descartar urgencias, formular el problema con participación familiar autorizada y acordar seguimiento comunitario.",
+      "ancla": "cultura"
+    }
   },
   {
     "id": "PSQ-01-002",
@@ -40,13 +45,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "La atención comunitaria integra detección de riesgo, intervención proporcional, plan de seguridad colaborativo, abordaje del consumo y coordinación con la red de apoyo y atención especializada según evolución. La ideación sin plan exige valoración, no abandono.",
     "analisis": [
-      "El riesgo suicida debe investigarse independientemente del motivo de consulta.",
-      "La evaluación de urgencia, los factores protectores y el seguimiento son partes inseparables del modelo de continuidad asistencial.",
-      "La derivación puede ser necesaria, pero no reemplaza evaluación y medidas inmediatas.",
-      "La atención de crisis no requiere esperar a completar una categoría diagnóstica.",
-      "Existen excepciones legales y éticas a la confidencialidad cuando el riesgo es grave e inminente."
+      "El riesgo suicida debe investigarse independientemente del motivo de consulta. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La ideación suicida exige precisar intención, planificación, acceso a medios, intentos previos, consumo concomitante y factores protectores; una negación de plan no equivale a riesgo nulo. Se documentan plan de seguridad, señales de alarma, contactos y reevaluación temprana con red comunitaria.",
+      "La derivación puede ser necesaria, pero no reemplaza evaluación y medidas inmediatas. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La atención de crisis no requiere esperar a completar una categoría diagnóstica. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Existen excepciones legales y éticas a la confidencialidad cuando el riesgo es grave e inminente. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La ideación suicida exige precisar intención, planificación, acceso a medios, intentos previos, consumo concomitante y factores protectores; una negación de plan no equivale a riesgo nulo.",
+      "conducta": "Se documentan plan de seguridad, señales de alarma, contactos y reevaluación temprana con red comunitaria.",
+      "ancla": "evaluacion"
+    }
   },
   {
     "id": "PSQ-02-001",
@@ -64,13 +74,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "La combinación de duración superior a dos semanas, síntomas nucleares (ánimo deprimido y anhedonia), síntomas neurovegetativos/cognitivos y afectación clínica constituye un episodio depresivo mayor; es imprescindible evaluar riesgo suicida, bipolaridad y etiologías médicas.",
     "analisis": [
-      "El trastorno adaptativo no explica mejor un episodio que cumple el síndrome depresivo mayor.",
-      "",
-      "La distimia exige un curso crónico de al menos dos años en adultos, no solo ocho semanas.",
-      "No se documenta episodio hipomaníaco requerido para bipolar II.",
-      "El duelo puede coexistir con depresión mayor, pero no explica por sí solo este síndrome ni excluye su diagnóstico."
+      "El trastorno adaptativo no explica mejor un episodio que cumple el síndrome depresivo mayor. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La psicosis congruente con el estado de ánimo y el deterioro físico elevan la urgencia. Hay que investigar inanición, deshidratación, riesgo suicida, capacidad de decisión y alternativas rápidas basadas en gravedad. La TEC es una opción de alta eficacia en depresión grave con síntomas psicóticos; debe planificarse con evaluación anestésica y seguimiento posterior.",
+      "La distimia exige un curso crónico de al menos dos años en adultos, no solo ocho semanas. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No se documenta episodio hipomaníaco requerido para bipolar II. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El duelo puede coexistir con depresión mayor, pero no explica por sí solo este síndrome ni excluye su diagnóstico. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La psicosis congruente con el estado de ánimo y el deterioro físico elevan la urgencia. Hay que investigar inanición, deshidratación, riesgo suicida, capacidad de decisión y alternativas rápidas basadas en gravedad.",
+      "conducta": "La TEC es una opción de alta eficacia en depresión grave con síntomas psicóticos; debe planificarse con evaluación anestésica y seguimiento posterior.",
+      "ancla": "gravedad"
+    }
   },
   {
     "id": "PSQ-02-002",
@@ -88,13 +103,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "La depresión grave con síntomas psicóticos y compromiso nutricional es una situación de alto riesgo. La electroconvulsoterapia puede ser especialmente apropiada cuando se requiere respuesta rápida, junto con estabilización médica y valoración individualizada de seguridad y capacidad.",
     "analisis": [
-      "La psicoterapia puede complementar, pero no sustituye la atención urgente en una enfermedad grave.",
-      "La TEC es una intervención eficaz en depresión grave, incluida la psicótica, especialmente cuando hay riesgo vital o necesidad de respuesta rápida.",
-      "Buspirona no trata el cuadro depresivo psicótico grave.",
-      "La espera aumenta riesgos por desnutrición, deshidratación y psicosis.",
-      "Un abordaje ambulatorio aislado es insuficiente ante la gravedad clínica."
+      "La psicoterapia puede complementar, pero no sustituye la atención urgente en una enfermedad grave. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Los delirios nihilistas, negativa a alimentarse y compromiso físico obligan a pensar más allá del tratamiento ambulatorio estándar. Se prioriza estabilización médica, evaluación de capacidad y tratamiento eficaz de acción relativamente rápida.",
+      "Buspirona no trata el cuadro depresivo psicótico grave. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La espera aumenta riesgos por desnutrición, deshidratación y psicosis. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Un abordaje ambulatorio aislado es insuficiente ante la gravedad clínica. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Los delirios nihilistas, negativa a alimentarse y compromiso físico obligan a pensar más allá del tratamiento ambulatorio estándar.",
+      "conducta": "Se prioriza estabilización médica, evaluación de capacidad y tratamiento eficaz de acción relativamente rápida.",
+      "ancla": "tratamiento"
+    }
   },
   {
     "id": "PSQ-03-001",
@@ -112,13 +132,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "El episodio maníaco completo requiere duración y síntomas característicos con deterioro marcado, hospitalización o psicosis; una manía que persiste más allá de los efectos fisiológicos de un antidepresivo puede contar para bipolar I. Es crucial corroborar cronología y descartar causas inducidas.",
     "analisis": [
-      "",
-      "Bipolar II requiere hipomanía y ausencia de manía; la psicosis no es obligatoria para manía.",
-      "La hospitalización es uno de varios criterios de gravedad, no condición universal.",
-      "La evidencia de manía cambia la formulación de depresión unipolar a bipolaridad.",
-      "La distinción manía/hipomanía depende de gravedad, duración y deterioro, no solo de ánimo elevado."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La cronología del episodio, persistencia tras el fármaco y grado de deterioro permiten separar manía verdadera de activación farmacológica transitoria. Antes de etiquetar bipolaridad se descartan sustancias, esteroides, trastornos del sueño y otras causas secundarias.",
+      "Bipolar II requiere hipomanía y ausencia de manía; la psicosis no es obligatoria para manía. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La hospitalización es uno de varios criterios de gravedad, no condición universal. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La evidencia de manía cambia la formulación de depresión unipolar a bipolaridad. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La distinción manía/hipomanía depende de gravedad, duración y deterioro, no solo de ánimo elevado. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La cronología del episodio, persistencia tras el fármaco y grado de deterioro permiten separar manía verdadera de activación farmacológica transitoria.",
+      "conducta": "Antes de etiquetar bipolaridad se descartan sustancias, esteroides, trastornos del sueño y otras causas secundarias.",
+      "ancla": "maniayhipomania"
+    }
   },
   {
     "id": "PSQ-03-002",
@@ -136,13 +161,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "El cuadro sugiere toxicidad por litio favorecida por deshidratación e interacción farmacológica. Deben suspenderse exposiciones relevantes y solicitarse evaluación urgente con función renal, electrolitos y concentración plasmática; la gravedad clínica orienta tratamientos avanzados.",
     "analisis": [
-      "Aumentar la exposición puede agravar una intoxicación potencialmente neurológica.",
-      "La clínica neurológica y gastrointestinal obliga a valorar toxicidad y factores precipitantes de forma inmediata.",
-      "Los antidepresivos no corrigen intoxicación por litio.",
-      "Una dosis adicional es insegura en contexto sospechoso.",
-      "La ataxia y confusión no deben etiquetarse como síntomas ansiosos sin descartar causa tóxica."
+      "Aumentar la exposición puede agravar una intoxicación potencialmente neurológica. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. El litio se elimina por vía renal; deshidratación e interacciones con AINE pueden elevar su concentración. El diagnóstico de toxicidad depende del cuadro clínico además de la litemia. Confusión y ataxia son alertas para evaluación urgente, vigilancia renal y valoración de terapia de eliminación extracorpórea según gravedad.",
+      "Los antidepresivos no corrigen intoxicación por litio. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Una dosis adicional es insegura en contexto sospechoso. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La ataxia y confusión no deben etiquetarse como síntomas ansiosos sin descartar causa tóxica. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "El litio se elimina por vía renal; deshidratación e interacciones con AINE pueden elevar su concentración. El diagnóstico de toxicidad depende del cuadro clínico además de la litemia.",
+      "conducta": "Confusión y ataxia son alertas para evaluación urgente, vigilancia renal y valoración de terapia de eliminación extracorpórea según gravedad.",
+      "ancla": "litio"
+    }
   },
   {
     "id": "PSQ-04-001",
@@ -160,13 +190,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 2,
     "fundamento": "El trastorno esquizofreniforme comparte el espectro sintomático de la esquizofrenia y dura entre uno y menos de seis meses. Cuatro meses totales de alteración no satisfacen todavía el requisito temporal de seis meses de esquizofrenia.",
     "analisis": [
-      "Esquizofrenia exige signos continuos durante al menos seis meses.",
-      "El trastorno psicótico breve dura más de un día y menos de un mes, con retorno a funcionamiento previo.",
-      "",
-      "El discurso desorganizado y las alucinaciones destacadas hacen inadecuada la formulación de trastorno delirante.",
-      "No se documenta una relación longitudinal entre episodios afectivos mayores y psicosis propia del esquizoafectivo."
+      "Esquizofrenia exige signos continuos durante al menos seis meses. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El trastorno psicótico breve dura más de un día y menos de un mes, con retorno a funcionamiento previo. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. El requisito temporal del DSM diferencia esquizofreniforme de esquizofrenia; el deterioro y las experiencias psicóticas no sustituyen el criterio de duración. El seguimiento longitudinal puede obligar a reformular el diagnóstico cuando se alcancen seis meses de signos continuos.",
+      "El discurso desorganizado y las alucinaciones destacadas hacen inadecuada la formulación de trastorno delirante. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No se documenta una relación longitudinal entre episodios afectivos mayores y psicosis propia del esquizoafectivo. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "El requisito temporal del DSM diferencia esquizofreniforme de esquizofrenia; el deterioro y las experiencias psicóticas no sustituyen el criterio de duración.",
+      "conducta": "El seguimiento longitudinal puede obligar a reformular el diagnóstico cuando se alcancen seis meses de signos continuos.",
+      "ancla": "diagnostico"
+    }
   },
   {
     "id": "PSQ-04-002",
@@ -184,13 +219,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "La desviación ocular y las contracciones sostenidas de aparición precoz tras bloqueo dopaminérgico orientan a distonía aguda. Anticolinérgicos parenterales como benztropina o difenhidramina según disponibilidad local son medidas habituales, con observación y ajuste farmacológico.",
     "analisis": [
-      "Mayor bloqueo D2 puede intensificar la reacción extrapiramidal.",
-      "La distonía aguda es una urgencia tratable con medidas anticolinérgicas y reevaluación del desencadenante.",
-      "No hay síndrome afectivo que justifique litio.",
-      "El síndrome neuroléptico maligno típicamente asocia rigidez generalizada, hipertermia y alteración autonómica; no es la interpretación principal de una distonía focal aislada.",
-      "Valproato no revierte de forma específica una distonía aguda."
+      "Mayor bloqueo D2 puede intensificar la reacción extrapiramidal. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La distonía aguda aparece habitualmente tras iniciar o aumentar antagonistas dopaminérgicos de alta potencia; puede afectar cuello, mandíbula u ojos. Hay que valorar compromiso de vía aérea si hay distonía laríngea; tratar la reacción y revisar dosis, necesidad y riesgo de nueva exposición.",
+      "No hay síndrome afectivo que justifique litio. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El síndrome neuroléptico maligno típicamente asocia rigidez generalizada, hipertermia y alteración autonómica; no es la interpretación principal de una distonía focal aislada. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Valproato no revierte de forma específica una distonía aguda. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La distonía aguda aparece habitualmente tras iniciar o aumentar antagonistas dopaminérgicos de alta potencia; puede afectar cuello, mandíbula u ojos.",
+      "conducta": "Hay que valorar compromiso de vía aérea si hay distonía laríngea; tratar la reacción y revisar dosis, necesidad y riesgo de nueva exposición.",
+      "ancla": "adversos"
+    }
   },
   {
     "id": "PSQ-05-001",
@@ -208,13 +248,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "Las crisis de pánico recurrentes e inesperadas junto con al menos un mes de preocupación persistente o cambios conductuales desadaptativos constituyen el núcleo del trastorno de pánico. Deben investigarse diagnósticos médicos y sustancias antes de concluir.",
     "analisis": [
-      "TAG implica preocupación extensa en varios dominios durante un tiempo prolongado, no predominantemente temor a nuevas crisis.",
-      "",
-      "No se describe exposición traumática ni el conjunto de síntomas de TEPT.",
-      "La evitación de transporte puede coexistir con agorafobia, pero no sustituye el síndrome de pánico claramente descrito.",
-      "La ansiedad se organiza alrededor de ataques inesperados más que de síntomas somáticos persistentes con preocupación desproporcionada."
+      "TAG implica preocupación extensa en varios dominios durante un tiempo prolongado, no predominantemente temor a nuevas crisis. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La clave no es solo experimentar una crisis autonómica, sino su carácter inesperado y el mes o más de preocupación o evitación posterior. La evaluación clínica inicial excluye arritmias, hipertiroidismo y estimulantes cuando el contexto lo justifica; después se individualiza TCC e ISRS.",
+      "No se describe exposición traumática ni el conjunto de síntomas de TEPT. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La evitación de transporte puede coexistir con agorafobia, pero no sustituye el síndrome de pánico claramente descrito. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La ansiedad se organiza alrededor de ataques inesperados más que de síntomas somáticos persistentes con preocupación desproporcionada. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La clave no es solo experimentar una crisis autonómica, sino su carácter inesperado y el mes o más de preocupación o evitación posterior.",
+      "conducta": "La evaluación clínica inicial excluye arritmias, hipertiroidismo y estimulantes cuando el contexto lo justifica; después se individualiza TCC e ISRS.",
+      "ancla": "panico"
+    }
   },
   {
     "id": "PSQ-05-002",
@@ -232,13 +277,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "El TEPT requiere exposición traumática y conjuntos de síntomas de intrusión, evitación, alteraciones negativas cognitivas/afectivas y activación, con duración superior a un mes y deterioro. La evaluación debe incluir seguridad, comorbilidad y terapias centradas en trauma.",
     "analisis": [
-      "El estrés agudo se limita al periodo posterior al trauma hasta un mes.",
-      "Tres meses con dominios clínicos característicos orientan al TEPT.",
-      "El pánico no explica el conjunto de intrusión, evitación y cogniciones postraumáticas.",
-      "Un trastorno adaptativo no es la opción preferente cuando se cumplen criterios específicos de TEPT.",
-      "No se describen delirios fijos independientes de la experiencia traumática."
+      "El estrés agudo se limita al periodo posterior al trauma hasta un mes. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. No basta un acontecimiento desagradable: se verifica el tipo de exposición, intrusiones, evitación, cogniciones/ánimo negativos e hiperactivación, más duración y deterioro. La intervención orientada al trauma requiere seguridad, alianza y valoración de comorbilidades; el tratamiento farmacológico no reemplaza automáticamente la psicoterapia focalizada.",
+      "El pánico no explica el conjunto de intrusión, evitación y cogniciones postraumáticas. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Un trastorno adaptativo no es la opción preferente cuando se cumplen criterios específicos de TEPT. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No se describen delirios fijos independientes de la experiencia traumática. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "No basta un acontecimiento desagradable: se verifica el tipo de exposición, intrusiones, evitación, cogniciones/ánimo negativos e hiperactivación, más duración y deterioro.",
+      "conducta": "La intervención orientada al trauma requiere seguridad, alianza y valoración de comorbilidades; el tratamiento farmacológico no reemplaza automáticamente la psicoterapia focalizada.",
+      "ancla": "trauma"
+    }
   },
   {
     "id": "PSQ-06-001",
@@ -256,13 +306,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 2,
     "fundamento": "DSM-5-TR no exige síntomas médicamente inexplicables. El foco es la presencia de síntomas somáticos perturbadores y pensamientos, ansiedad o conductas excesivas y persistentes; puede coexistir una enfermedad física auténtica.",
     "analisis": [
-      "Los síntomas pueden explicarse parcial o totalmente por patología médica.",
-      "Una enfermedad concomitante no excluye una respuesta desproporcionada clínicamente significativa.",
-      "",
-      "La simulación requiere evidencia de producción intencional con incentivos externos, no la mera reiteración de consultas.",
-      "El dolor puede ser orgánico y coexistir con el trastorno de síntomas somáticos."
+      "Los síntomas pueden explicarse parcial o totalmente por patología médica. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Una enfermedad concomitante no excluye una respuesta desproporcionada clínicamente significativa. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. El trastorno de síntomas somáticos se define por sufrimiento e inversión desproporcionada de recursos cognitivos, emocionales o conductuales en síntomas; no por demostrar que sean 'imaginarios'. Debe mantenerse vigilancia médica razonable y evitar tanto el sobreestudio repetitivo como el abandono de enfermedades concurrentes.",
+      "La simulación requiere evidencia de producción intencional con incentivos externos, no la mera reiteración de consultas. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El dolor puede ser orgánico y coexistir con el trastorno de síntomas somáticos. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "El trastorno de síntomas somáticos se define por sufrimiento e inversión desproporcionada de recursos cognitivos, emocionales o conductuales en síntomas; no por demostrar que sean 'imaginarios'.",
+      "conducta": "Debe mantenerse vigilancia médica razonable y evitar tanto el sobreestudio repetitivo como el abandono de enfermedades concurrentes.",
+      "ancla": "criterios"
+    }
   },
   {
     "id": "PSQ-06-002",
@@ -280,13 +335,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "El diagnóstico de trastorno neurológico funcional se apoya en hallazgos clínicos positivos de incompatibilidad entre el patrón observado y las enfermedades neurológicas reconocidas. No exige probar un desencadenante psicológico ni inferir intencionalidad.",
     "analisis": [
-      "La inconsistencia clínica no demuestra producción voluntaria del síntoma.",
-      "Los signos positivos, como Hoover, permiten una explicación clínica concreta, tras evaluar adecuadamente etiologías neurológicas.",
-      "El trastorno facticio requiere evidencia de falsificación o inducción engañosa de síntomas.",
-      "No es necesario demostrar trauma psicológico específico.",
-      "La simulación requiere indicios de producción intencional motivada por incentivos externos."
+      "La inconsistencia clínica no demuestra producción voluntaria del síntoma. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Signos positivos de inconsistencia, reproducibles en exploración, aportan evidencia diagnóstica de un trastorno neurológico funcional. Explicar que los síntomas son genuinos y potencialmente tratables facilita derivación a rehabilitación especializada y psicoterapia cuando corresponda.",
+      "El trastorno facticio requiere evidencia de falsificación o inducción engañosa de síntomas. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No es necesario demostrar trauma psicológico específico. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La simulación requiere indicios de producción intencional motivada por incentivos externos. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Signos positivos de inconsistencia, reproducibles en exploración, aportan evidencia diagnóstica de un trastorno neurológico funcional.",
+      "conducta": "Explicar que los síntomas son genuinos y potencialmente tratables facilita derivación a rehabilitación especializada y psicoterapia cuando corresponda.",
+      "ancla": "funcional"
+    }
   },
   {
     "id": "PSQ-07-001",
@@ -304,13 +364,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "El patrón es compatible con trastorno límite de la personalidad; la terapia dialéctico-conductual incluye entrenamiento de habilidades, regulación emocional, tolerancia al malestar y estrategias para reducir autolesión. El manejo exige evaluación de seguridad y comorbilidades.",
     "analisis": [
-      "",
-      "No existe obligación de una modalidad exclusiva, y la evidencia de prevención de autolesión favorece intervenciones estructuradas específicas.",
-      "Los psicofármacos no sustituyen una psicoterapia estructurada y se reservan según indicación clínica.",
-      "La TEC no es tratamiento preventivo establecido de autolesiones en este trastorno.",
-      "La alianza terapéutica y una estructura clara son componentes centrales del tratamiento."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Diferenciar inestabilidad afectiva reactiva en horas de episodios maníacos sostenidos exige historia longitudinal, contexto interpersonal y evaluación de autolesiones. La DBT ofrece análisis de cadenas conductuales, entrenamiento de habilidades y estrategias de prevención de crisis; no sustituye la evaluación de riesgo individual.",
+      "No existe obligación de una modalidad exclusiva, y la evidencia de prevención de autolesión favorece intervenciones estructuradas específicas. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Los psicofármacos no sustituyen una psicoterapia estructurada y se reservan según indicación clínica. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La TEC no es tratamiento preventivo establecido de autolesiones en este trastorno. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alianza terapéutica y una estructura clara son componentes centrales del tratamiento. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Diferenciar inestabilidad afectiva reactiva en horas de episodios maníacos sostenidos exige historia longitudinal, contexto interpersonal y evaluación de autolesiones.",
+      "conducta": "La DBT ofrece análisis de cadenas conductuales, entrenamiento de habilidades y estrategias de prevención de crisis; no sustituye la evaluación de riesgo individual.",
+      "ancla": "limite"
+    }
   },
   {
     "id": "PSQ-07-002",
@@ -328,13 +393,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "Los trastornos de personalidad se caracterizan por patrones perdurables, inflexibles y transcontextuales de cognición, afectividad, relaciones y control de impulsos; se evalúa su estabilidad y consecuencias funcionales, diferenciándolos de episodios afectivos o sustancias.",
     "analisis": [
-      "La persistencia y generalización son claves en la evaluación longitudinal.",
-      "Los síntomas que aparecen únicamente durante un episodio afectivo no bastan para diagnosticar personalidad.",
-      "La intoxicación puede provocar alteraciones conductuales reversibles.",
-      "El delirium altera conducta y cognición de manera aguda y fluctuante.",
-      "Un evento interpersonal aislado carece de la persistencia y extensión requeridas."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. El diagnóstico de personalidad no se construye por un rasgo aislado: se requiere patrón inflexible persistente, presente en contextos diversos y asociado con deterioro. Las manifestaciones transitorias por sustancias, episodios afectivos o entornos específicos son diagnósticos alternativos esenciales.",
+      "Los síntomas que aparecen únicamente durante un episodio afectivo no bastan para diagnosticar personalidad. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La intoxicación puede provocar alteraciones conductuales reversibles. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El delirium altera conducta y cognición de manera aguda y fluctuante. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Un evento interpersonal aislado carece de la persistencia y extensión requeridas. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "El diagnóstico de personalidad no se construye por un rasgo aislado: se requiere patrón inflexible persistente, presente en contextos diversos y asociado con deterioro.",
+      "conducta": "Las manifestaciones transitorias por sustancias, episodios afectivos o entornos específicos son diagnósticos alternativos esenciales.",
+      "ancla": "evaluacion"
+    }
   },
   {
     "id": "PSQ-08-001",
@@ -352,13 +422,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 2,
     "fundamento": "En anorexia nerviosa probable, bradicardia marcada, inestabilidad hemodinámica y alteraciones electrolíticas requieren evaluación urgente, estabilización y manejo nutricional supervisado con vigilancia de síndrome de realimentación. La psicoterapia es esencial, pero no sustituye la seguridad médica inicial.",
     "analisis": [
-      "La inestabilidad fisiológica no permite retrasar una evaluación médica intensiva.",
-      "Un estimulante del apetito no corrige el riesgo cardiometabólico inmediato.",
-      "",
-      "La intervención psiquiátrica aislada no trata la hipopotasemia ni el compromiso cardiovascular.",
-      "El ejercicio puede aumentar el riesgo de complicaciones en una paciente inestable."
+      "La inestabilidad fisiológica no permite retrasar una evaluación médica intensiva. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Un estimulante del apetito no corrige el riesgo cardiometabólico inmediato. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Bradicardia marcada e hipopotasemia son datos médicos de peligro: hay riesgo arrítmico y de complicaciones de realimentación. El ingreso se decide por estabilidad fisiológica, trayectoria de peso, ingesta y apoyo; el tratamiento nutricional requiere vigilancia de fósforo, potasio y magnesio.",
+      "La intervención psiquiátrica aislada no trata la hipopotasemia ni el compromiso cardiovascular. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El ejercicio puede aumentar el riesgo de complicaciones en una paciente inestable. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Bradicardia marcada e hipopotasemia son datos médicos de peligro: hay riesgo arrítmico y de complicaciones de realimentación.",
+      "conducta": "El ingreso se decide por estabilidad fisiológica, trayectoria de peso, ingesta y apoyo; el tratamiento nutricional requiere vigilancia de fósforo, potasio y magnesio.",
+      "ancla": "gravedad"
+    }
   },
   {
     "id": "PSQ-08-002",
@@ -376,13 +451,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "La bulimia nerviosa incluye atracones y conductas compensatorias inapropiadas recurrentes, al menos una vez por semana durante tres meses, y autoevaluación indebidamente influida por peso y figura. El peso normal no excluye el trastorno.",
     "analisis": [
-      "No se documenta peso significativamente bajo ni patrón restrictivo exclusivo.",
-      "Los atracones con vómitos compensatorios recurrentes sustentan bulimia nerviosa si se verifican los demás criterios.",
-      "En trastorno por atracones no hay conductas compensatorias inapropiadas regulares.",
-      "ARFID no se define por atracones y preocupación por peso/figura.",
-      "Pica consiste en ingesta persistente de sustancias no nutritivas."
+      "No se documenta peso significativamente bajo ni patrón restrictivo exclusivo. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Los atracones exigen pérdida subjetiva de control y gran ingesta en un intervalo delimitado; las purgas regulares diferencian bulimia de trastorno por atracones. El peso habitual no descarta alteraciones hidroelectrolíticas ni lesión esofágica o dental por vómitos.",
+      "En trastorno por atracones no hay conductas compensatorias inapropiadas regulares. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "ARFID no se define por atracones y preocupación por peso/figura. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Pica consiste en ingesta persistente de sustancias no nutritivas. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Los atracones exigen pérdida subjetiva de control y gran ingesta en un intervalo delimitado; las purgas regulares diferencian bulimia de trastorno por atracones.",
+      "conducta": "El peso habitual no descarta alteraciones hidroelectrolíticas ni lesión esofágica o dental por vómitos.",
+      "ancla": "bulimia"
+    }
   },
   {
     "id": "PSQ-09-001",
@@ -400,13 +480,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "La instalación aguda y fluctuante con alteración atencional indica delirium. Se deben identificar causas infecciosas, metabólicas, medicamentosas y ambientales; proporcionar hidratación, protección, reorientación, manejo del sueño y medidas de seguridad individualizadas.",
     "analisis": [
-      "El carácter súbito y fluctuante no es típico del curso aislado de un trastorno neurocognitivo mayor.",
-      "",
-      "Benzodiacepinas pueden empeorar delirium salvo etiologías específicas como abstinencia de alcohol o sedantes.",
-      "La esquizofrenia no explica bien alteración aguda de atención con desencadenante médico.",
-      "No es la intervención primaria ante un síndrome confusional agudo."
+      "El carácter súbito y fluctuante no es típico del curso aislado de un trastorno neurocognitivo mayor. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Desatención y fluctuación agudas son hallazgos cardinales del delirium. Se buscan infección, hipoxia, dolor, deshidratación, retención urinaria y fármacos precipitantes. La reorientación y movilización segura se combinan con tratamiento etiológico; sedantes y antipsicóticos se reservan a indicaciones limitadas.",
+      "Benzodiacepinas pueden empeorar delirium salvo etiologías específicas como abstinencia de alcohol o sedantes. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La esquizofrenia no explica bien alteración aguda de atención con desencadenante médico. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No es la intervención primaria ante un síndrome confusional agudo. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Desatención y fluctuación agudas son hallazgos cardinales del delirium. Se buscan infección, hipoxia, dolor, deshidratación, retención urinaria y fármacos precipitantes.",
+      "conducta": "La reorientación y movilización segura se combinan con tratamiento etiológico; sedantes y antipsicóticos se reservan a indicaciones limitadas.",
+      "ancla": "delirium"
+    }
   },
   {
     "id": "PSQ-09-002",
@@ -424,13 +509,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "Los corticosteroides pueden precipitar síntomas afectivos, incluso maniformes. La relación temporal farmacológica obliga a investigar un trastorno inducido antes de atribuir síntomas a bipolaridad primaria, con evaluación médica y manejo del fármaco cuando sea clínicamente posible.",
     "analisis": [
-      "La temporalidad medicamentosa impide asumir etiología primaria sin investigación.",
-      "El vínculo temporal y exposición a esteroides es una pista causal relevante para el diagnóstico inducido.",
-      "Los trastornos de personalidad requieren un patrón duradero previo.",
-      "No hay síntomas principales de esquizofrenia descritos.",
-      "No predomina preocupación excesiva, sino activación del ánimo."
+      "La temporalidad medicamentosa impide asumir etiología primaria sin investigación. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Glucocorticoides pueden producir activación afectiva grave; la temporalidad de dosis y síntomas debe reconstruirse antes de asignar un trastorno primario. La respuesta incluye valorar seguridad, causas médicas y coordinación con quien prescribe el esteroide para ajustes clínicamente viables.",
+      "Los trastornos de personalidad requieren un patrón duradero previo. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No hay síntomas principales de esquizofrenia descritos. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No predomina preocupación excesiva, sino activación del ánimo. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Glucocorticoides pueden producir activación afectiva grave; la temporalidad de dosis y síntomas debe reconstruirse antes de asignar un trastorno primario.",
+      "conducta": "La respuesta incluye valorar seguridad, causas médicas y coordinación con quien prescribe el esteroide para ajustes clínicamente viables.",
+      "ancla": "mania"
+    }
   },
   {
     "id": "PSQ-10-001",
@@ -448,13 +538,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 2,
     "fundamento": "El delirium por abstinencia alcohólica es una urgencia. Las benzodiacepinas son la base del tratamiento, junto con vigilancia de vía aérea, estado hemodinámico, fluidos, electrolitos y tiamina según evaluación clínica; a veces se requiere unidad de cuidados intensivos.",
     "analisis": [
-      "Los antipsicóticos aislados no controlan adecuadamente el mecanismo de abstinencia y pueden aumentar riesgos.",
-      "Naltrexona se usa para el tratamiento longitudinal del consumo de alcohol, no para resolver delirium por abstinencia.",
-      "",
-      "Los antidepresivos no sustituyen la sedación anticonvulsiva indicada.",
-      "Disulfiram no trata abstinencia aguda y sería inapropiado en un paciente médicamente inestable."
+      "Los antipsicóticos aislados no controlan adecuadamente el mecanismo de abstinencia y pueden aumentar riesgos. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Naltrexona se usa para el tratamiento longitudinal del consumo de alcohol, no para resolver delirium por abstinencia. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Temblor, autonomismo, desorientación y alteraciones perceptivas tras cesación indican abstinencia alcohólica complicada y riesgo de convulsiones. El control con benzodiacepinas se titula bajo monitorización; la tiamina y corrección metabólica se consideran según evaluación.",
+      "Los antidepresivos no sustituyen la sedación anticonvulsiva indicada. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Disulfiram no trata abstinencia aguda y sería inapropiado en un paciente médicamente inestable. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Temblor, autonomismo, desorientación y alteraciones perceptivas tras cesación indican abstinencia alcohólica complicada y riesgo de convulsiones.",
+      "conducta": "El control con benzodiacepinas se titula bajo monitorización; la tiamina y corrección metabólica se consideran según evaluación.",
+      "ancla": "abstinenciaalcohol"
+    }
   },
   {
     "id": "PSQ-10-002",
@@ -472,13 +567,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "La tríada de depresión respiratoria, alteración de conciencia y miosis orienta a intoxicación por opioides. Naloxona es antagonista de inicio rápido y debe administrarse junto al soporte ventilatorio, con vigilancia de recurrencia por diferencias de duración farmacológica.",
     "analisis": [
-      "Flumazenilo antagoniza benzodiacepinas en situaciones seleccionadas y puede causar convulsiones en pacientes vulnerables.",
-      "Naloxona revierte la depresión respiratoria opioide y no sustituye el soporte vital.",
-      "Naltrexona es un antagonista de acción prolongada para prevención de recaídas en situaciones indicadas, no rescate habitual inmediato.",
-      "Disulfiram se emplea en abordaje de dependencia alcohólica y no revierte opioides.",
-      "Acamprosato se utiliza para mantenimiento de abstinencia alcohólica, no para sobredosis de opioides."
+      "Flumazenilo antagoniza benzodiacepinas en situaciones seleccionadas y puede causar convulsiones en pacientes vulnerables. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La depresión respiratoria es la complicación letal inmediata y debe tratarse mientras se garantiza ventilación eficaz. La duración de naloxona puede ser menor que la del opioide: se requiere vigilancia de resedación y posible repetición de dosis.",
+      "Naltrexona es un antagonista de acción prolongada para prevención de recaídas en situaciones indicadas, no rescate habitual inmediato. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Disulfiram se emplea en abordaje de dependencia alcohólica y no revierte opioides. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Acamprosato se utiliza para mantenimiento de abstinencia alcohólica, no para sobredosis de opioides. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La depresión respiratoria es la complicación letal inmediata y debe tratarse mientras se garantiza ventilación eficaz.",
+      "conducta": "La duración de naloxona puede ser menor que la del opioide: se requiere vigilancia de resedación y posible repetición de dosis.",
+      "ancla": "opioides"
+    }
   },
   {
     "id": "PSQ-11-001",
@@ -496,13 +596,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "El TOC implica obsesiones y compulsiones que consumen tiempo o causan deterioro. La exposición con prevención de respuesta (EPR), modalidad de terapia cognitivo-conductual, trabaja habituación/aprendizaje inhibitorio y reducción de rituales; ISRS pueden indicarse según gravedad.",
     "analisis": [
-      "",
-      "El reaseguramiento repetitivo puede alimentar el ciclo de compulsiones.",
-      "La evitación mantiene el aprendizaje de amenaza y la interferencia funcional.",
-      "La supresión mental como estrategia central suele ser ineficaz y puede intensificar intrusiones.",
-      "Reconocer pensamientos como propios y resistidos es compatible con TOC; el insight varía y requiere evaluación clínica."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La exposición graduada sin ejecutar compulsiones facilita tolerar incertidumbre y reducir rituales; no consiste en convencer repetidamente de que la amenaza es imposible. La gravedad, insight, comorbilidad y colaboración familiar orientan el plan, además de valorar ISRS cuando proceda.",
+      "El reaseguramiento repetitivo puede alimentar el ciclo de compulsiones. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La evitación mantiene el aprendizaje de amenaza y la interferencia funcional. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La supresión mental como estrategia central suele ser ineficaz y puede intensificar intrusiones. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Reconocer pensamientos como propios y resistidos es compatible con TOC; el insight varía y requiere evaluación clínica. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La exposición graduada sin ejecutar compulsiones facilita tolerar incertidumbre y reducir rituales; no consiste en convencer repetidamente de que la amenaza es imposible.",
+      "conducta": "La gravedad, insight, comorbilidad y colaboración familiar orientan el plan, además de valorar ISRS cuando proceda.",
+      "ancla": "epr"
+    }
   },
   {
     "id": "PSQ-11-002",
@@ -520,13 +625,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "La exposición con prevención de respuesta es un componente esencial de la terapia cognitivo-conductual del TOC. La intervención reduce rituales y facilita el aprendizaje de tolerancia a la incertidumbre, mientras se revisa adecuación y duración del tratamiento farmacológico.",
     "analisis": [
-      "La EPR enfrenta desencadenantes y elimina el ritual de neutralización progresivamente.",
-      "El reaseguramiento repetido puede transformarse en una compulsión interpersonal.",
-      "La evitación mantiene la atribución de amenaza y los rituales.",
-      "La supresión forzada no constituye una estrategia nuclear validada para TOC.",
-      "El aislamiento no aborda mecanismos de obsesiones y compulsiones."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Una respuesta parcial exige comprobar dosis, duración, adherencia y acceso a EPR de calidad antes de declarar refractariedad. La neutralización y el reaseguramiento familiar son blancos del tratamiento, y deben reducirse sin imposición abrupta ni humillación.",
+      "El reaseguramiento repetido puede transformarse en una compulsión interpersonal. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La evitación mantiene la atribución de amenaza y los rituales. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La supresión forzada no constituye una estrategia nuclear validada para TOC. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El aislamiento no aborda mecanismos de obsesiones y compulsiones. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Una respuesta parcial exige comprobar dosis, duración, adherencia y acceso a EPR de calidad antes de declarar refractariedad.",
+      "conducta": "La neutralización y el reaseguramiento familiar son blancos del tratamiento, y deben reducirse sin imposición abrupta ni humillación.",
+      "ancla": "respuesta-insuficiente"
+    }
   },
   {
     "id": "PSQ-12-001",
@@ -544,13 +654,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "El deterioro adquirido de uno o varios dominios cognitivos que interfiere con la independencia en actividades instrumentales es propio de trastorno neurocognitivo mayor. La etiología (Alzheimer, vascular, cuerpos de Lewy u otras) exige evaluación adicional y no puede inferirse solo del síntoma de memoria.",
     "analisis": [
-      "Delirium se caracteriza por inicio agudo/fluctuante y alteración prominente de atención.",
-      "",
-      "El deterioro leve preserva esencialmente la independencia mediante mayor esfuerzo o compensación.",
-      "Depresión puede coexistir o simular deterioro, pero no puede asumirse sin síndrome afectivo y evaluación longitudinal.",
-      "No se describen síntomas psicóticos de inicio agudo que sostengan esta opción."
+      "Delirium se caracteriza por inicio agudo/fluctuante y alteración prominente de atención. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La pérdida de autonomía en finanzas y medicación distingue deterioro neurocognitivo mayor del leve, independientemente de la etiología específica. Para determinar causa se revisan progresión, evaluación cognitiva formal, funcionalidad, fármacos, depresión y estudios complementarios pertinentes.",
+      "El deterioro leve preserva esencialmente la independencia mediante mayor esfuerzo o compensación. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Depresión puede coexistir o simular deterioro, pero no puede asumirse sin síndrome afectivo y evaluación longitudinal. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No se describen síntomas psicóticos de inicio agudo que sostengan esta opción. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La pérdida de autonomía en finanzas y medicación distingue deterioro neurocognitivo mayor del leve, independientemente de la etiología específica.",
+      "conducta": "Para determinar causa se revisan progresión, evaluación cognitiva formal, funcionalidad, fármacos, depresión y estudios complementarios pertinentes.",
+      "ancla": null
+    }
   },
   {
     "id": "PSQ-12-002",
@@ -568,13 +683,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "La asociación de fluctuaciones cognitivas, alucinaciones visuales recurrentes y conducta del sueño REM es característica de enfermedad con cuerpos de Lewy. Debe extremarse cautela ante sensibilidad a antipsicóticos, especialmente bloqueantes dopaminérgicos potentes.",
     "analisis": [
-      "La combinación sindrómica obliga a considerar cuerpos de Lewy y riesgo iatrogénico.",
-      "Las alucinaciones visuales pueden formar parte de trastornos neurodegenerativos.",
-      "Las fluctuaciones son una característica de este subtipo y no excluyen deterioro neurocognitivo mayor.",
-      "Los neurolépticos potentes pueden causar reacciones adversas graves en estos pacientes.",
-      "La clínica permite un diferencial más específico que asumir Alzheimer de forma automática."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Fluctuación, alucinaciones visuales y trastorno conductual REM sugieren enfermedad con cuerpos de Lewy y obligan a evaluar parkinsonismo y sensibilidad neuroléptica. Un antagonista dopaminérgico potente puede provocar empeoramiento motor y alteración grave del estado general; el manejo de conductas perturbadoras exige proporcionalidad.",
+      "Las alucinaciones visuales pueden formar parte de trastornos neurodegenerativos. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Las fluctuaciones son una característica de este subtipo y no excluyen deterioro neurocognitivo mayor. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Los neurolépticos potentes pueden causar reacciones adversas graves en estos pacientes. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La clínica permite un diferencial más específico que asumir Alzheimer de forma automática. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Fluctuación, alucinaciones visuales y trastorno conductual REM sugieren enfermedad con cuerpos de Lewy y obligan a evaluar parkinsonismo y sensibilidad neuroléptica.",
+      "conducta": "Un antagonista dopaminérgico potente puede provocar empeoramiento motor y alteración grave del estado general; el manejo de conductas perturbadoras exige proporcionalidad.",
+      "ancla": null
+    }
   },
   {
     "id": "PSQ-13-001",
@@ -592,13 +712,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "La confidencialidad es fundamental pero no ilimitada ante amenazas graves y concretas. Proceden evaluación estructurada de inminencia, medios, intencionalidad y capacidad, protección proporcional y documentación. Notificaciones y medidas involuntarias dependen de la legislación aplicable y protocolos institucionales.",
     "analisis": [
-      "El deber de confidencialidad admite excepciones legales y éticas relacionadas con daño grave.",
-      "",
-      "La divulgación indiscriminada viola proporcionalidad y privacidad; solo debe compartirse lo necesario y legalmente permitido.",
-      "La autonomía no elimina la obligación de valorar y reducir riesgos importantes.",
-      "La prescripción aislada sin evaluar la amenaza ni registrar decisiones es insuficiente."
+      "El deber de confidencialidad admite excepciones legales y éticas relacionadas con daño grave. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. El riesgo debe evaluarse de manera estructurada: persona identificada, plan, acceso a medios, intencionalidad, plazo y factores modificables. El tipo de advertencia, notificación y medida de protección depende del marco normativo local; solo debe revelarse información imprescindible.",
+      "La divulgación indiscriminada viola proporcionalidad y privacidad; solo debe compartirse lo necesario y legalmente permitido. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La autonomía no elimina la obligación de valorar y reducir riesgos importantes. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La prescripción aislada sin evaluar la amenaza ni registrar decisiones es insuficiente. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "El riesgo debe evaluarse de manera estructurada: persona identificada, plan, acceso a medios, intencionalidad, plazo y factores modificables.",
+      "conducta": "El tipo de advertencia, notificación y medida de protección depende del marco normativo local; solo debe revelarse información imprescindible.",
+      "ancla": "confidencialidad"
+    }
   },
   {
     "id": "PSQ-13-002",
@@ -616,13 +741,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "La capacidad clínica de decisión se evalúa por habilidades de comprensión, apreciación, razonamiento y expresión de una elección; es específica para la decisión y puede fluctuar. Deben distinguirse capacidad clínica, competencia legal y criterios locales de intervenciones involuntarias.",
     "analisis": [
-      "Un diagnóstico psiquiátrico no implica incapacidad automática.",
-      "Las habilidades decisorias se valoran para la decisión concreta y el momento, con apoyos razonables.",
-      "Rechazar una recomendación no demuestra incapacidad por sí solo.",
-      "Las decisiones por sustitución requieren criterios y procedimientos legales y clínicos pertinentes.",
-      "La capacidad puede recuperarse al tratar delirium, psicosis u otras causas reversibles."
+      "Un diagnóstico psiquiátrico no implica incapacidad automática. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Capacidad clínica no equivale a competencia legal: se evalúan comprensión, apreciación, razonamiento y expresión de preferencia para una decisión concreta. La psicosis puede comprometer capacidad, pero el diagnóstico por sí solo no autoriza a presumirla ausente; se intentan apoyos antes de recurrir a sustitución legal.",
+      "Rechazar una recomendación no demuestra incapacidad por sí solo. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Las decisiones por sustitución requieren criterios y procedimientos legales y clínicos pertinentes. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La capacidad puede recuperarse al tratar delirium, psicosis u otras causas reversibles. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Capacidad clínica no equivale a competencia legal: se evalúan comprensión, apreciación, razonamiento y expresión de preferencia para una decisión concreta.",
+      "conducta": "La psicosis puede comprometer capacidad, pero el diagnóstico por sí solo no autoriza a presumirla ausente; se intentan apoyos antes de recurrir a sustitución legal.",
+      "ancla": "capacidades"
+    }
   },
   {
     "id": "PSQ-14-001",
@@ -640,13 +770,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "El TEA requiere dificultades persistentes de comunicación/interacción social y patrones restringidos/repetitivos, con inicio en desarrollo temprano y repercusión funcional. El funcionamiento intelectual promedio no excluye TEA; deben evaluarse apoyos, lenguaje y comorbilidades.",
     "analisis": [
-      "No explica adecuadamente conductas restringidas y repetitivas, criterio diferencial importante.",
-      "",
-      "La desatención o impulsividad no explica por sí sola el patrón social y repetitivo temprano.",
-      "La ansiedad social no suele producir por sí misma estereotipias e intereses restringidos presentes desde la infancia.",
-      "El rendimiento intelectual promedio hace inapropiado inferir discapacidad intelectual solo desde diferencias sociocomunicativas."
+      "No explica adecuadamente conductas restringidas y repetitivas, criterio diferencial importante. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La reciprocidad social alterada y las conductas restringidas/repetitivas son dominios diagnósticos diferenciados, presentes desde el desarrollo temprano. La capacidad intelectual normal no excluye TEA; la evaluación debe ser funcional y contextual, incluyendo lenguaje y adaptaciones.",
+      "La desatención o impulsividad no explica por sí sola el patrón social y repetitivo temprano. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La ansiedad social no suele producir por sí misma estereotipias e intereses restringidos presentes desde la infancia. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El rendimiento intelectual promedio hace inapropiado inferir discapacidad intelectual solo desde diferencias sociocomunicativas. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La reciprocidad social alterada y las conductas restringidas/repetitivas son dominios diagnósticos diferenciados, presentes desde el desarrollo temprano.",
+      "conducta": "La capacidad intelectual normal no excluye TEA; la evaluación debe ser funcional y contextual, incluyendo lenguaje y adaptaciones.",
+      "ancla": "criterios-autismo"
+    }
   },
   {
     "id": "PSQ-14-002",
@@ -664,13 +799,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "El diagnóstico de TDAH requiere síntomas persistentes, inicio temprano, presencia en varios entornos e interferencia, además de valorar otras causas y comorbilidades. El sueño fragmentado y la apnea pueden afectar atención y conducta; deben investigarse antes de atribuir todo a TDAH.",
     "analisis": [
-      "Los síntomas de sueño pueden empeorar o imitar problemas atencionales.",
-      "La evaluación multimodal evita errores por atribución prematura y orienta tratamiento.",
-      "La coexistencia de alteración del sueño no excluye automáticamente TDAH.",
-      "Se requiere historia evolutiva y datos de múltiples informantes; la medicación no sustituye la evaluación.",
-      "No existen episodios maníacos que sustenten trastorno bipolar."
+      "Los síntomas de sueño pueden empeorar o imitar problemas atencionales. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La aparente inatención puede potenciarse por sueño insuficiente o apnea; además se necesitan síntomas persistentes en más de un entorno. Los reportes de cuidadores y docentes, el curso temporal y el impacto funcional evitan etiquetar automáticamente TDAH o negar una comorbilidad real.",
+      "La coexistencia de alteración del sueño no excluye automáticamente TDAH. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Se requiere historia evolutiva y datos de múltiples informantes; la medicación no sustituye la evaluación. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No existen episodios maníacos que sustenten trastorno bipolar. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La aparente inatención puede potenciarse por sueño insuficiente o apnea; además se necesitan síntomas persistentes en más de un entorno.",
+      "conducta": "Los reportes de cuidadores y docentes, el curso temporal y el impacto funcional evitan etiquetar automáticamente TDAH o negar una comorbilidad real.",
+      "ancla": "diferencial-tdah"
+    }
   },
   {
     "id": "PSQ-15-001",
@@ -688,13 +828,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "Tourette exige tics motores múltiples y al menos un tic vocal en algún momento del curso, persistencia superior a un año desde el primer tic, inicio antes de 18 años y exclusión de causas fisiológicas alternativas.",
     "analisis": [
-      "El trastorno provisional dura menos de un año desde el inicio.",
-      "",
-      "La presencia de tic vocal impide clasificarlo solo como persistente motor.",
-      "Las estereotipias tienen otras características evolutivas y fenomenológicas; aquí se describen tics motores y vocales.",
-      "No hay evidencia suficiente de signos positivos de incompatibilidad neurológica para diagnóstico funcional."
+      "El trastorno provisional dura menos de un año desde el inicio. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Tourette requiere tics motores múltiples y al menos un tic vocal en algún punto, duración superior a un año e inicio infantil. Los tics fluctúan; la comorbilidad con TDAH y TOC puede generar más deterioro que el tic en sí.",
+      "La presencia de tic vocal impide clasificarlo solo como persistente motor. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Las estereotipias tienen otras características evolutivas y fenomenológicas; aquí se describen tics motores y vocales. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No hay evidencia suficiente de signos positivos de incompatibilidad neurológica para diagnóstico funcional. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Tourette requiere tics motores múltiples y al menos un tic vocal en algún punto, duración superior a un año e inicio infantil.",
+      "conducta": "Los tics fluctúan; la comorbilidad con TDAH y TOC puede generar más deterioro que el tic en sí.",
+      "ancla": "criterios-tics"
+    }
   },
   {
     "id": "PSQ-15-002",
@@ -712,13 +857,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "La enuresis nocturna primaria se caracteriza por ausencia de un periodo sostenido de continencia nocturna; la evaluación incluye hábitos de eliminación, estreñimiento, síntomas diurnos, sueño, ingesta y causas médicas según signos de alarma.",
     "analisis": [
-      "Nunca alcanzar continencia sostenida orienta a presentación primaria.",
-      "La secundaria requiere un periodo previo de continencia significativa, habitualmente al menos seis meses.",
-      "La encopresis afecta eliminación fecal, no urinaria.",
-      "Los tics no describen el patrón de pérdidas de orina durante el sueño.",
-      "No hay deterioro cognitivo adquirido."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Distinguir enuresis primaria de secundaria depende de un periodo previo de continencia sostenida, no solo de la edad. Se interroga estreñimiento, síntomas urinarios diurnos, ronquidos y factores psicosociales; el manejo puede incluir alarma de enuresis y medidas conductuales.",
+      "La secundaria requiere un periodo previo de continencia significativa, habitualmente al menos seis meses. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La encopresis afecta eliminación fecal, no urinaria. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Los tics no describen el patrón de pérdidas de orina durante el sueño. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No hay deterioro cognitivo adquirido. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Distinguir enuresis primaria de secundaria depende de un periodo previo de continencia sostenida, no solo de la edad.",
+      "conducta": "Se interroga estreñimiento, síntomas urinarios diurnos, ronquidos y factores psicosociales; el manejo puede incluir alarma de enuresis y medidas conductuales.",
+      "ancla": "tipos-enuresis"
+    }
   },
   {
     "id": "PSQ-16-001",
@@ -736,13 +886,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "La terapia cognitivo-conductual integra identificación de pensamientos automáticos, reestructuración cognitiva y activación conductual; permite objetivos medibles y tareas domiciliarias. El plan debe individualizarse por gravedad, suicidabilidad, preferencias y tratamientos concomitantes.",
     "analisis": [
-      "",
-      "La hipnosis no es la única ni una intervención de primera línea universal para depresión recurrente.",
-      "El caso solicita técnicas estructuradas con mecanismos cognitivos y conductuales específicos.",
-      "Castigar emociones no constituye una terapia basada en evidencia para depresión.",
-      "La privación del sueño no es una intervención psicoterapéutica estándar para este cuadro."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La TCC vincula pensamiento, emoción y conducta. En depresión, el registro cognitivo y la activación ayudan a salir del círculo de evitación y pérdida de refuerzo. Se establecen metas observables y evaluación de progreso; el esquema se adapta a gravedad, preferencias y riesgo.",
+      "La hipnosis no es la única ni una intervención de primera línea universal para depresión recurrente. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El caso solicita técnicas estructuradas con mecanismos cognitivos y conductuales específicos. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Castigar emociones no constituye una terapia basada en evidencia para depresión. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La privación del sueño no es una intervención psicoterapéutica estándar para este cuadro. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La TCC vincula pensamiento, emoción y conducta. En depresión, el registro cognitivo y la activación ayudan a salir del círculo de evitación y pérdida de refuerzo.",
+      "conducta": "Se establecen metas observables y evaluación de progreso; el esquema se adapta a gravedad, preferencias y riesgo.",
+      "ancla": "tcc"
+    }
   },
   {
     "id": "PSQ-16-002",
@@ -760,13 +915,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "El tratamiento integral de esquizofrenia combina farmacoterapia con intervenciones psicosociales individualizadas, rehabilitación, habilidades y empleo con apoyo, centradas en autonomía y preferencias de la persona.",
     "analisis": [
-      "Apoyos rehabilitadores permiten trabajar objetivos de vivienda, participación social y empleo.",
-      "Los resultados funcionales no dependen exclusivamente del control sintomático farmacológico.",
-      "La institucionalización prolongada no es medida universal de recuperación.",
-      "La sedación puede empeorar funcionamiento y calidad de vida.",
-      "La intervención familiar consensuada puede reducir carga y apoyar recuperación."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La recuperación en esquizofrenia se mide también por empleo, autonomía, vínculos y calidad de vida, no solo por ausencia de delirios. El empleo con apoyo y la rehabilitación psicosocial deben coordinarse con el tratamiento farmacológico y los objetivos expresados por la persona.",
+      "Los resultados funcionales no dependen exclusivamente del control sintomático farmacológico. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La institucionalización prolongada no es medida universal de recuperación. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La sedación puede empeorar funcionamiento y calidad de vida. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La intervención familiar consensuada puede reducir carga y apoyar recuperación. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La recuperación en esquizofrenia se mide también por empleo, autonomía, vínculos y calidad de vida, no solo por ausencia de delirios.",
+      "conducta": "El empleo con apoyo y la rehabilitación psicosocial deben coordinarse con el tratamiento farmacológico y los objetivos expresados por la persona.",
+      "ancla": "rehabilitacion"
+    }
   },
   {
     "id": "PSQ-17-001",
@@ -784,13 +944,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "Ronquido, pausas respiratorias presenciadas, somnolencia y factores de riesgo cardiometabólicos sugieren apnea obstructiva del sueño. La evaluación formal del sueño y la estimación de gravedad orientan tratamiento y reducción de riesgo.",
     "analisis": [
-      "Los sedantes pueden empeorar respiración y somnolencia en pacientes susceptibles.",
-      "",
-      "Narcolepsia requiere un estudio específico de síntomas centrales y pruebas; la clínica respiratoria obliga a considerar apnea.",
-      "Tratar somnolencia sin evaluar la causa respiratoria puede retrasar el manejo adecuado.",
-      "No se describen sueños disfóricos recurrentes ni despertar asociado."
+      "Los sedantes pueden empeorar respiración y somnolencia en pacientes susceptibles. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. Ronquidos, apneas presenciadas y somnolencia obligan a investigar apnea obstructiva antes de utilizar hipnóticos de manera empírica. La prueba de sueño ayuda a clasificar gravedad; el abordaje incluye valoración respiratoria y de factores cardiometabólicos.",
+      "Narcolepsia requiere un estudio específico de síntomas centrales y pruebas; la clínica respiratoria obliga a considerar apnea. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Tratar somnolencia sin evaluar la causa respiratoria puede retrasar el manejo adecuado. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No se describen sueños disfóricos recurrentes ni despertar asociado. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "Ronquidos, apneas presenciadas y somnolencia obligan a investigar apnea obstructiva antes de utilizar hipnóticos de manera empírica.",
+      "conducta": "La prueba de sueño ayuda a clasificar gravedad; el abordaje incluye valoración respiratoria y de factores cardiometabólicos.",
+      "ancla": null
+    }
   },
   {
     "id": "PSQ-17-002",
@@ -808,13 +973,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "La TCC-I es intervención de primera línea para insomnio crónico. Integra control de estímulos, restricción/compresión de tiempo en cama según adecuación clínica, reestructuración cognitiva y estrategias de sueño, junto con evaluación de sustancias y comorbilidades.",
     "analisis": [
-      "Su eficacia se sostiene en la modificación de mecanismos conductuales y cognitivos que perpetúan insomnio.",
-      "El tratamiento hipnótico prolongado presenta riesgos y no sustituye la opción de primera línea.",
-      "El alcohol fragmenta el sueño y crea riesgos de dependencia.",
-      "Antipsicóticos sin indicación expone a efectos adversos innecesarios.",
-      "Siempre se valoran otros trastornos del sueño y factores médicos o psiquiátricos."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La TCC-I aborda condicionamiento de vigilia en cama, hábitos perpetuadores y creencias sobre el sueño; es una primera línea para insomnio crónico. El alcohol puede facilitar somnolencia inicial pero fragmenta el sueño. Deben evaluarse también apnea, piernas inquietas y trastornos del ánimo.",
+      "El tratamiento hipnótico prolongado presenta riesgos y no sustituye la opción de primera línea. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El alcohol fragmenta el sueño y crea riesgos de dependencia. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Antipsicóticos sin indicación expone a efectos adversos innecesarios. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "Siempre se valoran otros trastornos del sueño y factores médicos o psiquiátricos. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La TCC-I aborda condicionamiento de vigilia en cama, hábitos perpetuadores y creencias sobre el sueño; es una primera línea para insomnio crónico.",
+      "conducta": "El alcohol puede facilitar somnolencia inicial pero fragmenta el sueño. Deben evaluarse también apnea, piernas inquietas y trastornos del ánimo.",
+      "ancla": null
+    }
   },
   {
     "id": "PSQ-18-001",
@@ -832,13 +1002,18 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 1,
     "fundamento": "El patrón de irritabilidad crónica grave, estallidos frecuentes desproporcionados, persistencia superior a 12 meses y manifestación en múltiples entornos orienta a desregulación disruptiva del estado de ánimo, tras verificar edad, exclusiones y deterioro.",
     "analisis": [
-      "Bipolar I requiere episodios de manía distinguibles, ausentes en el escenario.",
-      "",
-      "La manía no es especificador de trastorno depresivo mayor; exige valoración de bipolaridad.",
-      "En el trastorno explosivo intermitente no es definitoria una irritabilidad basal persistente como aquí.",
-      "El curso prolongado y la presencia en varios entornos hacen menos apropiada esta formulación."
+      "Bipolar I requiere episodios de manía distinguibles, ausentes en el escenario. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. La irritabilidad crónica grave con estallidos y ausencia de episodios maníacos sostenidos orienta a desregulación disruptiva, si satisface edad, frecuencia, duración y múltiples contextos. No debe diagnosticarse por un episodio aislado: se revisan desarrollo, historia familiar, trauma y otros trastornos externalizantes.",
+      "La manía no es especificador de trastorno depresivo mayor; exige valoración de bipolaridad. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "En el trastorno explosivo intermitente no es definitoria una irritabilidad basal persistente como aquí. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "El curso prolongado y la presencia en varios entornos hacen menos apropiada esta formulación. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "La irritabilidad crónica grave con estallidos y ausencia de episodios maníacos sostenidos orienta a desregulación disruptiva, si satisface edad, frecuencia, duración y múltiples contextos.",
+      "conducta": "No debe diagnosticarse por un episodio aislado: se revisan desarrollo, historia familiar, trauma y otros trastornos externalizantes.",
+      "ancla": null
+    }
   },
   {
     "id": "PSQ-18-002",
@@ -856,12 +1031,17 @@ window.BADBEAR_PSIQ_BANCO = [
     "correcta": 0,
     "fundamento": "El trastorno negativista desafiante se caracteriza por humor irritable/enojado, conducta desafiante/discutidora o vindictividad persistente. El trastorno de conducta requiere vulneración más grave de derechos o normas; se investiga contexto familiar, escuela, desarrollo y comorbilidad.",
     "analisis": [
-      "La ausencia de transgresiones graves favorece diferenciar trastorno negativista desafiante de trastorno de conducta.",
-      "El trastorno explosivo intermitente se centra en estallidos impulsivos recurrentes, sin requerir patrón desafiante continuo.",
-      "No se describen episodios diferenciados de manía.",
-      "No existen síntomas psicóticos que expliquen el cuadro.",
-      "No predomina un déficit de pragmática social."
+      "La alternativa integra los datos discriminantes del caso y cumple la prioridad diagnóstica o terapéutica solicitada. En negativismo desafiante predomina patrón de enojo, discusiones y desafío; en trastorno de conducta destacan transgresiones graves de normas y derechos. El entorno escolar y familiar, TDAH, aprendizaje y traumas deben evaluarse antes de una etiqueta, para orientar intervención multimodal.",
+      "El trastorno explosivo intermitente se centra en estallidos impulsivos recurrentes, sin requerir patrón desafiante continuo. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No se describen episodios diferenciados de manía. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No existen síntomas psicóticos que expliquen el cuadro. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso.",
+      "No predomina un déficit de pragmática social. Esta opción falla porque no integra el conjunto de datos del enunciado o sustituye el objetivo clínico prioritario por una explicación menos sustentada; debe contrastarse con la temporalidad, gravedad, criterios y riesgos específicos del caso."
     ],
-    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual.",
+    "desarrollo": {
+      "razonamiento": "En negativismo desafiante predomina patrón de enojo, discusiones y desafío; en trastorno de conducta destacan transgresiones graves de normas y derechos.",
+      "conducta": "El entorno escolar y familiar, TDAH, aprendizaje y traumas deben evaluarse antes de una etiqueta, para orientar intervención multimodal.",
+      "ancla": null
+    }
   }
 ];
