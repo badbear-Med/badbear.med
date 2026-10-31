@@ -1,4 +1,4 @@
-/* Banco original inicial: 18 casos clínicos; expansión modular sin duplicar preguntas. */
+/* Banco original de Psiquiatría: 18 unidades; referencias DSM-5-TR y Kaplan & Sadock. */
 window.BADBEAR_PSIQ_BANCO = [
   {
     "id": "PSQ-01-001",
@@ -22,7 +22,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "Una explicación cultural no es por sí sola delirio ni indicación de antipsicótico.",
       "El sufrimiento y deterioro requieren atención aun cuando no se complete un síndrome depresivo."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-01-002",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria",
+    "nivel": "ENAM avanzado",
+    "caso": "Un varón de 52 años presenta aislamiento social, desempleo y consumo nocivo de alcohol tras un desastre natural. En atención primaria no hay psiquiatra; refiere pensamientos suicidas sin plan ni intención, pero dispone de familiares disponibles. ¿Cuál es la estrategia inicial más adecuada?",
+    "opciones": [
+      "Tratar únicamente el alcohol y omitir valoración suicida",
+      "Realizar evaluación estructurada de riesgo, plan de seguridad y seguimiento comunitario coordinado",
+      "Derivarlo sin evaluación al hospital de referencia",
+      "Esperar a que cumpla criterios completos de un trastorno DSM",
+      "Garantizar confidencialidad incluso ante peligro inminente"
+    ],
+    "correcta": 1,
+    "fundamento": "La atención comunitaria integra detección de riesgo, intervención proporcional, plan de seguridad colaborativo, abordaje del consumo y coordinación con la red de apoyo y atención especializada según evolución. La ideación sin plan exige valoración, no abandono.",
+    "analisis": [
+      "El riesgo suicida debe investigarse independientemente del motivo de consulta.",
+      "La evaluación de urgencia, los factores protectores y el seguimiento son partes inseparables del modelo de continuidad asistencial.",
+      "La derivación puede ser necesaria, pero no reemplaza evaluación y medidas inmediatas.",
+      "La atención de crisis no requiere esperar a completar una categoría diagnóstica.",
+      "Existen excepciones legales y éticas a la confidencialidad cuando el riesgo es grave e inminente."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-02-001",
@@ -46,7 +70,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "No se documenta episodio hipomaníaco requerido para bipolar II.",
       "El duelo puede coexistir con depresión mayor, pero no explica por sí solo este síndrome ni excluye su diagnóstico."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-02-002",
+    "unidad": 2,
+    "tema": "Trastornos depresivos",
+    "nivel": "Residencia / especialidad",
+    "caso": "Una paciente de 45 años presenta episodio depresivo mayor grave con delirios nihilistas congruentes con el ánimo, rechazo de alimentos, deshidratación y pérdida rápida de peso. Recibió tratamiento previo sin mejoría suficiente. ¿Cuál es la intervención con mayor prioridad clínica?",
+    "opciones": [
+      "Psicoterapia de apoyo exclusiva durante seis semanas",
+      "Electroconvulsoterapia tras evaluación médica y consentimiento conforme al marco aplicable",
+      "Buspirona como único tratamiento",
+      "Esperar resolución espontánea de los delirios",
+      "Activación conductual ambulatoria como única medida"
+    ],
+    "correcta": 1,
+    "fundamento": "La depresión grave con síntomas psicóticos y compromiso nutricional es una situación de alto riesgo. La electroconvulsoterapia puede ser especialmente apropiada cuando se requiere respuesta rápida, junto con estabilización médica y valoración individualizada de seguridad y capacidad.",
+    "analisis": [
+      "La psicoterapia puede complementar, pero no sustituye la atención urgente en una enfermedad grave.",
+      "La TEC es una intervención eficaz en depresión grave, incluida la psicótica, especialmente cuando hay riesgo vital o necesidad de respuesta rápida.",
+      "Buspirona no trata el cuadro depresivo psicótico grave.",
+      "La espera aumenta riesgos por desnutrición, deshidratación y psicosis.",
+      "Un abordaje ambulatorio aislado es insuficiente ante la gravedad clínica."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-03-001",
@@ -70,7 +118,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "La evidencia de manía cambia la formulación de depresión unipolar a bipolaridad.",
       "La distinción manía/hipomanía depende de gravedad, duración y deterioro, no solo de ánimo elevado."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-03-002",
+    "unidad": 3,
+    "tema": "Trastorno afectivo bipolar",
+    "nivel": "ENAM avanzado",
+    "caso": "Paciente de 30 años con trastorno bipolar I, estable con litio, consulta por vómitos, diarrea, temblor grueso, ataxia y confusión después de iniciar un antiinflamatorio no esteroideo. ¿Cuál es la conducta inmediata más adecuada?",
+    "opciones": [
+      "Aumentar litio por probable recaída",
+      "Suspender temporalmente litio, solicitar litemia, función renal y electrolitos, y evaluar toxicidad urgente",
+      "Añadir antidepresivo para la confusión",
+      "Administrar una nueva dosis de litio antes de medir niveles",
+      "Atribuir los síntomas a ansiedad sin estudios"
+    ],
+    "correcta": 1,
+    "fundamento": "El cuadro sugiere toxicidad por litio favorecida por deshidratación e interacción farmacológica. Deben suspenderse exposiciones relevantes y solicitarse evaluación urgente con función renal, electrolitos y concentración plasmática; la gravedad clínica orienta tratamientos avanzados.",
+    "analisis": [
+      "Aumentar la exposición puede agravar una intoxicación potencialmente neurológica.",
+      "La clínica neurológica y gastrointestinal obliga a valorar toxicidad y factores precipitantes de forma inmediata.",
+      "Los antidepresivos no corrigen intoxicación por litio.",
+      "Una dosis adicional es insegura en contexto sospechoso.",
+      "La ataxia y confusión no deben etiquetarse como síntomas ansiosos sin descartar causa tóxica."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-04-001",
@@ -94,7 +166,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "El discurso desorganizado y las alucinaciones destacadas hacen inadecuada la formulación de trastorno delirante.",
       "No se documenta una relación longitudinal entre episodios afectivos mayores y psicosis propia del esquizoafectivo."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-04-002",
+    "unidad": 4,
+    "tema": "Esquizofrenia y otros trastornos psicóticos",
+    "nivel": "Residencia / especialidad",
+    "caso": "Varón de 28 años con esquizofrenia recibe haloperidol intramuscular en emergencia y 12 horas después desarrolla contracción dolorosa sostenida del cuello y desviación ocular conjugada, sin fiebre ni alteración de conciencia. ¿Cuál es el manejo inicial más apropiado?",
+    "opciones": [
+      "Administrar una dosis mayor de haloperidol",
+      "Tratar distonía aguda con anticolinérgico parenteral y reevaluar antipsicótico",
+      "Indicar litio por síndrome maníaco",
+      "Diagnosticar síndrome neuroléptico maligno como única posibilidad",
+      "Indicar valproato como medida de rescate inmediata"
+    ],
+    "correcta": 1,
+    "fundamento": "La desviación ocular y las contracciones sostenidas de aparición precoz tras bloqueo dopaminérgico orientan a distonía aguda. Anticolinérgicos parenterales como benztropina o difenhidramina según disponibilidad local son medidas habituales, con observación y ajuste farmacológico.",
+    "analisis": [
+      "Mayor bloqueo D2 puede intensificar la reacción extrapiramidal.",
+      "La distonía aguda es una urgencia tratable con medidas anticolinérgicas y reevaluación del desencadenante.",
+      "No hay síndrome afectivo que justifique litio.",
+      "El síndrome neuroléptico maligno típicamente asocia rigidez generalizada, hipertermia y alteración autonómica; no es la interpretación principal de una distonía focal aislada.",
+      "Valproato no revierte de forma específica una distonía aguda."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-05-001",
@@ -118,7 +214,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "La evitación de transporte puede coexistir con agorafobia, pero no sustituye el síndrome de pánico claramente descrito.",
       "La ansiedad se organiza alrededor de ataques inesperados más que de síntomas somáticos persistentes con preocupación desproporcionada."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-05-002",
+    "unidad": 5,
+    "tema": "Ansiedad y trastornos relacionados con el estrés",
+    "nivel": "ENAM avanzado",
+    "caso": "Una mujer de 37 años sufrió una agresión hace tres meses. Desde entonces tiene recuerdos intrusivos, pesadillas, evitación de lugares asociados, hipervigilancia, culpa persistente y deterioro laboral. ¿Qué condición temporal y sindrómica resulta más compatible?",
+    "opciones": [
+      "Trastorno de estrés agudo",
+      "Trastorno de estrés postraumático",
+      "Trastorno de pánico aislado",
+      "Trastorno adaptativo por definición",
+      "Trastorno delirante persecutorio"
+    ],
+    "correcta": 1,
+    "fundamento": "El TEPT requiere exposición traumática y conjuntos de síntomas de intrusión, evitación, alteraciones negativas cognitivas/afectivas y activación, con duración superior a un mes y deterioro. La evaluación debe incluir seguridad, comorbilidad y terapias centradas en trauma.",
+    "analisis": [
+      "El estrés agudo se limita al periodo posterior al trauma hasta un mes.",
+      "Tres meses con dominios clínicos característicos orientan al TEPT.",
+      "El pánico no explica el conjunto de intrusión, evitación y cogniciones postraumáticas.",
+      "Un trastorno adaptativo no es la opción preferente cuando se cumplen criterios específicos de TEPT.",
+      "No se describen delirios fijos independientes de la experiencia traumática."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-06-001",
@@ -142,7 +262,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "La simulación requiere evidencia de producción intencional con incentivos externos, no la mera reiteración de consultas.",
       "El dolor puede ser orgánico y coexistir con el trastorno de síntomas somáticos."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-06-002",
+    "unidad": 6,
+    "tema": "Trastornos somatomorfos",
+    "nivel": "Residencia / especialidad",
+    "caso": "Varón de 36 años presenta debilidad de una extremidad súbita tras una discusión. La exploración revela inconsistencia reproducible entre movimientos voluntarios e involuntarios y signo de Hoover positivo; el estudio inicial excluye una urgencia neurológica. ¿Qué formulación es más sólida?",
+    "opciones": [
+      "El síntoma es fingido necesariamente porque varía entre maniobras",
+      "Trastorno neurológico funcional sustentado en signos positivos de incompatibilidad",
+      "Trastorno facticio hasta demostrar lo contrario",
+      "Diagnóstico imposible sin identificar un trauma infantil",
+      "Simulación con beneficio económico implícito"
+    ],
+    "correcta": 1,
+    "fundamento": "El diagnóstico de trastorno neurológico funcional se apoya en hallazgos clínicos positivos de incompatibilidad entre el patrón observado y las enfermedades neurológicas reconocidas. No exige probar un desencadenante psicológico ni inferir intencionalidad.",
+    "analisis": [
+      "La inconsistencia clínica no demuestra producción voluntaria del síntoma.",
+      "Los signos positivos, como Hoover, permiten una explicación clínica concreta, tras evaluar adecuadamente etiologías neurológicas.",
+      "El trastorno facticio requiere evidencia de falsificación o inducción engañosa de síntomas.",
+      "No es necesario demostrar trauma psicológico específico.",
+      "La simulación requiere indicios de producción intencional motivada por incentivos externos."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-07-001",
@@ -166,7 +310,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "La TEC no es tratamiento preventivo establecido de autolesiones en este trastorno.",
       "La alianza terapéutica y una estructura clara son componentes centrales del tratamiento."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-07-002",
+    "unidad": 7,
+    "tema": "Trastornos de la personalidad",
+    "nivel": "ENAM avanzado",
+    "caso": "Mujer de 33 años describe necesidad permanente de admiración, grandiosidad, conductas de explotación interpersonal y escasa empatía desde la adultez temprana, en contextos laborales y familiares. ¿Cuál rasgo longitudinal apoya un trastorno de personalidad frente a una manifestación episódica del ánimo?",
+    "opciones": [
+      "Patrón persistente, inflexible, generalizado y con deterioro",
+      "Cambios de conducta exclusivos de dos semanas de hipomanía",
+      "Conductas limitadas al estado de intoxicación",
+      "Presentación que aparece solo durante un delirium",
+      "Un conflicto interpersonal aislado"
+    ],
+    "correcta": 0,
+    "fundamento": "Los trastornos de personalidad se caracterizan por patrones perdurables, inflexibles y transcontextuales de cognición, afectividad, relaciones y control de impulsos; se evalúa su estabilidad y consecuencias funcionales, diferenciándolos de episodios afectivos o sustancias.",
+    "analisis": [
+      "La persistencia y generalización son claves en la evaluación longitudinal.",
+      "Los síntomas que aparecen únicamente durante un episodio afectivo no bastan para diagnosticar personalidad.",
+      "La intoxicación puede provocar alteraciones conductuales reversibles.",
+      "El delirium altera conducta y cognición de manera aguda y fluctuante.",
+      "Un evento interpersonal aislado carece de la persistencia y extensión requeridas."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-08-001",
@@ -190,7 +358,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "La intervención psiquiátrica aislada no trata la hipopotasemia ni el compromiso cardiovascular.",
       "El ejercicio puede aumentar el riesgo de complicaciones en una paciente inestable."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-08-002",
+    "unidad": 8,
+    "tema": "Conducta alimentaria y sexualidad",
+    "nivel": "Residencia / especialidad",
+    "caso": "Paciente de 23 años presenta episodios recurrentes de atracones con pérdida de control seguidos de vómitos autoinducidos y ejercicio compensatorio, al menos semanalmente durante cuatro meses. Su peso corporal está en rango habitual. ¿Cuál es el diagnóstico más probable?",
+    "opciones": [
+      "Anorexia nerviosa, tipo restrictivo",
+      "Bulimia nerviosa",
+      "Trastorno por atracones",
+      "Trastorno de evitación/restricción de ingesta",
+      "Pica"
+    ],
+    "correcta": 1,
+    "fundamento": "La bulimia nerviosa incluye atracones y conductas compensatorias inapropiadas recurrentes, al menos una vez por semana durante tres meses, y autoevaluación indebidamente influida por peso y figura. El peso normal no excluye el trastorno.",
+    "analisis": [
+      "No se documenta peso significativamente bajo ni patrón restrictivo exclusivo.",
+      "Los atracones con vómitos compensatorios recurrentes sustentan bulimia nerviosa si se verifican los demás criterios.",
+      "En trastorno por atracones no hay conductas compensatorias inapropiadas regulares.",
+      "ARFID no se define por atracones y preocupación por peso/figura.",
+      "Pica consiste en ingesta persistente de sustancias no nutritivas."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-09-001",
@@ -214,7 +406,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "La esquizofrenia no explica bien alteración aguda de atención con desencadenante médico.",
       "No es la intervención primaria ante un síndrome confusional agudo."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-09-002",
+    "unidad": 9,
+    "tema": "Psiquiatría de enlace y medicina psicosomática",
+    "nivel": "ENAM avanzado",
+    "caso": "Un paciente tratado con glucocorticoides sistémicos a dosis elevadas desarrolla insomnio, euforia, grandiosidad y desinhibición tres días después del incremento de dosis. No tenía episodios similares y los síntomas aparecen temporalmente vinculados a la exposición. ¿Cuál es el principal diagnóstico diferencial etiológico?",
+    "opciones": [
+      "Trastorno bipolar primario confirmado sin más evaluación",
+      "Trastorno bipolar y relacionado inducido por medicamentos",
+      "Trastorno de personalidad narcisista",
+      "Esquizofrenia de inicio agudo",
+      "Trastorno de ansiedad generalizada"
+    ],
+    "correcta": 1,
+    "fundamento": "Los corticosteroides pueden precipitar síntomas afectivos, incluso maniformes. La relación temporal farmacológica obliga a investigar un trastorno inducido antes de atribuir síntomas a bipolaridad primaria, con evaluación médica y manejo del fármaco cuando sea clínicamente posible.",
+    "analisis": [
+      "La temporalidad medicamentosa impide asumir etiología primaria sin investigación.",
+      "El vínculo temporal y exposición a esteroides es una pista causal relevante para el diagnóstico inducido.",
+      "Los trastornos de personalidad requieren un patrón duradero previo.",
+      "No hay síntomas principales de esquizofrenia descritos.",
+      "No predomina preocupación excesiva, sino activación del ánimo."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-10-001",
@@ -238,7 +454,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "Los antidepresivos no sustituyen la sedación anticonvulsiva indicada.",
       "Disulfiram no trata abstinencia aguda y sería inapropiado en un paciente médicamente inestable."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-10-002",
+    "unidad": 10,
+    "tema": "Sustancias y adicciones",
+    "nivel": "Residencia / especialidad",
+    "caso": "Un hombre de 26 años es encontrado inconsciente con respiración de 6/min, miosis puntiforme y saturación baja tras consumo probable de opioides. ¿Cuál intervención inicial específica se suma al soporte de ventilación y vía aérea?",
+    "opciones": [
+      "Flumazenilo",
+      "Naloxona",
+      "Naltrexona oral",
+      "Disulfiram",
+      "Acamprosato"
+    ],
+    "correcta": 1,
+    "fundamento": "La tríada de depresión respiratoria, alteración de conciencia y miosis orienta a intoxicación por opioides. Naloxona es antagonista de inicio rápido y debe administrarse junto al soporte ventilatorio, con vigilancia de recurrencia por diferencias de duración farmacológica.",
+    "analisis": [
+      "Flumazenilo antagoniza benzodiacepinas en situaciones seleccionadas y puede causar convulsiones en pacientes vulnerables.",
+      "Naloxona revierte la depresión respiratoria opioide y no sustituye el soporte vital.",
+      "Naltrexona es un antagonista de acción prolongada para prevención de recaídas en situaciones indicadas, no rescate habitual inmediato.",
+      "Disulfiram se emplea en abordaje de dependencia alcohólica y no revierte opioides.",
+      "Acamprosato se utiliza para mantenimiento de abstinencia alcohólica, no para sobredosis de opioides."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-11-001",
@@ -262,7 +502,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "La supresión mental como estrategia central suele ser ineficaz y puede intensificar intrusiones.",
       "Reconocer pensamientos como propios y resistidos es compatible con TOC; el insight varía y requiere evaluación clínica."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-11-002",
+    "unidad": 11,
+    "tema": "Trastornos obsesivo-compulsivos y relacionados",
+    "nivel": "ENAM avanzado",
+    "caso": "Paciente de 29 años con rituales de comprobación de puertas de más de dos horas al día refiere pensamientos intrusivos que considera excesivos. Tras respuesta parcial a un ISRS en dosis adecuada y terapia de apoyo, ¿qué intervención psicológica tiene mejor fundamento específico?",
+    "opciones": [
+      "Exposición con prevención de respuesta",
+      "Reaseguramiento repetido de que las puertas están cerradas",
+      "Evitar cualquier contacto con desencadenantes",
+      "Terapia basada exclusivamente en supresión voluntaria de ideas",
+      "Indicar aislamiento de los miembros del hogar"
+    ],
+    "correcta": 0,
+    "fundamento": "La exposición con prevención de respuesta es un componente esencial de la terapia cognitivo-conductual del TOC. La intervención reduce rituales y facilita el aprendizaje de tolerancia a la incertidumbre, mientras se revisa adecuación y duración del tratamiento farmacológico.",
+    "analisis": [
+      "La EPR enfrenta desencadenantes y elimina el ritual de neutralización progresivamente.",
+      "El reaseguramiento repetido puede transformarse en una compulsión interpersonal.",
+      "La evitación mantiene la atribución de amenaza y los rituales.",
+      "La supresión forzada no constituye una estrategia nuclear validada para TOC.",
+      "El aislamiento no aborda mecanismos de obsesiones y compulsiones."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-12-001",
@@ -286,7 +550,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "Depresión puede coexistir o simular deterioro, pero no puede asumirse sin síndrome afectivo y evaluación longitudinal.",
       "No se describen síntomas psicóticos de inicio agudo que sostengan esta opción."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-12-002",
+    "unidad": 12,
+    "tema": "Trastornos neurocognitivos",
+    "nivel": "Residencia / especialidad",
+    "caso": "Una mujer de 69 años presenta deterioro cognitivo progresivo, alucinaciones visuales bien formadas, fluctuaciones notables de atención y trastorno de conducta del sueño REM. Un médico propone haloperidol para las alucinaciones. ¿Qué consideración es especialmente importante?",
+    "opciones": [
+      "La combinación sugiere demencia con cuerpos de Lewy y posible sensibilidad grave a antipsicóticos",
+      "Las alucinaciones visuales descartan cualquier etiología neurodegenerativa",
+      "La fluctuación impide un trastorno neurocognitivo mayor",
+      "Los antipsicóticos típicos deben iniciarse siempre a dosis altas",
+      "El cuadro demuestra enfermedad de Alzheimer sin posibilidad diferencial"
+    ],
+    "correcta": 0,
+    "fundamento": "La asociación de fluctuaciones cognitivas, alucinaciones visuales recurrentes y conducta del sueño REM es característica de enfermedad con cuerpos de Lewy. Debe extremarse cautela ante sensibilidad a antipsicóticos, especialmente bloqueantes dopaminérgicos potentes.",
+    "analisis": [
+      "La combinación sindrómica obliga a considerar cuerpos de Lewy y riesgo iatrogénico.",
+      "Las alucinaciones visuales pueden formar parte de trastornos neurodegenerativos.",
+      "Las fluctuaciones son una característica de este subtipo y no excluyen deterioro neurocognitivo mayor.",
+      "Los neurolépticos potentes pueden causar reacciones adversas graves en estos pacientes.",
+      "La clínica permite un diferencial más específico que asumir Alzheimer de forma automática."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-13-001",
@@ -310,7 +598,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "La autonomía no elimina la obligación de valorar y reducir riesgos importantes.",
       "La prescripción aislada sin evaluar la amenaza ni registrar decisiones es insuficiente."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-13-002",
+    "unidad": 13,
+    "tema": "Psiquiatría forense y ética",
+    "nivel": "ENAM avanzado",
+    "caso": "Paciente con delirios persecutorios requiere intervención urgente y rechaza ingreso. La evaluación concluye que no comprende la información relevante, no aprecia riesgos ni puede razonar sobre las opciones en ese momento. ¿Cuál principio sobre capacidad de decisión es correcto?",
+    "opciones": [
+      "La capacidad es idéntica al diagnóstico de esquizofrenia",
+      "La capacidad es específica para la decisión y debe evaluarse en el momento clínico",
+      "Todo rechazo equivale a incompetencia legal",
+      "La familia decide automáticamente sin marco legal",
+      "La capacidad nunca puede cambiar con la mejoría clínica"
+    ],
+    "correcta": 1,
+    "fundamento": "La capacidad clínica de decisión se evalúa por habilidades de comprensión, apreciación, razonamiento y expresión de una elección; es específica para la decisión y puede fluctuar. Deben distinguirse capacidad clínica, competencia legal y criterios locales de intervenciones involuntarias.",
+    "analisis": [
+      "Un diagnóstico psiquiátrico no implica incapacidad automática.",
+      "Las habilidades decisorias se valoran para la decisión concreta y el momento, con apoyos razonables.",
+      "Rechazar una recomendación no demuestra incapacidad por sí solo.",
+      "Las decisiones por sustitución requieren criterios y procedimientos legales y clínicos pertinentes.",
+      "La capacidad puede recuperarse al tratar delirium, psicosis u otras causas reversibles."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-14-001",
@@ -334,7 +646,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "La ansiedad social no suele producir por sí misma estereotipias e intereses restringidos presentes desde la infancia.",
       "El rendimiento intelectual promedio hace inapropiado inferir discapacidad intelectual solo desde diferencias sociocomunicativas."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-14-002",
+    "unidad": 14,
+    "tema": "Neurodesarrollo: autismo y TDAH",
+    "nivel": "Residencia / especialidad",
+    "caso": "Niña de 9 años muestra inatención marcada en casa y colegio desde los seis años, con impacto académico. Su cuidador describe dificultades del sueño, y la exploración identifica ronquidos intensos y somnolencia diurna. ¿Cuál es la mejor aproximación diagnóstica?",
+    "opciones": [
+      "Diagnosticar TDAH sin valorar sueño",
+      "Evaluar integralmente síntomas de TDAH y posibles causas contribuyentes, incluido trastorno respiratorio del sueño",
+      "Excluir TDAH por presencia de ronquidos",
+      "Prescribir estimulantes sin entrevista escolar",
+      "Diagnosticar trastorno bipolar pediátrico"
+    ],
+    "correcta": 1,
+    "fundamento": "El diagnóstico de TDAH requiere síntomas persistentes, inicio temprano, presencia en varios entornos e interferencia, además de valorar otras causas y comorbilidades. El sueño fragmentado y la apnea pueden afectar atención y conducta; deben investigarse antes de atribuir todo a TDAH.",
+    "analisis": [
+      "Los síntomas de sueño pueden empeorar o imitar problemas atencionales.",
+      "La evaluación multimodal evita errores por atribución prematura y orienta tratamiento.",
+      "La coexistencia de alteración del sueño no excluye automáticamente TDAH.",
+      "Se requiere historia evolutiva y datos de múltiples informantes; la medicación no sustituye la evaluación.",
+      "No existen episodios maníacos que sustenten trastorno bipolar."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-15-001",
@@ -358,7 +694,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "Las estereotipias tienen otras características evolutivas y fenomenológicas; aquí se describen tics motores y vocales.",
       "No hay evidencia suficiente de signos positivos de incompatibilidad neurológica para diagnóstico funcional."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-15-002",
+    "unidad": 15,
+    "tema": "Tics, discapacidad intelectual y eliminación",
+    "nivel": "ENAM avanzado",
+    "caso": "Niño de 8 años presenta escapes urinarios nocturnos frecuentes, nunca ha logrado seis meses continuos de sequedad y no presenta molestias diurnas ni signos urinarios infecciosos. ¿Cuál es la clasificación clínica inicial más apropiada?",
+    "opciones": [
+      "Enuresis nocturna primaria, tras excluir causas médicas pertinentes",
+      "Enuresis secundaria",
+      "Encopresis funcional",
+      "Trastorno de Tourette",
+      "Trastorno neurocognitivo mayor"
+    ],
+    "correcta": 0,
+    "fundamento": "La enuresis nocturna primaria se caracteriza por ausencia de un periodo sostenido de continencia nocturna; la evaluación incluye hábitos de eliminación, estreñimiento, síntomas diurnos, sueño, ingesta y causas médicas según signos de alarma.",
+    "analisis": [
+      "Nunca alcanzar continencia sostenida orienta a presentación primaria.",
+      "La secundaria requiere un periodo previo de continencia significativa, habitualmente al menos seis meses.",
+      "La encopresis afecta eliminación fecal, no urinaria.",
+      "Los tics no describen el patrón de pérdidas de orina durante el sueño.",
+      "No hay deterioro cognitivo adquirido."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-16-001",
@@ -382,7 +742,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "Castigar emociones no constituye una terapia basada en evidencia para depresión.",
       "La privación del sueño no es una intervención psicoterapéutica estándar para este cuadro."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-16-002",
+    "unidad": 16,
+    "tema": "Psicoterapias y tratamientos psicosociales",
+    "nivel": "Residencia / especialidad",
+    "caso": "Un varón de 40 años con esquizofrenia estable presenta déficits funcionales y dificultades para sostener empleo pese a mejoría psicótica con antipsicóticos. ¿Cuál intervención complementaria favorece recuperación funcional y participación comunitaria?",
+    "opciones": [
+      "Rehabilitación psicosocial y empleo con apoyo adaptado a metas personales",
+      "Suspender toda intervención no farmacológica",
+      "Hospitalización indefinida para preservar estabilidad",
+      "Indicar solo sedación para reducir iniciativa",
+      "Evitar inclusión de familia aunque el paciente lo autorice"
+    ],
+    "correcta": 0,
+    "fundamento": "El tratamiento integral de esquizofrenia combina farmacoterapia con intervenciones psicosociales individualizadas, rehabilitación, habilidades y empleo con apoyo, centradas en autonomía y preferencias de la persona.",
+    "analisis": [
+      "Apoyos rehabilitadores permiten trabajar objetivos de vivienda, participación social y empleo.",
+      "Los resultados funcionales no dependen exclusivamente del control sintomático farmacológico.",
+      "La institucionalización prolongada no es medida universal de recuperación.",
+      "La sedación puede empeorar funcionamiento y calidad de vida.",
+      "La intervención familiar consensuada puede reducir carga y apoyar recuperación."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-17-001",
@@ -406,7 +790,31 @@ window.BADBEAR_PSIQ_BANCO = [
       "Tratar somnolencia sin evaluar la causa respiratoria puede retrasar el manejo adecuado.",
       "No se describen sueños disfóricos recurrentes ni despertar asociado."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-17-002",
+    "unidad": 17,
+    "tema": "Trastornos del sueño",
+    "nivel": "ENAM avanzado",
+    "caso": "Una mujer de 34 años presenta insomnio de conciliación y mantenimiento cuatro noches por semana durante cinco meses, con fatiga y deterioro laboral. Usa alcohol para dormir y permanece despierta en cama con el teléfono hasta la madrugada. ¿Qué tratamiento inicial tiene mayor fundamento para insomnio crónico?",
+    "opciones": [
+      "Terapia cognitivo-conductual para insomnio con intervención conductual sobre hábitos y tiempo en cama",
+      "Prescribir benzodiacepina de forma indefinida como única estrategia",
+      "Recomendar consumo nocturno de alcohol por efecto sedante",
+      "Indicar antipsicótico a dosis altas sin comorbilidad",
+      "Eliminar necesidad de valoración de apnea y otros trastornos del sueño"
+    ],
+    "correcta": 0,
+    "fundamento": "La TCC-I es intervención de primera línea para insomnio crónico. Integra control de estímulos, restricción/compresión de tiempo en cama según adecuación clínica, reestructuración cognitiva y estrategias de sueño, junto con evaluación de sustancias y comorbilidades.",
+    "analisis": [
+      "Su eficacia se sostiene en la modificación de mecanismos conductuales y cognitivos que perpetúan insomnio.",
+      "El tratamiento hipnótico prolongado presenta riesgos y no sustituye la opción de primera línea.",
+      "El alcohol fragmenta el sueño y crea riesgos de dependencia.",
+      "Antipsicóticos sin indicación expone a efectos adversos innecesarios.",
+      "Siempre se valoran otros trastornos del sueño y factores médicos o psiquiátricos."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   },
   {
     "id": "PSQ-18-001",
@@ -430,6 +838,30 @@ window.BADBEAR_PSIQ_BANCO = [
       "En el trastorno explosivo intermitente no es definitoria una irritabilidad basal persistente como aquí.",
       "El curso prolongado y la presencia en varios entornos hacen menos apropiada esta formulación."
     ],
-    "bibliografia": "American Psychiatric Association. DSM-5-TR (2022), sección diagnóstica correspondiente; complementación clínica original BADBEAR.MED. Segundo texto por confirmar."
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
+  },
+  {
+    "id": "PSQ-18-002",
+    "unidad": 18,
+    "tema": "Trastornos emocionales y de conducta en infancia y adolescencia",
+    "nivel": "Residencia / especialidad",
+    "caso": "Un adolescente de 15 años presenta comportamiento desafiante persistente con figuras de autoridad durante un año: discusiones, irritabilidad y actitud vengativa, pero no hay agresiones graves, crueldad animal, robos ni violaciones importantes de derechos ajenos. ¿Cuál es el diagnóstico diferencial más importante?",
+    "opciones": [
+      "Trastorno negativista desafiante frente a trastorno de conducta",
+      "Trastorno explosivo intermitente por episodios breves exclusivamente",
+      "Trastorno bipolar I con manía demostrada",
+      "Esquizofrenia de inicio infantil",
+      "Trastorno de comunicación social pragmática"
+    ],
+    "correcta": 0,
+    "fundamento": "El trastorno negativista desafiante se caracteriza por humor irritable/enojado, conducta desafiante/discutidora o vindictividad persistente. El trastorno de conducta requiere vulneración más grave de derechos o normas; se investiga contexto familiar, escuela, desarrollo y comorbilidad.",
+    "analisis": [
+      "La ausencia de transgresiones graves favorece diferenciar trastorno negativista desafiante de trastorno de conducta.",
+      "El trastorno explosivo intermitente se centra en estallidos impulsivos recurrentes, sin requerir patrón desafiante continuo.",
+      "No se describen episodios diferenciados de manía.",
+      "No existen síntomas psicóticos que expliquen el cuadro.",
+      "No predomina un déficit de pragmática social."
+    ],
+    "bibliografia": "Referencias conceptuales: American Psychiatric Association, DSM-5-TR (2022), categoría diagnóstica correspondiente; Kaplan & Sadock, Sinopsis de Psiquiatría, apartados clínicos correspondientes (edición y páginas por verificar). Explicación original BADBEAR.MED; no es cita textual."
   }
 ];
