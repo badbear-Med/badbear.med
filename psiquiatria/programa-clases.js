@@ -218,8 +218,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 16,
     "titulo": "Tratamientos psicoterapéuticos y psicosociales",
     "area": "Tratamiento",
-    "descripcion": "Intervenciones psicoterapéuticas y recursos psicosociales de la atención mental.",
-    "teoria": null,
+    "descripcion": "Psicoterapias y tratamientos psicosociales: enfoques, técnicas, alianza, seguridad, rehabilitación y ocho casos clínicos razonados.",
+    "teoria": "../psiquiatria/clases/clase-16-psicoterapias-y-tratamientos-psicosociales.html",
     "recursos": {
       "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-16.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-16.m4a",
