@@ -176,8 +176,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 13,
     "titulo": "Psiquiatría forense: dilemas éticos y legales en psiquiatría (I)",
     "area": "Psiquiatría forense",
-    "descripcion": "Consideraciones éticas y legales en la práctica psiquiátrica.",
-    "teoria": null,
+    "descripcion": "Ética, capacidad, confidencialidad, imputabilidad, responsabilidad médica y pericia en el marco peruano, con ocho casos razonados.",
+    "teoria": "../psiquiatria/clases/clase-13-psiquiatria-forense-etica-y-derecho.html",
     "recursos": {
       "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-13.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-13.m4a",
