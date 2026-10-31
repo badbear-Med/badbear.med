@@ -148,8 +148,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 11,
     "titulo": "Trastornos obsesivo-compulsivos y relacionados",
     "area": "Trastornos obsesivo-compulsivos",
-    "descripcion": "Fenómenos obsesivos, compulsivos y trastornos relacionados.",
-    "teoria": null,
+    "descripcion": "TOC, rituales mentales, EPR, tratamiento y trastornos relacionados, con ocho casos clínicos y repaso explicado.",
+    "teoria": "../psiquiatria/clases/clase-11-trastornos-obsesivo-compulsivos-y-relacionados.html",
     "recursos": {
       "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-11.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-11.m4a",
