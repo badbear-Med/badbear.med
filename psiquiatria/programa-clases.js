@@ -246,8 +246,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 18,
     "titulo": "Trastornos emocionales y de conducta en la infancia y adolescencia",
     "area": "Psiquiatría infantojuvenil",
-    "descripcion": "Evaluación de trastornos emocionales y de conducta durante el desarrollo.",
-    "teoria": null,
+    "descripcion": "Emociones y ansiedad infantojuvenil: separación, fobias, ansiedad social, mutismo, rivalidad entre hermanos y ocho casos razonados.",
+    "teoria": "../psiquiatria/clases/clase-18-emociones-y-ansiedad-en-la-infancia.html",
     "recursos": {
       "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-18.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-18.m4a",
