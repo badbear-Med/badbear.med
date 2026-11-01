@@ -23,6 +23,7 @@ const theoryUrl=new URL(unit.teoria,document.baseURI);if(q.desarrollo?.ancla)the
 addLink(p,theoryUrl.href,q.desarrollo?.ancla?"Consultar directamente el apartado relevante de la teoría · Unidad "+q.unidad+" ↗":"Consultar teoría de la unidad "+q.unidad+" ↗");box.append(p);}else box.append(el("p","Teoría propia de esta unidad: pendiente de publicación y verificación editorial."));
 return box;}
 function render(){const list=getList();root.replaceChildren();document.getElementById("total").textContent=bank.length;counter.textContent=Object.keys(selected).filter(k=>list.some(q=>q.id===k)).length;
+if(filter.value!=="all"){const available=list.length;const info=el("p",available>=20?"Esta unidad cumple el mínimo de 20 preguntas.":"Unidad en desarrollo: "+available+" de 20 preguntas mínimas. La cobertura todavía es parcial.","pill");root.append(info);}
 if(!list.length){root.append(el("p","No hay preguntas para esta selección.","empty"));return;}
 if(index>=list.length)index=list.length-1;
 if(submitted&&mode.value==="exam"){const correct=list.filter(q=>selected[q.id]===q.correcta).length;root.append(el("h2","Resultados del simulacro"));root.append(el("p",correct+" respuestas correctas de "+list.length,"score"));list.forEach(q=>{const row=el("details",undefined,"explanation");const summary=el("summary","Unidad "+q.unidad+" — "+(selected[q.id]===q.correcta?"Correcta":"Incorrecta o sin responder"));row.append(summary,el("p",q.caso),explain(q,selected[q.id]));root.append(row);});root.append(button("Reiniciar simulacro",()=>{selected={};index=0;submitted=false;store();render()}));return;}
@@ -33,6 +34,8 @@ if(answered&&mode.value==="study")root.append(explain(q,selected[q.id]));
 const nav=el("div",undefined,"nav");nav.append(button("← Anterior",()=>{index--;render()},index===0));if(mode.value==="exam")nav.append(el("span","Las respuestas se revelan al finalizar.","pill"));nav.append(button("Siguiente →",()=>{index++;render()},index===list.length-1));root.append(nav);
 if(mode.value==="exam")root.append(button("Finalizar y revisar todas las respuestas",()=>{submitted=true;render()}));
 }
-units.forEach(x=>{const opt=el("option",String(x.numero).padStart(2,"0")+" · "+x.titulo);opt.value=String(x.numero);filter.append(opt);});
+units.forEach(x=>{const count=bank.filter(q=>q.unidad===Number(x.numero)).length;
+const label=String(x.numero).padStart(2,"0")+" · "+x.titulo+" ("+count+"/20 mínimo"+(count>=20?" ✓":" · EN DESARROLLO")+")";
+const opt=el("option",label);opt.value=String(x.numero);filter.append(opt);});
 restore();filter.addEventListener("change",()=>{index=0;submitted=false;store();render()});mode.addEventListener("change",()=>{index=0;submitted=false;selected={};store();render()});document.getElementById("reset").addEventListener("click",()=>{if(!confirm("¿Reiniciar las respuestas de esta sesión?"))return;selected={};index=0;submitted=false;store();render()});render();
 })();
