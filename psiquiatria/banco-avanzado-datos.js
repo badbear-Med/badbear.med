@@ -1,4 +1,3 @@
-/* Banco clínico original BADBEAR.MED */
 window.BADBEAR_PSIQ_BANCO = [
   {
     "id": "PSQ-01-001",
@@ -636,6 +635,528 @@ window.BADBEAR_PSIQ_BANCO = [
       "razonamiento": "Los delirios nihilistas, negativa a alimentarse y compromiso físico obligan a pensar más allá del tratamiento ambulatorio estándar.",
       "conducta": "Se prioriza estabilización médica, evaluación de capacidad y tratamiento eficaz de acción relativamente rápida.",
       "ancla": "tratamiento"
+    }
+  },
+  {
+    "id": "PSQ-02-003",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Criterios",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Una paciente presenta 18 días de anhedonia, insomnio, culpa, fatiga y dificultad para concentrarse con deterioro. Niega manía, sustancias y enfermedad explicativa. ¿Qué criterio temporal se satisface?",
+    "opciones": [
+      "Un día de síntomas",
+      "Dos semanas con síntomas nucleares y acompañantes",
+      "Seis meses obligatorios",
+      "Dos años de síntomas",
+      "Tres episodios previos"
+    ],
+    "correcta": 1,
+    "fundamento": "El episodio depresivo mayor exige síntomas concurrentes durante al menos dos semanas, con ánimo deprimido o anhedonia.",
+    "analisis": [
+      "La alternativa «Un día de síntomas» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es criterios; el episodio depresivo mayor exige síntomas concurrentes durante al menos dos semanas, con ánimo deprimido o anhedonia.",
+      "El episodio depresivo mayor exige síntomas concurrentes durante al menos dos semanas, con ánimo deprimido o anhedonia. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Seis meses obligatorios» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es criterios; el episodio depresivo mayor exige síntomas concurrentes durante al menos dos semanas, con ánimo deprimido o anhedonia.",
+      "La alternativa «Dos años de síntomas» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es criterios; el episodio depresivo mayor exige síntomas concurrentes durante al menos dos semanas, con ánimo deprimido o anhedonia.",
+      "La alternativa «Tres episodios previos» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es criterios; el episodio depresivo mayor exige síntomas concurrentes durante al menos dos semanas, con ánimo deprimido o anhedonia."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "El episodio depresivo mayor exige síntomas concurrentes durante al menos dos semanas, con ánimo deprimido o anhedonia. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "diagnostico"
+    }
+  },
+  {
+    "id": "PSQ-02-004",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Bipolaridad oculta",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Un hombre con tres episodios depresivos revela una semana previa de ánimo elevado, disminución de sueño y deterioro laboral sin sustancias. ¿Qué diagnóstico debe reconsiderarse?",
+    "opciones": [
+      "Distimia aislada",
+      "Trastorno adaptativo",
+      "Trastorno bipolar I",
+      "Trastorno depresivo persistente sin más",
+      "Duelo normal"
+    ],
+    "correcta": 2,
+    "fundamento": "Un episodio maníaco completo cambia el diagnóstico longitudinal hacia bipolar I, aunque predominen las depresiones.",
+    "analisis": [
+      "La alternativa «Distimia aislada» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es bipolaridad oculta; un episodio maníaco completo cambia el diagnóstico longitudinal hacia bipolar i, aunque predominen las depresiones.",
+      "La alternativa «Trastorno adaptativo» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es bipolaridad oculta; un episodio maníaco completo cambia el diagnóstico longitudinal hacia bipolar i, aunque predominen las depresiones.",
+      "Un episodio maníaco completo cambia el diagnóstico longitudinal hacia bipolar I, aunque predominen las depresiones. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Trastorno depresivo persistente sin más» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es bipolaridad oculta; un episodio maníaco completo cambia el diagnóstico longitudinal hacia bipolar i, aunque predominen las depresiones.",
+      "La alternativa «Duelo normal» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es bipolaridad oculta; un episodio maníaco completo cambia el diagnóstico longitudinal hacia bipolar i, aunque predominen las depresiones."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "Un episodio maníaco completo cambia el diagnóstico longitudinal hacia bipolar I, aunque predominen las depresiones. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "diferencial"
+    }
+  },
+  {
+    "id": "PSQ-02-005",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Síntomas melancólicos",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "En episodio depresivo, una mujer no experimenta placer ni ante eventos habitualmente agradables y presenta empeoramiento matutino, despertar temprano y alteración psicomotora. ¿Qué especificador se debe valorar?",
+    "opciones": [
+      "Con características melancólicas",
+      "Con patrón estacional necesariamente",
+      "Con características atípicas por reactividad",
+      "Con catatonía automáticamente",
+      "Con ansiedad generalizada"
+    ],
+    "correcta": 0,
+    "fundamento": "La anhedonia marcada o ausencia de reactividad, junto con signos neurovegetativos específicos, orienta al especificador melancólico.",
+    "analisis": [
+      "La anhedonia marcada o ausencia de reactividad, junto con signos neurovegetativos específicos, orienta al especificador melancólico. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Con patrón estacional necesariamente» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es síntomas melancólicos; la anhedonia marcada o ausencia de reactividad, junto con signos neurovegetativos específicos, orienta al especificador melancólico.",
+      "La alternativa «Con características atípicas por reactividad» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es síntomas melancólicos; la anhedonia marcada o ausencia de reactividad, junto con signos neurovegetativos específicos, orienta al especificador melancólico.",
+      "La alternativa «Con catatonía automáticamente» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es síntomas melancólicos; la anhedonia marcada o ausencia de reactividad, junto con signos neurovegetativos específicos, orienta al especificador melancólico.",
+      "La alternativa «Con ansiedad generalizada» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es síntomas melancólicos; la anhedonia marcada o ausencia de reactividad, junto con signos neurovegetativos específicos, orienta al especificador melancólico."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La anhedonia marcada o ausencia de reactividad, junto con signos neurovegetativos específicos, orienta al especificador melancólico. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "manifestaciones"
+    }
+  },
+  {
+    "id": "PSQ-02-006",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Características atípicas",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Paciente con depresión mejora transitoriamente ante buenas noticias, pero describe hipersomnia, hiperfagia y sensación de pesadez en extremidades. ¿Qué especificador es compatible?",
+    "opciones": [
+      "Características psicóticas",
+      "Características melancólicas",
+      "Características atípicas",
+      "Catatonía",
+      "Patrón estacional"
+    ],
+    "correcta": 2,
+    "fundamento": "Reactividad del ánimo asociada con hipersomnia, aumento del apetito o parálisis plúmbea puede indicar características atípicas.",
+    "analisis": [
+      "La alternativa «Características psicóticas» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es características atípicas; reactividad del ánimo asociada con hipersomnia, aumento del apetito o parálisis plúmbea puede indicar características atípicas.",
+      "La alternativa «Características melancólicas» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es características atípicas; reactividad del ánimo asociada con hipersomnia, aumento del apetito o parálisis plúmbea puede indicar características atípicas.",
+      "Reactividad del ánimo asociada con hipersomnia, aumento del apetito o parálisis plúmbea puede indicar características atípicas. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Catatonía» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es características atípicas; reactividad del ánimo asociada con hipersomnia, aumento del apetito o parálisis plúmbea puede indicar características atípicas.",
+      "La alternativa «Patrón estacional» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es características atípicas; reactividad del ánimo asociada con hipersomnia, aumento del apetito o parálisis plúmbea puede indicar características atípicas."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "Reactividad del ánimo asociada con hipersomnia, aumento del apetito o parálisis plúmbea puede indicar características atípicas. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "manifestaciones"
+    }
+  },
+  {
+    "id": "PSQ-02-007",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Psicosis afectiva",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Una paciente con depresión grave sostiene con certeza delirante que merece castigo por causar una catástrofe inexistente. ¿Qué tipo de manifestación se observa?",
+    "opciones": [
+      "Obsesión con insight conservado",
+      "Delirio congruente con el ánimo",
+      "Alucinación hipnagógica",
+      "Despersonalización aislada",
+      "Idea sobrevalorada sin convicción"
+    ],
+    "correcta": 1,
+    "fundamento": "La culpa y ruina delirantes durante depresión pueden ser síntomas psicóticos congruentes con contenido depresivo.",
+    "analisis": [
+      "La alternativa «Obsesión con insight conservado» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es psicosis afectiva; la culpa y ruina delirantes durante depresión pueden ser síntomas psicóticos congruentes con contenido depresivo.",
+      "La culpa y ruina delirantes durante depresión pueden ser síntomas psicóticos congruentes con contenido depresivo. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Alucinación hipnagógica» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es psicosis afectiva; la culpa y ruina delirantes durante depresión pueden ser síntomas psicóticos congruentes con contenido depresivo.",
+      "La alternativa «Despersonalización aislada» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es psicosis afectiva; la culpa y ruina delirantes durante depresión pueden ser síntomas psicóticos congruentes con contenido depresivo.",
+      "La alternativa «Idea sobrevalorada sin convicción» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es psicosis afectiva; la culpa y ruina delirantes durante depresión pueden ser síntomas psicóticos congruentes con contenido depresivo."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La culpa y ruina delirantes durante depresión pueden ser síntomas psicóticos congruentes con contenido depresivo. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "gravedad"
+    }
+  },
+  {
+    "id": "PSQ-02-008",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Riesgo suicida",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Paciente deprimido manifiesta intento suicida reciente, acceso a medios y desesperanza intensa. ¿Qué acción es prioritaria?",
+    "opciones": [
+      "Psicoeducación sin evaluación",
+      "Cita en dos meses",
+      "Evaluación urgente y protección individualizada",
+      "Evitar preguntar por letalidad",
+      "Tratar insomnio exclusivamente"
+    ],
+    "correcta": 2,
+    "fundamento": "La conducta suicida reciente y el acceso a medios requieren evaluación urgente, contención y planificación de seguridad.",
+    "analisis": [
+      "La alternativa «Psicoeducación sin evaluación» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es riesgo suicida; la conducta suicida reciente y el acceso a medios requieren evaluación urgente, contención y planificación de seguridad.",
+      "La alternativa «Cita en dos meses» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es riesgo suicida; la conducta suicida reciente y el acceso a medios requieren evaluación urgente, contención y planificación de seguridad.",
+      "La conducta suicida reciente y el acceso a medios requieren evaluación urgente, contención y planificación de seguridad. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Evitar preguntar por letalidad» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es riesgo suicida; la conducta suicida reciente y el acceso a medios requieren evaluación urgente, contención y planificación de seguridad.",
+      "La alternativa «Tratar insomnio exclusivamente» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es riesgo suicida; la conducta suicida reciente y el acceso a medios requieren evaluación urgente, contención y planificación de seguridad."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La conducta suicida reciente y el acceso a medios requieren evaluación urgente, contención y planificación de seguridad. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "suicidio"
+    }
+  },
+  {
+    "id": "PSQ-02-009",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Diagnóstico diferencial médico",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Una mujer con bradipsiquia, fatiga, estreñimiento, intolerancia al frío y ánimo deprimido consulta por primera vez. ¿Qué causa médica debe investigarse?",
+    "opciones": [
+      "Hipotiroidismo",
+      "Hipertiroidismo manifiesto como explicación única",
+      "Feocromocitoma",
+      "Crisis epiléptica focal",
+      "Glaucoma agudo"
+    ],
+    "correcta": 0,
+    "fundamento": "La asociación de síntomas sistémicos y afectivos orienta a descartar hipotiroidismo antes de atribuir todo a depresión primaria.",
+    "analisis": [
+      "La asociación de síntomas sistémicos y afectivos orienta a descartar hipotiroidismo antes de atribuir todo a depresión primaria. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Hipertiroidismo manifiesto como explicación única» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es diagnóstico diferencial médico; la asociación de síntomas sistémicos y afectivos orienta a descartar hipotiroidismo antes de atribuir todo a depresión primaria.",
+      "La alternativa «Feocromocitoma» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es diagnóstico diferencial médico; la asociación de síntomas sistémicos y afectivos orienta a descartar hipotiroidismo antes de atribuir todo a depresión primaria.",
+      "La alternativa «Crisis epiléptica focal» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es diagnóstico diferencial médico; la asociación de síntomas sistémicos y afectivos orienta a descartar hipotiroidismo antes de atribuir todo a depresión primaria.",
+      "La alternativa «Glaucoma agudo» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es diagnóstico diferencial médico; la asociación de síntomas sistémicos y afectivos orienta a descartar hipotiroidismo antes de atribuir todo a depresión primaria."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La asociación de síntomas sistémicos y afectivos orienta a descartar hipotiroidismo antes de atribuir todo a depresión primaria. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "diferencial"
+    }
+  },
+  {
+    "id": "PSQ-02-010",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Duelo",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Tras fallecimiento de su pareja, una persona tiene oleadas de tristeza vinculadas a recuerdos, conserva autoestima y puede experimentar momentos de bienestar. ¿Cuál afirmación es adecuada?",
+    "opciones": [
+      "Todo duelo es episodio depresivo mayor",
+      "La capacidad de afecto positivo y autoestima conservada ayudan al diferencial",
+      "El duelo siempre excluye depresión mayor",
+      "Es trastorno bipolar por fluctuación",
+      "Requiere antipsicótico profiláctico"
+    ],
+    "correcta": 1,
+    "fundamento": "El duelo típico puede mostrar afecto positivo intermitente y autoestima preservada; no excluye depresión concomitante si se cumplen criterios.",
+    "analisis": [
+      "La alternativa «Todo duelo es episodio depresivo mayor» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es duelo; el duelo típico puede mostrar afecto positivo intermitente y autoestima preservada; no excluye depresión concomitante si se cumplen criterios.",
+      "El duelo típico puede mostrar afecto positivo intermitente y autoestima preservada; no excluye depresión concomitante si se cumplen criterios. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «El duelo siempre excluye depresión mayor» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es duelo; el duelo típico puede mostrar afecto positivo intermitente y autoestima preservada; no excluye depresión concomitante si se cumplen criterios.",
+      "La alternativa «Es trastorno bipolar por fluctuación» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es duelo; el duelo típico puede mostrar afecto positivo intermitente y autoestima preservada; no excluye depresión concomitante si se cumplen criterios.",
+      "La alternativa «Requiere antipsicótico profiláctico» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es duelo; el duelo típico puede mostrar afecto positivo intermitente y autoestima preservada; no excluye depresión concomitante si se cumplen criterios."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "El duelo típico puede mostrar afecto positivo intermitente y autoestima preservada; no excluye depresión concomitante si se cumplen criterios. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "diferencial"
+    }
+  },
+  {
+    "id": "PSQ-02-011",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Depresión persistente",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Un adulto refiere ánimo deprimido la mayor parte de los días desde hace tres años, con baja energía y desesperanza, sin periodos libres de síntomas mayores de dos meses. ¿Qué diagnóstico considerar?",
+    "opciones": [
+      "Episodio maníaco",
+      "Trastorno depresivo persistente",
+      "Trastorno psicótico breve",
+      "Trastorno ciclotímico obligatoriamente",
+      "Trastorno de pánico"
+    ],
+    "correcta": 1,
+    "fundamento": "En adultos, ánimo deprimido crónico al menos dos años con síntomas acompañantes orienta a trastorno depresivo persistente.",
+    "analisis": [
+      "La alternativa «Episodio maníaco» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión persistente; en adultos, ánimo deprimido crónico al menos dos años con síntomas acompañantes orienta a trastorno depresivo persistente.",
+      "En adultos, ánimo deprimido crónico al menos dos años con síntomas acompañantes orienta a trastorno depresivo persistente. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Trastorno psicótico breve» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión persistente; en adultos, ánimo deprimido crónico al menos dos años con síntomas acompañantes orienta a trastorno depresivo persistente.",
+      "La alternativa «Trastorno ciclotímico obligatoriamente» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión persistente; en adultos, ánimo deprimido crónico al menos dos años con síntomas acompañantes orienta a trastorno depresivo persistente.",
+      "La alternativa «Trastorno de pánico» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión persistente; en adultos, ánimo deprimido crónico al menos dos años con síntomas acompañantes orienta a trastorno depresivo persistente."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "En adultos, ánimo deprimido crónico al menos dos años con síntomas acompañantes orienta a trastorno depresivo persistente. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "curso"
+    }
+  },
+  {
+    "id": "PSQ-02-012",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · ISRS y respuesta",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Paciente inicia un ISRS por episodio depresivo moderado y a la semana no observa resolución. No hay deterioro ni efectos graves. ¿Cuál explicación es correcta?",
+    "opciones": [
+      "La falta de remisión en siete días demuestra resistencia",
+      "La respuesta clínica suele requerir varias semanas y seguimiento de seguridad",
+      "Debe duplicarse cada día la dosis",
+      "Debe añadirse litio automáticamente",
+      "Debe suspenderse toda intervención psicológica"
+    ],
+    "correcta": 1,
+    "fundamento": "La respuesta antidepresiva se evalúa longitudinalmente, usualmente en semanas, considerando dosis, tolerancia y riesgo suicida.",
+    "analisis": [
+      "La alternativa «La falta de remisión en siete días demuestra resistencia» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es isrs y respuesta; la respuesta antidepresiva se evalúa longitudinalmente, usualmente en semanas, considerando dosis, tolerancia y riesgo suicida.",
+      "La respuesta antidepresiva se evalúa longitudinalmente, usualmente en semanas, considerando dosis, tolerancia y riesgo suicida. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Debe duplicarse cada día la dosis» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es isrs y respuesta; la respuesta antidepresiva se evalúa longitudinalmente, usualmente en semanas, considerando dosis, tolerancia y riesgo suicida.",
+      "La alternativa «Debe añadirse litio automáticamente» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es isrs y respuesta; la respuesta antidepresiva se evalúa longitudinalmente, usualmente en semanas, considerando dosis, tolerancia y riesgo suicida.",
+      "La alternativa «Debe suspenderse toda intervención psicológica» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es isrs y respuesta; la respuesta antidepresiva se evalúa longitudinalmente, usualmente en semanas, considerando dosis, tolerancia y riesgo suicida."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La respuesta antidepresiva se evalúa longitudinalmente, usualmente en semanas, considerando dosis, tolerancia y riesgo suicida. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "farmacos"
+    }
+  },
+  {
+    "id": "PSQ-02-013",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Síndrome serotoninérgico",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Tras combinar dos agentes serotoninérgicos, un paciente desarrolla agitación, hiperreflexia, clonus y diaforesis. ¿Qué síndrome sospechar?",
+    "opciones": [
+      "Síndrome serotoninérgico",
+      "Discinesia tardía",
+      "Demencia frontotemporal",
+      "Catatonia depresiva aislada",
+      "Hipotiroidismo subclínico"
+    ],
+    "correcta": 0,
+    "fundamento": "Clonus e hiperreflexia con alteración mental y autonómica tras exposición serotoninérgica orientan a toxicidad serotoninérgica.",
+    "analisis": [
+      "Clonus e hiperreflexia con alteración mental y autonómica tras exposición serotoninérgica orientan a toxicidad serotoninérgica. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Discinesia tardía» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es síndrome serotoninérgico; clonus e hiperreflexia con alteración mental y autonómica tras exposición serotoninérgica orientan a toxicidad serotoninérgica.",
+      "La alternativa «Demencia frontotemporal» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es síndrome serotoninérgico; clonus e hiperreflexia con alteración mental y autonómica tras exposición serotoninérgica orientan a toxicidad serotoninérgica.",
+      "La alternativa «Catatonia depresiva aislada» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es síndrome serotoninérgico; clonus e hiperreflexia con alteración mental y autonómica tras exposición serotoninérgica orientan a toxicidad serotoninérgica.",
+      "La alternativa «Hipotiroidismo subclínico» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es síndrome serotoninérgico; clonus e hiperreflexia con alteración mental y autonómica tras exposición serotoninérgica orientan a toxicidad serotoninérgica."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "Clonus e hiperreflexia con alteración mental y autonómica tras exposición serotoninérgica orientan a toxicidad serotoninérgica. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "farmacos"
+    }
+  },
+  {
+    "id": "PSQ-02-014",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Bupropión",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Una mujer con bulimia nerviosa y depresión consulta por opciones farmacológicas. ¿Qué precaución es relevante respecto a bupropión?",
+    "opciones": [
+      "Es la primera línea obligatoria en bulimia",
+      "Está contraindicado en trastornos alimentarios como bulimia por riesgo convulsivo",
+      "No afecta nunca umbral convulsivo",
+      "Es un antipsicótico atípico",
+      "Trata de inmediato la deshidratación"
+    ],
+    "correcta": 1,
+    "fundamento": "Bupropión incrementa riesgo convulsivo en personas con bulimia o anorexia y se considera contraindicado en esos antecedentes.",
+    "analisis": [
+      "La alternativa «Es la primera línea obligatoria en bulimia» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es bupropión; bupropión incrementa riesgo convulsivo en personas con bulimia o anorexia y se considera contraindicado en esos antecedentes.",
+      "Bupropión incrementa riesgo convulsivo en personas con bulimia o anorexia y se considera contraindicado en esos antecedentes. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «No afecta nunca umbral convulsivo» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es bupropión; bupropión incrementa riesgo convulsivo en personas con bulimia o anorexia y se considera contraindicado en esos antecedentes.",
+      "La alternativa «Es un antipsicótico atípico» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es bupropión; bupropión incrementa riesgo convulsivo en personas con bulimia o anorexia y se considera contraindicado en esos antecedentes.",
+      "La alternativa «Trata de inmediato la deshidratación» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es bupropión; bupropión incrementa riesgo convulsivo en personas con bulimia o anorexia y se considera contraindicado en esos antecedentes."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "Bupropión incrementa riesgo convulsivo en personas con bulimia o anorexia y se considera contraindicado en esos antecedentes. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "farmacos"
+    }
+  },
+  {
+    "id": "PSQ-02-015",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · TEC",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Paciente con depresión psicótica grave y rechazo de alimentos necesita respuesta rápida. ¿Qué tratamiento puede considerarse especialmente?",
+    "opciones": [
+      "Exposición con prevención de respuesta exclusiva",
+      "Electroconvulsoterapia",
+      "Disulfiram",
+      "Estimulante sin evaluación",
+      "Observación domiciliaria sin soporte"
+    ],
+    "correcta": 1,
+    "fundamento": "La TEC es opción eficaz para depresión grave, particularmente psicótica y cuando hay urgencia clínica.",
+    "analisis": [
+      "La alternativa «Exposición con prevención de respuesta exclusiva» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es tec; la tec es opción eficaz para depresión grave, particularmente psicótica y cuando hay urgencia clínica.",
+      "La TEC es opción eficaz para depresión grave, particularmente psicótica y cuando hay urgencia clínica. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Disulfiram» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es tec; la tec es opción eficaz para depresión grave, particularmente psicótica y cuando hay urgencia clínica.",
+      "La alternativa «Estimulante sin evaluación» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es tec; la tec es opción eficaz para depresión grave, particularmente psicótica y cuando hay urgencia clínica.",
+      "La alternativa «Observación domiciliaria sin soporte» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es tec; la tec es opción eficaz para depresión grave, particularmente psicótica y cuando hay urgencia clínica."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La TEC es opción eficaz para depresión grave, particularmente psicótica y cuando hay urgencia clínica. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "tratamiento"
+    }
+  },
+  {
+    "id": "PSQ-02-016",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · TCC",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Paciente con depresión evita toda actividad gratificante y asume que cualquier error demuestra inutilidad. ¿Qué componente de terapia cognitivo-conductual resulta pertinente?",
+    "opciones": [
+      "Supresión de todas las emociones",
+      "Activación conductual y reestructuración cognitiva",
+      "Aislamiento social prescrito",
+      "Inducción de privación del sueño",
+      "Reaseguramiento compulsivo"
+    ],
+    "correcta": 1,
+    "fundamento": "La activación y el trabajo sobre interpretaciones negativas abordan mecanismos mantenedores de la depresión.",
+    "analisis": [
+      "La alternativa «Supresión de todas las emociones» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es tcc; la activación y el trabajo sobre interpretaciones negativas abordan mecanismos mantenedores de la depresión.",
+      "La activación y el trabajo sobre interpretaciones negativas abordan mecanismos mantenedores de la depresión. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Aislamiento social prescrito» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es tcc; la activación y el trabajo sobre interpretaciones negativas abordan mecanismos mantenedores de la depresión.",
+      "La alternativa «Inducción de privación del sueño» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es tcc; la activación y el trabajo sobre interpretaciones negativas abordan mecanismos mantenedores de la depresión.",
+      "La alternativa «Reaseguramiento compulsivo» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es tcc; la activación y el trabajo sobre interpretaciones negativas abordan mecanismos mantenedores de la depresión."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La activación y el trabajo sobre interpretaciones negativas abordan mecanismos mantenedores de la depresión. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "tratamiento"
+    }
+  },
+  {
+    "id": "PSQ-02-017",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Remisión",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Un paciente tratado informa menos tristeza pero conserva anhedonia, insomnio y deterioro laboral significativo. ¿Qué evaluación es preferible?",
+    "opciones": [
+      "Declarar curación completa por mejoría parcial",
+      "Medir síntomas residuales y funcionamiento para optimizar tratamiento",
+      "Retirar todo seguimiento",
+      "Diagnosticar psicosis de inmediato",
+      "Suspender psicoterapia por definición"
+    ],
+    "correcta": 1,
+    "fundamento": "La mejoría parcial no equivale a remisión; los síntomas residuales se asocian a deterioro y riesgo de recaída.",
+    "analisis": [
+      "La alternativa «Declarar curación completa por mejoría parcial» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es remisión; la mejoría parcial no equivale a remisión; los síntomas residuales se asocian a deterioro y riesgo de recaída.",
+      "La mejoría parcial no equivale a remisión; los síntomas residuales se asocian a deterioro y riesgo de recaída. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Retirar todo seguimiento» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es remisión; la mejoría parcial no equivale a remisión; los síntomas residuales se asocian a deterioro y riesgo de recaída.",
+      "La alternativa «Diagnosticar psicosis de inmediato» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es remisión; la mejoría parcial no equivale a remisión; los síntomas residuales se asocian a deterioro y riesgo de recaída.",
+      "La alternativa «Suspender psicoterapia por definición» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es remisión; la mejoría parcial no equivale a remisión; los síntomas residuales se asocian a deterioro y riesgo de recaída."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La mejoría parcial no equivale a remisión; los síntomas residuales se asocian a deterioro y riesgo de recaída. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "curso"
+    }
+  },
+  {
+    "id": "PSQ-02-018",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Depresión perinatal",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Mujer a seis semanas posparto presenta tristeza persistente, anhedonia, culpa, insomnio aun cuando el bebé duerme y deterioro. ¿Cuál aproximación es correcta?",
+    "opciones": [
+      "Normalizar automáticamente todo síntoma posparto",
+      "Evaluar episodio depresivo y riesgo, diferenciándolo de tristeza posparto transitoria",
+      "Diagnosticar psicosis posparto sin psicosis",
+      "Excluir tratamiento por lactancia",
+      "Atribuirlo únicamente a privación de sueño"
+    ],
+    "correcta": 1,
+    "fundamento": "La depresión perinatal requiere evaluación clínica y del riesgo; se diferencia de la tristeza transitoria por intensidad, persistencia y deterioro.",
+    "analisis": [
+      "La alternativa «Normalizar automáticamente todo síntoma posparto» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión perinatal; la depresión perinatal requiere evaluación clínica y del riesgo; se diferencia de la tristeza transitoria por intensidad, persistencia y deterioro.",
+      "La depresión perinatal requiere evaluación clínica y del riesgo; se diferencia de la tristeza transitoria por intensidad, persistencia y deterioro. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Diagnosticar psicosis posparto sin psicosis» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión perinatal; la depresión perinatal requiere evaluación clínica y del riesgo; se diferencia de la tristeza transitoria por intensidad, persistencia y deterioro.",
+      "La alternativa «Excluir tratamiento por lactancia» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión perinatal; la depresión perinatal requiere evaluación clínica y del riesgo; se diferencia de la tristeza transitoria por intensidad, persistencia y deterioro.",
+      "La alternativa «Atribuirlo únicamente a privación de sueño» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión perinatal; la depresión perinatal requiere evaluación clínica y del riesgo; se diferencia de la tristeza transitoria por intensidad, persistencia y deterioro."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La depresión perinatal requiere evaluación clínica y del riesgo; se diferencia de la tristeza transitoria por intensidad, persistencia y deterioro. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "poblaciones"
+    }
+  },
+  {
+    "id": "PSQ-02-019",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Depresión geriátrica",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Un hombre de 78 años presenta pérdida de interés, lentitud y quejas cognitivas durante dos meses. ¿Qué evaluación evita atribución errónea a envejecimiento?",
+    "opciones": [
+      "Evaluación afectiva, funcional, médica, fármacos y cognición",
+      "Asumir demencia irreversible",
+      "Asumir cambios normales",
+      "Evitar pruebas clínicas",
+      "Prescribir sedantes sin examen"
+    ],
+    "correcta": 0,
+    "fundamento": "La depresión geriátrica puede manifestarse con quejas cognitivas; se evalúan causas médicas, funcionamiento y deterioro neurocognitivo concurrente.",
+    "analisis": [
+      "La depresión geriátrica puede manifestarse con quejas cognitivas; se evalúan causas médicas, funcionamiento y deterioro neurocognitivo concurrente. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Asumir demencia irreversible» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión geriátrica; la depresión geriátrica puede manifestarse con quejas cognitivas; se evalúan causas médicas, funcionamiento y deterioro neurocognitivo concurrente.",
+      "La alternativa «Asumir cambios normales» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión geriátrica; la depresión geriátrica puede manifestarse con quejas cognitivas; se evalúan causas médicas, funcionamiento y deterioro neurocognitivo concurrente.",
+      "La alternativa «Evitar pruebas clínicas» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión geriátrica; la depresión geriátrica puede manifestarse con quejas cognitivas; se evalúan causas médicas, funcionamiento y deterioro neurocognitivo concurrente.",
+      "La alternativa «Prescribir sedantes sin examen» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es depresión geriátrica; la depresión geriátrica puede manifestarse con quejas cognitivas; se evalúan causas médicas, funcionamiento y deterioro neurocognitivo concurrente."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La depresión geriátrica puede manifestarse con quejas cognitivas; se evalúan causas médicas, funcionamiento y deterioro neurocognitivo concurrente. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "poblaciones"
+    }
+  },
+  {
+    "id": "PSQ-02-020",
+    "unidad": 2,
+    "tema": "Trastornos depresivos · Prevención de recaídas",
+    "nivel": "ENAM avanzado / residencia",
+    "caso": "Una persona en remisión tras varios episodios depresivos desea evitar recurrencias. ¿Qué plan es más apropiado?",
+    "opciones": [
+      "Suspender de forma abrupta todo cuidado",
+      "Plan individualizado de mantenimiento, vigilancia de síntomas prodrómicos y continuidad terapéutica",
+      "Solo repetir una prueba al año sin contacto clínico",
+      "Indicar antipsicótico en toda depresión",
+      "Prometer riesgo cero de recaída"
+    ],
+    "correcta": 1,
+    "fundamento": "La prevención de recurrencias considera número y gravedad de episodios, respuesta previa, adherencia, psicoterapia y seguimiento.",
+    "analisis": [
+      "La alternativa «Suspender de forma abrupta todo cuidado» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es prevención de recaídas; la prevención de recurrencias considera número y gravedad de episodios, respuesta previa, adherencia, psicoterapia y seguimiento.",
+      "La prevención de recurrencias considera número y gravedad de episodios, respuesta previa, adherencia, psicoterapia y seguimiento. Se determina por el conjunto de hallazgos, evolución y criterio temporal o terapéutico relevante.",
+      "La alternativa «Solo repetir una prueba al año sin contacto clínico» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es prevención de recaídas; la prevención de recurrencias considera número y gravedad de episodios, respuesta previa, adherencia, psicoterapia y seguimiento.",
+      "La alternativa «Indicar antipsicótico en toda depresión» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es prevención de recaídas; la prevención de recurrencias considera número y gravedad de episodios, respuesta previa, adherencia, psicoterapia y seguimiento.",
+      "La alternativa «Prometer riesgo cero de recaída» es menos apropiada porque no explica el hallazgo discriminante o propone una conducta no indicada en este contexto. El elemento clave es prevención de recaídas; la prevención de recurrencias considera número y gravedad de episodios, respuesta previa, adherencia, psicoterapia y seguimiento."
+    ],
+    "bibliografia": "DSM-5-TR, trastornos depresivos; Kaplan & Sadock, Sinopsis de Psiquiatría, trastornos del estado de ánimo y tratamientos (edición/páginas no verificadas); BADBEAR.MED teoría Clase 02.",
+    "desarrollo": {
+      "razonamiento": "La prevención de recurrencias considera número y gravedad de episodios, respuesta previa, adherencia, psicoterapia y seguimiento. El diagnóstico debe integrar síntomas nucleares, duración, deterioro, exclusión de causas médicas y búsqueda activa de bipolaridad y riesgo suicida cuando corresponda.",
+      "conducta": "Aplicar evaluación clínica completa, registrar gravedad y funcionalidad, establecer plan compartido y reevaluar respuesta, efectos adversos y seguridad. Ajustar nivel de atención según la urgencia.",
+      "ancla": "curso"
     }
   },
   {
