@@ -1,4 +1,4 @@
-/* Banco clínico original: referencias conceptuales, sin citas de páginas no comprobadas. */
+/* Banco clínico original BADBEAR.MED */
 window.BADBEAR_PSIQ_BANCO = [
   {
     "id": "PSQ-01-001",
@@ -56,6 +56,528 @@ window.BADBEAR_PSIQ_BANCO = [
       "razonamiento": "La ideación suicida exige precisar intención, planificación, acceso a medios, intentos previos, consumo concomitante y factores protectores; una negación de plan no equivale a riesgo nulo.",
       "conducta": "Se documentan plan de seguridad, señales de alarma, contactos y reevaluación temprana con red comunitaria.",
       "ancla": "evaluacion"
+    }
+  },
+  {
+    "id": "PSQ-01-003",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Determinantes sociales",
+    "nivel": "ENAM avanzado",
+    "caso": "Una familia desplazada presenta ansiedad ligada a inseguridad alimentaria y hacinamiento. ¿Cuál es el primer enfoque integral?",
+    "opciones": [
+      "Coordinar valoración clínica y recursos sociales",
+      "Prescribir antipsicótico de rutina",
+      "Desestimar los problemas sociales",
+      "Limitarse a una escala de ansiedad",
+      "Derivar sin evaluación"
+    ],
+    "correcta": 0,
+    "fundamento": "Se abordan conjuntamente sufrimiento psíquico y determinantes sociales que lo mantienen.",
+    "analisis": [
+      "Se abordan conjuntamente sufrimiento psíquico y determinantes sociales que lo mantienen. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Prescribir antipsicótico de rutina» no aborda el objetivo prioritario de determinantes sociales; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Desestimar los problemas sociales» no aborda el objetivo prioritario de determinantes sociales; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Limitarse a una escala de ansiedad» no aborda el objetivo prioritario de determinantes sociales; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Derivar sin evaluación» no aborda el objetivo prioritario de determinantes sociales; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "Se abordan conjuntamente sufrimiento psíquico y determinantes sociales que lo mantienen. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "determinantes"
+    }
+  },
+  {
+    "id": "PSQ-01-004",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Prevención primaria",
+    "nivel": "ENAM avanzado",
+    "caso": "Un municipio quiere prevenir problemas de salud mental antes de su aparición. ¿Qué actividad corresponde?",
+    "opciones": [
+      "Tratamiento de depresión establecida",
+      "Rehabilitación de psicosis crónica",
+      "Programa universal de prevención de violencia escolar",
+      "Seguimiento de recaídas",
+      "Ingreso hospitalario preventivo"
+    ],
+    "correcta": 2,
+    "fundamento": "La prevención primaria actúa antes del inicio del trastorno reduciendo factores de riesgo.",
+    "analisis": [
+      "La opción «Tratamiento de depresión establecida» no aborda el objetivo prioritario de prevención primaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Rehabilitación de psicosis crónica» no aborda el objetivo prioritario de prevención primaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La prevención primaria actúa antes del inicio del trastorno reduciendo factores de riesgo. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Seguimiento de recaídas» no aborda el objetivo prioritario de prevención primaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Ingreso hospitalario preventivo» no aborda el objetivo prioritario de prevención primaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La prevención primaria actúa antes del inicio del trastorno reduciendo factores de riesgo. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "modelos"
+    }
+  },
+  {
+    "id": "PSQ-01-005",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Prevención secundaria",
+    "nivel": "ENAM avanzado",
+    "caso": "La detección temprana y evaluación confirmatoria de síntomas depresivos en atención primaria representa:",
+    "opciones": [
+      "Rehabilitación terciaria",
+      "Prevención secundaria",
+      "Cuidados paliativos",
+      "Prevención de recaídas",
+      "Psicoterapia grupal necesariamente"
+    ],
+    "correcta": 1,
+    "fundamento": "La detección temprana seguida de intervención oportuna constituye prevención secundaria.",
+    "analisis": [
+      "La opción «Rehabilitación terciaria» no aborda el objetivo prioritario de prevención secundaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La detección temprana seguida de intervención oportuna constituye prevención secundaria. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Cuidados paliativos» no aborda el objetivo prioritario de prevención secundaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Prevención de recaídas» no aborda el objetivo prioritario de prevención secundaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Psicoterapia grupal necesariamente» no aborda el objetivo prioritario de prevención secundaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La detección temprana seguida de intervención oportuna constituye prevención secundaria. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "evaluacion"
+    }
+  },
+  {
+    "id": "PSQ-01-006",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Prevención terciaria",
+    "nivel": "ENAM avanzado",
+    "caso": "Una persona con esquizofrenia estabilizada solicita apoyo para retornar al empleo. ¿Cuál es la intervención apropiada?",
+    "opciones": [
+      "Tamizaje escolar universal",
+      "Campaña general de bienestar",
+      "Empleo con apoyo y rehabilitación psicosocial",
+      "Suspender medicación de manera sistemática",
+      "Hospitalizar indefinidamente"
+    ],
+    "correcta": 2,
+    "fundamento": "La rehabilitación reduce discapacidad y mejora el funcionamiento tras un trastorno establecido.",
+    "analisis": [
+      "La opción «Tamizaje escolar universal» no aborda el objetivo prioritario de prevención terciaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Campaña general de bienestar» no aborda el objetivo prioritario de prevención terciaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La rehabilitación reduce discapacidad y mejora el funcionamiento tras un trastorno establecido. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Suspender medicación de manera sistemática» no aborda el objetivo prioritario de prevención terciaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Hospitalizar indefinidamente» no aborda el objetivo prioritario de prevención terciaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La rehabilitación reduce discapacidad y mejora el funcionamiento tras un trastorno establecido. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "tratamiento"
+    }
+  },
+  {
+    "id": "PSQ-01-007",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Red comunitaria",
+    "nivel": "ENAM avanzado",
+    "caso": "Paciente con psicosis recurrente necesita continuidad entre centro de salud y hospital general. ¿Qué diseño favorece recuperación?",
+    "opciones": [
+      "Atención fragmentada",
+      "Controles sin documentación",
+      "Red integrada con responsabilidades y seguimiento",
+      "Alta sin plan",
+      "Exclusión de atención primaria"
+    ],
+    "correcta": 2,
+    "fundamento": "La continuidad asistencial integrada reduce pérdidas de seguimiento y facilita intervención escalonada.",
+    "analisis": [
+      "La opción «Atención fragmentada» no aborda el objetivo prioritario de red comunitaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Controles sin documentación» no aborda el objetivo prioritario de red comunitaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La continuidad asistencial integrada reduce pérdidas de seguimiento y facilita intervención escalonada. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Alta sin plan» no aborda el objetivo prioritario de red comunitaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Exclusión de atención primaria» no aborda el objetivo prioritario de red comunitaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La continuidad asistencial integrada reduce pérdidas de seguimiento y facilita intervención escalonada. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "red"
+    }
+  },
+  {
+    "id": "PSQ-01-008",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Formulación cultural",
+    "nivel": "ENAM avanzado",
+    "caso": "Una experiencia espiritual es culturalmente compartida y no causa deterioro. ¿Qué evaluación evita sobrediagnóstico?",
+    "opciones": [
+      "Explorar contexto cultural, juicio y funcionamiento",
+      "Etiquetarla automáticamente como delirio",
+      "Indicar ingreso involuntario",
+      "Evitar intérprete disponible",
+      "Prescribir antipsicótico sin entrevista"
+    ],
+    "correcta": 0,
+    "fundamento": "Las vivencias requieren interpretación cultural y evaluación de deterioro antes de etiquetarse como síntomas psicóticos.",
+    "analisis": [
+      "Las vivencias requieren interpretación cultural y evaluación de deterioro antes de etiquetarse como síntomas psicóticos. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Etiquetarla automáticamente como delirio» no aborda el objetivo prioritario de formulación cultural; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Indicar ingreso involuntario» no aborda el objetivo prioritario de formulación cultural; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Evitar intérprete disponible» no aborda el objetivo prioritario de formulación cultural; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Prescribir antipsicótico sin entrevista» no aborda el objetivo prioritario de formulación cultural; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "Las vivencias requieren interpretación cultural y evaluación de deterioro antes de etiquetarse como síntomas psicóticos. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "cultura"
+    }
+  },
+  {
+    "id": "PSQ-01-009",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Estigma",
+    "nivel": "ENAM avanzado",
+    "caso": "Una persona deja de consultar por temor a discriminación laboral. ¿Cuál medida facilita acceso?",
+    "opciones": [
+      "Informar al empleador sin consentimiento",
+      "Garantizar confidencialidad y atención sin estigma",
+      "Excluirla del programa",
+      "Negar información sobre derechos",
+      "Desaconsejar controles"
+    ],
+    "correcta": 1,
+    "fundamento": "Confidencialidad, trato digno y derechos disminuyen barreras relacionadas con estigma.",
+    "analisis": [
+      "La opción «Informar al empleador sin consentimiento» no aborda el objetivo prioritario de estigma; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "Confidencialidad, trato digno y derechos disminuyen barreras relacionadas con estigma. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Excluirla del programa» no aborda el objetivo prioritario de estigma; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Negar información sobre derechos» no aborda el objetivo prioritario de estigma; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Desaconsejar controles» no aborda el objetivo prioritario de estigma; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "Confidencialidad, trato digno y derechos disminuyen barreras relacionadas con estigma. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "derechos"
+    }
+  },
+  {
+    "id": "PSQ-01-010",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Riesgo suicida",
+    "nivel": "ENAM avanzado",
+    "caso": "Un paciente comunica plan suicida inminente y acceso al medio. ¿Qué actuación tiene prioridad?",
+    "opciones": [
+      "Seguimiento en seis meses",
+      "Evitar preguntas directas",
+      "Valorar de urgencia y activar protección apropiada",
+      "Prometer secreto absoluto",
+      "Solo entregar folleto"
+    ],
+    "correcta": 2,
+    "fundamento": "La intención, inminencia y acceso a medios exigen evaluación urgente y medidas de seguridad proporcionales.",
+    "analisis": [
+      "La opción «Seguimiento en seis meses» no aborda el objetivo prioritario de riesgo suicida; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Evitar preguntas directas» no aborda el objetivo prioritario de riesgo suicida; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La intención, inminencia y acceso a medios exigen evaluación urgente y medidas de seguridad proporcionales. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Prometer secreto absoluto» no aborda el objetivo prioritario de riesgo suicida; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Solo entregar folleto» no aborda el objetivo prioritario de riesgo suicida; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La intención, inminencia y acceso a medios exigen evaluación urgente y medidas de seguridad proporcionales. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "evaluacion"
+    }
+  },
+  {
+    "id": "PSQ-01-011",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Cribado",
+    "nivel": "ENAM avanzado",
+    "caso": "Un cuestionario de depresión es positivo en una campaña comunitaria. ¿Qué conclusión es válida?",
+    "opciones": [
+      "Confirma episodio depresivo mayor",
+      "Descarta bipolaridad",
+      "Exige entrevista clínica confirmatoria",
+      "Define la causa biológica",
+      "Determina tratamiento farmacológico específico"
+    ],
+    "correcta": 2,
+    "fundamento": "El cribado estima probabilidad y necesidad de evaluación; no constituye diagnóstico clínico definitivo.",
+    "analisis": [
+      "La opción «Confirma episodio depresivo mayor» no aborda el objetivo prioritario de cribado; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Descarta bipolaridad» no aborda el objetivo prioritario de cribado; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "El cribado estima probabilidad y necesidad de evaluación; no constituye diagnóstico clínico definitivo. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Define la causa biológica» no aborda el objetivo prioritario de cribado; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Determina tratamiento farmacológico específico» no aborda el objetivo prioritario de cribado; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "El cribado estima probabilidad y necesidad de evaluación; no constituye diagnóstico clínico definitivo. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "evaluacion"
+    }
+  },
+  {
+    "id": "PSQ-01-012",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Decisión compartida",
+    "nivel": "ENAM avanzado",
+    "caso": "Paciente competente teme efectos adversos de psicofármacos y solicita opciones. ¿Cuál es la respuesta profesional?",
+    "opciones": [
+      "Ocultar efectos adversos",
+      "Dialogar riesgos, beneficios, preferencias y alternativas",
+      "Declararlo incapaz por rechazar",
+      "Cerrar expediente",
+      "Imponer el medicamento"
+    ],
+    "correcta": 1,
+    "fundamento": "La alianza terapéutica se basa en consentimiento informado y deliberación compartida.",
+    "analisis": [
+      "La opción «Ocultar efectos adversos» no aborda el objetivo prioritario de decisión compartida; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La alianza terapéutica se basa en consentimiento informado y deliberación compartida. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Declararlo incapaz por rechazar» no aborda el objetivo prioritario de decisión compartida; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Cerrar expediente» no aborda el objetivo prioritario de decisión compartida; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Imponer el medicamento» no aborda el objetivo prioritario de decisión compartida; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La alianza terapéutica se basa en consentimiento informado y deliberación compartida. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "formulacion"
+    }
+  },
+  {
+    "id": "PSQ-01-013",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Discapacidad y entorno",
+    "nivel": "ENAM avanzado",
+    "caso": "Una persona con síntomas controlados no consigue empleo por ausencia de adaptaciones. ¿Qué concepto resulta pertinente?",
+    "opciones": [
+      "Defecto moral individual",
+      "Discapacidad como interacción con barreras sociales",
+      "Simulación presumida",
+      "Ausencia de necesidad asistencial",
+      "Etiología infecciosa oculta"
+    ],
+    "correcta": 1,
+    "fundamento": "La participación funcional depende también de barreras ambientales, no solo de síntomas individuales.",
+    "analisis": [
+      "La opción «Defecto moral individual» no aborda el objetivo prioritario de discapacidad y entorno; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La participación funcional depende también de barreras ambientales, no solo de síntomas individuales. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Simulación presumida» no aborda el objetivo prioritario de discapacidad y entorno; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Ausencia de necesidad asistencial» no aborda el objetivo prioritario de discapacidad y entorno; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Etiología infecciosa oculta» no aborda el objetivo prioritario de discapacidad y entorno; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La participación funcional depende también de barreras ambientales, no solo de síntomas individuales. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "modelos"
+    }
+  },
+  {
+    "id": "PSQ-01-014",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Autonomía",
+    "nivel": "ENAM avanzado",
+    "caso": "Una persona con trastorno mental estable quiere participar en decisiones terapéuticas. ¿Qué principio se aplica?",
+    "opciones": [
+      "Incapacidad universal",
+      "Autorización obligatoria del empleador",
+      "Autonomía y apoyos según capacidad para esa decisión",
+      "Exclusión del consentimiento",
+      "Divulgación indiscriminada"
+    ],
+    "correcta": 2,
+    "fundamento": "Un diagnóstico no extingue el derecho al consentimiento informado y la capacidad debe evaluarse específicamente.",
+    "analisis": [
+      "La opción «Incapacidad universal» no aborda el objetivo prioritario de autonomía; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Autorización obligatoria del empleador» no aborda el objetivo prioritario de autonomía; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "Un diagnóstico no extingue el derecho al consentimiento informado y la capacidad debe evaluarse específicamente. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Exclusión del consentimiento» no aborda el objetivo prioritario de autonomía; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Divulgación indiscriminada» no aborda el objetivo prioritario de autonomía; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "Un diagnóstico no extingue el derecho al consentimiento informado y la capacidad debe evaluarse específicamente. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "derechos"
+    }
+  },
+  {
+    "id": "PSQ-01-015",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Visita domiciliaria",
+    "nivel": "ENAM avanzado",
+    "caso": "Una paciente falta a citas por movilidad limitada; no hay peligro inmediato. ¿Qué estrategia es pertinente?",
+    "opciones": [
+      "Alta definitiva",
+      "Contacto y visita domiciliaria consentida",
+      "Ingreso forzoso automático",
+      "Negar nuevos turnos",
+      "Interpretar ausencia como simulación"
+    ],
+    "correcta": 1,
+    "fundamento": "La adaptación de servicios a barreras de acceso favorece seguimiento comunitario sin coerción injustificada.",
+    "analisis": [
+      "La opción «Alta definitiva» no aborda el objetivo prioritario de visita domiciliaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La adaptación de servicios a barreras de acceso favorece seguimiento comunitario sin coerción injustificada. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Ingreso forzoso automático» no aborda el objetivo prioritario de visita domiciliaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Negar nuevos turnos» no aborda el objetivo prioritario de visita domiciliaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Interpretar ausencia como simulación» no aborda el objetivo prioritario de visita domiciliaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La adaptación de servicios a barreras de acceso favorece seguimiento comunitario sin coerción injustificada. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "red"
+    }
+  },
+  {
+    "id": "PSQ-01-016",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Salud mental del adulto mayor",
+    "nivel": "ENAM avanzado",
+    "caso": "Anciano con síntomas depresivos y aislamiento carece de comida y presenta polifarmacia. ¿Qué evaluar además del ánimo?",
+    "opciones": [
+      "Solo neuroimagen",
+      "Función, medicamentos, apoyos y seguridad alimentaria",
+      "Únicamente rasgos de personalidad",
+      "Solo electroencefalograma",
+      "Nada fuera del DSM"
+    ],
+    "correcta": 1,
+    "fundamento": "La valoración geriátrica integra condiciones médicas, funcionamiento, tratamientos y riesgos sociales.",
+    "analisis": [
+      "La opción «Solo neuroimagen» no aborda el objetivo prioritario de salud mental del adulto mayor; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La valoración geriátrica integra condiciones médicas, funcionamiento, tratamientos y riesgos sociales. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Únicamente rasgos de personalidad» no aborda el objetivo prioritario de salud mental del adulto mayor; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Solo electroencefalograma» no aborda el objetivo prioritario de salud mental del adulto mayor; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Nada fuera del DSM» no aborda el objetivo prioritario de salud mental del adulto mayor; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La valoración geriátrica integra condiciones médicas, funcionamiento, tratamientos y riesgos sociales. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "determinantes"
+    }
+  },
+  {
+    "id": "PSQ-01-017",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Indicadores epidemiológicos",
+    "nivel": "ENAM avanzado",
+    "caso": "Una encuesta cuenta los casos de depresión existentes en determinada fecha. ¿Qué indicador obtuvo?",
+    "opciones": [
+      "Incidencia",
+      "Prevalencia",
+      "Riesgo relativo",
+      "Letalidad",
+      "Sensibilidad diagnóstica"
+    ],
+    "correcta": 1,
+    "fundamento": "La prevalencia es la proporción de casos existentes en un punto o periodo; no representa casos nuevos.",
+    "analisis": [
+      "La opción «Incidencia» no aborda el objetivo prioritario de indicadores epidemiológicos; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La prevalencia es la proporción de casos existentes en un punto o periodo; no representa casos nuevos. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Riesgo relativo» no aborda el objetivo prioritario de indicadores epidemiológicos; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Letalidad» no aborda el objetivo prioritario de indicadores epidemiológicos; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Sensibilidad diagnóstica» no aborda el objetivo prioritario de indicadores epidemiológicos; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La prevalencia es la proporción de casos existentes en un punto o periodo; no representa casos nuevos. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "epidemiologia"
+    }
+  },
+  {
+    "id": "PSQ-01-018",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Escuela",
+    "nivel": "ENAM avanzado",
+    "caso": "Un colegio registra acoso y autolesiones; desea respuesta institucional. ¿Qué estrategia resulta mejor?",
+    "opciones": [
+      "Expulsar a estudiantes sintomáticos",
+      "Programa integrado de convivencia, detección y ruta de crisis",
+      "Administrar antipsicótico a todos",
+      "Evitar evaluar riesgo",
+      "Publicar historias clínicas"
+    ],
+    "correcta": 1,
+    "fundamento": "La intervención escolar combina promoción, detección, respuesta a crisis y derivación con protección de confidencialidad.",
+    "analisis": [
+      "La opción «Expulsar a estudiantes sintomáticos» no aborda el objetivo prioritario de escuela; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La intervención escolar combina promoción, detección, respuesta a crisis y derivación con protección de confidencialidad. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Administrar antipsicótico a todos» no aborda el objetivo prioritario de escuela; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Evitar evaluar riesgo» no aborda el objetivo prioritario de escuela; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Publicar historias clínicas» no aborda el objetivo prioritario de escuela; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "La intervención escolar combina promoción, detección, respuesta a crisis y derivación con protección de confidencialidad. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "red"
+    }
+  },
+  {
+    "id": "PSQ-01-019",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Emergencia humanitaria",
+    "nivel": "ENAM avanzado",
+    "caso": "Personas afectadas por inundación presentan miedo e insomnio inicial sin deterioro grave. ¿Qué intervención es prioritaria?",
+    "opciones": [
+      "Diagnosticar TEPT a todos",
+      "Primeros auxilios psicológicos y apoyo práctico",
+      "Debriefing obligatorio",
+      "Sedación indefinida colectiva",
+      "Negar información"
+    ],
+    "correcta": 1,
+    "fundamento": "El apoyo no invasivo prioriza seguridad, necesidades y redes sin patologizar reacciones agudas esperables.",
+    "analisis": [
+      "La opción «Diagnosticar TEPT a todos» no aborda el objetivo prioritario de emergencia humanitaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "El apoyo no invasivo prioriza seguridad, necesidades y redes sin patologizar reacciones agudas esperables. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Debriefing obligatorio» no aborda el objetivo prioritario de emergencia humanitaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Sedación indefinida colectiva» no aborda el objetivo prioritario de emergencia humanitaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Negar información» no aborda el objetivo prioritario de emergencia humanitaria; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "El apoyo no invasivo prioriza seguridad, necesidades y redes sin patologizar reacciones agudas esperables. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "determinantes"
+    }
+  },
+  {
+    "id": "PSQ-01-020",
+    "unidad": 1,
+    "tema": "Psiquiatría comunitaria · Dimensiones clínicas",
+    "nivel": "ENAM avanzado",
+    "caso": "Una persona tiene síntomas mixtos subumbrales de ansiedad y depresión con deterioro real. ¿Cómo abordarla?",
+    "opciones": [
+      "Negar cuidado por no cumplir un umbral",
+      "Evaluar dimensionalmente, función y evolución longitudinal",
+      "Diagnosticar psicosis por descarte",
+      "Prescribir antipsicótico automáticamente",
+      "Excluir evaluación médica"
+    ],
+    "correcta": 1,
+    "fundamento": "Una formulación dimensional complementa categorías y permite atender sufrimiento relevante sin etiquetas prematuras.",
+    "analisis": [
+      "La opción «Negar cuidado por no cumplir un umbral» no aborda el objetivo prioritario de dimensiones clínicas; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "Una formulación dimensional complementa categorías y permite atender sufrimiento relevante sin etiquetas prematuras. La decisión atiende los datos contextuales y clínicos del caso.",
+      "La opción «Diagnosticar psicosis por descarte» no aborda el objetivo prioritario de dimensiones clínicas; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Prescribir antipsicótico automáticamente» no aborda el objetivo prioritario de dimensiones clínicas; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario.",
+      "La opción «Excluir evaluación médica» no aborda el objetivo prioritario de dimensiones clínicas; omite elementos de seguridad, validez diagnóstica o continuidad asistencial necesarios para resolver este escenario."
+    ],
+    "bibliografia": "Teoría BADBEAR.MED, clase 01; DSM-5-TR cuando corresponda y Kaplan & Sadock, Sinopsis de Psiquiatría, referencias conceptuales sin página verificada.",
+    "desarrollo": {
+      "razonamiento": "Una formulación dimensional complementa categorías y permite atender sufrimiento relevante sin etiquetas prematuras. Debe interpretarse el problema en relación con el ambiente, las necesidades de atención y el grado de riesgo, sin inferir diagnósticos por prejuicio o por un único síntoma.",
+      "conducta": "Integrar historia clínica, evaluación de riesgo y recursos, información comprensible y un plan documentado de seguimiento, derivando a mayor complejidad cuando los criterios clínicos lo requieran.",
+      "ancla": "clasificacion"
     }
   },
   {
