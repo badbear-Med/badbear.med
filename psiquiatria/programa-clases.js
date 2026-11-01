@@ -232,8 +232,8 @@ window.BADBEAR_PSIQUIATRIA_CLASES = [
     "numero": 17,
     "titulo": "Trastornos del sueño: epidemiología, clínica y tratamiento",
     "area": "Sueño",
-    "descripcion": "Evaluación de los problemas de sueño y opciones terapéuticas.",
-    "teoria": null,
+    "descripcion": "Fisiología del sueño, insomnio y TCC-I, hipersomnolencia, narcolepsia, apnea, piernas inquietas y parasomnias, con ocho casos razonados.",
+    "teoria": "../psiquiatria/clases/clase-17-sueno-y-trastornos-del-sueno.html",
     "recursos": {
       "ppt": "https://media.wajomea.group/psiquiatria/ppt/clase-17.pdf",
       "audio": "https://media.wajomea.group/psiquiatria/audio/clase-17.m4a",
