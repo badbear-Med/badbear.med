@@ -1,14 +1,25 @@
 (()=>{"use strict";
-const bank=Array.isArray(window.BADBEAR_PSIQ_BANCO)?window.BADBEAR_PSIQ_BANCO:[];
+const baseBank = Array.isArray(window.BADBEAR_PSIQ_BANCO) ? window.BADBEAR_PSIQ_BANCO : [];
+const pilotUnit = 8;
+const pilot = Array.isArray(window.BADBEAR_PSIQ_UNIDAD_8) ? window.BADBEAR_PSIQ_UNIDAD_8 : [];
+const pilotStart = baseBank.findIndex(question => question.unidad === pilotUnit);
+const bank = pilot.length && pilotStart !== -1
+  ? [...baseBank.slice(0, pilotStart), ...pilot, ...baseBank.slice(pilotStart).filter(question => question.unidad !== pilotUnit)]
+  : baseBank;
 const units=Array.isArray(window.BADBEAR_PSIQUIATRIA_CLASES)?window.BADBEAR_PSIQUIATRIA_CLASES:[];
 const root=document.getElementById("quiz"),filter=document.getElementById("unit"),mode=document.getElementById("mode"),counter=document.getElementById("answered");
 let selected={},index=0,submitted=false;
-const timed = new URLSearchParams(window.location.search).get("modo") === "simulacro";
+const params = new URLSearchParams(window.location.search);
+const timed = params.get("modo") === "simulacro";
+const pilotSelected = params.get("unidad") === String(pilotUnit);
+const timedUnit = timed && pilotSelected ? pilotUnit : null;
+const timedPool = timedUnit ? bank.filter(question => question.unidad === timedUnit) : bank;
 const timedSize = 20;
 const timedDuration = 10 * 60 * 1000;
-const timedStorageKey = "badbear-psiq-simulacro-10m-v1";
+const timedStorageKey = "badbear-psiq-simulacro-10m-v1" + (timedUnit ? "-unidad-" + timedUnit : "");
 const clock = document.getElementById("timed-clock");
-const bankById = timed ? new Map(bank.map(question => [question.id, question])) : null;
+// Las versiones previas siguen disponibles para restaurar simulacros ya iniciados.
+const bankById = timed ? new Map([...baseBank, ...bank].map(question => [question.id, question])) : null;
 let attempt = null;
 let timer = null;
 
@@ -23,7 +34,7 @@ function shuffled(items) {
 
 function startTimed() {
   if (attempt && !attempt.closed) return;
-  const shuffledBank = shuffled([...bankById.values()]);
+  const shuffledBank = shuffled(timedPool);
   const firstByUnit = new Map();
   for (const question of shuffledBank) {
     if (!firstByUnit.has(question.unidad)) firstByUnit.set(question.unidad, question);
@@ -42,7 +53,7 @@ function restoreTimed() {
   try {
     const saved = JSON.parse(sessionStorage.getItem(timedStorageKey) || "null");
     if (!saved || !Array.isArray(saved.ids) || saved.ids.length !== timedSize ||
-        new Set(saved.ids).size !== timedSize || !saved.ids.every(id => bankById.has(id)) ||
+        new Set(saved.ids).size !== timedSize || !saved.ids.every(id => bankById.has(id) && (!timedUnit || bankById.get(id).unidad === timedUnit)) ||
         !Number.isFinite(saved.deadline) || ![null, "manual", "time"].includes(saved.closed)) return;
     attempt = { ids: saved.ids, deadline: saved.deadline, closed: saved.closed };
     selected = Object.fromEntries(saved.ids.flatMap(id => {
@@ -101,16 +112,42 @@ function store(){
 function restore(){try{const v=JSON.parse(localStorage.getItem("badbear-psiq-banco-v1")||"{}");if(v&&typeof v==="object"){selected=v.selected||{};if(v.unit&&[...filter.options].some(x=>x.value===v.unit))filter.value=v.unit;if(["study","exam"].includes(v.mode))mode.value=v.mode;}}catch{}}
 function button(text,callback,disabled=false){const b=el("button",text);b.type="button";b.disabled=disabled;b.addEventListener("click",callback);return b;}
 function addLink(parent,url,text){if(!url)return;const a=el("a",text);a.href=url;a.target="_blank";a.rel="noopener noreferrer";parent.appendChild(a);}
+function assertionList(question, reveal = false) {
+  const list = el("ol", undefined, "statements");
+  list.setAttribute("type", "I");
+  for (const assertion of question.aseveraciones) {
+    const item = el("li", assertion.texto);
+    if (reveal) {
+      item.append(
+        el("strong", assertion.verdadera ? "Verdadera. " : "Falsa. "),
+        document.createTextNode(assertion.justificacion)
+      );
+    }
+    list.append(item);
+  }
+  return list;
+}
+
 function explain(q,chosen){const box=el("div",undefined,"response");
 const right=chosen===q.correcta;
 const feedback = chosen === undefined ? "Sin responder" : "Respuesta incorrecta";
 box.append(el("h3",right?"Respuesta correcta":feedback+". Respuesta esperada: "+letter(q.correcta)));
+if(q.aseveraciones){
+  box.append(el("h4","Corrección de las aseveraciones"));
+  box.append(el("p","Clave "+letter(q.correcta)+" · "+q.opciones[q.correcta]+" de cuatro aseveraciones correctas."));
+  box.append(assertionList(q,true));
+} else {
 box.append(el("h4","Interpretación clínica del caso"));box.append(el("p",q.fundamento));
 if(q.desarrollo?.razonamiento){box.append(el("h4","Razonamiento diagnóstico y fisiopatológico"));box.append(el("p",q.desarrollo.razonamiento));}
 if(q.desarrollo?.conducta){box.append(el("h4","Conducta, seguridad y aplicación práctica"));box.append(el("p",q.desarrollo.conducta));}
 box.append(el("h4","Análisis individual de las cinco alternativas"));
 const ul=el("ol");q.opciones.forEach((opt,i)=>{const li=el("li");const strong=el("strong",letter(i)+". "+opt+" — ");li.append(strong,document.createTextNode(q.analisis[i] || q.fundamento));ul.append(li);});box.append(ul);
-box.append(el("h4","Fundamento bibliográfico"));box.append(el("p",q.bibliografia));
+}
+box.append(el("h4","Fundamento bibliográfico"));
+const reference = el("p");
+if (q.fuente) addLink(reference,q.fuente,q.bibliografia);
+else reference.textContent=q.bibliografia;
+box.append(reference);
 const unit=units.find(x=>Number(x.numero)===Number(q.unidad));if(unit&&unit.teoria){const p=el("p");
 const theoryUrl=new URL(unit.teoria,document.baseURI);if(q.desarrollo?.ancla)theoryUrl.hash=q.desarrollo.ancla;
 addLink(p,theoryUrl.href,q.desarrollo?.ancla?"Consultar directamente el apartado relevante de la teoría · Unidad "+q.unidad+" ↗":"Consultar teoría de la unidad "+q.unidad+" ↗");box.append(p);}else box.append(el("p","Teoría propia de esta unidad: pendiente de publicación y verificación editorial."));
@@ -122,11 +159,14 @@ function render(){
     updateClock();
     if (!attempt) {
       root.append(el("h2","20 preguntas · 10 minutos"));
-      if (bankById.size < timedSize) {
+      if (timedPool.length < timedSize) {
         root.append(el("p","El banco aún no tiene suficientes preguntas para iniciar."));
         return;
       }
-      root.append(el("p","La selección mezcla unidades de Psiquiatría. El tiempo empieza al pulsar Iniciar simulacro. Al terminar, podrás revisar tu puntuación y las explicaciones."));
+      root.append(el("p", timedUnit
+        ? "Unidad 8 · Trastornos de la conducta alimentaria y de la sexualidad. Cada pregunta presenta cuatro aseveraciones."
+        : "La selección mezcla unidades de Psiquiatría."));
+      root.append(el("p","El tiempo empieza al pulsar Iniciar simulacro. Al terminar, podrás revisar tu puntuación y las explicaciones."));
       const start = button("Iniciar simulacro", startTimed);
       start.className = "main-btn";
       root.append(start);
@@ -139,6 +179,11 @@ function render(){
   document.getElementById("total").textContent=bank.length;
   counter.textContent=answeredCount;
 if(!timed&&filter.value!=="all"){const available=list.length;const info=el("p",available>=20?"Esta unidad cumple el mínimo de 20 preguntas.":"Unidad en desarrollo: "+available+" de 20 preguntas mínimas. La cobertura todavía es parcial.","pill");root.append(info);}
+if (!timed && filter.value === String(pilotUnit) && pilot.length) {
+  const link = el("a", "Simulacro de la unidad 8 · 20 preguntas / 10 min", "main-btn unit-simulacro");
+  link.href = "?modo=simulacro&unidad=8";
+  root.append(link);
+}
 if(!list.length){root.append(el("p","No hay preguntas para esta selección.","empty"));return;}
 if(index>=list.length)index=list.length-1;
 if(isExam && (timed ? attempt.closed : submitted)){
@@ -163,6 +208,10 @@ if(isExam && (timed ? attempt.closed : submitted)){
   return;
 }
 const q=list[index];const head=el("div",undefined,"head");head.append(el("span","Unidad "+q.unidad+" · "+q.tema),el("span",(index+1)+" / "+list.length+" · "+q.nivel));root.append(head,el("p",q.caso,"case"));
+if(q.aseveraciones){
+  root.append(assertionList(q));
+  root.append(el("p","¿Cuántas aseveraciones son correctas?","case"));
+}
 if (timed) root.append(el("p",answeredCount+" de "+list.length+" respondidas","pill"));
 const opts=el("div",undefined,"answers");const answered=Number.isInteger(selected[q.id]);
 q.opciones.forEach((opt,i)=>{
@@ -197,7 +246,7 @@ if(isExam){
 }
 if (timed) {
   document.title = "Simulacro de 10 minutos · Psiquiatría | BADBEAR.MED";
-  document.getElementById("bank-title").textContent = "Simulacro de Psiquiatría";
+  document.getElementById("bank-title").textContent = timedUnit ? "Simulacro de Psiquiatría · Unidad 8" : "Simulacro de Psiquiatría";
   document.getElementById("bank-stat").hidden = true;
   document.getElementById("bank-settings").hidden = true;
   document.getElementById("timed-bar").hidden = false;
@@ -209,5 +258,7 @@ if (timed) {
 units.forEach(x=>{const count=bank.filter(q=>q.unidad===Number(x.numero)).length;
 const label=String(x.numero).padStart(2,"0")+" · "+x.titulo+" ("+count+"/20 mínimo"+(count>=20?" ✓":" · EN DESARROLLO")+")";
 const opt=el("option",label);opt.value=String(x.numero);filter.append(opt);});
-restore();filter.addEventListener("change",()=>{index=0;submitted=false;store();render()});mode.addEventListener("change",()=>{index=0;submitted=false;selected={};store();render()});document.getElementById("reset").addEventListener("click",()=>{if(!confirm("¿Reiniciar las respuestas de esta sesión?"))return;selected={};index=0;submitted=false;store();render()});render();
+restore();
+if (pilotSelected && [...filter.options].some(option => option.value === String(pilotUnit))) filter.value = String(pilotUnit);
+filter.addEventListener("change",()=>{index=0;submitted=false;store();render()});mode.addEventListener("change",()=>{index=0;submitted=false;selected={};store();render()});document.getElementById("reset").addEventListener("click",()=>{if(!confirm("¿Reiniciar las respuestas de esta sesión?"))return;selected={};index=0;submitted=false;store();render()});render();
 })();
