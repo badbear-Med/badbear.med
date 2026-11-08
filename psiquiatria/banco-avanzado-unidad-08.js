@@ -161,7 +161,7 @@ window.BADBEAR_PSIQ_UNIDAD_8 = [
     "unidad": 8,
     "tema": "Trastornos de la conducta alimentaria y de la sexualidad",
     "nivel": "Práctica clínica",
-    "caso": "Un adulto tiene atracones con pérdida de control una vez por semana desde hace cinco meses. Come deprisa, a solas y hasta sentirse incómodo. Siente intenso malestar y no compensa.",
+    "caso": "Un adulto tiene atracones con pérdida de control una vez por semana desde hace cinco meses. Come deprisa, a solas por vergüenza y hasta sentirse incómodo. Siente intenso malestar y no compensa.",
     "aseveraciones": [
       {
         "texto": "El cuadro es compatible con trastorno por atracón.",
