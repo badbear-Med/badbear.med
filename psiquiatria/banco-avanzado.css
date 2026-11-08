@@ -5,3 +5,8 @@
 .timed-bar a { color: #41309f; font-weight: 700; }
 #timed-clock { margin: 0; font-weight: 800; font-variant-numeric: tabular-nums; }
 .answer[aria-pressed="true"] { border-color: #4935a6; background: #eeeaff; }
+
+.statements { padding-inline-start: 2.1rem; line-height: 1.55; }
+.statements li { padding-inline-start: .25rem; margin-block: .4rem; }
+.response .statements strong { display: block; margin-top: .25rem; }
+.unit-simulacro { display: inline-block; margin: 0 0 .75rem .75rem; text-decoration: none; }
