@@ -10,3 +10,19 @@
 .statements li { padding-inline-start: .25rem; margin-block: .4rem; }
 .response .statements strong { display: block; margin-top: .25rem; }
 .unit-simulacro { display: inline-block; margin: 0 0 .75rem .75rem; text-decoration: none; }
+
+.settings label { grid-template-columns: minmax(0, 1fr); }
+.settings select { width: 100%; min-width: 0; }
+.answers { grid-template-columns: minmax(0, 1fr); }
+.case, .statements, .response, .answer, .explanation { overflow-wrap: anywhere; }
+
+@media (max-width: 650px) {
+  main { padding-inline: 12px; }
+  .settings { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .settings label { min-width: 0; }
+  .settings select { font-size: 16px; }
+  .settings .main-btn { text-align: center; }
+  .head { flex-direction: column; gap: .25rem; }
+  .unit-simulacro { display: block; margin: .75rem 0; text-align: center; }
+  .response { padding: 14px; }
+}
