@@ -7,7 +7,19 @@ const combinedBank = pilot.length && pilotStart !== -1
   ? [...baseBank.slice(0, pilotStart), ...pilot, ...baseBank.slice(pilotStart).filter(question => question.unidad !== pilotUnit)]
   : baseBank;
 const convert = window.BADBEAR_PSIQ_CONVERTIR_ASEVERACIONES;
-const bank = convert ? combinedBank.map(convert) : combinedBank;
+const previousBank = convert ? combinedBank.map(convert) : combinedBank;
+const revisions = window.BADBEAR_PSIQ_REVISION_CLINICA || {};
+const bank = previousBank.map(question => {
+  const revision = revisions[question.id];
+  if (!revision) return question;
+  return {
+    ...question,
+    ...revision,
+    id: question.id + "-R2",
+    correcta: revision.aseveraciones.filter(assertion => assertion.verdadera).length,
+    respuestaOriginal: undefined
+  };
+});
 const units=Array.isArray(window.BADBEAR_PSIQUIATRIA_CLASES)?window.BADBEAR_PSIQUIATRIA_CLASES:[];
 const root=document.getElementById("quiz"),filter=document.getElementById("unit"),mode=document.getElementById("mode"),counter=document.getElementById("answered");
 let selected={},index=0,submitted=false;
@@ -21,7 +33,7 @@ const timedDuration = 10 * 60 * 1000;
 const timedStorageKey = "badbear-psiq-simulacro-10m-v1" + (timedUnit ? "-unidad-" + timedUnit : "");
 const clock = document.getElementById("timed-clock");
 // Las versiones previas siguen disponibles para restaurar simulacros ya iniciados.
-const bankById = timed ? new Map([...baseBank, ...combinedBank, ...bank].map(question => [question.id, question])) : null;
+const bankById = timed ? new Map([...baseBank, ...combinedBank, ...previousBank, ...bank].map(question => [question.id, question])) : null;
 let attempt = null;
 let timer = null;
 
@@ -103,11 +115,11 @@ const letter=i=>String.fromCharCode(65+i);
 // La respuesta almacenada es el número de verdades. La posición visible es independiente.
 const assertionOrder = [1, 2, 3, 4, 0];
 const assertionLabels = [
-  "NINGUNA ES VERDADERA",
-  "SOLO UNA ES VERDADERA",
-  "SOLO DOS SON VERDADERAS",
-  "SOLAMENTE TRES SON VERDADERAS",
-  "TODAS SON VERDADERAS"
+  "Todas son falsas",
+  "Una es correcta",
+  "Dos son correctas",
+  "Tres son correctas",
+  "Todas son verdaderas"
 ];
 const answerLetter = (question, index) => letter(question.aseveraciones ? assertionOrder.indexOf(index) : index);
 const el=(tag,text,cls)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(cls)node.className=cls;return node;};
@@ -227,14 +239,15 @@ if(isExam && (timed ? attempt.closed : submitted)){
 const q=list[index];const head=el("div",undefined,"head");head.append(el("span","Unidad "+q.unidad+" · "+q.tema),el("span",(index+1)+" / "+list.length+" · "+q.nivel));root.append(head,el("p",q.caso,"case"));
 if(q.aseveraciones){
   root.append(assertionList(q));
-  root.append(el("p","¿Cuántas aseveraciones son correctas?","case"));
+  root.append(el("p","Sobre las aseveraciones antes vertidas:","case"));
 }
 if (timed) root.append(el("p",answeredCount+" de "+list.length+" respondidas","pill"));
 const opts=el("div",undefined,"answers");const answered=Number.isInteger(selected[q.id]);
 const order = q.aseveraciones ? assertionOrder : q.opciones.map((_, i) => i);
 order.forEach(i=>{
   const option = q.aseveraciones ? assertionLabels[i] : q.opciones[i];
-  const b=button(answerLetter(q,i)+".  "+option,()=>{
+  const label = q.aseveraciones ? answerLetter(q,i).toLowerCase()+")" : answerLetter(q,i)+".";
+  const b=button(label+" "+option,()=>{
     if (timed) {
       tick();
       if (attempt.closed) return;
