@@ -16,3 +16,18 @@ body{background:#f7f7fb}.psiq-header{position:sticky;top:0;z-index:1000;backgrou
 .psiq-program-open:hover{background:#5217a3}
 @media(max-width:960px){.psiq-program-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.psiq-program-grid{grid-template-columns:1fr}.psiq-programa-section .psiq-section-head{align-items:flex-start}.psiq-programa-section .psiq-section-head>.psiq-btn{width:100%;justify-content:center}.psiq-program-card{padding:16px}}
+
+@media (max-width: 820px) {
+  .psiq-header .inner { padding-inline-end: 64px; }
+  .psiq-section-head > *, .psiq-tools > * { min-width: 0; }
+}
+@media (max-width: 640px) {
+  .psiq-hero { padding-block: 32px 44px; }
+  .psiq-hero h1 { font-size: clamp(2rem, 10vw, 3rem); }
+  .psiq-hero-inner, .psiq-stats, .psiq-grid, .psiq-modules, .psiq-program-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .psiq-tools input, .psiq-tools select { box-sizing: border-box; font-size: 16px; }
+  .psiq-programa-section .psiq-section-head > .psiq-btn { box-sizing: border-box; }
+  .psiq-module, .psiq-topic, .psiq-program-card { overflow-wrap: anywhere; }
+}

@@ -18,3 +18,17 @@ html.bb-course-locked{overflow:hidden!important}
 .bb-lock-note{margin-top:16px!important;padding-top:15px;border-top:1px solid #e5e7eb;font-size:12px;color:#7b8798!important}
 .bb-lock-close{position:fixed;z-index:2147483640;right:16px;bottom:16px;border:1px solid #d8dee8;border-radius:999px;background:#fff;color:#344054;padding:8px 11px;box-shadow:0 6px 18px rgba(15,23,42,.08);font:700 12px/1 Inter,system-ui,sans-serif;cursor:pointer}
 @media(max-width:600px){.bb-lock-overlay{padding:14px}.bb-lock-card{padding:22px 18px;border-radius:19px}.bb-lock-card h1{font-size:25px}.bb-lock-row{grid-template-columns:1fr}.bb-lock-row button{padding:11px}}
+
+.bb-lock-overlay {
+  box-sizing: border-box;
+  align-items: flex-start;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+}
+.bb-lock-card { box-sizing: border-box; flex: 0 0 auto; margin-block: auto; }
+.bb-lock-row { grid-template-columns: minmax(0, 1fr) auto; }
+.bb-lock-row input { box-sizing: border-box; }
+@media (max-width: 600px) {
+  .bb-lock-row { grid-template-columns: minmax(0, 1fr); }
+  .bb-lock-row input { font-size: 16px; }
+}
