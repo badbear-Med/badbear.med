@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Banco Las Reales de Psiquiatría | BADBEAR.MED</title>
+  <link rel="stylesheet" href="banco-avanzado.css?v=20261111-movil">
+  <link rel="stylesheet" href="../assets/css/course-lock.css?v=20261111-movil">
+  <script src="../assets/js/course-lock-config.js"></script>
+  <script src="../assets/js/course-lock.js" data-course="psiquiatria"></script>
+</head>
+<body data-banco="las-reales">
+  <header>
+    <a href="index.html">BADBEAR.<strong>MED</strong></a>
+    <span>PSIQUIATRÍA</span>
+    <a href="banco-avanzado.html">Banco Avanzado</a>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Banco Las Reales</h1>
+      <p>Preguntas de exámenes aportadas al curso de Psiquiatría.</p>
+      <div class="stat"><strong id="total">0</strong> preguntas disponibles · <strong id="answered">0</strong> respondidas</div>
+    </section>
+    <section class="panel settings" id="bank-settings" hidden>
+      <label>Unidad <select id="unit"><option value="all">Todas las unidades</option></select></label>
+      <label>Modalidad
+        <select id="mode">
+          <option value="study">Estudio · corregir al contestar</option>
+          <option value="exam">Evaluación · corregir al finalizar</option>
+        </select>
+      </label>
+      <button id="reset" type="button">Nueva sesión</button>
+    </section>
+    <section class="panel" id="quiz"><p>Cargando preguntas…</p></section>
+  </main>
+  <script src="programa-clases.js?v=20261031-youtube18"></script>
+  <script src="banco-las-reales-datos.js?v=20261114-las-reales"></script>
+  <script src="banco-avanzado.js?v=20261114-las-reales"></script>
+</body>
+</html>
