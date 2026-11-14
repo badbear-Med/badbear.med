@@ -161,6 +161,18 @@ function assertionList(question, reveal = false) {
 }
 
 function explain(q,chosen){const box=el("div",undefined,"response");
+if (reales && Array.isArray(q.marcasOriginales)) {
+  const marks = q.marcasOriginales;
+  if (!marks.length) {
+    box.append(el("h3", "Sin clave visible en el original"));
+  } else if (marks.length > 1) {
+    box.append(el("h3", "Varias alternativas marcadas en el original"));
+  } else {
+    box.append(el("h3", "Clave marcada en el original"));
+  }
+  for (const i of marks) box.append(el("p", letter(i) + ". " + q.opciones[i]));
+  return box;
+}
 const right=chosen===q.correcta;
 const feedback = chosen === undefined ? "Sin responder" : "Respuesta incorrecta";
 box.append(el("h3",right?"Respuesta correcta":feedback+". Respuesta esperada: "+answerLetter(q,q.correcta)));
@@ -190,6 +202,11 @@ const unit=units.find(x=>Number(x.numero)===Number(q.unidad));if(unit&&unit.teor
 const theoryUrl=new URL(unit.teoria,document.baseURI);if(q.desarrollo?.ancla)theoryUrl.hash=q.desarrollo.ancla;
 addLink(p,theoryUrl.href,q.desarrollo?.ancla?"Consultar directamente el apartado relevante de la teoría · Unidad "+q.unidad+" ↗":"Consultar teoría de la unidad "+q.unidad+" ↗");box.append(p);}else box.append(el("p","Teoría propia de esta unidad: pendiente de publicación y verificación editorial."));
 return box;}
+function questionText(question) {
+  const stem = el("p", question.caso, "case");
+  if (reales) stem.style.whiteSpace = "pre-line";
+  return stem;
+}
 function render(){
   root.replaceChildren();
   if (timed) {
@@ -231,16 +248,20 @@ if (!reales && !timed && filter.value !== "all" && list.length >= timedSize) {
 if(!list.length){root.append(el("p","No hay preguntas para esta selección.","empty"));return;}
 if(index>=list.length)index=list.length-1;
 if(isExam && (timed ? attempt.closed : submitted)){
-  const correct=list.filter(q=>selected[q.id]===q.correcta).length;
+  const graded = list.filter(q => Number.isInteger(q.correcta));
+  const correct = graded.filter(q => selected[q.id] === q.correcta).length;
   root.append(el("h2","Resultados del simulacro"));
   if (timed && attempt.closed === "time") root.append(el("p","Se agotaron los 10 minutos. Tu intento se cerró automáticamente."));
-  root.append(el("p",correct+" respuestas correctas de "+list.length,"score"));
+  root.append(el("p",correct+" respuestas correctas de "+graded.length,"score"));
+  if (graded.length < list.length) {
+    root.append(el("p", (list.length - graded.length) + " preguntas sin clave única, fuera de la puntuación."));
+  }
   if (timed) root.append(el("p",answeredCount+" respondidas · "+(list.length-answeredCount)+" sin responder."));
   list.forEach(q=>{
     const row=el("details",undefined,"explanation");
-    const result = !Object.hasOwn(selected,q.id) ? "Sin responder" : selected[q.id]===q.correcta ? "Correcta" : "Incorrecta";
+    const result = !Number.isInteger(q.correcta) ? "Sin clave única" : !Object.hasOwn(selected,q.id) ? "Sin responder" : selected[q.id]===q.correcta ? "Correcta" : "Incorrecta";
     const summary=el("summary","Unidad "+q.unidad+" — "+result);
-    row.append(summary,el("p",q.caso),explain(q,selected[q.id]));
+    row.append(summary,questionText(q),explain(q,selected[q.id]));
     root.append(row);
   });
   const restart = button(timed ? "Iniciar otro simulacro" : "Reiniciar simulacro", ()=>{
@@ -251,7 +272,7 @@ if(isExam && (timed ? attempt.closed : submitted)){
   root.append(restart);
   return;
 }
-const q=list[index];const head=el("div",undefined,"head");head.append(el("span","Unidad "+q.unidad+" · "+q.tema),el("span",(index+1)+" / "+list.length+" · "+q.nivel));root.append(head,el("p",q.caso,"case"));
+const q=list[index];const head=el("div",undefined,"head");head.append(el("span","Unidad "+q.unidad+" · "+q.tema),el("span",(index+1)+" / "+list.length+" · "+q.nivel));root.append(head,questionText(q));
 if(q.aseveraciones){
   root.append(assertionList(q));
   root.append(el("p","Sobre las aseveraciones antes vertidas:","case"));
@@ -274,7 +295,7 @@ order.forEach(i=>{
   },!timed&&answered);
   b.className="answer";
   if (timed) b.setAttribute("aria-pressed", String(i===selected[q.id]));
-  if(answered&&!isExam){if(i===q.correcta)b.classList.add("correct");else if(i===selected[q.id])b.classList.add("wrong");}
+  if(answered&&!isExam&&Number.isInteger(q.correcta)){if(i===q.correcta)b.classList.add("correct");else if(i===selected[q.id])b.classList.add("wrong");}
   opts.append(b);
 });root.append(opts);
 if(answered&&!isExam)root.append(explain(q,selected[q.id]));
