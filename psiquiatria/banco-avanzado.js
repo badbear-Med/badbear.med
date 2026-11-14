@@ -185,6 +185,11 @@ if (reales) {
     el("h4", "Justificación clínica"),
     el("p", q.argumento)
   );
+  if (q.teoria) {
+    const reference = el("p");
+    addLink(reference, q.teoria.ruta, "Ver teoría · " + q.teoria.titulo);
+    box.append(reference);
+  }
   return box;
 }
 const right=chosen===q.correcta;
