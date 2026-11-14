@@ -1,4 +1,4 @@
-/* Transcripción de los exámenes aportados. Las marcas reproducen el material de origen. */
+/* Exámenes originales, marcas de la fuente y revisión académica por pregunta. */
 window.BADBEAR_PSIQ_LAS_REALES = [
   {
     "id": "PSQ-REAL-D1-01",
@@ -17,7 +17,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
-    "correcta": 1
+    "clavesRevisadas": [],
+    "argumento": "El trastorno bipolar comporta riesgo elevado de suicidio en ambos tipos. Una comparación sin población, periodo ni distinción entre intentos y muertes no permite jerarquizarlos; la evaluación se basa en antecedentes, fase afectiva y factores actuales."
   },
   {
     "id": "PSQ-REAL-D1-02",
@@ -36,6 +37,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La empatía no figura como criterio del trastorno límite en DSM-5. La inestabilidad afectiva, el temor al abandono y la impulsividad sí orientan al diagnóstico, y bajo estrés pueden aparecer síntomas paranoides o disociativos transitorios.",
     "correcta": 1
   },
   {
@@ -55,6 +60,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "El interés sexual pedofílico corresponde al campo de las parafilias; el diagnóstico de trastorno tiene requisitos adicionales. Las dificultades de orgasmo o eyaculación pertenecen a otra categoría clínica.",
     "correcta": 0
   },
   {
@@ -74,6 +83,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "El peso marcadamente bajo, la restricción y la distorsión corporal favorecen anorexia nerviosa aun con vómitos. Es la mejor opción por diagnóstico; el ingreso depende de la estabilidad y del riesgo médico, y el tratamiento psicológico se individualiza.",
     "correcta": 3
   },
   {
@@ -93,6 +106,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "El modelo comunitario de la OMS prioriza servicios cercanos, atención primaria, integración con hospitales generales y coordinación intersectorial. Incrementar hospitales psiquiátricos como eje del modelo se aparta de ese enfoque.",
     "correcta": 3
   },
   {
@@ -112,6 +129,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La atención a la discapacidad intelectual favorece habilidades adaptativas, educación y participación en la comunidad. La institucionalización no es un objetivo terapéutico intrínseco.",
     "correcta": 2
   },
   {
@@ -131,6 +152,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "El TOC comienza con frecuencia en la infancia, la adolescencia o la adultez temprana. La edad orienta epidemiológicamente, pero el diagnóstico se establece por obsesiones o compulsiones con repercusión clínica.",
     "correcta": 1
   },
   {
@@ -150,6 +175,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La hipocondría de CIE-10, relacionada con la ansiedad por enfermedad en DSM-5 y con la hipocondría de CIE-11, puede acompañarse de comprobación corporal, búsqueda de atención y temor persistente a enfermedad grave. La alternativa conjunta recoge estos fenómenos.",
     "correcta": 2
   },
   {
@@ -169,6 +198,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "Entre las opciones, un intento previo es un antecedente especialmente relevante. La valoración actual también explora intención, acceso a medios y factores protectores; la orientación sexual por sí misma no constituye una explicación clínica del riesgo.",
     "correcta": 4
   },
   {
@@ -188,7 +221,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
-    "correcta": 0
+    "clavesRevisadas": [],
+    "argumento": "Los factores psicológicos pueden modificar el curso de una afección médica. Varias opciones expresan lo mismo y «todas las anteriores» aparece antes de ellas, por lo que el ítem no permite una clave única."
   },
   {
     "id": "PSQ-REAL-D1-11",
@@ -207,6 +241,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "El compañero imaginario puede formar parte del juego simbólico y suele vivirse como voluntario o controlable. Angustia marcada, pérdida de control y deterioro requieren diferenciar fenómenos perceptivos de otra naturaleza.",
     "correcta": 3
   },
   {
@@ -226,7 +264,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
-    "correcta": 1
+    "clavesRevisadas": [],
+    "argumento": "La agregación familiar de la enuresis es plausible, pero el 77 % requiere una fuente y población concretas. Los manuales diagnósticos no establecen ese porcentaje universal y las demás opciones contienen generalizaciones problemáticas."
   },
   {
     "id": "PSQ-REAL-D1-13",
@@ -245,7 +284,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
-    "correcta": 4
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Un delirio celotípico persistente y circunscrito, con función relativamente conservada fuera de su contenido, favorece trastorno delirante frente a esquizofrenia. La opción D aporta el diagnóstico más defendible; el caso no establece que flufenazina sea obligatoria.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D1-14",
@@ -264,6 +307,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La abstinencia de sedantes o hipnóticos puede cursar con insomnio, náuseas y síntomas neurológicos, incluidas convulsiones en cuadros graves. Las manifestaciones dependen del agente, la exposición y el ritmo de retirada.",
     "correcta": 1
   },
   {
@@ -282,6 +329,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "A los tres años, el juego, el dibujo y el lenguaje ajustado al desarrollo facilitan explorar vivencias. Un diálogo diseñado para adultos es la opción menos apropiada para esa etapa.",
     "correcta": 1
   },
   {
@@ -300,6 +351,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La terapia cognitivo-conductual cuenta con aplicaciones específicas para ansiedad, TOC y determinados trastornos alimentarios. En TOC, la exposición con prevención de respuesta es un componente central; la indicación concreta se adapta al diagnóstico.",
     "correcta": 1
   },
   {
@@ -319,6 +374,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "En DSM-5, al menos un episodio maníaco permite considerar bipolar I tras excluir causas secundarias. Bipolar II requiere hipomanía y depresión mayor sin antecedente de manía.",
     "correcta": 0
   },
   {
@@ -338,6 +397,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "La alteración de la vivencia de peso o figura en anorexia forma parte del cuadro alimentario y no equivale por sí sola a trastorno dismórfico corporal. El signo de Russell se relaciona con el vómito autoinducido.",
     "correcta": 0
   },
   {
@@ -357,6 +420,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Los antipsicóticos no son necesarios para todas las personas autistas ni tratan las características nucleares. Pueden considerarse para problemas asociados seleccionados; las referencias históricas a Asperger deben distinguirse de la clasificación vigente.",
     "correcta": 3
   },
   {
@@ -376,6 +443,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Gritos y miedo durante un despertar parcial, seguidos de retorno al sueño, orientan a terror del sueño. Una pesadilla suele acompañarse de despertar más completo y recuerdo del contenido.",
     "correcta": 3
   },
   {
@@ -395,7 +466,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
-    "correcta": 0
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "En DSM-5 el ánimo deprimido y la pérdida de interés o placer son los síntomas nucleares. El sueño y el apetito pueden alterarse y la abulia puede acompañar el cuadro, pero las opciones no nombran los dos síntomas nucleares.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D2-02",
@@ -414,6 +489,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "Antes de la pubertad la diferencia por sexo suele ser menor que en la adolescencia y adultez. La opción E es la más cercana a esa tendencia, aunque no implica igualdad exacta en toda población.",
     "correcta": 4
   },
   {
@@ -433,6 +512,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La edad orientativa para considerar enuresis es de cinco años o nivel de desarrollo equivalente. La persistencia hasta los once años no se define como normal por el solo criterio de edad.",
     "correcta": 4
   },
   {
@@ -452,6 +535,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La preocupación por enfermedad grave puede persistir con síntomas físicos leves y favorecer interpretaciones catastróficas. DSM-5 distingue ansiedad por enfermedad de trastorno de síntomas somáticos según el peso clínico de los síntomas.",
     "correcta": 3
   },
   {
@@ -471,6 +558,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La alternativa apunta al delta-9-tetrahidrocannabinol, principal cannabinoide psicoactivo. El nombre de la opción es impreciso; la dependencia se caracteriza además por el patrón de consumo y sus consecuencias.",
     "correcta": 2
   },
   {
@@ -490,6 +581,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Los ISRS son una opción farmacológica inicial para TOC. La exposición con prevención de respuesta es otra intervención de primera línea y puede combinarse según gravedad y respuesta.",
     "correcta": 3
   },
   {
@@ -508,6 +603,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La TCC tiene protocolos específicos en esos tres grupos de trastornos. La elección clínica depende del diagnóstico y la edad, por ejemplo, con participación familiar frecuente en menores con trastornos alimentarios.",
     "correcta": 3
   },
   {
@@ -526,6 +625,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La psicoterapia psicodinámica explora cómo las experiencias tempranas y patrones relacionales influyen en conflictos actuales. La descripción se ajusta a ese enfoque más que a una intervención interpersonal o conductual.",
     "correcta": 2
   },
   {
@@ -545,7 +648,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
-    "correcta": 0
+    "clavesRevisadas": [],
+    "argumento": "Promoción, prevención y fortalecimiento de servicios son componentes complementarios. La opción «solo promoción y prevención» contradice la inclusión de servicios y deja «todas» sin una interpretación coherente."
   },
   {
     "id": "PSQ-REAL-D2-10",
@@ -564,7 +668,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
-    "correcta": 4
+    "clavesRevisadas": [],
+    "argumento": "Las voces que comentan y los delirios son síntomas positivos. El inicio gradual no establece un trastorno psicótico agudo y transitorio en CIE-10, y la necesidad de ingreso no se desprende del caso. DSM-5 eliminó el subtipo paranoide. La hipótesis dopaminérgica es un modelo, no un hallazgo demostrado en este paciente; las combinaciones son ambiguas."
   },
   {
     "id": "PSQ-REAL-D2-11",
@@ -583,6 +688,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "Las afirmaciones proponen esquemas, plazos o efectos adversos como si fueran inevitables. La vía, dosis y duración se deciden según gravedad, tolerancia y respuesta; no corresponde añadir automáticamente un anticolinérgico.",
     "correcta": 4
   },
   {
@@ -602,6 +711,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "El inicio abrupto es compatible con una crisis de pánico y se debe considerar una causa médica antes de atribuir el dolor torácico a ansiedad. Un episodio aislado no demuestra trastorno de pánico, que exige recurrencia inesperada y repercusión posterior.",
     "correcta": 3
   },
   {
@@ -621,7 +734,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
-    "correcta": 0
+    "clavesRevisadas": [],
+    "argumento": "La viñeta no establece por sí sola trastorno de pánico ni excluye causas médicas del dolor torácico. Ningún esquema farmacológico fijo es una respuesta universal ante una primera crisis."
   },
   {
     "id": "PSQ-REAL-D2-14",
@@ -639,6 +753,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "Algunos ISRS, particularmente fluoxetina, tienen evidencia en bulimia nerviosa. El tratamiento se integra con intervenciones psicológicas y valoración médica, especialmente cuando hay purgas.",
     "correcta": 2
   },
   {
@@ -658,6 +776,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "El terror del sueño predomina en la infancia y no en adultos. La higiene del sueño forma parte del manejo, aunque no equivale al tratamiento completo del insomnio crónico.",
     "correcta": 2
   },
   {
@@ -677,6 +799,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "Dolor crónico, intentos previos, antecedentes familiares y acontecimientos adversos pueden contribuir al riesgo suicida. El contexto, la temporalidad y los factores protectores modifican la valoración individual.",
     "correcta": 2
   },
   {
@@ -696,7 +822,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
-    "correcta": 1
+    "clavesRevisadas": [],
+    "argumento": "La pertenencia del esquizotípico al grupo A y la caracterización ansiosa del grupo C son compatibles con DSM-5. La afirmación sobre gestos suicidas no sustenta «todas» y hay más de una opción defendible."
   },
   {
     "id": "PSQ-REAL-D2-18",
@@ -715,6 +842,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "El curso con ciclos rápidos puede asociarse a mayor complejidad clínica. En DSM-5 el especificador requiere al menos cuatro episodios afectivos en doce meses, con criterios de separación entre ellos.",
     "correcta": 2
   },
   {
@@ -734,7 +865,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
-    "correcta": 4
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La disminución de la necesidad de dormir, euforia, grandiosidad y conductas de riesgo forman un patrón maníaco típico. La hipersomnia y la hipoactividad no representan el patrón de activación esperado.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D2-20",
@@ -753,6 +888,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "El objetivo es desarrollar habilidades y participación en entornos inclusivos, con apoyos según funcionamiento adaptativo. Institucionalizar no constituye un fin del tratamiento.",
     "correcta": 1
   },
   {
@@ -772,6 +911,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "La dopamina participa en circuitos de recompensa y motivación, vinculados a la anhedonia. El fenómeno tiene múltiples mecanismos y no permite inferir un déficit aislado ni diagnosticar depresión por sí solo.",
     "correcta": 0
   },
   {
@@ -788,7 +931,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "7.6%"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 2",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "La prevalencia anual depende de edad, país, método y definición de episodio. Sin una población o encuesta de referencia, no puede asignarse una de esas cifras con DSM-5, CIE-10 o CIE-11."
   },
   {
     "id": "PSQ-REAL-D3-03",
@@ -804,7 +949,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "La enuresis nocturna se presenta normalmente hasta los 11 años"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 3",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La enuresis nocturna persistente a los once años no se considera normal por definición. El criterio diagnóstico se aplica desde la edad de desarrollo pertinente y requiere considerar frecuencia, repercusión y posibles causas médicas.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-D3-04",
@@ -820,7 +970,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Una actitud constante de autobservación"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 4",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "La preocupación por padecer enfermedad grave puede favorecer vigilancia corporal, interpretación amplificada de sensaciones y consultas repetidas. También existe evitación de atención en algunos pacientes.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D3-05",
@@ -836,7 +991,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "La 9 delta tetrahidrocannabinol es sustancia dependigena"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 5",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "El delta-9-tetrahidrocannabinol es el principal componente psicoactivo del cannabis y contribuye a su potencial de uso problemático. El diagnóstico de dependencia exige valorar el patrón de consumo.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-D3-06",
@@ -852,7 +1012,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Las obsesiones y compulsiones recurrentes no interfieren con la rutina normal de la persona."
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 6",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "El TOC puede cursar con obsesiones, compulsiones o ambas. Las obsesiones son experiencias intrusivas; las compulsiones son conductas o actos mentales repetitivos dirigidos a reducir malestar o prevenir algo temido.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D3-07",
@@ -867,7 +1032,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "En la mayoría de los casos: Es larga duración"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 7",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La duración de la psicoterapia depende del método, objetivo y evolución clínica. Hay intervenciones de duración breve bien establecidas, por lo que afirmar que en la mayoría necesariamente es prolongada no define la psicoterapia.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D3-08",
@@ -882,7 +1052,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Diálogo imaginario"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 8",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "Para un niño de tres años, el juego y recursos expresivos permiten adaptar la entrevista al desarrollo. Un diálogo con las exigencias verbales de una entrevista adulta aporta menos información.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D3-09",
@@ -898,7 +1073,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Hogares y Residencias protegidas"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 9",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Una dirección de salud cumple funciones de organización y gestión. Los centros comunitarios, dispositivos de rehabilitación, hospitales de día y residencias protegidas sí representan lugares de atención o apoyo.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D3-10",
@@ -914,7 +1094,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "E. paranoide antipsicóticos atípicos parenterales; alta"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 10",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "La agitación con delirios y alucinaciones requiere estabilización y búsqueda de delirium, sustancias y causas médicas, además de la evaluación psiquiátrica. El aspecto y la agresividad no identifican una etiología ni justifican un esquema fijo o un alta."
   },
   {
     "id": "PSQ-REAL-D3-11",
@@ -930,7 +1112,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Psicosis reactiva a trauma, antipsicóticos"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 11",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "La persistencia de reexperimentación dos meses después del trauma orienta a valorar TEPT frente al estrés agudo. Deben confirmarse el resto de los dominios y el deterioro; la psicoterapia focalizada en trauma tiene un papel central.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D3-12",
@@ -946,7 +1133,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Pica"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 12",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La restricción sin temor a engordar orienta a ARFID si hay repercusión nutricional o psicosocial. El peso en rango no lo excluye, aunque deben revisarse el crecimiento y las causas médicas.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D3-13",
@@ -962,7 +1154,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Trastorno delirante fluctuante; Litio"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 13",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "La convicción celotípica sostenida sin otros dominios psicóticos claramente documentados favorece trastorno delirante. La elección de intervención requiere valorar seguridad, repercusión, comorbilidades y preferencias.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D3-14",
@@ -978,7 +1175,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "T. ansiedad generalizada; Moclobemida 450 mg/dia"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 14",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La preocupación prolongada favorece ansiedad generalizada si resulta difícil de controlar y se acompaña de síntomas asociados. Entre las opciones, un ISRS como paroxetina es defendible; la pregunta no establece que sea la única opción de primera línea.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D3-15",
@@ -994,7 +1196,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Insomnio idiopático"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 15",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "El sonambulismo es una parasomnia por despertar incompleto del sueño no REM. Las demás opciones describen trastornos de sueño o de adaptación sin ese tipo de conducta compleja.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D3-16",
@@ -1010,7 +1217,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Historia de suicidio en la familia"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 16",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "Los intentos previos, los antecedentes familiares, el dolor crónico y sucesos adversos recientes son factores pertinentes. Se integran con el estado actual y no sustituyen la evaluación individual.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D3-17",
@@ -1026,7 +1238,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Querulancia"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 17",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La suspicacia y la atribución hostil son características centrales del patrón paranoide. La extraversión no es un criterio definitorio y puede variar entre personas.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D3-18",
@@ -1042,7 +1259,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Educación"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 18",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La atención busca participación, educación y habilidades adaptativas con los apoyos necesarios. Una institución no se considera un objetivo en sí mismo.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D3-19",
@@ -1058,7 +1280,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "La DSM V, anulo diagnostico que aun siguem vigente como el sindrome de rett, trastorno  desintegrativo infantil, sindrome de asperger"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 19",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "El autismo presenta una contribución genética importante, con heterogeneidad etiológica. Atribuirlo exclusivamente a la genética simplifica la evidencia; la historia de las categorías debe distinguirse de los criterios actuales.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D3-20",
@@ -1074,7 +1301,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Los trastornos de Tics leve puede no requerir medicación"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA III · Pregunta 20",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "El inicio antes de los dieciocho años apoya Tourette y los tics leves pueden no requerir medicación. Hay varias afirmaciones defendibles y la cifra poblacional impide validar con seguridad «todos»."
   },
   {
     "id": "PSQ-REAL-D4-01",
@@ -1093,6 +1322,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "Una pregunta directa puede ser útil al aclarar detalles, pero no es una técnica de facilitación narrativa en el sentido de este ítem. Pausas, preguntas abiertas y tiempo para responder favorecen el relato espontáneo.",
     "correcta": 2
   },
   {
@@ -1112,6 +1345,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "Una dirección de salud cumple funciones administrativas y de coordinación. Los demás recursos prestan atención, rehabilitación o apoyo residencial dentro de una red comunitaria.",
     "correcta": 0
   },
   {
@@ -1131,7 +1368,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
-    "correcta": 4
+    "clavesRevisadas": [],
+    "argumento": "Dos meses de psicosis requieren precisar síntomas, curso y seguridad. DSM-5 no conserva el subtipo paranoide y exige un curso total más largo para esquizofrenia; la CIE-10 usa otro umbral y no basta para confirmar una combinación."
   },
   {
     "id": "PSQ-REAL-D4-04",
@@ -1150,6 +1388,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La viñeta no impone antipsicótico intramuscular, un esquema concreto, una duración máxima fija ni un corrector extrapiramidal preventivo. La selección y el seguimiento dependen del caso.",
     "correcta": 4
   },
   {
@@ -1168,6 +1410,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La presentación orienta a un ataque de pánico, pero un solo episodio no establece trastorno de pánico. El diferencial médico sigue abierto ante dolor torácico y disnea, por lo que III y V son las afirmaciones más defendibles.",
     "correcta": 3
   },
   {
@@ -1187,7 +1433,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
-    "correcta": 0
+    "clavesRevisadas": [],
+    "argumento": "Un primer episodio con síntomas cardiopulmonares no establece la indicación de un esquema fijo de antidepresivo y benzodiacepina. Primero se caracteriza el episodio y se consideran causas médicas y factores de riesgo."
   },
   {
     "id": "PSQ-REAL-D4-07",
@@ -1206,6 +1453,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La retirada de sedantes puede acompañarse de mareos, insomnio, náuseas y, en cuadros graves, convulsiones. El perfil depende del fármaco y de la intensidad de la exposición.",
     "correcta": 1
   },
   {
@@ -1225,6 +1476,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La elevación breve del ánimo y el aumento de energía son efectos agudos característicos de la cocaína. La psicosis es una complicación posible, pero no el efecto habitual que discrimina esta pregunta.",
     "correcta": 4
   },
   {
@@ -1244,7 +1499,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
-    "correcta": 3
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La depresión tiene etiología multifactorial, con contribuciones biológicas, genéticas y ambientales. Decir que «es genética» o que «es epigenética» como explicación completa no justifica elegir todas.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D4-10",
@@ -1263,6 +1522,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La violencia basada en género se define por su motivación o contexto de desigualdad, no solo por el vínculo con la víctima. Puede ocurrir fuera de la pareja o del matrimonio.",
     "correcta": 3
   },
   {
@@ -1282,6 +1545,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "El interés sexual pedofílico se incluye entre las parafilias; diagnosticar un trastorno requiere considerar criterios adicionales. La eyaculación precoz y el trastorno orgásmico corresponden a disfunciones sexuales.",
     "correcta": 0
   },
   {
@@ -1301,7 +1568,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
-    "correcta": 4
+    "clavesRevisadas": [],
+    "argumento": "La amnesia disociativa no pertenece al grupo obsesivo-compulsivo. Sin embargo, hipocondría, tics y cleptomanía también tienen ubicaciones distintas según el manual y «espectro» no está definido, por lo que la excepción no es única."
   },
   {
     "id": "PSQ-REAL-D4-13",
@@ -1320,6 +1588,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "El abordaje de síntomas somáticos se basa en alianza terapéutica, explicación y seguimiento coordinado. Los antipsicóticos no se indican de rutina para el trastorno; otros fármacos pueden considerarse según comorbilidad.",
     "correcta": 4
   },
   {
@@ -1339,7 +1611,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
-    "correcta": 1
+    "clavesRevisadas": [],
+    "argumento": "DSM-5 y CIE-11 reconocen la patología de personalidad; CIE-11 emplea gravedad y calificadores, incluido el patrón límite. Varias afirmaciones del ítem son estereotipos o generalizaciones y no dejan una única falsa."
   },
   {
     "id": "PSQ-REAL-D4-15",
@@ -1358,7 +1631,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
-    "correcta": 3
+    "clavesRevisadas": [],
+    "argumento": "DSM-5 y CIE-11 reconocen el TDAH, cuyo manejo depende de edad, deterioro y preferencias. El metilfenidato no es imprescindible y la afirmación sobre una supuesta retractación no tiene fundamento diagnóstico; hay varias opciones objetables."
   },
   {
     "id": "PSQ-REAL-D4-16",
@@ -1377,6 +1651,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La extraversión es una dimensión de la personalidad en el modelo de Cattell. El par introversión–extraversión describe variación de rasgos y no constituye por sí mismo un diagnóstico.",
     "correcta": 4
   },
   {
@@ -1395,7 +1673,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
-    "correcta": 0
+    "clavesRevisadas": [],
+    "argumento": "El trastorno bipolar aumenta el riesgo suicida y puede afectar cognición y función. El porcentaje ofrecido carece de población, periodo y distinción entre intentos y muertes; las restantes generalizaciones no sostienen una clave."
   },
   {
     "id": "PSQ-REAL-D4-18",
@@ -1414,6 +1693,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Los antidepresivos no tratan la manía aguda y se revisa su continuidad si emerge manía. El abordaje antimaníaco depende de gravedad, antecedentes, contraindicaciones y seguimiento.",
     "correcta": 3
   },
   {
@@ -1433,7 +1716,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
-    "correcta": 4
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La educación y los apoyos forman parte de los objetivos del tratamiento. Un mejor funcionamiento adaptativo no implica la desaparición automática del diagnóstico al llegar a la adultez.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D4-20",
@@ -1452,7 +1739,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
-    "correcta": 2
+    "clavesRevisadas": [],
+    "argumento": "Los tics complejos pueden durar más, el inicio antes de los dieciocho años es relevante y los cuadros leves pueden observarse. La cifra epidemiológica no está documentada y existen varias opciones defendibles."
   },
   {
     "id": "PSQ-REAL-D5-01",
@@ -1467,7 +1755,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Diálogo adulto"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 1",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La entrevista a los tres años se ajusta al desarrollo y puede apoyarse en juego, dibujo y relato imaginario. La conversación con exigencias propias de adultos es la menos apropiada.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D5-02",
@@ -1483,7 +1776,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Disminución de la concentración"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 2",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La cocaína puede producir euforia breve y activación como efecto agudo característico. Psicosis o alteraciones de la concentración pueden aparecer, pero no son el efecto más representativo entre estas alternativas.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D5-03",
@@ -1499,7 +1797,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Bulimia nerviosa"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 3",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "El peso marcadamente bajo con distorsión corporal orienta a anorexia nerviosa. La presencia de purgas no la convierte por sí sola en bulimia; el subtipo se define por el patrón de atracones o purgas y su curso.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D5-04",
@@ -1515,7 +1818,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Se relaciona con acontecimientos traumáticos, problemas insoportables, relaciones interpersonales alteradas"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 4",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La alteración de la integración de memoria, conciencia, identidad o percepción caracteriza los trastornos disociativos. Puede existir antecedente traumático, pero las hipótesis de circuitos propuestas no son criterios diagnósticos.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D5-05",
@@ -1531,7 +1839,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Fue dado a conocer por el psicoanálisis"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 5",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La conducta suicida o autolesiva puede presentarse de forma recurrente en el trastorno límite, pero no es universal ni permanente. El vacío crónico y la inestabilidad afectiva sí pueden formar parte del cuadro.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D5-06",
@@ -1547,7 +1860,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Antidemenciales"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 6",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "Siete días después de una agresión se debe valorar síntomas de estrés agudo y necesidades de protección. Las alternativas solo ofrecen clases de fármacos; no incluyen el abordaje inicial centrado en evaluación, seguridad y atención focalizada en trauma."
   },
   {
     "id": "PSQ-REAL-D5-07",
@@ -1563,7 +1878,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "1% de los pacientes psiquiátricos ambulatorios"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 7",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Una idea obsesiva es un pensamiento, imagen o impulso intrusivo, vivido habitualmente como no deseado. La descripción de un acto ejecutado para neutralizar ansiedad se acerca más a una compulsión.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D5-08",
@@ -1578,7 +1898,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Todas"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 8",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La opción C identifica la psicoterapia como una intervención de naturaleza psicológica frente al malestar. La A enumera objetivos posibles y la B confunde psicoterapia con el campo general de la psicología.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D5-09",
@@ -1594,7 +1919,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Todos son correctos"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 9",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "El síndrome de retirada de sedantes puede incluir síntomas vegetativos y neurológicos. Las convulsiones son una complicación grave, no un requisito diagnóstico.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-D5-10",
@@ -1610,7 +1940,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Educación"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 10",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "En discapacidad intelectual el plan se orienta a educación, autonomía y participación, con apoyos adaptados. La institucionalización no constituye un objetivo terapéutico.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D5-11",
@@ -1626,7 +1961,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El grupo \"A\" se caracteriza por su extroversión"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 11",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "Los enunciados mezclan historia, rasgos y generalizaciones que no corresponden a criterios diagnósticos verificables. DSM-5 emplea agrupaciones descriptivas, mientras CIE-11 clasifica por gravedad y rasgos; el ítem no ofrece una opción sólida."
   },
   {
     "id": "PSQ-REAL-D5-12",
@@ -1642,7 +1979,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Prevalencia cercana al 1%"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 12",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "Las personas con discapacidad intelectual leve pueden aprender con apoyos. La mejoría adaptativa no borra el diagnóstico, y las cifras de prevalencia o proporción por sexo dependen de la fuente.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D5-13",
@@ -1658,7 +2000,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Son los también llamados ciclotímicos"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 13",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La C es la opción más cercana: describe episodios repetidos en trastorno bipolar. El umbral DSM-5 es de cuatro o más episodios en doce meses, por lo que «más de cuatro» excluye incorrectamente a quien tiene exactamente cuatro.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D5-14",
@@ -1674,7 +2021,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Olanzapina"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 14",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Aripiprazol es, entre estas opciones, una alternativa razonable cuando preocupan prolactina y riesgo metabólico. La indicación final depende de respuesta previa, efectos adversos y características de la psicosis.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D5-15",
@@ -1690,7 +2042,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Depresión"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 15",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "El cuadro sugiere un episodio depresivo por anhedonia, ánimo bajo, culpa y deterioro sostenidos, con necesidad de valorar riesgo e ideas referenciales. Dos alternativas dicen «Depresión» y no se puede distinguir una sola letra."
   },
   {
     "id": "PSQ-REAL-D5-16",
@@ -1706,7 +2060,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Para diagnosticar la Enfermedad de Gilles de la Tourette los tics deben haber comenzado antes de los 18 años"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 16",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La enuresis persistente hasta los once años no se considera normal por criterio de edad. La gravedad y repercusión de tics y enuresis orientan si se requiere tratamiento.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D5-17",
@@ -1722,7 +2081,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Fobia"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 17",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "A los siete días, la respuesta postraumática aguda es la hipótesis más cercana en DSM-5, aunque faltan datos para confirmar todos los criterios. CIE-11 diferencia la reacción aguda al estrés del TEPT y no los equipara.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D5-18",
@@ -1738,7 +2102,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Esquizofrenia de inicio temprano, haloperidol 5 mg 1 ampolla IM cada 8 horas"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 18",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "Tres meses pueden encajar con un cuadro esquizofreniforme en DSM-5 si cumple el patrón requerido; CIE-10 utiliza otro umbral para esquizofrenia. «Paranoide» es una categoría histórica y las alternativas ligan el diagnóstico a esquemas que no se justifican con la viñeta."
   },
   {
     "id": "PSQ-REAL-D5-19",
@@ -1754,7 +2120,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El sigo de Russel se refiere a la tricotilomanía que suelen presentar las pacientes bulímicas"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 19",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La comorbilidad con dificultades de regulación emocional o rasgos de personalidad es posible, pero no constituye criterio ni causa necesaria. Las alternativas restantes describen asociaciones o signos que no corresponden al cuadro.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D5-20",
@@ -1770,7 +2141,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Alcohol"
     ],
     "origen": "EXAMEN DE PSIQUIATRIA V · Pregunta 20",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "El alcohol es un factor relevante por intoxicación, desinhibición y trastorno por consumo. La comparación de frecuencias entre sustancias depende de la población y de cómo se mida el desenlace.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-D6-01",
@@ -1785,7 +2161,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El sistema formal de salud y la psiquiatría comunitaria"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 1",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La incorporación de salud mental a atención primaria favorece detección, continuidad y accesibilidad. La pobreza, el estigma y redes fragmentadas pueden dificultar la implementación.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D6-02",
@@ -1801,7 +2182,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Metilfenidato"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 2",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "El metilfenidato no es un tratamiento habitual del trastorno bipolar. Puede existir una indicación independiente por TDAH, mientras que estabilizadores y algunos antipsicóticos se utilizan según fase clínica.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-D6-03",
@@ -1816,7 +2202,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El V capitulo de la CIE-10 corresponde a los trastornos mentales"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 3",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2,
+      3
+    ],
+    "argumento": "CIE-10 es una clasificación de la OMS y su capítulo V agrupa trastornos mentales y del comportamiento. DSM-5 fue publicado por la Asociación Americana de Psiquiatría, no por la OPS ni por una asociación mundial."
   },
   {
     "id": "PSQ-REAL-D6-04",
@@ -1832,7 +2223,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Retraimiento social, agresividad, frialdad emocional, déficit en el procesamiento de la información"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 4",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "Delirios, alucinaciones y desorganización son manifestaciones positivas o desorganizadas. Alogia, retraimiento y aplanamiento afectivo apuntan al dominio negativo; la agitación por sí sola es inespecífica.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D6-05",
@@ -1848,7 +2244,15 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "delirium"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 5",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "argumento": "Insomnio, mareos, náuseas, convulsiones y delirium pueden aparecer en la retirada de sedantes. Los dos últimos orientan a cuadros graves y requieren atención urgente."
   },
   {
     "id": "PSQ-REAL-D6-06",
@@ -1864,7 +2268,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "45%"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 6",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "El porcentaje depende del periodo, la fuente y si se mide diagnóstico de depresión, asociación o atribución causal. Los manuales diagnósticos no contienen una cifra nacional que permita elegir una alternativa."
   },
   {
     "id": "PSQ-REAL-D6-07",
@@ -1880,7 +2286,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Trastornos del hablar del sueño"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 7",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3,
+      4
+    ],
+    "argumento": "El sonambulismo es una parasomnia no REM y hablar dormido puede describirse entre fenómenos parasómnicos, sin equivaler por sí solo a un trastorno. Las demás opciones describen otros problemas del sueño."
   },
   {
     "id": "PSQ-REAL-D6-08",
@@ -1896,7 +2307,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Afectividad lábil y superficial"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 8",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Impulsividad e inestabilidad afectiva son rasgos clínicos reconocidos en el patrón límite. La olanzapina no es un requisito de tratamiento ni existe un solo rasgo que confirme el diagnóstico.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D6-09",
@@ -1912,7 +2328,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El niño no lo puede describir claramente"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 9",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "El compañero imaginario suele integrarse en juego voluntario sin pérdida marcada de contacto con la realidad. Si hay malestar o deterioro debe evaluarse el fenómeno en su contexto.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D6-10",
@@ -1928,7 +2349,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Cualquier edad"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 10",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "El inicio suele concentrarse entre infancia, adolescencia y primera adultez. La opción amplia se aproxima mejor al perfil epidemiológico que una sola etapa, y el diagnóstico no se determina por edad.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D6-11",
@@ -1944,7 +2370,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El 20% está relacionado con muerte por accidentes cerebrovasculares"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 11",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La opción alude al delta-9-THC, principal compuesto psicoactivo del cannabis, aunque el nombre está escrito de forma imprecisa. La dependencia se reconoce por manifestaciones clínicas del patrón de consumo.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D6-12",
@@ -1960,7 +2391,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Ninguna de las anteriores (Corteza frontal media)"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 12",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "La psicosis resulta de alteraciones en redes y sistemas neurobiológicos, con posibles causas médicas, afectivas o por sustancias. No puede atribuirse de forma general a una sola estructura cerebral."
   },
   {
     "id": "PSQ-REAL-D6-13",
@@ -1976,7 +2409,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Baja autoestima"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 13",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Tolerar el fracaso es una capacidad adaptativa, mientras aislamiento, baja autoestima y desesperanza pueden ser motivos de evaluación e intervención. La indicación psicoterapéutica depende del impacto y de los objetivos.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D6-14",
@@ -1992,7 +2430,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Todos los anteriores son incorrectos"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 14",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "Asociación libre, transferencia y resistencia son conceptos de enfoques psicodinámicos. Un método conductual se apoya en el análisis funcional y en técnicas como exposición o refuerzo según el caso.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-D6-15",
@@ -2008,7 +2451,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Suicidios histéricos: luego de algunos intentos previos fallidos"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 15",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "La comparación de intentos y muertes por sexo depende de la población y la fuente, y las categorías «narcisista» o «histérico» no son categorías diagnósticas para clasificar suicidio. Hay más de una aseveración problemática."
   },
   {
     "id": "PSQ-REAL-D6-16",
@@ -2024,7 +2469,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Todas las anteriores"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 16",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "En el modelo dopaminérgico clásico, los síntomas negativos se asocian a disfunción mesocortical y los positivos a alteraciones mesolímbicas. Es un modelo explicativo, no un criterio diagnóstico.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D6-17",
@@ -2040,7 +2490,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Las alteraciones del sueño y la hipervigilia no forman parte de los síntomas"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 17",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0,
+      1
+    ],
+    "argumento": "DSM-5 incluye intrusiones y alteraciones negativas de cognición o ánimo. Exige una duración superior a un mes y la exposición por medios electrónicos no basta salvo circunstancias profesionales específicas. CIE-11 formula el cuadro con otros dominios."
   },
   {
     "id": "PSQ-REAL-D6-18",
@@ -2055,7 +2510,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Se conocen las causas en cerca de 75% de las personas con retardo mental severo"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 18",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "El diagnóstico de discapacidad intelectual considera funcionamiento intelectual y adaptativo con inicio en el desarrollo. La frecuencia de etiología identificada varía por gravedad y método, por lo que no cabe asignar un porcentaje universal."
   },
   {
     "id": "PSQ-REAL-D6-19",
@@ -2071,7 +2528,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "La citoarquitectura neuronal se torna anormal por una taupatia"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 19",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "La degeneración frontotemporal agrupa varios sustratos patológicos, con variantes tau y no tau. Gliosis o una determinada supervivencia no definen una respuesta única y el enunciado mezcla síndrome clínico y neuropatología."
   },
   {
     "id": "PSQ-REAL-D6-20",
@@ -2087,7 +2546,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Los trastornos de Tics leve puede no requerir medicación"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · primer bloque · Pregunta 20",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "La posibilidad de observar tics leves y el inicio temprano en Tourette son defendibles. Al haber más de una alternativa válida y una cifra epidemiológica sin referencia, «todos» no es una clave sólida."
   },
   {
     "id": "PSQ-REAL-D7-01",
@@ -2103,7 +2564,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Estabilizador de humor"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 1",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La opción B se refiere a los ISRS, una alternativa farmacológica inicial para TOC. La exposición con prevención de respuesta también es de primera línea y su combinación se decide según gravedad.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D7-02",
@@ -2119,7 +2585,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El 20% está relacionado con muerte por accidentes cerebrovasculares"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 2",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La redacción de C alude al delta-9-tetrahidrocannabinol, principal componente psicoactivo del cannabis. El compuesto por sí solo no define el diagnóstico de dependencia, que requiere valorar el patrón de consumo.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D7-03",
@@ -2135,7 +2606,9 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "La teoría de la madre inductora de este trastorno es de sesgo psicoanalitico"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 3",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [],
+    "argumento": "El autismo se define por diferencias persistentes de comunicación social y conductas restringidas o repetitivas. Las afirmaciones históricas y absolutas del ítem mezclan teorías descartadas y formulaciones ambiguas, por lo que la excepción no es única."
   },
   {
     "id": "PSQ-REAL-D7-04",
@@ -2151,7 +2624,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Continuidad de cuidados"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 4",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "Territorialización, continuidad, responsabilidad poblacional y abordaje multidisciplinario sí son rasgos del modelo comunitario. «Todas las anteriores» no identifica una excepción, por lo que B solo funciona como distractor del formato y no como rasgo clínico.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D7-05",
@@ -2167,7 +2645,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Convulsiones"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 5",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "Los síntomas enumerados son posibles en la abstinencia de sedantes, desde molestias vegetativas e insomnio hasta convulsiones en cuadros complicados. Se valoran el fármaco, la cronología y la gravedad.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D7-06",
@@ -2182,7 +2665,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El trastorno por evitación-restriccion de la ingesta de alimentos es una patología recientemente incluida en le DSM 5 y el CIE-10"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 6",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "La fluoxetina, un ISRS, tiene evidencia en el abordaje de la bulimia nerviosa. Los fármacos se consideran dentro de un plan que incluye intervención psicológica y valoración del riesgo físico por purgas.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D7-07",
@@ -2198,7 +2686,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Educación"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 7",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "El abordaje de discapacidad intelectual busca autonomía y participación según habilidades adaptativas y apoyos disponibles. Institucionalizar no es un objetivo del tratamiento.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D7-08",
@@ -2214,7 +2707,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Mutilación"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 8",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "Las ironías pueden expresar hostilidad interpersonal de forma indirecta. Autorreproches y autoagresión se dirigen a uno mismo; la clasificación es descriptiva y no constituye un diagnóstico.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D7-09",
@@ -2230,7 +2728,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Exaltación del estado animo"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 9",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La euforia y la activación son efectos agudos típicos del consumo de cocaína. La psicosis puede aparecer como complicación y exige una valoración propia.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-D7-10",
@@ -2246,7 +2749,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El sonambulismo tiene un componente hereditario."
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 10",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "El terror del sueño es más frecuente en la infancia. En el insomnio crónico, las medidas de higiene pueden acompañar la terapia cognitivo-conductual y no siempre bastan por sí solas.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D7-11",
@@ -2261,7 +2769,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Psicoterapia psicodinámica"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 11",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La TCC dispone de intervenciones específicas para los cuadros mencionados. No se aplica un protocolo único: la exposición, los componentes cognitivos y la participación familiar se eligen según diagnóstico y edad.",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D7-12",
@@ -2277,7 +2790,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Esquizofrenia paranoide; Risperidona"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 12",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La creencia celotípica fija con funcionamiento relativamente conservado fuera del delirio favorece trastorno delirante. La opción D es la mejor por el diagnóstico, sin poder establecer la flufenazina como tratamiento obligatorio.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D7-13",
@@ -2293,7 +2811,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Ciclador rápido"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 13",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "En DSM-5 la historia de manía diferencia bipolar I de bipolar II. El curso rápido describe frecuencia de episodios y no reemplaza la clasificación por polaridad.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D7-14",
@@ -2309,7 +2832,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "El cromosoma 7 genera proteína tau alterada"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 14",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La variante conductual de la demencia frontotemporal se caracteriza por cambios tempranos de conducta, personalidad o función ejecutiva. El síndrome clínico no equivale siempre a enfermedad de Pick en sentido neuropatológico.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D7-15",
@@ -2325,7 +2853,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Experiencia reciente (último año) de acontecimientos vitales negativos que signifiquen una perdida grave en el ámbito laboral/económico, familiar"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 15",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "El dolor crónico, los intentos previos, los antecedentes familiares y los acontecimientos adversos son factores relevantes. Se interpretan dentro de una formulación individual y no como una suma que prediga por sí sola el desenlace.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D7-16",
@@ -2341,7 +2874,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Un síntoma se ve minimizado por la mente de la persona"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 16",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La hipocondría implica preocupación por enfermedad grave, que puede mantenerse por interpretación de sensaciones leves. CIE-10 y CIE-11 conservan el término en marcos distintos, mientras DSM-5 diferencia ansiedad por enfermedad de síntomas somáticos prominentes.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D7-17",
@@ -2357,7 +2895,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Es imprescindibles el uso de litio"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 17",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La respuesta y tolerabilidad previas orientan la selección del tratamiento de mantenimiento. También cuentan polaridad predominante, comorbilidades y preferencias; ningún fármaco es obligatorio para toda persona.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D7-18",
@@ -2373,7 +2916,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "La enuresis nocturna se presenta normalmente hasta los 11 años"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 18",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La persistencia de enuresis hasta los once años no se considera fisiológica por definición. Se valoran edad de desarrollo, frecuencia y repercusión, así como estreñimiento, síntomas diurnos y otras causas cuando proceda.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-D7-19",
@@ -2389,7 +2937,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Uso sólo de antipsicóticos que suelen dar buenos resultados."
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 19",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La alianza, la explicación y el seguimiento coordinado son componentes del manejo. Los antipsicóticos no son monoterapia de rutina para este cuadro; los antidepresivos se valoran según indicación específica o comorbilidad.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-D7-20",
@@ -2405,7 +2958,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
       "Trastorno de evitación/restricción de la ingestión de alimentos; clonazepam y Psicoanálisis"
     ],
     "origen": "EXAMEN PSIQUIATRIA VI · segundo bloque · Pregunta 20",
-    "marcasOriginales": []
+    "marcasOriginales": [],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La restricción, el IMC muy bajo y la distorsión de la imagen corporal favorecen anorexia nerviosa. El nivel de atención depende del riesgo fisiológico completo; la psicoterapia y el apoyo nutricional se ajustan al caso.",
+    "correcta": 3
   },
   {
     "id": "PSQ-REAL-D8-01",
@@ -2424,7 +2982,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
-    "correcta": 2
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "Las personas con discapacidad intelectual leve pueden adquirir habilidades con educación y apoyos. La adaptación lograda no elimina automáticamente el diagnóstico y las cifras epidemiológicas no son universales.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D8-02",
@@ -2443,6 +3005,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La enuresis persistente hasta los once años no se considera normal por regla general. En Tourette el inicio debe ser en el periodo del desarrollo y los tics leves sin deterioro pueden no necesitar medicación.",
     "correcta": 1
   },
   {
@@ -2461,6 +3027,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "El diálogo que exige razonamiento y vocabulario de un adulto es poco adecuado a los tres años. Juego y recursos simbólicos permiten explorar al niño con menor demanda verbal.",
     "correcta": 0
   },
   {
@@ -2480,6 +3050,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "El consumo de alcohol puede aumentar el riesgo suicida a través de intoxicación, desinhibición y problemas asociados al consumo crónico. La frecuencia relativa depende de la muestra y del desenlace que se compare.",
     "correcta": 4
   },
   {
@@ -2499,7 +3073,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
-    "correcta": 3
+    "clavesRevisadas": [],
+    "argumento": "Pica y rumiación sí pertenecen al grupo de trastornos alimentarios o de la ingestión. La relación con rasgos de personalidad puede ser comórbida, pero no permite la generalización diagnóstica propuesta por D."
   },
   {
     "id": "PSQ-REAL-D8-06",
@@ -2518,7 +3093,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
-    "correcta": 1
+    "clavesRevisadas": [],
+    "argumento": "Tanto bipolar I como bipolar II requieren valorar el riesgo suicida. La comparación depende de si se miden intentos o muertes y de la muestra, la fase clínica y las comorbilidades."
   },
   {
     "id": "PSQ-REAL-D8-07",
@@ -2537,7 +3113,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
-    "correcta": 1
+    "clavesRevisadas": [],
+    "argumento": "El deterioro sostenido, la tristeza, la pérdida de interés y las ideas de culpa orientan a depresión. La ciclotimia exige una trayectoria diferente y aquí hay dos opciones idénticas («Depresión»), así que no se asigna una sola letra."
   },
   {
     "id": "PSQ-REAL-D8-08",
@@ -2556,6 +3133,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La constelación de náuseas, insomnio, mareo y convulsiones es compatible con retirada de sedantes. No todos los síntomas tienen que aparecer y las convulsiones indican un cuadro potencialmente grave.",
     "correcta": 2
   },
   {
@@ -2575,6 +3156,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La alianza, educación, evaluación del entorno familiar y atención a comorbilidades pueden integrarse. Los antidepresivos solo se contemplan cuando hay una indicación clínica; el ítem contiene opciones que se solapan.",
     "correcta": 3
   },
   {
@@ -2594,6 +3179,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "Los ISRS son una opción farmacológica inicial para el TOC. La TCC con exposición y prevención de respuesta también tiene un papel de primera línea, de acuerdo con la gravedad y preferencias.",
     "correcta": 0
   },
   {
@@ -2613,6 +3202,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La duración y los síntomas positivos orientan a un trastorno del espectro de esquizofrenia si se confirman el resto de criterios y exclusiones. E es la alternativa más cercana; DSM-5 y CIE-11 dejaron de usar el subtipo paranoide.",
     "correcta": 4
   },
   {
@@ -2633,7 +3226,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
-    "correcta": 1
+    "clavesRevisadas": [],
+    "argumento": "La responsabilidad sobre una población, continuidad, territorialización, integración de redes y abordaje multidisciplinario son compatibles con el modelo comunitario. «Todas son falsas» no ofrece una excepción sustantiva verificable."
   },
   {
     "id": "PSQ-REAL-D8-13",
@@ -2652,7 +3246,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
-    "correcta": 3
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La desintegración de memoria, conciencia, identidad o percepción caracteriza la disociación. El trauma puede ser relevante, pero los mecanismos corticales presentados no son requisitos diagnósticos y no sostienen «todas».",
+    "correcta": 1
   },
   {
     "id": "PSQ-REAL-D8-14",
@@ -2670,7 +3268,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
-    "correcta": 3
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "La opción A describe la naturaleza psicológica del tratamiento. C expone objetivos posibles, mientras B confunde la psicoterapia con una definición general de psicología.",
+    "correcta": 0
   },
   {
     "id": "PSQ-REAL-D8-15",
@@ -2689,6 +3291,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "Educación, empleo, vida comunitaria y desarrollo de habilidades adaptativas son objetivos congruentes. La opción E combina ambos grupos; institucionalización no es un fin terapéutico.",
     "correcta": 4
   },
   {
@@ -2708,6 +3314,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La exaltación breve del ánimo es un efecto agudo característico de cocaína. La aparición de psicosis, inquietud intensa u otras complicaciones requiere valoración separada de la intoxicación.",
     "correcta": 1
   },
   {
@@ -2727,6 +3337,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "El intento previo es el antecedente de mayor peso entre estas alternativas. La evaluación considera el momento del intento, intención actual, acceso a medios y apoyos, en lugar de depender de un factor aislado.",
     "correcta": 0
   },
   {
@@ -2746,7 +3360,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
-    "correcta": 3
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La ideación suicida puede fluctuar y no es un rasgo permanente de todas las personas con trastorno límite. Vacío crónico y fenómenos paranoides o disociativos breves pueden aparecer en el cuadro.",
+    "correcta": 2
   },
   {
     "id": "PSQ-REAL-D8-19",
@@ -2765,6 +3383,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "La negativa a ingerir, el peso muy bajo y la alteración de la imagen corporal orientan a anorexia nerviosa. Los vómitos recurrentes pueden formar parte del subtipo con atracones o purgas.",
     "correcta": 1
   },
   {
@@ -2784,6 +3406,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "Aripiprazol es la alternativa más razonable entre las ofrecidas cuando se consideran hiperprolactinemia y riesgo cardiometabólico. El tratamiento requiere monitorización e individualización.",
     "correcta": 2
   },
   {
@@ -2803,6 +3429,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "La disminución de la necesidad de dormir, verborrea, aumento de actividad, grandiosidad e internamiento favorecen manía con síntomas psicóticos. Para trastorno esquizoafectivo habría que demostrar el patrón longitudinal pertinente según la clasificación.",
     "correcta": 0
   },
   {
@@ -2822,7 +3452,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
-    "correcta": 1
+    "clavesRevisadas": [],
+    "argumento": "La discapacidad intelectual no es una única enfermedad; enuresis y encopresis pueden coexistir y Tourette inicia antes de los dieciocho años. El porcentaje de etiologías identificadas del punto IV depende de una fuente, por lo que no puede confirmarse la combinación marcada."
   },
   {
     "id": "PSQ-REAL-2024-2-03",
@@ -2841,6 +3472,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La respuesta emocional intensa no constituye un criterio nuclear de autismo. Los criterios modernos se centran en comunicación social y patrones restringidos o repetitivos; los hitos aislados no establecen ni descartan el diagnóstico.",
     "correcta": 3
   },
   {
@@ -2860,6 +3495,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "El silencio oportuno permite elaborar y continuar un relato sin dirigirlo. Las preguntas directas pueden servir para aclarar información, pero cumplen una función distinta en esta pregunta.",
     "correcta": 0
   },
   {
@@ -2879,7 +3518,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
-    "correcta": 0
+    "clavesRevisadas": [],
+    "argumento": "El estrés crónico puede modificar la regulación del eje hipotálamo-hipófisis-suprarrenal, con respuestas variables. Los síntomas no permiten inferir la dirección del cortisol ni atribuir por sí solos la pérdida de peso al estrés."
   },
   {
     "id": "PSQ-REAL-2024-2-06",
@@ -2898,6 +3538,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "Las benzodiacepinas son el grupo de primera línea para convulsiones relacionadas con abstinencia alcohólica, junto con estabilización y monitorización. Deben considerarse otras causas de convulsiones según el cuadro.",
     "correcta": 1
   },
   {
@@ -2917,6 +3561,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1
     ],
+    "clavesRevisadas": [
+      1
+    ],
+    "argumento": "Las ideas intrusivas no deseadas y las comprobaciones repetidas para reducir la angustia orientan a TOC en el posparto. Conviene valorar introspección y juicio de realidad para distinguirlas de síntomas psicóticos.",
     "correcta": 1
   },
   {
@@ -2936,6 +3584,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "Entre las afirmaciones, el estrés puede actuar como precipitante de episodios de sonambulismo. El sonambulismo predomina en la infancia; las afirmaciones sobre prevalencia universal y máximo a los 35 años no son defendibles.",
     "correcta": 0
   },
   {
@@ -2955,6 +3607,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La agitación psicomotriz puede constituir una urgencia por riesgo inmediato o por causas médicas o tóxicas subyacentes. Su presencia exige valorar seguridad y etiología.",
     "correcta": 3
   },
   {
@@ -2974,6 +3630,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La pérdida de interés o placer es un síntoma nuclear del episodio depresivo, junto con ánimo deprimido. Sueño, irritabilidad y abulia se interpretan según edad, contexto y clasificación.",
     "correcta": 3
   },
   {
@@ -2993,7 +3653,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
-    "correcta": 3
+    "clavesRevisadas": [],
+    "argumento": "Las taupatías agrupan procesos distintos definidos por alteraciones de tau. DSM-5, CIE-10 y CIE-11 no establecen una cascada universal que ordene tau, ubiquitina y glutamato de esa forma."
   },
   {
     "id": "PSQ-REAL-2024-2-12",
@@ -3012,6 +3673,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "La querulancia y la interpretación persistente de agravios hacen que el patrón paranoide sea la alternativa más cercana. El relato retrospectivo no documenta por sí solo todos los requisitos de un trastorno de personalidad ni excluye diagnósticos alternativos.",
     "correcta": 4
   },
   {
@@ -3031,7 +3696,11 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
-    "correcta": 0
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "El TEPT se incorporó en DSM-III. El DSM-5 exige duración superior a un mes y CIE-11 usa una formulación temporal distinta; el TEPT complejo figura en CIE-11. La psicoterapia focalizada en trauma es central y los antipsicóticos no son primera línea rutinaria.",
+    "correcta": 4
   },
   {
     "id": "PSQ-REAL-2024-2-14",
@@ -3050,6 +3719,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
+    "clavesRevisadas": [
+      4
+    ],
+    "argumento": "Pimavanserina se caracteriza por agonismo inverso serotoninérgico, principalmente 5-HT2A. La asociación farmacológica es la mejor opción, pero no equivale a afirmar que sea tratamiento habitual de esquizofrenia.",
     "correcta": 4
   },
   {
@@ -3069,6 +3742,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       3
     ],
+    "clavesRevisadas": [
+      3
+    ],
+    "argumento": "La adversidad infantil se ha asociado a trastornos alimentarios, incluido el trastorno por atracón, sin que sea criterio diagnóstico. Las otras alternativas atribuyen edades de inicio, mortalidad o ubicación clasificatoria de forma incorrecta.",
     "correcta": 3
   },
   {
@@ -3088,6 +3765,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       2
     ],
+    "clavesRevisadas": [
+      2
+    ],
+    "argumento": "La aparición rápida de psicosis con fluctuación de conciencia, mutismo y movimientos anormales exige considerar encefalitis autoinmune y evaluación neurológica urgente. Son defendibles III, IV y V; no está sustentado diagnosticar esquizofrenia refractaria a partir del caso.",
     "correcta": 2
   },
   {
@@ -3107,7 +3788,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
-    "correcta": 0
+    "clavesRevisadas": [],
+    "argumento": "La ideación suicida persistente y las autolesiones requieren una evaluación de seguridad y un diagnóstico integral. Bulimia, trauma y comorbilidades no permiten justificar uno de los esquemas triples fijos como elección clínica."
   },
   {
     "id": "PSQ-REAL-2024-2-18",
@@ -3126,7 +3808,12 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       1,
       2
-    ]
+    ],
+    "clavesRevisadas": [
+      1,
+      2
+    ],
+    "argumento": "Los antipsicóticos de primera generación se asocian en general a mayor carga extrapiramidal y la clozapina está indicada en esquizofrenia resistente tras ensayos adecuados. Por ello B y C son defendibles y se conservan ambas marcas originales."
   },
   {
     "id": "PSQ-REAL-2024-2-19",
@@ -3145,7 +3832,8 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       4
     ],
-    "correcta": 4
+    "clavesRevisadas": [],
+    "argumento": "La eficacia de antidepresivos en ciertas ansiedades y la duración individualizada invalidan las primeras generalizaciones. La disponibilidad de IMAO en Perú depende de fecha y registros verificables; sin ellos no se puede validar la alternativa marcada."
   },
   {
     "id": "PSQ-REAL-2024-2-20",
@@ -3164,6 +3852,10 @@ window.BADBEAR_PSIQ_LAS_REALES = [
     "marcasOriginales": [
       0
     ],
+    "clavesRevisadas": [
+      0
+    ],
+    "argumento": "El modelo OMS favorece atención primaria, servicios comunitarios y atención integrada en hospitales generales. Aumentar los hospitales psiquiátricos como prioridad no refleja el modelo territorial y comunitario.",
     "correcta": 0
   }
 ];
