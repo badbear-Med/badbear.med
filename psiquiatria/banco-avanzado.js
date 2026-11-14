@@ -32,16 +32,20 @@ const units=Array.isArray(window.BADBEAR_PSIQUIATRIA_CLASES)?window.BADBEAR_PSIQ
 const root=document.getElementById("quiz"),filter=document.getElementById("unit"),mode=document.getElementById("mode"),counter=document.getElementById("answered");
 let selected={},index=0,submitted=false;
 const params = new URLSearchParams(window.location.search);
-const timed = !reales && params.get("modo") === "simulacro";
+const timed = params.get("modo") === "simulacro";
 const requestedUnit = units.find(unit => String(unit.numero) === params.get("unidad"));
-const timedUnit = timed && requestedUnit ? Number(requestedUnit.numero) : null;
+const timedUnit = timed && !reales && requestedUnit ? Number(requestedUnit.numero) : null;
 const timedPool = timedUnit ? bank.filter(question => question.unidad === timedUnit) : bank;
 const timedSize = 20;
 const timedDuration = 10 * 60 * 1000;
-const timedStorageKey = "badbear-psiq-simulacro-10m-v1" + (timedUnit ? "-unidad-" + timedUnit : "");
+const timedStorageKey = reales
+  ? "badbear-psiq-las-reales-simulacro-10m-v1"
+  : "badbear-psiq-simulacro-10m-v1" + (timedUnit ? "-unidad-" + timedUnit : "");
 const clock = document.getElementById("timed-clock");
 // Las versiones previas siguen disponibles para restaurar simulacros ya iniciados.
-const bankById = timed ? new Map([...baseBank, ...combinedBank, ...previousBank, ...bank].map(question => [question.id, question])) : null;
+const bankById = timed
+  ? new Map((reales ? bank : [...baseBank, ...combinedBank, ...previousBank, ...bank]).map(question => [question.id, question]))
+  : null;
 let attempt = null;
 let timer = null;
 
@@ -80,7 +84,7 @@ function restoreTimed() {
     attempt = { ids: saved.ids, deadline: saved.deadline, closed: saved.closed };
     selected = Object.fromEntries(saved.ids.flatMap(id => {
       const answer = saved.selected?.[id];
-      return Number.isInteger(answer) && answer >= 0 && answer < bankById.get(id).opciones.length
+      return Number.isInteger(answer) && answer >= 0 && answer < optionCount(bankById.get(id))
         ? [[id, answer]]
         : [];
     }));
@@ -129,6 +133,7 @@ const assertionLabels = [
   "Tres son correctas",
   "Todas son verdaderas"
 ];
+const optionCount = question => question.aseveraciones ? assertionLabels.length : question.opciones.length;
 const answerLetter = (question, index) => letter(question.aseveraciones ? assertionOrder.indexOf(index) : index);
 const el=(tag,text,cls)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(cls)node.className=cls;return node;};
 function getList(){
@@ -150,7 +155,7 @@ function restore() {
     if (reales) {
       const validAnswers = bank.filter(question => {
         const answer = selected[question.id];
-        return Number.isInteger(answer) && answer >= 0 && answer < question.opciones.length;
+        return Number.isInteger(answer) && answer >= 0 && answer < optionCount(question);
       });
       selected = Object.fromEntries(validAnswers.map(question => [question.id, selected[question.id]]));
     }
@@ -179,15 +184,21 @@ function assertionList(question, reveal = false) {
 function explain(q,chosen){const box=el("div",undefined,"response");
 if (reales) {
   const heading = chosen === undefined ? "Sin responder" : chosen === q.correcta ? "Respuesta correcta" : "Respuesta incorrecta";
+  const correctOption = q.aseveraciones ? assertionLabels[q.correcta] : q.opciones[q.correcta];
   box.append(
     el("h3", heading),
-    el("p", "Clave: " + answerLetter(q, q.correcta) + ". " + q.opciones[q.correcta]),
+    el("p", "Clave: " + answerLetter(q, q.correcta) + ". " + correctOption),
     el("h4", "Justificación clínica"),
     el("p", q.argumento)
   );
   if (q.teoria) {
     const reference = el("p");
     addLink(reference, q.teoria.ruta, "Ver teoría · " + q.teoria.titulo);
+    box.append(reference);
+  }
+  for (const source of q.fuentes || []) {
+    const reference = el("p");
+    addLink(reference, source.ruta, source.titulo);
     box.append(reference);
   }
   return box;
@@ -239,7 +250,7 @@ function render(){
       }
       root.append(el("p", timedUnit
         ? "Unidad "+timedUnit+" · "+requestedUnit.titulo+". Cada pregunta presenta cuatro aseveraciones."
-        : "La selección mezcla unidades de Psiquiatría."));
+        : reales ? "La selección combina unidades de Banco Las Reales." : "La selección mezcla unidades de Psiquiatría."));
       root.append(el("p","El tiempo empieza al pulsar Iniciar simulacro. Al terminar, podrás revisar tu puntuación y las explicaciones."));
       const start = button("Iniciar simulacro", startTimed);
       start.className = "main-btn";
@@ -282,7 +293,9 @@ if(isExam && (timed ? attempt.closed : submitted)){
       : !Object.hasOwn(selected,q.id) ? "Sin responder"
       : selected[q.id] === q.correcta ? "Correcta" : "Incorrecta";
     const summary=el("summary","Unidad "+q.unidad+" — "+result);
-    row.append(summary,questionText(q),explain(q,selected[q.id]));
+    row.append(summary, questionText(q));
+    if (reales && q.aseveraciones) row.append(assertionList(q));
+    row.append(explain(q, selected[q.id]));
     root.append(row);
   });
   const restart = button(timed ? "Iniciar otro simulacro" : "Reiniciar simulacro", ()=>{
@@ -334,8 +347,12 @@ if(isExam){
 }
 }
 if (timed) {
-  document.title = "Simulacro de 10 minutos · Psiquiatría | BADBEAR.MED";
-  document.getElementById("bank-title").textContent = timedUnit ? "Simulacro de Psiquiatría · Unidad "+timedUnit : "Simulacro de Psiquiatría";
+  const title = reales ? "Simulacro de Banco Las Reales"
+    : timedUnit ? "Simulacro de Psiquiatría · Unidad " + timedUnit
+    : "Simulacro de Psiquiatría";
+  document.title = title + " · 10 minutos | BADBEAR.MED";
+  document.getElementById("bank-title").textContent = title;
+  if (reales) document.getElementById("reales-timed-entry").hidden = true;
   document.getElementById("bank-stat").hidden = true;
   document.getElementById("bank-settings").hidden = true;
   document.getElementById("timed-bar").hidden = false;
