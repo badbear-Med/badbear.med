@@ -1,4 +1,5 @@
 (()=>{"use strict";
+const reales = document.body?.dataset.banco === "las-reales";
 const baseBank = Array.isArray(window.BADBEAR_PSIQ_BANCO) ? window.BADBEAR_PSIQ_BANCO : [];
 const pilotUnit = 8;
 const pilot = Array.isArray(window.BADBEAR_PSIQ_UNIDAD_8) ? window.BADBEAR_PSIQ_UNIDAD_8 : [];
@@ -9,7 +10,7 @@ const combinedBank = pilot.length && pilotStart !== -1
 const convert = window.BADBEAR_PSIQ_CONVERTIR_ASEVERACIONES;
 const previousBank = convert ? combinedBank.map(convert) : combinedBank;
 const revisions = window.BADBEAR_PSIQ_REVISION_CLINICA || {};
-const bank = previousBank.map(question => {
+const advancedBank = previousBank.map(question => {
   const revision = revisions[question.id];
   if (!revision) return question;
   return {
@@ -20,11 +21,18 @@ const bank = previousBank.map(question => {
     respuestaOriginal: undefined
   };
 });
+const realQuestions = window.BADBEAR_PSIQ_LAS_REALES;
+const bank = reales
+  ? (realQuestions || []).map(question => question.aseveraciones
+      ? { ...question, correcta: question.aseveraciones.filter(item => item.verdadera).length }
+      : question)
+  : advancedBank;
+const studyStorageKey = reales ? "badbear-psiq-las-reales-v1" : "badbear-psiq-banco-v1";
 const units=Array.isArray(window.BADBEAR_PSIQUIATRIA_CLASES)?window.BADBEAR_PSIQUIATRIA_CLASES:[];
 const root=document.getElementById("quiz"),filter=document.getElementById("unit"),mode=document.getElementById("mode"),counter=document.getElementById("answered");
 let selected={},index=0,submitted=false;
 const params = new URLSearchParams(window.location.search);
-const timed = params.get("modo") === "simulacro";
+const timed = !reales && params.get("modo") === "simulacro";
 const requestedUnit = units.find(unit => String(unit.numero) === params.get("unidad"));
 const timedUnit = timed && requestedUnit ? Number(requestedUnit.numero) : null;
 const timedPool = timedUnit ? bank.filter(question => question.unidad === timedUnit) : bank;
@@ -130,10 +138,10 @@ function getList(){
 function store(){
   try {
     if (timed) sessionStorage.setItem(timedStorageKey, JSON.stringify({...attempt, selected, index}));
-    else localStorage.setItem("badbear-psiq-banco-v1",JSON.stringify({selected,unit:filter.value,mode:mode.value}));
+    else localStorage.setItem(studyStorageKey,JSON.stringify({selected,unit:filter.value,mode:mode.value}));
   } catch {}
 }
-function restore(){try{const v=JSON.parse(localStorage.getItem("badbear-psiq-banco-v1")||"{}");if(v&&typeof v==="object"){selected=v.selected||{};if(v.unit&&[...filter.options].some(x=>x.value===v.unit))filter.value=v.unit;if(["study","exam"].includes(v.mode))mode.value=v.mode;}}catch{}}
+function restore(){try{const v=JSON.parse(localStorage.getItem(studyStorageKey)||"{}");if(v&&typeof v==="object"){selected=v.selected||{};if(v.unit&&[...filter.options].some(x=>x.value===v.unit))filter.value=v.unit;if(["study","exam"].includes(v.mode))mode.value=v.mode;}}catch{}}
 function button(text,callback,disabled=false){const b=el("button",text);b.type="button";b.disabled=disabled;b.addEventListener("click",callback);return b;}
 function addLink(parent,url,text){if(!url)return;const a=el("a",text);a.href=url;a.target="_blank";a.rel="noopener noreferrer";parent.appendChild(a);}
 function assertionList(question, reveal = false) {
@@ -169,13 +177,15 @@ box.append(el("h4","Interpretación clínica del caso"));box.append(el("p",q.fun
 if(q.desarrollo?.razonamiento){box.append(el("h4","Razonamiento diagnóstico y fisiopatológico"));box.append(el("p",q.desarrollo.razonamiento));}
 if(q.desarrollo?.conducta){box.append(el("h4","Conducta, seguridad y aplicación práctica"));box.append(el("p",q.desarrollo.conducta));}
 box.append(el("h4","Análisis individual de las cinco alternativas"));
-const ul=el("ol");q.opciones.forEach((opt,i)=>{const li=el("li");const strong=el("strong",letter(i)+". "+opt+" — ");li.append(strong,document.createTextNode(q.analisis[i] || q.fundamento));ul.append(li);});box.append(ul);
+const ul=el("ol");q.opciones.forEach((opt,i)=>{const li=el("li");const strong=el("strong",letter(i)+". "+opt+" — ");li.append(strong,document.createTextNode(q.analisis?.[i] || q.fundamento || ""));ul.append(li);});box.append(ul);
 }
+if(q.bibliografia) {
 box.append(el("h4","Fundamento bibliográfico"));
 const reference = el("p");
 if (q.fuente) addLink(reference,q.fuente,q.bibliografia);
 else reference.textContent=q.bibliografia;
 box.append(reference);
+}
 const unit=units.find(x=>Number(x.numero)===Number(q.unidad));if(unit&&unit.teoria){const p=el("p");
 const theoryUrl=new URL(unit.teoria,document.baseURI);if(q.desarrollo?.ancla)theoryUrl.hash=q.desarrollo.ancla;
 addLink(p,theoryUrl.href,q.desarrollo?.ancla?"Consultar directamente el apartado relevante de la teoría · Unidad "+q.unidad+" ↗":"Consultar teoría de la unidad "+q.unidad+" ↗");box.append(p);}else box.append(el("p","Teoría propia de esta unidad: pendiente de publicación y verificación editorial."));
@@ -201,13 +211,18 @@ function render(){
       return;
     }
   }
+  if (reales && !bank.length) {
+    root.append(el("h2", "Aún no hay preguntas"));
+    root.append(el("p", "Aquí aparecerán las preguntas de examen que se incorporen al banco."));
+    return;
+  }
   const list=getList();
   const isExam = timed || mode.value === "exam";
   const answeredCount = list.filter(q=>Object.hasOwn(selected,q.id)).length;
   document.getElementById("total").textContent=bank.length;
   counter.textContent=answeredCount;
-if(!timed&&filter.value!=="all"){const available=list.length;const info=el("p",available>=20?"Esta unidad cumple el mínimo de 20 preguntas.":"Unidad en desarrollo: "+available+" de 20 preguntas mínimas. La cobertura todavía es parcial.","pill");root.append(info);}
-if (!timed && filter.value !== "all" && list.length >= timedSize) {
+if(!reales&&!timed&&filter.value!=="all"){const available=list.length;const info=el("p",available>=20?"Esta unidad cumple el mínimo de 20 preguntas.":"Unidad en desarrollo: "+available+" de 20 preguntas mínimas. La cobertura todavía es parcial.","pill");root.append(info);}
+if (!reales && !timed && filter.value !== "all" && list.length >= timedSize) {
   const unit = Number(filter.value);
   const link = el("a", "Simulacro de la unidad "+unit+" · 20 preguntas / 10 min", "main-btn unit-simulacro");
   link.href = "?modo=simulacro&unidad="+unit;
@@ -241,6 +256,7 @@ if(q.aseveraciones){
   root.append(assertionList(q));
   root.append(el("p","Sobre las aseveraciones antes vertidas:","case"));
 }
+if (q.origen) root.append(el("p",q.origen,"pill"));
 if (timed) root.append(el("p",answeredCount+" de "+list.length+" respondidas","pill"));
 const opts=el("div",undefined,"answers");const answered=Number.isInteger(selected[q.id]);
 const order = q.aseveraciones ? assertionOrder : q.opciones.map((_, i) => i);
@@ -287,10 +303,13 @@ if (timed) {
   if (attempt && !attempt.closed) timer = setInterval(tick, 250);
   return;
 }
+if (reales && bank.length) document.getElementById("bank-settings").hidden = false;
 units.forEach(x=>{const count=bank.filter(q=>q.unidad===Number(x.numero)).length;
-const label=String(x.numero).padStart(2,"0")+" · "+x.titulo+" ("+count+"/20 mínimo"+(count>=20?" ✓":" · EN DESARROLLO")+")";
+if (reales && !count) return;
+const progress = reales ? String(count) : count+"/20 mínimo"+(count>=20?" ✓":" · EN DESARROLLO");
+const label=String(x.numero).padStart(2,"0")+" · "+x.titulo+" ("+progress+")";
 const opt=el("option",label);opt.value=String(x.numero);filter.append(opt);});
 restore();
-if (requestedUnit) filter.value = String(requestedUnit.numero);
+if (requestedUnit && [...filter.options].some(option => option.value === String(requestedUnit.numero))) filter.value = String(requestedUnit.numero);
 filter.addEventListener("change",()=>{index=0;submitted=false;store();render()});mode.addEventListener("change",()=>{index=0;submitted=false;selected={};store();render()});document.getElementById("reset").addEventListener("click",()=>{if(!confirm("¿Reiniciar las respuestas de esta sesión?"))return;selected={};index=0;submitted=false;store();render()});render();
 })();
