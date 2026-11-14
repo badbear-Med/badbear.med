@@ -162,15 +162,19 @@ function assertionList(question, reveal = false) {
 
 function explain(q,chosen){const box=el("div",undefined,"response");
 if (reales && Array.isArray(q.marcasOriginales)) {
-  const marks = q.marcasOriginales;
-  if (!marks.length) {
-    box.append(el("h3", "Sin clave visible en el original"));
-  } else if (marks.length > 1) {
-    box.append(el("h3", "Varias alternativas marcadas en el original"));
-  } else {
-    box.append(el("h3", "Clave marcada en el original"));
+  const original = q.marcasOriginales;
+  const reviewed = q.clavesRevisadas || original;
+  const formatKeys = keys => keys.map(i => letter(i) + ". " + q.opciones[i]).join(" · ");
+  const hasSingleKey = Number.isInteger(q.correcta);
+  const heading = hasSingleKey
+    ? (chosen === undefined ? "Sin responder" : chosen === q.correcta ? "Respuesta correcta" : "Respuesta incorrecta")
+    : reviewed.length ? "Varias respuestas defendibles · sin puntuación" : "Sin clave única defendible · sin puntuación";
+  box.append(el("h3", heading));
+  if (reviewed.length) box.append(el("p", "Clave revisada: " + formatKeys(reviewed)));
+  box.append(el("p", original.length ? "Marca original: " + formatKeys(original) : "El original no muestra una marca."));
+  if (q.argumento) {
+    box.append(el("h4", "Argumento clínico"), el("p", q.argumento));
   }
-  for (const i of marks) box.append(el("p", letter(i) + ". " + q.opciones[i]));
   return box;
 }
 const right=chosen===q.correcta;
@@ -259,7 +263,7 @@ if(isExam && (timed ? attempt.closed : submitted)){
   if (timed) root.append(el("p",answeredCount+" respondidas · "+(list.length-answeredCount)+" sin responder."));
   list.forEach(q=>{
     const row=el("details",undefined,"explanation");
-    const result = !Number.isInteger(q.correcta) ? "Sin clave única" : !Object.hasOwn(selected,q.id) ? "Sin responder" : selected[q.id]===q.correcta ? "Correcta" : "Incorrecta";
+    const result = !Number.isInteger(q.correcta) ? "Sin puntuación" : !Object.hasOwn(selected,q.id) ? "Sin responder" : selected[q.id]===q.correcta ? "Correcta" : "Incorrecta";
     const summary=el("summary","Unidad "+q.unidad+" — "+result);
     row.append(summary,questionText(q),explain(q,selected[q.id]));
     root.append(row);
