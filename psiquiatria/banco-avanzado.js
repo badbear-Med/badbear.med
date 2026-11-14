@@ -141,7 +141,23 @@ function store(){
     else localStorage.setItem(studyStorageKey,JSON.stringify({selected,unit:filter.value,mode:mode.value}));
   } catch {}
 }
-function restore(){try{const v=JSON.parse(localStorage.getItem(studyStorageKey)||"{}");if(v&&typeof v==="object"){selected=v.selected||{};if(v.unit&&[...filter.options].some(x=>x.value===v.unit))filter.value=v.unit;if(["study","exam"].includes(v.mode))mode.value=v.mode;}}catch{}}
+function restore() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(studyStorageKey) || "{}");
+    if (!saved || typeof saved !== "object") return;
+
+    selected = saved.selected || {};
+    if (reales) {
+      const validAnswers = bank.filter(question => {
+        const answer = selected[question.id];
+        return Number.isInteger(answer) && answer >= 0 && answer < question.opciones.length;
+      });
+      selected = Object.fromEntries(validAnswers.map(question => [question.id, selected[question.id]]));
+    }
+    if (saved.unit && [...filter.options].some(option => option.value === saved.unit)) filter.value = saved.unit;
+    if (["study", "exam"].includes(saved.mode)) mode.value = saved.mode;
+  } catch {}
+}
 function button(text,callback,disabled=false){const b=el("button",text);b.type="button";b.disabled=disabled;b.addEventListener("click",callback);return b;}
 function addLink(parent,url,text){if(!url)return;const a=el("a",text);a.href=url;a.target="_blank";a.rel="noopener noreferrer";parent.appendChild(a);}
 function assertionList(question, reveal = false) {
@@ -161,20 +177,14 @@ function assertionList(question, reveal = false) {
 }
 
 function explain(q,chosen){const box=el("div",undefined,"response");
-if (reales && Array.isArray(q.marcasOriginales)) {
-  const original = q.marcasOriginales;
-  const reviewed = q.clavesRevisadas || original;
-  const formatKeys = keys => keys.map(i => letter(i) + ". " + q.opciones[i]).join(" · ");
-  const hasSingleKey = Number.isInteger(q.correcta);
-  const heading = hasSingleKey
-    ? (chosen === undefined ? "Sin responder" : chosen === q.correcta ? "Respuesta correcta" : "Respuesta incorrecta")
-    : reviewed.length ? "Varias respuestas defendibles · sin puntuación" : "Sin clave única defendible · sin puntuación";
-  box.append(el("h3", heading));
-  if (reviewed.length) box.append(el("p", "Clave revisada: " + formatKeys(reviewed)));
-  box.append(el("p", original.length ? "Marca original: " + formatKeys(original) : "El original no muestra una marca."));
-  if (q.argumento) {
-    box.append(el("h4", "Argumento clínico"), el("p", q.argumento));
-  }
+if (reales) {
+  const heading = chosen === undefined ? "Sin responder" : chosen === q.correcta ? "Respuesta correcta" : "Respuesta incorrecta";
+  box.append(
+    el("h3", heading),
+    el("p", "Clave: " + answerLetter(q, q.correcta) + ". " + q.opciones[q.correcta]),
+    el("h4", "Justificación clínica"),
+    el("p", q.argumento)
+  );
   return box;
 }
 const right=chosen===q.correcta;
@@ -252,18 +262,20 @@ if (!reales && !timed && filter.value !== "all" && list.length >= timedSize) {
 if(!list.length){root.append(el("p","No hay preguntas para esta selección.","empty"));return;}
 if(index>=list.length)index=list.length-1;
 if(isExam && (timed ? attempt.closed : submitted)){
-  const graded = list.filter(q => Number.isInteger(q.correcta));
+  const graded = reales ? list : list.filter(q => Number.isInteger(q.correcta));
   const correct = graded.filter(q => selected[q.id] === q.correcta).length;
   root.append(el("h2","Resultados del simulacro"));
   if (timed && attempt.closed === "time") root.append(el("p","Se agotaron los 10 minutos. Tu intento se cerró automáticamente."));
   root.append(el("p",correct+" respuestas correctas de "+graded.length,"score"));
-  if (graded.length < list.length) {
+  if (!reales && graded.length < list.length) {
     root.append(el("p", (list.length - graded.length) + " preguntas sin clave única, fuera de la puntuación."));
   }
   if (timed) root.append(el("p",answeredCount+" respondidas · "+(list.length-answeredCount)+" sin responder."));
   list.forEach(q=>{
     const row=el("details",undefined,"explanation");
-    const result = !Number.isInteger(q.correcta) ? "Sin puntuación" : !Object.hasOwn(selected,q.id) ? "Sin responder" : selected[q.id]===q.correcta ? "Correcta" : "Incorrecta";
+    const result = !reales && !Number.isInteger(q.correcta) ? "Sin puntuación"
+      : !Object.hasOwn(selected,q.id) ? "Sin responder"
+      : selected[q.id] === q.correcta ? "Correcta" : "Incorrecta";
     const summary=el("summary","Unidad "+q.unidad+" — "+result);
     row.append(summary,questionText(q),explain(q,selected[q.id]));
     root.append(row);
@@ -281,7 +293,6 @@ if(q.aseveraciones){
   root.append(assertionList(q));
   root.append(el("p","Sobre las aseveraciones antes vertidas:","case"));
 }
-if (q.origen) root.append(el("p",q.origen,"pill"));
 if (timed) root.append(el("p",answeredCount+" de "+list.length+" respondidas","pill"));
 const opts=el("div",undefined,"answers");const answered=Number.isInteger(selected[q.id]);
 const order = q.aseveraciones ? assertionOrder : q.opciones.map((_, i) => i);
