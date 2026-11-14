@@ -1,6 +1,198 @@
 /* Banco Las Reales de Psiquiatría. */
 window.BADBEAR_PSIQ_LAS_REALES = [
   {
+    "id": "PSQ-REAL-TIPO-01",
+    "unidad": 3,
+    "tema": "Trastorno afectivo bipolar",
+    "caso": "Una mujer de 29 años es llevada a Urgencias por sus familiares. A los 19 años tuvo un episodio depresivo mayor tratado de forma ambulatoria. Hace dos semanas, tras la muerte de un familiar, comenzó con insomnio, verborrea, gastos desinhibidos y la firme convicción de haber sido elegida para liderar un proyecto gubernamental secreto. En la evaluación se muestra irritable y agresiva, con fuga de ideas y delirios de grandeza.",
+    "argumento": "Solo II es verdadera. La FDA aprobó milsaperidona para el tratamiento agudo de episodios maníacos o mixtos del trastorno bipolar I en adultos. Para quien no toma un antipsicótico ni un estabilizador, NICE recomienda ofrecer inicialmente un antipsicótico apropiado al contexto y considerar la adición de litio o valproato según la respuesta y las precauciones aplicables. En una manía aguda con psicosis y agitación se prioriza la estabilización. La YMRS valora la gravedad de la manía mediante 11 ítems.",
+    "nivel": "Examen",
+    "aseveraciones": [
+      {
+        "texto": "Según NICE, en toda manía grave de una persona que no toma antipsicóticos ni estabilizadores, se debe iniciar desde el primer momento litio o valproato junto con un antipsicótico.",
+        "verdadera": false
+      },
+      {
+        "texto": "En 2026, la FDA aprobó Bysanti (milsaperidona) para el tratamiento agudo de los episodios maníacos o mixtos del trastorno bipolar I en adultos.",
+        "verdadera": true
+      },
+      {
+        "texto": "Se debe iniciar de inmediato psicoterapia psicodinámica tres veces por semana como intervención prioritaria del episodio actual.",
+        "verdadera": false
+      },
+      {
+        "texto": "La Escala de Young para la Evaluación de la Manía (YMRS) tiene 14 ítems.",
+        "verdadera": false
+      }
+    ],
+    "teoria": {
+      "titulo": "Tratamiento del trastorno bipolar según la fase",
+      "ruta": "clases/clase-03-trastorno-afectivo-bipolar.html#tratamiento"
+    },
+    "fuentes": [
+      {
+        "titulo": "Ficha de milsaperidona · FDA",
+        "ruta": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220358Orig1s000lbl.pdf"
+      },
+      {
+        "titulo": "Manejo de manía e hipomanía · NICE CG185",
+        "ruta": "https://www.nice.org.uk/guidance/cg185/chapter/Recommendations#managing-mania-or-hypomania-in-adults-in-secondary-care"
+      }
+    ]
+  },
+  {
+    "id": "PSQ-REAL-TIPO-02",
+    "unidad": 14,
+    "tema": "Autismo y TDAH",
+    "caso": "Un niño de 5 años es llevado a consulta por dificultades escolares. Su profesora refiere que comete errores por descuido, se distrae ante ruidos mínimos, pierde los útiles y parece no escuchar cuando le hablan. Le cuesta permanecer sentado, corre o salta en situaciones inapropiadas, interrumpe a sus compañeros y habla en exceso. Su madre observa estas conductas en casa desde los 3 años y refiere dificultades para socializar.",
+    "argumento": "Las cuatro aseveraciones son verdaderas. En 2026, la FDA aprobó la centanafadina, inhibidora de la recaptación de norepinefrina, dopamina y serotonina, para adultos y pacientes pediátricos a partir de los 6 años que pesen al menos 20 kg. Tanto la ficha de Ritalin como la de atomoxetina sitúan la indicación pediátrica de TDAH a partir de los 6 años. A los 5 años se priorizan las intervenciones conductuales. El posible uso fuera de ficha de metilfenidato en casos seleccionados es una decisión clínica distinta de la autorización regulatoria.",
+    "nivel": "Examen",
+    "aseveraciones": [
+      {
+        "texto": "En 2026, la FDA aprobó centanafadina para el TDAH. Su acción incluye inhibir la recaptación de norepinefrina, dopamina y serotonina.",
+        "verdadera": true
+      },
+      {
+        "texto": "En preescolares de 4 a 5 años, el entrenamiento conductual para cuidadores o las intervenciones conductuales en el aula son la primera línea cuando están disponibles.",
+        "verdadera": true
+      },
+      {
+        "texto": "La ficha de la FDA de Ritalin (metilfenidato) no incluye a este niño de 5 años en su indicación para TDAH.",
+        "verdadera": true
+      },
+      {
+        "texto": "La atomoxetina es un inhibidor selectivo de la recaptación de norepinefrina no estimulante, aprobado por la FDA para TDAH a partir de los 6 años.",
+        "verdadera": true
+      }
+    ],
+    "teoria": {
+      "titulo": "Tratamiento integral del TDAH y entrenamiento de cuidadores",
+      "ruta": "clases/clase-14-neurodesarrollo-tdah-y-autismo.html#intervencion-tdah"
+    },
+    "fuentes": [
+      {
+        "titulo": "Revisión de centanafadina · FDA",
+        "ruta": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2026/218145Orig1s000RiskR.pdf"
+      },
+      {
+        "titulo": "Tratamiento del TDAH preescolar · Academia Americana de Pediatría",
+        "ruta": "https://doi.org/10.1542/peds.2019-2528"
+      }
+    ]
+  },
+  {
+    "id": "PSQ-REAL-TIPO-03",
+    "unidad": 11,
+    "tema": "Trastorno obsesivo-compulsivo",
+    "caso": "Valeria, de 26 años, tiene TOC grave y recibe fluoxetina 80 mg/día desde hace cuatro meses, con respuesta parcial. Hace diez días se añadió clomipramina, titulada rápidamente hasta 150 mg/día. Acude a Urgencias por agitación, confusión fluctuante, diaforesis, temblor y diarrea de 24 horas de evolución. Presenta PA 155/95 mmHg, FC 128/min, FR 24/min y temperatura de 38,9 °C. Tiene pupilas midriáticas, piel húmeda y caliente, ruidos intestinales aumentados, hiperreflexia marcada en miembros inferiores y clonus inducible bilateral en los tobillos. El electrocardiograma muestra taquicardia sinusal.",
+    "argumento": "Las cuatro aseveraciones son falsas. Los criterios de Hunter orientan a toxicidad serotoninérgica ante un agente serotoninérgico y clonus inducible acompañado de agitación o diaforesis. El clonus, la hiperreflexia y la diarrea apoyan ese diagnóstico frente al toxíndrome anticolinérgico. La mirtazapina no es un IMAO y la ficha de fluoxetina exige esperar al menos cinco semanas antes de iniciar un IMAO psiquiátrico. El biperideno no trata la toxicidad serotoninérgica. El manejo inicial consiste en retirar los agentes y dar soporte urgente, con sedación y enfriamiento según la gravedad.",
+    "nivel": "Examen",
+    "aseveraciones": [
+      {
+        "texto": "La paciente cumple criterios de Hunter para síndrome neuroléptico maligno desencadenado por la interacción entre ambos fármacos.",
+        "verdadera": false
+      },
+      {
+        "texto": "La mirtazapina es un IMAO y puede iniciarse con un lavado de dos semanas tras suspender ambos fármacos, dado que solo importa la vida media de la clomipramina.",
+        "verdadera": false
+      },
+      {
+        "texto": "El clonus y la hiperreflexia confirman un síndrome anticolinérgico inducido por fluoxetina.",
+        "verdadera": false
+      },
+      {
+        "texto": "Si persisten la hipertermia y la hiperactividad neuromuscular tras suspender los fármacos e iniciar medidas de soporte, el biperideno es el antídoto de elección.",
+        "verdadera": false
+      }
+    ],
+    "teoria": {
+      "titulo": "Toxicidad serotoninérgica y criterios de Hunter",
+      "ruta": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11862804/#:~:text=Hunter%20Serotonin%20Toxicity%20criteria"
+    },
+    "fuentes": [
+      {
+        "titulo": "Intervalo de lavado antes de un IMAO · FDA",
+        "ruta": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/202133s004s005lbl.pdf"
+      }
+    ]
+  },
+  {
+    "id": "PSQ-REAL-TIPO-04",
+    "unidad": 4,
+    "tema": "Psicosis y antipsicóticos",
+    "caso": "Sebastián, de 23 años, estudia medicina y desde hace ocho meses presenta deterioro académico y aislamiento social. Hace seis semanas aparecieron delirios de control del pensamiento, dos voces que comentan sus actos, afecto aplanado y abulia. Durante la exacerbación psicótica presentó cinco días de irritabilidad, menor necesidad de dormir y verborrea, que remitieron espontáneamente. Niega consumo de sustancias y los estudios de laboratorio y neuroimagen no muestran alteraciones. Le preocupan los efectos adversos de los antipsicóticos porque su hermano presentó distonía y complicaciones metabólicas durante el tratamiento con olanzapina.",
+    "argumento": "Las cuatro aseveraciones son falsas. El DSM-5-TR exige un conjunto de síntomas y un curso compatible para diagnosticar esquizofrenia, y eliminó el subtipo paranoide. El diagnóstico esquizoafectivo exige un episodio afectivo mayor y una distribución temporal específica entre síntomas afectivos y psicóticos. El efecto de la xanomelina se atribuye a su agonismo muscarínico central M1 y M4. La quetiapina tiene un perfil metabólico distinto al de las opciones de menor riesgo mencionadas, por lo que la selección requiere valorar y vigilar cada efecto adverso.",
+    "nivel": "Examen",
+    "aseveraciones": [
+      {
+        "texto": "Las voces que comentan sus actos son patognomónicas y permiten confirmar por sí solas el subtipo de esquizofrenia paranoide en el DSM-5-TR.",
+        "verdadera": false
+      },
+      {
+        "texto": "Cinco días de síntomas maniformes concurrentes con psicosis bastan para diagnosticar trastorno esquizoafectivo de tipo bipolar.",
+        "verdadera": false
+      },
+      {
+        "texto": "La combinación de xanomelina con cloruro de trospio (Cobenfy, antes KarXT) ejerce el efecto antipsicótico por agonismo selectivo de los receptores D1, D4 y 5-HT6.",
+        "verdadera": false
+      },
+      {
+        "texto": "Si se prioriza reducir el riesgo metabólico, la quetiapina tiene un perfil tan favorable como aripiprazol, lurasidona, cariprazina y ziprasidona.",
+        "verdadera": false
+      }
+    ],
+    "teoria": {
+      "titulo": "Diagnóstico diferencial de las psicosis",
+      "ruta": "clases/clase-04-esquizofrenia-y-otros-trastornos-psicoticos.html#diferencial"
+    },
+    "fuentes": [
+      {
+        "titulo": "Ficha de xanomelina y trospio · FDA",
+        "ruta": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/216158s000lbl.pdf"
+      },
+      {
+        "titulo": "Comparación de efectos metabólicos de antipsicóticos · The Lancet Psychiatry",
+        "ruta": "https://doi.org/10.1016/S2215-0366%2819%2930416-X"
+      }
+    ]
+  },
+  {
+    "id": "PSQ-REAL-TIPO-05",
+    "unidad": 12,
+    "tema": "Trastornos neurocognitivos",
+    "caso": "Un varón de 87 años con hipertensión mal controlada sufrió hace seis meses un evento isquémico con hemiparesia izquierda, disartria, heminegligencia y dificultades de memoria y nominación. Recuperó la función motora, pero persistió el deterioro cognitivo y desde entonces necesitó ayuda para administrar su medicación y sus finanzas. Ayer sufrió un nuevo evento isquémico, con desorientación y empeoramiento de la memoria, apraxia y discurso limitado. También presenta alucinaciones visuales y táctiles.",
+    "argumento": "Son verdaderas I, III y IV. El deterioro persistente con pérdida de independencia tras el primer ictus y el empeoramiento después de otro evento vascular apoyan un trastorno neurocognitivo mayor de etiología vascular. La CIE-10 lo denomina demencia vascular en la categoría F01. La FDA carece de una indicación específica para demencia vascular en antidemenciales. Las pruebas mencionadas sirven para el cribado. El cambio de ayer requiere además valorar un posible delirium superpuesto.",
+    "nivel": "Examen",
+    "aseveraciones": [
+      {
+        "texto": "La pérdida de independencia tras el primer ictus y el patrón escalonado apoyan un trastorno neurocognitivo mayor de etiología vascular según el DSM-5-TR.",
+        "verdadera": true
+      },
+      {
+        "texto": "La CIE-10 denomina «trastorno neurocognitivo mayor» a la categoría F01.",
+        "verdadera": false
+      },
+      {
+        "texto": "La FDA no ha aprobado antidemenciales con indicación específica para la demencia vascular.",
+        "verdadera": true
+      },
+      {
+        "texto": "El MMSE, la prueba del reloj y el cuestionario de Pfeiffer son instrumentos de cribado cognitivo.",
+        "verdadera": true
+      }
+    ],
+    "teoria": {
+      "titulo": "Deterioro cognitivo vascular y demencia",
+      "ruta": "https://www.nature.com/articles/s41386-026-02331-3"
+    },
+    "fuentes": [
+      {
+        "titulo": "Demencia vascular, categoría F01 · CIE-10 de la OMS",
+        "ruta": "https://www.who.int/docs/default-source/classification/other-classifications/9241544228_eng.pdf#:~:text=F01%20Vascular%20dementia"
+      }
+    ]
+  },
+  {
     "id": "PSQ-REAL-D1-01-R2",
     "unidad": 3,
     "tema": "Trastorno afectivo bipolar",
