@@ -24,8 +24,15 @@ window.BATIMIX_CABEZA_CUELLO = [
     descripcion: "Anatomía laríngea, laringoscopia, TNM por subsitio, cirugía y preservación funcional, estoma y rehabilitación.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
   },
-  { id: "BATIMIX-U3-C4", numero: 4, titulo: "Patología de las glándulas salivales" },
-  { id: "BATIMIX-U3-C5", numero: 5, titulo: "Masas cervicales y urgencias de la vía aérea" },
+  {
+    id: "BATIMIX-U3-C4",
+    numero: 4,
+    titulo: "Masas cervicales congénitas",
+    teoria: "/cirugia-batimix/clases/u3-c4-masas-cervicales-congenitas.html",
+    descripcion: "Quiste tirogloso, anomalías branquiales, malformaciones linfáticas y diagnóstico diferencial quirúrgico de las masas cervicales.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
+  { id: "BATIMIX-U3-C5", numero: 5, titulo: "Patología de las glándulas salivales" },
   { id: "BATIMIX-U3-C6", numero: 6, titulo: "Trauma y fracturas maxilofaciales" },
   { id: "BATIMIX-U3-C7", numero: 7, titulo: "Reconstrucción y rehabilitación de cabeza y cuello" }
 ];
