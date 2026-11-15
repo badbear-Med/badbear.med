@@ -25,18 +25,20 @@ const completeTheory={
   description:"Anestesia general endovenosa I y II: hipnóticos IV, opioides, TIVA, TCI, dosis orientativas, monitorización, casos y complicaciones."
  }
 };
+const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
 const units=[
 {name:"Cirugía cardiovascular y de tórax",titles:["Tuberculosis pulmonar"],color:"#f28a36",tint:"#fff1e5"},
 {name:"Anestesiología",titles:[],color:"#17a776",tint:"#eaf9f2"},
-{name:"Cirugía de cabeza y cuello",titles:[],color:"#ea6178",tint:"#fff0f2"},
+{name:"Cirugía de cabeza y cuello",titles:cabezaCuello.map(clase=>clase.titulo),color:"#ea6178",tint:"#fff0f2"},
 {name:"Técnicas quirúrgicas",titles:[],color:"#eab52f",tint:"#fff8db"},
 {name:"Cirugía plástica",titles:[],color:"#4288db",tint:"#edf5ff"}
 ];
 const lessonName=(u,i)=>units[u].titles[i]||"Tema por definir";
 const lessonId=(u,i)=>"BATIMIX-U"+(u+1)+"-C"+(i+1);
 const key="badbear_batimix_campus_studied_v1";
-const TOTAL=20+anestItems.length;
-const known=new Set(units.flatMap((unit,u)=>u===1?anestItems.map(i=>i.id):Array.from({length:5},(_,i)=>lessonId(u,i))));
+const lessonCount=u=>u===1?anestItems.length:u===2?cabezaCuello.length:5;
+const TOTAL=units.reduce((count,_,u)=>count+lessonCount(u),0);
+const known=new Set(units.flatMap((unit,u)=>u===1?anestItems.map(i=>i.id):Array.from({length:lessonCount(u)},(_,i)=>lessonId(u,i))));
 let studied;try{studied=new Set(JSON.parse(localStorage.getItem(key)||"[]"))}catch{studied=new Set()}
 for(let i=1;i<=4;i++){
  const old=lessonId(1,i-1),target="BATIMIX-U2-T"+String(i).padStart(2,"0");
@@ -46,7 +48,10 @@ const tabs=document.getElementById("unit-tabs"),content=document.getElementById(
 if(!tabs||!content||!qu||!ql)return;
 const params=new URLSearchParams(window.location.search);
 const deepLink=params.get("recurso");
-let selected=params.get("unidad")==="2"||anestItems.some(i=>i.id===deepLink)?1:0;
+const requestedUnit=Number(params.get("unidad"));
+let selected=anestItems.some(i=>i.id===deepLink)?1
+ :cabezaCuello.some(i=>i.id===deepLink)?2
+ :Number.isInteger(requestedUnit)&&requestedUnit>=1&&requestedUnit<=units.length?requestedUnit-1:0;
 
 const text=(tag,value,cls)=>{
  const element=document.createElement(tag);element.textContent=value;
@@ -61,7 +66,7 @@ const globalClose=document.getElementById("batimix-player-close");
 let currentAudioUrl="";
 function selectGlobalAudio(item,url){
  if(!globalPlayer||!globalAudio||!globalTitle)return;
- const name=(completeTheory[item.id]?.name||"Seminario "+item.numero)+" · "+item.titulo;
+ const name=(completeTheory[item.id]?.name||(item.teoria?"Clase ":"Seminario ")+item.numero)+" · "+item.titulo;
  // No modificar src ni invocar load() si el mismo audio ya se estaba escuchando.
  if(currentAudioUrl!==url){
   globalAudio.pause();
@@ -85,14 +90,14 @@ if(globalClose&&globalAudio&&globalPlayer){
 }
 function countStudy(u){
  return u===1?anestItems.filter(i=>studied.has(i.id)).length:
- Array.from({length:5},(_,i)=>lessonId(u,i)).filter(id=>studied.has(id)).length;
+ Array.from({length:lessonCount(u)},(_,i)=>lessonId(u,i)).filter(id=>studied.has(id)).length;
 }
 function progressUpdate(){
  const done=units.reduce((n,_,u)=>n+countStudy(u),0);
  progress.textContent=done+" de "+TOTAL+" apartados estudiados";
  fill.style.width=(done/TOTAL*100)+"%";
  [...tabs.children].forEach((tab,u)=>{
-  const limit=u===1?anestItems.length:5;
+  const limit=lessonCount(u);
   tab.querySelector("small").textContent=countStudy(u)+" de "+limit+" estudiados";
  });
 }
@@ -110,16 +115,19 @@ function studyControls(article,id){
  actions.appendChild(toggle);article.appendChild(actions);
  return toggle;
 }
-function resourcePanel(article,available,anestItem=null){
- const toggle=studyControls(article,anestItem?anestItem.id:article.dataset.lessonId);
+function resourcePanel(article,available,item=null){
+ const toggle=studyControls(article,item?.id||article.dataset.lessonId);
  const resources=document.createElement("section");resources.className="resources";resources.hidden=true;
  const tabsRes=document.createElement("div");tabsRes.className="resource-tabs";
  const pane=document.createElement("div");pane.className="resource-pane";
- const isAnest=Boolean(anestItem);
- const theory=isAnest?completeTheory[anestItem.id]:null;
+ const isHeadNeck=Boolean(item&&cabezaCuello.includes(item));
+ const theory=isHeadNeck
+  ?(item.teoria?{href:item.teoria,name:"Clase "+item.numero,description:item.descripcion}:null)
+  :completeTheory[item?.id];
  const hasFullTheory=Boolean(theory);
- const types=isAnest
-  ?(hasFullTheory?["Teoría completa","PPT","Audio","Video YouTube","Material extra"]:["PPT","Audio","Video YouTube","Material extra"])
+ const mediaTypes=[isHeadNeck?"PPT en PDF":"PPT","Audio","Video YouTube","Material extra"];
+ const types=item
+  ?(hasFullTheory||isHeadNeck?["Teoría completa",...mediaTypes]:mediaTypes)
   :["Teoría","Audio","Video","Diapositivas","PDF adicional"];
  if(hasFullTheory)tabsRes.classList.add("anesthesia-tabs-with-theory");
  const keys=["ppt","audio","youtube","extra"];
@@ -139,11 +147,16 @@ function resourcePanel(article,available,anestItem=null){
    pane.appendChild(link);
    return;
   }
-  if(isAnest){
-   const resourceIndex=hasFullTheory?n-1:n;
-   const resourceUrl=anestItem.recursos?.[keys[resourceIndex]];
-   const fileHint=resourceIndex===3?"Material identificado en el listado: "+anestItem.archivoReferencia+
-    ". Formato original: "+anestItem.formatoReferencia.toUpperCase()+".":"";
+  if(item){
+   if(isHeadNeck&&!hasFullTheory&&n===0){
+    desc.textContent="Teoría pendiente de publicación.";
+    pane.appendChild(desc);
+    return;
+   }
+   const resourceIndex=hasFullTheory||isHeadNeck?n-1:n;
+   const resourceUrl=item.recursos?.[keys[resourceIndex]];
+   const fileHint=resourceIndex===3&&item.archivoReferencia?"Material identificado en el listado: "+item.archivoReferencia+
+    ". Formato original: "+item.formatoReferencia.toUpperCase()+".":"";
    if(typeof resourceUrl==="string"&&resourceUrl.trim()){
     const urlBase=resourceUrl.split("?")[0].split("#")[0].toLowerCase();
     const isAudio=resourceIndex===1&&/\.(mp3|m4a|aac|ogg|oga|wav|webm)$/.test(urlBase);
@@ -154,14 +167,14 @@ function resourcePanel(article,available,anestItem=null){
      :null;
     if(isAudio){
      // El audio nunca se inserta en pane: pane.replaceChildren() detendría la reproducción.
-     selectGlobalAudio(anestItem,resourceUrl);
+     selectGlobalAudio(item,resourceUrl);
      desc.textContent="Este audio se controla desde el reproductor general fijo en la parte inferior de la página. Puedes abrir PPT, PDF, material extra o cambiar de clase sin interrumpirlo. Pulsa Reproducir en la barra inferior.";
      pane.appendChild(desc);
      const button=document.createElement("button");
      button.type="button";
      button.className="anesthesia-select-global-audio";
      button.textContent="Seleccionar este audio en el reproductor general";
-     button.addEventListener("click",()=>selectGlobalAudio(anestItem,resourceUrl));
+     button.addEventListener("click",()=>selectGlobalAudio(item,resourceUrl));
      pane.appendChild(button);
      const link=document.createElement("a");
      link.className="anesthesia-original-link";
@@ -176,7 +189,7 @@ function resourcePanel(article,available,anestItem=null){
      const frame=document.createElement("iframe");
      frame.className="anesthesia-youtube-viewer";
      frame.src="https://www.youtube-nocookie.com/embed/"+youtubeMatch[1];
-     frame.title="Video YouTube · "+anestItem.titulo;
+     frame.title="Video YouTube · "+item.titulo;
      frame.loading="lazy";
      frame.setAttribute("allowfullscreen","");
      frame.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
@@ -205,7 +218,7 @@ function resourcePanel(article,available,anestItem=null){
      const frame=document.createElement("iframe");
      frame.className="anesthesia-embedded-viewer";
      frame.src=viewerUrl;
-     frame.title="Visor de "+types[n]+" · "+anestItem.titulo;
+     frame.title="Visor de "+types[n]+" · "+item.titulo;
      frame.loading="lazy";
      frame.setAttribute("allowfullscreen","");
      frame.setAttribute("allow","fullscreen");
@@ -251,7 +264,7 @@ function resourcePanel(article,available,anestItem=null){
   toggle.setAttribute("aria-expanded",String(!resources.hidden));
  });
  article.appendChild(resources);
- if(isAnest&&deepLink===anestItem.id){resources.hidden=false;toggle.textContent="Ocultar recursos";toggle.setAttribute("aria-expanded","true");}
+ if(item&&deepLink===item.id){resources.hidden=false;toggle.textContent="Ocultar recursos";toggle.setAttribute("aria-expanded","true");}
 }
 function renderAnesthesia(){
  const intro=text("p","2 secciones · "+anestItems.length+" apartados · 4 recursos por apartado: PPT, audio, video de YouTube y material extra.","intro");
@@ -281,14 +294,21 @@ function renderAnesthesia(){
  }
 }
 function renderRegular(){
- const p=text("p","5 clases · 5 recursos por clase: teoría, audio, video, diapositivas y PDF adicional.","intro");
+ const p=text("p",lessonCount(selected)+" clases · teoría, audio, video de YouTube, diapositivas y material extra.","intro");
  content.appendChild(p);
- for(let i=0;i<5;i++){
+ for(let i=0;i<lessonCount(selected);i++){
   const u=selected,id=lessonId(u,i),available=u===0&&i===0;
+  const clase=u===2?cabezaCuello[i]:null;
   const article=document.createElement("article");article.className="lesson";article.dataset.lessonId=id;
   article.appendChild(text("h4","CLASE "+String(i+1).padStart(2,"0")+" · "+lessonName(u,i)));
-  article.appendChild(text("p","Teoría + audio + video + PPT + PDF extra"+(available?" · Teoría inicial disponible":" · Pendiente de contenido"),"lesson-meta"));
-  resourcePanel(article,available);
+  const status=clase?.teoria?"Teoría completa disponible":available?"Teoría inicial disponible":"Pendiente de contenido";
+  article.appendChild(text("p",status,"lesson-meta"));
+  if(clase?.teoria){
+   const link=text("a","Leer teoría completa","anesthesia-theory-link");
+   link.href=clase.teoria;
+   article.appendChild(link);
+  }
+  resourcePanel(article,available,clase);
   content.appendChild(article);
  }
 }
@@ -316,7 +336,7 @@ function quizUpdate(){
    const opt=document.createElement("option");opt.value=item.id;
    opt.textContent=(group.id==="teoria"?"Clase ":"Seminario ")+item.numero+" · "+item.titulo;ql.appendChild(opt)
   }
- }else for(let i=0;i<5;i++){
+ }else for(let i=0;i<lessonCount(u);i++){
   const opt=document.createElement("option");opt.value=i;opt.textContent="Clase "+(i+1)+" · "+lessonName(u,i);ql.appendChild(opt)
  }
 }
