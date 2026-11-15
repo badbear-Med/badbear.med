@@ -32,7 +32,14 @@ window.BATIMIX_CABEZA_CUELLO = [
     descripcion: "Quiste tirogloso, anomalías branquiales, malformaciones linfáticas y diagnóstico diferencial quirúrgico de las masas cervicales.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
   },
-  { id: "BATIMIX-U3-C5", numero: 5, titulo: "Patología de las glándulas salivales" },
-  { id: "BATIMIX-U3-C6", numero: 6, titulo: "Trauma y fracturas maxilofaciales" },
+  {
+    id: "BATIMIX-U3-C5",
+    numero: 5,
+    titulo: "Trauma cervical y fracturas maxilofaciales",
+    teoria: "/cirugia-batimix/clases/u3-c5-trauma-cervical-maxilofacial.html",
+    descripcion: "Evaluación del politrauma, trauma cervical y laríngeo, urgencias orbitarias, fracturas de Le Fort y mandibulares, oclusión y osteosíntesis.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
+  { id: "BATIMIX-U3-C6", numero: 6, titulo: "Patología de las glándulas salivales" },
   { id: "BATIMIX-U3-C7", numero: 7, titulo: "Reconstrucción y rehabilitación de cabeza y cuello" }
 ];
