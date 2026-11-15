@@ -1,5 +1,6 @@
 (() => {
 "use strict";
+const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
 const unidades=[
 ["Cirugía cardiovascular y de tórax",["Tuberculosis pulmonar"]],
 ["Anestesiología",[]],
@@ -54,15 +55,19 @@ function hacerAnestesiologia(section){
 }
 unidades.forEach(([nombre,titulos],u)=>{
  const section=document.createElement("section");section.className="unit";
+ if(u===2)section.id="cabeza-y-cuello";
  section.appendChild(encabezado("h2",`Unidad ${u+1} · ${nombre}`));
  if(u===1){hacerAnestesiologia(section);cont.appendChild(section);return}
  const grid=document.createElement("div");grid.className="class-grid";
- for(let i=0;i<5;i++){
+ const clases=u===2?cabezaCuello:null;
+ for(let i=0;i<(clases?.length??5);i++){
+  const clase=clases?.[i];
   const article=document.createElement("article");article.className="class-card";
   const cod=encabezado("div",`BATIMIX-U${u+1}-C${i+1}`);cod.className="class-code";article.appendChild(cod);
-  article.appendChild(encabezado("h3",titulos[i]||`Clase ${i+1} · Tema por definir`));
+  article.appendChild(encabezado("h3",clase?.titulo||titulos[i]||`Clase ${i+1} · Tema por definir`));
   article.appendChild(encabezado("p","Recursos: teoría · audio · video · PPT · PDF."));
   if(u===0&&i===0){const link=document.createElement("a");link.href="clases/u1-c1-tuberculosis.html";link.textContent="Entrar a la clase";article.appendChild(link)}
+  else if(clase?.teoria){const link=document.createElement("a");link.href=clase.teoria;link.textContent="Leer teoría completa";article.appendChild(link)}
   else{const p=encabezado("span","Pendiente de desarrollo");p.className="pending";article.appendChild(p)}
   grid.appendChild(article);
  }

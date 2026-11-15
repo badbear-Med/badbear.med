@@ -1,0 +1,76 @@
+.oral-anatomy,
+.doi-figure {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 1px solid #d8e2eb;
+  border-radius: .65rem;
+  background: #f7fafc;
+}
+
+.oral-anatomy img {
+  display: block;
+  width: min(100%, 42rem);
+  height: auto;
+  margin: 0 auto .75rem;
+}
+
+.oral-anatomy figcaption,
+.doi-figure figcaption {
+  font-size: .95rem;
+  color: #263e52;
+}
+
+.oral-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr));
+  gap: .75rem;
+  padding: 0 !important;
+  list-style: none;
+  counter-reset: oral-step;
+}
+
+.oral-flow li {
+  counter-increment: oral-step;
+  padding: .85rem;
+  border: 1px solid #cbdde7;
+  border-top: 3px solid #127878;
+  border-radius: .55rem;
+  background: #eff8f8;
+}
+
+.oral-flow strong::before {
+  content: counter(oral-step) ". ";
+}
+
+.oral-flow span {
+  display: block;
+  margin-top: .25rem;
+}
+
+.doi-row {
+  display: grid;
+  grid-template-columns: 3.75rem minmax(0, 1fr) 2.5rem;
+  align-items: center;
+  gap: .75rem;
+  margin-block: .7rem;
+}
+
+.doi-row progress {
+  width: 100%;
+  accent-color: #127878;
+}
+
+.doi-figure p {
+  margin-bottom: 0;
+}
+
+.chapter table caption {
+  margin-bottom: .5rem;
+  padding: .25rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.chapter :is(h2, h3)[id] {
+  scroll-margin-top: 5.5rem;
+}
