@@ -40,6 +40,13 @@ window.BATIMIX_CABEZA_CUELLO = [
     descripcion: "Evaluación del politrauma, trauma cervical y laríngeo, urgencias orbitarias, fracturas de Le Fort y mandibulares, oclusión y osteosíntesis.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
   },
-  { id: "BATIMIX-U3-C6", numero: 6, titulo: "Patología de las glándulas salivales" },
+  {
+    id: "BATIMIX-U3-C6",
+    numero: 6,
+    titulo: "Patología de las glándulas salivales",
+    teoria: "/cirugia-batimix/clases/u3-c6-glandulas-salivales.html",
+    descripcion: "Anatomía quirúrgica, diagnóstico diferencial, clasificación de Milán, TNM salival AJCC 9, parotidectomía y manejo del cuello.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
   { id: "BATIMIX-U3-C7", numero: 7, titulo: "Reconstrucción y rehabilitación de cabeza y cuello" }
 ];
