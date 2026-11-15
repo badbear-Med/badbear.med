@@ -57,6 +57,9 @@ unidades.forEach(([nombre,titulos],u)=>{
  const section=document.createElement("section");section.className="unit";
  if(u===2)section.id="cabeza-y-cuello";
  section.appendChild(encabezado("h2",`Unidad ${u+1} · ${nombre}`));
+ const bank=encabezado("a","BADBEAR.REALES · Banco de preguntas");
+ bank.href="banco-las-reales.html?unidad="+(u+1)+"#banco";
+ section.appendChild(bank);
  if(u===1){hacerAnestesiologia(section);cont.appendChild(section);return}
  const grid=document.createElement("div");grid.className="class-grid";
  const clases=u===2?cabezaCuello:null;

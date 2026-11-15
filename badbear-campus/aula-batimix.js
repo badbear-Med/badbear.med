@@ -44,8 +44,8 @@ for(let i=1;i<=4;i++){
  const old=lessonId(1,i-1),target="BATIMIX-U2-T"+String(i).padStart(2,"0");
  if(studied.has(old))studied.add(target);
 }
-const tabs=document.getElementById("unit-tabs"),content=document.getElementById("unit-content"),progress=document.getElementById("progress-label"),fill=document.getElementById("progress-fill"),qu=document.getElementById("quiz-unit"),ql=document.getElementById("quiz-lesson");
-if(!tabs||!content||!qu||!ql)return;
+const tabs=document.getElementById("unit-tabs"),content=document.getElementById("unit-content"),progress=document.getElementById("progress-label"),fill=document.getElementById("progress-fill");
+if(!tabs||!content)return;
 const params=new URLSearchParams(window.location.search);
 const deepLink=params.get("recurso");
 const requestedUnit=Number(params.get("unidad"));
@@ -324,25 +324,14 @@ function render(){
  });
  content.replaceChildren();
  content.appendChild(text("h3","Unidad "+(selected+1)+" · "+units[selected].name));
+ const bankHref="../cirugia-batimix/banco-las-reales.html?unidad="+(selected+1)+"#banco";
+ const bankLink=text("a","BADBEAR.REALES · "+units[selected].name);
+ bankLink.href=bankHref;
+ content.appendChild(bankLink);
+ const quizStart=document.getElementById("quiz-start");
+ if(quizStart)quizStart.href=bankHref;
  if(selected===1)renderAnesthesia();else renderRegular();
  progressUpdate();
 }
-units.forEach((unit,u)=>{const opt=document.createElement("option");opt.value=u;opt.textContent="Unidad "+(u+1)+" · "+unit.name;qu.appendChild(opt)});
-function quizUpdate(){
- ql.replaceChildren();
- const u=Number(qu.value);
- if(u===1){
-  for(const group of anestSections)for(const item of group.items){
-   const opt=document.createElement("option");opt.value=item.id;
-   opt.textContent=(group.id==="teoria"?"Clase ":"Seminario ")+item.numero+" · "+item.titulo;ql.appendChild(opt)
-  }
- }else for(let i=0;i<lessonCount(u);i++){
-  const opt=document.createElement("option");opt.value=i;opt.textContent="Clase "+(i+1)+" · "+lessonName(u,i);ql.appendChild(opt)
- }
-}
-qu.value=String(selected);qu.addEventListener("change",quizUpdate);quizUpdate();
-document.getElementById("quiz-start").addEventListener("click",()=>{
- document.getElementById("quiz-status").textContent="El banco de preguntas de esta clase o seminario todavía no está publicado. No se generarán preguntas ficticias ni resultados de evaluación.";
-});
 render();
 })();
