@@ -16,8 +16,15 @@ window.BATIMIX_CABEZA_CUELLO = [
     descripcion: "Embriología y anatomía quirúrgica, evaluación del nódulo, ACR TI-RADS, Bethesda, estadificación TNM y tratamiento por histología.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
   },
-  { id: "BATIMIX-U3-C3", numero: 3, titulo: "Patología de las glándulas salivales" },
-  { id: "BATIMIX-U3-C4", numero: 4, titulo: "Tumores de faringe y laringe" },
+  {
+    id: "BATIMIX-U3-C3",
+    numero: 3,
+    titulo: "Cáncer de laringe",
+    teoria: "/cirugia-batimix/clases/u3-c3-cancer-laringe.html",
+    descripcion: "Anatomía laríngea, laringoscopia, TNM por subsitio, cirugía y preservación funcional, estoma y rehabilitación.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
+  { id: "BATIMIX-U3-C4", numero: 4, titulo: "Patología de las glándulas salivales" },
   { id: "BATIMIX-U3-C5", numero: 5, titulo: "Masas cervicales y urgencias de la vía aérea" },
   { id: "BATIMIX-U3-C6", numero: 6, titulo: "Trauma y fracturas maxilofaciales" },
   { id: "BATIMIX-U3-C7", numero: 7, titulo: "Reconstrucción y rehabilitación de cabeza y cuello" }
