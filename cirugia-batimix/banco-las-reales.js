@@ -220,12 +220,17 @@
       return;
     }
     status.textContent = "Simulacro · 20 preguntas · 10 minutos";
-    byId("tiempo").hidden = false;
+    quiz.append(
+      el("p", "El tiempo empieza al pulsar Iniciar simulacro. La corrección se muestra al finalizar."),
+      button("Iniciar simulacro", () => {
+        byId("tiempo").hidden = false;
+        deadline = Date.now() + SIM_SECONDS * 1000;
+        interval = setInterval(tick, 500);
+        tick();
+        renderQuestion().focus();
+      })
+    );
     byId("finalizar").addEventListener("click", finish);
-    deadline = Date.now() + SIM_SECONDS * 1000;
-    interval = setInterval(tick, 500);
-    tick();
-    renderQuestion();
   } else {
     byId("controles").hidden = !bank.length;
     topic.addEventListener("change", updatePractice);
