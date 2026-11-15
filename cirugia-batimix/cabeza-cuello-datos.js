@@ -48,5 +48,12 @@ window.BATIMIX_CABEZA_CUELLO = [
     descripcion: "Anatomía quirúrgica, diagnóstico diferencial, clasificación de Milán, TNM salival AJCC 9, parotidectomía y manejo del cuello.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
   },
-  { id: "BATIMIX-U3-C7", numero: 7, titulo: "Reconstrucción y rehabilitación de cabeza y cuello" }
+  {
+    id: "BATIMIX-U3-C7",
+    numero: 7,
+    titulo: "Fisuras labioalveolopalatinas y cirugía ortognática",
+    teoria: "/cirugia-batimix/clases/u3-c7-fisuras-cirugia-ortognatica.html",
+    descripcion: "Anatomía y clasificación de fisuras, rehabilitación interdisciplinaria, injerto alveolar, maloclusión, cefalometría y distracción mandibular.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  }
 ];
