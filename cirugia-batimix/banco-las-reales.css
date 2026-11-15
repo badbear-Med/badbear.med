@@ -70,7 +70,7 @@ button, .button {
 button:disabled { opacity: .55; cursor: default; }
 button.secondary { background: #fff; color: var(--accent); }
 fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
-legend { font-size: 1.1rem; font-weight: 700; margin-bottom: .45rem; padding: 0; }
+legend { white-space: pre-line; font-size: 1.1rem; font-weight: 700; margin-bottom: .45rem; padding: 0; }
 .choice {
   display: flex;
   align-items: baseline;
