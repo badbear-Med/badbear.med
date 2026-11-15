@@ -27,11 +27,11 @@ const completeTheory={
 };
 const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
 const units=[
-{name:"Cirugía cardiovascular y de tórax",titles:["Tuberculosis pulmonar"],color:"#f28a36",tint:"#fff1e5"},
-{name:"Anestesiología",titles:[],color:"#17a776",tint:"#eaf9f2"},
-{name:"Cirugía de cabeza y cuello",titles:cabezaCuello.map(clase=>clase.titulo),color:"#ea6178",tint:"#fff0f2"},
-{name:"Técnicas quirúrgicas",titles:[],color:"#eab52f",tint:"#fff8db"},
-{name:"Cirugía plástica",titles:[],color:"#4288db",tint:"#edf5ff"}
+{name:"Cirugía cardiovascular y de tórax",titles:["Tuberculosis pulmonar"],color:"#b94414",tint:"#fff0e6"},
+{name:"Anestesiología",titles:[],color:"#087c59",tint:"#e3f9ed"},
+{name:"Cirugía de cabeza y cuello",titles:cabezaCuello.map(clase=>clase.titulo),color:"#b52d59",tint:"#ffe9f0"},
+{name:"Técnicas quirúrgicas",titles:[],color:"#836000",tint:"#fff4c8"},
+{name:"Cirugía plástica",titles:[],color:"#2459c4",tint:"#e8f0ff"}
 ];
 const lessonName=(u,i)=>units[u].titles[i]||"Tema por definir";
 const lessonId=(u,i)=>"BATIMIX-U"+(u+1)+"-C"+(i+1);
@@ -98,11 +98,14 @@ function progressUpdate(){
  fill.style.width=(done/TOTAL*100)+"%";
  [...tabs.children].forEach((tab,u)=>{
   const limit=lessonCount(u);
-  tab.querySelector("small").textContent=countStudy(u)+" de "+limit+" estudiados";
+  const completed=countStudy(u);
+  tab.querySelector("small").textContent=completed+" de "+limit+" estudiados";
+  tab.style.setProperty("--unit-progress",completed/limit*100+"%");
  });
 }
-function studyControls(article,id){
+function studyControls(header,id,theoryLink){
  const actions=document.createElement("div");actions.className="lesson-actions";
+ if(theoryLink)actions.appendChild(theoryLink);
  const check=document.createElement("label");check.className="check-label";
  const input=document.createElement("input");input.type="checkbox";input.checked=studied.has(id);
  input.addEventListener("change",()=>{
@@ -110,14 +113,16 @@ function studyControls(article,id){
   try{localStorage.setItem(key,JSON.stringify([...studied]))}catch(e){}
   progressUpdate();
  });
- check.append(input,document.createTextNode("Marcar como estudiada"));actions.appendChild(check);
- const toggle=document.createElement("button");toggle.type="button";toggle.textContent="Ver recursos en el campus";toggle.setAttribute("aria-expanded","false");
- actions.appendChild(toggle);article.appendChild(actions);
+ check.append(input,document.createTextNode("Marcar como estudiada"));
+ const toggle=document.createElement("button");toggle.type="button";toggle.textContent="Ver recursos";toggle.setAttribute("aria-expanded","false");
+ actions.append(toggle,check);header.appendChild(actions);
  return toggle;
 }
-function resourcePanel(article,available,item=null){
- const toggle=studyControls(article,item?.id||article.dataset.lessonId);
- const resources=document.createElement("section");resources.className="resources";resources.hidden=true;
+function resourcePanel(article,header,available,item=null,theoryLink=null){
+ const id=item?.id||article.dataset.lessonId;
+ const toggle=studyControls(header,id,theoryLink);
+ const resources=document.createElement("section");resources.className="resources";resources.hidden=true;resources.id=id+"-recursos";
+ toggle.setAttribute("aria-controls",resources.id);
  const tabsRes=document.createElement("div");tabsRes.className="resource-tabs";
  const pane=document.createElement("div");pane.className="resource-pane";
  const isHeadNeck=Boolean(item&&cabezaCuello.includes(item));
@@ -129,11 +134,13 @@ function resourcePanel(article,available,item=null){
  const types=item
   ?(hasFullTheory||isHeadNeck?["Teoría completa",...mediaTypes]:mediaTypes)
   :["Teoría","Audio","Video","Diapositivas","PDF adicional"];
- if(hasFullTheory)tabsRes.classList.add("anesthesia-tabs-with-theory");
+ const themeTypes=item
+  ?(hasFullTheory||isHeadNeck?["theory","slides","audio","video","extra"]:["slides","audio","video","extra"])
+  :["theory","audio","video","slides","extra"];
  const keys=["ppt","audio","youtube","extra"];
  function displayResource(n){
   pane.replaceChildren();
-  [...tabsRes.children].forEach((button,k)=>button.setAttribute("aria-selected",String(k===n)));
+  [...tabsRes.children].forEach((button,k)=>button.setAttribute("aria-pressed",String(k===n)));
   const desc=document.createElement("p");
   if(hasFullTheory&&n===0){
    desc.textContent=theory.description;
@@ -256,80 +263,118 @@ function resourcePanel(article,available,item=null){
   }else{desc.textContent=types[n]+" pendiente de publicación. No existe todavía un archivo o enlace oficial para este recurso.";pane.appendChild(desc)}
  }
  types.forEach((name,n)=>{
-  const button=document.createElement("button");button.type="button";button.textContent=name;button.addEventListener("click",()=>displayResource(n));tabsRes.appendChild(button);
+  const button=document.createElement("button");button.type="button";button.textContent=name;button.dataset.format=themeTypes[n];button.addEventListener("click",()=>displayResource(n));tabsRes.appendChild(button);
  });
  resources.append(tabsRes,pane);displayResource(0);
  toggle.addEventListener("click",()=>{
-  resources.hidden=!resources.hidden;toggle.textContent=resources.hidden?"Ver recursos en el campus":"Ocultar recursos";
+  resources.hidden=!resources.hidden;toggle.textContent=resources.hidden?"Ver recursos":"Ocultar recursos";
   toggle.setAttribute("aria-expanded",String(!resources.hidden));
  });
  article.appendChild(resources);
- if(item&&deepLink===item.id){resources.hidden=false;toggle.textContent="Ocultar recursos";toggle.setAttribute("aria-expanded","true");}
+ if(item&&deepLink===item.id){article.classList.add("lesson-linked");resources.hidden=false;toggle.textContent="Ocultar recursos";toggle.setAttribute("aria-expanded","true");}
 }
+function lessonHeader(article,type,number,title,status,published){
+ const header=text("div","","lesson-header");
+ const summary=text("div","","lesson-summary");
+ const copy=text("div","","lesson-copy");
+ const ordinal=text("span",String(number).padStart(2,"0"),"lesson-number");
+ ordinal.setAttribute("aria-hidden","true");
+ copy.append(text("p",type,"lesson-label"),text("h4",title));
+ copy.appendChild(text("span",status,"lesson-meta"+(published?" is-published":"")));
+ summary.append(ordinal,copy);
+ header.appendChild(summary);
+ article.appendChild(header);
+ return header;
+}
+
 function renderAnesthesia(){
- const intro=text("p","2 secciones · "+anestItems.length+" apartados · 4 recursos por apartado: PPT, audio, video de YouTube y material extra.","intro");
- content.appendChild(intro);
  for(const section of anestSections){
-  const group=document.createElement("section");group.className="anesthesia-group";
+  const group=text("section","","anesthesia-group");
   group.appendChild(text("h4",section.nombre+" · "+section.items.length+(section.id==="teoria"?" clases":" seminarios"),"anesthesia-group-title"));
+  const list=text("div","","lesson-list");
   for(const item of section.items){
-   const article=document.createElement("article");article.className="lesson anesthesia-lesson";article.id=item.id;
-   const type=section.id==="teoria"?"CLASE":"SEMINARIO";
-   article.appendChild(text("h4",type+" "+String(item.numero).padStart(2,"0")+" · "+item.titulo));
-   article.appendChild(text("p",(completeTheory[item.id]?"Teoría completa + ":"")+"PPT + audio + video de YouTube + material extra.","lesson-meta"));
-   article.appendChild(text("p","Archivo de referencia: "+item.archivoReferencia+(item.recursos?.extra?" · Enlace configurado":" · Pendiente de subir"),"anesthesia-file-name"));
-   if(completeTheory[item.id]){
-    const theoryLink=document.createElement("a");
-    theoryLink.href=completeTheory[item.id].href;
+   const article=text("article","","lesson anesthesia-lesson");
+   article.id=item.id;
+   const theory=completeTheory[item.id];
+   const count=Object.values(item.recursos||{}).filter(Boolean).length;
+   const header=lessonHeader(article,section.id==="teoria"?"Clase":"Seminario",item.numero,item.titulo,
+     count?count+(count===1?" recurso disponible":" recursos disponibles"):"Recursos pendientes",Boolean(count));
+   const theoryLink=theory?text("a","Leer teoría completa","anesthesia-theory-link"):null;
+   if(theoryLink){
+    theoryLink.href=theory.href;
     theoryLink.target="_blank";
     theoryLink.rel="noopener noreferrer";
-    theoryLink.className="anesthesia-theory-link";
-    theoryLink.textContent="Leer teoría médica completa · "+completeTheory[item.id].name;
-    article.appendChild(theoryLink);
    }
-   resourcePanel(article,false,item);
-   group.appendChild(article);
+   resourcePanel(article,header,false,item,theoryLink);
+   list.appendChild(article);
   }
+  group.appendChild(list);
   content.appendChild(group);
  }
 }
+
 function renderRegular(){
- const p=text("p",lessonCount(selected)+" clases · teoría, audio, video de YouTube, diapositivas y material extra.","intro");
- content.appendChild(p);
+ const list=text("div","","lesson-list");
  for(let i=0;i<lessonCount(selected);i++){
   const u=selected,id=lessonId(u,i),available=u===0&&i===0;
   const clase=u===2?cabezaCuello[i]:null;
-  const article=document.createElement("article");article.className="lesson";article.dataset.lessonId=id;
-  article.appendChild(text("h4","CLASE "+String(i+1).padStart(2,"0")+" · "+lessonName(u,i)));
-  const status=clase?.teoria?"Teoría completa disponible":available?"Teoría inicial disponible":"Pendiente de contenido";
-  article.appendChild(text("p",status,"lesson-meta"));
-  if(clase?.teoria){
-   const link=text("a","Leer teoría completa","anesthesia-theory-link");
-   link.href=clase.teoria;
-   article.appendChild(link);
-  }
-  resourcePanel(article,available,clase);
-  content.appendChild(article);
+  const article=text("article","","lesson");
+  article.dataset.lessonId=id;
+  article.id=id;
+  const theoryHref=clase?.teoria||(available?"../cirugia-batimix/clases/u1-c1-tuberculosis.html":"");
+  const status=clase?.teoria?"Teoría publicada":available?"Teoría inicial publicada":"Contenido pendiente";
+  const header=lessonHeader(article,"Clase",i+1,lessonName(u,i),status,Boolean(theoryHref));
+  const theoryLink=theoryHref?text("a","Leer teoría completa","anesthesia-theory-link"):null;
+  if(theoryLink)theoryLink.href=theoryHref;
+  resourcePanel(article,header,available,clase,theoryLink);
+  list.appendChild(article);
  }
+ content.appendChild(list);
 }
+
+function activateUnit(index,focus=false){
+ selected=index;
+ render();
+ if(focus)tabs.children[index].focus();
+}
+
 function render(){
  tabs.replaceChildren();
  units.forEach((unit,u)=>{
-  const b=document.createElement("button");b.type="button";b.className="unit-tab";
-  b.style.setProperty("--accent",unit.color);b.style.setProperty("--tint",unit.tint);
-  b.setAttribute("role","tab");b.setAttribute("aria-selected",String(u===selected));
-  b.id="batimix-unit-"+(u+1);b.setAttribute("aria-controls","unit-content");
-  b.textContent="Unidad "+(u+1)+" · "+unit.name;b.appendChild(document.createElement("small"));
-  b.addEventListener("click",()=>{selected=u;render()});tabs.appendChild(b);
+  const b=text("button","","unit-tab");
+  b.type="button";
+  b.style.setProperty("--accent",unit.color);
+  b.style.setProperty("--tint",unit.tint);
+  b.setAttribute("role","tab");
+  b.setAttribute("aria-selected",String(u===selected));
+  b.id="batimix-unit-"+(u+1);
+  b.tabIndex=u===selected?0:-1;
+  b.setAttribute("aria-controls","unit-content");
+  b.append(text("span","Unidad "+(u+1),"unit-number"),text("strong",unit.name,"unit-name"),text("small","","unit-progress"));
+  b.addEventListener("click",()=>activateUnit(u,true));
+  b.addEventListener("keydown",event=>{
+   const destinations={ArrowLeft:(u+units.length-1)%units.length,ArrowRight:(u+1)%units.length,Home:0,End:units.length-1};
+   if(!Object.hasOwn(destinations,event.key))return;
+   event.preventDefault();
+   activateUnit(destinations[event.key],true);
+  });
+  tabs.appendChild(b);
  });
+ const unit=units[selected];
  content.replaceChildren();
- content.appendChild(text("h3","Unidad "+(selected+1)+" · "+units[selected].name));
- const bankHref="../cirugia-batimix/banco-las-reales.html?unidad="+(selected+1)+"#banco";
- const bankLink=text("a","BADBEAR.REALES · "+units[selected].name);
- bankLink.href=bankHref;
- content.appendChild(bankLink);
- const quizStart=document.getElementById("quiz-start");
- if(quizStart)quizStart.href=bankHref;
+ content.setAttribute("aria-labelledby",tabs.children[selected].id);
+ content.style.setProperty("--accent",unit.color);
+ content.style.setProperty("--tint",unit.tint);
+ const banner=text("div","","unit-banner");
+ const description=text("div","","unit-banner-copy");
+ const count=lessonCount(selected);
+ description.append(text("h3",unit.name),text("p",selected===1?"4 clases teóricas y 11 seminarios":count+" clases"));
+ const bankLink=text("a","BADBEAR.REALES","unit-bank");
+ bankLink.id="quiz-start";
+ bankLink.setAttribute("aria-label","BADBEAR.REALES · "+unit.name);
+ bankLink.href="../cirugia-batimix/banco-las-reales.html?unidad="+(selected+1)+"#banco";
+ banner.append(description,bankLink);
+ content.appendChild(banner);
  if(selected===1)renderAnesthesia();else renderRegular();
  progressUpdate();
 }
