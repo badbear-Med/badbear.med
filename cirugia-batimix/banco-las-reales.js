@@ -10,7 +10,7 @@
   const requested = Number(params.get("unidad"));
   const unit = requested >= 1 && requested <= units.length && Number.isInteger(requested) ? requested : 2;
   const bank = (data[unit]?.items ?? data[unit] ?? []).map(question => ({
-    ...question, ...data[unit]?.explanations?.[question.group]
+    ...data[unit]?.explanations?.[question.group], ...question
   }));
   const anesthesia = (window.BATIMIX_ANESTESIOLOGIA?.secciones ?? []).flatMap(section => section.items);
   const nameById = new Map(anesthesia.map(item => [item.id, item.titulo]));
