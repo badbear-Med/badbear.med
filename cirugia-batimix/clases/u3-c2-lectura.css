@@ -1,0 +1,54 @@
+.thyroid-illustration, .neck-organizer {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 1px solid #d8e2eb;
+  border-radius: .65rem;
+  background: #f7fafc;
+}
+
+.thyroid-illustration img {
+  display: block;
+  width: min(100%, 44rem);
+  height: auto;
+  margin: 0 auto .75rem;
+}
+
+.thyroid-illustration figcaption, .neck-organizer figcaption {
+  font-size: .95rem;
+  color: #263e52;
+}
+
+.neck-lanes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: .6rem;
+  margin-block: .75rem;
+}
+
+.neck-lanes div {
+  display: grid;
+  align-content: start;
+  gap: .4rem;
+  background: #eff8f8;
+  border: 1px solid #cbdde7;
+  border-top: 3px solid #127878;
+  border-radius: .55rem;
+  padding: .75rem;
+}
+
+.neck-lanes div:nth-child(2) {
+  background: #f7f3fa;
+  border-top-color: #674383;
+}
+
+.neck-organizer p {
+  margin-bottom: 0;
+}
+
+.chapter .doi-row {
+  grid-template-columns: 3rem minmax(0, 1fr) 4rem;
+}
+
+.chapter section[id] {
+  scroll-margin-top: 5.5rem;
+}

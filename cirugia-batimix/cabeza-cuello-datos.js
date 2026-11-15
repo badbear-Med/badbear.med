@@ -8,7 +8,14 @@ window.BATIMIX_CABEZA_CUELLO = [
     descripcion: "Anatomía oncológica, sospecha, biopsia, estadificación TNM, manejo del cuello y rehabilitación.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
   },
-  { id: "BATIMIX-U3-C2", numero: 2, titulo: "Patología quirúrgica de tiroides y paratiroides" },
+  {
+    id: "BATIMIX-U3-C2",
+    numero: 2,
+    titulo: "Nódulo tiroideo y cáncer de tiroides",
+    teoria: "/cirugia-batimix/clases/u3-c2-nodulo-cancer-tiroides.html",
+    descripcion: "Embriología y anatomía quirúrgica, evaluación del nódulo, ACR TI-RADS, Bethesda, estadificación TNM y tratamiento por histología.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
   { id: "BATIMIX-U3-C3", numero: 3, titulo: "Patología de las glándulas salivales" },
   { id: "BATIMIX-U3-C4", numero: 4, titulo: "Tumores de faringe y laringe" },
   { id: "BATIMIX-U3-C5", numero: 5, titulo: "Masas cervicales y urgencias de la vía aérea" },
