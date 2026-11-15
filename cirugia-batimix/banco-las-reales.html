@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Banco de exámenes de Cirugía BATIMIX por unidad, con corrección razonada y simulacro.">
+  <title>BADBEAR.REALES · Cirugía BATIMIX</title>
+  <link rel="icon" href="../assets/logos/cursos/cirugia-batimix/logo.png">
+  <link rel="stylesheet" href="banco-las-reales.css?v=20261115">
+  <link rel="stylesheet" href="../assets/css/course-lock.css">
+  <script src="../assets/js/course-lock-config.js"></script>
+  <script src="../assets/js/course-lock.js" data-course="cirugia-batimix"></script>
+</head>
+<body>
+  <header class="top">
+    <a href="index.html">BADBEAR.MED · CIRUGÍA BATIMIX</a>
+    <a id="aula" href="../badbear-campus/aula-batimix.html">Volver al aula</a>
+  </header>
+  <main id="banco">
+    <h1>BADBEAR.REALES</h1>
+    <p>Preguntas de Cirugía BATIMIX con respuestas razonadas.</p>
+    <nav id="unidades" class="units" aria-label="Bancos por unidad"></nav>
+    <section class="panel" aria-labelledby="unidad-titulo">
+      <h2 id="unidad-titulo"></h2>
+      <div id="controles" class="controls" hidden>
+        <label for="tema">Clase o tema <select id="tema"></select></label>
+        <a class="button" id="simulacro" hidden>Simulacro · 20 preguntas / 10 min</a>
+      </div>
+      <p id="disponibles" role="status"></p>
+    </section>
+    <div id="tiempo" class="timer" hidden>
+      <span id="reloj" role="timer" aria-label="Tiempo restante"></span>
+      <button id="finalizar" type="button">Finalizar simulacro</button>
+    </div>
+    <section id="pregunta" class="panel" aria-label="Pregunta y corrección"></section>
+    <noscript>Activa JavaScript para usar el banco.</noscript>
+  </main>
+  <script src="anestesiologia-datos.js?v=20261029-ppt1"></script>
+  <script src="reales-u2.js?v=20261115"></script>
+  <script src="reales-u3.js?v=20261115"></script>
+  <script src="reales-u5.js?v=20261115"></script>
+  <script src="banco-las-reales.js?v=20261115"></script>
+</body>
+</html>
