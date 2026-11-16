@@ -3,6 +3,8 @@
 const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
 const torax=window.BATIMIX_TORAX||[];
 const plastica=window.BATIMIX_PLASTICA||[];
+const tecnicas=window.BATIMIX_TECNICAS||[];
+const clasesPorUnidad=[torax,[],cabezaCuello,tecnicas,plastica];
 const unidades=[
 ["Cirugía cardiovascular y de tórax",["Tuberculosis pulmonar"]],
 ["Anestesiología",[]],
@@ -58,6 +60,7 @@ function hacerAnestesiologia(section){
 unidades.forEach(([nombre,titulos],u)=>{
  const section=document.createElement("section");section.className="unit";
  if(u===2)section.id="cabeza-y-cuello";
+ if(u===3)section.id="tecnicas-quirurgicas";
  if(u===4)section.id="cirugia-plastica";
  section.appendChild(encabezado("h2",`Unidad ${u+1} · ${nombre}`));
  const bank=encabezado("a","BADBEAR.REALES · Banco de preguntas");
@@ -65,7 +68,7 @@ unidades.forEach(([nombre,titulos],u)=>{
  section.appendChild(bank);
  if(u===1){hacerAnestesiologia(section);cont.appendChild(section);return}
  const grid=document.createElement("div");grid.className="class-grid";
- const clases=u===0?torax:u===2?cabezaCuello:u===4?plastica:[];
+ const clases=clasesPorUnidad[u];
  for(let i=0;i<(u===2?clases.length:Math.max(5,clases.length));i++){
   const id=`BATIMIX-U${u+1}-C${i+1}`;
   const clase=clases[i];
