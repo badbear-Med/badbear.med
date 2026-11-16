@@ -1,0 +1,76 @@
+.thoracic-chapter {
+  --thoracic-ink: #16344c;
+  --thoracic-line: #c8dce5;
+}
+
+.thoracic-chapter h3[id],
+.thoracic-chapter figure[id] {
+  scroll-margin-top: 6rem;
+}
+
+.compartments,
+.thoracic-chapter .resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: .8rem;
+  margin: 1.15rem 0;
+}
+
+.compartments a,
+.thoracic-chapter .resources-grid section {
+  display: grid;
+  align-content: start;
+  gap: .2rem;
+  padding: .85rem 1rem;
+  border: 1px solid var(--thoracic-line);
+  border-radius: .75rem;
+  color: var(--thoracic-ink);
+  background: #f2f8fa;
+}
+
+.compartments a:nth-child(2) { background: #fff4e4; border-color: #edcc9e; }
+.compartments a:nth-child(3) { background: #edf8ef; border-color: #bedcc7; }
+.compartments strong { font-size: 1.13rem; }
+.compartments small { color: #344d5e; }
+
+.thoracic-image {
+  margin: 1.25rem 0;
+  overflow: hidden;
+  border: 1px solid var(--thoracic-line);
+  border-radius: .75rem;
+  background: #f5f9fb;
+}
+
+.thoracic-image > a {
+  display: grid;
+  justify-items: center;
+  background: #121a21;
+}
+
+.thoracic-image img {
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: 30rem;
+  object-fit: contain;
+}
+
+.thoracic-image figcaption { padding: .85rem 1rem; }
+.thoracic-steps li { margin: .6rem 0; }
+
+.thoracic-chapter details {
+  margin: .75rem 0;
+  padding: .65rem .9rem;
+  border: 1px solid var(--thoracic-line);
+  border-radius: .7rem;
+}
+
+.thoracic-chapter summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--thoracic-ink);
+}
+
+.thoracic-chapter .resources-grid section { margin: 0; }
+.thoracic-chapter .resources-grid :is(h3, p) { margin: 0; }

@@ -1,6 +1,7 @@
 (() => {
 "use strict";
 const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
+const torax=window.BATIMIX_TORAX_INFECCIONES;
 const unidades=[
 ["Cirugía cardiovascular y de tórax",["Tuberculosis pulmonar"]],
 ["Anestesiología",[]],
@@ -64,9 +65,10 @@ unidades.forEach(([nombre,titulos],u)=>{
  const grid=document.createElement("div");grid.className="class-grid";
  const clases=u===2?cabezaCuello:null;
  for(let i=0;i<(clases?.length??5);i++){
-  const clase=clases?.[i];
+  const id=`BATIMIX-U${u+1}-C${i+1}`;
+  const clase=clases?.[i]||(u===0&&id===torax?.id?torax:null);
   const article=document.createElement("article");article.className="class-card";
-  const cod=encabezado("div",`BATIMIX-U${u+1}-C${i+1}`);cod.className="class-code";article.appendChild(cod);
+  const cod=encabezado("div",id);cod.className="class-code";article.appendChild(cod);
   article.appendChild(encabezado("h3",clase?.titulo||titulos[i]||`Clase ${i+1} · Tema por definir`));
   article.appendChild(encabezado("p","Recursos: teoría · audio · video · PPT · PDF."));
   if(u===0&&i===0){const link=document.createElement("a");link.href="clases/u1-c1-tuberculosis.html";link.textContent="Entrar a la clase";article.appendChild(link)}
