@@ -1,0 +1,128 @@
+.top-links .chapter-print-open {
+  padding: .45rem .7rem;
+  border: 1px solid currentColor;
+  border-radius: .55rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chapter-print-dialog {
+  box-sizing: border-box;
+  width: min(32rem, calc(100% - 1.5rem));
+  max-height: calc(100dvh - 1.5rem);
+  padding: clamp(.9rem, 4vw, 1.5rem);
+  overflow: auto;
+  border: 1px solid #afc4d4;
+  border-radius: 1rem;
+  background: #f9fcff;
+  color: #17324b;
+}
+
+.chapter-print-dialog::backdrop { background: rgb(15 27 46 / 65%); }
+.chapter-print-dialog h2 { margin: 0; font-size: 1.38rem; }
+.chapter-print-dialog p { margin: .65rem 0; }
+
+.chapter-print-list {
+  display: grid;
+  gap: .3rem;
+  min-inline-size: 0;
+  margin: .85rem 0;
+  padding: .55rem;
+  border: 1px solid #c8dce5;
+  border-radius: .65rem;
+}
+
+.chapter-print-list legend { padding: 0 .25rem; font-weight: 700; }
+.chapter-print-list label {
+  display: flex;
+  gap: .65rem;
+  align-items: baseline;
+  padding: .25rem;
+}
+
+.chapter-print-list input { accent-color: #075470; }
+.chapter-print-status { color: #365770; }
+.chapter-print-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.chapter-print-actions button {
+  padding: .5rem .7rem;
+  border: 1px solid #afc4d4;
+  border-radius: .5rem;
+  color: inherit;
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.chapter-print-actions .chapter-print-primary { background: #0b536d; border-color: #0b536d; color: #fff; font-weight: 700; }
+.chapter-print-actions button:disabled { opacity: .52; cursor: default; }
+
+.hydatid-layers {
+  display: grid;
+  grid-template-columns: minmax(7rem, 13rem) 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #c8dce5;
+  border-radius: .75rem;
+  background: #f5f9fb;
+}
+
+.hydatid-layers .cross-section {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #eaf8ff 0 46%, #ad5965 47% 54%, #f2cc78 55% 69%, #547985 70% 100%);
+  border: .35rem solid #547985;
+}
+
+.hydatid-layers ol { padding-left: 1.35rem; margin: .5rem 0; }
+.hydatid-layers li { margin-block: .35rem; }
+
+@media (max-width: 480px) {
+  .hydatid-layers { grid-template-columns: 1fr; }
+  .hydatid-layers .cross-section { width: min(56%, 10rem); justify-self: center; }
+}
+
+@media print {
+  @page { margin: 13mm 15mm; }
+  body.chapter-print-selection {
+    margin: 0 !important;
+    background: #fff !important;
+    color: #171d24 !important;
+  }
+
+  .chapter-print-selection :is(.skip, .topbar, .sidebar, .chapter-print-dialog, .chapter > .lead),
+  .chapter-print-selection .chapter > section:not([data-print-included]) {
+    display: none !important;
+  }
+
+  .chapter-print-selection :is(.hero, .hero-inner, .wrapper, .chapter, .tablewrap) {
+    display: block !important;
+    overflow: visible !important;
+    position: static !important;
+    max-width: none !important;
+    width: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #fff !important;
+    color: #171d24 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .chapter-print-selection .hero { margin-bottom: 8mm !important; }
+  .chapter-print-selection .hero :is(h1, .eyebrow, p) { color: #171d24 !important; }
+  .chapter-print-selection .hero h1 { font-size: 22pt !important; }
+  .chapter-print-selection .chapter { font-size: 10.5pt; }
+  .chapter-print-selection .chapter :is(h2, h3, summary) { break-after: avoid; }
+  .chapter-print-selection .chapter :is(tr, figure) { break-inside: avoid; }
+  .chapter-print-selection .chapter table { width: 100%; min-width: 0 !important; font-size: 9pt; }
+  .chapter-print-selection .chapter th,
+  .chapter-print-selection .chapter td { overflow-wrap: anywhere; }
+  .chapter-print-selection .chapter img { max-height: 85mm; }
+  .chapter-print-selection .hydatid-layers { print-color-adjust: exact; }
+}
