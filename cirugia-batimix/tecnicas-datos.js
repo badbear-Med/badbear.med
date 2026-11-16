@@ -50,5 +50,18 @@ window.BATIMIX_TECNICAS = [
       youtube: null,
       extra: "https://www.digesa.minsa.gob.pe/Orientacion/NTS-144-MINSA-2018-DIGESA.pdf"
     }
+  },
+  {
+    id: "BATIMIX-U4-C5",
+    numero: 5,
+    titulo: "Tiempos operatorios e instrumental quirúrgico",
+    teoria: "../cirugia-batimix/clases/u4-c5-tiempos-operatorios-instrumental.html",
+    descripcion: "Diéresis, exéresis, síntesis y hemostasia. Identificación del instrumental, suturas, cierre abdominal y práctica supervisada.",
+    recursos: {
+      ppt: null,
+      audio: null,
+      youtube: null,
+      extra: "https://www.teleflex.com/en/usa/productAreas/surgical/documents/Teleflex%20Catalog%20Lo%20Res.pdf"
+    }
   }
 ];
