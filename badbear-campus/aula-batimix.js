@@ -27,12 +27,13 @@ const completeTheory={
 };
 const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
 const torax=window.BATIMIX_TORAX||[];
+const plastica=window.BATIMIX_PLASTICA||[];
 const units=[
 {name:"Cirugía cardiovascular y de tórax",titles:torax.map(clase=>clase.titulo),color:"#b94414",tint:"#fff0e6"},
 {name:"Anestesiología",titles:[],color:"#087c59",tint:"#e3f9ed"},
 {name:"Cirugía de cabeza y cuello",titles:cabezaCuello.map(clase=>clase.titulo),color:"#b52d59",tint:"#ffe9f0"},
 {name:"Técnicas quirúrgicas",titles:[],color:"#836000",tint:"#fff4c8"},
-{name:"Cirugía plástica",titles:[],color:"#2459c4",tint:"#e8f0ff"}
+{name:"Cirugía plástica",titles:plastica.map(clase=>clase.titulo),color:"#2459c4",tint:"#e8f0ff"}
 ];
 const lessonName=(u,i)=>units[u].titles[i]||"Tema por definir";
 const lessonId=(u,i)=>"BATIMIX-U"+(u+1)+"-C"+(i+1);
@@ -53,6 +54,7 @@ const requestedUnit=Number(params.get("unidad"));
 let selected=anestItems.some(i=>i.id===deepLink)?1
  :cabezaCuello.some(i=>i.id===deepLink)?2
  :torax.some(i=>i.id===deepLink)?0
+ :plastica.some(i=>i.id===deepLink)?4
  :Number.isInteger(requestedUnit)&&requestedUnit>=1&&requestedUnit<=units.length?requestedUnit-1:0;
 
 const text=(tag,value,cls)=>{
@@ -316,7 +318,7 @@ function renderRegular(){
  const list=text("div","","lesson-list");
  for(let i=0;i<lessonCount(selected);i++){
   const u=selected,id=lessonId(u,i);
-  const clase=(u===0?torax:u===2?cabezaCuello:[])[i];
+  const clase=(u===0?torax:u===2?cabezaCuello:u===4?plastica:[])[i];
   const article=text("article","","lesson");
   article.dataset.lessonId=id;
   article.id=id;
