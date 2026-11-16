@@ -1,0 +1,137 @@
+.instrument-lesson {
+  --instrument-ink: #142b42;
+  --instrument-teal: #08645e;
+  --instrument-line: #cbdce1;
+  --instrument-tint: #eff8f7;
+  --instrument-paper: #f7fbfc;
+}
+.instrument-lesson .instrument-hero {
+  background: linear-gradient(112deg, #122642 0%, #21466a 56%, #075e58 100%);
+}
+.instrument-lesson .instrument-hero .hero-inner {
+  padding-block: clamp(2.2rem, 6vw, 5rem);
+}
+.instrument-hero h1 {
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.instrument-hero p {
+  max-width: 58ch;
+  line-height: 1.55;
+}
+.instrument-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  margin-top: 1.4rem;
+}
+.instrument-jump a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .45rem .8rem;
+  border: 1px solid #a7d9d3;
+  border-radius: .55rem;
+  background: #15394c;
+  color: #fff;
+  font-size: .93rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.instrument-jump a:hover,
+.instrument-jump a:focus-visible {
+  background: #e6fbf7;
+  color: #102d42;
+}
+.instrument-lesson .chapter > section {
+  scroll-margin-top: 5rem;
+}
+.instrument-lesson .chapter h3[id] {
+  scroll-margin-top: 5rem;
+}
+.instrument-lesson .chapter h3 {
+  color: var(--instrument-ink);
+}
+.instrument-lesson .chapter .instrument-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .9rem;
+  margin-block: 1.15rem 1.4rem;
+}
+.instrument-lesson .chapter .instrument-gallery--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+.instrument-lesson .chapter .instrument-photo {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--instrument-line);
+  border-radius: .9rem;
+  background: var(--instrument-paper);
+}
+.instrument-photo .instrument-photo-link {
+  display: grid;
+  place-items: center;
+  height: clamp(12rem, 34vw, 17rem);
+  padding: .8rem;
+  background: #edf3f6;
+}
+.instrument-lesson .chapter .instrument-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+.instrument-lesson .chapter .instrument-photo figcaption {
+  display: grid;
+  gap: .34rem;
+  padding: .8rem .95rem 1rem;
+  color: var(--instrument-ink);
+  font-size: .92rem;
+  line-height: 1.45;
+}
+.instrument-photo figcaption > strong {
+  font-size: 1.04rem;
+}
+.instrument-photo .instrument-credit {
+  color: #445b6a;
+  font-size: .8rem;
+}
+.instrument-lesson .chapter .instrument-note {
+  margin-block: 1.2rem;
+  padding: .9rem 1.05rem;
+  border-left: 4px solid #128177;
+  border-radius: 0 .65rem .65rem 0;
+  background: var(--instrument-tint);
+}
+.instrument-note > p:last-child { margin-bottom: 0; }
+.instrument-note > p:first-child { margin-top: 0; }
+.instrument-lesson .chapter .instrument-steps {
+  padding-inline-start: 1.5rem;
+}
+.instrument-steps li { padding: .22rem .15rem; }
+.instrument-steps li::marker { color: var(--instrument-teal); font-weight: 800; }
+@media (max-width: 560px) {
+  .instrument-lesson .chapter .instrument-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media print {
+  .instrument-jump { display: none !important; }
+  .instrument-photo .instrument-photo-link {
+    height: 49mm;
+    background: #fff;
+    padding: 2mm;
+  }
+  .instrument-lesson .chapter .instrument-photo figcaption {
+    font-size: 9pt;
+  }
+  .instrument-lesson .chapter .instrument-photo,
+  .instrument-lesson .chapter .instrument-note {
+    background: #fff;
+    break-inside: avoid;
+  }
+}
