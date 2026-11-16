@@ -38,7 +38,7 @@ const units=[
 const lessonName=(u,i)=>units[u].titles[i]||"Tema por definir";
 const lessonId=(u,i)=>"BATIMIX-U"+(u+1)+"-C"+(i+1);
 const key="badbear_batimix_campus_studied_v1";
-const lessonCount=u=>u===0?Math.max(5,torax.length):u===1?anestItems.length:u===2?cabezaCuello.length:5;
+const lessonCount=u=>u===0?Math.max(5,torax.length):u===1?anestItems.length:u===2?cabezaCuello.length:u===4?Math.max(5,plastica.length):5;
 const TOTAL=units.reduce((count,_,u)=>count+lessonCount(u),0);
 const known=new Set(units.flatMap((unit,u)=>u===1?anestItems.map(i=>i.id):Array.from({length:lessonCount(u)},(_,i)=>lessonId(u,i))));
 let studied;try{studied=new Set(JSON.parse(localStorage.getItem(key)||"[]"))}catch{studied=new Set()}
