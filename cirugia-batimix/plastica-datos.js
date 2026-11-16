@@ -38,5 +38,13 @@ window.BATIMIX_PLASTICA = [
     teoria: "../cirugia-batimix/clases/u5-c5-cirugia-reconstructiva.html",
     descripcion: "Selección de cobertura, trauma de mano, microcirugía oncológica, matrices dérmicas y expansión tisular.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
+  {
+    id: "BATIMIX-U5-C6",
+    numero: 6,
+    titulo: "Cirugía estética",
+    teoria: "../cirugia-batimix/clases/u5-c6-cirugia-estetica.html",
+    descripcion: "Evaluación y seguridad en blefaroplastia, rinoplastia, cirugía mamaria, contorno corporal, lifting e inyectables.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
   }
 ];

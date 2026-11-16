@@ -66,7 +66,7 @@ unidades.forEach(([nombre,titulos],u)=>{
  if(u===1){hacerAnestesiologia(section);cont.appendChild(section);return}
  const grid=document.createElement("div");grid.className="class-grid";
  const clases=u===0?torax:u===2?cabezaCuello:u===4?plastica:[];
- for(let i=0;i<(u===0?Math.max(5,torax.length):u===2?clases.length:5);i++){
+ for(let i=0;i<(u===2?clases.length:Math.max(5,clases.length));i++){
   const id=`BATIMIX-U${u+1}-C${i+1}`;
   const clase=clases[i];
   const article=document.createElement("article");article.className="class-card";
