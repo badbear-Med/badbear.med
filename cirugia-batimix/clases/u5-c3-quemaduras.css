@@ -1,0 +1,43 @@
+.burn-depth,
+.burn-map {
+  margin: 1.25rem 0;
+  padding: .8rem;
+  border: 1px solid #d6dce5;
+  border-radius: .8rem;
+}
+
+.burn-depth figcaption,
+.burn-map figcaption { margin-bottom: .6rem; }
+
+.burn-depth tbody .burn-hit { background: #fbdde2; color: #722d3b; }
+.burn-depth tbody .burn-part { background: #fff0cf; color: #62491e; }
+
+.burn-map dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: .55rem;
+  margin: 0;
+}
+
+.burn-map dl div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: .6rem;
+  padding: .55rem;
+  border-radius: .55rem;
+  color: #173650;
+  background: #eaf4ff;
+}
+
+.burn-map dd {
+  margin: 0;
+  color: #124d84;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media print {
+  .burn-depth,
+  .burn-map { print-color-adjust: exact; }
+}
