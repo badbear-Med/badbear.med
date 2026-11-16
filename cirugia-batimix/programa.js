@@ -2,6 +2,7 @@
 "use strict";
 const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
 const torax=window.BATIMIX_TORAX||[];
+const plastica=window.BATIMIX_PLASTICA||[];
 const unidades=[
 ["Cirugía cardiovascular y de tórax",["Tuberculosis pulmonar"]],
 ["Anestesiología",[]],
@@ -57,13 +58,14 @@ function hacerAnestesiologia(section){
 unidades.forEach(([nombre,titulos],u)=>{
  const section=document.createElement("section");section.className="unit";
  if(u===2)section.id="cabeza-y-cuello";
+ if(u===4)section.id="cirugia-plastica";
  section.appendChild(encabezado("h2",`Unidad ${u+1} · ${nombre}`));
  const bank=encabezado("a","BADBEAR.REALES · Banco de preguntas");
  bank.href="banco-las-reales.html?unidad="+(u+1)+"#banco";
  section.appendChild(bank);
  if(u===1){hacerAnestesiologia(section);cont.appendChild(section);return}
  const grid=document.createElement("div");grid.className="class-grid";
- const clases=u===0?torax:u===2?cabezaCuello:[];
+ const clases=u===0?torax:u===2?cabezaCuello:u===4?plastica:[];
  for(let i=0;i<(u===0?Math.max(5,torax.length):u===2?clases.length:5);i++){
   const id=`BATIMIX-U${u+1}-C${i+1}`;
   const clase=clases[i];
