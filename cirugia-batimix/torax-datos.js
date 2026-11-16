@@ -30,5 +30,14 @@ window.BATIMIX_TORAX = [
     teoria: "../cirugia-batimix/clases/u1-c4-tumores-toracicos.html",
     descripcion: "Histología, biopsia, TNM de 9.ª edición, resección pulmonar y diagnóstico por compartimentos del mediastino.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
+  {
+    id: "BATIMIX-U1-C5",
+    numero: 5,
+    tipo: "Seminario",
+    titulo: "Trauma torácico",
+    teoria: "../cirugia-batimix/clases/u1-c5-trauma-toracico.html",
+    descripcion: "Evaluación primaria, trauma cerrado y penetrante, lesiones pleurales y mediastínicas, control hemorrágico y SDRA.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
   }
 ];
