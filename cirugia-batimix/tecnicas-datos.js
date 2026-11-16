@@ -24,5 +24,18 @@ window.BATIMIX_TECNICAS = [
       youtube: null,
       extra: "https://www.cdc.gov/infection-control/hcp/disinfection-and-sterilization/steam-sterilization-cycle-times.html"
     }
+  },
+  {
+    id: "BATIMIX-U4-C3",
+    numero: 3,
+    titulo: "Preparación del equipo y del campo quirúrgico",
+    teoria: "../cirugia-batimix/clases/u4-c3-preparacion-campo-quirurgico.html",
+    descripcion: "Higiene de manos, bata y guantes estériles, antisepsia del sitio y colocación de campos.",
+    recursos: {
+      ppt: null,
+      audio: null,
+      youtube: null,
+      extra: "https://www.who.int/docs/default-source/patient-safety/how-to-handwash-poster.pdf"
+    }
   }
 ];
