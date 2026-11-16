@@ -37,5 +37,18 @@ window.BATIMIX_TECNICAS = [
       youtube: null,
       extra: "https://www.who.int/docs/default-source/patient-safety/how-to-handwash-poster.pdf"
     }
+  },
+  {
+    id: "BATIMIX-U4-C4",
+    numero: 4,
+    titulo: "Bioseguridad hospitalaria y asepsia quirúrgica",
+    teoria: "../cirugia-batimix/clases/u4-c4-bioseguridad-hospitalaria.html",
+    descripcion: "Precauciones estándar, exposición ocupacional a sangre, residuos sanitarios en el Perú y reglas del campo estéril.",
+    recursos: {
+      ppt: null,
+      audio: null,
+      youtube: null,
+      extra: "https://www.digesa.minsa.gob.pe/Orientacion/NTS-144-MINSA-2018-DIGESA.pdf"
+    }
   }
 ];
