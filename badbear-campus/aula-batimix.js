@@ -26,9 +26,9 @@ const completeTheory={
  }
 };
 const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
-const torax=window.BATIMIX_TORAX_INFECCIONES;
+const torax=window.BATIMIX_TORAX||[];
 const units=[
-{name:"Cirugía cardiovascular y de tórax",titles:["Tuberculosis pulmonar",torax?.titulo],color:"#b94414",tint:"#fff0e6"},
+{name:"Cirugía cardiovascular y de tórax",titles:torax.map(clase=>clase.titulo),color:"#b94414",tint:"#fff0e6"},
 {name:"Anestesiología",titles:[],color:"#087c59",tint:"#e3f9ed"},
 {name:"Cirugía de cabeza y cuello",titles:cabezaCuello.map(clase=>clase.titulo),color:"#b52d59",tint:"#ffe9f0"},
 {name:"Técnicas quirúrgicas",titles:[],color:"#836000",tint:"#fff4c8"},
@@ -52,7 +52,7 @@ const deepLink=params.get("recurso");
 const requestedUnit=Number(params.get("unidad"));
 let selected=anestItems.some(i=>i.id===deepLink)?1
  :cabezaCuello.some(i=>i.id===deepLink)?2
- :torax&&deepLink===torax.id?0
+ :torax.some(i=>i.id===deepLink)?0
  :Number.isInteger(requestedUnit)&&requestedUnit>=1&&requestedUnit<=units.length?requestedUnit-1:0;
 
 const text=(tag,value,cls)=>{
@@ -120,7 +120,7 @@ function studyControls(header,id,theoryLink){
  actions.append(toggle,check);header.appendChild(actions);
  return toggle;
 }
-function resourcePanel(article,header,available,item=null,theoryLink=null){
+function resourcePanel(article,header,item=null,theoryLink=null){
  const id=item?.id||article.dataset.lessonId;
  const toggle=studyControls(header,id,theoryLink);
  const resources=document.createElement("section");resources.className="resources";resources.hidden=true;resources.id=id+"-recursos";
@@ -259,9 +259,6 @@ function resourcePanel(article,header,available,item=null,theoryLink=null){
      pane.appendChild(link);
     }
    }else{desc.textContent=types[n]+" pendiente de vinculación. "+fileHint;pane.appendChild(desc)}
-  }else if(available&&n===0){
-   desc.textContent="Introducción teórica publicada en BADBEAR.MED. El capítulo ampliado está en preparación.";pane.appendChild(desc);
-   const link=document.createElement("a");link.className="resource-link";link.href="../cirugia-batimix/clases/u1-c1-tuberculosis.html";link.textContent="Leer teoría en BADBEAR.MED ↗";pane.appendChild(link);
   }else{desc.textContent=types[n]+" pendiente de publicación. No existe todavía un archivo o enlace oficial para este recurso.";pane.appendChild(desc)}
  }
  types.forEach((name,n)=>{
@@ -307,7 +304,7 @@ function renderAnesthesia(){
     theoryLink.target="_blank";
     theoryLink.rel="noopener noreferrer";
    }
-   resourcePanel(article,header,false,item,theoryLink);
+   resourcePanel(article,header,item,theoryLink);
    list.appendChild(article);
   }
   group.appendChild(list);
@@ -318,17 +315,17 @@ function renderAnesthesia(){
 function renderRegular(){
  const list=text("div","","lesson-list");
  for(let i=0;i<lessonCount(selected);i++){
-  const u=selected,id=lessonId(u,i),available=u===0&&i===0;
-  const clase=u===2?cabezaCuello[i]:u===0&&id===torax?.id?torax:null;
+  const u=selected,id=lessonId(u,i);
+  const clase=(u===0?torax:u===2?cabezaCuello:[])[i];
   const article=text("article","","lesson");
   article.dataset.lessonId=id;
   article.id=id;
-  const theoryHref=clase?.teoria||(available?"../cirugia-batimix/clases/u1-c1-tuberculosis.html":"");
-  const status=clase?.teoria?"Teoría publicada":available?"Teoría inicial publicada":"Contenido pendiente";
+  const theoryHref=clase?.teoria;
+  const status=theoryHref?"Teoría publicada":"Contenido pendiente";
   const header=lessonHeader(article,"Clase",i+1,lessonName(u,i),status,Boolean(theoryHref));
   const theoryLink=theoryHref?text("a","Leer teoría completa","anesthesia-theory-link"):null;
   if(theoryLink)theoryLink.href=theoryHref;
-  resourcePanel(article,header,available,clase,theoryLink);
+  resourcePanel(article,header,clase,theoryLink);
   list.appendChild(article);
  }
  content.appendChild(list);
