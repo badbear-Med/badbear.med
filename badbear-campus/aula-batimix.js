@@ -129,7 +129,7 @@ function resourcePanel(article,header,item=null,theoryLink=null){
  const pane=document.createElement("div");pane.className="resource-pane";
  const hasChapterResources=Boolean(item&&(item.teoria||cabezaCuello.includes(item)));
  const theory=hasChapterResources
-  ?(item.teoria?{href:item.teoria,name:"Clase "+item.numero,description:item.descripcion}:null)
+  ?(item.teoria?{href:item.teoria,name:item.tipo==="Seminario"?"Seminario":"Clase "+item.numero,description:item.descripcion}:null)
   :completeTheory[item?.id];
  const hasFullTheory=Boolean(theory);
  const mediaTypes=[hasChapterResources?"PPT en PDF":"PPT","Audio","Video YouTube","Material extra"];
@@ -152,7 +152,7 @@ function resourcePanel(article,header,item=null,theoryLink=null){
    link.href=theory.href;
    link.target="_blank";
    link.rel="noopener noreferrer";
-   link.textContent="Abrir teoría completa de la "+theory.name;
+   link.textContent=item?.tipo==="Seminario"?"Abrir teoría completa del seminario":"Abrir teoría completa de la "+theory.name;
    pane.appendChild(link);
    return;
   }
@@ -322,7 +322,7 @@ function renderRegular(){
   article.id=id;
   const theoryHref=clase?.teoria;
   const status=theoryHref?"Teoría publicada":"Contenido pendiente";
-  const header=lessonHeader(article,"Clase",i+1,lessonName(u,i),status,Boolean(theoryHref));
+  const header=lessonHeader(article,clase?.tipo||"Clase",i+1,lessonName(u,i),status,Boolean(theoryHref));
   const theoryLink=theoryHref?text("a","Leer teoría completa","anesthesia-theory-link"):null;
   if(theoryLink)theoryLink.href=theoryHref;
   resourcePanel(article,header,clase,theoryLink);
@@ -367,7 +367,10 @@ function render(){
  const banner=text("div","","unit-banner");
  const description=text("div","","unit-banner-copy");
  const count=lessonCount(selected);
- description.append(text("h3",unit.name),text("p",selected===1?"4 clases teóricas y 11 seminarios":count+" clases"));
+ const seminars=selected===0?torax.filter(item=>item.tipo==="Seminario").length:0;
+ const totalLabel=selected===1?"4 clases teóricas y 11 seminarios"
+  :seminars?`${count-seminars} clases y ${seminars} ${seminars===1?"seminario":"seminarios"}`:count+" clases";
+ description.append(text("h3",unit.name),text("p",totalLabel));
  const bankLink=text("a","BADBEAR.REALES","unit-bank");
  bankLink.id="quiz-start";
  bankLink.setAttribute("aria-label","BADBEAR.REALES · "+unit.name);
