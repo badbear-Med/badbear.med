@@ -39,5 +39,13 @@ window.BATIMIX_TORAX = [
     teoria: "../cirugia-batimix/clases/u1-c5-trauma-toracico.html",
     descripcion: "Evaluación primaria, trauma cerrado y penetrante, lesiones pleurales y mediastínicas, control hemorrágico y SDRA.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
+  {
+    id: "BATIMIX-U1-C6",
+    numero: 6,
+    titulo: "Coronariopatías, valvulopatías, miocardiopatías, CEC y aneurismas de aorta",
+    teoria: "../cirugia-batimix/clases/u1-c6-cirugia-cardiovascular.html",
+    descripcion: "Revascularización coronaria, cirugía valvular, miocardiopatías, perfusión extracorpórea y reparación aórtica.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
   }
 ];
