@@ -46,5 +46,14 @@ window.BATIMIX_PLASTICA = [
     teoria: "../cirugia-batimix/clases/u5-c6-cirugia-estetica.html",
     descripcion: "Evaluación y seguridad en blefaroplastia, rinoplastia, cirugía mamaria, contorno corporal, lifting e inyectables.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
+  {
+    id: "BATIMIX-U5-C7",
+    numero: 7,
+    tipo: "Seminario",
+    titulo: "Cirugía estética: aumento mamario, rinoseptoplastia y blefaroplastia",
+    teoria: "../cirugia-batimix/clases/u5-c7-seminario-cirugia-estetica.html",
+    descripcion: "Planificación anatómica, accesos y bolsillos mamarios, evaluación nasal funcional, soporte palpebral y discusión de casos.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
   }
 ];
