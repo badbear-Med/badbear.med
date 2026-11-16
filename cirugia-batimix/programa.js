@@ -69,7 +69,8 @@ unidades.forEach(([nombre,titulos],u)=>{
   const clase=clases[i];
   const article=document.createElement("article");article.className="class-card";
   const cod=encabezado("div",id);cod.className="class-code";article.appendChild(cod);
-  article.appendChild(encabezado("h3",clase?.titulo||titulos[i]||`Clase ${i+1} · Tema por definir`));
+  const titulo=clase?.titulo||titulos[i]||`Clase ${i+1} · Tema por definir`;
+  article.appendChild(encabezado("h3",clase?.tipo==="Seminario"?`Seminario · ${titulo}`:titulo));
   article.appendChild(encabezado("p","Recursos: teoría · audio · video · PPT · PDF."));
   if(clase?.teoria){const link=document.createElement("a");link.href=clase.teoria;link.textContent="Leer teoría completa";article.appendChild(link)}
   else{const p=encabezado("span","Pendiente de desarrollo");p.className="pending";article.appendChild(p)}
