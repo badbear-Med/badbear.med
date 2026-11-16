@@ -1,0 +1,21 @@
+.thoracic-chapter .thoracic-decision {
+  margin-block: 1.25rem;
+  padding: .9rem 1rem;
+  border-inline-start: .25rem solid #087c79;
+  border-radius: .5rem;
+  background: #eaf8f5;
+  color: #17324b;
+}
+
+.thoracic-chapter table caption {
+  padding: .65rem;
+  color: inherit;
+  font-weight: 700;
+  text-align: left;
+}
+
+@media print {
+  .chapter-print-selection .thoracic-decision {
+    break-inside: avoid;
+  }
+}

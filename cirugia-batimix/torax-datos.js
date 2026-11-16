@@ -22,5 +22,13 @@ window.BATIMIX_TORAX = [
     teoria: "../cirugia-batimix/clases/u1-c3-hidatidosis-aspergiloma.html",
     descripcion: "Anatomía del quiste, signos tomográficos, cirugía conservadora, aspergiloma y control de la hemoptisis.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
+  {
+    id: "BATIMIX-U1-C4",
+    numero: 4,
+    titulo: "Tumores pulmonares y mediastínicos",
+    teoria: "../cirugia-batimix/clases/u1-c4-tumores-toracicos.html",
+    descripcion: "Histología, biopsia, TNM de 9.ª edición, resección pulmonar y diagnóstico por compartimentos del mediastino.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
   }
 ];
