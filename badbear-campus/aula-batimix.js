@@ -369,7 +369,8 @@ function render(){
  const banner=text("div","","unit-banner");
  const description=text("div","","unit-banner-copy");
  const count=lessonCount(selected);
- const seminars=selected===0?torax.filter(item=>item.tipo==="Seminario").length:0;
+ const regularLessons=selected===0?torax:selected===4?plastica:[];
+ const seminars=regularLessons.filter(item=>item.tipo==="Seminario").length;
  const totalLabel=selected===1?"4 clases teóricas y 11 seminarios"
   :seminars?`${count-seminars} clases y ${seminars} ${seminars===1?"seminario":"seminarios"}`:count+" clases";
  description.append(text("h3",unit.name),text("p",totalLabel));
