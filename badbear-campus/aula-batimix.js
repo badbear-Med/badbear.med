@@ -26,8 +26,9 @@ const completeTheory={
  }
 };
 const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
+const torax=window.BATIMIX_TORAX_INFECCIONES;
 const units=[
-{name:"Cirugía cardiovascular y de tórax",titles:["Tuberculosis pulmonar"],color:"#b94414",tint:"#fff0e6"},
+{name:"Cirugía cardiovascular y de tórax",titles:["Tuberculosis pulmonar",torax?.titulo],color:"#b94414",tint:"#fff0e6"},
 {name:"Anestesiología",titles:[],color:"#087c59",tint:"#e3f9ed"},
 {name:"Cirugía de cabeza y cuello",titles:cabezaCuello.map(clase=>clase.titulo),color:"#b52d59",tint:"#ffe9f0"},
 {name:"Técnicas quirúrgicas",titles:[],color:"#836000",tint:"#fff4c8"},
@@ -51,6 +52,7 @@ const deepLink=params.get("recurso");
 const requestedUnit=Number(params.get("unidad"));
 let selected=anestItems.some(i=>i.id===deepLink)?1
  :cabezaCuello.some(i=>i.id===deepLink)?2
+ :torax&&deepLink===torax.id?0
  :Number.isInteger(requestedUnit)&&requestedUnit>=1&&requestedUnit<=units.length?requestedUnit-1:0;
 
 const text=(tag,value,cls)=>{
@@ -125,17 +127,17 @@ function resourcePanel(article,header,available,item=null,theoryLink=null){
  toggle.setAttribute("aria-controls",resources.id);
  const tabsRes=document.createElement("div");tabsRes.className="resource-tabs";
  const pane=document.createElement("div");pane.className="resource-pane";
- const isHeadNeck=Boolean(item&&cabezaCuello.includes(item));
- const theory=isHeadNeck
+ const hasChapterResources=Boolean(item&&(item.teoria||cabezaCuello.includes(item)));
+ const theory=hasChapterResources
   ?(item.teoria?{href:item.teoria,name:"Clase "+item.numero,description:item.descripcion}:null)
   :completeTheory[item?.id];
  const hasFullTheory=Boolean(theory);
- const mediaTypes=[isHeadNeck?"PPT en PDF":"PPT","Audio","Video YouTube","Material extra"];
+ const mediaTypes=[hasChapterResources?"PPT en PDF":"PPT","Audio","Video YouTube","Material extra"];
  const types=item
-  ?(hasFullTheory||isHeadNeck?["Teoría completa",...mediaTypes]:mediaTypes)
+  ?(hasFullTheory||hasChapterResources?["Teoría completa",...mediaTypes]:mediaTypes)
   :["Teoría","Audio","Video","Diapositivas","PDF adicional"];
  const themeTypes=item
-  ?(hasFullTheory||isHeadNeck?["theory","slides","audio","video","extra"]:["slides","audio","video","extra"])
+  ?(hasFullTheory||hasChapterResources?["theory","slides","audio","video","extra"]:["slides","audio","video","extra"])
   :["theory","audio","video","slides","extra"];
  const keys=["ppt","audio","youtube","extra"];
  function displayResource(n){
@@ -155,12 +157,12 @@ function resourcePanel(article,header,available,item=null,theoryLink=null){
    return;
   }
   if(item){
-   if(isHeadNeck&&!hasFullTheory&&n===0){
+   if(hasChapterResources&&!hasFullTheory&&n===0){
     desc.textContent="Teoría pendiente de publicación.";
     pane.appendChild(desc);
     return;
    }
-   const resourceIndex=hasFullTheory||isHeadNeck?n-1:n;
+   const resourceIndex=hasFullTheory||hasChapterResources?n-1:n;
    const resourceUrl=item.recursos?.[keys[resourceIndex]];
    const fileHint=resourceIndex===3&&item.archivoReferencia?"Material identificado en el listado: "+item.archivoReferencia+
     ". Formato original: "+item.formatoReferencia.toUpperCase()+".":"";
@@ -317,7 +319,7 @@ function renderRegular(){
  const list=text("div","","lesson-list");
  for(let i=0;i<lessonCount(selected);i++){
   const u=selected,id=lessonId(u,i),available=u===0&&i===0;
-  const clase=u===2?cabezaCuello[i]:null;
+  const clase=u===2?cabezaCuello[i]:u===0&&id===torax?.id?torax:null;
   const article=text("article","","lesson");
   article.dataset.lessonId=id;
   article.id=id;
