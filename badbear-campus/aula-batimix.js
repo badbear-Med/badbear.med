@@ -28,17 +28,19 @@ const completeTheory={
 const cabezaCuello=window.BATIMIX_CABEZA_CUELLO||[];
 const torax=window.BATIMIX_TORAX||[];
 const plastica=window.BATIMIX_PLASTICA||[];
+const tecnicas=window.BATIMIX_TECNICAS||[];
+const regularLessons=[torax,[],cabezaCuello,tecnicas,plastica];
 const units=[
 {name:"Cirugía cardiovascular y de tórax",titles:torax.map(clase=>clase.titulo),color:"#b94414",tint:"#fff0e6"},
 {name:"Anestesiología",titles:[],color:"#087c59",tint:"#e3f9ed"},
 {name:"Cirugía de cabeza y cuello",titles:cabezaCuello.map(clase=>clase.titulo),color:"#b52d59",tint:"#ffe9f0"},
-{name:"Técnicas quirúrgicas",titles:[],color:"#836000",tint:"#fff4c8"},
+{name:"Técnicas quirúrgicas",titles:tecnicas.map(clase=>clase.titulo),color:"#836000",tint:"#fff4c8"},
 {name:"Cirugía plástica",titles:plastica.map(clase=>clase.titulo),color:"#2459c4",tint:"#e8f0ff"}
 ];
 const lessonName=(u,i)=>units[u].titles[i]||"Tema por definir";
 const lessonId=(u,i)=>"BATIMIX-U"+(u+1)+"-C"+(i+1);
 const key="badbear_batimix_campus_studied_v1";
-const lessonCount=u=>u===0?Math.max(5,torax.length):u===1?anestItems.length:u===2?cabezaCuello.length:u===4?Math.max(5,plastica.length):5;
+const lessonCount=u=>u===1?anestItems.length:u===2?cabezaCuello.length:Math.max(5,regularLessons[u].length);
 const TOTAL=units.reduce((count,_,u)=>count+lessonCount(u),0);
 const known=new Set(units.flatMap((unit,u)=>u===1?anestItems.map(i=>i.id):Array.from({length:lessonCount(u)},(_,i)=>lessonId(u,i))));
 let studied;try{studied=new Set(JSON.parse(localStorage.getItem(key)||"[]"))}catch{studied=new Set()}
@@ -51,10 +53,9 @@ if(!tabs||!content)return;
 const params=new URLSearchParams(window.location.search);
 const deepLink=params.get("recurso");
 const requestedUnit=Number(params.get("unidad"));
+const linkedUnit=regularLessons.findIndex(items=>items.some(item=>item.id===deepLink));
 let selected=anestItems.some(i=>i.id===deepLink)?1
- :cabezaCuello.some(i=>i.id===deepLink)?2
- :torax.some(i=>i.id===deepLink)?0
- :plastica.some(i=>i.id===deepLink)?4
+ :linkedUnit>=0?linkedUnit
  :Number.isInteger(requestedUnit)&&requestedUnit>=1&&requestedUnit<=units.length?requestedUnit-1:0;
 
 const text=(tag,value,cls)=>{
@@ -318,7 +319,7 @@ function renderRegular(){
  const list=text("div","","lesson-list");
  for(let i=0;i<lessonCount(selected);i++){
   const u=selected,id=lessonId(u,i);
-  const clase=(u===0?torax:u===2?cabezaCuello:u===4?plastica:[])[i];
+  const clase=regularLessons[u][i];
   const article=text("article","","lesson");
   article.dataset.lessonId=id;
   article.id=id;
@@ -369,8 +370,7 @@ function render(){
  const banner=text("div","","unit-banner");
  const description=text("div","","unit-banner-copy");
  const count=lessonCount(selected);
- const regularLessons=selected===0?torax:selected===4?plastica:[];
- const seminars=regularLessons.filter(item=>item.tipo==="Seminario").length;
+ const seminars=regularLessons[selected].filter(item=>item.tipo==="Seminario").length;
  const totalLabel=selected===1?"4 clases teóricas y 11 seminarios"
   :seminars?`${count-seminars} clases y ${seminars} ${seminars===1?"seminario":"seminarios"}`:count+" clases";
  description.append(text("h3",unit.name),text("p",totalLabel));
