@@ -22,5 +22,13 @@ window.BATIMIX_PLASTICA = [
     teoria: "../cirugia-batimix/clases/u5-c3-quemaduras.html",
     descripcion: "Profundidad, superficie corporal quemada, evaluación inicial, líquidos, cirugía y rehabilitación.",
     recursos: { ppt: null, audio: null, youtube: null, extra: null }
+  },
+  {
+    id: "BATIMIX-U5-C4",
+    numero: 4,
+    titulo: "Lesiones por presión",
+    teoria: "../cirugia-batimix/clases/u5-c4-lesiones-presion.html",
+    descripcion: "Factores de riesgo, estadificación, descarga, cuidado de la herida, reconstrucción y rehabilitación.",
+    recursos: { ppt: null, audio: null, youtube: null, extra: null }
   }
 ];
