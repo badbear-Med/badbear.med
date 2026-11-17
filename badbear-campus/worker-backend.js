@@ -1,5 +1,6 @@
 /* BADBEAR.CAMPUS: private D1 binding DB; secrets ADMIN_API_TOKEN and PASSWORD_PEPPER. */
 import { createEmailAccess } from './email-access.js';
+import { createLiveAccess } from './live-access.js';
 const SITE = "https://wajomea.group";
 const encoder = new TextEncoder();
 const now = () => Math.floor(Date.now() / 1000);
@@ -174,6 +175,8 @@ async function importResults(body, env) {
   return {ok:true,publicados:check.total,alumnos:check.alumnos,modo:"visible"};
 }
 const emailAccess=createEmailAccess({Problem,code,now,random,digest,password,passwordHash});
+const liveAccess = createLiveAccess({ Problem, session, readJSON, now, digest, random });
+
 export default {
   async fetch(req, env, ctx) {
     const origin = req.headers.get("Origin") || "", path = new URL(req.url).pathname;
@@ -194,6 +197,8 @@ export default {
       }
       if (!env.DB || env.ADMIN_API_TOKEN?.length < 32 || !env.ADMIN_API_TOKEN || env.PASSWORD_PEPPER?.length < 32 || !env.PASSWORD_PEPPER) throw new Problem("El portal está pendiente de conexión. Inténtalo más tarde.", 503);
       if (["POST","PUT","DELETE"].includes(req.method) && origin !== SITE) throw new Problem("Origen no permitido.", 403);
+      const live = path.match(/^\/api\/en-vivo\/([a-z0-9-]+)(?:\/(iniciar|entrar|abrir|cerrar))?$/);
+      if (live) return response(await liveAccess(req, env, live[1], live[2]), 200, origin);
       if (req.method === "POST" && path === "/api/admin/login") return response(await adminLogin(req,env),200,origin);
       if (req.method === "POST" && path === "/api/correo/solicitar") return response(await emailAccess.request(req,await readJSON(req),env,ctx),200,origin);
       if (req.method === "POST" && path === "/api/correo/confirmar") return response(await emailAccess.complete(await readJSON(req),env),200,origin);

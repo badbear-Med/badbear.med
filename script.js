@@ -72,7 +72,17 @@
     entrar.textContent = curso.estado === "integrado" ? "Ingresar al curso" : "Abrir estructura";
 
     a.append(top, categoria, titulo, descripcion, entrar);
-    return a;
+
+    const ficha = document.createElement("div");
+    ficha.className = "catalog-course";
+    const vivo = document.createElement("a");
+    vivo.className = "catalog-live-link";
+    vivo.href = "badbear-campus/clases-en-vivo.html?curso=" + encodeURIComponent(curso.id);
+    vivo.target = "_top";
+    vivo.textContent = "Clases en vivo";
+    vivo.setAttribute("aria-label", "Clases en vivo de " + curso.nombre);
+    ficha.append(a, vivo);
+    return ficha;
   }
 
   function render() {

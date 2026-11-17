@@ -1,0 +1,26 @@
+.catalog-course { display: grid; grid-template-rows: 1fr auto; gap: .65rem; min-width: 0; }
+.catalog-live-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 1px solid #a6b7e0;
+  border-radius: .85rem;
+  background: #edf2ff;
+  color: #223785;
+  font-weight: 750;
+  text-decoration: none;
+}
+.catalog-live-link:is(:hover, :focus-visible) { background: #dfe8ff; }
+.live-page #live-course {
+  width: min(100%, 23rem);
+  min-height: 44px;
+  border: 1px solid #8497b6;
+  border-radius: .55rem;
+  padding-inline: .65rem;
+  color: #183050;
+  background: #f7f9ff;
+  font: inherit;
+}
+.live-page label[for="live-course"] { align-self: center; font-weight: 750; }
+.live-page .live-meeting { margin-top: 1rem; }

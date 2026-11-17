@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://8x8.vc; style-src 'self' 'unsafe-inline'; frame-src https://8x8.vc; connect-src https://badbear-campus-api.wajomea-group.workers.dev; img-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+  <title>Clases en vivo | BADBEAR.CAMPUS</title>
+  <link rel="stylesheet" href="aula-batimix.css?v=20261115-aula">
+  <link rel="stylesheet" href="batimix-en-vivo.css?v=1">
+  <link rel="stylesheet" href="clases-en-vivo.css?v=1">
+  <script src="../assets/js/courses.js?v=en-vivo-1" defer></script>
+  <script src="clases-en-vivo.js?v=1" type="module"></script>
+</head>
+<body class="batimix-aula live-page">
+  <header class="campus-header">
+    <div class="head-inner">
+      <a class="campus-brand" href="index.html" target="_top">BADBEAR<span>.CAMPUS</span></a>
+      <a class="course-link" href="../badbear-med.html#cursos" target="_top">Ver cursos</a>
+    </div>
+  </header>
+  <main class="campus-main">
+    <section class="live-hero" aria-labelledby="live-title">
+      <p class="course-kicker">BADBEAR.CAMPUS</p>
+      <h1 id="live-title">Clases en vivo</h1>
+      <p>Selecciona un curso para iniciar una reunión o unirte a la que esté abierta.</p>
+    </section>
+    <section class="live-panel" aria-labelledby="entry-title">
+      <h2 id="entry-title">Sala del curso</h2>
+      <div class="live-actions">
+        <label for="live-course">Curso</label>
+        <select id="live-course"></select>
+        <button id="live-refresh" class="live-quiet" type="button">Actualizar</button>
+      </div>
+      <p id="live-identity" hidden></p>
+      <p id="live-status" class="live-status" role="status" aria-live="polite">Comprobando el acceso…</p>
+      <p id="live-sign-in" hidden><a href="index.html" target="_top">Iniciar sesión en Campus</a>. Después vuelve a abrir la sala del curso.</p>
+      <div class="live-actions">
+        <button id="live-enter" type="button" hidden>Entrar a la reunión</button>
+        <button id="live-end" type="button" class="live-quiet" hidden>Finalizar reunión</button>
+        <button id="live-exit" type="button" class="live-quiet" hidden>Salir de la videollamada</button>
+      </div>
+      <div id="live-meeting" class="live-meeting" role="region" aria-label="Videollamada del curso" hidden></div>
+    </section>
+  </main>
+  <footer>BADBEAR.MED · WAJOMEA.GROUP</footer>
+</body>
+</html>
