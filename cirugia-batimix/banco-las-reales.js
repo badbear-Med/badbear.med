@@ -81,11 +81,12 @@
   function explanation(question, answer) {
     const result = el("section", "", "feedback");
     const label = question.opts.find(([letter]) => letter === question.correct);
-    const title = question.kind === "mc"
-      ? (answer ? (answer === question.correct ? "Correcta" : "Respuesta correcta") : "Respuesta correcta")
-      : (question.kind === "open" ? "Respuesta orientativa" : "Repaso razonado");
+    let title = question.kind === "open" ? "Respuesta orientativa" : "Repaso razonado";
+    if (question.kind === "mc") {
+      title = !answer ? "Sin responder" : answer === question.correct ? "Correcta" : "Incorrecta";
+    }
     result.append(el("h3", title));
-    if (label) result.append(el("p", label.join(". ")));
+    if (label) result.append(el("p", `Respuesta correcta: ${label.join(". ")}`));
     result.append(el("p", question.why));
     if (question.theory) result.append(link("Ir a la teoría", question.theory));
     else if (question.lesson) {
@@ -111,7 +112,7 @@
     number.setAttribute("aria-live", "polite");
     quiz.append(number, form);
     const scorable = question.kind === "mc";
-    const showing = !timed && (scorable ? answers.has(question.id) : revealed.has(question.id));
+    const showing = !timed && (answers.has(question.id) || revealed.has(question.id));
     for (const [letter, option] of question.opts) {
       const row = el("label", "", "choice");
       const input = document.createElement("input");
@@ -124,7 +125,7 @@
       if (scorable && showing && letter === answer && letter !== question.correct) row.classList.add("incorrect");
       input.addEventListener("change", () => {
         answers.set(question.id, letter);
-        if (!timed && scorable) renderQuestion().focus();
+        if (!timed) renderQuestion().focus();
       });
       row.append(input, el("span", `${letter}. ${option}`));
       form.append(row);
