@@ -71,8 +71,10 @@ button:disabled { opacity: .55; cursor: default; }
 button.secondary { background: #fff; color: var(--accent); }
 fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
 legend { white-space: pre-line; font-size: 1.1rem; font-weight: 700; margin-bottom: .45rem; padding: 0; }
+.controls .graded-filter { display: flex; align-items: center; gap: .4rem; }
 .choice {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: baseline;
   gap: .65rem;
   min-height: 2.75rem;
@@ -82,7 +84,10 @@ legend { white-space: pre-line; font-size: 1.1rem; font-weight: 700; margin-bott
   padding: .7rem .8rem;
   overflow-wrap: anywhere;
 }
-.choice input { flex: none; accent-color: var(--accent); }
+.choice input { accent-color: var(--accent); }
+.choice-verdict { grid-column: 2; justify-self: start; font-size: .9rem; }
+.choice.correct .choice-verdict { color: #205c4d; }
+.choice.incorrect .choice-verdict { color: #9c282e; }
 .choice:has(input:not(:disabled)) { cursor: pointer; }
 .choice:has(input:checked:not(:disabled)) { border-color: var(--accent); background: #edf0fd; }
 .written-answer { display: grid; gap: .35rem; margin: .65rem 0 .9rem; font-weight: 650; }
