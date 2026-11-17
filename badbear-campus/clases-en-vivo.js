@@ -149,6 +149,7 @@ async function openMeeting() {
       height: "100%",
       roomName: access.appId + "/" + access.sala,
       jwt: access.jwt,
+      lang: "es",
       configOverwrite: {
         prejoinConfig: { hideDisplayName: true },
         readOnlyName: true,
