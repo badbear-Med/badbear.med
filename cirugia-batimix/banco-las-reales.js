@@ -17,6 +17,7 @@
   const byId = id => document.getElementById(id);
   const quiz = byId("pregunta");
   const topic = byId("tema");
+  const gradedOnly = byId("solo-con-clave");
   const status = byId("disponibles");
   const answers = new Map();
   const writtenAnswers = new Map();
@@ -99,7 +100,10 @@
   function renderQuestion() {
     quiz.replaceChildren();
     if (!selection.length) {
-      quiz.append(el("p", "Todavía no hay preguntas de los materiales recibidos para esta unidad."));
+      const message = gradedOnly.checked
+        ? "Este tema todavía no tiene preguntas con clave. Desactiva el filtro para ver las de repaso."
+        : "Todavía no hay preguntas de los materiales recibidos para esta unidad.";
+      quiz.append(el("p", message));
       return;
     }
     const question = selection[cursor];
@@ -121,13 +125,29 @@
       input.value = letter;
       input.checked = answer === letter;
       input.disabled = scorable && showing;
-      if (scorable && showing && letter === question.correct) row.classList.add("correct");
-      if (scorable && showing && letter === answer && letter !== question.correct) row.classList.add("incorrect");
+      const selected = letter === answer;
+      const correct = letter === question.correct;
+      if (scorable && showing && correct) row.classList.add("correct");
+      if (scorable && showing && selected && !correct) row.classList.add("incorrect");
+      row.append(input, el("span", `${letter}. ${option}`));
+      if (showing && (selected || (scorable && correct))) {
+        const label = scorable
+          ? (selected ? (correct ? "Correcta" : "Incorrecta") : "Respuesta correcta")
+          : "Marcada · repaso sin puntuación";
+        const verdict = el("strong", label, "choice-verdict");
+        if (selected) {
+          verdict.tabIndex = -1;
+          verdict.setAttribute("data-veredicto", "");
+        }
+        row.append(verdict);
+      }
       input.addEventListener("change", () => {
         answers.set(question.id, letter);
-        if (!timed) renderQuestion().focus();
+        if (!timed) {
+          renderQuestion();
+          quiz.querySelector("[data-veredicto]").focus();
+        }
       });
-      row.append(input, el("span", `${letter}. ${option}`));
       form.append(row);
     }
     if (!timed && question.kind === "open") {
@@ -171,7 +191,9 @@
   }
 
   function updatePractice() {
-    selection = topic.value ? bank.filter(question => topicKey(question) === topic.value) : bank;
+    selection = bank.filter(question =>
+      (!topic.value || topicKey(question) === topic.value) && (!gradedOnly.checked || question.kind === "mc")
+    );
     cursor = 0;
     const sim = byId("simulacro");
     const available = uniqueScorable(selection).length;
@@ -251,6 +273,7 @@
   } else {
     byId("controles").hidden = !bank.length;
     topic.addEventListener("change", updatePractice);
+    gradedOnly.addEventListener("change", updatePractice);
     updatePractice();
   }
 })();
