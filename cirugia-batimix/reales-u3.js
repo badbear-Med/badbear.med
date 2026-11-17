@@ -5,34 +5,34 @@ window.BADBEAR_BATIMIX_REALES[3] = [
   "lesson": "BATIMIX-U3-C1",
   "topic": "Cáncer de cavidad oral",
   "group": "oralplan",
-  "stem": "¿Qué tratamiento NO prescribirá usted en un paciente masculino de 65 años de edad con cáncer de cavidad oral; clasificado como T3 N1 MO etapa clínica III?",
+  "stem": "Varón de 65 años con carcinoma escamocelular resecable de cavidad oral, cT3 cN1 cM0 (estadio III). Se realiza resección del tumor y disección cervical. La anatomía patológica confirma pT3 pN1, invasión perineural, márgenes libres y ausencia de extensión extranodal. ¿Qué estrategia completa el tratamiento de este caso?",
   "opts": [
    [
     "A",
-    "Quimioterapia+ Radioterapia simultánea con rescate quirúrgico"
+    "Quimiorradioterapia definitiva y cirugía solo como rescate"
    ],
    [
     "B",
-    "Cirugía radical"
+    "Cirugía como único tratamiento, con vigilancia"
    ],
    [
     "C",
-    "Radioterapia y cirugía radical"
+    "Radioterapia preoperatoria seguida de cirugía"
    ],
    [
     "D",
-    "Cirugía radical + Radioterapia"
+    "Cirugía seguida de radioterapia posoperatoria sin cisplatino"
    ],
    [
     "E",
-    "Quimioterapia + cirugía radical + Radioterapia"
+    "Cirugía seguida de quimiorradioterapia posoperatoria con cisplatino por el solo hecho de ser pN1"
    ]
   ],
-  "correct": null,
-  "kind": "review",
-  "why": "En carcinoma escamocelular resecable de cavidad oral cT3N1M0, la estrategia habitual es cirugía del primario y del cuello seguida de adyuvancia según patología. La quimiorradioterapia posoperatoria se considera especialmente con extensión extranodal o márgenes positivos. El ítem mezcla secuencias y escenarios sin indicar resecabilidad ni hallazgos histológicos, de modo que una única alternativa excluida no resulta defendible.",
+  "correct": "D",
+  "kind": "mc",
+  "why": "Tras la resección del tumor y la disección cervical, el pT3 y la invasión perineural favorecen la radioterapia adyuvante, aun con un solo ganglio positivo. Los márgenes libres y la ausencia de extensión extranodal explican por qué no se añade cisplatino concomitante de rutina en este caso. La quimiorradioterapia definitiva con cirugía de rescate describe otro abordaje, no el tratamiento que corresponde tras esta resección.",
   "theory": "/cirugia-batimix/clases/u3-c1-cancer-cavidad-oral.html#tratamiento",
-  "ref": "https://ascopubs.org/doi/full/10.1200/JCO.18.01921",
+  "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7098829/",
   "source": "1 - EXAMEN DE CABEZA Y CUELLO.pdf",
   "page": 1,
   "num": 1,
@@ -43,34 +43,34 @@ window.BADBEAR_BATIMIX_REALES[3] = [
   "lesson": "BATIMIX-U3-C1",
   "topic": "Cáncer de cavidad oral",
   "group": "oralneck",
-  "stem": "El tratamiento aceptado por la mayoría de los autores para las metástasis cervicales clínicas de cáncer epidermoide en cabeza y cuello es",
+  "stem": "En un paciente con carcinoma escamocelular resecable del borde lateral de la lengua oral, un ganglio metastásico ipsilateral de 2 cm y cuello contralateral clínicamente negativo, se planifica resecar el tumor primario. ¿Qué manejo inicial del cuello ipsilateral corresponde?",
   "opts": [
    [
     "A",
-    "Radioterapia radical"
+    "Radioterapia definitiva del cuello sin disección cervical"
    ],
    [
     "B",
-    "Quimioterapia neoadyuvante"
+    "Quimioterapia neoadyuvante como único tratamiento del cuello"
    ],
    [
     "C",
-    "Cirugía radical modificada"
+    "Disección cervical selectiva terapéutica de los niveles Ia, Ib, IIa, IIb, III y IV"
    ],
    [
     "D",
-    "Cirugía radical"
+    "Disección radical de los niveles I a V con sacrificio sistemático del nervio accesorio, la vena yugular interna y el esternocleidomastoideo"
    ],
    [
     "E",
-    "Cirugía radical modificada + Radioterapia"
+    "Disección supraomohioidea limitada a los niveles I a III"
    ]
   ],
-  "correct": null,
-  "kind": "review",
-  "why": "La conducta depende del primario, los niveles afectados, el número de ganglios y la extensión extranodal. En cavidad oral con cuello cN+ resecable se considera disección terapéutica y adyuvancia según patología. En otros subsitios puede tratarse con radioterapia o quimiorradioterapia definitiva. Las alternativas son demasiado generales para decidir por todo cáncer epidermoide de cabeza y cuello.",
+  "correct": "C",
+  "kind": "mc",
+  "why": "En un cuello clínicamente positivo, la disección ipsilateral es terapéutica y abarca los niveles I a IV especificados en la opción. Se considera ampliar al nivel V en casos seleccionados, por ejemplo, con afectación de múltiples estaciones. El informe anatomopatológico de la disección orienta la necesidad de radioterapia o quimiorradioterapia adyuvante.",
   "theory": "/cirugia-batimix/clases/u3-c1-cancer-cavidad-oral.html#cuello",
-  "ref": "https://ascopubs.org/doi/full/10.1200/JCO.18.01921",
+  "ref": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7098829/",
   "source": "1 - EXAMEN DE CABEZA Y CUELLO.pdf",
   "page": 1,
   "num": 2,
@@ -263,30 +263,30 @@ window.BADBEAR_BATIMIX_REALES[3] = [
   "lesson": "BATIMIX-U3-C5",
   "topic": "Trauma y fracturas maxilofaciales",
   "group": "condyle",
-  "stem": "Cuál es la indicación para una fractura mandibular parasinfisiaria, acompañada de una fractura de cóndilo contralateral?",
+  "stem": "Un adulto presenta una fractura mandibular parasinfisaria desplazada e inestable, con maloclusión, y una fractura del cóndilo contralateral. ¿Cuál es la conducta indicada para el foco parasinfisario?",
   "opts": [
    [
     "A",
-    "Bloqueo intermaxilar por 65 días y controles periódicos."
+    "Mantener bloqueo intermaxilar durante 65 días como conducta de rutina"
    ],
    [
     "B",
-    "Reducción cruenta con ostesintesis con miniplaca, con bloqueo intermaxilar por 15 días."
+    "Restablecer la oclusión y estabilizar el foco parasinfisario mediante reducción abierta y fijación interna"
    ],
    [
     "C",
-    "Dieta blanda, y ferulización monomaxilar."
+    "Indicar solo dieta blanda, pese al desplazamiento y la maloclusión"
    ],
    [
     "D",
-    "Colocación de placas y tornillos con bloqueo por 45 días."
+    "Fijar solo el cóndilo y dejar inestable la fractura anterior"
    ]
   ],
-  "correct": null,
-  "kind": "review",
-  "why": "La prioridad es restablecer la oclusión y estabilizar el foco parasinfisario si está desplazado o inestable. La conducta sobre el cóndilo depende de altura de rama, desplazamiento, oclusión, edad y función. Puede ser funcional o quirúrgica. La opción B plantea estabilizar el foco anterior, pero el enunciado carece de datos para imponer 15 días de bloqueo.",
+  "correct": "B",
+  "kind": "mc",
+  "why": "El foco anterior desplazado e inestable requiere recuperar la oclusión y estabilizar el arco mandibular. Una reducción adecuada evita que persista el ensanchamiento del arco. La conducta sobre el cóndilo se individualiza según el desplazamiento, la altura de la rama y la oclusión obtenida. La combinación de fracturas, por sí sola, no impone una duración fija de bloqueo intermaxilar.",
   "theory": "/cirugia-batimix/clases/u3-c5-trauma-cervical-maxilofacial.html#mandibula",
-  "ref": "https://surgeryreference.aofoundation.org/cmf/trauma/mandible/condylar-process-and-head-simple-and-complex/definition",
+  "ref": "https://surgeryreference.aofoundation.org/cmf/trauma/mandible/further-reading/multiple-fractures",
   "source": "1 - EXAMEN DE CABEZA Y CUELLO.pdf",
   "page": 3,
   "num": 9,
