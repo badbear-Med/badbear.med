@@ -1,0 +1,210 @@
+import { $, call, post } from "./core.js";
+
+const selector = $("live-course");
+const refreshButton = $("live-refresh");
+const enterButton = $("live-enter");
+const endButton = $("live-end");
+const exitButton = $("live-exit");
+const status = $("live-status");
+const mount = $("live-meeting");
+const signIn = $("live-sign-in");
+const identity = $("live-identity");
+const requested = new URLSearchParams(location.search).get("curso");
+const courses = globalThis.BADBEAR_COURSES;
+const meetingOrigin = "https://8x8.vc";
+const sessionKey = "badbear-campus-portal-session";
+let state;
+let api;
+let access;
+let loadedApp;
+let sdk;
+let busy = false;
+let closedToCampus = false;
+
+for (const { id, nombre } of courses) selector.add(new Option(nombre, id));
+if (courses.some(course => course.id === requested)) selector.value = requested;
+
+function message(text, error = false) {
+  status.textContent = text;
+  status.dataset.error = String(error);
+}
+
+function sessionToken() {
+  try {
+    return sessionStorage.getItem(sessionKey) || "";
+  } catch {
+    return "";
+  }
+}
+
+function endpoint(action = "") {
+  return "/api/en-vivo/" + selector.value + (action ? "/" + action : "");
+}
+
+function controls() {
+  selector.disabled = refreshButton.disabled = busy || Boolean(api);
+  enterButton.hidden = !state || Boolean(api) ||
+    !(state.esAnfitrion || state.estado === "abierta" ||
+      (state.puedeIniciar && state.estado === "sin-reunion"));
+  enterButton.disabled = busy;
+  enterButton.textContent = state?.estado === "sin-reunion" ? "Iniciar reunión" :
+    state?.esAnfitrion ? "Volver como anfitrión" : "Entrar como invitado";
+  endButton.hidden = !api || !access?.esAnfitrion || closedToCampus;
+  exitButton.hidden = !api;
+  endButton.disabled = exitButton.disabled = busy;
+}
+
+function report(error) {
+  if (error.status === 401) {
+    signIn.hidden = false;
+    message("Inicia sesión con tu cuenta de BADBEAR.CAMPUS.");
+    return;
+  }
+  message(error.status === 404 ? "Las clases en vivo están pendientes de habilitación." : error.message, true);
+}
+
+async function refresh() {
+  if (busy || api) return;
+  state = undefined;
+  identity.hidden = true;
+  const token = sessionToken();
+  signIn.hidden = Boolean(token);
+  if (!token) {
+    message("Inicia sesión con tu cuenta de BADBEAR.CAMPUS.");
+    controls();
+    return;
+  }
+  busy = true;
+  controls();
+  message("Consultando la sala…");
+  try {
+    state = await call(endpoint(), token);
+    identity.textContent = "Sesión iniciada como " + state.nombre;
+    identity.hidden = false;
+    message({
+      "sin-reunion": state.puedeIniciar ? "Puedes iniciar una reunión ahora." : "El anfitrión todavía no ha iniciado una reunión.",
+      preparando: state.esAnfitrion ? "Tu reunión está en preparación." : "El anfitrión está preparando la reunión.",
+      abierta: "Hay una reunión abierta."
+    }[state.estado]);
+  } catch (error) {
+    report(error);
+  } finally {
+    busy = false;
+    controls();
+  }
+}
+
+function loadSDK(appId) {
+  if (loadedApp === appId) return Promise.resolve();
+  sdk?.remove();
+  sdk = document.createElement("script");
+  sdk.src = meetingOrigin + "/" + appId + "/external_api.js";
+  sdk.referrerPolicy = "no-referrer";
+  return new Promise((resolve, reject) => {
+    const finish = () => {
+      clearTimeout(timeout);
+      sdk.onload = sdk.onerror = null;
+    };
+    const fail = () => {
+      finish();
+      sdk.remove();
+      loadedApp = undefined;
+      reject(new Error("No se pudo cargar Jitsi. Vuelve a intentarlo."));
+    };
+    const timeout = setTimeout(fail, 12000);
+    sdk.onerror = fail;
+    sdk.onload = () => {
+      if (typeof window.JitsiMeetExternalAPI !== "function") return fail();
+      finish();
+      loadedApp = appId;
+      resolve();
+    };
+    document.head.append(sdk);
+  });
+}
+
+function leave() {
+  const previous = api;
+  api = access = undefined;
+  closedToCampus = false;
+  previous?.dispose();
+  mount.replaceChildren();
+  mount.hidden = true;
+  controls();
+}
+
+async function openMeeting() {
+  if (busy || !state) return;
+  busy = true;
+  controls();
+  message("Abriendo la videollamada…");
+  try {
+    const action = state.puedeIniciar && (state.esAnfitrion || state.estado === "sin-reunion") ? "iniciar" : "entrar";
+    access = await post(endpoint(action), sessionToken(), {});
+    await loadSDK(access.appId);
+    mount.hidden = false;
+    const meeting = new window.JitsiMeetExternalAPI("8x8.vc", {
+      parentNode: mount,
+      width: "100%",
+      height: "100%",
+      roomName: access.appId + "/" + access.sala,
+      jwt: access.jwt,
+      configOverwrite: { startWithAudioMuted: true, startWithVideoMuted: true }
+    });
+    api = meeting;
+    access = { sala: access.sala, esAnfitrion: access.esAnfitrion };
+    meeting.getIFrame().title = "Videollamada de " + state.curso;
+    meeting.addListener("videoConferenceJoined", async () => {
+      if (api !== meeting) return;
+      try {
+        if (access.esAnfitrion) await post(endpoint("abrir"), sessionToken(), { sala: access.sala });
+        if (api === meeting) message("Estás en la reunión.");
+      } catch (error) {
+        if (api === meeting) report(error);
+      }
+    });
+    meeting.addListener("readyToClose", () => {
+      if (api !== meeting) return;
+      leave();
+      void refresh();
+    });
+    meeting.addListener("errorOccurred", () => {
+      if (api === meeting) message("Revisa el mensaje que muestra Jitsi en la videollamada.", true);
+    });
+    message("Completa el ingreso en Jitsi.");
+  } catch (error) {
+    leave();
+    report(error);
+  } finally {
+    busy = false;
+    controls();
+  }
+}
+
+async function endMeeting() {
+  if (busy || !api || !access?.esAnfitrion) return;
+  busy = true;
+  controls();
+  try {
+    const meeting = api;
+    await post(endpoint("cerrar"), sessionToken(), { sala: access.sala });
+    if (api === meeting) {
+      closedToCampus = true;
+      meeting.executeCommand("endConference");
+    }
+    message("La sala del Campus está cerrada a nuevas entradas. Jitsi finalizará la llamada si esa opción está habilitada.");
+  } catch (error) {
+    report(error);
+  } finally {
+    busy = false;
+    controls();
+    if (!api) void refresh();
+  }
+}
+
+selector.addEventListener("change", refresh);
+refreshButton.addEventListener("click", refresh);
+enterButton.addEventListener("click", openMeeting);
+endButton.addEventListener("click", endMeeting);
+exitButton.addEventListener("click", () => { leave(); void refresh(); });
+void refresh();

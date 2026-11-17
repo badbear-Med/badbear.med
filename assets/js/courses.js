@@ -1,4 +1,4 @@
-window.BADBEAR_COURSES = [
+globalThis.BADBEAR_COURSES = [
   {
     id: "tesis-1",
     nombre: "Tesis I",
