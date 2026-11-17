@@ -75,13 +75,18 @@ legend { white-space: pre-line; font-size: 1.1rem; font-weight: 700; margin-bott
   display: flex;
   align-items: baseline;
   gap: .65rem;
+  min-height: 2.75rem;
   margin: .55rem 0;
   border: 1px solid var(--line);
   border-radius: .55rem;
   padding: .7rem .8rem;
   overflow-wrap: anywhere;
 }
-.choice input { flex: none; }
+.choice input { flex: none; accent-color: var(--accent); }
+.choice:has(input:not(:disabled)) { cursor: pointer; }
+.choice:has(input:checked:not(:disabled)) { border-color: var(--accent); background: #edf0fd; }
+.written-answer { display: grid; gap: .35rem; margin: .65rem 0 .9rem; font-weight: 650; }
+.written-answer textarea { resize: vertical; font-weight: 400; }
 .choice.correct { border-color: #4b927c; background: #eaf8f3; }
 .choice.incorrect { border-color: #b87f80; background: #fff1f1; }
 .feedback { padding: .8rem 1rem; margin-top: 1rem; background: #f2f5fa; border-radius: .65rem; }

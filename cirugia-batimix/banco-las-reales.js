@@ -19,6 +19,8 @@
   const topic = byId("tema");
   const status = byId("disponibles");
   const answers = new Map();
+  const writtenAnswers = new Map();
+  const revealed = new Set();
   const SIM_SIZE = 20;
   const SIM_SECONDS = 600;
   const bankUrl = `?unidad=${unit}#banco`;
@@ -108,7 +110,8 @@
     const number = el("p", `${cursor + 1} de ${selection.length} · ${topicName(question)}`, "meta");
     number.setAttribute("aria-live", "polite");
     quiz.append(number, form);
-    const showing = !timed && answers.has(question.id);
+    const scorable = question.kind === "mc";
+    const showing = !timed && (scorable ? answers.has(question.id) : revealed.has(question.id));
     for (const [letter, option] of question.opts) {
       const row = el("label", "", "choice");
       const input = document.createElement("input");
@@ -116,27 +119,34 @@
       input.name = "answer";
       input.value = letter;
       input.checked = answer === letter;
-      input.disabled = question.kind === "review" || showing;
-      if (showing && letter === question.correct) row.classList.add("correct");
-      if (showing && letter === answer && letter !== question.correct) row.classList.add("incorrect");
+      input.disabled = scorable && showing;
+      if (scorable && showing && letter === question.correct) row.classList.add("correct");
+      if (scorable && showing && letter === answer && letter !== question.correct) row.classList.add("incorrect");
       input.addEventListener("change", () => {
         answers.set(question.id, letter);
-        if (!timed) renderQuestion().focus();
+        if (!timed && scorable) renderQuestion().focus();
       });
       row.append(input, el("span", `${letter}. ${option}`));
       form.append(row);
     }
-    if (!timed) {
-      if (showing) {
-        const result = explanation(question, answer);
-        result.tabIndex = -1;
-        quiz.append(result);
-      } else if (question.kind !== "mc") {
-        quiz.append(button(question.kind === "open" ? "Ver respuesta razonada" : "Ver repaso razonado", () => {
-          answers.set(question.id, "");
-          renderQuestion().focus();
-        }));
-      }
+    if (!timed && question.kind === "open") {
+      const label = el("label", "Tu respuesta", "written-answer");
+      const draft = document.createElement("textarea");
+      draft.rows = 4;
+      draft.value = writtenAnswers.get(question.id) ?? "";
+      draft.addEventListener("input", () => writtenAnswers.set(question.id, draft.value));
+      label.append(draft);
+      form.append(label);
+    }
+    if (showing) {
+      const result = explanation(question, answer);
+      result.tabIndex = -1;
+      quiz.append(result);
+    } else if (!timed && !scorable) {
+      quiz.append(button(question.kind === "open" ? "Ver respuesta razonada" : "Ver repaso razonado", () => {
+        revealed.add(question.id);
+        renderQuestion().focus();
+      }));
     }
     const actions = el("div", "", "actions");
     const previous = button("Anterior", () => move(-1), "secondary");
@@ -144,6 +154,12 @@
     previous.disabled = cursor === 0;
     next.disabled = cursor === selection.length - 1;
     actions.append(previous, next);
+    if (scorable && showing) {
+      actions.append(button("Volver a responder", () => {
+        answers.delete(question.id);
+        renderQuestion().focus();
+      }, "secondary"));
+    }
     quiz.append(actions);
     return showing ? quiz.querySelector(".feedback") : heading;
   }
