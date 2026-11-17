@@ -36,14 +36,7 @@ export function createLiveAccess({ Problem, session, readJSON, now, digest, rand
         !kid?.startsWith(app + "/") || !/^[A-Za-z0-9_-]{1,100}$/.test(kid.slice(app.length + 1)) || !pem) {
       throw new Problem("Las clases en vivo están pendientes de habilitación.", 503);
     }
-    let hosts;
-    try {
-      hosts = JSON.parse(env.CAMPUS_LIVE_HOSTS || "null");
-      if (!hosts || typeof hosts !== "object" || Array.isArray(hosts)) throw new Error();
-    } catch {
-      throw new Problem("La configuración de anfitriones está pendiente de revisión.", 503);
-    }
-    return { app, kid, pem, hosts };
+    return { app, kid, pem };
   }
 
   async function token(config, user, room, moderator, time) {
@@ -84,8 +77,6 @@ export function createLiveAccess({ Problem, session, readJSON, now, digest, rand
     if (!courses.has(course)) throw new Problem("Curso no disponible.", 404);
     const user = await session(req, env);
     const config = configuration(env);
-    const hostCodes = [config.hosts[course], config.hosts["*"]];
-    const canHost = hostCodes.some(list => Array.isArray(list) && list.includes(user.codigo));
     const db = env.DB;
     const time = now();
     let room = await getRoom(db, course, time);
@@ -94,15 +85,14 @@ export function createLiveAccess({ Problem, session, readJSON, now, digest, rand
       return {
         curso: courses.get(course),
         nombre: user.nombre,
-        puedeIniciar: canHost,
-        esAnfitrion: canHost && room?.anfitrion === user.codigo,
+        puedeIniciar: !room || room.anfitrion === user.codigo,
+        esAnfitrion: room?.anfitrion === user.codigo,
         estado: room ? (room.abierta ? "abierta" : "preparando") : "sin-reunion"
       };
     }
     if (req.method !== "POST") throw new Problem("Ruta no disponible.", 404);
 
     if (action === "iniciar") {
-      if (!canHost) throw new Problem("Solo un anfitrión asignado puede iniciar la reunión.", 403);
       if (!room) {
         const candidate = { sala: "campus-" + course + "-" + random().slice(0, 32), expira: time + meetingDuration };
         const access = await token(config, user, candidate, true, time);
@@ -120,12 +110,11 @@ export function createLiveAccess({ Problem, session, readJSON, now, digest, rand
 
     if (action === "entrar") {
       if (!room?.abierta) throw new Problem("El anfitrión todavía no ha abierto la sala.", 409);
-      if (room.anfitrion === user.codigo && !canHost) throw new Problem("Tu permiso de anfitrión cambió.", 403);
       return token(config, user, room, room.anfitrion === user.codigo, time);
     }
 
     if (action === "abrir" || action === "cerrar") {
-      if (!canHost || room?.anfitrion !== user.codigo) throw new Problem("Solo el anfitrión de esta reunión puede gestionarla.", 403);
+      if (room?.anfitrion !== user.codigo) throw new Problem("Solo el anfitrión de esta reunión puede gestionarla.", 403);
       const { sala } = await readJSON(req);
       if (sala !== room.sala) throw new Problem("La reunión ya cambió. Actualiza el aula.", 409);
       const query = action === "abrir"

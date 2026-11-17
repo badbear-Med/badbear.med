@@ -28,8 +28,7 @@ function setup(type = "pkcs8") {
   } };
   return { sql, env: {
     DB, ADMIN_API_TOKEN: "a".repeat(64), PASSWORD_PEPPER: "b".repeat(64),
-    JAAS_APP_ID: app, JAAS_KEY_ID: app + "/test", JAAS_PRIVATE_KEY: privateKey.export({ type, format: "pem" }),
-    CAMPUS_LIVE_HOSTS: JSON.stringify({ "cirugia-batimix": ["HOST", "OTHER"], "tesis-1": ["HOST"] })
+    JAAS_APP_ID: app, JAAS_KEY_ID: app + "/test", JAAS_PRIVATE_KEY: privateKey.export({ type, format: "pem" })
   } };
 }
 
@@ -61,12 +60,16 @@ test("anfitrión abre la sala, invitado identificado entra y solo el anfitrión 
   assert.equal((await request(env, room)).status, 401);
   assert.equal((await request(env, room, "INACTIVE")).status, 401);
   assert.equal((await request(env, room, "GUEST", undefined, "https://foreign.invalid")).status, 403);
-  assert.equal((await request(env, room + "/iniciar", "GUEST", {moderator: true})).status, 403);
+  assert.equal((await request(env, room + "/iniciar", "INACTIVE", {moderator: true})).status, 401);
+  assert.equal((await request(env, room + "/iniciar", undefined, {})).status, 401);
+  assert.equal((await request(env, room, "GUEST")).body.puedeIniciar, true);
   assert.equal((await request(env, room + "/entrar", "GUEST", {})).status, 409);
   const started = await request(env, room + "/iniciar", "HOST", {});
   assert.equal(started.status, 200);
   claims(started.body, "true", "Cuenta HOST");
-  assert.equal((await request(env, room, "GUEST")).body.estado, "preparando");
+  const preparing = (await request(env, room, "GUEST")).body;
+  assert.equal(preparing.estado, "preparando");
+  assert.equal(preparing.puedeIniciar, false);
   assert.equal((await request(env, room + "/entrar", "GUEST", {})).status, 409);
   assert.equal((await request(env, room + "/abrir", "OTHER", { sala: started.body.sala })).status, 403);
   assert.equal((await request(env, room + "/abrir", "HOST", { sala: "otra" })).status, 409);
@@ -78,7 +81,9 @@ test("anfitrión abre la sala, invitado identificado entra y solo el anfitrión 
   assert.equal((await request(env, room + "/cerrar", "GUEST", { sala: started.body.sala })).status, 403);
   assert.equal((await request(env, room + "/cerrar", "HOST", { sala: started.body.sala })).status, 200);
   assert.equal((await request(env, room + "/entrar", "GUEST", {})).status, 409);
-  const next = await request(env, room + "/iniciar", "HOST", {});
+  const next = await request(env, room + "/iniciar", "GUEST", {});
+  assert.equal(next.status, 200);
+  claims(next.body, "true", "Cuenta GUEST");
   assert.notEqual(next.body.sala, started.body.sala);
 });
 
@@ -89,6 +94,7 @@ test("el catálogo completo tiene salas independientes y se acepta una clave PKC
     assert.equal(result.status, 200);
     assert.equal(result.body.curso, nombre);
     assert.equal(result.body.estado, "sin-reunion");
+    assert.equal(result.body.puedeIniciar, true);
   }
   assert.equal((await request(env, "/api/en-vivo/no-existe", "HOST")).status, 404);
   const jobs = await Promise.all([
