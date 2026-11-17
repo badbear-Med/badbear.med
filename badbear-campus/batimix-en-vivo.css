@@ -1,0 +1,69 @@
+.live-page .campus-main {
+  width: min(1100px, calc(100% - 2rem));
+}
+.live-hero {
+  padding: clamp(1.25rem, 4vw, 2.8rem);
+  border-radius: 1.15rem;
+  background: linear-gradient(120deg, #132551, #293d92 63%, #185f74);
+  color: #fff;
+}
+.live-hero .course-kicker { color: #c9e8ff; }
+.live-hero h1 { margin: .3rem 0 .55rem; font-size: clamp(2rem, 6vw, 3.65rem); }
+.live-hero p:last-child { max-width: 56ch; margin: 0; }
+.live-panel {
+  margin-top: 1rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: #fff;
+  border: 1px solid #d9e2f1;
+  border-radius: 1rem;
+}
+.live-panel h2 { margin: 0 0 .6rem; font-size: clamp(1.2rem, 3vw, 1.6rem); }
+.live-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  margin-block: 1.15rem;
+}
+.live-fields label,
+.live-fields small { display: block; }
+.live-fields label { font-weight: 750; }
+.live-fields small { margin-top: .3rem; color: #435471; }
+.live-fields input {
+  display: block;
+  width: 100%;
+  padding: .63rem .8rem;
+  margin-top: .38rem;
+  border: 1px solid #8497b6;
+  border-radius: .55rem;
+  background: #f7f9ff;
+  color: #183050;
+  font: inherit;
+}
+.live-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.live-actions button {
+  padding: .65rem 1rem;
+  border: 1px solid #283a88;
+  border-radius: .58rem;
+  background: #283a88;
+  color: #fff;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+.live-actions .live-quiet { background: #fff; color: #283a88; }
+.live-actions button:disabled { opacity: .57; cursor: default; }
+.live-status { color: #344a6a; }
+.live-status[data-error="true"] { color: #8a1826; }
+.live-meeting {
+  overflow: hidden;
+  border-radius: .8rem;
+  height: clamp(26rem, 70vh, 48rem);
+  background: #101a30;
+}
+.live-meeting iframe { width: 100%; height: 100%; border: 0; }
+.live-panel li + li { margin-top: .5rem; }
+.live-page [hidden] { display: none !important; }
+@media (max-width: 630px) {
+  .live-fields { grid-template-columns: minmax(0, 1fr); }
+  .live-meeting { height: clamp(23rem, 70vh, 40rem); }
+}
