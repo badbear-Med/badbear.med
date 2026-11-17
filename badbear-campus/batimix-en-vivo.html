@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Sala piloto de videoconferencia de Cirugía BATIMIX.">
+  <title>BATIMIX en vivo | BADBEAR.CAMPUS</title>
+  <link rel="icon" href="../assets/logos/cursos/cirugia-batimix/logo.png">
+  <link rel="stylesheet" href="aula-batimix.css?v=20261115-aula">
+  <link rel="stylesheet" href="batimix-en-vivo.css?v=1">
+  <script src="batimix-en-vivo.js?v=1" defer></script>
+</head>
+<body class="batimix-aula live-page">
+  <header class="campus-header">
+    <div class="head-inner">
+      <a class="campus-brand" href="aula-batimix.html">BADBEAR<span>.CAMPUS</span></a>
+      <a class="course-link" href="aula-batimix.html">Volver a BATIMIX</a>
+    </div>
+  </header>
+  <main class="campus-main">
+    <section class="live-hero" aria-labelledby="live-title">
+      <p class="course-kicker">CIRUGÍA BATIMIX</p>
+      <h1 id="live-title">Aula virtual</h1>
+      <p>Sala piloto con Jitsi JaaS. Prueba la cámara, el micrófono y la presentación desde esta página.</p>
+    </section>
+    <section class="live-panel" aria-labelledby="entry-title">
+      <h2 id="entry-title">Entrar a la sala de prueba</h2>
+      <p>Usa el mismo nombre de sala y la misma cuenta JaaS para los dos participantes. Cada uno entra con su propio token temporal.</p>
+      <form id="live-entry" autocomplete="off" novalidate>
+        <div class="live-fields">
+          <div>
+            <label for="live-room">Nombre de la sala</label>
+            <input id="live-room" type="text" value="batimix-piloto" maxlength="80" spellcheck="false" autocomplete="off" aria-describedby="room-note" required>
+            <small id="room-note">Empieza con una letra o número. También puedes usar guiones y guiones bajos.</small>
+          </div>
+          <div>
+            <label for="live-token">Token temporal de JaaS</label>
+            <input id="live-token" type="password" maxlength="16384" spellcheck="false" autocomplete="off" placeholder="Pega tu JWT de prueba" aria-describedby="token-note" required>
+            <small id="token-note">Usa el JWT generado para pruebas. El token se usa para conectar con JaaS y se borra del formulario al enviarlo.</small>
+          </div>
+        </div>
+        <div class="live-actions">
+          <button id="live-join" type="submit">Entrar a la sala</button>
+          <button id="live-leave" class="live-quiet" type="button" hidden>Cerrar sala</button>
+        </div>
+      </form>
+      <noscript>Activa JavaScript en el navegador para abrir la videollamada.</noscript>
+      <p id="live-status" class="live-status" role="status" aria-live="polite" tabindex="-1">Ingresa tus datos de prueba para abrir Jitsi.</p>
+      <div id="live-meeting" class="live-meeting" role="region" aria-label="Videollamada de BATIMIX" hidden></div>
+    </section>
+    <section class="live-panel" aria-labelledby="test-title">
+      <h2 id="test-title">Prueba con dos participantes</h2>
+      <ol>
+        <li>En <a href="https://jaas.8x8.vc/" target="_blank" rel="noopener noreferrer">JaaS Console</a> añade una clave en <strong>API Keys</strong> si tu cuenta todavía no tiene una. Usa <strong>JWT Generator</strong> para obtener un token temporal de anfitrión con permiso de moderador. Pega en el aula únicamente el JWT temporal. Guarda la clave privada fuera de la web.</li>
+        <li>Genera un segundo token para el invitado, con otro identificador de usuario y sin el permiso de moderador. Ambos deben autorizar el mismo nombre de sala.</li>
+        <li>Entra desde dos dispositivos o perfiles de navegador. Desde la computadora del anfitrión, elige <strong>Compartir pantalla</strong> en Jitsi y verifica en el otro dispositivo que se vea la presentación.</li>
+      </ol>
+      <p><a href="https://developer.8x8.com/jaas/docs/jaas-console-api-keys/" target="_blank" rel="noopener noreferrer">Instrucciones del generador de tokens de JaaS</a></p>
+    </section>
+  </main>
+  <footer>BADBEAR.MED · WAJOMEA.GROUP</footer>
+</body>
+</html>
