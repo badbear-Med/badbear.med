@@ -149,7 +149,12 @@ async function openMeeting() {
       height: "100%",
       roomName: access.appId + "/" + access.sala,
       jwt: access.jwt,
-      configOverwrite: { startWithAudioMuted: true, startWithVideoMuted: true }
+      configOverwrite: {
+        prejoinConfig: { hideDisplayName: true },
+        readOnlyName: true,
+        startWithAudioMuted: true,
+        startWithVideoMuted: true
+      }
     });
     api = meeting;
     access = { sala: access.sala, esAnfitrion: access.esAnfitrion };
