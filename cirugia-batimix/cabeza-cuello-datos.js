@@ -54,6 +54,6 @@ window.BATIMIX_CABEZA_CUELLO = [
     titulo: "Fisuras labioalveolopalatinas y cirugía ortognática",
     teoria: "/cirugia-batimix/clases/u3-c7-fisuras-cirugia-ortognatica.html",
     descripcion: "Anatomía y clasificación de fisuras, rehabilitación interdisciplinaria, injerto alveolar, maloclusión, cefalometría y distracción mandibular.",
-    recursos: { ppt: null, audio: null, youtube: null, extra: null }
+    recursos: { ppt: null, audio: null, youtube: null, extra: "https://media.wajomea.group/cirugia-batimix/cabeza-cuello/material-extra/clase-07-fisuras-ortognatica.pdf" }
   }
 ];
