@@ -23,3 +23,7 @@ button:focus-visible, a:focus-visible, select:focus-visible, summary:focus-visib
 main, .panel, .hero, .response { min-width: 0; overflow-wrap: anywhere; }
 :where(.nav,.settings) .main-btn { text-decoration: none; display: inline-flex; align-items: center; }
 @media (max-width: 650px) { .settings label { min-width: 0; flex-basis: 100%; } .response { padding: 14px; } .head { flex-wrap: wrap; } }
+
+.premise-analysis h5 { margin: 1rem 0 .4rem; font-size: .95rem; color: #33415e; }
+.premise-analysis a { text-underline-offset: .18em; }
+.theory-links { border-left: 3px solid #7761c0; padding: .35rem .35rem .35rem 1.5rem; background: #f2effb; }
