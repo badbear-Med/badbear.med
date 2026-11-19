@@ -2,7 +2,6 @@
   "use strict";
   const questions = window.BADBEAR_PSIQ_BOTONI || [];
   const root = document.getElementById("botoni-quiz");
-  const mode = document.getElementById("botoni-mode");
   const navigator = document.getElementById("botoni-nav");
   const status = document.getElementById("botoni-status");
   const storageKey = "badbear-psiq-botoni-v1";
@@ -39,7 +38,7 @@
 
   function save() {
     try {
-      localStorage.setItem(storageKey, JSON.stringify({answers, index, finished, mode: mode.value}));
+      localStorage.setItem(storageKey, JSON.stringify({answers, index, finished}));
     } catch {}
   }
 
@@ -51,9 +50,8 @@
         const value = saved.answers?.[question.id];
         return Number.isInteger(value) && counts.includes(value) ? [[question.id, value]] : [];
       }));
-      if (saved.mode === "study" || saved.mode === "exam") mode.value = saved.mode;
       if (Number.isInteger(saved.index)) index = Math.max(0, Math.min(saved.index, questions.length - 1));
-      finished = saved.finished === true && mode.value === "exam";
+      finished = saved.finished === true;
     } catch {}
   }
 
@@ -72,6 +70,40 @@
     return list;
   }
 
+  function linkedParagraph(text, links, className) {
+    const paragraph = element("p", undefined, className);
+    const terms = links.map(link => link.termino.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+    const pattern = new RegExp("\\b(" + terms.sort((a, b) => b.length - a.length).join("|") + ")\\b", "giu");
+    let cursor = 0;
+    for (const match of text.matchAll(pattern)) {
+      paragraph.append(document.createTextNode(text.slice(cursor, match.index)));
+      const target = links.find(link => link.termino.toLowerCase() === match[0].toLowerCase());
+      const anchor = element("a", match[0]);
+      anchor.href = target.ruta;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.title = "Estudiar " + target.titulo;
+      paragraph.append(anchor);
+      cursor = match.index + match[0].length;
+    }
+    paragraph.append(document.createTextNode(text.slice(cursor)));
+    return paragraph;
+  }
+
+  function theoryList(links) {
+    const list = element("ul", undefined, "references theory-links");
+    for (const link of links) {
+      const item = element("li");
+      const anchor = element("a", link.titulo);
+      anchor.href = link.ruta;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      item.append(anchor);
+      list.append(item);
+    }
+    return list;
+  }
+
   function explanation(question) {
     const count = correctCount(question);
     const chosen = answers[question.id];
@@ -80,13 +112,21 @@
     heading.tabIndex = -1;
     result.append(heading, element("p", "Clave · " + optionText(count)));
     if (chosen !== undefined) result.append(element("p", "Tu respuesta · " + optionText(chosen)));
+    const truePremises = question.premisas.flatMap((premise, position) => premise.verdadera ? [romans[position]] : []);
+    const falsePremises = question.premisas.flatMap((premise, position) => premise.verdadera ? [] : [romans[position]]);
+    result.append(element("p", "Verdaderas: " + (truePremises.join(", ") || "ninguna") + ". Falsas: " + (falsePremises.join(", ") || "ninguna") + "."));
     question.premisas.forEach((premise, position) => {
       const block = element("section", undefined, "premise-analysis");
       block.append(element("h4", "Premisa " + romans[position]),
         element("span", premise.verdadera ? "Verdadera" : "Falsa", "verdict " + (premise.verdadera ? "true" : "false")),
-        element("p", premise.texto, "statement"), element("p", premise.analisis), sourceList(question, premise.fuentes));
+        linkedParagraph(premise.texto, premise.teoria, "statement"),
+        linkedParagraph(premise.analisis, premise.teoria),
+        linkedParagraph(premise.aplicacion, premise.teoria),
+        element("h5", "Ampliar en las clases"), theoryList(premise.teoria),
+        element("h5", "Bibliografía de esta premisa"), sourceList(question, premise.fuentes));
       result.append(block);
     });
+    result.append(element("h4", "Bibliografía del caso"), sourceList(question, question.fuentes.map((_, position) => position)));
     return result;
   }
 
@@ -130,8 +170,7 @@
     document.getElementById("botoni-count").textContent = answeredCount + " respondidas";
     renderNavigation();
     status.textContent = finished ? answeredCount + " respondidas · " + (questions.length - answeredCount) + " sin responder."
-      : mode.value === "exam" ? "La clave y las justificaciones aparecen al finalizar el examen. Puedes cambiar tus respuestas."
-      : "Al marcar verás la clave y el análisis de las cuatro premisas.";
+      : "Al marcar verás la clave, el análisis de cada premisa y sus enlaces a teoría y bibliografía.";
     if (!questions.length) {
       root.append(element("p", "No se pudo cargar el examen. Recarga la página."));
       return;
@@ -152,13 +191,13 @@
     options.setAttribute("role", "group");
     options.setAttribute("aria-label", "Número de premisas verdaderas");
     const answered = Object.hasOwn(answers, question.id);
-    const reveal = mode.value === "study" && answered;
+    const reveal = answered;
     for (const count of counts) {
       const option = button(optionText(count), () => {
         answers[question.id] = count;
         save();
         render();
-        if (mode.value === "study") root.querySelector("h3").focus();
+        root.querySelector("h3").focus();
       }, reveal);
       option.className = "answer";
       option.setAttribute("aria-pressed", String(answers[question.id] === count));
@@ -176,7 +215,7 @@
     }
     const actions = element("div", undefined, "nav");
     actions.append(button("Anterior", () => move(index - 1), index === 0), button("Siguiente", () => move(index + 1), index === questions.length - 1));
-    if (mode.value === "exam") actions.append(button("Finalizar y revisar", () => {
+    actions.append(button("Ver resultado y revisar todas", () => {
       finished = true;
       save();
       render();
@@ -185,11 +224,6 @@
     root.append(actions);
   }
 
-  mode.addEventListener("change", () => {
-    finished = false;
-    save();
-    render();
-  });
   document.getElementById("botoni-reset").addEventListener("click", () => {
     if (Object.keys(answers).length && !window.confirm("¿Empezar un nuevo intento y borrar las respuestas de este examen?")) return;
     answers = {};
