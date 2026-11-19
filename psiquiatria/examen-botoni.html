@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Examen nivel Botoni · Psiquiatría | BADBEAR.MED</title>
+  <meta name="description" content="Diez casos avanzados de Psiquiatría con cuatro premisas, alternativas por conteo y justificación clínica de cada aseveración.">
+  <link rel="stylesheet" href="banco-avanzado.css?v=20261111-movil">
+  <link rel="stylesheet" href="examen-botoni.css?v=20261118">
+  <link rel="stylesheet" href="../assets/css/course-lock.css?v=20261111-movil">
+  <script src="../assets/js/course-lock-config.js"></script>
+  <script src="../assets/js/course-lock.js" data-course="psiquiatria"></script>
+</head>
+<body>
+  <header><a href="index.html">BADBEAR.<strong>MED</strong></a><span>PSIQUIATRÍA</span><a href="../badbear-campus/aula-psiquiatria.html">Aula</a></header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">CASOS CLÍNICOS AVANZADOS</p>
+      <h1>Examen nivel Botoni</h1>
+      <p>Diez casos integrados. En cada uno, evalúa cuatro premisas y marca cuántas son verdaderas.</p>
+      <div class="stat">10 preguntas · 4 premisas por caso · <span id="botoni-count">0 respondidas</span></div>
+    </section>
+    <section class="panel settings" aria-label="Opciones del examen">
+      <label for="botoni-mode">Modalidad
+        <select id="botoni-mode"><option value="exam">Examen · corregir al finalizar</option><option value="study">Repaso · corregir al marcar</option></select>
+      </label>
+      <button id="botoni-reset" type="button">Nuevo intento</button>
+      <a class="main-btn" href="banco-avanzado.html">Banco avanzado</a>
+    </section>
+    <nav id="botoni-nav" class="question-nav" aria-label="Ir a una pregunta"></nav>
+    <p id="botoni-status" class="attempt-status" role="status"></p>
+    <section id="botoni-quiz" class="panel" aria-label="Caso clínico y respuestas"><p>Cargando examen…</p></section>
+    <p class="notes">Casos originales de BADBEAR.MED. Las referencias diagnósticas corresponden al DSM-5-TR y las guías citadas en cada premisa. Las escalas se interpretan con su versión y contexto clínico. Revisión bibliográfica del 18 de noviembre de 2026.</p>
+    <noscript>Activa JavaScript para responder y revisar las explicaciones.</noscript>
+  </main>
+  <script src="examen-botoni-datos.js?v=20261118"></script>
+  <script src="examen-botoni.js?v=20261118"></script>
+</body>
+</html>
