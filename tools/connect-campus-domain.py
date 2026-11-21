@@ -1,6 +1,7 @@
 import json
 import os
 import time
+import subprocess
 import urllib.error
 import urllib.request
 
@@ -28,21 +29,27 @@ def cloudflare(path, method="GET", payload=None):
     return result["result"]
 
 
-class NoRedirect(urllib.request.HTTPRedirectHandler):
-    def redirect_request(self, req, fp, code, msg, headers, newurl):
-        return None
-
-
 def check():
-    client = urllib.request.build_opener(NoRedirect)
-    try:
-        with client.open("https://" + DOMAIN + MED, timeout=10):
-            return False
-    except urllib.error.HTTPError as error:
-        if error.code != 303 or error.headers.get("Location") != CAMPUS:
-            return False
-    with client.open("https://" + DOMAIN + CAMPUS, timeout=10) as response:
-        return response.status == 200 and b'campus-gateway' in response.read()
+    def fetch(path):
+        result = subprocess.run(
+            ["curl", "--silent", "--show-error", "--max-time", "12",
+             "--write-out", "\n%{http_code}\n%{redirect_url}",
+             "https://" + DOMAIN + path],
+            capture_output=True, check=False,
+        )
+        if result.returncode:
+            print(f"Public probe curl exit: {result.returncode}", flush=True)
+            return b"", "", ""
+        body, status, location = result.stdout.rsplit(b"\n", 2)
+        return body, status.decode(), location.decode()
+
+    _, status, location = fetch(MED)
+    print(f"Public BADBEAR.MED probe: HTTP {status or 'unavailable'}", flush=True)
+    if status != "303" or location != "https://" + DOMAIN + CAMPUS:
+        return False
+    body, status, _ = fetch(CAMPUS)
+    print(f"Official Campus probe: HTTP {status or 'unavailable'}", flush=True)
+    return status == "200" and b'campus-gateway' in body
 
 
 def main():
@@ -78,7 +85,7 @@ def main():
             if not record["proxied"]:
                 cloudflare(dns + "/" + record["id"], "PATCH", {"proxied": True})
                 changed.append(record["id"])
-        for attempt in range(8):
+        for attempt in range(24):
             try:
                 if check():
                     print("BADBEAR.MED redirects to the official Campus without a session.")
