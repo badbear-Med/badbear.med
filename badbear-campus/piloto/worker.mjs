@@ -7,6 +7,7 @@ const FILES = new Map([
 
 // Keep the original page paths so relative links, scripts and styles resolve.
 const MED_PATHS = new Set([
+  "/app.html", "/badbear-music/catalog.js",
   "/badbear-med.html", "/style.css", "/script.js", "/badbear-campus/clases-en-vivo.css",
   "/dermatologia/badbear_logo.png",
 ]);
