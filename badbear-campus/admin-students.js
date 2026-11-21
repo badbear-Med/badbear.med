@@ -36,6 +36,16 @@ export function setupStudents({ $, call, post, message, action, getToken, reload
         $("manage-student").value = student.codigo;
         action(show);
       });
+      const nameButton = document.createElement("button");
+      nameButton.type = "button";
+      nameButton.className = "student-name-edit";
+      nameButton.textContent = student.nombre;
+      nameButton.setAttribute("aria-label", "Modificar datos de " + student.nombre);
+      nameButton.addEventListener("click", () => {
+        $("manage-student").value = student.codigo;
+        action(show);
+      });
+      row.children[0].replaceChildren(nameButton);
       cell.append(edit);
       row.append(cell);
     });
@@ -70,6 +80,10 @@ export function setupStudents({ $, call, post, message, action, getToken, reload
     $("manage-restore").hidden = creating || !student?.retirado_en;
     $("manage-status").textContent = creating ? "Nueva ficha" : accessLabel(student);
     $("manage-form").hidden = false;
+    for (const id of ["manage-name", "manage-email", "manage-dni", "manage-phone"]) {
+      $(id).readOnly = false;
+      $(id).disabled = false;
+    }
   }
 
   async function show() {
@@ -145,6 +159,14 @@ export function setupStudents({ $, call, post, message, action, getToken, reload
     $("manage-total").textContent = "";
   }
 
+  for (const [button, field] of [["manage-clear-name","manage-name"],["manage-clear-email","manage-email"],["manage-clear-dni","manage-dni"],["manage-clear-phone","manage-phone"]]) {
+    $(button).addEventListener("click", () => {
+      $(field).value = "";
+      $(field).focus();
+      $("manage-status").textContent = "Cambio pendiente. Completa la ficha y pulsa Guardar cambios.";
+    });
+  }
+
   $("manage-add").addEventListener("click", () => {
     selectionRevision++;
     creating = true;
@@ -162,10 +184,21 @@ export function setupStudents({ $, call, post, message, action, getToken, reload
     event.preventDefault();
     action(async () => {
       const item = {codigo:$("manage-code").value,nombre:$("manage-name").value,correo:$("manage-email").value,dni:$("manage-dni").value,celular:$("manage-phone").value};
-      requireService();
       const wasCreating = creating;
       if (wasCreating) item.activo = $("manage-new-access").checked;
-      await post(wasCreating ? "/api/admin/alumnos/crear" : "/api/admin/alumnos/ficha", getToken(), item);
+      if (serviceReady) {
+        await post(wasCreating ? "/api/admin/alumnos/crear" : "/api/admin/alumnos/ficha", getToken(), item);
+      } else {
+        if (wasCreating && !item.activo) requireService();
+        try {
+          await post("/api/admin/alumnos/importar", getToken(), {items:[{
+            codigo:item.codigo, nombre:item.nombre, correo:item.correo, dni:item.dni, telefono:item.celular
+          }]});
+        } catch (error) {
+          if (error.status === 404) throw Error("El servicio de Campus necesita actualizarse para guardar esta ficha. Tus cambios siguen en el formulario.");
+          throw error;
+        }
+      }
       await reload();
       $("manage-student").value = item.codigo.trim().toUpperCase();
       await show();
