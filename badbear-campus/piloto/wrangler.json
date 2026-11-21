@@ -1,0 +1,19 @@
+{
+  "name": "badbear-campus-piloto",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-21",
+  "workers_dev": true,
+  "preview_urls": false,
+  "services": [
+    {
+      "binding": "CAMPUS",
+      "service": "badbear-campus-api"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "PILOT_ASSETS",
+      "bucket_name": "badbear-campus-piloto"
+    }
+  ]
+}
