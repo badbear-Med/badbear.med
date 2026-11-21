@@ -38,3 +38,8 @@ summary,.eyebrow{color:#242424}
 .student-grade strong { display: block; margin-bottom: .6rem; }
 #manage-list .table-wrap { max-height: 420px; overflow: auto; }
 #manage-list button { white-space: nowrap; }
+
+.student-edit-field { display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; }
+.student-edit-field input { flex:1 1 220px; min-width:0; }
+.student-edit-field button { flex:0 1 auto; }
+#manage-list .student-name-edit { background:transparent; color:inherit; text-align:left; padding:.3rem 0; box-shadow:none; text-decoration:underline; text-underline-offset:3px; white-space:normal; }
