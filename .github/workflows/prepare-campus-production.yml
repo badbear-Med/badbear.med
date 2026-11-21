@@ -5,6 +5,8 @@ on:
       - campus/validacion-sesion-proyectos
     paths:
       - .github/workflows/prepare-campus-production.yml
+      - badbear-campus/gateway/**
+      - tools/package-campus-site.py
   workflow_dispatch:
 
 permissions:
