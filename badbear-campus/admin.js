@@ -1,6 +1,6 @@
 import { $,call,post,message,availability,table,busy } from "./core.js?v=20261011-colornotas1";
 import { parseCSV,parseContactsCSV,parseRosterCSV,parseSimpleGradesCSV } from "./csv.js?v=20261011-identificados2";
-import { setupStudents } from "./admin-students.js?v=20261121-padron";
+import { setupStudents } from "./admin-students.js?v=20261121-editar2";
 import { centralBridge } from "../administracion/bridge.js?v=20261011-central1";
 let token="",checked=null,contactsChecked=null;
 let reportConnection=()=>{};
