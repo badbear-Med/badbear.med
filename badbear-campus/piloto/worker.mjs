@@ -18,6 +18,7 @@ function reply(body, status = 200, headers = {}) {
 function page(body, status = 200) {
   return reply('<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Prueba de BADBEAR.CAMPUS</title><main><h1>Prueba de BADBEAR.CAMPUS</h1>' + body + '</main></html>', status, {
     "Content-Type": "text/html; charset=utf-8",
+    "Referrer-Policy": "same-origin",
     "Content-Security-Policy": "default-src 'none'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
   });
 }
