@@ -18,9 +18,25 @@ async function loadStudyProgress(){
  const total=24,done=ids.size;$("campus-progress-count").textContent=done+" de "+total+" clases estudiadas";$("campus-progress-fill").style.width=Math.round(done/total*100)+"%";$("campus-progress-status").textContent="Progreso actualizado";
  }catch(error){$("campus-progress-count").textContent="Consulta el avance en el aula de Cirugía General.";$("campus-progress-status").textContent="Avance no disponible";}
 }
+const gatewayEnabled = Boolean(document.querySelector('meta[name="campus-gateway"]'));
+async function synchronizeGateway(method) {
+  if (!gatewayEnabled) return;
+  const response = await fetch("/__campus/session", {
+    method,
+    credentials: "same-origin",
+    headers: method === "POST" ? {Authorization: "Bearer " + token} : {},
+  });
+  if (!response.ok) {
+    const error = new Error("No se pudo habilitar el acceso a los proyectos desde Campus.");
+    error.status = response.status;
+    throw error;
+  }
+}
+
 async function load() {
   try {let data;try{data=await call("/api/mi-perfil",token)}catch(error){if(error.status!==404)throw error;let perfil=null;try{perfil=JSON.parse(sessionStorage.getItem(profileKey)||"null")}catch(_){}if(perfil?.codigo&&perfil?.nombre)data={alumno:perfil};else {const legacy=await call("/api/mis-resultados",token);data={alumno:legacy.alumno}}}items=[];$("campus-results-count").textContent="—";$("grades-private-area").hidden=true;$("student-name").textContent=data.alumno.nombre;$("student-code").textContent="Código: "+data.alumno.codigo;
     const previous=$("course").value;$("course").replaceChildren(new Option("Todos los cursos",""));for(const course of [...new Set(items.map(x=>x.curso))].sort())$("course").append(new Option(course,course));if(items.some(x=>x.curso===previous))$("course").value=previous;
+    await synchronizeGateway("POST");
     $("entry").hidden=true;$("results").hidden=false;await loadStudyProgress();message("Sesión activa. Solicita tus calificaciones cuando quieras consultarlas.","success");
   }catch(error){if(error.status===401)clear();throw error;}
 }
@@ -43,7 +59,7 @@ $("email-confirm").addEventListener("submit",event=>{event.preventDefault();busy
   const data=await post("/api/correo/confirmar","",{token:emailToken,password:$("email-password").value});clearEmailLink();$("codigo").value=data.codigo;$("password").focus();message(data.mensaje,"success");
 })});
 $("email-cancel").addEventListener("click",()=>{clearEmailLink();message("Puedes solicitar otro enlace desde «Activa o recupera tu cuenta por correo».")});
-$("logout").addEventListener("click",()=>busy(async()=>{try{await post("/api/logout",token,{})}finally{clear();message("Sesión cerrada.")}}));
+$("logout").addEventListener("click",()=>busy(async()=>{try{await post("/api/logout",token,{})}finally{try{await synchronizeGateway("DELETE")}finally{clear();message("Sesión cerrada.")}}}));
 $("refresh").addEventListener("click",()=>busy(requestGrades));$("course").addEventListener("change",render);
 function selectCampusSection(section){
   const target=[...document.querySelectorAll(".student-tabs button")].find(button=>button.dataset.section===section);
