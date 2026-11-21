@@ -30,11 +30,19 @@ def cloudflare(path, method="GET", payload=None):
 
 
 def check():
+    from ipaddress import IPv4Address
+    with urllib.request.urlopen(urllib.request.Request("https://cloudflare-dns.com/dns-query?name=" + DOMAIN + "&type=A", headers={"Accept": "application/dns-json"}), timeout=6) as reply:
+        dns_answer = json.load(reply)
+    addresses = [str(IPv4Address(item["data"])) for item in dns_answer.get("Answer", []) if item.get("type") == 1]
+    if not addresses:
+        return False
+    edge = addresses[0]
     def fetch(path):
         result = subprocess.run(
             ["curl", "--silent", "--show-error", "--max-time", "12",
+             "--resolve", DOMAIN + ":443:" + edge, "--header", "Cache-Control: no-cache",
              "--write-out", "\n%{http_code}\n%{redirect_url}",
-             "https://" + DOMAIN + path],
+             "https://" + DOMAIN + path + ("&" if "?" in path else "?") + "_campus_probe=" + str(time.time_ns())],
             capture_output=True, check=False,
         )
         if result.returncode:
