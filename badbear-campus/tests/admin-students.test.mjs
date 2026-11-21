@@ -65,7 +65,7 @@ test('search and retired filter operate on the correct rows and preserve edit ac
   const f=fixture(t);f.manager.render();
   assert.match(f.$('manage-total').textContent,/1 alumnos/);
   f.$('manage-search').value='maria@example.invalid';await f.fire('manage-search','input');
-  const button=f.$('manage-list').querySelector('tbody button');assert.equal(button['aria-label'],'Editar a García de la Cruz, María');
+  const button=f.$('manage-list').querySelector('tbody button');assert.equal(button['aria-label'],'Modificar datos de García de la Cruz, María');
   button.listeners.click();await new Promise(resolve=>setImmediate(resolve));
   assert.equal(f.$('manage-student').value,'001');
   f.$('manage-search').value='';f.$('manage-show-retired').checked=true;await f.fire('manage-show-retired','change');
@@ -75,10 +75,23 @@ test('search and retired filter operate on the correct rows and preserve edit ac
   await f.fire('manage-restore');assert.equal(f.posts.at(-1).path,'/api/admin/alumnos/restaurar');
 });
 
-test('old backend displays the update requirement and prevents unsupported saving',async t=>{
+test('old backend explains the update requirement for unsupported access controls',async t=>{
   const f=fixture(t);f.manager.render(false);assert.equal(f.$('manage-service-status').hidden,false);
-  await f.fire('manage-add');f.$('manage-code').value='003';f.$('manage-name').value='Nuevo, Alumno';
+  await f.fire('manage-add');f.$('manage-code').value='003';f.$('manage-name').value='Nuevo, Alumno';f.$('manage-new-access').checked=false;
   await assert.rejects(f.fire('manage-form','submit'),/Actualizar-Campus/);
   assert.equal(f.posts.length,0);
   f.manager.clear();assert.equal(f.$('manage-form').hidden,true);assert.equal(f.$('manage-list').children.length,0);
+});
+
+
+test('clearing fields and replacing the full name saves through the deployed legacy roster endpoint',async t=>{
+  const f=fixture(t);f.manager.render(false);f.$('manage-student').value='001';await f.fire('manage-student','change');
+  for(const [button,field] of [['manage-clear-name','manage-name'],['manage-clear-email','manage-email'],['manage-clear-dni','manage-dni'],['manage-clear-phone','manage-phone']]) {
+    assert.equal(f.$(field).readOnly,false);assert.equal(f.$(field).disabled,false);
+    await f.fire(button);assert.equal(f.$(field).value,'');assert.equal(f.$(field).focused,true);
+  }
+  f.$('manage-name').value='García de la Cruz, María del Carmen';
+  await f.fire('manage-form','submit');
+  assert.deepEqual(f.posts[0],{path:'/api/admin/alumnos/importar',token:'admin-session',body:{items:[{codigo:'001',nombre:'García de la Cruz, María del Carmen',correo:'',dni:'',telefono:''}]}});
+  assert.equal(f.messages.at(-1)[0],'Ficha actualizada.');
 });
