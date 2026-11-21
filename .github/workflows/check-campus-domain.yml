@@ -1,0 +1,55 @@
+name: Check Campus domain access
+on:
+  push:
+    branches:
+      - campus/validacion-sesion-proyectos
+    paths:
+      - .github/workflows/check-campus-domain.yml
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    if: github.repository == 'badbear-Med/badbear.med'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify domain access without changes
+        env:
+          CF_ZONE_TOKEN: ${{ secrets.CLOUDFLARE_ZONE_API_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+
+          token = os.environ.get("CF_ZONE_TOKEN")
+          if not token:
+              raise SystemExit("Missing CLOUDFLARE_ZONE_API_TOKEN")
+
+          def get(path):
+              request = urllib.request.Request(
+                  "https://api.cloudflare.com/client/v4" + path,
+                  headers={"Authorization": "Bearer " + token},
+              )
+              try:
+                  with urllib.request.urlopen(request, timeout=20) as reply:
+                      data = json.load(reply)
+              except urllib.error.HTTPError as error:
+                  codes = [item.get("code") for item in json.load(error).get("errors", [])]
+                  raise SystemExit(f"Cloudflare returned HTTP {error.code}, error codes: {codes}")
+              if not data.get("success"):
+                  raise SystemExit("Cloudflare rejected the request")
+              return data["result"]
+
+          zones = get("/zones?name=wajomea.group")
+          if len(zones) != 1:
+              raise SystemExit("Could not identify the wajomea.group zone")
+          zone = zones[0]["id"]
+          for host in ("wajomea.group", "www.wajomea.group", "media.wajomea.group"):
+              records = get(f"/zones/{zone}/dns_records?name={host}")
+              print(host, [(record["type"], record.get("proxied")) for record in records])
+          routes = get(f"/zones/{zone}/workers/routes")
+          print("Worker routes:", [(route["pattern"], route.get("script")) for route in routes])
+          PY
