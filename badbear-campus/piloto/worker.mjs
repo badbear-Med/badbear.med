@@ -1,10 +1,55 @@
 const SESSION = "__Host-campus-pilot";
 const CAMPUS_ORIGIN = "https://wajomea.group";
 const FILES = new Map([
-  ["/med", ["prueba-campus/med.html", "text/html; charset=utf-8"]],
   ["/material.pdf", ["prueba-campus/material.pdf", "application/pdf"]],
   ["/audio.mp3", ["prueba-campus/audio.mp3", "audio/mpeg"]],
 ]);
+
+// Keep the original page paths so relative links, scripts and styles resolve.
+const MED_PATHS = new Set([
+  "/badbear-med.html", "/style.css", "/script.js", "/badbear-campus/clases-en-vivo.css",
+  "/dermatologia/badbear_logo.png",
+]);
+
+const CARDIO_PDF = "/cardiologia/material-piloto.pdf";
+const CARDIO_PDF_ORIGIN = "https://media.wajomea.group/badbear-med/cardiologia/pdf/material-extra/arritmias-cardiacas.pdf";
+
+function isMedPath(path) {
+  return MED_PATHS.has(path) || path.startsWith("/assets/") || path.startsWith("/cardiologia/");
+}
+
+async function serveMed(request) {
+  const url = new URL(request.url);
+  const upstreamUrl = new URL(CAMPUS_ORIGIN);
+  upstreamUrl.pathname = url.pathname;
+  upstreamUrl.search = url.search;
+  const range = request.headers.get("Range");
+  const upstream = await fetch(url.pathname === CARDIO_PDF ? CARDIO_PDF_ORIGIN : upstreamUrl, {
+    method: request.method, redirect: "manual", headers: range ? {Range: range} : undefined,
+  });
+  if (upstream.status >= 300 && upstream.status < 400) {
+    const location = upstream.headers.get("Location");
+    await upstream.body?.cancel();
+    if (!location) return reply("La página de origen no está disponible.", 502);
+    const target = new URL(location, upstreamUrl);
+    if (target.origin !== CAMPUS_ORIGIN || !isMedPath(target.pathname)) {
+      return reply("La página de origen está fuera del piloto.", 502);
+    }
+    return reply(null, upstream.status, {Location: target.pathname + target.search});
+  }
+  const headers = {};
+  for (const name of ["Content-Type", "Content-Security-Policy", "Cross-Origin-Resource-Policy", "Accept-Ranges", "Content-Range"]) {
+    const value = upstream.headers.get(name);
+    if (value) headers[name] = value;
+  }
+  const response = reply(upstream.body, upstream.status, headers);
+  if (url.pathname === "/cardiologia/index.html" && upstream.ok && request.method === "GET") {
+    return new HTMLRewriter().on('a[href="' + CARDIO_PDF_ORIGIN + '"]', {
+      element(link) { link.setAttribute("href", CARDIO_PDF); },
+    }).transform(response);
+  }
+  return response;
+}
 
 function reply(body, status = 200, headers = {}) {
   return new Response(body, {status, headers: {
@@ -117,7 +162,8 @@ export default {
       }
       if (request.method !== "GET" && request.method !== "HEAD") return reply("Método no permitido.", 405);
       if (pathname === "/login") return loginPage();
-      if (pathname !== "/" && !FILES.has(pathname)) return reply("Ruta inexistente.", 404);
+      if (pathname === "/index.html") return reply(null, 303, {Location: "/"});
+      if (pathname !== "/" && pathname !== "/med" && !FILES.has(pathname) && !isMedPath(pathname)) return reply("Ruta inexistente.", 404);
       if (!token) return reply(null, 303, {Location: "/login"});
       // The deployed Campus API already validates the session on this route.
       // Use only the status. The profile is never returned to the browser.
@@ -126,6 +172,8 @@ export default {
       if (result.status === 401) return reply(null, 303, {Location: "/login", "Set-Cookie": cookie()});
       if (!result.ok) return reply("Validación de Campus no disponible.", 503);
       if (pathname === "/") return page('<ul><li><a href="/med">Página médica</a></li><li><a href="/material.pdf">Material en PDF</a></li><li><a href="/audio.mp3">Pista de audio</a></li></ul><form method="post" action="/logout"><button>Cerrar sesión</button></form>');
+      if (pathname === "/med") return reply(null, 303, {Location: "/badbear-med.html"});
+      if (isMedPath(pathname)) return await serveMed(request);
       return await serveFile(request, env.PILOT_ASSETS, FILES.get(pathname));
     } catch {
       return reply("La prueba de Campus no está disponible.", 503);
