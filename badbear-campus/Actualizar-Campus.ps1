@@ -29,11 +29,12 @@ try {
     for ($attempt = 0; $attempt -lt 6; $attempt++) {
         try {
             $health = Invoke-RestMethod -Uri 'https://badbear-campus-api.wajomea-group.workers.dev/api/health' -TimeoutSec 10
-            if ($health.estado -eq 'operativo' -and $health.estados_asistencia -eq $true -and $health.acceso_unificado -eq $true) { $ready = $true; break }
+            if ($health.estado -eq 'operativo' -and $health.estados_asistencia -eq $true -and $health.acceso_unificado -eq $true -and $health.gestion_alumnos -eq $true) { $ready = $true; break }
         } catch {}
         if ($attempt -lt 5) { Start-Sleep -Seconds 5 }
     }
-    if (-not $ready) { throw 'No se confirmo la conexion interna Campus-Examenes. Revisa que badbear-exams-api exista en la misma cuenta y que Wrangler muestre env.EXAMS_AUTH.' }
+    if (-not $ready) { throw 'No se confirmo la conexion interna Campus-Examenes. Revisa que badbear-exams-api exista en la misma cuenta, que Wrangler muestre env.EXAMS_AUTH y que se haya aplicado la migracion 0008 del padron.' }
     Write-Host 'Campus y Examenes: entra al escritorio con el mismo correo y contrasena de Examenes.' -ForegroundColor Green
     Start-Process 'https://wajomea.group/administracion/index.html'
 } finally { Pop-Location }
+

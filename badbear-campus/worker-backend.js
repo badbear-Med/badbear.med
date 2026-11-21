@@ -1,6 +1,7 @@
 /* BADBEAR.CAMPUS: private D1 binding DB; secrets ADMIN_API_TOKEN and PASSWORD_PEPPER. */
 import { createEmailAccess } from './email-access.js';
 import { createLiveAccess } from './live-access.js';
+import { createStudentManagement } from './student-management.js';
 const SITE = "https://wajomea.group";
 const encoder = new TextEncoder();
 const now = () => Math.floor(Date.now() / 1000);
@@ -174,6 +175,7 @@ async function importResults(body, env) {
   ]);
   return {ok:true,publicados:check.total,alumnos:check.alumnos,modo:"visible"};
 }
+const studentManagement = createStudentManagement({ Problem, code });
 const emailAccess=createEmailAccess({Problem,code,now,random,digest,password,passwordHash});
 const liveAccess = createLiveAccess({ Problem, session, readJSON, now, digest, random });
 
@@ -193,7 +195,7 @@ export default {
         let states = false; if (ready) { try { states = !!await env.DB.prepare("SELECT name FROM pragma_table_info('campus_resultados') WHERE name='estado'").first(); } catch {} }
         const exams = ready && await examsAvailable(env);
         const emailReady=ready&&emailAccess.configuration(env)&&await emailAccess.schema(env);
-        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states,acceso_unificado:exams,conexion_examenes:exams?"conectado":"pendiente",acceso_correo:emailReady},ready?200:503,origin);
+        return response({servicio:"BADBEAR.CAMPUS",estado:ready?"operativo":"pendiente de conexión",estados_asistencia:states,acceso_unificado:exams,conexion_examenes:exams?"conectado":"pendiente",acceso_correo:emailReady,gestion_alumnos:ready && await studentManagement.ready(env)},ready?200:503,origin);
       }
       if (!env.DB || env.ADMIN_API_TOKEN?.length < 32 || !env.ADMIN_API_TOKEN || env.PASSWORD_PEPPER?.length < 32 || !env.PASSWORD_PEPPER) throw new Problem("El portal está pendiente de conexión. Inténtalo más tarde.", 503);
       if (["POST","PUT","DELETE"].includes(req.method) && origin !== SITE) throw new Problem("Origen no permitido.", 403);
@@ -207,9 +209,12 @@ export default {
         if (req.method === "GET" && path === "/api/admin/correos/estado") return response(await emailAccess.status(env),200,origin);
         if (req.method === "POST" && path === "/api/admin/correos/vista-previa") return response(await emailAccess.preview((await readJSON(req)).items,env),200,origin);
         if (req.method === "POST" && path === "/api/admin/correos") return response(await emailAccess.save(await readJSON(req),env),200,origin);
+        const studentAction = path.match(/^\/api\/admin\/alumnos\/(crear|acceso|retirar|restaurar)$/);
+        if (req.method === "POST" && studentAction) return response(await studentManagement.manage(studentAction[1], await readJSON(req), env), 200, origin);
         if (req.method === "GET" && path === "/api/admin/alumnos") {
-          const users = await env.DB.prepare("SELECT a.codigo,a.nombre,a.nombres,a.apellidos,a.dni,a.celular,a.activo,a.correo,a.correo_verificado,CASE WHEN a.password_hash IS NULL THEN 0 ELSE 1 END AS activado,COUNT(r.codigo) AS resultados FROM campus_alumnos a LEFT JOIN campus_resultados r ON r.codigo=a.codigo GROUP BY a.codigo ORDER BY a.nombre").all();
-          return response({items:users.results},200,origin);
+          const retired = await studentManagement.ready(env) ? "a.retirado_en" : "NULL AS retirado_en";
+          const users = await env.DB.prepare("SELECT " + retired + ",a.codigo,a.nombre,a.nombres,a.apellidos,a.dni,a.celular,a.activo,a.correo,a.correo_verificado,CASE WHEN a.password_hash IS NULL THEN 0 ELSE 1 END AS activado,COUNT(r.codigo) AS resultados FROM campus_alumnos a LEFT JOIN campus_resultados r ON r.codigo=a.codigo GROUP BY a.codigo ORDER BY a.nombre").all();
+          return response({items:users.results,gestion_alumnos:await studentManagement.ready(env)},200,origin);
         }
         if (req.method === "POST" && path === "/api/admin/alumnos/importar") {
           const payload=await readJSON(req);
@@ -235,25 +240,13 @@ export default {
           return response({ok:true,total:validated.length},200,origin);
         }
         if (req.method === "POST" && path === "/api/admin/alumnos/ficha") {
-          const body=await readJSON(req);
-          const codigo=code(body.codigo);
-          const names=String(body.nombres||"").trim(), surnames=String(body.apellidos||"").trim();
-          const dni=String(body.dni||"").trim(),cell=String(body.celular||"").trim(),correo=String(body.correo||"").trim().toLowerCase();
-          if(!names||!surnames||names.length>100||surnames.length>120)throw new Problem("Introduce nombres y apellidos válidos.");
-          if(dni&&!/^[0-9]{8}$/.test(dni))throw new Problem("El DNI debe tener exactamente 8 dígitos.");
-          if(cell&&!/^[+0-9 -]{7,20}$/.test(cell))throw new Problem("Celular inválido.");
-          if(correo&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo))throw new Problem("Correo inválido.");
-          const prev=await env.DB.prepare("SELECT codigo FROM campus_alumnos WHERE codigo=?").bind(codigo).first();
-          if(!prev)throw new Problem("Alumno no registrado. Publícalo primero en la lista de resultados.",404);
-          try{await env.DB.prepare("UPDATE campus_alumnos SET nombre=?,nombres=?,apellidos=?,dni=?,celular=?,correo=? WHERE codigo=?").bind(names+" "+surnames,names,surnames,dni||null,cell||null,correo||null,codigo).run()}
-          catch(err){if(/UNIQUE|constraint/i.test(err.message||""))throw new Problem("DNI o correo ya registrado, o datos incompatibles.",409);throw err}
-          return response({ok:true},200,origin);
+          return response(await studentManagement.manage("guardar", await readJSON(req), env), 200, origin);
         }
         if (req.method === "POST" && path === "/api/admin/nota/editar") {
           const body=await readJSON(req);const codigo=code(body.codigo);
           const fields=["curso","periodo","evaluacion","fecha"];
           if(fields.some(k=>typeof body[k]!=="string"||!body[k].trim()||body[k].length>150))throw new Problem("Identificador de nota incompleto.");
-          if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(body.fecha))throw new Problem("Fecha inválida.");
+          if(!/^\d{4}-\d{2}-\d{2}$/.test(body.fecha))throw new Problem("Fecha inválida.");
           const nota=Number(body.nota);if(!Number.isFinite(nota)||nota<0||nota>20)throw new Problem("La nota debe estar entre 0 y 20.");
           const row=await env.DB.prepare("SELECT nota FROM campus_resultados WHERE codigo=? AND curso=? AND periodo=? AND evaluacion=?").bind(codigo,body.curso,body.periodo,body.evaluacion).first();
           if(!row)throw new Problem("Evaluación no encontrada.",404);
@@ -412,3 +405,4 @@ export default {
     }
   }
 };
+
