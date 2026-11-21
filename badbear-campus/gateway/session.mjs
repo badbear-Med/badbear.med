@@ -46,7 +46,7 @@ export async function campusGate(request, campus, isPublicPath) {
     const status = await validate(campus, readCookie(request));
     if (status === 200) return null;
     if (status !== 401 || (request.method !== "GET" && request.method !== "HEAD")) return response(status);
-    return response(303, {Location: "/#accesos", "Set-Cookie": sessionCookie()});
+    return response(303, {Location: "/badbear-campus/index.html", "Set-Cookie": sessionCookie()});
   } catch {
     return response(503);
   }
