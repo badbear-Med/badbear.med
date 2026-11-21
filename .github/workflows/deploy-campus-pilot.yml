@@ -1,0 +1,40 @@
+name: Deploy Campus pilot
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - campus/validacion-sesion-proyectos
+    paths:
+      - .github/workflows/deploy-campus-pilot.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: campus-cloudflare-pilot
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.repository == 'badbear-Med/badbear.med' && github.ref == 'refs/heads/campus/validacion-sesion-proyectos'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check pilot syntax
+        run: node --check badbear-campus/piloto/worker.mjs
+      - name: Deploy the pilot Worker
+        working-directory: badbear-campus/piloto
+        env:
+          CLOUDFLARE_ACCOUNT_ID: caace9c94fd11467e298cdee61f2397b
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::Repository secret CLOUDFLARE_API_TOKEN is missing."
+            exit 1
+          fi
+          npx --yes wrangler@4 deploy --config wrangler.json
