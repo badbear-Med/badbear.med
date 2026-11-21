@@ -1,0 +1,13 @@
+name: Campus access
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  access:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --test campus-gateway/tests/*.test.mjs badbear-campus/tests/student-email.test.mjs

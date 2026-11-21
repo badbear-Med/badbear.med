@@ -1,0 +1,2 @@
+html:not([data-campus-access="granted"]) body{visibility:hidden!important;pointer-events:none!important}
+html:not([data-campus-access="granted"])::after{content:"Validando tu acceso a BADBEAR.CAMPUS…";position:fixed;inset:0;display:grid;place-items:center;padding:24px;background:#091d3d;color:#fff;font:600 18px/1.5 Arial,sans-serif;text-align:center;z-index:2147483647}

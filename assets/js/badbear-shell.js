@@ -435,7 +435,7 @@
   function navigateFrame(raw, pushHistory = false) {
     const pageUrl = new URL(sanitizePage(raw));
     if (pageUrl.pathname.endsWith(".html") || pageUrl.pathname.endsWith("/")) {
-      pageUrl.searchParams.set("_ui", "20261011-clean-navigation2");
+      pageUrl.searchParams.set("_ui", "20261121-campus-only1");
     }
     const target = pageUrl.href;
     if (playerView === "closed" &&

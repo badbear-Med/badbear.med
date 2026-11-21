@@ -21,6 +21,7 @@
     const base = new URL(".", location.href);
     if (!target.pathname.startsWith(base.pathname)) return;
     if (target.pathname.endsWith("/app.html")) return;
+    if (target.pathname.endsWith("/badbear-campus/index.html") || target.pathname.endsWith("/badbear-campus/")) return;
 
     event.preventDefault();
 

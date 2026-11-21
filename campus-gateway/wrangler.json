@@ -1,0 +1,12 @@
+{
+  "name": "badbear-campus-gateway",
+  "main": "worker.js",
+  "compatibility_date": "2026-11-21",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {"pattern": "wajomea.group/*", "zone_name": "wajomea.group"},
+    {"pattern": "media.wajomea.group/*", "zone_name": "wajomea.group"}
+  ],
+  "services": [{"binding": "CAMPUS_API", "service": "badbear-campus-api"}]
+}
