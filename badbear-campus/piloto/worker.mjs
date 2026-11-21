@@ -118,7 +118,10 @@ export default {
       if (pathname === "/login") return loginPage();
       if (pathname !== "/" && !FILES.has(pathname)) return reply("Ruta inexistente.", 404);
       if (!token) return reply(null, 303, {Location: "/login"});
-      const result = await campus(env, "/api/sesion", {headers: authorization(token)});
+      // The deployed Campus API already validates the session on this route.
+      // Use only the status. The profile is never returned to the browser.
+      const result = await campus(env, "/api/mi-perfil", {headers: authorization(token)});
+      await result.body?.cancel();
       if (result.status === 401) return reply(null, 303, {Location: "/login", "Set-Cookie": cookie()});
       if (!result.ok) return reply("Validación de Campus no disponible.", 503);
       if (pathname === "/") return page('<ul><li><a href="/med">Página médica</a></li><li><a href="/material.pdf">Material en PDF</a></li><li><a href="/audio.mp3">Pista de audio</a></li></ul><form method="post" action="/logout"><button>Cerrar sesión</button></form>');
