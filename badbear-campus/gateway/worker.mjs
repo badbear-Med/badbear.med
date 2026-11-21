@@ -74,6 +74,16 @@ export default {
         }).transform(new Response(asset.body, {status: asset.status, headers}));
       }
       headers.set("Cache-Control", "private, no-store");
+      if (!PUBLIC.has(url.pathname) && request.method === "GET" && asset.status === 200 &&
+          /^text\/html(?:;|$)/i.test(headers.get("Content-Type") || "")) {
+        headers.delete("Content-Length");
+        headers.delete("ETag");
+        return new HTMLRewriter().on("body", {
+          element(body) {
+            body.prepend('<nav aria-label="Cuenta de Campus"><a href="/__campus/profile" target="_top">Mi perfil</a> · <a href="/__campus/logout" target="_top">Cerrar sesión</a></nav>', {html: true});
+          },
+        }).transform(new Response(asset.body, {status: asset.status, headers}));
+      }
       return new Response(asset.body, {status: asset.status, headers});
     } catch {
       return reply(503);
