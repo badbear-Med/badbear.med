@@ -239,3 +239,22 @@
 .wg-projects details[open] .wg-project-logo img{
   transform:scale(1.03);
 }
+
+
+/* Portada centrada: los siete proyectos se despliegan desde Más proyectos. */
+.wg-video-stage{min-height:calc(100svh - 80px);display:flex;flex-direction:column;justify-content:center;padding:56px 0}
+.wg-video-stage .wg-entry{width:100%;max-width:1100px;margin:0 auto;padding:28px 5%}
+.wg-entry>.wg-eyebrow,.wg-entry>h2{text-align:center}
+.wg-video-stage .wg-entry-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.wg-entry-other{font:inherit;text-align:left;cursor:pointer}
+.wg-entry-card .wg-entry-description{display:block;max-width:420px;font-size:15px;margin:11px 0 24px;line-height:1.6}
+.wg-entry-other:focus-visible{outline:3px solid #84f4ff;outline-offset:5px}
+.wg-video-stage .wg-projects{width:100%}
+#proyectos[hidden]{display:none!important}
+.wg-team{margin-top:32px}
+@media(max-width:760px){
+  .wg-video-stage{min-height:calc(100svh - 150px);padding:40px 0}
+  .wg-video-stage .wg-entry{padding:24px 5%}
+  .wg-video-stage .wg-entry-grid{grid-template-columns:1fr;gap:16px}
+  .wg-entry-card .wg-entry-description{font-size:14px;margin:10px 0 15px}
+}
