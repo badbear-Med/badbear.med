@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Connect domain and verify public Campus
+      - name: Connect domain and verify the BADBEAR.MED redirect
         env:
           CF_ZONE_TOKEN: ${{ secrets.CLOUDFLARE_ZONE_API_TOKEN }}
         run: python3 tools/connect-campus-domain.py
