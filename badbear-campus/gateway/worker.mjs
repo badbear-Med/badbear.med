@@ -33,6 +33,27 @@ export default {
     if (request.method !== "GET" && request.method !== "HEAD") return reply(405, {Allow: "GET, HEAD"});
 
     try {
+      const file = env.LARGE_ASSETS_MANIFEST?.[decodeURIComponent(url.pathname).slice(1)];
+      if (file && /^campus-site\/[a-f0-9]{64}$/.test(file.key)) {
+        const head = request.method === "HEAD";
+        const range = request.headers.get("Range");
+        const object = head ? await env.LARGE_ASSETS.head(file.key) :
+          await env.LARGE_ASSETS.get(file.key, range ? {range: request.headers} : undefined);
+        if (!object) return reply(404);
+        const headers = new Headers();
+        object.writeHttpMetadata(headers);
+        headers.set("Cache-Control", "private, no-store");
+        headers.set("X-Content-Type-Options", "nosniff");
+        headers.set("Accept-Ranges", "bytes");
+        const part = !head && range && object.range;
+        if (part && Number.isInteger(part.offset) && Number.isInteger(part.length)) {
+          headers.set("Content-Range", `bytes ${part.offset}-${part.offset + part.length - 1}/${object.size}`);
+          headers.set("Content-Length", String(part.length));
+          return new Response(object.body, {status: 206, headers});
+        }
+        headers.set("Content-Length", String(object.size));
+        return new Response(head ? null : object.body, {headers});
+      }
       const asset = await env.SITE_ASSETS.fetch(request);
       const headers = new Headers(asset.headers);
       if (asset.status >= 300 && asset.status < 400 && headers.has("Location")) {
