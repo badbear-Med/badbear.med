@@ -19,7 +19,7 @@ function readCookie(request) {
 
 async function validate(campus, token) {
   if (!TOKEN.test(token)) return 401;
-  const result = await campus.fetch("https://badbear-campus-api.wajomea-group.workers.dev/api/sesion", {
+  const result = await campus.fetch("https://badbear-campus-api.wajomea-group.workers.dev/api/mi-perfil", {
     headers: {Authorization: "Bearer " + token},
     redirect: "manual",
   });
