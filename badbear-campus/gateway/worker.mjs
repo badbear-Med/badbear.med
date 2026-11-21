@@ -54,7 +54,9 @@ export default {
         headers.set("Content-Length", String(object.size));
         return new Response(head ? null : object.body, {headers});
       }
-      const asset = await env.SITE_ASSETS.fetch(request);
+      const assetUrl = new URL(url);
+      if (assetUrl.pathname.endsWith("/")) assetUrl.pathname += "index.html";
+      const asset = await env.SITE_ASSETS.fetch(new Request(assetUrl, request));
       const headers = new Headers(asset.headers);
       if (asset.status >= 300 && asset.status < 400 && headers.has("Location")) {
         const target = new URL(headers.get("Location"), url);
@@ -63,7 +65,7 @@ export default {
           return reply(502);
         }
       }
-      if (url.pathname === CAMPUS && request.method === "GET" && asset.ok) {
+      if (assetUrl.pathname === CAMPUS && request.method === "GET" && asset.ok) {
         headers.delete("Content-Length");
         headers.delete("ETag");
         headers.set("Cache-Control", "private, no-store");
