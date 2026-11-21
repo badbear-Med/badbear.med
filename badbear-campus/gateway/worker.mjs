@@ -2,6 +2,9 @@ import {campusGate} from "./session.mjs";
 
 const HOME = "https://wajomea.group";
 const CAMPUS = "/badbear-campus/index.html";
+const ACCOUNT_CSS_PATH = "/__campus/account.css";
+const ACCOUNT_CSS = ".bb-campus-account{box-sizing:border-box;position:relative;z-index:1000;display:flex;justify-content:flex-end;padding:.35rem clamp(.75rem,4vw,3rem);background:#0d203d;color:#fff;font:600 .875rem/1.4 system-ui,sans-serif}\n.bb-campus-account details{position:relative}\n.bb-campus-account summary{display:flex;align-items:center;gap:.55rem;cursor:pointer;list-style:none;padding:.38rem .7rem;border:1px solid #527197;border-radius:.55rem;color:#fff}\n.bb-campus-account summary::-webkit-details-marker{display:none}\n.bb-campus-account summary::after{content:\"\";width:.42rem;height:.42rem;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin-top:-.2rem}\n.bb-campus-account details[open] summary::after{transform:rotate(225deg);margin-top:.2rem}\n.bb-campus-account summary:hover{background:#203b62}\n.bb-campus-account-panel{position:absolute;inset-inline-end:0;min-width:10.5rem;margin-top:.35rem;padding:.3rem;background:#fff;border:1px solid #d6e0ee;border-radius:.55rem;box-shadow:0 .5rem 1.4rem #0d203d33}\n.bb-campus-account-panel a{display:block;padding:.5rem .65rem;border-radius:.3rem;color:#152c4d;text-decoration:none;white-space:nowrap}\n.bb-campus-account-panel a:hover,.bb-campus-account-panel a:focus-visible{background:#eaf1fa}\n.bb-campus-account :focus-visible{outline:2px solid #428df0;outline-offset:2px}";
+const ACCOUNT_MENU = "<div class=\"bb-campus-account\"><details><summary>Mi cuenta</summary><div class=\"bb-campus-account-panel\" role=\"navigation\" aria-label=\"Cuenta de Campus\"><a href=\"/__campus/profile\" target=\"_top\">Mi perfil</a><a href=\"/__campus/logout\" target=\"_top\">Cerrar sesión</a></div></details></div>";
 const PUBLIC = new Set([
   "/", "/index.html", "/badbear-campus/", CAMPUS,
   "/badbear-campus/student.js", "/badbear-campus/core.js", "/badbear-campus/results.js",
@@ -31,6 +34,12 @@ export default {
     const guard = await campusGate(request, env.CAMPUS, path => PUBLIC.has(path));
     if (guard) return guard;
     if (request.method !== "GET" && request.method !== "HEAD") return reply(405, {Allow: "GET, HEAD"});
+
+    if (url.pathname === ACCOUNT_CSS_PATH) {
+      return new Response(request.method === "HEAD" ? null : ACCOUNT_CSS, {
+        headers: {"Content-Type": "text/css; charset=utf-8", "Cache-Control": "private, no-store"},
+      });
+    }
 
     try {
       const file = env.LARGE_ASSETS_MANIFEST?.[decodeURIComponent(url.pathname).slice(1)];
@@ -78,11 +87,14 @@ export default {
           /^text\/html(?:;|$)/i.test(headers.get("Content-Type") || "")) {
         headers.delete("Content-Length");
         headers.delete("ETag");
-        return new HTMLRewriter().on("body", {
-          element(body) {
-            body.prepend('<nav aria-label="Cuenta de Campus"><a href="/__campus/profile" target="_top">Mi perfil</a> · <a href="/__campus/logout" target="_top">Cerrar sesión</a></nav>', {html: true});
-          },
-        }).transform(new Response(asset.body, {status: asset.status, headers}));
+        return new HTMLRewriter()
+          .on("head", {element(head) {
+            head.append(`<link rel="stylesheet" href="${ACCOUNT_CSS_PATH}">`, {html: true});
+          }})
+          .on("body", {element(body) {
+            body.prepend(ACCOUNT_MENU, {html: true});
+          }})
+          .transform(new Response(asset.body, {status: asset.status, headers}));
       }
       return new Response(asset.body, {status: asset.status, headers});
     } catch {
