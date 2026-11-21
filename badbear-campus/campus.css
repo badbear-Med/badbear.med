@@ -30,3 +30,11 @@ tbody tr:nth-child(even){background:#fafafb}
 summary,.eyebrow{color:#242424}
 .grade.grade-high{color:#218658!important}
 .grade.grade-low{color:#be3046!important}
+
+
+#manage-form { margin-top: 1.25rem; scroll-margin-top: 1rem; }
+#manage-form .row { flex-wrap: wrap; }
+.student-grade { border: 1px solid #dbe5ed; border-radius: 9px; padding: 12px; margin: 9px 0; }
+.student-grade strong { display: block; margin-bottom: .6rem; }
+#manage-list .table-wrap { max-height: 420px; overflow: auto; }
+#manage-list button { white-space: nowrap; }
