@@ -31,7 +31,7 @@ export default {
     }
     if (url.origin !== HOME) return reply(421);
 
-    const guard = await campusGate(request, env.CAMPUS, path => PUBLIC.has(path));
+    const guard = await campusGate(request, env.CAMPUS, path => PUBLIC.has(path), env.LARGE_ASSETS);
     if (guard) return guard;
     if (request.method !== "GET" && request.method !== "HEAD") return reply(405, {Allow: "GET, HEAD"});
 
