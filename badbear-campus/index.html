@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BADBEAR.CAMPUS | Portal del estudiante</title><meta name="description" content="Portal del estudiante de BADBEAR.CAMPUS. Consulta privada de resultados académicos."><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src &#39;self&#39; https://badbear-campus-api.wajomea-group.workers.dev; base-uri 'none'; form-action 'none'; object-src 'none'"><link rel="icon" href="../dermatologia/badbear_logo.png"><link rel="stylesheet" href="campus.css?v=20261011-colornotas1"><link rel="stylesheet" href="student-portal.css?v=20261121-menu2"><link rel="stylesheet" href="campus-vivid.css?v=20261012-vivo1"><script type="module" src="student.js?v=20261121-menu2"></script>  <link rel="stylesheet" href="../assets/css/clean-navigation.css?v=20261011-clean-navigation2">
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BADBEAR.CAMPUS | Portal del estudiante</title><meta name="description" content="Portal del estudiante de BADBEAR.CAMPUS. Consulta privada de resultados académicos."><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src &#39;self&#39; https://badbear-campus-api.wajomea-group.workers.dev; base-uri 'none'; form-action 'none'; object-src 'none'"><link rel="icon" href="../dermatologia/badbear_logo.png"><link rel="stylesheet" href="campus.css?v=20261011-colornotas1"><link rel="stylesheet" href="student-portal.css?v=20261121-panel1"><link rel="stylesheet" href="campus-vivid.css?v=20261012-vivo1"><script type="module" src="student.js?v=20261121-panel1"></script>  <link rel="stylesheet" href="../assets/css/clean-navigation.css?v=20261011-clean-navigation2">
 </head>
 <body class="student-portal">
 <header class="portal-header"><a class="brand" href="index.html" aria-label="BADBEAR.CAMPUS, inicio"><img src="../dermatologia/badbear_logo.png" width="48" height="48" alt=""><span class="brand-wordmark">BADBEAR.<strong>CAMPUS</strong><small>PORTAL ACADÉMICO</small></span></a><details class="campus-menu" id="campus-menu"><summary>Menú del Campus</summary><nav aria-label="Navegación del Campus"><a href="#portal">Inicio</a><a href="#portal" data-campus-section="med">BADBEAR.MED</a><a href="#portal" data-campus-section="calificaciones">Calificaciones</a><a href="#portal" data-campus-section="biblioteca">Biblioteca</a><a href="#portal" data-campus-section="proyectos">Más proyectos</a><a href="#portal" data-campus-section="perfil">Perfil</a><a class="group-link" href="../index.html">WAJOMEA.GROUP</a><button type="button" id="campus-menu-logout" hidden>Cerrar sesión</button></nav></details></header>
@@ -15,8 +15,8 @@
 <aside class="panel accent access-guide"><span class="eyebrow">TU PRIMER INGRESO</span><h2>Comienza aquí</h2><p>Tu cuenta te acompaña en todos tus cursos.</p><ol class="steps"><li><strong>Solicita tu enlace</strong><span>Abre «Activa o recupera tu cuenta por correo» e ingresa tu código de alumno.</span></li><li><strong>Crea tu contraseña</strong><span>Revisa tu correo y abre el enlace para configurar tu acceso personal.</span></li><li><strong>Consulta tus resultados</strong><span>Ingresa con tu código y contraseña. Tus cursos aparecerán cuando se publiquen tus evaluaciones.</span></li></ol><p class="guide-note">¿Olvidaste tu contraseña? Solicita un nuevo enlace desde la misma opción.</p></aside></div>
 <div id="status" class="status" role="status" aria-live="polite"></div>
 <section id="email-finish" class="panel" hidden><span class="eyebrow">TU ACCESO PERSONAL</span><h2>Crea tu nueva contraseña</h2><p class="hint">Este enlace permite activar tu cuenta o recuperar el acceso. Usa de 12 a 128 caracteres y una contraseña diferente a tu código de alumno.</p><form id="email-confirm"><label for="email-password">Nueva contraseña</label><input id="email-password" type="password" autocomplete="new-password" required minlength="12" maxlength="128"><label for="email-repeat">Repite la contraseña</label><input id="email-repeat" type="password" autocomplete="new-password" required minlength="12" maxlength="128"><div class="row"><button type="submit">Guardar contraseña</button><button id="email-cancel" type="button" class="secondary">Volver al inicio</button></div></form></section>
-<section id="results" class="panel" hidden>
-<div class="welcome"><div><span class="eyebrow">MI ESPACIO ACADÉMICO</span><h2 id="student-name"></h2><span id="student-code" class="tag"></span></div><button id="logout" type="button" class="secondary">Cerrar sesión</button></div>
+<section id="results" class="panel campus-workspace" hidden>
+<div class="welcome"><div><span class="eyebrow">PANEL DEL ESTUDIANTE</span><h2 id="student-name"></h2><span id="student-code" class="tag"></span></div><button id="logout" type="button" class="secondary">Cerrar sesión</button></div>
 <nav class="student-tabs" aria-label="Navegación de estudiante">
   <button type="button" data-section="med" class="selected">BADBEAR.MED</button>
   <button type="button" data-section="calificaciones">Calificaciones</button>
@@ -26,16 +26,41 @@
 </nav>
 
 <div class="tab-section" data-view="med">
-  <section class="campus-dashboard" id="campus-dashboard" style="display:block" aria-label="BADBEAR.MED y cursos">
-    <div class="campus-dashboard-heading"><div><span class="eyebrow">ÁREA MÉDICA</span><h3>BADBEAR.MED</h3></div><span id="campus-progress-status">Consultando avance…</span></div>
-    <div class="campus-dashboard-grid">
-      <article class="campus-course"><strong>BADBEAR.MED</strong><p>Accede a las especialidades, clases, materiales y recursos médicos disponibles en tu cuenta.</p><a href="../badbear-med.html" class="campus-course-link">Entrar a BADBEAR.MED</a></article>
-      <article class="campus-course"><strong>Cirugía BATIMIX</strong><p>5 unidades, 25 clases y 5 recursos previstos por clase. Iniciamos con Tuberculosis pulmonar.</p><a href="aula-batimix.html" class="campus-course-link">Entrar al aula de Cirugía BATIMIX</a></article>
-      <article class="campus-course"><strong>Cirugía General</strong><p>24 clases organizadas en Teorías, Seminarios, Sabatinas y Talleres.</p><div class="campus-progress-track"><div id="campus-progress-fill"></div></div><p id="campus-progress-count">Progreso en preparación</p><a href="aula-cirugia.html" class="campus-course-link">Entrar al aula de Cirugía General</a></article>
-    </div>
-    <p><a class="campus-course-link" href="clases-en-vivo.html" target="_top">Clases en vivo de tus cursos</a></p>
-    <p class="campus-dashboard-note">Tu progreso de estudio es independiente de tus calificaciones oficiales. <strong id="campus-results-count">0</strong> evaluaciones publicadas en tu cuenta.</p>
-  </section>
+  <div class="campus-overview">
+    <section class="campus-feature" aria-labelledby="campus-med-title">
+      <div>
+        <h3 id="campus-med-title">BADBEAR.MED</h3>
+        <p>Especialidades, clases y materiales de estudio en un solo lugar.</p>
+        <a class="campus-feature-link" href="../badbear-med.html">Abrir BADBEAR.MED <span aria-hidden="true">→</span></a>
+      </div>
+      <img src="../dermatologia/badbear_logo.png" width="112" height="112" alt="">
+    </section>
+    <section class="campus-classrooms" aria-labelledby="campus-classroom-title">
+      <div class="campus-classroom-heading">
+        <h3 id="campus-classroom-title">Aulas y progreso</h3>
+        <span id="campus-progress-status" role="status">Consultando avance…</span>
+      </div>
+      <div class="campus-classroom-grid">
+        <article class="campus-classroom">
+          <h4>Cirugía General</h4>
+          <p>Teorías, seminarios, sabatinas y talleres.</p>
+          <progress id="campus-progress-fill" max="24" value="0" aria-label="Clases estudiadas en Cirugía General" aria-describedby="campus-progress-count"></progress>
+          <p id="campus-progress-count">Progreso en preparación</p>
+          <a class="campus-classroom-link" href="aula-cirugia.html">Abrir aula de Cirugía General <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="campus-classroom">
+          <h4>Cirugía BATIMIX</h4>
+          <p>5 unidades y 25 clases de repaso quirúrgico.</p>
+          <a class="campus-classroom-link" href="aula-batimix.html">Abrir aula de Cirugía BATIMIX <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+      <div class="campus-live">
+        <div><h4>Clases en vivo</h4><p>Consulta los encuentros de tus cursos.</p></div>
+        <a class="campus-classroom-link" href="clases-en-vivo.html" target="_top">Ver clases en vivo <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="campus-grade-note" id="campus-results-summary" hidden><strong id="campus-results-count">0</strong> evaluaciones publicadas. El avance de estudio se registra por separado.</p>
+    </section>
+  </div>
 </div>
 
 <div class="tab-section" data-view="calificaciones" hidden>
@@ -65,7 +90,7 @@
 </div>
 
 <div class="tab-section" data-view="perfil" hidden>
-  <h3>Mi perfil</h3><p>Consulta tu información académica en el encabezado y utiliza «Cerrar sesión» cuando termines.</p>
+  <h3>Mi perfil</h3><p>Consulta tus datos académicos y administra tu foto.</p><a class="campus-classroom-link" href="/__campus/profile">Abrir mi perfil completo <span aria-hidden="true">→</span></a>
 </div>
 </section>
 <section class="learning-area" aria-label="Acceso centralizado"><div class="panel"><span class="eyebrow">ACCESO CENTRALIZADO</span><h2>Todos los cursos y proyectos se abren desde tu cuenta.</h2><p>Inicia sesión en BADBEAR.CAMPUS. Después encontrarás BADBEAR.MED, calificaciones, biblioteca, más proyectos y tu perfil dentro de tu espacio privado.</p></div></section>
