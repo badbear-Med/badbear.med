@@ -199,3 +199,77 @@
 .student-portal .tab-section[data-view="inicio"] p{color:#536c7a;margin:0}
 .student-portal .tab-section[data-view="biblioteca"] a{display:inline-flex;background:#e8f3f7;padding:11px 16px;border-radius:9px;text-decoration:none;font-weight:700}
 @media(max-width:650px){.student-portal .student-tabs button{flex:1 1 120px}.student-portal .tab-section[data-view="inicio"]{padding:20px}}
+
+.student-portal .portal-header .campus-menu {
+  position: relative;
+  z-index: 10;
+  margin-inline-start: auto;
+}
+.student-portal .campus-menu > summary {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .55rem .8rem;
+  border: 1px solid #cbd9e9;
+  border-radius: .65rem;
+  background: #eef5ff;
+  color: #16385e;
+  font: 650 .875rem/1.4 system-ui, sans-serif;
+  cursor: pointer;
+}
+.student-portal .campus-menu > summary::after {
+  content: "";
+  width: .42rem;
+  height: .42rem;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: translateY(-2px) rotate(45deg);
+}
+.student-portal .campus-menu[open] > summary::after {
+  transform: translateY(2px) rotate(225deg);
+}
+.student-portal .campus-menu > nav {
+  position: absolute;
+  inset-inline-end: 0;
+  top: calc(100% + .35rem);
+  display: grid;
+  gap: .15rem;
+  width: min(14rem, calc(100vw - 2rem));
+  max-height: min(65vh, 26rem);
+  overflow: auto;
+  box-sizing: border-box;
+  padding: .35rem;
+  border: 1px solid #d5e1ee;
+  border-radius: .7rem;
+  background: #fff;
+  box-shadow: 0 .5rem 1.4rem #0d203d26;
+}
+.student-portal .campus-menu:not([open]) > nav {
+  display: none;
+}
+.student-portal .campus-menu nav a,
+.student-portal .campus-menu nav .group-link,
+.student-portal .campus-menu nav button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .52rem .65rem;
+  border: 0;
+  border-radius: .4rem;
+  background: transparent;
+  color: #16385e;
+  font: 600 .84rem/1.4 system-ui, sans-serif;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+}
+.student-portal .campus-menu nav button[hidden] {
+  display: none;
+}
+.student-portal .campus-menu nav a:hover,
+.student-portal .campus-menu nav button:hover {
+  background: #eef5ff;
+}
+.student-portal .campus-menu :focus-visible {
+  outline: 2px solid #2c6db5;
+  outline-offset: -2px;
+}
