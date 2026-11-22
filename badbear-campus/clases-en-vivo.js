@@ -5,6 +5,8 @@ const refreshButton = $("live-refresh");
 const enterButton = $("live-enter");
 const endButton = $("live-end");
 const exitButton = $("live-exit");
+const recordButton = $("live-record");
+const recordHelp = $("live-record-help");
 const status = $("live-status");
 const mount = $("live-meeting");
 const signIn = $("live-sign-in");
@@ -20,6 +22,9 @@ let loadedApp;
 let sdk;
 let busy = false;
 let closedToCampus = false;
+let joined = false;
+let recording = false;
+let recordingTimer;
 
 for (const { id, nombre } of courses) selector.add(new Option(nombre, id));
 if (courses.some(course => course.id === requested)) selector.value = requested;
@@ -51,7 +56,11 @@ function controls() {
     state?.esAnfitrion ? "Volver como anfitrión" : "Entrar como invitado";
   endButton.hidden = !api || !access?.esAnfitrion || closedToCampus;
   exitButton.hidden = !api;
-  endButton.disabled = exitButton.disabled = busy;
+  const canRecord = Boolean(api && joined && access?.esAnfitrion);
+  recordButton.hidden = recordHelp.hidden = !canRecord;
+  recordButton.disabled = busy || Boolean(recordingTimer);
+  recordButton.textContent = recording ? "Detener grabación local" : "Grabar en este equipo";
+  endButton.disabled = exitButton.disabled = busy || recording || Boolean(recordingTimer);
 }
 
 function report(error) {
@@ -123,7 +132,36 @@ function loadSDK(appId) {
   });
 }
 
+function clearRecordingTimer() {
+  clearTimeout(recordingTimer);
+  recordingTimer = undefined;
+}
+
+function toggleRecording() {
+  if (!api || !joined || !access?.esAnfitrion || busy || recordingTimer) return;
+  const stopping = recording;
+  const meeting = api;
+  message(stopping ? "Deteniendo grabación local…" : "Solicitando grabación local…");
+  recordingTimer = setTimeout(() => {
+    clearRecordingTimer();
+    if (api !== meeting) return;
+    message("Jitsi no confirmó el cambio de grabación. Revisa los avisos en la sala.", true);
+    controls();
+  }, 45000);
+  controls();
+  try {
+    if (stopping) meeting.executeCommand("stopRecording", "local");
+    else meeting.executeCommand("startRecording", {mode: "local", onlySelf: false});
+  } catch {
+    clearRecordingTimer();
+    message("No se pudo usar la grabación local en esta sala.", true);
+    controls();
+  }
+}
+
 function leave() {
+  clearRecordingTimer();
+  joined = recording = false;
   const previous = api;
   api = access = undefined;
   closedToCampus = false;
@@ -153,6 +191,7 @@ async function openMeeting() {
       configOverwrite: {
         prejoinConfig: { hideDisplayName: true },
         readOnlyName: true,
+        localRecording: {disable: false, notifyAllParticipants: true},
         startWithAudioMuted: true,
         startWithVideoMuted: true
       }
@@ -160,11 +199,22 @@ async function openMeeting() {
     api = meeting;
     access = { sala: access.sala, esAnfitrion: access.esAnfitrion };
     meeting.getIFrame().title = "Videollamada de " + state.curso;
+    meeting.addListener("recordingStatusChanged", ({mode, on, error}) => {
+      if (api !== meeting || mode !== "local") return;
+      clearRecordingTimer();
+      if (typeof on === "boolean") recording = on;
+      message(error ? "Jitsi indicó un error de grabación local." : recording
+        ? "Grabación local en curso."
+        : "Grabación local detenida. Revisa las descargas del navegador.", Boolean(error));
+      controls();
+    });
     meeting.addListener("videoConferenceJoined", async () => {
       if (api !== meeting) return;
+      joined = true;
+      controls();
       try {
         if (access.esAnfitrion) await post(endpoint("abrir"), sessionToken(), { sala: access.sala });
-        if (api === meeting) message("Estás en la reunión.");
+        if (api === meeting && !recordingTimer && !recording) message("Estás en la reunión.");
       } catch (error) {
         if (api === meeting) report(error);
       }
@@ -211,6 +261,7 @@ async function endMeeting() {
 selector.addEventListener("change", refresh);
 refreshButton.addEventListener("click", refresh);
 enterButton.addEventListener("click", openMeeting);
+recordButton.addEventListener("click", toggleRecording);
 endButton.addEventListener("click", endMeeting);
 exitButton.addEventListener("click", () => { leave(); void refresh(); });
 void refresh();

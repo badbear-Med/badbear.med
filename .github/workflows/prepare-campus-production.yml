@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/prepare-campus-production.yml
       - badbear-campus/gateway/**
+      - badbear-campus/clases-en-vivo.*
       - badbear-campus/index.html
       - badbear-campus/student.js
       - badbear-campus/student-portal.css
