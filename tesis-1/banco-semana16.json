@@ -1,0 +1,451 @@
+[
+  {
+    "id": 1,
+    "topic": "Diseño",
+    "prompt": "El nivel de investigación que no requiere hipótesis ni estadística es:",
+    "options": [
+      "Aplicativo",
+      "Explicativo",
+      "Exploratorio",
+      "Relacional",
+      "Predictivo"
+    ],
+    "key": 2,
+    "reason": "La clave es exploratorio. Explorar un problema poco conocido no exige hipótesis formal ni estadística inferencial; sí puede incluir estadísticas descriptivas.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 2,
+    "topic": "Variables",
+    "prompt": "En “Atención en poblaciones excluidas y desarrollo de recursos humanos en las fuerzas armadas”, distinga la variable independiente según la clave del curso.",
+    "options": [
+      "Desarrollo de recursos humanos",
+      "Atención en poblaciones excluidas",
+      "Ninguna",
+      "Todas",
+      "Fuerzas armadas"
+    ],
+    "key": 1,
+    "reason": "La clave toma la atención como predictor y el desarrollo como resultado. El título solo no establece causalidad ni dirección: verifique el objetivo y el diseño.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 3,
+    "topic": "Planeamiento",
+    "prompt": "Son etapas de la investigación cuantitativa según el esquema del curso:",
+    "options": [
+      "Preparatoria, trabajo de campo, analítica e informativa",
+      "Planeamiento, organización, implementación, ejecución, evaluación y resultados",
+      "Diagnóstico, seguimiento, evaluación, resultados y recomendaciones",
+      "Todas",
+      "Ninguna"
+    ],
+    "key": 1,
+    "reason": "El curso usa seis etapas. Los nombres y la agrupación de fases pueden variar entre manuales.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 4,
+    "topic": "Diseño",
+    "prompt": "Respecto a la relación objeto–sujeto en el enfoque cuantitativo clásico, marque la respuesta esperada.",
+    "options": [
+      "El investigador decide y el investigado es tratado como objeto pasivo",
+      "Ninguna",
+      "Se define y construye al planificar",
+      "Todas",
+      "Ambos participan en todos los momentos"
+    ],
+    "key": 0,
+    "reason": "La clave alude al control del diseño y la medición por el investigador. Esa caracterización clásica no elimina la autonomía ni la participación de las personas.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 5,
+    "topic": "Planeamiento",
+    "prompt": "Respecto a la matriz de consistencia, marque lo correcto.",
+    "options": [
+      "Resume los principales elementos del proyecto",
+      "No necesita considerar título, problema, objetivos ni hipótesis específicas",
+      "No es un instrumento de ponderación",
+      "Nunca deben codificarse sus componentes",
+      "Solo se elabora al terminar el proyecto"
+    ],
+    "key": 0,
+    "reason": "Su función principal es hacer visible la coherencia del proyecto. Se puede revisar durante el diseño y la estructura se adapta al estudio.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 6,
+    "topic": "Planeamiento",
+    "prompt": "En el planeamiento, ¿qué fundamenta conceptualmente el problema y los objetivos?",
+    "options": [
+      "Planteamiento del problema",
+      "Metodología",
+      "Justificación",
+      "Aspectos administrativos",
+      "Marco teórico"
+    ],
+    "key": 4,
+    "reason": "El marco teórico organiza el conocimiento previo y contextualiza conceptos. La justificación explica la importancia y la metodología describe cómo se investigará.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 7,
+    "topic": "Ética y RSU",
+    "prompt": "Respecto al consentimiento informado, marque lo correcto.",
+    "options": [
+      "Es una guía para el diseño",
+      "Debe ser lo más corto posible",
+      "Termina con la firma",
+      "Los niños firman el consentimiento informado",
+      "Aplica la autonomía y el respeto a la voluntad"
+    ],
+    "key": 4,
+    "reason": "Es un proceso continuo de información, comprensión y decisión voluntaria. La firma documenta el proceso; en menores distinga asentimiento y autorización del representante.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 8,
+    "topic": "Instrumentos",
+    "prompt": "Respecto a la lista de cotejo, marque lo correcto.",
+    "options": [
+      "Cuestionario escrito",
+      "Encuesta escrita",
+      "Instrumento de observación de campo",
+      "Libreta no estructurada",
+      "Ficha de análisis documental"
+    ],
+    "key": 2,
+    "reason": "Una lista de cotejo registra de forma estructurada si cada conducta o característica se observa, usualmente con categorías como sí y no.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 9,
+    "topic": "Variables",
+    "prompt": "En “Aseguramiento en salud y la descentralización de EsSalud”, distinga la variable dependiente según la clave del curso.",
+    "options": [
+      "Aseguramiento en salud",
+      "Ninguna",
+      "Descentralización",
+      "EsSalud",
+      "Todas"
+    ],
+    "key": 0,
+    "reason": "La clave plantea el aseguramiento como resultado y la descentralización como posible predictor. La dirección se define en el objetivo, no por el orden del título.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 10,
+    "topic": "Ética y RSU",
+    "prompt": "Respecto a la ética, marque la opción esperada por el banco.",
+    "options": [
+      "La ética alude aquí a normas asumidas por la persona y la moral a normas transmitidas socialmente",
+      "Los mayores de 12 años no pueden participar en investigación biomédica",
+      "La deontología del nutricionista no contempla la investigación",
+      "Puede iniciarse el estudio sin la revisión ética aplicable"
+    ],
+    "key": 0,
+    "reason": "Es la distinción didáctica de este banco. En filosofía, ética también designa la reflexión crítica sobre la moral; no existe una prohibición general basada solo en tener más de 12 años.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 11,
+    "topic": "Instrumentos",
+    "prompt": "La confiabilidad del instrumento se refiere a:",
+    "options": [
+      "Medir una variable distinta",
+      "No medir la variable propuesta",
+      "Obtener resultados consistentes al repetir la medición en condiciones comparables",
+      "Obtener el mismo resultado en sujetos distintos",
+      "Obtener resultados similares sin especificar condiciones"
+    ],
+    "key": 2,
+    "reason": "La confiabilidad es consistencia. Un instrumento puede ser reproducible y aun así medir sistemáticamente mal.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 12,
+    "topic": "Instrumentos",
+    "prompt": "La validez de un instrumento se refiere a:",
+    "options": [
+      "Resultados similares a los previos",
+      "Consistencia al medir al mismo sujeto",
+      "Resultados iguales entre sujetos distintos",
+      "No medir la variable propuesta",
+      "Medir la variable que se pretende medir"
+    ],
+    "key": 4,
+    "reason": "La validez se refiere a la evidencia que respalda la interpretación de la medición para un propósito. Repetibilidad por sí sola no la demuestra.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 13,
+    "topic": "Ética y RSU",
+    "prompt": "¿Qué documento sistematiza respeto por las personas, beneficencia y justicia como principios de investigación con seres humanos?",
+    "options": [
+      "Declaración de Helsinki",
+      "Informe Belmont",
+      "Juramento Hipocrático",
+      "Código de Núremberg",
+      "Declaración de Ginebra"
+    ],
+    "key": 1,
+    "reason": "Belmont formula ese tríptico. Núremberg y Helsinki son antecedentes y referencias éticas relevantes, por eso se precisó el enunciado original.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 14,
+    "topic": "Ética y RSU",
+    "prompt": "¿Cuál es una aplicación del principio de autonomía en investigación?",
+    "options": [
+      "Validez del instrumento",
+      "Protocolo de investigación",
+      "Plan de análisis",
+      "Consentimiento informado",
+      "Matriz de consistencia"
+    ],
+    "key": 3,
+    "reason": "La persona decide libremente tras recibir y comprender la información pertinente.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 15,
+    "topic": "Gestión",
+    "prompt": "El presupuesto, según la clasificación del curso, comprende:",
+    "options": [
+      "Actividades, bienes y servicios",
+      "Personal, bienes y servicios",
+      "Personal, bibliografía y servicios",
+      "Personal, bienes y ejecución",
+      "Tiempo, bienes y servicios"
+    ],
+    "key": 1,
+    "reason": "La clasificación separa costos de recursos humanos, adquisiciones y servicios. El tiempo se organiza principalmente en el cronograma.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 16,
+    "topic": "Fuentes",
+    "prompt": "¿Qué técnica de esta lista se usa al trabajar con información documental ya existente?",
+    "options": [
+      "Entrevistas",
+      "Sondeos",
+      "Observación",
+      "Encuestas",
+      "Subrayado"
+    ],
+    "key": 4,
+    "reason": "Subrayar ayuda a trabajar con documentos existentes. Es una técnica de lectura y no una fuente en sí; el documento puede ser primario o secundario según su origen.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 17,
+    "topic": "Ética y RSU",
+    "prompt": "¿Cómo caracteriza el banco la Responsabilidad Social Universitaria?",
+    "options": [
+      "Compromiso unilateral obligatorio",
+      "Extensión solidaria únicamente",
+      "Gestión justa y sostenible de los impactos universitarios",
+      "Revisión de la legitimidad sin gestión de impactos",
+      "Mercantilización de la universidad"
+    ],
+    "key": 2,
+    "reason": "La RSU abarca los impactos de la formación, la investigación, la gestión institucional y la relación con la sociedad.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 18,
+    "topic": "Fuentes",
+    "prompt": "¿Cuál técnica puede producir información primaria por obtención directa?",
+    "options": [
+      "Gráficas e ilustraciones",
+      "Análisis de contenido",
+      "Resumen analítico",
+      "Fichaje",
+      "Observación"
+    ],
+    "key": 4,
+    "reason": "El registro directo de un fenómeno genera datos primarios para el estudio. Una gráfica o un resumen pueden presentar información ya existente.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 19,
+    "topic": "Planeamiento",
+    "prompt": "¿Qué conjunto resume mejor una matriz de consistencia en el formato del curso?",
+    "options": [
+      "Problemas, objetivos, hipótesis, variables y operacionalización",
+      "Problemas, objetivos, hipótesis, variables, indicadores y métodos o técnicas",
+      "Justificación en lugar de problemas",
+      "Marco teórico en lugar de problemas",
+      "Factibilidad en lugar de problemas"
+    ],
+    "key": 1,
+    "reason": "La opción integra el problema con los objetivos, la medición y la metodología. La hipótesis se incluye cuando corresponde al enfoque y objetivo.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 20,
+    "topic": "Instrumentos",
+    "prompt": "¿Qué conjunto de criterios es razonable para diseñar y aplicar un cuestionario?",
+    "options": [
+      "Una población pequeña siempre exige un censo",
+      "Todas las preguntas deben ser cerradas",
+      "El anonimato garantiza confiabilidad",
+      "La confidencialidad es irrelevante",
+      "Considerar un censo si es viable, elegir el tipo de pregunta según el objetivo y proteger la privacidad"
+    ],
+    "key": 4,
+    "reason": "Se precisó la pregunta original: el anonimato puede reducir algunos sesgos de respuesta, pero no garantiza confiabilidad. El censo es una opción, no una obligación.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 21,
+    "topic": "Ética y RSU",
+    "prompt": "Marque lo correcto respecto a la difusión de resultados.",
+    "options": [
+      "Publicar solo lo que coincide con la hipótesis",
+      "Basta respetar el Juramento Hipocrático",
+      "Basta informar al patrocinador",
+      "Difundir también los resultados negativos o no concluyentes",
+      "Iniciar investigación con personas sin revisión ética aplicable"
+    ],
+    "key": 3,
+    "reason": "Informar resultados negativos e inconclusos reduce el sesgo de publicación y permite evaluar el conjunto de la evidencia.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 22,
+    "topic": "Gestión",
+    "prompt": "¿Qué se programa en los aspectos administrativos de un proyecto según el banco?",
+    "options": [
+      "Solo los financiamientos",
+      "Recursos y tiempo de formulación",
+      "Solo presupuesto y actividades",
+      "Recursos y tiempo para ejecutar la investigación",
+      "Únicamente recursos y presupuesto"
+    ],
+    "key": 3,
+    "reason": "La respuesta combina qué recursos se necesitan y cuándo se ejecutarán las actividades. Presupuesto y cronograma cumplen funciones complementarias.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 23,
+    "topic": "Gestión",
+    "prompt": "¿Qué muestra principalmente el diagrama de Gantt?",
+    "options": [
+      "Recursos y tiempo",
+      "Presupuesto y tareas",
+      "Financiamiento y tareas",
+      "Actividades distribuidas en el tiempo",
+      "Recursos y actividades"
+    ],
+    "key": 3,
+    "reason": "Cada barra muestra cuándo comienza y termina una actividad y permite ver superposiciones.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 24,
+    "topic": "Instrumentos",
+    "prompt": "¿Qué conjunto describe buenas prácticas al realizar una entrevista de investigación?",
+    "options": [
+      "Entrevistar equivale a aplicar un cuestionario cerrado",
+      "La influencia del entrevistador no importa",
+      "Grabar siempre es obligatorio",
+      "Se puede grabar sin informar",
+      "Usar el diálogo, reducir sesgos y grabar cuando sea pertinente y esté autorizado"
+    ],
+    "key": 4,
+    "reason": "Se precisó la pregunta original: registrar audio o video es opcional y requiere autorización. Capacitación y preguntas neutrales ayudan a reducir sesgos.",
+    "source": "Aportada · adaptada para estudio"
+  },
+  {
+    "id": 25,
+    "topic": "Diseño",
+    "prompt": "Un equipo mide exposición y enfermedad en una única visita a cada participante. ¿Qué diseño describe mejor el estudio?",
+    "options": [
+      "Cohorte prospectiva",
+      "Transversal",
+      "Ensayo aleatorizado",
+      "Casos y controles",
+      "Serie temporal"
+    ],
+    "key": 1,
+    "reason": "El diseño transversal mide variables en un momento o periodo breve y permite estimar prevalencia. La secuencia temporal puede quedar incierta.",
+    "source": "Práctica original"
+  },
+  {
+    "id": 26,
+    "topic": "Variables",
+    "prompt": "Se estudia si las horas de sueño predicen el puntaje de un examen. ¿Cuál es el resultado?",
+    "options": [
+      "Horas de sueño",
+      "Edad",
+      "Puntaje del examen",
+      "Participantes",
+      "Horario de recolección"
+    ],
+    "key": 2,
+    "reason": "El resultado es el puntaje. Las horas de sueño son el predictor de interés; el diseño determinará qué inferencias son válidas.",
+    "source": "Práctica original"
+  },
+  {
+    "id": 27,
+    "topic": "Instrumentos",
+    "prompt": "Una balanza arroja repetidamente 3 kg por encima del valor de referencia. ¿Qué ocurre?",
+    "options": [
+      "Baja consistencia y exactitud perfecta",
+      "Buena consistencia y error sistemático",
+      "La validez se demuestra al repetir",
+      "Error exclusivamente aleatorio",
+      "No se puede identificar sesgo"
+    ],
+    "key": 1,
+    "reason": "Las mediciones repetidas coinciden entre sí, pero se apartan sistemáticamente de la referencia. Consistencia no equivale a exactitud.",
+    "source": "Práctica original"
+  },
+  {
+    "id": 28,
+    "topic": "Ética y RSU",
+    "prompt": "Una participante desea retirarse de un estudio. ¿Qué conducta respeta su autonomía?",
+    "options": [
+      "Exigir una explicación",
+      "Penalizarla",
+      "Respetar su decisión y explicar el manejo de los datos ya recogidos",
+      "Obligarla a completar las visitas",
+      "Publicar su identidad"
+    ],
+    "key": 2,
+    "reason": "El retiro debe ser voluntario y sin represalias. El uso de datos ya recogidos depende de lo informado y del protocolo aplicable.",
+    "source": "Práctica original"
+  },
+  {
+    "id": 29,
+    "topic": "Planeamiento",
+    "prompt": "El objetivo dice estimar prevalencia, pero el método solo analiza historias seleccionadas por presencia de la enfermedad. ¿Qué revisar primero?",
+    "options": [
+      "Ortografía del título",
+      "Cronograma",
+      "Coherencia entre objetivo, selección de participantes y denominador",
+      "Color de la matriz",
+      "Formato bibliográfico"
+    ],
+    "key": 2,
+    "reason": "Una selección basada solo en enfermos elimina el denominador necesario para estimar prevalencia en la población objetivo.",
+    "source": "Práctica original"
+  },
+  {
+    "id": 30,
+    "topic": "Fuentes",
+    "prompt": "Un equipo extrae datos ya recogidos de historias clínicas para su nuevo estudio. ¿Cómo usa esos datos?",
+    "options": [
+      "Primarios por estar en un hospital",
+      "Secundarios para ese estudio",
+      "Experimentales",
+      "Resultados propios de una entrevista",
+      "Aleatorizados"
+    ],
+    "key": 1,
+    "reason": "Son secundarios para el nuevo estudio porque fueron recogidos previamente con otro propósito.",
+    "source": "Práctica original"
+  }
+]
