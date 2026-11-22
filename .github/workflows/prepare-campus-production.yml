@@ -11,6 +11,8 @@ on:
       - badbear-campus/student.js
       - badbear-campus/student-portal.css
       - tesis-1/**
+      - cirugia-batimix/**
+      - badbear-campus/aula-batimix.html
       - tools/package-campus-site.py
   workflow_dispatch:
 
