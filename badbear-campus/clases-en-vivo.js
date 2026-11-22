@@ -9,6 +9,9 @@ const recordButton = $("live-record");
 const recordHelp = $("live-record-help");
 const status = $("live-status");
 const mount = $("live-meeting");
+const stage = $("live-stage");
+const fullscreen = $("live-fullscreen");
+const captureStatus = $("live-capture-status");
 const signIn = $("live-sign-in");
 const identity = $("live-identity");
 const requested = new URLSearchParams(location.search).get("curso");
@@ -59,11 +62,12 @@ function controls() {
     state?.esAnfitrion ? "Volver como anfitrión" : "Entrar como invitado";
   endButton.hidden = !api || !access?.esAnfitrion || closedToCampus;
   exitButton.hidden = !api;
+  fullscreen.hidden = !api || !document.fullscreenEnabled;
   const canRecord = Boolean(api && joined && access?.esAnfitrion);
   recordButton.hidden = recordHelp.hidden = !canRecord;
   recordButton.disabled = busy || selectingCapture;
   recordButton.textContent = recording ? "Detener grabación local" : "Grabar en este equipo";
-  endButton.disabled = exitButton.disabled = busy || recording || selectingCapture;
+  endButton.disabled = exitButton.disabled = busy || selectingCapture;
 }
 
 function report(error) {
@@ -146,6 +150,7 @@ async function toggleRecording() {
     return;
   }
   const meeting = api;
+  if (downloadUrl && !window.confirm("Si comienzas otra grabación, se reemplazará el archivo anterior. ¿Continuar?")) return;
   let display, microphone, mixer;
   const release = () => {
     for (const stream of [display, microphone, mixer?.destination.stream]) {
@@ -186,9 +191,9 @@ async function toggleRecording() {
         download.href = downloadUrl;
         download.download = "clase-campus-" + new Date().toISOString().replace(/[:.]/g, "-") + (mime.includes("mp4") ? ".mp4" : ".webm");
         download.hidden = false;
-        message("Grabación lista. Pulsa Descargar grabación para guardar el archivo.");
+        captureStatus.textContent = "Grabación lista para guardar en tu equipo.";
       } else {
-        message("El navegador no pudo generar el archivo de grabación.", true);
+        captureStatus.textContent = "El navegador no pudo generar el archivo de grabación.";
       }
       controls();
     });
@@ -196,9 +201,13 @@ async function toggleRecording() {
       if (local.state !== "inactive") local.stop();
     }, {once: true});
     local.start(1000);
+    if (downloadUrl) URL.revokeObjectURL(downloadUrl);
+    downloadUrl = undefined;
+    download.hidden = true;
+    download.removeAttribute("href");
     recorder = local;
     recording = true;
-    message("Grabación local en curso. El micrófono local también se está grabando.");
+    captureStatus.textContent = "Grabación local en curso. Incluye tu micrófono.";
   } catch (error) {
     release();
     const denied = ["NotAllowedError", "AbortError"].includes(error.name);
@@ -209,8 +218,13 @@ async function toggleRecording() {
   }
 }
 
-function leave() {
+function finishCapture() {
   if (recorder && recorder.state !== "inactive") recorder.stop();
+}
+
+function leave() {
+  finishCapture();
+  if (document.fullscreenElement === stage) void document.exitFullscreen().catch(() => {});
   joined = false;
   const previous = api;
   api = access = undefined;
@@ -286,6 +300,8 @@ async function endMeeting() {
     await post(endpoint("cerrar"), sessionToken(), { sala: access.sala });
     if (api === meeting) {
       closedToCampus = true;
+      finishCapture();
+      if (document.fullscreenElement === stage) void document.exitFullscreen().catch(() => {});
       meeting.executeCommand("endConference");
     }
     message("La sala del Campus está cerrada a nuevas entradas. Jitsi finalizará la llamada si esa opción está habilitada.");
@@ -302,6 +318,17 @@ selector.addEventListener("change", refresh);
 refreshButton.addEventListener("click", refresh);
 enterButton.addEventListener("click", openMeeting);
 recordButton.addEventListener("click", toggleRecording);
+fullscreen.addEventListener("click", async () => {
+  try {
+    if (document.fullscreenElement === stage) await document.exitFullscreen();
+    else await stage.requestFullscreen();
+  } catch {
+    captureStatus.textContent = "No se pudo cambiar a pantalla completa.";
+  }
+});
+document.addEventListener("fullscreenchange", () => {
+  fullscreen.textContent = document.fullscreenElement === stage ? "Salir de pantalla completa" : "Pantalla completa";
+});
 endButton.addEventListener("click", endMeeting);
 exitButton.addEventListener("click", () => { leave(); void refresh(); });
 void refresh();

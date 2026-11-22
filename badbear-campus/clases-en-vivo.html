@@ -8,9 +8,9 @@
   <title>Clases en vivo | BADBEAR.CAMPUS</title>
   <link rel="stylesheet" href="aula-batimix.css?v=20261115-aula">
   <link rel="stylesheet" href="batimix-en-vivo.css?v=1">
-  <link rel="stylesheet" href="clases-en-vivo.css?v=1">
+  <link rel="stylesheet" href="clases-en-vivo.css?v=local3">
   <script src="../assets/js/courses.js?v=en-vivo-1" defer></script>
-  <script src="clases-en-vivo.js?v=local2" type="module"></script>
+  <script src="clases-en-vivo.js?v=local3" type="module"></script>
 </head>
 <body class="batimix-aula live-page">
   <header class="campus-header">
@@ -37,13 +37,19 @@
       <p id="live-sign-in" hidden><a href="index.html" target="_top">Iniciar sesión en Campus</a>. Después vuelve a abrir la sala del curso.</p>
       <div class="live-actions">
         <button id="live-enter" type="button" hidden>Entrar a la reunión</button>
+      </div>
+      <section id="live-stage" class="live-stage" aria-label="Controles de la videollamada">
+      <div class="live-actions live-stage-actions">
+        <button id="live-fullscreen" type="button" class="live-quiet" hidden>Pantalla completa</button>
         <button id="live-record" type="button" hidden>Grabar en este equipo</button>
         <button id="live-end" type="button" class="live-quiet" hidden>Finalizar reunión</button>
         <button id="live-exit" type="button" class="live-quiet" hidden>Salir de la videollamada</button>
       </div>
       <p id="live-record-help" hidden>Avisa a los participantes antes de grabar. Selecciona esta pestaña, comparte su audio y autoriza el micrófono.</p>
-      <a id="live-record-download" hidden download>Descargar grabación</a>
+      <p id="live-capture-status" class="live-status" role="status" aria-live="polite"></p>
+      <a id="live-record-download" class="live-download" hidden download>Descargar grabación</a>
       <div id="live-meeting" class="live-meeting" role="region" aria-label="Videollamada del curso" hidden></div>
+      </section>
     </section>
   </main>
   <footer>BADBEAR.MED · WAJOMEA.GROUP</footer>
