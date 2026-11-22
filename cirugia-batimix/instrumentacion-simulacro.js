@@ -572,6 +572,14 @@ function grade(skipped) {
   source.target = "_blank";
   source.rel = "noopener noreferrer";
   feedback.append(atlas, source);
+  const pages = ({"metzenbaum":[10,11,12],"mayo-recta":[13,14,15],"mayo-curva":[13,14,15],"mangos-de-bisturi-n-3-y-4":[5],"pinza-de-diseccion-con-dientes":[25,26],"pinza-de-diseccion-sin-dientes":[25],"crile":[28],"kelly":[32],"halsted-o-mosquito":[27],"mayo-hegar":[64],"sonda-acanalada":[62],"backhaus":[37],"doyen-intestinal":[],"farabeuf":[68],"richardson":[],"deaver":[],"valva-maleable":[],"gosset-y-balfour":[67]})[item.anchor] || [];
+  if (item.id !== "gosset") for (const page of pages) {
+    const catalog = element("a", "TRIMED · pág. " + page);
+    catalog.href = "media/instrumentacion/catalogo-trimed.pdf#page=" + page;
+    catalog.target = "_blank";
+    catalog.rel = "noopener";
+    feedback.append(catalog);
+  }
   $("next").textContent = index === run.length - 1 ? "Ver resultado final" : "Siguiente estación";
   $("next").hidden = false;
   $("next").focus();
