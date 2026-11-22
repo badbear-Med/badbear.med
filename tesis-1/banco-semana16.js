@@ -55,6 +55,13 @@ function explanation(item, answer) {
   box.append(node("strong", correct ? "Correcto" : answer === undefined ? "Sin responder" : "Incorrecto"),
     node("p", "Respuesta correcta: " + item.options[item.key]),
     node("p", item.reason));
+  if (item.theory) {
+    const link = node("a", "Consultar teoría de esta pregunta");
+    link.href = item.theory;
+    link.target = "_blank";
+    link.rel = "noopener";
+    box.append(link);
+  }
   return box;
 }
 
@@ -127,6 +134,7 @@ async function init() {
     el("previous").addEventListener("click", () => { index--; render(true); });
     el("next").addEventListener("click", () => { index++; render(true); });
     el("finish").addEventListener("click", () => finish());
+    if ([...topic.options].some(option => option.value === params.get("tema"))) topic.value = params.get("tema");
     begin(false);
     if (params.get("modo") === "simulacro") {
       status.textContent = "Pulsa Iniciar simulacro cuando estés listo. Tendrás 10 minutos.";
