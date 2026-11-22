@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulacro visual de instrumentación · Cirugía BATIMIX</title>
+<link rel="stylesheet" href="instrumentacion.css?v=sim1">
+<script src="instrumentacion-simulacro.js" defer></script></head>
+<body><header class="mast"><div class="wrap"><a href="instrumentacion.html">← Atlas de Instrumentación</a><a href="index.html">Cirugía BATIMIX</a></div></header>
+<main class="wrap">
+<section class="hero"><p class="tag">CIRUGÍA BATIMIX</p><h1>Simulacro visual de instrumental</h1><p>Observa la foto y responde el nombre, el cuadrante o destino, y las funciones habituales de la pieza.</p></section>
+<section class="lesson sim" aria-label="Estación de reconocimiento">
+<div class="sim-actions"><button id="quick" type="button">20 instrumentos</button><button id="all" type="button">Todas las fotos · 34 estaciones</button></div>
+<p id="status" role="status">Elige una modalidad para empezar.</p>
+<div id="station" hidden>
+<h2 id="position" tabindex="-1"></h2>
+<figure class="sim-photo"><img id="photo" alt="Fotografía de un instrumento para identificar"></figure>
+<p id="image-error" hidden>No se pudo cargar esta foto. Usa «Saltar foto» para continuar.</p>
+<form id="answers">
+<div id="questions"></div>
+<div class="sim-actions"><button id="check" type="submit">Comprobar respuestas</button><button id="skip" type="button">Saltar foto</button></div>
+</form>
+<div id="feedback" class="sim-feedback" aria-live="polite"></div>
+<button id="next" type="button" hidden>Siguiente estación</button>
+</div>
+<section id="summary" hidden aria-label="Resultado"></section>
+</section></main><footer class="wrap">BADBEAR.MED · Cirugía BATIMIX</footer></body></html>

@@ -11,3 +11,20 @@
 .atlas-compare{background:#eaf3ff;border-inline-start:3px solid #2476a9;border-radius:.45rem;padding:.65rem .75rem;margin-top:.85rem}
 .atlas-compare h4{font-size:.88rem;line-height:1.4;margin:0}
 .atlas-compare p{font-size:.88rem;margin:.25rem 0 0}
+
+.routes .sim-launch{background:#84e4ef;color:#0b2948}
+.sim{max-width:64rem;margin:1rem auto}
+.sim-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:.85rem 0}
+.sim button,.sim select{font:inherit;border:1px solid #a9bfd5;border-radius:.55rem;padding:.48rem .75rem;background:#fff;color:#173b61}
+.sim button{cursor:pointer;font-weight:700}
+.sim button[type=submit],.sim #next{background:#174a7d;color:#fff;border-color:#174a7d}
+.sim button:disabled{opacity:.55;cursor:default}
+.sim-photo{margin:.75rem 0;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:.7rem}
+.sim-photo img{width:100%;height:clamp(13rem,42vw,28rem);object-fit:contain;background:#fff}
+.sim #questions{display:grid;gap:.7rem;min-width:0}
+.sim label{display:block;margin-bottom:.25rem;font-weight:750}
+.sim select{width:100%;text-overflow:ellipsis}
+.sim-feedback:not(:empty){padding:.8rem 1rem;margin:1rem 0;border-inline-start:4px solid #2476a9;background:#eaf3ff;border-radius:.45rem}
+.sim-feedback a{display:inline-block;margin-inline-end:.6rem}
+.sim :focus-visible{outline:3px solid #2485df;outline-offset:3px}
+.sim [hidden]{display:none!important}
