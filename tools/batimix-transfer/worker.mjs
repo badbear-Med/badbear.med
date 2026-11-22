@@ -1,73 +1,68 @@
 const FILES = {
-  "mesa.jpg": {
-    "bytes": 143756,
-    "sha": "02114bcb3852f1c93422d3ca273d2ee9227b00ca88a8f684562d559f12d5c317",
+  "visual-1.jpg": {
+    "bytes": 45908,
+    "sha": "91fe315583a41bca31e6073b17a0e8d33e8fc280538ba14334716da2da3adb0d",
     "type": "image/jpeg"
   },
-  "arevalo-14.mp4": {
-    "bytes": 21380330,
-    "sha": "b6f716081f26dba63b458a06ea37e8bb84ac1e341cbe36292f44a571603c958a",
-    "type": "video/mp4"
+  "visual-2.jpg": {
+    "bytes": 46916,
+    "sha": "e25b23c9b88943fc6e4eba09b6b83769bc59948445bc272ead709aca9a1b52d6",
+    "type": "image/jpeg"
   },
-  "arevalo-13.mp4": {
-    "bytes": 32819573,
-    "sha": "5b9169cb914a27a4e4f293b863bc6f3fab386aeb6be384d63298b6bd6e4df1f0",
-    "type": "video/mp4"
+  "visual-3.jpg": {
+    "bytes": 38617,
+    "sha": "3a59c0b7f301641e595d02e8930078060274ce262fc24511683145b785b51a7b",
+    "type": "image/jpeg"
   },
-  "arevalo-12.mp4": {
-    "bytes": 49256963,
-    "sha": "29e52d5f812dc92584466b006d45b4d9122112c8b721f4aca28173753f2f1807",
-    "type": "video/mp4"
+  "visual-4.jpg": {
+    "bytes": 58693,
+    "sha": "6ac30690366504685e9cf8c8539ecf9b4d8fa75f857ff4e8ce2c0dba2daa8fb9",
+    "type": "image/jpeg"
   },
-  "arevalo-11.mp4": {
-    "bytes": 46162345,
-    "sha": "ee65d20d15567f5afe3ec0adba57aab1dee2da65b6ba7a27b8a78f4da738f653",
-    "type": "video/mp4"
+  "visual-5.jpg": {
+    "bytes": 40350,
+    "sha": "95f0dd93581d7bc1555ebf4fc7d2e66340230bebee7e4f2e9dbe5b4f9edda9fc",
+    "type": "image/jpeg"
   },
-  "arevalo-10.mp4": {
-    "bytes": 19706525,
-    "sha": "0cef103b1799b39c5e5ddc63a284ef3de8c4caede4992ff9446668a457bdd265",
-    "type": "video/mp4"
+  "visual-7.jpg": {
+    "bytes": 56184,
+    "sha": "a82b0c792e98792b290222b611c205d286fb3f05fe96c90ebba7c2bdd3692947",
+    "type": "image/jpeg"
   },
-  "arevalo-9.mp4": {
-    "bytes": 45286674,
-    "sha": "e2c9b28e904ccbd54258c2ab0794331ee2e3fd619e0535f080ec764c82483296",
-    "type": "video/mp4"
+  "visual-8.jpg": {
+    "bytes": 36153,
+    "sha": "854af4ee487ad98d617d6ad43f9fd2e9f5dcdbd97a4cab7535b87a1f3422d378",
+    "type": "image/jpeg"
   },
-  "arevalo-8.mp4": {
-    "bytes": 48515361,
-    "sha": "ddfa9bd9c14b12e8be31824b275a75c2c258b71109f559841119c7cb27a9830c",
-    "type": "video/mp4"
+  "visual-9.jpg": {
+    "bytes": 44940,
+    "sha": "dda896630e6b086a7abd3b2537731e3ec70b410dbfbffce79ce0cdb96113e77e",
+    "type": "image/jpeg"
   },
-  "arevalo-7.mp4": {
-    "bytes": 31116864,
-    "sha": "511c0d27dbc90feaadbc3a07253dfedfd0cc70a02a5a9d3b4ea09e651e9921f9",
-    "type": "video/mp4"
+  "visual-10.jpg": {
+    "bytes": 35348,
+    "sha": "98770498cae42a17fcade22056445dff8af11dab09d285a1a5976918be2123dc",
+    "type": "image/jpeg"
   },
-  "arevalo-5.mp4": {
-    "bytes": 56538047,
-    "sha": "6515b52559ba87f8654753452631566f4d1e2d44df26702e6ada4e6ba1a3444c",
-    "type": "video/mp4"
+  "visual-11.jpg": {
+    "bytes": 51785,
+    "sha": "0f917732c26f74a7b94ea7fa9bc540ec74eac68e1b21966d6bfc0c673a8b8a3f",
+    "type": "image/jpeg"
   },
-  "arevalo-4.mp4": {
-    "bytes": 69394565,
-    "sha": "db3477b5b996527b1a297394d0209197e3a1dd2c7f7cc5f88f8e3aabef4f4fa6",
-    "type": "video/mp4"
+  "visual-12.jpg": {
+    "bytes": 54961,
+    "sha": "e7547e0409b37dac54033096bd725524cc17c41f28cc837f95182584c30f344f",
+    "type": "image/jpeg"
   },
-  "arevalo-3.mp4": {
-    "bytes": 16428510,
-    "sha": "f34d9e511e55c1a91b769c3d2c6ff001a86727fd3b593f32c352c89e83561213",
-    "type": "video/mp4"
+  "visual-13.jpg": {
+    "bytes": 49844,
+    "sha": "41c5c9bb283f9d86e359b17bcd4c65d1adbec733c58e993a8f46bf4d4d961e05",
+    "type": "image/jpeg"
   },
-  "arevalo-2.mp4": {
-    "bytes": 15603789,
-    "sha": "89b240f55fb28bc8bfd9d0553d6c1c27e6da7a34fbf4115788f16342a22141d6",
-    "type": "video/mp4"
-  },
-  "arevalo-1.mp4": {
-    "bytes": 36165734,
-    "sha": "7033aea15f8b30dcf502db4bf9a6640c8a3c1b2f28ee27059434bcb7d8b881f7",
-    "type": "video/mp4"
+  "visual-14.jpg": {
+    "bytes": 88388,
+    "sha": "d84e0c69ace9b569cbafaf5745f903a5c75074abea191f09e7d4b44509c57b2a",
+    "type": "image/jpeg"
   }
 };
 const PUBLIC_KEY = "MCowBQYDK2VwAyEAse04A0lvU8IFTlpEDfSkVDyOTk7urNqyW6zdVkFOey4=";
