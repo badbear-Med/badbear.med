@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="batimix-en-vivo.css?v=1">
   <link rel="stylesheet" href="clases-en-vivo.css?v=1">
   <script src="../assets/js/courses.js?v=en-vivo-1" defer></script>
-  <script src="clases-en-vivo.js?v=local1" type="module"></script>
+  <script src="clases-en-vivo.js?v=local2" type="module"></script>
 </head>
 <body class="batimix-aula live-page">
   <header class="campus-header">
@@ -41,7 +41,8 @@
         <button id="live-end" type="button" class="live-quiet" hidden>Finalizar reunión</button>
         <button id="live-exit" type="button" class="live-quiet" hidden>Salir de la videollamada</button>
       </div>
-      <p id="live-record-help" hidden>Avisa a los participantes antes de grabar. Si el navegador abre un selector, elige la pestaña de la reunión y activa su audio.</p>
+      <p id="live-record-help" hidden>Avisa a los participantes antes de grabar. Selecciona esta pestaña, comparte su audio y autoriza el micrófono.</p>
+      <a id="live-record-download" hidden download>Descargar grabación</a>
       <div id="live-meeting" class="live-meeting" role="region" aria-label="Videollamada del curso" hidden></div>
     </section>
   </main>

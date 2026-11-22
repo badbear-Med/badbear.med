@@ -24,7 +24,10 @@ let busy = false;
 let closedToCampus = false;
 let joined = false;
 let recording = false;
-let recordingTimer;
+let selectingCapture = false;
+let recorder;
+let downloadUrl;
+const download = $("live-record-download");
 
 for (const { id, nombre } of courses) selector.add(new Option(nombre, id));
 if (courses.some(course => course.id === requested)) selector.value = requested;
@@ -58,9 +61,9 @@ function controls() {
   exitButton.hidden = !api;
   const canRecord = Boolean(api && joined && access?.esAnfitrion);
   recordButton.hidden = recordHelp.hidden = !canRecord;
-  recordButton.disabled = busy || Boolean(recordingTimer);
+  recordButton.disabled = busy || selectingCapture;
   recordButton.textContent = recording ? "Detener grabación local" : "Grabar en este equipo";
-  endButton.disabled = exitButton.disabled = busy || recording || Boolean(recordingTimer);
+  endButton.disabled = exitButton.disabled = busy || recording || selectingCapture;
 }
 
 function report(error) {
@@ -132,36 +135,83 @@ function loadSDK(appId) {
   });
 }
 
-function clearRecordingTimer() {
-  clearTimeout(recordingTimer);
-  recordingTimer = undefined;
-}
-
-function toggleRecording() {
-  if (!api || !joined || !access?.esAnfitrion || busy || recordingTimer) return;
-  const stopping = recording;
+async function toggleRecording() {
+  if (!api || !joined || !access?.esAnfitrion || busy || selectingCapture) return;
+  if (recording) {
+    if (recorder?.state === "recording") recorder.stop();
+    return;
+  }
+  if (!navigator.mediaDevices?.getDisplayMedia || typeof MediaRecorder === "undefined" || typeof AudioContext === "undefined") {
+    message("Este navegador no admite la grabación local. Abre Campus en Chrome o Edge de escritorio.", true);
+    return;
+  }
   const meeting = api;
-  message(stopping ? "Deteniendo grabación local…" : "Solicitando grabación local…");
-  recordingTimer = setTimeout(() => {
-    clearRecordingTimer();
-    if (api !== meeting) return;
-    message("Jitsi no confirmó el cambio de grabación. Revisa los avisos en la sala.", true);
-    controls();
-  }, 45000);
+  let display, microphone, mixer;
+  const release = () => {
+    for (const stream of [display, microphone, mixer?.destination.stream]) {
+      stream?.getTracks().forEach(track => track.stop());
+    }
+    if (mixer) void mixer.context.close().catch(() => {});
+  };
+  selectingCapture = true;
   controls();
   try {
-    if (stopping) meeting.executeCommand("stopRecording", "local");
-    else meeting.executeCommand("startRecording", {mode: "local", onlySelf: false});
-  } catch {
-    clearRecordingTimer();
-    message("No se pudo usar la grabación local en esta sala.", true);
+    display = await navigator.mediaDevices.getDisplayMedia({video: true, audio: true, preferCurrentTab: true});
+    if (api !== meeting) { release(); return; }
+    if (!display.getAudioTracks().length) throw new Error("Selecciona la pestaña de Clases en vivo y marca Compartir audio de la pestaña.");
+    microphone = await navigator.mediaDevices.getUserMedia({audio: true});
+    if (api !== meeting || display.getVideoTracks()[0]?.readyState !== "live") { release(); return; }
+
+    const context = new AudioContext();
+    mixer = {context, destination: context.createMediaStreamDestination()};
+    for (const stream of [display, microphone]) {
+      context.createMediaStreamSource(stream).connect(mixer.destination);
+    }
+    await context.resume();
+    if (api !== meeting || display.getVideoTracks()[0]?.readyState !== "live") { release(); return; }
+    const capture = new MediaStream([...display.getVideoTracks(), ...mixer.destination.stream.getAudioTracks()]);
+    const local = new MediaRecorder(capture);
+    const chunks = [];
+    let failed = false;
+    local.addEventListener("dataavailable", event => { if (event.data.size) chunks.push(event.data); });
+    local.addEventListener("error", () => { failed = true; });
+    local.addEventListener("stop", () => {
+      release();
+      if (recorder === local) recorder = undefined;
+      recording = false;
+      if (!failed && chunks.length) {
+        if (downloadUrl) URL.revokeObjectURL(downloadUrl);
+        const mime = local.mimeType || chunks[0].type || "video/webm";
+        downloadUrl = URL.createObjectURL(new Blob(chunks, {type: mime}));
+        download.href = downloadUrl;
+        download.download = "clase-campus-" + new Date().toISOString().replace(/[:.]/g, "-") + (mime.includes("mp4") ? ".mp4" : ".webm");
+        download.hidden = false;
+        message("Grabación lista. Pulsa Descargar grabación para guardar el archivo.");
+      } else {
+        message("El navegador no pudo generar el archivo de grabación.", true);
+      }
+      controls();
+    });
+    display.getVideoTracks()[0].addEventListener("ended", () => {
+      if (local.state !== "inactive") local.stop();
+    }, {once: true});
+    local.start(1000);
+    recorder = local;
+    recording = true;
+    message("Grabación local en curso. El micrófono local también se está grabando.");
+  } catch (error) {
+    release();
+    const denied = ["NotAllowedError", "AbortError"].includes(error.name);
+    message(denied ? "Grabación cancelada o permiso denegado. Autoriza la pestaña y el micrófono para continuar." : error.message, true);
+  } finally {
+    selectingCapture = false;
     controls();
   }
 }
 
 function leave() {
-  clearRecordingTimer();
-  joined = recording = false;
+  if (recorder && recorder.state !== "inactive") recorder.stop();
+  joined = false;
   const previous = api;
   api = access = undefined;
   closedToCampus = false;
@@ -191,7 +241,6 @@ async function openMeeting() {
       configOverwrite: {
         prejoinConfig: { hideDisplayName: true },
         readOnlyName: true,
-        localRecording: {disable: false, notifyAllParticipants: true},
         startWithAudioMuted: true,
         startWithVideoMuted: true
       }
@@ -199,22 +248,13 @@ async function openMeeting() {
     api = meeting;
     access = { sala: access.sala, esAnfitrion: access.esAnfitrion };
     meeting.getIFrame().title = "Videollamada de " + state.curso;
-    meeting.addListener("recordingStatusChanged", ({mode, on, error}) => {
-      if (api !== meeting || mode !== "local") return;
-      clearRecordingTimer();
-      if (typeof on === "boolean") recording = on;
-      message(error ? "Jitsi indicó un error de grabación local." : recording
-        ? "Grabación local en curso."
-        : "Grabación local detenida. Revisa las descargas del navegador.", Boolean(error));
-      controls();
-    });
     meeting.addListener("videoConferenceJoined", async () => {
       if (api !== meeting) return;
       joined = true;
       controls();
       try {
         if (access.esAnfitrion) await post(endpoint("abrir"), sessionToken(), { sala: access.sala });
-        if (api === meeting && !recordingTimer && !recording) message("Estás en la reunión.");
+        if (api === meeting && !selectingCapture && !recording) message("Estás en la reunión.");
       } catch (error) {
         if (api === meeting) report(error);
       }
