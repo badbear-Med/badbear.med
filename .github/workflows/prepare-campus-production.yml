@@ -6,6 +6,9 @@ on:
     paths:
       - .github/workflows/prepare-campus-production.yml
       - badbear-campus/gateway/**
+      - badbear-campus/index.html
+      - badbear-campus/student.js
+      - badbear-campus/student-portal.css
       - tools/package-campus-site.py
   workflow_dispatch:
 
