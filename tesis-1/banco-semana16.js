@@ -3,6 +3,7 @@ const el = id => document.getElementById(id);
 const answers = new Map();
 let bank, pool, index, mode, deadline, timer;
 const params = new URLSearchParams(location.search);
+const finalMode = params.get("modo") === "final";
 const topic = el("topic");
 const status = el("status");
 
@@ -27,13 +28,13 @@ function begin(exam) {
   answers.clear();
   mode = exam ? "exam" : "practice";
   index = 0;
-  pool = exam ? sample(bank, 20) : bank.filter(item => !topic.value || item.topic === topic.value);
+  pool = exam ? (finalMode ? [...bank] : sample(bank, 20)) : bank.filter(item => !topic.value || item.topic === topic.value);
   el("quiz").hidden = false;
   el("review").hidden = true;
   el("finish").hidden = !exam;
   topic.disabled = exam;
   el("clock").textContent = "";
-  status.textContent = exam ? "Simulacro en curso. La corrección aparece al finalizar." : "";
+  status.textContent = exam ? (finalMode ? "Examen final en curso. La corrección aparece al finalizar." : "Simulacro en curso. La corrección aparece al finalizar.") : "";
   if (exam) {
     deadline = Date.now() + 600000;
     timer = setInterval(tick, 250);
@@ -116,16 +117,16 @@ function finish(expired = false) {
     review.append(details);
   }
   review.hidden = false;
-  status.textContent = expired ? "Se acabó el tiempo." : "Simulacro finalizado.";
+  status.textContent = expired ? "Se acabó el tiempo." : finalMode ? "Examen finalizado." : "Simulacro finalizado.";
   title.focus();
 }
 
 async function init() {
   try {
-    const result = await fetch("banco-semana16.json");
+    const result = await fetch(finalMode ? "examen-final-datos.json" : "banco-semana16.json");
     if (!result.ok) throw new Error("Banco no disponible.");
     bank = await result.json();
-    if (bank.length < 20) throw new Error("El banco requiere al menos 20 preguntas.");
+    if (finalMode ? bank.length !== 20 : bank.length < 20) throw new Error("El banco requiere al menos 20 preguntas.");
     topic.add(new Option("Todos los temas", ""));
     for (const name of new Set(bank.map(item => item.topic))) topic.add(new Option(name, name));
     topic.addEventListener("change", () => begin(false));
@@ -134,6 +135,19 @@ async function init() {
     el("previous").addEventListener("click", () => { index--; render(true); });
     el("next").addEventListener("click", () => { index++; render(true); });
     el("finish").addEventListener("click", () => finish());
+    if (finalMode) {
+      document.title = "Examen final de Tesis I | BADBEAR.MED";
+      el("bank-title").textContent = "Examen final de Tesis I";
+      el("bank-intro").textContent = "20 preguntas en 10 minutos. Revisa los fundamentos y enlaces a la teoría al terminar.";
+      el("practice").hidden = true;
+      el("topic-picker").hidden = true;
+      el("exam").textContent = "Iniciar examen final";
+      el("finish").textContent = "Finalizar examen";
+      el("exam").focus();
+      status.textContent = "Pulsa Iniciar examen final cuando estés listo.";
+      return;
+    }
+    el("quiz").hidden = false;
     if ([...topic.options].some(option => option.value === params.get("tema"))) topic.value = params.get("tema");
     begin(false);
     if (params.get("modo") === "simulacro") {

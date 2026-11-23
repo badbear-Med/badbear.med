@@ -1,0 +1,318 @@
+[
+  {
+    "id": 1,
+    "topic": "Diseño",
+    "prompt": "La investigación orientada principalmente a generar nuevos conocimientos y desarrollar o contrastar teorías se denomina:",
+    "options": [
+      "Aplicada",
+      "Cuantitativa",
+      "Básica",
+      "Experimental",
+      "Analítica"
+    ],
+    "key": 2,
+    "reason": "Básica describe la finalidad de ampliar el conocimiento. Aplicada busca resolver una necesidad práctica. Cuantitativa describe el enfoque, experimental la asignación de una intervención y analítica el objetivo de comparar o estudiar relaciones: un mismo estudio puede ser básico y, además, cuantitativo.",
+    "theory": "clase-09.html#tema-2",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 2,
+    "topic": "Temporalidad",
+    "prompt": "Si se reconstruyen exposiciones y desenlaces que ya ocurrieron usando registros previos, ¿cómo se clasifica la obtención temporal de los datos?",
+    "options": [
+      "Transversal",
+      "Longitudinal",
+      "Prospectiva",
+      "Retrospectiva",
+      "Observacional"
+    ],
+    "key": 3,
+    "reason": "Es retrospectiva porque los hechos de interés ya ocurrieron cuando se inicia su reconstrucción. Puede ser longitudinal si los registros cubren el seguimiento y observacional si se registraron exposiciones sin asignarlas. Tener datos previos no obliga a que todo el estudio sea retrospectivo si también hay seguimiento futuro.",
+    "theory": "clase-09.html#tema-4",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 3,
+    "topic": "Diseño",
+    "prompt": "Un estudio estima la frecuencia de un fenómeno sin plantear una hipótesis de asociación. Según su finalidad, ¿cómo se clasifica?",
+    "options": [
+      "Analítico",
+      "Descriptivo",
+      "Observacional",
+      "Transversal",
+      "Básico o puro"
+    ],
+    "key": 1,
+    "reason": "La finalidad es caracterizar el fenómeno, por ejemplo estimar su prevalencia. Un estudio descriptivo puede medir varias variables. La ausencia de hipótesis de asociación es compatible con este objetivo; observacional y transversal son clasificaciones de otros ejes.",
+    "theory": "clase-09.html#tema-5",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 4,
+    "topic": "Niveles",
+    "prompt": "Cuando se conoce poco un fenómeno y se busca delimitar el problema, identificar dimensiones relevantes y generar hipótesis, ¿qué nivel corresponde?",
+    "options": [
+      "Exploratorio",
+      "Descriptivo",
+      "Relacional",
+      "Explicativo",
+      "Predictivo"
+    ],
+    "key": 0,
+    "reason": "El nivel exploratorio ayuda a definir qué se investigará después. Puede utilizar entrevistas interpretativas, pero la hermenéutica es una forma de interpretar y no basta por sí sola para asignar el nivel. Describir frecuencias o predecir desenlaces son objetivos diferentes.",
+    "theory": "clase-09.html#tema-6",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 5,
+    "topic": "Niveles",
+    "prompt": "¿Qué nivel describe un proyecto que introduce una solución innovadora a un problema práctico y evalúa sus resultados?",
+    "options": [
+      "Exploratorio",
+      "Descriptivo",
+      "Aplicativo",
+      "Explicativo",
+      "Predictivo"
+    ],
+    "key": 2,
+    "reason": "En el esquema del curso, el nivel aplicativo orienta el trabajo a una solución y a medir su desempeño. Que el resultado sea útil no demuestra por sí solo un impacto causal: eso depende del diseño, el comparador y el análisis.",
+    "theory": "clase-09.html#tema-6",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 6,
+    "topic": "Diseño",
+    "prompt": "¿En qué categoría general encajan los estudios de casos y controles y las cohortes que comparan la ocurrencia de un desenlace según la exposición?",
+    "options": [
+      "Descriptivo",
+      "Analítico",
+      "De intervención",
+      "Cuasiexperimental",
+      "Exploratorio"
+    ],
+    "key": 1,
+    "reason": "Son analíticos cuando comparan grupos para estimar una asociación. En casos y controles se selecciona por desenlace; en la cohorte se reconstruye u observa la evolución de una población en riesgo. La presencia de asociación no basta para atribuir causalidad.",
+    "theory": "clase-09.html#tema-7",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 7,
+    "topic": "Diseño",
+    "prompt": "Un hospital introduce una intervención sin asignación aleatoria y compara sus resultados con un servicio similar. ¿Qué diseño corresponde?",
+    "options": [
+      "Experimento aleatorizado",
+      "Preexperimento sin comparador",
+      "Cuasiexperimento",
+      "Casos y controles",
+      "Cohorte sin intervención definida"
+    ],
+    "key": 2,
+    "reason": "Se evalúa una intervención con un comparador, pero la asignación no es aleatoria. Las diferencias basales y los cambios simultáneos pueden explicar parte del resultado. Una medición única sin comparador sería un planteamiento distinto y más débil.",
+    "theory": "clase-09.html#tema-3",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 8,
+    "topic": "Muestreo",
+    "prompt": "¿Cuál es una razón práctica para calcular y estudiar una muestra en vez de medir toda la población?",
+    "options": [
+      "Requiere más tiempo",
+      "Permite estudiar el fenómeno con menos tiempo y recursos que un censo",
+      "Es necesariamente más costosa",
+      "Siempre produce resultados más precisos que un censo"
+    ],
+    "key": 1,
+    "reason": "Se corrigió la clave «menor rapidez». Examinar una parte permite reducir la carga de recolección. La precisión depende del tamaño, del diseño y de la calidad de las mediciones; la selección inadecuada puede producir sesgo aunque la muestra sea grande.",
+    "theory": "clase-10.html#tema-3",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 9,
+    "topic": "Población",
+    "prompt": "¿Qué se entiende por población en un estudio estadístico?",
+    "options": [
+      "Grupo seleccionado para el estudio",
+      "Total de datos recolectados",
+      "Conjunto completo de unidades de interés definidas por los criterios del estudio",
+      "Número de observaciones del experimento",
+      "Solo las variables cuantitativas"
+    ],
+    "key": 2,
+    "reason": "La población es el conjunto de unidades elegibles al que se refiere el estudio. La muestra es el subconjunto seleccionado. Una unidad puede aportar varias observaciones: por ejemplo, un paciente con tres controles sigue siendo un paciente si esa es la unidad de análisis.",
+    "theory": "clase-10.html#tema-1",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 10,
+    "topic": "Recolección",
+    "prompt": "Si un protocolo plantea una hipótesis sobre peso y actividad física, ¿qué debe especificar su plan de recolección?",
+    "options": [
+      "Solo las celdas de la matriz",
+      "Solo el nombre de un instrumento",
+      "Cómo y cuándo medir las variables de la hipótesis mediante indicadores definidos",
+      "Solo los valores numéricos esperados"
+    ],
+    "key": 2,
+    "reason": "El plan operacionaliza cada variable y define fuente, instrumento, unidad, momento y registro. Si importa la variación, se programan mediciones comparables en el tiempo. La recolección tampoco se limita a variables numéricas ni exige hipótesis en todo estudio.",
+    "theory": "clase-07.html#recoleccion-datos",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 11,
+    "topic": "Medición",
+    "prompt": "¿Cómo se define la validez de un instrumento para un uso determinado?",
+    "options": [
+      "Grado de consistencia de sus resultados",
+      "Grado en que la evidencia respalda que mide la variable que se pretende medir",
+      "Grado de exposición al sesgo del observador",
+      "Grado de codificación previa",
+      "Todas las anteriores"
+    ],
+    "key": 1,
+    "reason": "La validez se refiere a si la interpretación de la medición está respaldada para el propósito y población. Una balanza que siempre agrega 3 kg puede ser consistente y, aun así, inadecuada para estimar el peso real. La consistencia corresponde a confiabilidad.",
+    "theory": "clase-14-15.html#tema-5",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 12,
+    "topic": "Instrumentos",
+    "prompt": "¿Qué uso es apropiado para un cuestionario de autoinforme que pretende conocer cómo perciben los pacientes la atención y qué esperan del servicio?",
+    "options": [
+      "Verificar directamente conductas mediante observación",
+      "Medir presión arterial",
+      "Recoger opiniones y expectativas de los pacientes",
+      "Estimar inteligencia sin prueba validada",
+      "Analizar únicamente el contenido de campañas de TV"
+    ],
+    "key": 2,
+    "reason": "Un cuestionario estructurado permite recoger opiniones y expectativas declaradas. También puede recoger actitudes o satisfacción si se diseñó y evaluó para ello. La conducta observada, la medición fisiológica y el análisis documental requieren otras fuentes o instrumentos.",
+    "theory": "clase-07.html#tecnicas-instrumentos",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 13,
+    "topic": "Análisis",
+    "prompt": "¿Qué prueba es apropiada para evaluar independencia entre dos variables categóricas en una tabla de contingencia, si se satisfacen sus supuestos?",
+    "options": [
+      "Coeficiente de correlación de Pearson",
+      "Correlación de Fisher",
+      "Regresión lineal",
+      "Prueba t",
+      "Chi cuadrada de Pearson"
+    ],
+    "key": 4,
+    "reason": "Chi cuadrada compara frecuencias observadas con las esperadas bajo independencia. Requiere observaciones independientes y frecuencias esperadas adecuadas. Si una tabla 2×2 tiene frecuencias esperadas pequeñas, puede considerarse la prueba exacta de Fisher. La correlación de Pearson responde otra pregunta.",
+    "theory": "clase-07.html#analisis-datos",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 14,
+    "topic": "Ética",
+    "prompt": "¿Qué principio bioético exige distribuir de manera equitativa las cargas y los beneficios de la investigación?",
+    "options": [
+      "Autonomía",
+      "Justicia",
+      "No maleficencia",
+      "Confidencialidad",
+      "Beneficencia"
+    ],
+    "key": 1,
+    "reason": "La justicia exige selección equitativa y evitar que un grupo soporte riesgos sin acceso razonable a los beneficios. Autonomía protege la decisión voluntaria; beneficencia y no maleficencia se refieren al balance de beneficios y daños.",
+    "theory": "clase-11.html#tema-3",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 15,
+    "topic": "Ética",
+    "prompt": "¿Qué es el consentimiento informado?",
+    "options": [
+      "Un documento sin importancia para los participantes",
+      "Una autorización que permite hacer cualquier procedimiento",
+      "Un proceso de información clara, comprensión y aceptación voluntaria",
+      "Un formulario que solo firma el investigador",
+      "Una normativa exclusiva de estudios médicos"
+    ],
+    "key": 2,
+    "reason": "Es un proceso de comunicación y decisión, no solo una firma. La persona debe comprender propósito, procedimientos y riesgos pertinentes, poder preguntar y decidir sin presión. La firma, cuando corresponde, documenta esa decisión y no elimina el derecho a retirarse.",
+    "theory": "clase-11.html#tema-4",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 16,
+    "topic": "Gestión",
+    "prompt": "¿Cuál es el principal uso del diagrama de Gantt?",
+    "options": [
+      "Analizar viabilidad financiera",
+      "Mostrar la secuencia y duración de tareas en un cronograma",
+      "Evaluar desempeño individual",
+      "Identificar riesgos",
+      "Diseñar planos arquitectónicos"
+    ],
+    "key": 1,
+    "reason": "Cada barra ubica una tarea en el tiempo, con inicio, duración y fin. Así se visualizan solapamientos e hitos. Puede complementarse con dependencias y responsables, pero no reemplaza el presupuesto ni el análisis de riesgos.",
+    "theory": "clase-13.html#tema-2",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 17,
+    "topic": "Matriz",
+    "prompt": "¿Qué conjunto de elementos debe quedar articulado en la matriz de consistencia del curso?",
+    "options": [
+      "Problemas, objetivos, hipótesis cuando correspondan, variables, indicadores, métodos y técnicas",
+      "Variables, dimensiones, indicadores, índices y escalas",
+      "Problemas, objetivos, hipótesis, instrumentos, validez y confiabilidad únicamente",
+      "Variables, dimensiones, indicadores, instrumentos y técnicas sin problema ni objetivos"
+    ],
+    "key": 0,
+    "reason": "La matriz permite seguir la coherencia desde el problema y el objetivo hasta las variables y el método. Las dimensiones, indicadores y escalas forman parte de la operacionalización. La hipótesis se incluye cuando corresponde al diseño y al objetivo.",
+    "theory": "clase-14-15.html#tema-2",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 18,
+    "topic": "Medición",
+    "prompt": "¿Qué significa confiabilidad de un instrumento de medición?",
+    "options": [
+      "Consistencia de resultados en condiciones comparables",
+      "Medir la variable propuesta",
+      "Grado de susceptibilidad a sesgos",
+      "Existencia de códigos para las respuestas",
+      "Todas las anteriores"
+    ],
+    "key": 0,
+    "reason": "Confiabilidad alude a reproducibilidad o consistencia. Puede evaluarse con estabilidad temporal o acuerdo entre observadores, según el caso. Alta confiabilidad no sustituye la evidencia de validez; un error sistemático puede ser muy repetible.",
+    "theory": "clase-14-15.html#tema-5",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 19,
+    "topic": "Fuentes",
+    "prompt": "¿Cuál alternativa describe un uso de información secundaria para un estudio nuevo?",
+    "options": [
+      "Observar directamente a los participantes",
+      "Aplicar una encuesta propia",
+      "Entrevistar a los participantes",
+      "Analizar cuadros o gráficos publicados con datos recogidos previamente por otra fuente"
+    ],
+    "key": 3,
+    "reason": "Los datos son secundarios para el estudio nuevo si provienen de registros o publicaciones preexistentes. Un cuadro o gráfico por sí solo no determina el tipo de fuente: puede representar datos primarios si los recogió el propio equipo para ese estudio.",
+    "theory": "clase-05.html#fuentes-informacion",
+    "source": "Examen final · material aportado"
+  },
+  {
+    "id": 20,
+    "topic": "Instrumentos",
+    "prompt": "¿Qué práctica amenaza la validez y confiabilidad de una medición?",
+    "options": [
+      "Improvisar los instrumentos o cambiar el procedimiento sin justificación",
+      "Usar un instrumento desarrollado en otro país después de adaptarlo y evaluarlo",
+      "Elegir un instrumento adecuado a la población",
+      "Estandarizar las condiciones de aplicación",
+      "Todas las anteriores"
+    ],
+    "key": 0,
+    "reason": "La improvisación puede cambiar qué se mide y aumentar la variación no deseada. El origen extranjero no es un defecto por sí solo; deben valorarse la adaptación y la evidencia para el nuevo contexto. Estandarizar y pilotar ayuda a detectar problemas antes de la recolección.",
+    "theory": "clase-07.html#prueba-piloto",
+    "source": "Examen final · material aportado"
+  }
+]
