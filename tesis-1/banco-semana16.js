@@ -27,6 +27,7 @@ function begin(exam) {
   clearInterval(timer);
   answers.clear();
   mode = exam ? "exam" : "practice";
+  if (finalMode) el("final-material").hidden = exam;
   index = 0;
   pool = exam ? (finalMode ? [...bank] : sample(bank, 20)) : bank.filter(item => !topic.value || item.topic === topic.value);
   el("quiz").hidden = false;
@@ -103,6 +104,7 @@ function finish(expired = false) {
   if (mode !== "exam") return;
   clearInterval(timer);
   mode = "review";
+  if (finalMode) el("final-material").hidden = false;
   topic.disabled = false;
   el("quiz").hidden = true;
   const score = pool.filter(item => answers.get(item.id) === item.key).length;
@@ -139,6 +141,7 @@ async function init() {
       document.title = "Examen final de Tesis I | BADBEAR.MED";
       el("bank-title").textContent = "Examen final de Tesis I";
       el("bank-intro").textContent = "20 preguntas en 10 minutos. Revisa los fundamentos y enlaces a la teoría al terminar.";
+      el("final-material").hidden = false;
       el("practice").hidden = true;
       el("topic-picker").hidden = true;
       el("exam").textContent = "Iniciar examen final";
