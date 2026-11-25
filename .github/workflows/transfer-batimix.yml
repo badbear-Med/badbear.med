@@ -15,8 +15,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Upload endpoint for the Surgical Techniques material
+      - name: Deactivate the temporary upload endpoint
         env:
           CLOUDFLARE_ACCOUNT_ID: caace9c94fd11467e298cdee61f2397b
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
         run: npx --yes wrangler@4 deploy --config tools/batimix-transfer/wrangler.json
+

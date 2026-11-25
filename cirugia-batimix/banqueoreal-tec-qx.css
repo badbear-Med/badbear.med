@@ -1,0 +1,19 @@
+body{margin:0;background:#eef3f8;color:#172b44;font:1rem/1.55 system-ui,sans-serif}
+main{width:min(60rem,calc(100% - 2rem));margin:2rem auto}
+.hero,.panel{border-radius:1rem;padding:clamp(1rem,4vw,2.2rem);margin:1.25rem 0}
+.hero{background:#102945;color:#fff;border-bottom:5px solid #0fb4ac}
+.hero a{color:#9feee9}
+h1,h2{line-height:1.2} h1{overflow-wrap:anywhere}
+.panel{background:#fff;border:1px solid #c9d8e8}
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem}
+button,select{font:inherit;padding:.55rem .85rem;border:1px solid #7892af;border-radius:.55rem;background:#fff;color:#172b44}
+button:not(:disabled){cursor:pointer}button:disabled{opacity:.55}
+button.primary{background:#164a77;color:#fff;border-color:#164a77;font-weight:700}
+fieldset{border:0;padding:0;margin:1rem 0;min-width:0}
+legend{font-size:1.18rem;font-weight:700}
+.choice{display:flex;gap:.65rem;border:1px solid #cedbea;border-radius:.65rem;padding:.65rem;margin:.55rem 0;cursor:pointer}
+.choice:has(:checked){background:#e6f2ff;border-color:#245a89}
+#feedback:not(:empty){padding:1rem;background:#e8f1fa;border-radius:.65rem;margin:1rem 0}
+#feedback p{margin:.35rem 0}
+#pdf-page{width:100%;height:auto;margin-top:1rem;border:1px solid #cedbea}
+[hidden]{display:none!important}

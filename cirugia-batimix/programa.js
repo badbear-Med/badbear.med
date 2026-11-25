@@ -66,6 +66,15 @@ unidades.forEach(([nombre,titulos],u)=>{
  const bank=encabezado("a","BADBEAR.REALES · Banco de preguntas");
  bank.href="banco-las-reales.html?unidad="+(u+1)+"#banco";
  section.appendChild(bank);
+ if(u===3){
+  const officialBank=encabezado("a","BANQUEOREAL.TEC.QX");
+  officialBank.className="bat-btn primary";
+  officialBank.href="banqueoreal-tec-qx.html";
+  const actions=document.createElement("div");
+  actions.className="bat-actions";
+  actions.appendChild(officialBank);
+  section.appendChild(actions);
+ }
  if(u===1){hacerAnestesiologia(section);cont.appendChild(section);return}
  const grid=document.createElement("div");grid.className="class-grid";
  const clases=clasesPorUnidad[u];

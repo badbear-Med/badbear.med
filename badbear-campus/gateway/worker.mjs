@@ -44,8 +44,10 @@ export default {
     try {
       const path = decodeURIComponent(url.pathname).slice(1);
       const match = /^cirugia-batimix\/media\/instrumentacion\/(catalogo-trimed\.pdf|mesa\.jpg|arevalo-(?:[1-5]|[7-9]|1[0-4])\.mp4|visual-(?:[1-5]|[7-9]|1[0-4])\.jpg)$/.exec(path);
+      const examPage = /^cirugia-batimix\/media\/banqueoreal-tec-qx\/(p-(?:0[1-9]|1[0-9]|20)\.jpg)$/.exec(path);
       const stored = env.LARGE_ASSETS_MANIFEST?.[path];
       const file = path === "tesis-1/material/examen-final-tesis-i.pdf" ? {key: "tesis-1/examen-final-tesis-i.pdf"} : match ? {key: "batimix/instrumentacion/" + match[1]} :
+        examPage ? {key: "batimix/banqueoreal-tec-qx/" + examPage[1]} :
         stored && /^campus-site\/[a-f0-9]{64}$/.test(stored.key) ? stored : null;
       if (file) {
         const head = request.method === "HEAD";
