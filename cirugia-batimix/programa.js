@@ -73,6 +73,10 @@ unidades.forEach(([nombre,titulos],u)=>{
   const actions=document.createElement("div");
   actions.className="bat-actions";
   actions.appendChild(officialBank);
+  const wounds=encabezado("a","Heridas · Clasificación y profundidad");
+  wounds.className="bat-btn secondary";
+  wounds.href="clases/u5-c1-cicatrizacion-injertos.html#clasificacion-heridas";
+  actions.appendChild(wounds);
   section.appendChild(actions);
  }
  if(u===1){hacerAnestesiologia(section);cont.appendChild(section);return}
