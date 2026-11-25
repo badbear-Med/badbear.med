@@ -81,6 +81,18 @@
     return question.lesson || question.topic;
   }
 
+  function optionVerdict(question, letter) {
+    if (letter === question.correct) return {label: "Respuesta correcta", correct: true};
+    const keyIndex = question.opts.findIndex(([key]) => key === question.correct);
+    const keyText = question.opts[keyIndex]?.[1].trim().replace(/[.!]+$/, "") ?? "";
+    const includesPrevious = /^(?:tod[ao]s(?:\s+(?:(?:l[ao]s\s+)?anteriores))?|t\.\s*a)$/i.test(keyText);
+    const optionIndex = question.opts.findIndex(([key]) => key === letter);
+    if (includesPrevious && optionIndex >= 0 && optionIndex < keyIndex) {
+      return {label: "Verdadera · incluida en la respuesta", correct: true};
+    }
+    return {label: "Incorrecta", correct: false};
+  }
+
   function explanation(question, answer) {
     const result = el("section", "", "feedback");
     const label = question.opts.find(([letter]) => letter === question.correct);
@@ -126,17 +138,16 @@
       input.checked = answer === letter;
       input.disabled = showing;
       const selected = letter === answer;
-      const correct = letter === question.correct;
-      if (showing) row.classList.add(correct ? "correct" : "incorrect");
+      const verdict = showing ? optionVerdict(question, letter) : null;
+      if (verdict) row.classList.add(verdict.correct ? "correct" : "incorrect");
       row.append(input, el("span", `${letter}. ${option}`));
-      if (showing) {
-        const label = correct ? "Correcta" : "Incorrecta";
-        const verdict = el("strong", label, "choice-verdict");
+      if (verdict) {
+        const badge = el("strong", verdict.label, "choice-verdict");
         if (selected) {
-          verdict.tabIndex = -1;
-          verdict.setAttribute("data-veredicto", "");
+          badge.tabIndex = -1;
+          badge.setAttribute("data-veredicto", "");
         }
-        row.append(verdict);
+        row.append(badge);
       }
       input.addEventListener("change", () => {
         answers.set(question.id, letter);
@@ -210,7 +221,7 @@
       detail.append(el("p", `Tu respuesta: ${question.opts.find(([letter]) => letter === answer)?.join(". ") || "Sin responder"}`));
       const options = el("ul", "");
       for (const [letter, option] of question.opts) {
-        options.append(el("li", `${letter}. ${option} · ${letter === question.correct ? "Correcta" : "Incorrecta"}`));
+        options.append(el("li", `${letter}. ${option} · ${optionVerdict(question, letter).label}`));
       }
       detail.append(options, explanation(question, answer));
       quiz.append(detail);
