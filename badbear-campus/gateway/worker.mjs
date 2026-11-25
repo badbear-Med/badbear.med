@@ -9,6 +9,13 @@ const PUBLIC = new Set([
   "/", "/index.html", "/badbear-campus/", CAMPUS,
   "/badbear-campus/student.js", "/badbear-campus/core.js", "/badbear-campus/results.js",
   "/badbear-campus/campus.css", "/badbear-campus/student-portal.css", "/badbear-campus/campus-vivid.css",
+  // Administration serves a sign-in screen and static UI. The APIs authorize administrative requests.
+  "/administracion/", "/administracion/index.html", "/administracion/admin.css",
+  "/administracion/admin.js", "/administracion/bridge.js",
+  "/badbear-campus/admin.html", "/badbear-campus/admin.js", "/badbear-campus/admin-students.js",
+  "/badbear-campus/csv.js", "/badbear-campus/plantilla-correos.csv",
+  "/badbear-campus/plantilla-padron-alumnos.csv", "/badbear-campus/plantilla-resultados.csv",
+  "/badbear-exams/admin.html",
   "/dermatologia/badbear_logo.png", "/assets/css/clean-navigation.css",
   "/assets/css/wajomea-group.css", "/assets/css/wajomea-cinematic.css",
   "/assets/js/wajomea-group.js", "/assets/js/wajomea-video.js", "/assets/js/wajomea-shell-entry.js",
