@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BANQUEOREAL.TEC.QX · Cirugía BATIMIX</title>
+<link rel="stylesheet" href="banqueoreal-tec-qx.css">
+<link rel="stylesheet" href="../assets/css/course-lock.css">
+<script src="../assets/js/course-lock-config.js"></script>
+<script src="../assets/js/course-lock.js" data-course="cirugia-batimix"></script>
+<script src="banqueoreal-tec-qx.js" defer></script>
+</head>
+<body>
+<main>
+<header class="hero">
+<a href="index.html#tecnicas-quirurgicas">← Técnicas Quirúrgicas</a>
+<h1>BANQUEOREAL.TEC.QX</h1>
+<p>Responde y revisa el fundamento de cada pregunta. Las preguntas se adaptaron del material de examen y los enunciados ambiguos se reformularon.</p>
+</header>
+<section class="panel" aria-labelledby="practice">
+<h2 id="practice">Banco de preguntas</h2>
+<div class="controls"><label for="topic">Tema</label><select id="topic"><option value="">Todos los temas</option></select></div>
+<p id="progress" aria-live="polite"></p>
+<form id="quiz">
+<fieldset id="choices"></fieldset>
+<button class="primary" id="check" type="submit">Comprobar respuesta</button>
+</form>
+<div id="feedback" aria-live="polite"></div>
+<div class="controls">
+<button id="back" type="button">Anterior</button>
+<button id="next" type="button">Siguiente</button>
+</div>
+</section>
+<section class="panel" aria-labelledby="material">
+<h2 id="material">Material original</h2>
+<button class="primary" id="open-pdf" type="button" aria-expanded="false" aria-controls="pdf-view">Consultar material en PDF</button>
+<div id="pdf-view" hidden>
+<p id="pdf-status" role="status"></p>
+<div class="controls">
+<button id="pdf-back" type="button">Página anterior</button>
+<button id="pdf-next" type="button">Página siguiente</button>
+</div>
+<img id="pdf-page" alt="" hidden>
+</div>
+</section>
+</main>
+</body>
+</html>

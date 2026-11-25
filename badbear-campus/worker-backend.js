@@ -388,6 +388,10 @@ export default {
         else await env.DB.prepare("DELETE FROM campus_progreso_cirugia WHERE codigo=? AND clase_id=?").bind(user.codigo,body.clase_id).run();
         return response({ok:true},200,origin);
       }
+      if (req.method === "GET" && path === "/api/sesion") {
+        await session(req, env);
+        return response({ok:true},200,origin);
+      }
       if (req.method === "GET" && path === "/api/mi-perfil") { const user=await session(req,env);return response({alumno:user},200,origin); }
       if (req.method === "GET" && path === "/api/mis-resultados") {
         const user = await session(req,env);

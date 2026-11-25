@@ -1,0 +1,81 @@
+name: Prepare Campus production assets
+on:
+  push:
+    branches:
+      - campus/validacion-sesion-proyectos
+    paths:
+      - .github/workflows/prepare-campus-production.yml
+      - badbear-campus/gateway/**
+      - badbear-campus/clases-en-vivo.*
+      - badbear-campus/index.html
+      - badbear-campus/student.js
+      - badbear-campus/student-portal.css
+      - tesis-1/**
+      - cirugia-batimix/**
+      - badbear-campus/aula-batimix.html
+      - tools/package-campus-site.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: campus-production-preparation
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.repository == 'badbear-Med/badbear.med' && github.ref == 'refs/heads/campus/validacion-sesion-proyectos'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Package and check site
+        run: |
+          node --check badbear-campus/gateway/session.mjs
+          node --check badbear-campus/gateway/worker.mjs
+          python3 tools/package-campus-site.py "$RUNNER_TEMP/campus-site"
+      - name: Prepare private storage and upload large files
+        env:
+          CLOUDFLARE_ACCOUNT_ID: caace9c94fd11467e298cdee61f2397b
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN"
+          bucket=badbear-campus-site-private
+          if ! npx --yes wrangler@4 r2 bucket info "$bucket"; then
+            npx --yes wrangler@4 r2 bucket create "$bucket"
+          fi
+          while IFS=$'\t' read -r key mime; do
+            npx --yes wrangler@4 r2 object put "$bucket/$key" --file "$RUNNER_TEMP/campus-site/large/${key##*/}" --content-type "$mime" --remote
+          done < <(python3 -c 'import json,mimetypes,sys; data=json.load(open(sys.argv[1])); print("\n".join(item["key"]+"\t"+(mimetypes.guess_type(path)[0] or "application/octet-stream") for path,item in data.items()))' "$RUNNER_TEMP/campus-site/large-assets.json")
+      - name: Deploy gateway without any public route
+        env:
+          CLOUDFLARE_ACCOUNT_ID: caace9c94fd11467e298cdee61f2397b
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PRODUCTION_API_TOKEN }}
+        run: |
+          test -n "$CLOUDFLARE_API_TOKEN"
+          cp badbear-campus/gateway/{worker,session}.mjs "$RUNNER_TEMP/campus-site/"
+          cd "$RUNNER_TEMP/campus-site"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          config = {
+              "name": "badbear-campus-gateway",
+              "main": "worker.mjs",
+              "compatibility_date": "2026-11-21",
+              "workers_dev": False,
+              "preview_urls": False,
+              "assets": {"directory": "./static", "binding": "SITE_ASSETS",
+                         "run_worker_first": True, "html_handling": "none"},
+              "services": [{"binding": "CAMPUS", "service": "badbear-campus-api"}],
+              "r2_buckets": [{"binding": "LARGE_ASSETS", "bucket_name": "badbear-campus-site-private"}],
+              "vars": {"LARGE_ASSETS_MANIFEST": json.loads(Path("large-assets.json").read_text())},
+          }
+          Path("wrangler.json").write_text(json.dumps(config))
+          PY
+          npx --yes wrangler@4 deploy --config wrangler.json

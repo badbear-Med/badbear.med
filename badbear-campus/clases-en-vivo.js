@@ -5,8 +5,13 @@ const refreshButton = $("live-refresh");
 const enterButton = $("live-enter");
 const endButton = $("live-end");
 const exitButton = $("live-exit");
+const recordButton = $("live-record");
+const recordHelp = $("live-record-help");
 const status = $("live-status");
 const mount = $("live-meeting");
+const stage = $("live-stage");
+const fullscreen = $("live-fullscreen");
+const captureStatus = $("live-capture-status");
 const signIn = $("live-sign-in");
 const identity = $("live-identity");
 const requested = new URLSearchParams(location.search).get("curso");
@@ -20,6 +25,12 @@ let loadedApp;
 let sdk;
 let busy = false;
 let closedToCampus = false;
+let joined = false;
+let recording = false;
+let selectingCapture = false;
+let recorder;
+let downloadUrl;
+const download = $("live-record-download");
 
 for (const { id, nombre } of courses) selector.add(new Option(nombre, id));
 if (courses.some(course => course.id === requested)) selector.value = requested;
@@ -51,7 +62,12 @@ function controls() {
     state?.esAnfitrion ? "Volver como anfitrión" : "Entrar como invitado";
   endButton.hidden = !api || !access?.esAnfitrion || closedToCampus;
   exitButton.hidden = !api;
-  endButton.disabled = exitButton.disabled = busy;
+  fullscreen.hidden = !api || !document.fullscreenEnabled;
+  const canRecord = Boolean(api && joined && access?.esAnfitrion);
+  recordButton.hidden = recordHelp.hidden = !canRecord;
+  recordButton.disabled = busy || selectingCapture;
+  recordButton.textContent = recording ? "Detener grabación local" : "Grabar en este equipo";
+  endButton.disabled = exitButton.disabled = busy || selectingCapture;
 }
 
 function report(error) {
@@ -123,7 +139,93 @@ function loadSDK(appId) {
   });
 }
 
+async function toggleRecording() {
+  if (!api || !joined || !access?.esAnfitrion || busy || selectingCapture) return;
+  if (recording) {
+    if (recorder?.state === "recording") recorder.stop();
+    return;
+  }
+  if (!navigator.mediaDevices?.getDisplayMedia || typeof MediaRecorder === "undefined" || typeof AudioContext === "undefined") {
+    message("Este navegador no admite la grabación local. Abre Campus en Chrome o Edge de escritorio.", true);
+    return;
+  }
+  const meeting = api;
+  if (downloadUrl && !window.confirm("Si comienzas otra grabación, se reemplazará el archivo anterior. ¿Continuar?")) return;
+  let display, microphone, mixer;
+  const release = () => {
+    for (const stream of [display, microphone, mixer?.destination.stream]) {
+      stream?.getTracks().forEach(track => track.stop());
+    }
+    if (mixer) void mixer.context.close().catch(() => {});
+  };
+  selectingCapture = true;
+  controls();
+  try {
+    display = await navigator.mediaDevices.getDisplayMedia({video: true, audio: true, preferCurrentTab: true});
+    if (api !== meeting) { release(); return; }
+    if (!display.getAudioTracks().length) throw new Error("Selecciona la pestaña de Clases en vivo y marca Compartir audio de la pestaña.");
+    microphone = await navigator.mediaDevices.getUserMedia({audio: true});
+    if (api !== meeting || display.getVideoTracks()[0]?.readyState !== "live") { release(); return; }
+
+    const context = new AudioContext();
+    mixer = {context, destination: context.createMediaStreamDestination()};
+    for (const stream of [display, microphone]) {
+      context.createMediaStreamSource(stream).connect(mixer.destination);
+    }
+    await context.resume();
+    if (api !== meeting || display.getVideoTracks()[0]?.readyState !== "live") { release(); return; }
+    const capture = new MediaStream([...display.getVideoTracks(), ...mixer.destination.stream.getAudioTracks()]);
+    const local = new MediaRecorder(capture);
+    const chunks = [];
+    let failed = false;
+    local.addEventListener("dataavailable", event => { if (event.data.size) chunks.push(event.data); });
+    local.addEventListener("error", () => { failed = true; });
+    local.addEventListener("stop", () => {
+      release();
+      if (recorder === local) recorder = undefined;
+      recording = false;
+      if (!failed && chunks.length) {
+        if (downloadUrl) URL.revokeObjectURL(downloadUrl);
+        const mime = local.mimeType || chunks[0].type || "video/webm";
+        downloadUrl = URL.createObjectURL(new Blob(chunks, {type: mime}));
+        download.href = downloadUrl;
+        download.download = "clase-campus-" + new Date().toISOString().replace(/[:.]/g, "-") + (mime.includes("mp4") ? ".mp4" : ".webm");
+        download.hidden = false;
+        captureStatus.textContent = "Grabación lista para guardar en tu equipo.";
+      } else {
+        captureStatus.textContent = "El navegador no pudo generar el archivo de grabación.";
+      }
+      controls();
+    });
+    display.getVideoTracks()[0].addEventListener("ended", () => {
+      if (local.state !== "inactive") local.stop();
+    }, {once: true});
+    local.start(1000);
+    if (downloadUrl) URL.revokeObjectURL(downloadUrl);
+    downloadUrl = undefined;
+    download.hidden = true;
+    download.removeAttribute("href");
+    recorder = local;
+    recording = true;
+    captureStatus.textContent = "Grabación local en curso. Incluye tu micrófono.";
+  } catch (error) {
+    release();
+    const denied = ["NotAllowedError", "AbortError"].includes(error.name);
+    message(denied ? "Grabación cancelada o permiso denegado. Autoriza la pestaña y el micrófono para continuar." : error.message, true);
+  } finally {
+    selectingCapture = false;
+    controls();
+  }
+}
+
+function finishCapture() {
+  if (recorder && recorder.state !== "inactive") recorder.stop();
+}
+
 function leave() {
+  finishCapture();
+  if (document.fullscreenElement === stage) void document.exitFullscreen().catch(() => {});
+  joined = false;
   const previous = api;
   api = access = undefined;
   closedToCampus = false;
@@ -162,9 +264,11 @@ async function openMeeting() {
     meeting.getIFrame().title = "Videollamada de " + state.curso;
     meeting.addListener("videoConferenceJoined", async () => {
       if (api !== meeting) return;
+      joined = true;
+      controls();
       try {
         if (access.esAnfitrion) await post(endpoint("abrir"), sessionToken(), { sala: access.sala });
-        if (api === meeting) message("Estás en la reunión.");
+        if (api === meeting && !selectingCapture && !recording) message("Estás en la reunión.");
       } catch (error) {
         if (api === meeting) report(error);
       }
@@ -196,6 +300,8 @@ async function endMeeting() {
     await post(endpoint("cerrar"), sessionToken(), { sala: access.sala });
     if (api === meeting) {
       closedToCampus = true;
+      finishCapture();
+      if (document.fullscreenElement === stage) void document.exitFullscreen().catch(() => {});
       meeting.executeCommand("endConference");
     }
     message("La sala del Campus está cerrada a nuevas entradas. Jitsi finalizará la llamada si esa opción está habilitada.");
@@ -211,6 +317,18 @@ async function endMeeting() {
 selector.addEventListener("change", refresh);
 refreshButton.addEventListener("click", refresh);
 enterButton.addEventListener("click", openMeeting);
+recordButton.addEventListener("click", toggleRecording);
+fullscreen.addEventListener("click", async () => {
+  try {
+    if (document.fullscreenElement === stage) await document.exitFullscreen();
+    else await stage.requestFullscreen();
+  } catch {
+    captureStatus.textContent = "No se pudo cambiar a pantalla completa.";
+  }
+});
+document.addEventListener("fullscreenchange", () => {
+  fullscreen.textContent = document.fullscreenElement === stage ? "Salir de pantalla completa" : "Pantalla completa";
+});
 endButton.addEventListener("click", endMeeting);
 exitButton.addEventListener("click", () => { leave(); void refresh(); });
 void refresh();

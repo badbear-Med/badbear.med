@@ -1,0 +1,28 @@
+name: Connect Campus domain
+on:
+  push:
+    branches:
+      - campus/validacion-sesion-proyectos
+    paths:
+      - .github/workflows/connect-campus-domain.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: campus-domain-connection
+  cancel-in-progress: false
+
+jobs:
+  connect:
+    if: github.repository == 'badbear-Med/badbear.med'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Connect domain and verify the Cloudflare edge
+        env:
+          CF_ZONE_TOKEN: ${{ secrets.CLOUDFLARE_ZONE_API_TOKEN }}
+        run: python3 tools/connect-campus-domain.py

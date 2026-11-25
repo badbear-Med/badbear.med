@@ -1,0 +1,2401 @@
+[
+  {
+    "id": 1,
+    "topic": "Diseño",
+    "prompt": "El nivel de investigación que no requiere hipótesis ni estadística es:",
+    "options": [
+      "Aplicativo",
+      "Explicativo",
+      "Exploratorio",
+      "Relacional",
+      "Predictivo"
+    ],
+    "key": 2,
+    "reason": "La clave es exploratorio. Explorar un problema poco conocido no exige hipótesis formal ni estadística inferencial; sí puede incluir estadísticas descriptivas.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-09.html#tema-3"
+  },
+  {
+    "id": 2,
+    "topic": "Variables",
+    "prompt": "En “Atención en poblaciones excluidas y desarrollo de recursos humanos en las fuerzas armadas”, distinga la variable independiente según la clave del curso.",
+    "options": [
+      "Desarrollo de recursos humanos",
+      "Atención en poblaciones excluidas",
+      "Ninguna",
+      "Todas",
+      "Fuerzas armadas"
+    ],
+    "key": 1,
+    "reason": "La clave toma la atención como predictor y el desarrollo como resultado. El título solo no establece causalidad ni dirección: verifique el objetivo y el diseño.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-06.html"
+  },
+  {
+    "id": 3,
+    "topic": "Planeamiento",
+    "prompt": "Son etapas de la investigación cuantitativa según el esquema del curso:",
+    "options": [
+      "Preparatoria, trabajo de campo, analítica e informativa",
+      "Planeamiento, organización, implementación, ejecución, evaluación y resultados",
+      "Diagnóstico, seguimiento, evaluación, resultados y recomendaciones",
+      "Todas",
+      "Ninguna"
+    ],
+    "key": 1,
+    "reason": "El curso usa seis etapas. Los nombres y la agrupación de fases pueden variar entre manuales.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-14-15.html#tema-2"
+  },
+  {
+    "id": 4,
+    "topic": "Diseño",
+    "prompt": "Respecto a la relación objeto–sujeto en el enfoque cuantitativo clásico, marque la respuesta esperada.",
+    "options": [
+      "El investigador decide y el investigado es tratado como objeto pasivo",
+      "Ninguna",
+      "Se define y construye al planificar",
+      "Todas",
+      "Ambos participan en todos los momentos"
+    ],
+    "key": 0,
+    "reason": "La clave alude al control del diseño y la medición por el investigador. Esa caracterización clásica no elimina la autonomía ni la participación de las personas.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-09.html#tema-3"
+  },
+  {
+    "id": 5,
+    "topic": "Planeamiento",
+    "prompt": "Respecto a la matriz de consistencia, marque lo correcto.",
+    "options": [
+      "Resume los principales elementos del proyecto",
+      "No necesita considerar título, problema, objetivos ni hipótesis específicas",
+      "No es un instrumento de ponderación",
+      "Nunca deben codificarse sus componentes",
+      "Solo se elabora al terminar el proyecto"
+    ],
+    "key": 0,
+    "reason": "Su función principal es hacer visible la coherencia del proyecto. Se puede revisar durante el diseño y la estructura se adapta al estudio.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-14-15.html#tema-2"
+  },
+  {
+    "id": 6,
+    "topic": "Planeamiento",
+    "prompt": "En el planeamiento, ¿qué fundamenta conceptualmente el problema y los objetivos?",
+    "options": [
+      "Planteamiento del problema",
+      "Metodología",
+      "Justificación",
+      "Aspectos administrativos",
+      "Marco teórico"
+    ],
+    "key": 4,
+    "reason": "El marco teórico organiza el conocimiento previo y contextualiza conceptos. La justificación explica la importancia y la metodología describe cómo se investigará.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-05.html"
+  },
+  {
+    "id": 7,
+    "topic": "Ética y RSU",
+    "prompt": "Respecto al consentimiento informado, marque lo correcto.",
+    "options": [
+      "Es una guía para el diseño",
+      "Debe ser lo más corto posible",
+      "Termina con la firma",
+      "Los niños firman el consentimiento informado",
+      "Aplica la autonomía y el respeto a la voluntad"
+    ],
+    "key": 4,
+    "reason": "Es un proceso continuo de información, comprensión y decisión voluntaria. La firma documenta el proceso; en menores distinga asentimiento y autorización del representante.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-11.html#tema-4"
+  },
+  {
+    "id": 8,
+    "topic": "Instrumentos",
+    "prompt": "Respecto a la lista de cotejo, marque lo correcto.",
+    "options": [
+      "Cuestionario escrito",
+      "Encuesta escrita",
+      "Instrumento de observación de campo",
+      "Libreta no estructurada",
+      "Ficha de análisis documental"
+    ],
+    "key": 2,
+    "reason": "Una lista de cotejo registra de forma estructurada si cada conducta o característica se observa, usualmente con categorías como sí y no.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 9,
+    "topic": "Variables",
+    "prompt": "En “Aseguramiento en salud y la descentralización de EsSalud”, distinga la variable dependiente según la clave del curso.",
+    "options": [
+      "Aseguramiento en salud",
+      "Ninguna",
+      "Descentralización",
+      "EsSalud",
+      "Todas"
+    ],
+    "key": 0,
+    "reason": "La clave plantea el aseguramiento como resultado y la descentralización como posible predictor. La dirección se define en el objetivo, no por el orden del título.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-06.html"
+  },
+  {
+    "id": 10,
+    "topic": "Ética y RSU",
+    "prompt": "Respecto a la ética, marque la opción esperada por el banco.",
+    "options": [
+      "La ética alude aquí a normas asumidas por la persona y la moral a normas transmitidas socialmente",
+      "Los mayores de 12 años no pueden participar en investigación biomédica",
+      "La deontología del nutricionista no contempla la investigación",
+      "Puede iniciarse el estudio sin la revisión ética aplicable"
+    ],
+    "key": 0,
+    "reason": "Es la distinción didáctica de este banco. En filosofía, ética también designa la reflexión crítica sobre la moral; no existe una prohibición general basada solo en tener más de 12 años.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-11.html#tema-4"
+  },
+  {
+    "id": 11,
+    "topic": "Instrumentos",
+    "prompt": "La confiabilidad del instrumento se refiere a:",
+    "options": [
+      "Medir una variable distinta",
+      "No medir la variable propuesta",
+      "Obtener resultados consistentes al repetir la medición en condiciones comparables",
+      "Obtener el mismo resultado en sujetos distintos",
+      "Obtener resultados similares sin especificar condiciones"
+    ],
+    "key": 2,
+    "reason": "La confiabilidad es consistencia. Un instrumento puede ser reproducible y aun así medir sistemáticamente mal.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 12,
+    "topic": "Instrumentos",
+    "prompt": "La validez de un instrumento se refiere a:",
+    "options": [
+      "Resultados similares a los previos",
+      "Consistencia al medir al mismo sujeto",
+      "Resultados iguales entre sujetos distintos",
+      "No medir la variable propuesta",
+      "Medir la variable que se pretende medir"
+    ],
+    "key": 4,
+    "reason": "La validez se refiere a la evidencia que respalda la interpretación de la medición para un propósito. Repetibilidad por sí sola no la demuestra.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 13,
+    "topic": "Ética y RSU",
+    "prompt": "¿Qué documento sistematiza respeto por las personas, beneficencia y justicia como principios de investigación con seres humanos?",
+    "options": [
+      "Declaración de Helsinki",
+      "Informe Belmont",
+      "Juramento Hipocrático",
+      "Código de Núremberg",
+      "Declaración de Ginebra"
+    ],
+    "key": 1,
+    "reason": "Belmont formula ese tríptico. Núremberg y Helsinki son antecedentes y referencias éticas relevantes, por eso se precisó el enunciado original.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-11.html#tema-2"
+  },
+  {
+    "id": 14,
+    "topic": "Ética y RSU",
+    "prompt": "¿Cuál es una aplicación del principio de autonomía en investigación?",
+    "options": [
+      "Validez del instrumento",
+      "Protocolo de investigación",
+      "Plan de análisis",
+      "Consentimiento informado",
+      "Matriz de consistencia"
+    ],
+    "key": 3,
+    "reason": "La persona decide libremente tras recibir y comprender la información pertinente.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-11.html#tema-4"
+  },
+  {
+    "id": 15,
+    "topic": "Gestión",
+    "prompt": "El presupuesto, según la clasificación del curso, comprende:",
+    "options": [
+      "Actividades, bienes y servicios",
+      "Personal, bienes y servicios",
+      "Personal, bibliografía y servicios",
+      "Personal, bienes y ejecución",
+      "Tiempo, bienes y servicios"
+    ],
+    "key": 1,
+    "reason": "La clasificación separa costos de recursos humanos, adquisiciones y servicios. El tiempo se organiza principalmente en el cronograma.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-13.html#tema-3"
+  },
+  {
+    "id": 16,
+    "topic": "Fuentes",
+    "prompt": "¿Qué técnica de esta lista se usa al trabajar con información documental ya existente?",
+    "options": [
+      "Entrevistas",
+      "Sondeos",
+      "Observación",
+      "Encuestas",
+      "Subrayado"
+    ],
+    "key": 4,
+    "reason": "Subrayar ayuda a trabajar con documentos existentes. Es una técnica de lectura y no una fuente en sí; el documento puede ser primario o secundario según su origen.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-05.html"
+  },
+  {
+    "id": 17,
+    "topic": "Ética y RSU",
+    "prompt": "¿Cómo caracteriza el banco la Responsabilidad Social Universitaria?",
+    "options": [
+      "Compromiso unilateral obligatorio",
+      "Extensión solidaria únicamente",
+      "Gestión justa y sostenible de los impactos universitarios",
+      "Revisión de la legitimidad sin gestión de impactos",
+      "Mercantilización de la universidad"
+    ],
+    "key": 2,
+    "reason": "La RSU abarca los impactos de la formación, la investigación, la gestión institucional y la relación con la sociedad.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-12.html#tema-1"
+  },
+  {
+    "id": 18,
+    "topic": "Fuentes",
+    "prompt": "¿Cuál técnica puede producir información primaria por obtención directa?",
+    "options": [
+      "Gráficas e ilustraciones",
+      "Análisis de contenido",
+      "Resumen analítico",
+      "Fichaje",
+      "Observación"
+    ],
+    "key": 4,
+    "reason": "El registro directo de un fenómeno genera datos primarios para el estudio. Una gráfica o un resumen pueden presentar información ya existente.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-05.html"
+  },
+  {
+    "id": 19,
+    "topic": "Planeamiento",
+    "prompt": "¿Qué conjunto resume mejor una matriz de consistencia en el formato del curso?",
+    "options": [
+      "Problemas, objetivos, hipótesis, variables y operacionalización",
+      "Problemas, objetivos, hipótesis, variables, indicadores y métodos o técnicas",
+      "Justificación en lugar de problemas",
+      "Marco teórico en lugar de problemas",
+      "Factibilidad en lugar de problemas"
+    ],
+    "key": 1,
+    "reason": "La opción integra el problema con los objetivos, la medición y la metodología. La hipótesis se incluye cuando corresponde al enfoque y objetivo.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-14-15.html#tema-2"
+  },
+  {
+    "id": 20,
+    "topic": "Instrumentos",
+    "prompt": "¿Qué conjunto de criterios es razonable para diseñar y aplicar un cuestionario?",
+    "options": [
+      "Una población pequeña siempre exige un censo",
+      "Todas las preguntas deben ser cerradas",
+      "El anonimato garantiza confiabilidad",
+      "La confidencialidad es irrelevante",
+      "Considerar un censo si es viable, elegir el tipo de pregunta según el objetivo y proteger la privacidad"
+    ],
+    "key": 4,
+    "reason": "Se precisó la pregunta original: el anonimato puede reducir algunos sesgos de respuesta, pero no garantiza confiabilidad. El censo es una opción, no una obligación.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 21,
+    "topic": "Ética y RSU",
+    "prompt": "Marque lo correcto respecto a la difusión de resultados.",
+    "options": [
+      "Publicar solo lo que coincide con la hipótesis",
+      "Basta respetar el Juramento Hipocrático",
+      "Basta informar al patrocinador",
+      "Difundir también los resultados negativos o no concluyentes",
+      "Iniciar investigación con personas sin revisión ética aplicable"
+    ],
+    "key": 3,
+    "reason": "Informar resultados negativos e inconclusos reduce el sesgo de publicación y permite evaluar el conjunto de la evidencia.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-11.html#tema-6"
+  },
+  {
+    "id": 22,
+    "topic": "Gestión",
+    "prompt": "¿Qué se programa en los aspectos administrativos de un proyecto según el banco?",
+    "options": [
+      "Solo los financiamientos",
+      "Recursos y tiempo de formulación",
+      "Solo presupuesto y actividades",
+      "Recursos y tiempo para ejecutar la investigación",
+      "Únicamente recursos y presupuesto"
+    ],
+    "key": 3,
+    "reason": "La respuesta combina qué recursos se necesitan y cuándo se ejecutarán las actividades. Presupuesto y cronograma cumplen funciones complementarias.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-13.html#tema-3"
+  },
+  {
+    "id": 23,
+    "topic": "Gestión",
+    "prompt": "¿Qué muestra principalmente el diagrama de Gantt?",
+    "options": [
+      "Recursos y tiempo",
+      "Presupuesto y tareas",
+      "Financiamiento y tareas",
+      "Actividades distribuidas en el tiempo",
+      "Recursos y actividades"
+    ],
+    "key": 3,
+    "reason": "Cada barra muestra cuándo comienza y termina una actividad y permite ver superposiciones.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-13.html#tema-2"
+  },
+  {
+    "id": 24,
+    "topic": "Instrumentos",
+    "prompt": "¿Qué conjunto describe buenas prácticas al realizar una entrevista de investigación?",
+    "options": [
+      "Entrevistar equivale a aplicar un cuestionario cerrado",
+      "La influencia del entrevistador no importa",
+      "Grabar siempre es obligatorio",
+      "Se puede grabar sin informar",
+      "Usar el diálogo, reducir sesgos y grabar cuando sea pertinente y esté autorizado"
+    ],
+    "key": 4,
+    "reason": "Se precisó la pregunta original: registrar audio o video es opcional y requiere autorización. Capacitación y preguntas neutrales ayudan a reducir sesgos.",
+    "source": "Aportada · adaptada para estudio",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 25,
+    "topic": "Diseño",
+    "prompt": "Un equipo mide exposición y enfermedad en una única visita a cada participante. ¿Qué diseño describe mejor el estudio?",
+    "options": [
+      "Cohorte prospectiva",
+      "Transversal",
+      "Ensayo aleatorizado",
+      "Casos y controles",
+      "Serie temporal"
+    ],
+    "key": 1,
+    "reason": "El diseño transversal mide variables en un momento o periodo breve y permite estimar prevalencia. La secuencia temporal puede quedar incierta.",
+    "source": "Práctica original",
+    "theory": "clase-09.html#tema-4"
+  },
+  {
+    "id": 26,
+    "topic": "Variables",
+    "prompt": "Se estudia si las horas de sueño predicen el puntaje de un examen. ¿Cuál es el resultado?",
+    "options": [
+      "Horas de sueño",
+      "Edad",
+      "Puntaje del examen",
+      "Participantes",
+      "Horario de recolección"
+    ],
+    "key": 2,
+    "reason": "El resultado es el puntaje. Las horas de sueño son el predictor de interés; el diseño determinará qué inferencias son válidas.",
+    "source": "Práctica original",
+    "theory": "clase-06.html"
+  },
+  {
+    "id": 27,
+    "topic": "Instrumentos",
+    "prompt": "Una balanza arroja repetidamente 3 kg por encima del valor de referencia. ¿Qué ocurre?",
+    "options": [
+      "Baja consistencia y exactitud perfecta",
+      "Buena consistencia y error sistemático",
+      "La validez se demuestra al repetir",
+      "Error exclusivamente aleatorio",
+      "No se puede identificar sesgo"
+    ],
+    "key": 1,
+    "reason": "Las mediciones repetidas coinciden entre sí, pero se apartan sistemáticamente de la referencia. Consistencia no equivale a exactitud.",
+    "source": "Práctica original",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 28,
+    "topic": "Ética y RSU",
+    "prompt": "Una participante desea retirarse de un estudio. ¿Qué conducta respeta su autonomía?",
+    "options": [
+      "Exigir una explicación",
+      "Penalizarla",
+      "Respetar su decisión y explicar el manejo de los datos ya recogidos",
+      "Obligarla a completar las visitas",
+      "Publicar su identidad"
+    ],
+    "key": 2,
+    "reason": "El retiro debe ser voluntario y sin represalias. El uso de datos ya recogidos depende de lo informado y del protocolo aplicable.",
+    "source": "Práctica original",
+    "theory": "clase-11.html#tema-4"
+  },
+  {
+    "id": 29,
+    "topic": "Planeamiento",
+    "prompt": "El objetivo dice estimar prevalencia, pero el método solo analiza historias seleccionadas por presencia de la enfermedad. ¿Qué revisar primero?",
+    "options": [
+      "Ortografía del título",
+      "Cronograma",
+      "Coherencia entre objetivo, selección de participantes y denominador",
+      "Color de la matriz",
+      "Formato bibliográfico"
+    ],
+    "key": 2,
+    "reason": "Una selección basada solo en enfermos elimina el denominador necesario para estimar prevalencia en la población objetivo.",
+    "source": "Práctica original",
+    "theory": "clase-14-15.html#tema-2"
+  },
+  {
+    "id": 30,
+    "topic": "Fuentes",
+    "prompt": "Un equipo extrae datos ya recogidos de historias clínicas para su nuevo estudio. ¿Cómo usa esos datos?",
+    "options": [
+      "Primarios por estar en un hospital",
+      "Secundarios para ese estudio",
+      "Experimentales",
+      "Resultados propios de una entrevista",
+      "Aleatorizados"
+    ],
+    "key": 1,
+    "reason": "Son secundarios para el nuevo estudio porque fueron recogidos previamente con otro propósito.",
+    "source": "Práctica original",
+    "theory": "clase-05.html"
+  },
+  {
+    "id": 31,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "El investigador observa si un seguimiento habitual se asocia a progresión sin asignar visitas. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Estudio observacional analítico",
+      "Ensayo aleatorizado",
+      "Estudio cuasiexperimental",
+      "Estudio ecológico",
+      "Serie de casos"
+    ],
+    "key": 0,
+    "reason": "La exposición ocurre en la práctica clínica y el objetivo compara desenlaces por exposición.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-3"
+  },
+  {
+    "id": 32,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se asigna al azar un programa de seguimiento o atención habitual. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Cohorte prospectiva",
+      "Ensayo no aleatorizado",
+      "Casos y controles",
+      "Ensayo aleatorizado",
+      "Estudio transversal"
+    ],
+    "key": 3,
+    "reason": "La asignación la decide el protocolo y el azar equilibra factores en promedio.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-3"
+  },
+  {
+    "id": 33,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se asigna el programa por hospital sin sorteo y se compara con otro centro. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Ensayo aleatorizado por conglomerados",
+      "Estudio cuasiexperimental",
+      "Cohorte sin intervención asignada",
+      "Estudio ecológico descriptivo",
+      "Serie de casos sin comparación"
+    ],
+    "key": 1,
+    "reason": "Existe intervención asignada, pero las diferencias entre centros pueden confundir.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-3"
+  },
+  {
+    "id": 34,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "En 2026 se reconstruye el seguimiento completo de 2022–2025 a partir de registros. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Cohorte prospectiva",
+      "Casos y controles",
+      "Transversal analítico",
+      "Ensayo por conglomerados",
+      "Cohorte retrospectiva"
+    ],
+    "key": 4,
+    "reason": "La población se forma desde el inicio en riesgo y la trayectoria ya ocurrió.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-4"
+  },
+  {
+    "id": 35,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se recluta hoy a pacientes elegibles y se mide incidencia durante dos años. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Cohorte retrospectiva",
+      "Casos y controles",
+      "Cohorte prospectiva",
+      "Transversal descriptivo",
+      "Serie de casos"
+    ],
+    "key": 2,
+    "reason": "La selección precede al desenlace, que se observa conforme ocurre.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-4"
+  },
+  {
+    "id": 36,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se revisan registros previos y luego se sigue a las mismas personas hacia el futuro. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Cohorte ambidireccional",
+      "Cohorte exclusivamente retrospectiva",
+      "Cohorte exclusivamente prospectiva",
+      "Transversal analítico",
+      "Casos y controles"
+    ],
+    "key": 0,
+    "reason": "Se combinan tramos retrospectivo y prospectivo de la misma cohorte.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-4"
+  },
+  {
+    "id": 37,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "En una sola encuesta se mide IMC y alteración glicémica en todos los incluidos. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Cohorte prospectiva",
+      "Transversal descriptivo",
+      "Estudio ecológico",
+      "Transversal analítico",
+      "Casos y controles"
+    ],
+    "key": 3,
+    "reason": "Permite comparar prevalencias; la temporalidad entre variables suele quedar incierta.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-4"
+  },
+  {
+    "id": 38,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se calcula qué proporción de asistentes presenta prediabetes en una encuesta de una visita. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Casos y controles",
+      "Transversal descriptivo",
+      "Cohorte retrospectiva",
+      "Transversal analítico",
+      "Ensayo preventivo"
+    ],
+    "key": 1,
+    "reason": "Describe prevalencia en una población medida en un corte, sin comparar exposiciones.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-5"
+  },
+  {
+    "id": 39,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se seleccionan personas que progresaron y personas de la misma población que no progresaron para reconstruir exposición. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Ecológico",
+      "Serie de casos",
+      "Cohorte",
+      "Ensayo aleatorizado",
+      "Casos y controles"
+    ],
+    "key": 4,
+    "reason": "Se muestrea por desenlace; suele estimarse una razón de momios.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-7"
+  },
+  {
+    "id": 40,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se parte de expuestos y no expuestos inicialmente libres de DM2. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Casos y controles",
+      "Ecológico",
+      "Cohorte",
+      "Serie de casos",
+      "Cohorte prospectiva"
+    ],
+    "key": 2,
+    "reason": "Se puede comparar incidencia por exposición cuando el seguimiento es adecuado.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-7"
+  },
+  {
+    "id": 41,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "El objetivo es comprender por qué los pacientes abandonan las visitas mediante entrevistas abiertas. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Cualitativo",
+      "Métodos mixtos",
+      "Transversal descriptivo",
+      "Estudio observacional analítico",
+      "Serie de casos"
+    ],
+    "key": 0,
+    "reason": "La unidad de análisis se interpreta mediante narrativas y categorías; no basta contar respuestas.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-1"
+  },
+  {
+    "id": 42,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se estima la frecuencia de abandono y las entrevistas se integran para explicar sus patrones. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Cualitativo",
+      "Cohorte retrospectiva",
+      "Aplicada",
+      "Métodos mixtos",
+      "Cohorte ambidireccional"
+    ],
+    "key": 3,
+    "reason": "La integración explícita de resultados cuantitativos y cualitativos caracteriza el enfoque.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-1"
+  },
+  {
+    "id": 43,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se contrasta una teoría sobre mecanismos metabólicos sin objetivo práctico inmediato. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Aplicada",
+      "Básica",
+      "De evaluación de implementación",
+      "De mejora de procesos",
+      "De evaluación económica"
+    ],
+    "key": 1,
+    "reason": "Busca ampliar conocimiento conceptual; usar métodos cuantitativos no implica orientación aplicada.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-2"
+  },
+  {
+    "id": 44,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se estudia una modificación del circuito clínico para reducir citas perdidas. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Básica",
+      "Revisión puramente conceptual",
+      "Desarrollo de teoría sin aplicación inmediata",
+      "Exploración mecanicista sin objetivo operativo",
+      "Aplicada"
+    ],
+    "key": 4,
+    "reason": "La finalidad práctica define la orientación, independientemente del diseño.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-2"
+  },
+  {
+    "id": 45,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se construye un modelo para estimar el riesgo individual a dos años y se evalúa su calibración. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Relacional",
+      "Exploratorio",
+      "Predictivo",
+      "Básica",
+      "Cohorte ambidireccional"
+    ],
+    "key": 2,
+    "reason": "Importa el desempeño al pronosticar casos futuros; un predictor no necesita ser causa.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-6"
+  },
+  {
+    "id": 46,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se examina la asociación entre HbA1c inicial y progresión sin un objetivo causal. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Relacional",
+      "Exploratorio",
+      "Predictivo",
+      "Casos y controles",
+      "Ensayo aleatorizado"
+    ],
+    "key": 0,
+    "reason": "Medir una asociación no identifica el efecto de intervenir sobre la exposición.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-6"
+  },
+  {
+    "id": 47,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se busca identificar qué dimensiones de una barrera poco conocida conviene estudiar. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Relacional",
+      "Predictivo",
+      "Estudio cuasiexperimental",
+      "Exploratorio",
+      "Confusión por autoselección"
+    ],
+    "key": 3,
+    "reason": "Busca delimitar el problema y generar hipótesis; no exige confirmarlas.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-6"
+  },
+  {
+    "id": 48,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se describen ocho casos sin grupo de comparación. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Cohorte",
+      "Serie de casos",
+      "Casos y controles",
+      "Ecológico",
+      "Cohorte ambidireccional"
+    ],
+    "key": 1,
+    "reason": "Puede generar hipótesis, pero no estima el efecto de una exposición.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-7"
+  },
+  {
+    "id": 49,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Se relacionan tasas de enfermedad y recursos por distrito, sin datos individuales. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Casos y controles",
+      "Serie de casos",
+      "Cohorte",
+      "Ensayo aleatorizado",
+      "Ecológico"
+    ],
+    "key": 4,
+    "reason": "La unidad es el distrito; trasladar el resultado al individuo puede producir falacia ecológica.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-7"
+  },
+  {
+    "id": 50,
+    "topic": "Clase 09 · Tipo, nivel y diseño",
+    "prompt": "Los pacientes eligen el programa y quienes lo eligen tienen mejor acceso a transporte. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Ensayo aleatorizado",
+      "Estudio observacional analítico",
+      "Confusión por autoselección",
+      "Estudio cuasiexperimental",
+      "Métodos mixtos"
+    ],
+    "key": 2,
+    "reason": "El acceso puede influir en exposición y desenlace; ajustar variables observadas no descarta toda confusión.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-09.html#tema-3"
+  },
+  {
+    "id": 51,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se extraen cuatro visitas por paciente y se estima el riesgo de progresión por persona. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Visita como unidad independiente",
+      "Paciente como unidad de análisis",
+      "Hospital como unidad de análisis",
+      "Número de historia como desenlace",
+      "Año calendario como unidad de análisis"
+    ],
+    "key": 1,
+    "reason": "Las visitas son mediciones repetidas; tratarlas como pacientes independientes distorsiona la precisión.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-1"
+  },
+  {
+    "id": 52,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "El estudio usa un solo hospital pero quiere concluir sobre toda Lima. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Aleatorio simple",
+      "Invitar inicialmente a 240 personas",
+      "Estratificado",
+      "Recalcular con diferencia esperada y potencia",
+      "Distinguir población accesible de población objetivo"
+    ],
+    "key": 4,
+    "reason": "El marco hospitalario no abarca automáticamente a la población a la que se quiere extrapolar.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-2"
+  },
+  {
+    "id": 53,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Un padrón contiene el mismo paciente con tres números de historia. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Sesgo potencial de cobertura",
+      "Por conglomerados",
+      "Depurar duplicados antes del sorteo",
+      "Criterio consistente con la población en riesgo",
+      "Consecutivo"
+    ],
+    "key": 2,
+    "reason": "La duplicación altera probabilidades de inclusión y puede sesgar la muestra.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-4"
+  },
+  {
+    "id": 54,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "El padrón no incluye centros rurales que forman parte de la población objetivo. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Sesgo potencial de cobertura",
+      "Depurar duplicados antes del sorteo",
+      "Por cuotas",
+      "Ponderar por probabilidades de inclusión",
+      "El tamaño requerido se aproxima a cuatro veces"
+    ],
+    "key": 0,
+    "reason": "Un sorteo impecable dentro de un marco incompleto no recupera las unidades ausentes.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-4"
+  },
+  {
+    "id": 55,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se sortean identificadores con igual probabilidad a partir de una lista depurada. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Estratificado",
+      "Multietápico",
+      "Por cuotas",
+      "Aleatorio simple",
+      "Ponderar por probabilidades de inclusión"
+    ],
+    "key": 3,
+    "reason": "Cada unidad del marco tiene la misma probabilidad en este diseño.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-5"
+  },
+  {
+    "id": 56,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se elige un inicio aleatorio y luego cada décimo registro. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Consecutivo",
+      "Sistemático",
+      "Por conveniencia",
+      "Estratificado",
+      "Multietápico"
+    ],
+    "key": 1,
+    "reason": "La periodicidad del orden puede sesgar la selección si coincide con el intervalo.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-5"
+  },
+  {
+    "id": 57,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se separa el padrón por sexo y se sortean pacientes dentro de cada grupo. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Ponderar por probabilidades de inclusión",
+      "Aleatorio simple",
+      "Por conglomerados",
+      "Consecutivo",
+      "Estratificado"
+    ],
+    "key": 4,
+    "reason": "Se seleccionan unidades en cada estrato para asegurar su representación.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-5"
+  },
+  {
+    "id": 58,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se sortean centros y se incluye a todos los elegibles de los centros seleccionados. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Multietápico",
+      "Por cuotas",
+      "Por conglomerados",
+      "Ponderar por probabilidades de inclusión",
+      "Aleatorio simple"
+    ],
+    "key": 2,
+    "reason": "Se sortean grupos naturales; la similitud interna afecta la varianza.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-5"
+  },
+  {
+    "id": 59,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se sortean centros y luego pacientes dentro de los centros elegidos. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Multietápico",
+      "Por conveniencia",
+      "Sistemático",
+      "Por conglomerados",
+      "Por cuotas"
+    ],
+    "key": 0,
+    "reason": "Hay selección en más de una etapa y deben considerarse las probabilidades de ambas.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-5"
+  },
+  {
+    "id": 60,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se incorpora a todos los elegibles que llegan durante el periodo definido. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Aleatorio simple",
+      "Estratificado",
+      "Multietápico",
+      "Consecutivo",
+      "Por conveniencia"
+    ],
+    "key": 3,
+    "reason": "Reduce la discrecionalidad de invitar sólo algunos, pero no equivale a selección aleatoria.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-5"
+  },
+  {
+    "id": 61,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se llena una cantidad fija de participantes por edad mediante invitaciones sin sorteo. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Por conglomerados",
+      "Por cuotas",
+      "Consecutivo",
+      "Ponderar por probabilidades de inclusión",
+      "Aleatorio simple"
+    ],
+    "key": 1,
+    "reason": "La cantidad por grupo está fijada, pero la inclusión individual no es probabilística.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-5"
+  },
+  {
+    "id": 62,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se encuesta a los compañeros disponibles en una sola aula. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Por cuotas",
+      "Sistemático",
+      "Por conglomerados",
+      "Consecutivo",
+      "Por conveniencia"
+    ],
+    "key": 4,
+    "reason": "La disponibilidad determina la selección y limita la generalización.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-5"
+  },
+  {
+    "id": 63,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se estima prevalencia y se reduce a la mitad el error absoluto tolerado con los demás supuestos fijos. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "El mismo tamaño",
+      "Aproximadamente el doble",
+      "El tamaño requerido se aproxima a cuatro veces",
+      "Aproximadamente la mitad",
+      "Aproximadamente ocho veces"
+    ],
+    "key": 2,
+    "reason": "En la fórmula usual para población grande, el tamaño es inversamente proporcional al cuadrado del error.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-6"
+  },
+  {
+    "id": 64,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "El análisis necesita 180 respuestas y se espera que participe el 75 %. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Invitar inicialmente a 240 personas",
+      "Invitar inicialmente a 180 personas",
+      "Invitar inicialmente a 195 personas",
+      "Invitar inicialmente a 225 personas",
+      "Invitar inicialmente a 270 personas"
+    ],
+    "key": 0,
+    "reason": "Se divide 180 entre 0,75; el aumento no corrige por sí solo el sesgo por no respuesta.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-6"
+  },
+  {
+    "id": 65,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Con pacientes agrupados en centros, las respuestas dentro de cada centro se parecen. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "El tamaño requerido se aproxima a cuatro veces",
+      "Recalcular con diferencia esperada y potencia",
+      "Invitar inicialmente a 240 personas",
+      "Incorporar efecto de diseño",
+      "Sistemático"
+    ],
+    "key": 3,
+    "reason": "La correlación intragrupo reduce información respecto al muestreo simple del mismo tamaño.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-6"
+  },
+  {
+    "id": 66,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "El objetivo cambia de estimar porcentaje a comparar dos grupos. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "El tamaño requerido se aproxima a cuatro veces",
+      "Recalcular con diferencia esperada y potencia",
+      "Incorporar efecto de diseño",
+      "Invitar inicialmente a 240 personas",
+      "Criterio consistente con la población en riesgo"
+    ],
+    "key": 1,
+    "reason": "El nuevo objetivo exige supuestos de comparación y no solo el margen de error de prevalencia.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-6"
+  },
+  {
+    "id": 67,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se excluye a quienes ya tenían DM2 al inicio para medir primera progresión. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Exclusión pos hoc sesgada",
+      "Depurar duplicados antes del sorteo",
+      "Ponderar por probabilidades de inclusión",
+      "Por conveniencia",
+      "Criterio consistente con la población en riesgo"
+    ],
+    "key": 4,
+    "reason": "El desenlace incidente solo puede ocurrir en personas que no lo presentaban al inicio.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-7"
+  },
+  {
+    "id": 68,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "El investigador elimina después del análisis los casos que contradicen la hipótesis. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Criterio consistente con la población en riesgo",
+      "Sistemático",
+      "Exclusión pos hoc sesgada",
+      "Incorporar efecto de diseño",
+      "Por conglomerados"
+    ],
+    "key": 2,
+    "reason": "Los criterios deben predefinirse y las desviaciones documentarse sin seleccionar por resultados.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-7"
+  },
+  {
+    "id": 69,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se revisan todos los registros elegibles de una base cerrada. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Censo de la población accesible",
+      "Multietápico",
+      "Distinguir población accesible de población objetivo",
+      "Exclusión pos hoc sesgada",
+      "Por cuotas"
+    ],
+    "key": 0,
+    "reason": "Se incluyen todas las unidades del marco elegible; aún puede haber errores de cobertura o medición.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-3"
+  },
+  {
+    "id": 70,
+    "topic": "Clase 10 · Población, muestra y muestreo",
+    "prompt": "Se sobremuestrea un estrato pequeño y se quiere calcular una prevalencia total representativa. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Por conveniencia",
+      "Aleatorio simple",
+      "Estratificado",
+      "Ponderar por probabilidades de inclusión",
+      "Multietápico"
+    ],
+    "key": 3,
+    "reason": "Ignorar el sobremuestreo otorga a ese estrato un peso mayor que el de la población.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-10.html#tema-5"
+  },
+  {
+    "id": 71,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Un tesista quiere extraer historias identificables antes de que su protocolo sea revisado. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Solicitar evaluación de una dispensa",
+      "Someter una enmienda antes de aplicar el cambio",
+      "Esperar la aprobación y permisos aplicables",
+      "Declarar el análisis como exploratorio",
+      "Seudonimización"
+    ],
+    "key": 2,
+    "reason": "La revisión retrospectiva no vuelve inocuo el acceso a datos identificables.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-1"
+  },
+  {
+    "id": 72,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "No es viable solicitar consentimiento individual para un estudio de registros. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Solicitar evaluación de una dispensa",
+      "Esperar la aprobación y permisos aplicables",
+      "Someter una enmienda antes de aplicar el cambio",
+      "Justificar selección y reducir presión",
+      "Fabricación"
+    ],
+    "key": 0,
+    "reason": "La decisión corresponde al comité, que evalúa condiciones y salvaguardas.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-1"
+  },
+  {
+    "id": 73,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Después de la aprobación se agrega una visita invasiva al protocolo. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Solicitar evaluación de una dispensa",
+      "Esperar la aprobación y permisos aplicables",
+      "Corregir beneficios esperados y riesgos",
+      "Someter una enmienda antes de aplicar el cambio",
+      "Informar el resultado con sus limitaciones"
+    ],
+    "key": 3,
+    "reason": "Cambiar riesgos o procedimientos requiere la revisión correspondiente.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-1"
+  },
+  {
+    "id": 74,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Una pregunta se puede responder con datos mínimos, pero el equipo solicita diagnósticos ajenos al objetivo. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Seudonimización",
+      "Limitar los datos al propósito aprobado",
+      "Someter una enmienda antes de aplicar el cambio",
+      "Declarar el financiamiento y gestionar el conflicto",
+      "Agrupar o suprimir celdas identificables"
+    ],
+    "key": 1,
+    "reason": "La minimización reduce riesgo de privacidad sin perjudicar la respuesta.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-2"
+  },
+  {
+    "id": 75,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Se recluta exclusivamente a personas dependientes del investigador por facilidad. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Revisar el comparador para proteger la atención estándar",
+      "Fabricación",
+      "Comprobar comprensión antes de incluirlo",
+      "Plagio",
+      "Justificar selección y reducir presión"
+    ],
+    "key": 4,
+    "reason": "La justicia exige criterios pertinentes y la dependencia puede afectar voluntariedad.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-3"
+  },
+  {
+    "id": 76,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Un grupo comparador perdería la atención habitual disponible. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Justificar selección y reducir presión",
+      "Informar el resultado con sus limitaciones",
+      "Revisar el comparador para proteger la atención estándar",
+      "Valorar asentimiento y autorización del representante",
+      "Solicitar evaluación de una dispensa"
+    ],
+    "key": 2,
+    "reason": "La conveniencia analítica no justifica retirar cuidados sin fundamento y revisión ética.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-3"
+  },
+  {
+    "id": 77,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "El participante firma, pero no logra explicar lo que implica participar. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Comprobar comprensión antes de incluirlo",
+      "Corregir beneficios esperados y riesgos",
+      "Valorar asentimiento y autorización del representante",
+      "Respetar el retiro sin represalias",
+      "Declarar el financiamiento y gestionar el conflicto"
+    ],
+    "key": 0,
+    "reason": "La firma no sustituye la comprensión ni la decisión voluntaria.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-4"
+  },
+  {
+    "id": 78,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "La hoja promete curación aunque el estudio solo mide indicadores. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Respetar el retiro sin represalias",
+      "Comprobar comprensión antes de incluirlo",
+      "Valorar asentimiento y autorización del representante",
+      "Corregir beneficios esperados y riesgos",
+      "Plagio"
+    ],
+    "key": 3,
+    "reason": "Prometer beneficios inexistentes puede inducir una decisión mal informada.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-4"
+  },
+  {
+    "id": 79,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Una persona quiere abandonar el seguimiento del estudio. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Corregir beneficios esperados y riesgos",
+      "Respetar el retiro sin represalias",
+      "Comprobar comprensión antes de incluirlo",
+      "Valorar asentimiento y autorización del representante",
+      "Solicitar evaluación de una dispensa"
+    ],
+    "key": 1,
+    "reason": "Debe distinguirse el retiro de visitas del manejo de datos ya obtenidos conforme al protocolo.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-4"
+  },
+  {
+    "id": 80,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Se invita a menores capaces de expresar su voluntad. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Comprobar comprensión antes de incluirlo",
+      "Respetar el retiro sin represalias",
+      "Corregir beneficios esperados y riesgos",
+      "Justificar selección y reducir presión",
+      "Valorar asentimiento y autorización del representante"
+    ],
+    "key": 4,
+    "reason": "Cuando corresponda, la voluntad del menor complementa el permiso del representante.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-4"
+  },
+  {
+    "id": 81,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Se reemplaza el nombre por código, pero se conserva una tabla de correspondencia. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Anonimización irreversible",
+      "Muestreo codificado",
+      "Seudonimización",
+      "Publicación de identificadores directos",
+      "Destrucción de toda posibilidad de vinculación"
+    ],
+    "key": 2,
+    "reason": "Mientras sea posible vincular, los datos no son anónimos y requieren protección.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-5"
+  },
+  {
+    "id": 82,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Un analista solo necesita variables clínicas codificadas. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Otorgar acceso a la base analítica estrictamente necesaria",
+      "Seudonimización",
+      "Agrupar o suprimir celdas identificables",
+      "Limitar los datos al propósito aprobado",
+      "Fabricación"
+    ],
+    "key": 0,
+    "reason": "Separar identificadores y controlar permisos reduce exposición.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-5"
+  },
+  {
+    "id": 83,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Una tabla pública muestra un único caso en una localidad pequeña. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Seudonimización",
+      "Otorgar acceso a la base analítica estrictamente necesaria",
+      "Falsificación",
+      "Agrupar o suprimir celdas identificables",
+      "Comprobar comprensión antes de incluirlo"
+    ],
+    "key": 3,
+    "reason": "La combinación de características puede permitir reidentificación sin publicar nombres.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-5"
+  },
+  {
+    "id": 84,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Se inventan valores de laboratorio para completar expedientes. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Declarar el análisis como exploratorio",
+      "Fabricación",
+      "Falsificación",
+      "Informar el resultado con sus limitaciones",
+      "Plagio"
+    ],
+    "key": 1,
+    "reason": "Inventar observaciones se distingue de una imputación transparente basada en un método.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-6"
+  },
+  {
+    "id": 85,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Se eliminan valores reales sin criterio para alcanzar significancia. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Plagio",
+      "Declarar el análisis como exploratorio",
+      "Fabricación",
+      "Informar el resultado con sus limitaciones",
+      "Falsificación"
+    ],
+    "key": 4,
+    "reason": "La manipulación selectiva altera la representación de los resultados.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-6"
+  },
+  {
+    "id": 86,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Se copia un marco teórico sin atribución, aunque se cambian algunas palabras. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Informar el resultado con sus limitaciones",
+      "Falsificación",
+      "Plagio",
+      "Declarar el análisis como exploratorio",
+      "Fabricación"
+    ],
+    "key": 2,
+    "reason": "Parafrasear no elimina la obligación de atribuir ideas ajenas.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-6"
+  },
+  {
+    "id": 87,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "El resultado no respalda la hipótesis del patrocinador. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Informar el resultado con sus limitaciones",
+      "Fabricación",
+      "Plagio",
+      "Falsificación",
+      "Declarar el análisis como exploratorio"
+    ],
+    "key": 0,
+    "reason": "La publicación selectiva sesga la evidencia y el patrocinio no justifica ocultar hallazgos.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-6"
+  },
+  {
+    "id": 88,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Se decide explorar un subgrupo después de ver los resultados. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Falsificación",
+      "Informar el resultado con sus limitaciones",
+      "Fabricación",
+      "Declarar el análisis como exploratorio",
+      "Plagio"
+    ],
+    "key": 3,
+    "reason": "Debe distinguirse de una hipótesis previamente especificada para evitar exagerar evidencia.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-6"
+  },
+  {
+    "id": 89,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "Un jefe aportó solo autorización administrativa y solicita autoría. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Declarar el financiamiento y gestionar el conflicto",
+      "Reconocer el apoyo sin autoría injustificada",
+      "Respetar el retiro sin represalias",
+      "Solicitar evaluación de una dispensa",
+      "Declarar el análisis como exploratorio"
+    ],
+    "key": 1,
+    "reason": "Autoría requiere contribución, participación intelectual y responsabilidad según criterios aplicables.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-7"
+  },
+  {
+    "id": 90,
+    "topic": "Clase 11 · Ética e integridad",
+    "prompt": "El equipo recibe financiación de una empresa interesada en el resultado. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Reconocer el apoyo sin autoría injustificada",
+      "Otorgar acceso a la base analítica estrictamente necesaria",
+      "Justificar selección y reducir presión",
+      "Fabricación",
+      "Declarar el financiamiento y gestionar el conflicto"
+    ],
+    "key": 4,
+    "reason": "La transparencia permite evaluar influencias; conviene acordar independencia del análisis.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-11.html#tema-7"
+  },
+  {
+    "id": 91,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "El equipo define éxito solo como obtener el grado, pese a que la comunidad aportó tiempo. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Distinguir objeto de estudio de forma de investigar",
+      "Añadir salvaguardas y monitorizar daños",
+      "Definir aportes interdisciplinarios concretos",
+      "Incluir retorno útil para la comunidad",
+      "Revisar relevancia y utilidad de la pregunta"
+    ],
+    "key": 3,
+    "reason": "La responsabilidad social considera los efectos de la investigación sobre quienes contribuyen.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-1"
+  },
+  {
+    "id": 92,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "La tesis analiza políticas de RSU y el equipo desea además ejercerla. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Incluir retorno útil para la comunidad",
+      "Distinguir objeto de estudio de forma de investigar",
+      "Evaluar pertinencia y autorización del uso secundario",
+      "Comunicar alcance y limitaciones antes de recomendar",
+      "Anticipar usos y daños de la clasificación"
+    ],
+    "key": 1,
+    "reason": "Estudiar RSU y practicar investigación responsable son dimensiones distintas.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-1"
+  },
+  {
+    "id": 93,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Varios equipos piden los mismos datos al hospital con objetivos similares. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Evaluar pertinencia y autorización del uso secundario",
+      "Revisar relevancia y utilidad de la pregunta",
+      "Incorporar resultados relevantes para los afectados",
+      "Evaluar distribución de beneficios y alternativas de acceso",
+      "Coordinar usos evitando cargas duplicadas"
+    ],
+    "key": 4,
+    "reason": "La coordinación usa mejor recursos y reduce exigencias al servicio.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-2"
+  },
+  {
+    "id": 94,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Un proyecto usa un método vistoso pero no responde una necesidad pertinente. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Coordinar usos evitando cargas duplicadas",
+      "Evaluar pertinencia y autorización del uso secundario",
+      "Revisar relevancia y utilidad de la pregunta",
+      "Definir aportes interdisciplinarios concretos",
+      "Valorar la carga y comparar alternativas viables"
+    ],
+    "key": 2,
+    "reason": "La calidad social no se confunde con sofisticación técnica.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-2"
+  },
+  {
+    "id": 95,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Un equipo propone reutilizar datos disponibles para responder la pregunta. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Evaluar pertinencia y autorización del uso secundario",
+      "Coordinar usos evitando cargas duplicadas",
+      "Revisar relevancia y utilidad de la pregunta",
+      "Comunicar alcance y limitaciones antes de recomendar",
+      "Anticipar usos y daños de la clasificación"
+    ],
+    "key": 0,
+    "reason": "La eficiencia de recursos debe coexistir con validez y permisos.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-2"
+  },
+  {
+    "id": 96,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "La pregunta presupone que no asistir se debe a irresponsabilidad del paciente. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Anticipar usos y daños de la clasificación",
+      "Incorporar resultados relevantes para los afectados",
+      "Evaluar distribución de beneficios y alternativas de acceso",
+      "Reformular en términos neutrales y contrastables",
+      "Incorporar barreras al diseño cuando proceda"
+    ],
+    "key": 3,
+    "reason": "La pregunta puede introducir estigma y omitir barreras estructurales.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-3"
+  },
+  {
+    "id": 97,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Un modelo clasificaría a pacientes como de alto riesgo. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Incorporar resultados relevantes para los afectados",
+      "Anticipar usos y daños de la clasificación",
+      "Reformular en términos neutrales y contrastables",
+      "Valorar la carga y comparar alternativas viables",
+      "Preparar devolución comprensible de resultados"
+    ],
+    "key": 1,
+    "reason": "La clasificación puede mejorar seguimiento o perjudicar acceso si se aplica sin salvaguardas.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-3"
+  },
+  {
+    "id": 98,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "El desenlace elegido destaca costos pero omite carga para pacientes. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Anticipar usos y daños de la clasificación",
+      "Reformular en términos neutrales y contrastables",
+      "Comunicar resultados y abrir diálogo sobre su interpretación",
+      "Incluir actores relevantes desde el diseño",
+      "Incorporar resultados relevantes para los afectados"
+    ],
+    "key": 4,
+    "reason": "La utilidad depende de medir consecuencias que importan a quienes recibirán las acciones.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-3"
+  },
+  {
+    "id": 99,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "La investigación se diseña sin consultar al servicio que aplicaría sus resultados. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Buscar perspectivas diversas y explicitar límites",
+      "Definir aportes interdisciplinarios concretos",
+      "Incluir actores relevantes desde el diseño",
+      "Incorporar barreras al diseño cuando proceda",
+      "Distinguir objeto de estudio de forma de investigar"
+    ],
+    "key": 2,
+    "reason": "La participación temprana mejora factibilidad y comprensión del contexto.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-4"
+  },
+  {
+    "id": 100,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Pacientes señalan transporte y horarios como posibles barreras omitidas. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Incorporar barreras al diseño cuando proceda",
+      "Incluir actores relevantes desde el diseño",
+      "Buscar perspectivas diversas y explicitar límites",
+      "Definir aportes interdisciplinarios concretos",
+      "Evaluar pertinencia y autorización del uso secundario"
+    ],
+    "key": 0,
+    "reason": "La experiencia comunitaria puede detectar variables ausentes en el enfoque clínico.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-4"
+  },
+  {
+    "id": 101,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "El problema combina indicadores clínicos, acceso y organización del servicio. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Incorporar barreras al diseño cuando proceda",
+      "Incluir actores relevantes desde el diseño",
+      "Buscar perspectivas diversas y explicitar límites",
+      "Definir aportes interdisciplinarios concretos",
+      "Incorporar resultados relevantes para los afectados"
+    ],
+    "key": 3,
+    "reason": "Cada disciplina debe contribuir a decisiones del método, análisis o implementación.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-4"
+  },
+  {
+    "id": 102,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Una sola persona afirma representar a toda una comunidad diversa. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Definir aportes interdisciplinarios concretos",
+      "Buscar perspectivas diversas y explicitar límites",
+      "Incorporar barreras al diseño cuando proceda",
+      "Incluir actores relevantes desde el diseño",
+      "Revisar relevancia y utilidad de la pregunta"
+    ],
+    "key": 1,
+    "reason": "Una voz no garantiza cobertura de los grupos afectados.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-4"
+  },
+  {
+    "id": 103,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Solo se planea publicar en una revista inaccesible para la comunidad. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Difundir agregados que preserven privacidad",
+      "Comunicar alcance y limitaciones antes de recomendar",
+      "Comunicar resultados y abrir diálogo sobre su interpretación",
+      "Anticipar usos y daños de la clasificación",
+      "Preparar devolución comprensible de resultados"
+    ],
+    "key": 4,
+    "reason": "Una síntesis accesible complementa la difusión científica.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-5"
+  },
+  {
+    "id": 104,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Un estudio observacional encuentra una asociación en un solo hospital. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Difundir agregados que preserven privacidad",
+      "Preparar devolución comprensible de resultados",
+      "Comunicar alcance y limitaciones antes de recomendar",
+      "Comunicar resultados y abrir diálogo sobre su interpretación",
+      "Añadir salvaguardas y monitorizar daños"
+    ],
+    "key": 2,
+    "reason": "La política no debe asumir causalidad o generalización que el diseño no respalda.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-5"
+  },
+  {
+    "id": 105,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Una tabla muy detallada identifica indirectamente a un grupo pequeño. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Difundir agregados que preserven privacidad",
+      "Preparar devolución comprensible de resultados",
+      "Comunicar resultados y abrir diálogo sobre su interpretación",
+      "Comunicar alcance y limitaciones antes de recomendar",
+      "Reformular en términos neutrales y contrastables"
+    ],
+    "key": 0,
+    "reason": "La utilidad del reporte puede mantenerse evitando la exposición de participantes.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-5"
+  },
+  {
+    "id": 106,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Los resultados contradicen expectativas del equipo comunitario. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Preparar devolución comprensible de resultados",
+      "Difundir agregados que preserven privacidad",
+      "Comunicar alcance y limitaciones antes de recomendar",
+      "Comunicar resultados y abrir diálogo sobre su interpretación",
+      "Evaluar distribución de beneficios y alternativas de acceso"
+    ],
+    "key": 3,
+    "reason": "Participar en la investigación no garantiza un resultado favorable.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-5"
+  },
+  {
+    "id": 107,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Una tecnología mejora el promedio, pero excluye a quienes carecen de internet. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Valorar la carga y comparar alternativas viables",
+      "Evaluar distribución de beneficios y alternativas de acceso",
+      "Definir indicadores de uso y seguimiento",
+      "Añadir salvaguardas y monitorizar daños",
+      "Coordinar usos evitando cargas duplicadas"
+    ],
+    "key": 1,
+    "reason": "El efecto promedio puede ocultar un aumento de inequidad.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-6"
+  },
+  {
+    "id": 108,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "El equipo prevé que una etiqueta de riesgo cause discriminación. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Evaluar distribución de beneficios y alternativas de acceso",
+      "Valorar la carga y comparar alternativas viables",
+      "Definir indicadores de uso y seguimiento",
+      "Reformular en términos neutrales y contrastables",
+      "Añadir salvaguardas y monitorizar daños"
+    ],
+    "key": 4,
+    "reason": "Anticipar consecuencias permite prevenir o detectar usos problemáticos.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-6"
+  },
+  {
+    "id": 109,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Se quiere saber si la devolución ayudó a cambiar una práctica del servicio. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Añadir salvaguardas y monitorizar daños",
+      "Evaluar distribución de beneficios y alternativas de acceso",
+      "Definir indicadores de uso y seguimiento",
+      "Valorar la carga y comparar alternativas viables",
+      "Incluir actores relevantes desde el diseño"
+    ],
+    "key": 2,
+    "reason": "Una publicación o reunión indica difusión; el uso efectivo necesita medición adicional.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-6"
+  },
+  {
+    "id": 110,
+    "topic": "Clase 12 · Responsabilidad social",
+    "prompt": "Una recomendación exige visitas adicionales sin evaluar el costo para pacientes. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Valorar la carga y comparar alternativas viables",
+      "Añadir salvaguardas y monitorizar daños",
+      "Evaluar distribución de beneficios y alternativas de acceso",
+      "Definir indicadores de uso y seguimiento",
+      "Buscar perspectivas diversas y explicitar límites"
+    ],
+    "key": 0,
+    "reason": "El beneficio ostensible puede reducirse si se ignoran tiempo, transporte y acceso.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-12.html#tema-6"
+  },
+  {
+    "id": 111,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "La revisión de historias es parte del método pero no figura en la planificación. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Verificar disponibilidad real antes de fijar plazos",
+      "Verificar qué rubros admite cada fuente",
+      "Declararla como recurso existente según el formato",
+      "Diagrama de Gantt",
+      "Vincular cada tarea con recursos, responsable y plazo"
+    ],
+    "key": 4,
+    "reason": "El plan administrativo debe permitir ejecutar todas las etapas del método.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-1"
+  },
+  {
+    "id": 112,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "La universidad solo presta el laboratorio determinadas tardes. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Vincular cada tarea con recursos, responsable y plazo",
+      "Programar el borrador antes de la validación",
+      "Verificar disponibilidad real antes de fijar plazos",
+      "Incluir almacenamiento seguro y sus responsables",
+      "Identificar la ruta crítica y prever holguras"
+    ],
+    "key": 2,
+    "reason": "Tener acceso nominal no garantiza horas suficientes de uso.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-1"
+  },
+  {
+    "id": 113,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "La extracción se programa antes de obtener la aprobación requerida. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Reordenar actividades con la aprobación como dependencia",
+      "Programar el borrador antes de la validación",
+      "Identificar la ruta crítica y prever holguras",
+      "Diagrama de Gantt",
+      "Resolver la sobreasignación del colaborador"
+    ],
+    "key": 0,
+    "reason": "El cronograma debe impedir acceso a datos antes del permiso correspondiente.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-2"
+  },
+  {
+    "id": 114,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Se quiere visualizar inicio, duración y solapamiento de tareas. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Reordenar actividades con la aprobación como dependencia",
+      "Resolver la sobreasignación del colaborador",
+      "Programar el borrador antes de la validación",
+      "Diagrama de Gantt",
+      "Identificar la ruta crítica y prever holguras"
+    ],
+    "key": 3,
+    "reason": "Las barras representan tiempos; conviene documentar dependencias además de dibujarlas.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-2"
+  },
+  {
+    "id": 115,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "La validación depende del primer borrador, que todavía no existe. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Identificar la ruta crítica y prever holguras",
+      "Programar el borrador antes de la validación",
+      "Reordenar actividades con la aprobación como dependencia",
+      "Resolver la sobreasignación del colaborador",
+      "Diagrama de Gantt"
+    ],
+    "key": 1,
+    "reason": "Las actividades dependientes no deben arrancar en un orden imposible.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-2"
+  },
+  {
+    "id": 116,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Recolección y preparación de tablas requieren al mismo colaborador en el mismo turno. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Diagrama de Gantt",
+      "Identificar la ruta crítica y prever holguras",
+      "Reordenar actividades con la aprobación como dependencia",
+      "Programar el borrador antes de la validación",
+      "Resolver la sobreasignación del colaborador"
+    ],
+    "key": 4,
+    "reason": "Las tareas pueden ser compatibles en teoría pero competir por el mismo recurso.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-2"
+  },
+  {
+    "id": 117,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Una semana de retraso en el permiso desplaza todo el proyecto. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Programar el borrador antes de la validación",
+      "Diagrama de Gantt",
+      "Identificar la ruta crítica y prever holguras",
+      "Resolver la sobreasignación del colaborador",
+      "Reordenar actividades con la aprobación como dependencia"
+    ],
+    "key": 2,
+    "reason": "Una tarea sin holgura puede retrasar la fecha final si no se replanifica.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-2"
+  },
+  {
+    "id": 118,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Se revisarán 200 fichas a S/ 1,50 por ficha. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Presupuestar S/ 300 para ese rubro",
+      "S/ 150",
+      "S/ 200",
+      "S/ 250",
+      "S/ 350"
+    ],
+    "key": 0,
+    "reason": "Se multiplica el volumen por el costo unitario.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-3"
+  },
+  {
+    "id": 119,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "El alquiler mensual de software cuesta S/ 120 y se usará tres meses. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "S/ 120",
+      "S/ 240",
+      "S/ 300",
+      "Presupuestar S/ 360 para la licencia",
+      "S/ 480"
+    ],
+    "key": 3,
+    "reason": "La unidad de costo es el mes; el rubro no debe contarse como pago único.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-3"
+  },
+  {
+    "id": 120,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "El presupuesto contiene un monto global para materiales, sin cantidades. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Presupuestar S/ 360 para la licencia",
+      "Desglosar cantidades y costos unitarios",
+      "Separar costos fijos de costos variables",
+      "Presupuestar S/ 300 para ese rubro",
+      "Declararla como recurso existente según el formato"
+    ],
+    "key": 1,
+    "reason": "El desglose permite revisar supuestos y recalcular si cambian volúmenes.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-3"
+  },
+  {
+    "id": 121,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "El tesista usa su propia laptop sin exigir reembolso. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Presupuestar S/ 300 para ese rubro",
+      "Desglosar cantidades y costos unitarios",
+      "Presupuestar S/ 360 para la licencia",
+      "Separar costos fijos de costos variables",
+      "Declararla como recurso existente según el formato"
+    ],
+    "key": 4,
+    "reason": "El equipo disponible es un recurso, aunque no genere un desembolso adicional.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-3"
+  },
+  {
+    "id": 122,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Al duplicar la muestra se quiere duplicar automáticamente todo el presupuesto. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Declararla como recurso existente según el formato",
+      "Presupuestar S/ 300 para ese rubro",
+      "Separar costos fijos de costos variables",
+      "Desglosar cantidades y costos unitarios",
+      "Presupuestar S/ 360 para la licencia"
+    ],
+    "key": 2,
+    "reason": "Los costos por registro cambian con el volumen; una licencia fija puede permanecer igual.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-3"
+  },
+  {
+    "id": 123,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Dos revisores codificarán expedientes pero nadie resolverá discrepancias. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Asignar revisión y resolución a responsables definidos",
+      "Programar capacitación y calibración",
+      "Incluir almacenamiento seguro y sus responsables",
+      "Identificar la ruta crítica y prever holguras",
+      "Proteger independencia y declarar las condiciones"
+    ],
+    "key": 0,
+    "reason": "La delegación exige prever control de calidad y tiempo.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-4"
+  },
+  {
+    "id": 124,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "El equipo no ha previsto almacenamiento con acceso restringido. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Programar capacitación y calibración",
+      "Asignar revisión y resolución a responsables definidos",
+      "Verificar qué rubros admite cada fuente",
+      "Incluir almacenamiento seguro y sus responsables",
+      "Desglosar cantidades y costos unitarios"
+    ],
+    "key": 3,
+    "reason": "La protección de datos requiere recursos y gestión concretos.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-4"
+  },
+  {
+    "id": 125,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Se incorpora un asistente para extracción y no se planifica entrenamiento. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Asignar revisión y resolución a responsables definidos",
+      "Programar capacitación y calibración",
+      "Incluir almacenamiento seguro y sus responsables",
+      "Resolver la sobreasignación del colaborador",
+      "Separar aportes en especie de gastos monetarios"
+    ],
+    "key": 1,
+    "reason": "El entrenamiento disminuye variación entre revisores y demanda recursos.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-4"
+  },
+  {
+    "id": 126,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Un hospital cede equipos y el tesista paga los insumos. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Proteger independencia y declarar las condiciones",
+      "Verificar qué rubros admite cada fuente",
+      "Presupuestar S/ 360 para la licencia",
+      "Verificar disponibilidad real antes de fijar plazos",
+      "Separar aportes en especie de gastos monetarios"
+    ],
+    "key": 4,
+    "reason": "Registrar ambas contribuciones refleja la financiación y recursos reales.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-5"
+  },
+  {
+    "id": 127,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Un patrocinador exige aprobar conclusiones antes de publicarlas. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Separar aportes en especie de gastos monetarios",
+      "Verificar qué rubros admite cada fuente",
+      "Proteger independencia y declarar las condiciones",
+      "Reordenar actividades con la aprobación como dependencia",
+      "Incluir control de calidad en cronograma y presupuesto"
+    ],
+    "key": 2,
+    "reason": "El apoyo financiero no debe determinar conclusiones ni ocultar resultados.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-5"
+  },
+  {
+    "id": 128,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Una beca cubre solo insumos, pero el plan la asigna también a remuneraciones. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Verificar qué rubros admite cada fuente",
+      "Proteger independencia y declarar las condiciones",
+      "Separar aportes en especie de gastos monetarios",
+      "Resolver la sobreasignación del colaborador",
+      "Programar capacitación y calibración"
+    ],
+    "key": 0,
+    "reason": "Las restricciones de los fondos pueden hacer inviable un presupuesto aparente.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-5"
+  },
+  {
+    "id": 129,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Se añade un segundo centro al método. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Incluir control de calidad en cronograma y presupuesto",
+      "Presupuestar S/ 360 para la licencia",
+      "Verificar disponibilidad real antes de fijar plazos",
+      "Actualizar permisos, tiempos, capacitación y costos",
+      "Verificar qué rubros admite cada fuente"
+    ],
+    "key": 3,
+    "reason": "El cambio de alcance altera tareas y dependencias.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-6"
+  },
+  {
+    "id": 130,
+    "topic": "Clase 13 · Aspectos administrativos",
+    "prompt": "Se incluye doble revisión de una submuestra pero no se reserva tiempo. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Actualizar permisos, tiempos, capacitación y costos",
+      "Incluir control de calidad en cronograma y presupuesto",
+      "Separar costos fijos de costos variables",
+      "Programar el borrador antes de la validación",
+      "Incluir almacenamiento seguro y sus responsables"
+    ],
+    "key": 1,
+    "reason": "Una salvaguarda metodológica solo es factible si se planifica su ejecución.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-13.html#tema-6"
+  },
+  {
+    "id": 131,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "El protocolo afirma usar una ficha estructurada, pero el anexo solo trae preguntas de entrevista. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Adjuntar la ficha real de extracción",
+      "Identificar versión y fecha del documento vigente",
+      "Revisar validez de contenido pese a la consistencia",
+      "Fijar unidades y reglas de conversión",
+      "Definir indicador, unidad y ventana de medición"
+    ],
+    "key": 0,
+    "reason": "El anexo debe permitir verificar cómo se capturarán las variables del método.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-1"
+  },
+  {
+    "id": 132,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "El expediente incluye versiones antiguas y nuevas del consentimiento. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Adjuntar la ficha real de extracción",
+      "Justificar su ausencia según el diseño y formato",
+      "Evidencia de validez de constructo",
+      "Identificar versión y fecha del documento vigente",
+      "Revisar la cobertura vertical de los objetivos"
+    ],
+    "key": 3,
+    "reason": "El control de versiones evita aplicar un formulario desactualizado.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-1"
+  },
+  {
+    "id": 133,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "El objetivo busca asociación con progresión, pero la matriz no contiene un desenlace. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Justificar su ausencia según el diseño y formato",
+      "Incluir el desenlace operacionalizado",
+      "Definir indicador, unidad y ventana de medición",
+      "Unificar ventana y frecuencia en ambos documentos",
+      "Revisar equivalencia y evaluar su desempeño local"
+    ],
+    "key": 1,
+    "reason": "La matriz debe conectar el objetivo con variables que permitan contestarlo.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-2"
+  },
+  {
+    "id": 134,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Se cita HbA1c como variable, pero no se indica qué dato se extrae. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Incluir el desenlace operacionalizado",
+      "Justificar su ausencia según el diseño y formato",
+      "Fijar unidades y reglas de conversión",
+      "Conciliar documentos y probar con casos piloto",
+      "Definir indicador, unidad y ventana de medición"
+    ],
+    "key": 4,
+    "reason": "El indicador convierte un concepto en un dato reproducible.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-2"
+  },
+  {
+    "id": 135,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Un estudio descriptivo no plantea hipótesis contrastable. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Incluir el desenlace operacionalizado",
+      "Definir indicador, unidad y ventana de medición",
+      "Justificar su ausencia según el diseño y formato",
+      "Evidencia de validez de constructo",
+      "Revisar la cobertura vertical de los objetivos"
+    ],
+    "key": 2,
+    "reason": "La matriz refleja el protocolo; no fuerza una hipótesis ajena al objetivo.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-2"
+  },
+  {
+    "id": 136,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Un objetivo compara grupos, pero el análisis solo informa un promedio global. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Alinear el análisis con el objetivo comparativo",
+      "Revisar la cobertura vertical de los objetivos",
+      "Unificar ventana y frecuencia en ambos documentos",
+      "Revisar equivalencia y evaluar su desempeño local",
+      "Separar códigos de ausencia de los valores observados"
+    ],
+    "key": 0,
+    "reason": "Un promedio agregado no permite conocer las diferencias entre grupos.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-3"
+  },
+  {
+    "id": 137,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Los objetivos específicos omiten un componente del objetivo general. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Unificar ventana y frecuencia en ambos documentos",
+      "Alinear el análisis con el objetivo comparativo",
+      "Conciliar documentos y probar con casos piloto",
+      "Revisar la cobertura vertical de los objetivos",
+      "Evidencia concurrente de validez de criterio"
+    ],
+    "key": 3,
+    "reason": "Los objetivos específicos deben descomponer lo necesario para cumplir el general.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-3"
+  },
+  {
+    "id": 138,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "La matriz define seguimiento trimestral, pero el método dice semestral. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Revisar la cobertura vertical de los objetivos",
+      "Unificar ventana y frecuencia en ambos documentos",
+      "Alinear el análisis con el objetivo comparativo",
+      "Confiabilidad entre observadores",
+      "Añadir reglas de extracción y desempate"
+    ],
+    "key": 1,
+    "reason": "Las discrepancias afectan comparabilidad y replicabilidad.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-3"
+  },
+  {
+    "id": 139,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Dos revisores interpretan “última HbA1c” de forma distinta. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Fijar unidades y reglas de conversión",
+      "Separar códigos de ausencia de los valores observados",
+      "Identificar versión y fecha del documento vigente",
+      "Ajustar el consentimiento a procedimientos reales",
+      "Añadir reglas de extracción y desempate"
+    ],
+    "key": 4,
+    "reason": "Una ventana temporal y una regla para fechas iguales reducen desacuerdos.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-4"
+  },
+  {
+    "id": 140,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "La ficha usa 0 para resultados ausentes y también como valor posible. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Añadir reglas de extracción y desempate",
+      "Fijar unidades y reglas de conversión",
+      "Separar códigos de ausencia de los valores observados",
+      "Justificar su ausencia según el diseño y formato",
+      "Confiabilidad test–retest"
+    ],
+    "key": 2,
+    "reason": "Mezclarlos puede sesgar resúmenes y modelos.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-4"
+  },
+  {
+    "id": 141,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Los campos numéricos admiten indistintamente metros y centímetros. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Fijar unidades y reglas de conversión",
+      "Separar códigos de ausencia de los valores observados",
+      "Añadir reglas de extracción y desempate",
+      "Unificar ventana y frecuencia en ambos documentos",
+      "Adjuntar la ficha real de extracción"
+    ],
+    "key": 0,
+    "reason": "La estandarización evita comparar escalas incompatibles.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-4"
+  },
+  {
+    "id": 142,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Expertos evalúan si los ítems cubren las dimensiones pertinentes. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Validez de criterio",
+      "Validez de constructo",
+      "Confiabilidad test–retest",
+      "Validez de contenido",
+      "Acuerdo entre evaluadores"
+    ],
+    "key": 3,
+    "reason": "Evalúa representación del dominio; no demuestra estabilidad temporal.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 143,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Se compara un nuevo instrumento con un referente medido simultáneamente. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Validez de contenido",
+      "Evidencia concurrente de validez de criterio",
+      "Evidencia predictiva",
+      "Estabilidad test–retest",
+      "Acuerdo entre observadores"
+    ],
+    "key": 1,
+    "reason": "Se examina la relación con una referencia externa en el mismo periodo.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 144,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Se prueba si un cuestionario muestra relaciones esperadas con medidas de conceptos afines y distintos. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Reproducibilidad entre observadores",
+      "Validez de criterio exclusivamente",
+      "Validez de contenido exclusivamente",
+      "Estabilidad temporal",
+      "Evidencia de validez de constructo"
+    ],
+    "key": 4,
+    "reason": "Los patrones convergentes y discriminantes respaldan la interpretación teórica.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 145,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Se aplica dos veces el instrumento a sujetos estables. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Concordancia de criterio concurrente",
+      "Validez de contenido",
+      "Confiabilidad test–retest",
+      "Confiabilidad entre observadores",
+      "Evidencia predictiva de criterio"
+    ],
+    "key": 2,
+    "reason": "Evalúa estabilidad temporal cuando el constructo no cambia.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 146,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Dos evaluadores clasifican los mismos expedientes con categorías nominales. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Confiabilidad entre observadores",
+      "Consistencia interna",
+      "Validez de contenido",
+      "Validez de constructo",
+      "Estabilidad en mediciones consecutivas del mismo evaluador"
+    ],
+    "key": 0,
+    "reason": "Puede resumirse con kappa cuando interesa ajustar el acuerdo por azar.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 147,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Una escala traducida se aplicará en un contexto cultural nuevo. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Validez de contenido",
+      "Evidencia de validez de constructo",
+      "Confiabilidad entre observadores",
+      "Revisar equivalencia y evaluar su desempeño local",
+      "Evidencia concurrente de validez de criterio"
+    ],
+    "key": 3,
+    "reason": "La evidencia de validez no se transfiere automáticamente entre poblaciones.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 148,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "Una ficha presenta alfa elevado, pero omite una dimensión esencial. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Confiabilidad test–retest",
+      "Revisar validez de contenido pese a la consistencia",
+      "Revisar equivalencia y evaluar su desempeño local",
+      "Validez de contenido",
+      "Evidencia de validez de constructo"
+    ],
+    "key": 1,
+    "reason": "El alfa no demuestra que se hayan incluido todas las dimensiones relevantes.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-5"
+  },
+  {
+    "id": 149,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "El consentimiento menciona extracción de sangre que nunca se hará. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Añadir reglas de extracción y desempate",
+      "Identificar versión y fecha del documento vigente",
+      "Revisar validez de contenido pese a la consistencia",
+      "Fijar unidades y reglas de conversión",
+      "Ajustar el consentimiento a procedimientos reales"
+    ],
+    "key": 4,
+    "reason": "El documento debe describir lo que ocurrirá y permitir decidir informadamente.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-6"
+  },
+  {
+    "id": 150,
+    "topic": "Clase 14-15 · Anexos e instrumentos",
+    "prompt": "La ficha, el protocolo y la matriz asignan distintos códigos a la misma variable. ¿Cuál es la mejor respuesta?",
+    "options": [
+      "Validez de contenido",
+      "Justificar su ausencia según el diseño y formato",
+      "Conciliar documentos y probar con casos piloto",
+      "Evidencia de validez de constructo",
+      "Revisar la cobertura vertical de los objetivos"
+    ],
+    "key": 2,
+    "reason": "La revisión cruzada y el pilotaje revelan contradicciones antes de la recolección.",
+    "source": "Caso original · segunda parte",
+    "theory": "clase-14-15.html#tema-7"
+  }
+]

@@ -199,3 +199,250 @@
 .student-portal .tab-section[data-view="inicio"] p{color:#536c7a;margin:0}
 .student-portal .tab-section[data-view="biblioteca"] a{display:inline-flex;background:#e8f3f7;padding:11px 16px;border-radius:9px;text-decoration:none;font-weight:700}
 @media(max-width:650px){.student-portal .student-tabs button{flex:1 1 120px}.student-portal .tab-section[data-view="inicio"]{padding:20px}}
+
+.student-portal .portal-header .campus-menu {
+  position: relative;
+  z-index: 10;
+  margin-inline-start: auto;
+}
+.student-portal .campus-menu > summary {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .55rem .8rem;
+  border: 1px solid #cbd9e9;
+  border-radius: .65rem;
+  background: #eef5ff;
+  color: #16385e;
+  font: 650 .875rem/1.4 system-ui, sans-serif;
+  cursor: pointer;
+}
+.student-portal .campus-menu > summary::after {
+  content: "";
+  width: .42rem;
+  height: .42rem;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: translateY(-2px) rotate(45deg);
+}
+.student-portal .campus-menu[open] > summary::after {
+  transform: translateY(2px) rotate(225deg);
+}
+.student-portal .campus-menu > nav {
+  position: absolute;
+  inset-inline-end: 0;
+  top: calc(100% + .35rem);
+  display: grid;
+  gap: .15rem;
+  width: min(14rem, calc(100vw - 2rem));
+  max-height: min(65vh, 26rem);
+  overflow: auto;
+  box-sizing: border-box;
+  padding: .35rem;
+  border: 1px solid #d5e1ee;
+  border-radius: .7rem;
+  background: #fff;
+  box-shadow: 0 .5rem 1.4rem #0d203d26;
+}
+.student-portal .campus-menu:not([open]) > nav {
+  display: none;
+}
+.student-portal .campus-menu nav a,
+.student-portal .campus-menu nav .group-link,
+.student-portal .campus-menu nav button {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .52rem .65rem;
+  border: 0;
+  border-radius: .4rem;
+  background: transparent;
+  color: #16385e;
+  font: 600 .84rem/1.4 system-ui, sans-serif;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+}
+.student-portal .campus-menu nav button[hidden] {
+  display: none;
+}
+.student-portal .campus-menu nav a:hover,
+.student-portal .campus-menu nav button:hover {
+  background: #eef5ff;
+}
+.student-portal .campus-menu :focus-visible {
+  outline: 2px solid #2c6db5;
+  outline-offset: -2px;
+}
+
+/* Workspace after sign-in */
+.student-portal main:has(.campus-workspace:not([hidden])) > .portal-hero,
+.student-portal main:has(.campus-workspace:not([hidden])) > .learning-area {
+  display:none;
+}
+.student-portal #results.campus-workspace {
+  padding:clamp(1rem,3vw,2rem);
+  border-radius:1.25rem;
+  border:1px solid #dce6ef;
+  background:#fff;
+}
+.student-portal .campus-workspace .welcome {
+  padding:0 0 1.1rem;
+  border-bottom:1px solid #e3eaf2;
+}
+.student-portal .campus-workspace .welcome h2 {
+  font-size:clamp(1.35rem,3vw,2rem);
+  line-height:1.2;
+  color:#142941;
+}
+.student-portal #results .student-tabs {
+  margin:1rem 0 1.35rem;
+  padding:0;
+  gap:.35rem;
+  background:transparent;
+  border:0;
+}
+.student-portal #results .student-tabs button {
+  padding:.48rem .8rem;
+  border:1px solid #dce6ef;
+  border-radius:.55rem;
+  background:#fff;
+  color:#263e57;
+  box-shadow:none;
+  font-size:.85rem;
+}
+.student-portal #results .student-tabs button.selected {
+  border-color:#bad2ed;
+  background:#e8f2ff;
+  color:#103d74;
+}
+.student-portal .campus-overview {display:grid;gap:1.45rem}
+.student-portal .campus-feature {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:1rem;
+  padding:clamp(1.1rem,4vw,2.3rem);
+  border-radius:1rem;
+  background:linear-gradient(112deg,#102641,#174761);
+  color:#f4faff;
+}
+.student-portal .campus-feature h3 {
+  margin:0;
+  color:inherit;
+  font-size:clamp(1.55rem,4vw,2.6rem);
+  letter-spacing:-.035em;
+}
+.student-portal .campus-feature p {margin:.35rem 0 1rem;color:#d3e6f4;font-size:.95rem}
+.student-portal .campus-feature img {width:clamp(3.6rem,10vw,7rem);height:auto;border-radius:50%}
+.student-portal .campus-feature-link,
+.student-portal .campus-classroom-link {
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-weight:700;
+  text-decoration:none;
+}
+.student-portal .campus-feature-link {padding:.55rem .8rem;border-radius:.55rem;background:#d7f2ff;color:#15334e}
+.student-portal .campus-feature-link:hover {background:#fff}
+.student-portal .campus-classroom-link {color:#145a97}
+.student-portal .campus-classroom-link:hover {text-decoration:underline}
+.student-portal .campus-classroom-heading,
+.student-portal .campus-live {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  gap:.6rem;
+}
+.student-portal .campus-classroom-heading h3 {margin:0;color:#18324c;font-size:1.2rem}
+.student-portal .campus-classroom-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.85rem;
+  margin:.8rem 0;
+}
+.student-portal .campus-classroom,
+.student-portal .campus-live {
+  padding:1rem;
+  background:#f7fafd;
+  border:1px solid #dce6ef;
+  border-radius:.8rem;
+}
+.student-portal .campus-classroom {display:flex;flex-direction:column;align-items:flex-start}
+.student-portal .campus-classroom h4,
+.student-portal .campus-live h4 {margin:0;color:#18324c;font-size:1rem}
+.student-portal .campus-classroom p,
+.student-portal .campus-live p {margin:.3rem 0;color:#506477;font-size:.85rem}
+.student-portal .campus-classroom > a {margin-top:auto;padding-top:.65rem}
+.student-portal .campus-classroom progress {
+  width:100%;
+  height:.65rem;
+  margin-top:.65rem;
+  accent-color:#147c88;
+}
+.student-portal .campus-grade-note {margin:.65rem 0 0;color:#506477;font-size:.8rem}
+@media(max-width:640px) {
+  .student-portal .campus-classroom-grid {grid-template-columns:minmax(0,1fr)}
+  .student-portal #results .student-tabs button {flex:0 1 auto}
+}
+
+.student-portal:has(.campus-workspace:not([hidden])) {
+  background:linear-gradient(150deg,#e4edfa,#f5f8ff 50%,#eef3f8);
+}
+.student-portal:has(.campus-workspace:not([hidden])) .portal-header {
+  background:#0c2040;
+  border-bottom:3px solid #4b83f3;
+}
+.student-portal:has(.campus-workspace:not([hidden])) .portal-header .brand-wordmark,
+.student-portal:has(.campus-workspace:not([hidden])) .portal-header .brand-wordmark strong {
+  color:#fff;
+}
+.student-portal:has(.campus-workspace:not([hidden])) .portal-header .brand-wordmark small {
+  color:#b9d7ff;
+}
+.student-portal .campus-workspace .welcome h2 {font-size:clamp(1.45rem,3vw,2.25rem)}
+.student-portal .campus-spotlight {
+  display:grid;
+  grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
+  gap:1rem;
+}
+.student-portal .campus-feature {
+  background:radial-gradient(ellipse at 95% 5%,#225fbc 0%,transparent 60%),linear-gradient(130deg,#0d2548,#173d79);
+}
+.student-portal .campus-feature-link {background:#fff;color:#153b72}
+.student-portal .campus-feature-link:hover {background:#dbeaff}
+.student-portal .campus-spotlight .campus-live {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  gap:.65rem;
+  padding:clamp(1.1rem,3vw,1.65rem);
+  border-color:#893549;
+  border-radius:1rem;
+  background:radial-gradient(ellipse at 100% 0%,#89334e,transparent 65%),linear-gradient(135deg,#47172f,#68213b);
+  color:#fff;
+}
+.student-portal .campus-live h3 {margin:0;font-size:clamp(1.35rem,3vw,1.85rem);color:#fff;line-height:1.2}
+.student-portal .campus-live p {margin:.3rem 0;color:#ffe2e8;font-size:.9rem}
+.student-portal .campus-live-icon {
+  position:relative;
+  width:1.3rem;height:.95rem;border:2px solid #ffb7c7;border-radius:.25rem;
+}
+.student-portal .campus-live-icon::after {
+  content:"";position:absolute;inset-inline-start:100%;top:50%;
+  transform:translateY(-50%);width:0;height:0;
+  border:.28rem solid transparent;border-inline-end-color:#ffb7c7;
+}
+.student-portal .campus-live-link {
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.56rem .8rem;border-radius:.55rem;
+  background:#ffe2e9;color:#54162e;font-weight:750;text-decoration:none;
+}
+.student-portal .campus-live-link:hover {background:#fff}
+.student-portal .campus-classroom {background:#fff;border-color:#bfcee3;border-top:3px solid #446daa}
+.student-portal .campus-overview a:focus-visible {outline:3px solid #3778e0;outline-offset:3px}
+.student-portal .campus-spotlight a:focus-visible {outline-color:#fff}
+@media(max-width:760px) {
+  .student-portal .campus-spotlight {grid-template-columns:minmax(0,1fr)}
+}

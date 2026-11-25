@@ -24,3 +24,11 @@
 }
 .live-page label[for="live-course"] { align-self: center; font-weight: 750; }
 .live-page .live-meeting { margin-top: 1rem; }
+
+.live-stage-actions{margin-top:.85rem}
+.live-download:not([hidden]){display:inline-block;margin:.5rem 0;padding:.65rem 1rem;border-radius:.55rem;background:#183b79;color:#fff;font-weight:700}
+.live-stage:fullscreen{display:flex;flex-direction:column;box-sizing:border-box;padding:.75rem;background:#101d36;color:#fff;overflow:auto}
+.live-stage:fullscreen .live-meeting:not([hidden]){flex:1;min-height:0;height:auto}
+.live-stage:fullscreen .live-stage-actions{margin-top:0}
+.live-stage:fullscreen .live-status{color:inherit}
+#live-capture-status:empty{display:none}
