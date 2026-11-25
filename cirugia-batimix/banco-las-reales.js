@@ -9,18 +9,21 @@
   const params = new URLSearchParams(location.search);
   const requested = Number(params.get("unidad"));
   const unit = requested >= 1 && requested <= units.length && Number.isInteger(requested) ? requested : 2;
-  const bank = (data[unit]?.items ?? data[unit] ?? []).map(question => ({
-    ...data[unit]?.explanations?.[question.group], ...question
-  }));
+  const bank = (data[unit]?.items ?? data[unit] ?? []).map(item => {
+    const question = {...data[unit]?.explanations?.[item.group], ...item};
+    const revision = window.BATIMIX_VERDADERO_FALSO?.[question.id];
+    if (!revision) return question;
+    const [stem, correct] = revision;
+    return {...question, originalStem: question.stem, stem, correct, kind: "mc",
+      opts: [["A", "Verdadero"], ["B", "Falso"]]};
+  });
   const anesthesia = (window.BATIMIX_ANESTESIOLOGIA?.secciones ?? []).flatMap(section => section.items);
   const nameById = new Map(anesthesia.map(item => [item.id, item.titulo]));
   const byId = id => document.getElementById(id);
   const quiz = byId("pregunta");
   const topic = byId("tema");
-  const gradedOnly = byId("solo-con-clave");
   const status = byId("disponibles");
   const answers = new Map();
-  const writtenAnswers = new Map();
   const revealed = new Set();
   const SIM_SIZE = 20;
   const SIM_SECONDS = 600;
@@ -55,7 +58,6 @@
   function uniqueScorable(pool) {
     const byGroup = new Map();
     for (const question of pool) {
-      if (question.kind !== "mc") continue;
       if (!byGroup.has(question.group)) byGroup.set(question.group, []);
       byGroup.get(question.group).push(question);
     }
@@ -82,13 +84,15 @@
   function explanation(question, answer) {
     const result = el("section", "", "feedback");
     const label = question.opts.find(([letter]) => letter === question.correct);
-    let title = question.kind === "open" ? "Respuesta orientativa" : "Repaso razonado";
-    if (question.kind === "mc") {
-      title = !answer ? "Sin responder" : answer === question.correct ? "Correcta" : "Incorrecta";
-    }
+    const title = !answer ? "Sin responder" : answer === question.correct ? "Correcta" : "Incorrecta";
     result.append(el("h3", title));
-    if (label) result.append(el("p", `Respuesta correcta: ${label.join(". ")}`));
-    result.append(el("p", question.why));
+    result.append(el("p", `Respuesta correcta: ${label.join(". ")}`));
+    result.append(el("h4", "BADBEAR.FIJAS · Fundamento"), el("p", question.why));
+    if (question.originalStem) {
+      const original = el("details", "");
+      original.append(el("summary", "Ver enunciado original"), el("p", question.originalStem));
+      result.append(original);
+    }
     if (question.theory) result.append(link("Ir a la teoría", question.theory));
     else if (question.lesson) {
       result.append(link("Ver clase o seminario", `../badbear-campus/aula-batimix.html?unidad=${unit}&recurso=${encodeURIComponent(question.lesson)}#unit-content`));
@@ -100,10 +104,7 @@
   function renderQuestion() {
     quiz.replaceChildren();
     if (!selection.length) {
-      const message = gradedOnly.checked
-        ? "Este tema todavía no tiene preguntas con clave. Desactiva el filtro para ver las de repaso."
-        : "Todavía no hay preguntas de los materiales recibidos para esta unidad.";
-      quiz.append(el("p", message));
+      quiz.append(el("p", "Todavía no hay preguntas para este tema."));
       return;
     }
     const question = selection[cursor];
@@ -115,7 +116,6 @@
     const number = el("p", `${cursor + 1} de ${selection.length} · ${topicName(question)}`, "meta");
     number.setAttribute("aria-live", "polite");
     quiz.append(number, form);
-    const scorable = question.kind === "mc";
     const showing = !timed && (answers.has(question.id) || revealed.has(question.id));
     for (const [letter, option] of question.opts) {
       const row = el("label", "", "choice");
@@ -124,16 +124,13 @@
       input.name = "answer";
       input.value = letter;
       input.checked = answer === letter;
-      input.disabled = scorable && showing;
+      input.disabled = showing;
       const selected = letter === answer;
       const correct = letter === question.correct;
-      if (scorable && showing && correct) row.classList.add("correct");
-      if (scorable && showing && selected && !correct) row.classList.add("incorrect");
+      if (showing) row.classList.add(correct ? "correct" : "incorrect");
       row.append(input, el("span", `${letter}. ${option}`));
-      if (showing && (selected || (scorable && correct))) {
-        const label = scorable
-          ? (selected ? (correct ? "Correcta" : "Incorrecta") : "Respuesta correcta")
-          : "Marcada · repaso sin puntuación";
+      if (showing) {
+        const label = correct ? "Correcta" : "Incorrecta";
         const verdict = el("strong", label, "choice-verdict");
         if (selected) {
           verdict.tabIndex = -1;
@@ -150,21 +147,12 @@
       });
       form.append(row);
     }
-    if (!timed && question.kind === "open") {
-      const label = el("label", "Tu respuesta", "written-answer");
-      const draft = document.createElement("textarea");
-      draft.rows = 4;
-      draft.value = writtenAnswers.get(question.id) ?? "";
-      draft.addEventListener("input", () => writtenAnswers.set(question.id, draft.value));
-      label.append(draft);
-      form.append(label);
-    }
     if (showing) {
       const result = explanation(question, answer);
       result.tabIndex = -1;
       quiz.append(result);
-    } else if (!timed && !scorable) {
-      quiz.append(button(question.kind === "open" ? "Ver respuesta razonada" : "Ver repaso razonado", () => {
+    } else if (!timed) {
+      quiz.append(button("Ver respuesta y fundamento", () => {
         revealed.add(question.id);
         renderQuestion().focus();
       }));
@@ -175,9 +163,10 @@
     previous.disabled = cursor === 0;
     next.disabled = cursor === selection.length - 1;
     actions.append(previous, next);
-    if (scorable && showing) {
+    if (showing) {
       actions.append(button("Volver a responder", () => {
         answers.delete(question.id);
+        revealed.delete(question.id);
         renderQuestion().focus();
       }, "secondary"));
     }
@@ -192,7 +181,7 @@
 
   function updatePractice() {
     selection = bank.filter(question =>
-      (!topic.value || topicKey(question) === topic.value) && (!gradedOnly.checked || question.kind === "mc")
+      !topic.value || topicKey(question) === topic.value
     );
     cursor = 0;
     const sim = byId("simulacro");
@@ -219,7 +208,11 @@
       const detail = el("details", "", "feedback");
       detail.append(el("summary", `${index + 1}. ${question.stem}`));
       detail.append(el("p", `Tu respuesta: ${question.opts.find(([letter]) => letter === answer)?.join(". ") || "Sin responder"}`));
-      detail.append(explanation(question, answer));
+      const options = el("ul", "");
+      for (const [letter, option] of question.opts) {
+        options.append(el("li", `${letter}. ${option} · ${letter === question.correct ? "Correcta" : "Incorrecta"}`));
+      }
+      detail.append(options, explanation(question, answer));
       quiz.append(detail);
     }
     result.focus();
@@ -273,7 +266,6 @@
   } else {
     byId("controles").hidden = !bank.length;
     topic.addEventListener("change", updatePractice);
-    gradedOnly.addEventListener("change", updatePractice);
     updatePractice();
   }
 })();
