@@ -344,6 +344,11 @@ function render() {
     radio.value = option;
     radio.checked = saved === option;
     label.append(radio, option);
+    if (saved !== undefined) {
+      const verdict = document.createElement("strong");
+      verdict.textContent = option === correct ? "Correcta" : "Incorrecta";
+      label.append(verdict);
+    }
     choices.append(label);
   }
 
@@ -354,7 +359,11 @@ function render() {
   feedback.replaceChildren();
   if (saved !== undefined) {
     const result = document.createElement("strong");
-    result.textContent = saved === correct ? "Correcto" : `Respuesta correcta · ${correct}`;
+    result.textContent = saved === correct ? "Correcta" : "Incorrecta";
+    const answerKey = document.createElement("p");
+    answerKey.textContent = `Respuesta correcta: ${correct}`;
+    const rationale = document.createElement("h3");
+    rationale.textContent = "BADBEAR.FIJAS · Fundamento";
     const explanation = document.createElement("p");
     explanation.textContent = options[4];
     const link = document.createElement("a");
@@ -362,7 +371,7 @@ function render() {
     link.textContent = "Repasar teoría relacionada";
     const source = document.createElement("p");
     source.textContent = `Material original · página ${options[5]}`;
-    feedback.append(result, explanation, link, source);
+    feedback.append(result, answerKey, rationale, explanation, link, source);
   }
 }
 
